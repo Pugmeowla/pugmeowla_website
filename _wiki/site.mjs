@@ -15,7 +15,7 @@ export const site = {
 
 export const nav = [
   { title: 'Getting Started', icon: 'renders/infinity_gauntlet_cast.png', pages: [
-    'index.html', 'getting-started.html', 'finding-stones.html',
+    'index.html', 'getting-started.html', 'finding-stones.html', 'progression.html',
   ] },
   { title: 'Infinity Stones', icon: 'stones/space_stone.png', pages: [
     'stones/index.html', 'stones/space.html', 'stones/mind.html', 'stones/reality.html',
@@ -24,8 +24,8 @@ export const nav = [
   { title: 'Infinity Gauntlet', icon: 'renders/infinity_gauntlet.png', pages: [
     'gauntlet/index.html', 'gauntlet/snap.html', 'gauntlet/skins.html',
   ] },
-  { title: 'Abilities & Progression', icon: 'icons/energy_blast.png', pages: [
-    'abilities.html', 'progression.html',
+  { title: 'Abilities', icon: 'icons/energy_blast.png', pages: [
+    'abilities.html',
   ] },
   { title: 'Items & Equipment', icon: 'renders/cosmi-rod.png', pages: [
     'items.html', 'containers.html',

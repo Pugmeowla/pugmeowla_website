@@ -193,7 +193,9 @@ export const macros = {
     return `<div class="skin-grid">${skins.map((skin) => `<article class="skin-card" id="skin-${slugify(skin.id)}">
   <button type="button" class="skin-zoom" data-zoom="@/assets/img/skin-renders/${skin.id}.png" data-caption="${escapeHtml(skin.title)}" aria-label="Enlarge ${escapeHtml(skin.title)}">${img(`skin-renders/${skin.id}.png`, skin.title, 'px skin-img')}</button>
   <h3 class="no-toc">${escapeHtml(skin.title)}</h3>
-  <p class="skin-unlock">${skin.secret
+  <p class="skin-unlock">${!skin.unlock
+    ? '<span>Unlock:</span> <em>Secret</em>'
+    : skin.secret
     ? `<span>Unlock:</span> <button type="button" class="spoiler" aria-label="Reveal unlock item">Reveal</button><span class="spoiler-text" hidden>${escapeHtml(skin.unlock)}</span>`
     : `<span>Unlock:</span> ${escapeHtml(skin.unlock)}`}</p>
   ${skin.notes ? `<p class="skin-notes">${escapeHtml(skin.notes)}</p>` : ''}

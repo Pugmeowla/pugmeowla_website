@@ -15,7 +15,7 @@ export const skins = [
   { id: 'blaze_inc_gauntlet', title: 'Blaze Inc Gauntlet', unlock: 'Quartz Flux Capacitor (Palladium)', unlockId: 'palladium:quartz_flux_capacitor', notes: 'Custom model. A tribute to Blaze Inc.' },
   { id: 'cheeselander', title: 'Cheeselander Gauntlet', unlock: 'Sponge', unlockId: 'minecraft:sponge', notes: "Made for the main suit from the Rangers SuperHeros mod." },
   { id: 'finger_gauntlet', title: 'Gauntlet with Fingers', unlock: 'Raw Chicken (just hold it)', unlockId: 'minecraft:chicken', notes: 'Applied as soon as you hold the item, with an eating sound. Custom model.' },
-  { id: 'fantastic_four_skin', title: 'Fantastic Four Skin', unlock: 'Shears', unlockId: 'minecraft:shears', secret: true, notes: 'Hidden from the ability bar.' },
+  { id: 'fantastic_four_skin', title: 'Fantastic Four Skin', unlock: null, notes: 'Hidden from the ability bar. The unlock item is a secret.' },
   { id: 'hand_of_terror', title: 'Hand of Terror', unlock: 'Orb', unlockId: 'infinity:orb', secret: true, notes: 'Requested by Terror.' },
   { id: 'nano_gauntlet', title: 'Nano Gauntlet Skin', unlock: 'Vibranium Flux Capacitor (Palladium)', unlockId: 'palladium:vibranium_flux_capacitor',
     notes: 'Can be applied over the Burnt Gauntlet and repairs the burnt look of the gauntlet and arm.' },
