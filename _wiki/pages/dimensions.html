@@ -1,0 +1,59 @@
+---
+title: Dimensions & Travel
+nav: Dimensions
+description: Vormir, Morag, Svartalfheim, the Garden, the Soulworld and the Marvel space dimension, and how to travel between them.
+lead: Four alien worlds, a pocket dimension for souls, and a slice of space. How to get there and what you'll find.
+icon: renders/morag_stone.png
+related: structures.html, stones/space.html, stones/soul.html, compatibility.html
+---
+<h2 id="travel">Getting there</h2>
+<p>There are no portal blocks to these worlds. The intended way in is the Space Stone's {{ab space/teleport}}: type the dimension ID and
+  coordinates and step through. The dimension field suggests every dimension the server has, so you don't need to remember the IDs.</p>
+<pre data-lang="text" data-title="Teleport GUI examples">
+Dimension: infinity:vormir       X: 212   Y: 130   Z: 99      (the Soul Guardian)
+Dimension: infinity:morag        X: 0     Y: 120   Z: 0
+Dimension: infinity:svartelheim  X: 0     Y: 120   Z: 0
+Dimension: infinity:garden       X: 0     Y: 100   Z: 0
+</pre>
+<p>Portals always put you on safe ground near the coordinates you typed, so a rough Y is fine. Operators can of course also use
+  <code>/execute in infinity:vormir run tp @s 212 130 99</code>.</p>
+<div class="callout compat"><span class="callout-title">Space mods</span><p>The mod ships planet data for the <strong>Cosmos</strong>
+  mod (a "Marvel" solar system with the Garden, Vormir, Morag and Svartalfheim as planets) and Ad Astra-style planet files. Those only do
+  anything when that mod is installed.</p></div>
+
+<h2 id="vormir">Vormir</h2>
+<p><code>infinity:vormir</code> · terrain of {{item vormir_sand}} and {{item vormir_stone}}, no sky light, sea level 63.</p>
+<p>The planet of the Soul Stone. Its great cliff and the Soul Guardian are always in the same place, roughly X 0–271, Z 0–191, with the
+  Guardian at <code>212 121 99</code>. See {{page structures.html#vormir Structures}} and {{page stones/soul.html#obtaining Soul Stone}}.</p>
+
+<h2 id="morag">Morag</h2>
+<p><code>infinity:morag</code> · terrain of {{item morag_stone}}, no sky light, sea level 100.</p>
+<p>A flooded planet. The {{page structures.html#morag-temple Morag Temple}} with the Orb sits on the ocean floor, far from the origin,
+  so bring water breathing (the Space Stone has it).</p>
+
+<h2 id="svartalfheim">Svartalfheim</h2>
+<p><code>infinity:svartelheim</code> · terrain of {{item svartelheim_stone}} and {{item svartelheim_sand}}, no sky light, sea level 100.</p>
+<p>Home of the dark elves. {{page structures.html#uru-meteor Uru meteor craters}} are everywhere on the surface, and the
+  {{page structures.html#aether-chamber Aether Chamber}} is buried near the bottom of the world.</p>
+
+<h2 id="garden">The Garden</h2>
+<p><code>infinity:garden</code> · normal day and night, with garden, plains and river biomes.</p>
+<p>The peaceful farm planet where Thanos retires. Beds and respawn anchors work and raids can happen. There are no stones or structures
+  here; it's a place to go after it's all over.</p>
+
+<h2 id="soulworld">The Soulworld</h2>
+<p><code>infinity:soulworld</code> · a flat world of smooth red sandstone under a thin layer of water, always noon.</p>
+<ul>
+  <li><strong>Getting in</strong>: the Soul Stone's {{ab soul/enter_soulworld}} (you and everything within 5 blocks, at Y 72), the
+    {{page gauntlet/snap.html Snap}} (hostile mobs and other players), or Destroy Stones.</li>
+  <li><strong>Getting out</strong>: Exit Soulworld sends everyone back to where they came from. Anyone without a way back can walk to
+    <strong>X 0, Z 0</strong>: a 5 × 5 shaft drops all the way down to an <strong>End portal</strong> at the bottom of the world.</li>
+  <li><strong>The Snap cell</strong> at <code>1000 78 1000</code> is a lit bedrock room with an oak door on its south side. Snapped mobs and
+    players arrive inside it.</li>
+  <li>Entities sent back by Exit Soulworld that didn't arrive through Enter Soulworld land in the Overworld above the same X and Z with
+    slow falling.</li>
+</ul>
+
+<h2 id="marvel">Marvel (space)</h2>
+<p><code>infinity:marvel</code> · an empty space dimension used as the Marvel solar system for the Cosmos mod. Without Cosmos it isn't
+  meant to be visited.</p>

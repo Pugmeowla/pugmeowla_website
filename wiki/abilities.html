@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-root="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>All Abilities · Infinity Stone Core Wiki</title>
+<meta name="description" content="Searchable list of every ability in the mod, with its stone, how it's activated, cooldown and unlock cost.">
+<meta property="og:title" content="All Abilities · Infinity Stone Core Wiki">
+<meta property="og:description" content="Searchable list of every ability in the mod, with its stone, how it's activated, cooldown and unlock cost.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/wiki.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <a class="home-link" href="../index.html">Pugmeowla</a>
+</header>
+<div class="shell">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <a class="sidebar-version" href="compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
+      <details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="index.html">Wiki Home</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="finding-stones.html">Finding the Stones</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="stones/index.html">Overview</a></li><li><a href="stones/space.html">Space Stone</a></li><li><a href="stones/mind.html">Mind Stone</a></li><li><a href="stones/reality.html">Reality Stone</a></li><li><a href="stones/power.html">Power Stone</a></li><li><a href="stones/time.html">Time Stone</a></li><li><a href="stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="gauntlet/index.html">The Gauntlet</a></li><li><a href="gauntlet/snap.html">The Snap</a></li><li><a href="gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group" open><summary><img src="assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities &amp; Progression</span></summary><ul><li><a href="abilities.html" aria-current="page" class="active">All Abilities</a></li><li><a href="progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="items.html">Item Index</a></li><li><a href="containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="structures.html">Structures</a></li><li><a href="dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="addons/index.html">Overview</a></li><li><a href="addons/stones.html">Custom Stones</a></li><li><a href="addons/skins.html">Skin Files</a></li><li><a href="addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="addons/ground-items.html">Ground Items</a></li><li><a href="addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="compatibility.html">Compatibility &amp; Config</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></details>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki</a></li><li><span>Abilities &amp; Progression</span></li><li aria-current="page">All Abilities</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="assets/img/icons/energy_blast.png" alt=""><div><h1>All Abilities</h1><p class="lead">Every ability from every stone, tool and container in one filterable list. Click one for the full explanation.</p></div></header>
+    
+    <article class="prose">
+<h2 id="list">Ability list<a class="heading-anchor" href="#list" aria-label="Link to this section">#</a></h2>
+<p>Type to filter by name, effect or ability type, narrow it down by source, or pick an activation. <code>AoE</code> is the unlock cost
+  in <a class="chip item-chip" href="items.html#item-aspects-of-existance"><img src="assets/img/renders/aspects_of_existance.png" alt="" class="px" loading="lazy">Aspects of Existence</a>. Links work with <code>?q=</code> and <code>?source=</code>, for example
+  <a href="abilities.html?source=power">abilities.html?source=power</a>.</p>
+<div class="filter-panel" data-filter-list="abilities">
+  <div class="filter-row"><label class="visually-hidden" for="ability-filter">Filter abilities</label>
+  <input id="ability-filter" class="filter-input" type="search" placeholder="Filter by name, effect or ability type…" autocomplete="off">
+  <label class="visually-hidden" for="activation-filter">Activation</label>
+  <select id="activation-filter" class="filter-select"><option value="">Any activation</option><option>Toggle</option><option>Key press</option><option>Upgrade</option><option>Passive</option><option>Hold</option><option>Scroll</option><option>Right-click</option></select></div>
+  <div class="filter-chips" role="group" aria-label="Filter by source"><button type="button" class="filter-chip" data-filter-group="space" aria-pressed="false" style="--accent:#0255FF">Space Stone</button><button type="button" class="filter-chip" data-filter-group="mind" aria-pressed="false" style="--accent:#FFD300">Mind Stone</button><button type="button" class="filter-chip" data-filter-group="reality" aria-pressed="false" style="--accent:#FF0130">Reality Stone</button><button type="button" class="filter-chip" data-filter-group="power" aria-pressed="false" style="--accent:#C32AD1">Power Stone</button><button type="button" class="filter-chip" data-filter-group="time" aria-pressed="false" style="--accent:#13CF55">Time Stone</button><button type="button" class="filter-chip" data-filter-group="soul" aria-pressed="false" style="--accent:#DE7300">Soul Stone</button><button type="button" class="filter-chip" data-filter-group="scepter" aria-pressed="false">Scepter</button><button type="button" class="filter-chip" data-filter-group="gauntlet" aria-pressed="false">Infinity Gauntlet</button><button type="button" class="filter-chip" data-filter-group="cosmi_rod" aria-pressed="false">Cosmi-Rod</button><button type="button" class="filter-chip" data-filter-group="orb" aria-pressed="false">Orb</button><button type="button" class="filter-chip" data-filter-group="eye" aria-pressed="false">Eye of Agamotto</button><button type="button" class="filter-chip" data-filter-group="aether" aria-pressed="false">Empty Aether</button><button type="button" class="filter-chip" data-filter-group="telephone" aria-pressed="false">Soul Guardian Telephone</button></div>
+  <p class="filter-count" aria-live="polite"><span data-count>67</span> of 67 abilities</p>
+  <ul class="index-list"><li class="index-row" data-group="space" data-activation="Toggle" data-text="force field space stone a shield bubble that blocks attacks but roots you in place. palladium:attribute_modifier + infinity:force_field force_field" style="--accent:#0255FF">
+  <a href="stones/space.html#force-field"><img src="assets/img/icons/force_field.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Force Field</strong><small>A shield bubble that blocks attacks but roots you in place.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Toggle</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Key press" data-text="jump teleport space stone opens a short-lived portal to the block you are looking at and jumps you through. infinity:jump_portal jump_teleport" style="--accent:#0255FF">
+  <a href="stones/space.html#jump-teleport"><img src="assets/img/icons/teleport.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Jump Teleport</strong><small>Opens a short-lived portal to the block you are looking at and jumps you through.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Key press</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Key press" data-text="teleport gui space stone pick any dimension and coordinates, then open a linked portal pair. infinity:portal teleport" style="--accent:#0255FF">
+  <a href="stones/space.html#teleport"><img src="assets/img/icons/teleport.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Teleport GUI</strong><small>Pick any dimension and coordinates, then open a linked portal pair.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Key press</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Toggle" data-text="telekinesis space stone pick up an entity or block, move it around and throw it. infinity:telekinesis telekinesis" style="--accent:#0255FF">
+  <a href="stones/space.html#telekinesis"><img src="assets/img/stones/space_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Telekinesis</strong><small>Pick up an entity or block, move it around and throw it.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Toggle</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Upgrade" data-text="spatial lock space stone right-click while holding something with telekinesis to freeze it in space. infinity:spatial_lock spatial_lock" style="--accent:#0255FF">
+  <a href="stones/space.html#spatial-lock"><img src="assets/img/stones/space_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Spatial Lock</strong><small>Right-click while holding something with Telekinesis to freeze it in space.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Upgrade</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Toggle" data-text="black hole space stone summon a growing black hole that follows your aim, then throw it. infinity:black_hole black_hole" style="--accent:#0255FF">
+  <a href="stones/space.html#black-hole"><img src="assets/img/icons/black_hole.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Black Hole</strong><small>Summon a growing black hole that follows your aim, then throw it.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Toggle</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Passive" data-text="water breathing space stone breathe underwater. palladium:command water_breathing" style="--accent:#0255FF">
+  <a href="stones/space.html#water-breathing"><img src="assets/img/stones/space_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Water Breathing</strong><small>Breathe underwater.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Passive" data-text="fall damage immunity space stone negates all fall damage. palladium:damage_immunity fall_immunity" style="--accent:#0255FF">
+  <a href="stones/space.html#fall-immunity"><img src="assets/img/stones/space_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Fall Damage Immunity</strong><small>Negates all fall damage.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Passive" data-text="speed space stone adds 0.05 to your movement speed attribute (+50% for a player). palladium:attribute_modifier speed" style="--accent:#0255FF">
+  <a href="stones/space.html#speed"><img src="assets/img/stones/space_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Speed</strong><small>Adds 0.05 to your movement speed attribute (+50% for a player).</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="space" data-activation="Passive" data-text="step assist space stone walk up full blocks without jumping. palladium:attribute_modifier step_assist" style="--accent:#0255FF">
+  <a href="stones/space.html#step-assist"><img src="assets/img/icons/step.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Step Assist</strong><small>Walk up full blocks without jumping.</small></span>
+  <span class="index-side"><span class="tag tag-group">Space Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Key press" data-text="pacify mind stone turns mobs within 5 blocks peaceful towards you. sneak to undo. palladium:command passive" style="--accent:#FFD300">
+  <a href="stones/mind.html#passive"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Pacify</strong><small>Turns mobs within 5 blocks peaceful towards you. Sneak to undo.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Key press</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Passive" data-text="flight mind stone fly freely once unlocked. palladium:flight flight" style="--accent:#FFD300">
+  <a href="stones/mind.html#flight"><img src="assets/img/icons/fly.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Flight</strong><small>Fly freely once unlocked.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Key press" data-text="flight toggle mind stone free unlock: clicking it in the skill tree turns mind stone flight off or back on. palladium:command flight_toggle" style="--accent:#FFD300">
+  <a href="stones/mind.html#flight-toggle"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Flight Toggle</strong><small>Free unlock: clicking it in the skill tree turns Mind Stone flight off or back on.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Toggle" data-text="intangibility mind stone phase through blocks and entities; all damage is negated. palladium:intangibility intangibility" style="--accent:#FFD300">
+  <a href="stones/mind.html#intangibility"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Intangibility</strong><small>Phase through blocks and entities; all damage is negated.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Toggle</span><span class="tag">10 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Passive" data-text="recipes mind stone unlocks every recipe in your recipe book. palladium:command recipe" style="--accent:#FFD300">
+  <a href="stones/mind.html#recipe"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Recipes</strong><small>Unlocks every recipe in your recipe book.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Passive" data-text="hero of the people mind stone permanent hero of the village vi. palladium:command hero" style="--accent:#FFD300">
+  <a href="stones/mind.html#hero"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Hero of the People</strong><small>Permanent Hero of the Village VI.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Passive" data-text="night vision mind stone permanent night vision. palladium:command night_vision" style="--accent:#FFD300">
+  <a href="stones/mind.html#night-vision"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Night Vision</strong><small>Permanent Night Vision.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Key press" data-text="mind illusions mind stone creates 3 copies of yourself for 60 seconds. infinity:clones clones" style="--accent:#FFD300">
+  <a href="stones/mind.html#clones"><img src="assets/img/icons/illusion.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Mind Illusions</strong><small>Creates 3 copies of yourself for 60 seconds.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Key press</span><span class="tag">20 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Key press" data-text="mind reading mind stone look at a creature (up to 32 blocks) to see its health, effects, gear, inventory and target. infinity:mind_reading mind_reading" style="--accent:#FFD300">
+  <a href="stones/mind.html#mind-reading"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Mind Reading</strong><small>Look at a creature (up to 32 blocks) to see its health, effects, gear, inventory and target.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Key press</span><span class="tag">1 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="mind" data-activation="Key press" data-text="disguise mind stone wear any player's skin and name by typing their username. infinity:disguise disguise" style="--accent:#FFD300">
+  <a href="stones/mind.html#disguise"><img src="assets/img/stones/mind_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Disguise</strong><small>Wear any player's skin and name by typing their username.</small></span>
+  <span class="index-side"><span class="tag tag-group">Mind Stone</span><span class="tag">Key press</span><span class="tag">1 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="scepter" data-activation="Hold" data-text="scepter power blast scepter hold to fire a beam from the scepter: 20 damage, 50 block range, sets targets on fire. palladium:energy_beam scepter_blast" style="--accent:#8a6d5d">
+  <a href="stones/mind.html#scepter-blast"><img src="assets/img/icons/power_blast_blue.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Scepter Power Blast</strong><small>Hold to fire a beam from the Scepter: 20 damage, 50 block range, sets targets on fire.</small></span>
+  <span class="index-side"><span class="tag tag-group">Scepter</span><span class="tag">Hold</span></span></a>
+</li>
+<li class="index-row" data-group="reality" data-activation="Upgrade" data-text="block saving reality stone unlocks copy block and paste block. palladium:dummy save_dummy" style="--accent:#FF0130">
+  <a href="stones/reality.html#save-dummy"><img src="assets/img/stones/reality_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Block Saving</strong><small>Unlocks Copy Block and Paste Block.</small></span>
+  <span class="index-side"><span class="tag tag-group">Reality Stone</span><span class="tag">Upgrade</span><span class="tag tag-cost">128 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="reality" data-activation="Scroll" data-text="size changing reality stone unlocks size control: toggle it, then scroll to grow up to 5× or shrink down to 0.1×. palladium:dummy + palladium:command shrink_dummy" style="--accent:#FF0130">
+  <a href="stones/reality.html#shrink-dummy"><img src="assets/img/stones/reality_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Size Changing</strong><small>Unlocks Size Control: toggle it, then scroll to grow up to 5× or shrink down to 0.1×.</small></span>
+  <span class="index-side"><span class="tag tag-group">Reality Stone</span><span class="tag">Scroll</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="reality" data-activation="Toggle" data-text="invisibility reality stone true invisibility: no body, no armor, no name. palladium:invisibility invisibility" style="--accent:#FF0130">
+  <a href="stones/reality.html#invisibility"><img src="assets/img/stones/reality_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Invisibility</strong><small>True invisibility: no body, no armor, no name.</small></span>
+  <span class="index-side"><span class="tag tag-group">Reality Stone</span><span class="tag">Toggle</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="reality" data-activation="Hold" data-text="change the weather reality stone hold to open a wheel and pick clear, rain or thunder. palladium:ability_wheel weather_wheel" style="--accent:#FF0130">
+  <a href="stones/reality.html#weather-wheel"><img src="assets/img/icons/weather_wheel.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Change the Weather</strong><small>Hold to open a wheel and pick Clear, Rain or Thunder.</small></span>
+  <span class="index-side"><span class="tag tag-group">Reality Stone</span><span class="tag">Hold</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Key press" data-text="energy blast power stone fires a magenta energy bolt. damage: 3 × 2^level. infinity:energy_blast impower" style="--accent:#C32AD1">
+  <a href="stones/power.html#impower"><img src="assets/img/icons/energy_blast.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Energy Blast</strong><small>Fires a magenta energy bolt. Damage: 3 × 2^level.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Key press</span><span class="tag">0.25 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Passive" data-text="knockback resistance power stone full knockback resistance. palladium:attribute_modifier knockback" style="--accent:#C32AD1">
+  <a href="stones/power.html#knockback"><img src="assets/img/stones/power_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Knockback Resistance</strong><small>Full knockback resistance.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Hold" data-text="power blast power stone hold to fire a 100-block beam that smelts blocks and starts fires. infinity:power_blast power_blast_aim" style="--accent:#C32AD1">
+  <a href="stones/power.html#power-blast-aim"><img src="assets/img/icons/power_blast.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Power Blast</strong><small>Hold to fire a 100-block beam that smelts blocks and starts fires.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Hold</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Upgrade" data-text="power levels 1–11 power stone eleven purchasable levels. each one doubles your base attack damage. palladium:dummy (×11) power_levels" style="--accent:#C32AD1">
+  <a href="stones/power.html#power-levels"><img src="assets/img/stones/power_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Power Levels 1–11</strong><small>Eleven purchasable levels. Each one doubles your base attack damage.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Upgrade</span><span class="tag tag-cost">434 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Scroll" data-text="damage control power stone toggle on, then scroll up/down to set your active power level. palladium:command + infinity:power_level_change damage_control" style="--accent:#C32AD1">
+  <a href="stones/power.html#damage-control"><img src="assets/img/stones/power_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Damage Control</strong><small>Toggle on, then scroll up/down to set your active power level.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Scroll</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Upgrade" data-text="cosmic explosion power stone controls the stone’s raw energy: unlocks rocket burst and power cyclone. palladium:dummy explosion2" style="--accent:#C32AD1">
+  <a href="stones/power.html#explosion2"><img src="assets/img/icons/rocket_burst.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Cosmic Explosion</strong><small>Controls the stone’s raw energy: unlocks Rocket Burst and Power Cyclone.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Upgrade</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Key press" data-text="rocket burst power stone below full power: launches five homing rockets. infinity:rocket_burst rocket_burst" style="--accent:#C32AD1">
+  <a href="stones/power.html#rocket-burst"><img src="assets/img/icons/rocket_burst.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Rocket Burst</strong><small>Below full power: launches five homing rockets.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Key press</span><span class="tag">5 s</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Hold" data-text="power cyclone power stone at level 11 only: hold to become a cyclone of energy that fires a rocket every second. infinity:power_cyclone power_cyclone" style="--accent:#C32AD1">
+  <a href="stones/power.html#power-cyclone"><img src="assets/img/icons/rocket_burst.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Power Cyclone</strong><small>At level 11 only: hold to become a cyclone of energy that fires a rocket every second.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Hold</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Key press" data-text="meteor storm power stone shatters a moon and drops the fragments on the spot you look at. infinity:meteor_storm meteor_storm" style="--accent:#C32AD1">
+  <a href="stones/power.html#meteor-storm"><img src="assets/img/icons/meteor.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Meteor Storm</strong><small>Shatters a moon and drops the fragments on the spot you look at.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Key press</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="power" data-activation="Key press" data-text="radiation texture toggle power stone free: clicking it in the skill tree turns the radiation skin overlay off or on. palladium:command radiation_texture_toggle" style="--accent:#C32AD1">
+  <a href="stones/power.html#radiation-texture-toggle"><img src="assets/img/stones/power_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Radiation Texture Toggle</strong><small>Free: clicking it in the skill tree turns the radiation skin overlay off or on.</small></span>
+  <span class="index-side"><span class="tag tag-group">Power Stone</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Hold" data-text="fast forward daylight cycle time stone hold to race through the day (+100 ticks of daytime every tick). palladium:command fast_forward" style="--accent:#13CF55">
+  <a href="stones/time.html#fast-forward"><img src="assets/img/stones/time_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Fast Forward Daylight Cycle</strong><small>Hold to race through the day (+100 ticks of daytime every tick).</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Hold</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Toggle" data-text="stop projectile time stone projectiles that come within 2.5 blocks freeze in mid-air. infinity:projectile_stop projectile_stop" style="--accent:#13CF55">
+  <a href="stones/time.html#projectile-stop"><img src="assets/img/icons/no_arrow.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Stop Projectile</strong><small>Projectiles that come within 2.5 blocks freeze in mid-air.</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Toggle</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Passive" data-text="time command time stone lets you use /infinity time set . infinity:time_set time_set" style="--accent:#13CF55">
+  <a href="stones/time.html#time-set"><img src="assets/img/stones/time_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Time Command</strong><small>Lets you use /infinity time set <time>.</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Key press" data-text="daylight cycle toggle time stone free: clicking it flips the dodaylightcycle game rule. palladium:command daylight_cycle_toggle" style="--accent:#13CF55">
+  <a href="stones/time.html#daylight-cycle-toggle"><img src="assets/img/stones/time_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Daylight Cycle Toggle</strong><small>Free: clicking it flips the doDaylightCycle game rule.</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Scroll" data-text="slow time time stone unlocks change flow of time: toggle it on, then scroll to change the server tick rate. infinity:time_flow slow_time_dummy" style="--accent:#13CF55">
+  <a href="stones/time.html#slow-time-dummy"><img src="assets/img/icons/hourglass.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Slow Time</strong><small>Unlocks Change Flow of Time: toggle it on, then scroll to change the server tick rate.</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Scroll</span><span class="tag tag-cost">5 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Toggle" data-text="freeze time time stone unlocks time freeze: pauses the entire world while you keep moving. infinity:time_freeze time_freeze_dummy" style="--accent:#13CF55">
+  <a href="stones/time.html#time-freeze-dummy"><img src="assets/img/icons/stop.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Freeze Time</strong><small>Unlocks Time Freeze: pauses the entire world while you keep moving.</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Toggle</span><span class="tag tag-cost">10 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="time" data-activation="Key press" data-text="screen toggle time stone free: turns the green screen overlay shown while using time powers off or on. palladium:command screen_toggle" style="--accent:#13CF55">
+  <a href="stones/time.html#screen-toggle"><img src="assets/img/stones/time_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Screen Toggle</strong><small>Free: turns the green screen overlay shown while using time powers off or on.</small></span>
+  <span class="index-side"><span class="tag tag-group">Time Stone</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="soul storage soul stone every entity you kill stores one soul, up to 50 (orange bar). infinity:soul_storage soul_storage" style="--accent:#DE7300">
+  <a href="stones/soul.html#soul-storage"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Soul Storage</strong><small>Every entity you kill stores one soul, up to 50 (orange bar).</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Key press" data-text="soul heal soul stone spend 1 soul to restore 2 hearts. infinity:soul_heal soul_heal" style="--accent:#DE7300">
+  <a href="stones/soul.html#soul-heal"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Soul Heal</strong><small>Spend 1 soul to restore 2 hearts.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Key press</span><span class="tag">0.5 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Key press" data-text="soul drain soul stone rip the soul out of the mob you look at (8 blocks), leaving it standing still in greyscale. infinity:soul_drain soul_drain" style="--accent:#DE7300">
+  <a href="stones/soul.html#soul-drain"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Soul Drain</strong><small>Rip the soul out of the mob you look at (8 blocks), leaving it standing still in greyscale.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Key press</span><span class="tag">0.5 s</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Hold" data-text="glow soul stone hold to see every entity within 100 blocks outlined in orange. palladium:entity_glow glow" style="--accent:#DE7300">
+  <a href="stones/soul.html#glow"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Glow</strong><small>Hold to see every entity within 100 blocks outlined in orange.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Hold</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="locate entity command soul stone lets you use /infinity soul locateplayer . infinity:locate_player locateplayer_command" style="--accent:#DE7300">
+  <a href="stones/soul.html#locateplayer-command"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Locate Entity Command</strong><small>Lets you use /infinity soul locateplayer <player>.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Key press" data-text="summon zombie soul stone summons six zombies that join your peaceful team. palladium:command summon_zombie" style="--accent:#DE7300">
+  <a href="stones/soul.html#summon-zombie"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Summon Zombie</strong><small>Summons six zombies that join your peaceful team.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Key press</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Key press" data-text="enter / exit soulworld soul stone takes you and everything within 5 blocks into the soulworld; use again to return. infinity:pocket_dimension_enter / exit enter_soulworld" style="--accent:#DE7300">
+  <a href="stones/soul.html#enter-soulworld"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Enter / Exit Soulworld</strong><small>Takes you and everything within 5 blocks into the Soulworld; use again to return.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Key press</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="saturation soul stone you never get hungry. palladium:command saturation" style="--accent:#DE7300">
+  <a href="stones/soul.html#saturation"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Saturation</strong><small>You never get hungry.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="effect immunity soul stone clears most negative effects (poison, wither, slowness, blindness…) every tick. palladium:command effect_immune" style="--accent:#DE7300">
+  <a href="stones/soul.html#effect-immune"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Effect Immunity</strong><small>Clears most negative effects (poison, wither, slowness, blindness…) every tick.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">1 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="regeneration soul stone permanent, extremely strong regeneration. palladium:command regen" style="--accent:#DE7300">
+  <a href="stones/soul.html#regen"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Regeneration</strong><small>Permanent, extremely strong Regeneration.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">16 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="health soul stone nearly infinite max health. palladium:attribute_modifier health" style="--accent:#DE7300">
+  <a href="stones/soul.html#health"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Health</strong><small>Nearly infinite max health.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">64 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="soul" data-activation="Passive" data-text="immortality soul stone complete immortality. needs all six stones. palladium:immortality + infinity:invulnerability immortal" style="--accent:#DE7300">
+  <a href="stones/soul.html#immortal"><img src="assets/img/stones/soul_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Immortality</strong><small>Complete immortality. Needs all six stones.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Stone</span><span class="tag">Passive</span><span class="tag tag-cost">128 AoE</span></span></a>
+</li>
+<li class="index-row" data-group="gauntlet" data-activation="Key press" data-text="kill half of all entities infinity gauntlet the snap: half of the living entities in your dimension turn to dust. palladium:command kill_half" style="--accent:#8a6d5d">
+  <a href="gauntlet/snap.html#kill-half"><img src="assets/img/icons/snap.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Kill Half of All Entities</strong><small>The Snap: half of the living entities in your dimension turn to dust.</small></span>
+  <span class="index-side"><span class="tag tag-group">Infinity Gauntlet</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="gauntlet" data-activation="Key press" data-text="kill all hostile infinity gauntlet snaps every hostile mob in every dimension into a sealed soulworld cell. palladium:command kill_hostile" style="--accent:#8a6d5d">
+  <a href="gauntlet/snap.html#kill-hostile"><img src="assets/img/icons/snap.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Kill All Hostile</strong><small>Snaps every hostile mob in every dimension into a sealed Soulworld cell.</small></span>
+  <span class="index-side"><span class="tag tag-group">Infinity Gauntlet</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="gauntlet" data-activation="Key press" data-text="kill other players infinity gauntlet snaps every other player into the soulworld cell. palladium:command kill_player" style="--accent:#8a6d5d">
+  <a href="gauntlet/snap.html#kill-player"><img src="assets/img/icons/snap.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Kill Other Players</strong><small>Snaps every other player into the Soulworld cell.</small></span>
+  <span class="index-side"><span class="tag tag-group">Infinity Gauntlet</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="gauntlet" data-activation="Toggle" data-text="destroy stones infinity gauntlet a 7 second ritual that destroys all six stones in the gauntlet. palladium:animation_timer destroy_stones" style="--accent:#8a6d5d">
+  <a href="gauntlet/snap.html#destroy-stones"><img src="assets/img/icons/snap.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Destroy Stones</strong><small>A 7 second ritual that destroys all six stones in the gauntlet.</small></span>
+  <span class="index-side"><span class="tag tag-group">Infinity Gauntlet</span><span class="tag">Toggle</span></span></a>
+</li>
+<li class="index-row" data-group="gauntlet" data-activation="Key press" data-text="return to original gauntlet infinity gauntlet removes the current skin and gives its unlock item back. palladium:command normal_gauntlet" style="--accent:#8a6d5d">
+  <a href="gauntlet/skins.html#normal-gauntlet"><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Return to Original Gauntlet</strong><small>Removes the current skin and gives its unlock item back.</small></span>
+  <span class="index-side"><span class="tag tag-group">Infinity Gauntlet</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="cosmi_rod" data-activation="Key press" data-text="shockwave cosmi-rod concussive blast from the hand that flings and hurts everything in front of you. infinity:shockwave shockwave" style="--accent:#8a6d5d">
+  <a href="containers.html#shockwave"><img src="assets/img/icons/shockwave.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Shockwave</strong><small>Concussive blast from the hand that flings and hurts everything in front of you.</small></span>
+  <span class="index-side"><span class="tag tag-group">Cosmi-Rod</span><span class="tag">Key press</span><span class="tag">5 s</span></span></a>
+</li>
+<li class="index-row" data-group="orb" data-activation="Key press" data-text="rotate left / rotate right orb turn the orb’s combination lock one step. geckolib:render_layer_animation rotate" style="--accent:#8a6d5d">
+  <a href="containers.html#rotate"><img src="assets/img/icons/left.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Rotate Left / Rotate Right</strong><small>Turn the Orb’s combination lock one step.</small></span>
+  <span class="index-side"><span class="tag tag-group">Orb</span><span class="tag">Key press</span><span class="tag">0.5 s</span></span></a>
+</li>
+<li class="index-row" data-group="orb" data-activation="Toggle" data-text="open / close orb orb once unlocked, opens the orb to take or insert the power stone (right-click). palladium:dummy open_close" style="--accent:#8a6d5d">
+  <a href="containers.html#open-close"><img src="assets/img/renders/orb.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Open / Close Orb</strong><small>Once unlocked, opens the Orb to take or insert the Power Stone (right-click).</small></span>
+  <span class="index-side"><span class="tag tag-group">Orb</span><span class="tag">Toggle</span></span></a>
+</li>
+<li class="index-row" data-group="orb" data-activation="Key press" data-text="lock orb orb locks the orb again; you’ll need the combination to reopen it. palladium:command reset_progress" style="--accent:#8a6d5d">
+  <a href="containers.html#reset-progress"><img src="assets/img/icons/lock.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Lock Orb</strong><small>Locks the Orb again; you’ll need the combination to reopen it.</small></span>
+  <span class="index-side"><span class="tag tag-group">Orb</span><span class="tag">Key press</span><span class="tag">0.5 s</span></span></a>
+</li>
+<li class="index-row" data-group="eye" data-activation="Key press" data-text="open / close eye eye of agamotto opens or closes the worn eye of agamotto. infinity:eye_of_agamotto open" style="--accent:#8a6d5d">
+  <a href="containers.html#open"><img src="assets/img/renders/eye_of_agamotto.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Open / Close Eye</strong><small>Opens or closes the worn Eye of Agamotto.</small></span>
+  <span class="index-side"><span class="tag tag-group">Eye of Agamotto</span><span class="tag">Key press</span><span class="tag">2 s</span></span></a>
+</li>
+<li class="index-row" data-group="eye" data-activation="Key press" data-text="remove / insert time stone eye of agamotto take the time stone out of the open eye, or put a held one back. infinity:eye_of_agamotto remove_stone" style="--accent:#8a6d5d">
+  <a href="containers.html#remove-stone"><img src="assets/img/stones/time_stone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Remove / Insert Time Stone</strong><small>Take the Time Stone out of the open Eye, or put a held one back.</small></span>
+  <span class="index-side"><span class="tag tag-group">Eye of Agamotto</span><span class="tag">Key press</span><span class="tag">0.5 s</span></span></a>
+</li>
+<li class="index-row" data-group="aether" data-activation="Key press" data-text="insert reality stone empty aether with the reality stone in your off hand, turns an empty aether into the aether. palladium:command insert_reality_stone" style="--accent:#8a6d5d">
+  <a href="containers.html#insert-reality-stone"><img src="assets/img/renders/aether.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Insert Reality Stone</strong><small>With the Reality Stone in your off hand, turns an Empty Aether into the Aether.</small></span>
+  <span class="index-side"><span class="tag tag-group">Empty Aether</span><span class="tag">Key press</span></span></a>
+</li>
+<li class="index-row" data-group="telephone" data-activation="Right-click" data-text="summon / return soul guardian soul guardian telephone calls the soul guardian from vormir to you. sneak + right-click sends it back. palladium:command summon" style="--accent:#8a6d5d">
+  <a href="containers.html#summon"><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px index-icon" loading="lazy"><span class="index-main"><strong>Summon / Return Soul Guardian</strong><small>Calls the Soul Guardian from Vormir to you. Sneak + right-click sends it back.</small></span>
+  <span class="index-side"><span class="tag tag-group">Soul Guardian Telephone</span><span class="tag">Right-click</span><span class="tag">1200 s</span></span></a>
+</li></ul>
+  <p class="filter-empty" hidden>No abilities match. Try a shorter search.</p>
+</div>
+
+<h2 id="activation-types">Activation types<a class="heading-anchor" href="#activation-types" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Activation</th><th>How you use it</th></tr></thead>
+  <tbody>
+    <tr><td>Key press</td><td>Press the ability's key once. If it has a cooldown, it can't be used again until the cooldown is over.</td></tr>
+    <tr><td>Toggle</td><td>Press once to turn on, again to turn off.</td></tr>
+    <tr><td>Hold</td><td>Active while you hold the key down.</td></tr>
+    <tr><td>Scroll</td><td>Turn the ability's toggle on, then use the mouse wheel.</td></tr>
+    <tr><td>Passive</td><td>Always on once unlocked, while you have the stone's power.</td></tr>
+    <tr><td>Upgrade</td><td>A skill-tree unlock that enables or changes other abilities and does nothing by itself.</td></tr>
+    <tr><td>Right-click</td><td>Right-click with the item in hand.</td></tr>
+  </tbody>
+</table></div>
+<p>Cooldowns are listed in seconds (20 ticks = 1 second). Abilities marked "Press twice to confirm" ignore the first press and only
+  show a warning; press again within 3 seconds.</p>
+
+    </article>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="progression.html"><img src="assets/img/renders/aspects_of_existance.png" alt="" class="px" loading="lazy"><span><strong>Skill Trees &amp; Progression</strong><small>Aspects of Existence, how skill trees unlock, every stone's costs, Power Stone levels and Soul Storage.</small></span></a><a class="related-card" href="stones/index.html"><img src="assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy"><span><strong>The Infinity Stones</strong><small>All six stones at a glance, how a stone's power is granted, and the abilities that need more than one stone.</small></span></a><a class="related-card" href="addons/abilities.html"><img src="assets/img/icons/energy_blast.png" alt="" class="px" loading="lazy"><span><strong>Ability &amp; Condition Reference</strong><small>Every ability type and condition the mod registers with Palladium, with their properties and defaults, for use in your own powers.</small></span></a><a class="related-card" href="gauntlet/snap.html"><img src="assets/img/icons/snap.png" alt="" class="px" loading="lazy"><span><strong>The Snap</strong><small>The four six-stone gauntlet abilities, exactly what each one does, and the burn that follows.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="gauntlet/skins.html"><small>← Previous</small><span>Gauntlet Skins</span></a><a class="pager-link next" href="progression.html"><small>Next →</small><span>Skill Trees &amp; Progression</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../index.html">All projects</a></p>
+    </footer>
+  </main>
+  
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="assets/js/search-index.js" defer></script>
+<script src="assets/js/wiki.js" defer></script>
+</body>
+</html>

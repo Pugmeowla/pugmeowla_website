@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Space Stone · Infinity Stone Core Wiki</title>
+<meta name="description" content="The Space Stone's portals, telekinesis, spatial lock, black hole and movement passives.">
+<meta property="og:title" content="Space Stone · Infinity Stone Core Wiki">
+<meta property="og:description" content="The Space Stone's portals, telekinesis, spatial lock, black hole and movement passives.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="stylesheet" href="../assets/css/wiki.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <a class="home-link" href="../../index.html">Pugmeowla</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <a class="sidebar-version" href="../compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
+      <details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="../index.html">Wiki Home</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/space.html" aria-current="page" class="active">Space Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities &amp; Progression</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li><li><a href="../progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="../compatibility.html">Compatibility &amp; Config</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li></ul></details>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki</a></li><li><a href="../stones/index.html">Infinity Stones</a></li><li aria-current="page">Space Stone</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../assets/img/stones/space_stone.png" alt=""><div><h1>Space Stone</h1><p class="lead">Bend distance itself. The blue stone is your ticket to every other world in the mod.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#overview">Overview</a></li><li class="toc-l2"><a href="#abilities">Abilities</a></li><li class="toc-l2"><a href="#skill-tree">Skill tree costs</a></li><li class="toc-l2"><a href="#portals">How portals behave</a></li><li class="toc-l2"><a href="#telekinesis-controls">Telekinesis controls</a></li><li class="toc-l2"><a href="#tips">Tips</a></li></ol></details>
+    <article class="prose">
+<h2 id="overview">Overview<a class="heading-anchor" href="#overview" aria-label="Link to this section">#</a></h2>
+<div class="item-cards">
+  <div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img class="px item-detail-img" src="../assets/img/stones/space_stone.png" alt="Space Stone"><div><h3 class="no-toc">Space Stone</h3><code>infinity:space_stone</code></div></div>
+    <dl><dt>Color</dt><dd>Blue (<code>#0255FF</code>)</dd><dt>Container</dt><dd><a class="chip item-chip" href="../items.html#item-tesseract"><img src="../assets/img/renders/tesseract.png" alt="" class="px" loading="lazy">Tesseract</a></dd>
+    <dt>Found in</dt><dd><a href="../structures.html#norse-village">Norse Village</a>, Overworld</dd><dt>Power</dt><dd><code>infinity:space_stone</code></dd></dl>
+  </div></div>
+</div>
+<p>You have the Space Stone's power while holding the stone or the Tesseract in either hand, wearing the stone in the Curios head
+  slot, with it in your gauntlet, or socketed in a Cosmi-Rod. Get it out of the Tesseract by dropping the Tesseract and hitting it.</p>
+<p>Get this stone first: its <a class="ability-link" href="../stones/space.html#teleport">Teleport GUI</a> is how you reach Vormir, Morag and Svartalfheim.</p>
+
+<h2 id="abilities">Abilities<a class="heading-anchor" href="#abilities" aria-label="Link to this section">#</a></h2>
+<div class="ability-list"><article class="ability-card" id="force-field" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/icons/force_field.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Force Field<a class="heading-anchor" href="#force-field" aria-label="Link to Force Field">#</a></h3>
+    <p class="ability-summary">A shield bubble that blocks attacks but roots you in place.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    
+    
+    <p>While the field is up you get a huge armor and armor toughness bonus, a shield is drawn around you and you
+      can't walk, strafe or jump. Hits from entities dealing less than <strong>23</strong> damage are blocked outright, and
+      hits from Iron Golems, Wardens, Vindicators, Piglin Brutes and Zombified Piglins are always blocked. Damage without an
+      attacker (falling, fire, suffocation) still gets through.</p>
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>palladium:attribute_modifier + infinity:force_field</code></p>
+  </div>
+</article>
+<article class="ability-card" id="jump-teleport" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/icons/teleport.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Jump Teleport<a class="heading-anchor" href="#jump-teleport" aria-label="Link to Jump Teleport">#</a></h3>
+    <p class="ability-summary">Opens a short-lived portal to the block you are looking at and jumps you through.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/space.html#force-field">Force Field</a></p>
+    
+    <p>Opens a pair of portals, one in front of you and one at the block you look at (up to 256 blocks away), and
+      lands you on safe ground next to that block. The pair closes after 3 seconds; anything can walk through until then.
+      Still usable while burnt by the Snap.</p>
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>infinity:jump_portal</code></p>
+  </div>
+</article>
+<article class="ability-card" id="teleport" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/icons/teleport.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Teleport GUI<a class="heading-anchor" href="#teleport" aria-label="Link to Teleport GUI">#</a></h3>
+    <p class="ability-summary">Pick any dimension and coordinates, then open a linked portal pair.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/space.html#force-field">Force Field</a></p>
+    
+    <p>Opens the <em>Space Teleport</em> menu with a dimension field (with suggestions for every loaded dimension)
+      and X / Y / Z fields. <strong>Open Portal</strong> creates a linked pair: one portal 2.5 blocks in front of you and one
+      at the destination. The portals stay open until someone hits one of them, which closes both. This is the main way to
+      reach the mod's dimensions without a space mod. Still usable while burnt by the Snap.</p>
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>infinity:portal</code></p>
+  </div>
+</article>
+<article class="ability-card" id="telekinesis" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Telekinesis<a class="heading-anchor" href="#telekinesis" aria-label="Link to Telekinesis">#</a></h3>
+    <p class="ability-summary">Pick up an entity or block, move it around and throw it.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/space.html#force-field">Force Field</a></p>
+    
+    <p>Turning it on grabs the entity or solid block you look at (up to 32 blocks away) and holds it in front of you.
+      <strong>Scroll</strong> to move it between 2 and 24 blocks away, <strong>left-click</strong> to throw it (it damages
+      whatever it hits), or toggle off to set it down; blocks are placed back. Unbreakable blocks and blocks with block
+      entities (chests, furnaces…) can't be picked up.</p>
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>infinity:telekinesis</code></p>
+  </div>
+</article>
+<article class="ability-card" id="spatial-lock" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Spatial Lock<a class="heading-anchor" href="#spatial-lock" aria-label="Link to Spatial Lock">#</a></h3>
+    <p class="ability-summary">Right-click while holding something with Telekinesis to freeze it in space.</p>
+    <ul class="tags"><li class="tag tag-activation">Upgrade</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/space.html#telekinesis">Telekinesis</a></p>
+    
+    <p>An upgrade for Telekinesis. While holding something, <strong>right-click</strong> to lock it where it is: it
+      can't move, fall or be knocked back (a held block stays floating) until you pick it up with Telekinesis again. The lock
+      is saved with the world.</p>
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>infinity:spatial_lock</code></p>
+  </div>
+</article>
+<article class="ability-card" id="black-hole" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/icons/black_hole.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Black Hole<a class="heading-anchor" href="#black-hole" aria-label="Link to Black Hole">#</a></h3>
+    <p class="ability-summary">Summon a growing black hole that follows your aim, then throw it.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/space.html#teleport">Teleport GUI</a></p>
+    <p class="ability-req"><span>Needs stones</span> <a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a></p>
+    <p>Requires both the Space Stone and the Power Stone. Turning it on summons a black hole in front of you that grows,
+      follows your aim and pulls in entities and blocks. <strong>Left-click</strong> to throw it; it collapses on its own
+      later. Toggling off before throwing collapses it immediately.</p>
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>infinity:black_hole</code></p>
+  </div>
+</article>
+<article class="ability-card" id="water-breathing" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Water Breathing<a class="heading-anchor" href="#water-breathing" aria-label="Link to Water Breathing">#</a></h3>
+    <p class="ability-summary">Breathe underwater.</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>palladium:command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="fall-immunity" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Fall Damage Immunity<a class="heading-anchor" href="#fall-immunity" aria-label="Link to Fall Damage Immunity">#</a></h3>
+    <p class="ability-summary">Negates all fall damage.</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>palladium:damage_immunity</code></p>
+  </div>
+</article>
+<article class="ability-card" id="speed" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Speed<a class="heading-anchor" href="#speed" aria-label="Link to Speed">#</a></h3>
+    <p class="ability-summary">Adds 0.05 to your movement speed attribute (+50% for a player).</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>palladium:attribute_modifier</code></p>
+  </div>
+</article>
+<article class="ability-card" id="step-assist" data-group="space" style="--accent:#0255FF">
+  <div class="ability-icon"><img src="../assets/img/icons/step.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Step Assist<a class="heading-anchor" href="#step-assist" aria-label="Link to Step Assist">#</a></h3>
+    <p class="ability-summary">Walk up full blocks without jumping.</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/space.html#speed">Speed</a></p>
+    
+    
+    <p class="ability-id"><code>infinity:space_stone</code> · <code>palladium:attribute_modifier</code></p>
+  </div>
+</article></div>
+
+<h2 id="skill-tree">Skill tree costs<a class="heading-anchor" href="#skill-tree" aria-label="Link to this section">#</a></h2>
+<p>Force Field is the root of the active abilities; Speed leads to Step Assist. Prices are in <a class="chip item-chip" href="../items.html#item-aspects-of-existance"><img src="../assets/img/renders/aspects_of_existance.png" alt="" class="px" loading="lazy">Aspects of Existence</a>.</p>
+<div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="../stones/space.html#force-field">Force Field</a></td><td>1</td><td>—</td><td>Toggle</td></tr><tr><td><a href="../stones/space.html#jump-teleport">Jump Teleport</a></td><td>1</td><td>Force Field</td><td>Key press</td></tr><tr><td><a href="../stones/space.html#teleport">Teleport GUI</a></td><td>1</td><td>Force Field</td><td>Key press</td></tr><tr><td><a href="../stones/space.html#telekinesis">Telekinesis</a></td><td>1</td><td>Force Field</td><td>Toggle</td></tr><tr><td><a href="../stones/space.html#spatial-lock">Spatial Lock</a></td><td>1</td><td>Telekinesis</td><td>Upgrade</td></tr><tr><td><a href="../stones/space.html#black-hole">Black Hole</a></td><td>1</td><td>Teleport GUI</td><td>Toggle</td></tr><tr><td><a href="../stones/space.html#water-breathing">Water Breathing</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="../stones/space.html#fall-immunity">Fall Damage Immunity</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="../stones/space.html#speed">Speed</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="../stones/space.html#step-assist">Step Assist</a></td><td>1</td><td>Speed</td><td>Passive</td></tr></tbody><tfoot><tr><td>Everything</td><td>10</td><td colspan="2"></td></tr></tfoot></table></div>
+
+<h2 id="portals">How portals behave<a class="heading-anchor" href="#portals" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li>A portal is a pair: one end opens 2.5 blocks in front of you, the other at the destination. Each end grows open over 3 seconds.</li>
+  <li>Anything that walks into either end, players and mobs alike, comes out of the other one on safe ground. Each entity has a one
+    second cooldown so it doesn't bounce back.</li>
+  <li><strong>Teleport GUI</strong> portals stay open until someone hits one end; both ends then close. The chunks at both ends stay
+    loaded while the pair is open.</li>
+  <li><strong>Jump Teleport</strong> portals close on their own after 3 seconds. If no block is in range you get the message
+    "No block found within range for the portal."</li>
+  <li>The menu's background, the portals' color, size, and a fire style (an orange ring of flames like Doctor Strange's sling ring)
+    are configurable by addons: see <a href="../addons/abilities.html">Ability Reference</a>.</li>
+</ul>
+<figure class="figure"><button type="button" class="zoomable" data-zoom="@/assets/img/gui/portal.png" data-caption="The Space Teleport menu background (textures/gui/portal.png)." aria-label="Enlarge image"><img src="../assets/img/gui/portal.png" alt="The Space Teleport menu background (textures/gui/portal.png)." class="px" loading="lazy"></button><figcaption>The Space Teleport menu background (textures/gui/portal.png).</figcaption></figure>
+
+<h2 id="telekinesis-controls">Telekinesis controls<a class="heading-anchor" href="#telekinesis-controls" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Input</th><th>While holding something</th></tr></thead>
+  <tbody>
+    <tr><td>Ability key</td><td>Toggle off: set it down (blocks are placed back where possible).</td></tr>
+    <tr><td>Mouse wheel</td><td>Move it closer or further (2–24 blocks).</td></tr>
+    <tr><td>Left-click</td><td>Throw it. Faster, bigger things hurt more when they hit.</td></tr>
+    <tr><td>Right-click</td><td>Spatial Lock it in place (after unlocking <a class="ability-link" href="../stones/space.html#spatial-lock">Spatial Lock</a>).</td></tr>
+  </tbody>
+</table></div>
+<p>A held block becomes a floating block entity. If it can't be placed back it drops as an item after 30 seconds in the air.
+  Picking up a spatially locked target frees it.</p>
+
+<h2 id="tips">Tips<a class="heading-anchor" href="#tips" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li>Force Field roots you in place: use it to tank a fight, not to escape one. Jump Teleport is the escape.</li>
+  <li>Black Hole and Meteor Storm both need the Power Stone too. With both stones in a gauntlet you get all of them.</li>
+  <li>The Teleport GUI and Jump Teleport keep working after the Snap, when the other stone abilities are locked.</li>
+</ul>
+
+    </article>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="../stones/power.html"><img src="../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"><span><strong>Power Stone</strong><small>The Power Stone's level system, energy blast, power blast, rocket burst, power cyclone and meteor storm, and why you shouldn't hold it bare.</small></span></a><a class="related-card" href="../containers.html"><img src="../assets/img/renders/orb.png" alt="" class="px" loading="lazy"><span><strong>Stone Containers &amp; Tools</strong><small>The Tesseract, Scepter, Aether, Orb, Eye of Agamotto, Cosmi-Rod and Soul Guardian Telephone, and how items behave on the ground.</small></span></a><a class="related-card" href="../dimensions.html"><img src="../assets/img/renders/morag_stone.png" alt="" class="px" loading="lazy"><span><strong>Dimensions &amp; Travel</strong><small>Vormir, Morag, Svartalfheim, the Garden, the Soulworld and the Marvel space dimension, and how to travel between them.</small></span></a><a class="related-card" href="../structures.html"><img src="../assets/img/renders/vormir_sand.png" alt="" class="px" loading="lazy"><span><strong>Structures</strong><small>Every structure the mod generates, where it appears, how rare it is, what's inside and how to find it.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../stones/index.html"><small>← Previous</small><span>The Infinity Stones</span></a><a class="pager-link next" href="../stones/mind.html"><small>Next →</small><span>Mind Stone</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#overview">Overview</a></li><li class="toc-l2"><a href="#abilities">Abilities</a></li><li class="toc-l2"><a href="#skill-tree">Skill tree costs</a></li><li class="toc-l2"><a href="#portals">How portals behave</a></li><li class="toc-l2"><a href="#telekinesis-controls">Telekinesis controls</a></li><li class="toc-l2"><a href="#tips">Tips</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/wiki.js" defer></script>
+</body>
+</html>

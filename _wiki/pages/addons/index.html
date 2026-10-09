@@ -1,0 +1,76 @@
+---
+title: Addon Development
+nav: Overview
+description: How to extend Infinity Stone Core with addon packs: data-driven stones, skins, gauntlets and ground items, and Palladium integration.
+lead: New stones, skins, gauntlets and props without writing Java. Everything here is JSON in an addon pack or a mod.
+icon: renders/52-d_unit.png
+related: addons/stones.html, addons/skins.html, addons/custom-gauntlets.html, addons/abilities.html
+---
+<h2 id="extension-points">Extension points</h2>
+{{pagecards addons/stones.html|stones/time_stone.png addons/skins.html|skin-renders/dragon_gauntlet.png addons/custom-gauntlets.html|renders/infinity_gauntlet.png addons/ground-items.html|renders/tesseract.png addons/abilities.html|icons/energy_blast.png}}
+<div class="table-wrap"><table>
+  <thead><tr><th>System</th><th>Folder</th><th>One file per</th></tr></thead>
+  <tbody>
+    <tr><td>{{page addons/stones.html Gauntlet stones}}</td><td><code>data/infinity/gauntlet_stones/</code></td><td>item that fits in the gauntlet</td></tr>
+    <tr><td>{{page addons/skins.html Gauntlet skins}}</td><td><code>data/infinity/gauntlet_skins/</code></td><td>skin</td></tr>
+    <tr><td>{{page addons/custom-gauntlets.html Custom gauntlets}}</td><td><code>data/infinity/gauntlets/</code></td><td>item or power that acts as a gauntlet</td></tr>
+    <tr><td>{{page addons/ground-items.html Ground items}}</td><td><code>data/infinity/ground_items/</code></td><td>item that lies on the ground like a stone</td></tr>
+    <tr><td>Palladium powers and abilities</td><td><code>data/&lt;namespace&gt;/palladium/powers/</code></td><td>power; can use the mod's {{page addons/abilities.html ability types and conditions}}</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="rules">Rules shared by all four systems</h2>
+<ul>
+  <li>Files always go in the <strong><code>infinity</code></strong> namespace folder (<code>data/infinity/…</code>), in your addon pack or mod. The <strong>file name
+    is the ID</strong>.</li>
+  <li>Files are read from every mod and every pack in the <code>addonpacks</code> folder. If two packs have a file with the same name, the
+    higher-priority pack wins, so an addon can replace one of the mod's own files.</li>
+  <li>File names starting with <code>_</code> are ignored (handy for templates and disabled files).</li>
+  <li>They're read once at startup. <strong>Restart the game</strong> after changing them; <code>/reload</code> isn't enough.</li>
+  <li>Parsing is lenient: an invalid value falls back to its default, an invalid file is skipped, and the problem is logged once
+    (<code>Gauntlet stone &lt;id&gt;: …</code>, <code>Gauntlet skin …</code>, <code>Custom gauntlet …</code>, <code>Ground item …</code>). Check
+    <code>logs/latest.log</code> if something doesn't show up.</li>
+</ul>
+
+<h2 id="addon-pack">Setting up an addon pack</h2>
+<p>Infinity Stone Core is a Palladium addon itself, and its content uses Palladium's addon pack format. The quickest way to extend it is
+  your own addon pack: a folder (or zip) in <code>.minecraft/addonpacks/</code>, containing data, assets and Palladium's <code>addon/</code> folder for
+  new items and blocks. See <a href="https://docs.threetag.net/docs/intro/">Palladium's documentation</a> for the pack format itself.</p>
+<pre data-lang="text" data-title="Example: a pack that adds a stone">
+addonpacks/chaos_stone_pack/
+├── pack.mcmeta
+├── addon/example/items/chaos_stone.json                 the item (Palladium addon item)
+├── assets/example/models/item/chaos_stone.json          {"parent": "infinity:item/infinity_stone"}
+├── assets/example/lang/en_us.json
+├── data/example/palladium/powers/chaos_stone.json       the stone's power and abilities
+├── data/infinity/gauntlet_stones/chaos_stone.json       makes it fit in the gauntlet
+└── data/infinity/ground_items/chaos_stone.json          optional: lies on the ground like a stone
+</pre>
+<p>The same files work inside a regular mod's <code>src/main/resources</code>.</p>
+
+<h2 id="palladium">Working with the mod's powers</h2>
+<ul>
+  <li>The stone powers are <code>infinity:space_stone</code>, <code>infinity:mind_stone</code>, <code>infinity:reality_stone</code>,
+    <code>infinity:power_stone</code>, <code>infinity:time_stone</code> and <code>infinity:soul_stone</code>; the gauntlet's is
+    <code>infinity:infinity_gauntlet</code>. Use <code>palladium:has_power</code> to check for them.</li>
+  <li>To check what's in a gauntlet use <code>infinity:gauntlet_slot</code>; for "is this stone available at all" use
+    <code>infinity:stone_equipped</code>. All conditions and ability types are on the {{page addons/abilities.html reference page}}.</li>
+  <li>To add the generated skin abilities to your own power, put an entry <code>{"infinity:generate": "gauntlet_skins"}</code> among its abilities,
+    as the gauntlet power does: it's replaced with every skin's apply ability and skill tree entry at load time.</li>
+  <li>Scoreboard objectives the mod uses, which conditions and energy bars can read: <code>DamageCycle</code> (Power level),
+    <code>SoulStorage</code> (souls), <code>tickrateCycle</code> and <code>timestonesidebar</code> (Time Stone step), <code>power_stone</code> …
+    <code>mind_stone</code> (1 while that stone is in the worn gauntlet).</li>
+</ul>
+
+<h2 id="in-game-docs">In-game reference</h2>
+<p>When Palladium generates its documentation (into <code>mods/documentation/</code>), the mod adds reference pages for its formats under
+  <code>infinity/</code>: <code>gauntlet_stones.html</code>, <code>gauntlet_skins.html</code>, <code>custom_gauntlets.html</code> and
+  <code>ground_items.html</code>, and documents its ability and condition types in Palladium's own pages. They're generated from the code, so
+  they always match the version you have installed.</p>
+
+<h2 id="examples">Real examples</h2>
+<ul>
+  <li><strong>Pugmeowla's Infintrix</strong> turns four Omnitrixes into power gauntlets with gloves (custom gauntlets).</li>
+  <li><strong>Infinity Protocol</strong> makes the Iron Man MK85 suit an item gauntlet whose stones only show during its nano-gauntlet animation.</li>
+  <li>The mod's own <code>data/infinity/gauntlet_skins</code>, <code>gauntlet_stones</code> and <code>ground_items</code> folders are good templates.</li>
+</ul>

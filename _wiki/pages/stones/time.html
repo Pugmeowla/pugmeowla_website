@@ -1,0 +1,43 @@
+---
+title: Time Stone
+description: The Time Stone's daylight control, projectile stopping, server tick-rate control and time freeze, and the Eye of Agamotto.
+lead: Speed the world up, slow it down, or stop it entirely. The green stone rests in the Eye of Agamotto.
+icon: stones/time_stone.png
+related: containers.html, commands.html, compatibility.html, structures.html
+---
+<h2 id="overview">Overview</h2>
+<div class="item-cards">
+  <div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img class="px item-detail-img" src="@/assets/img/stones/time_stone.png" alt="Time Stone"><div><h3 class="no-toc">Time Stone</h3><code>infinity:time_stone</code></div></div>
+    <dl><dt>Color</dt><dd>Green (<code>#13CF55</code>)</dd><dt>Container</dt><dd>{{item eye_of_agamotto}}</dd>
+    <dt>Found in</dt><dd><a href="@/structures.html#sanctum-sanctorum">Sanctum Sanctorum</a>, Overworld</dd><dt>Power</dt><dd><code>infinity:time_stone</code></dd></dl>
+  </div></div>
+</div>
+<p>You have the Time Stone's power while holding it, wearing it in the Curios head slot, with it in your gauntlet, socketed in a
+  Cosmi-Rod, or while an Eye of Agamotto that still holds the stone is held, worn on your chest or in the Curios necklace slot.
+  There is only one Time Stone per world: see <a href="@/containers.html#eye-of-agamotto">the Eye of Agamotto</a> for taking it out.</p>
+<p>Whenever a time power is running, your arm is raised, green time rings are drawn on you and a green tint covers your screen (switch the tint
+  off with the free Screen Toggle).</p>
+
+<h2 id="abilities">Abilities</h2>
+{{abilities time}}
+
+<h2 id="skill-tree">Skill tree costs</h2>
+<p>Fast Forward is the root. Slow Time (5) and Freeze Time (10) are the expensive steps.</p>
+{{costtable time}}
+
+<h2 id="tick-rate">Slow Time steps</h2>
+<p>Change Flow of Time changes the <strong>server's tick rate</strong> through Chrono API. Each step is 4 ticks per second:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Step</th><th>−5</th><th>−4</th><th>−3</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+  <tbody><tr><td>Ticks per second</td><td>40</td><td>36</td><td>32</td><td>28</td><td>24</td><td><strong>20</strong></td><td>16</td><td>12</td><td>8</td><td>4</td><td>2</td></tr></tbody>
+</table></div>
+<p>Scroll down to slow time (positive steps) and up to speed it up. The green bar shows the step, with the middle being normal speed.
+  While time is slowed you get hidden Speed and Haste so you keep up, and you're whitelisted from the tick-rate change.</p>
+<div class="callout warn"><span class="callout-title">Server-wide</span><p>Change Flow of Time and Time Freeze affect the whole server,
+  every player included, until you turn them off. On a shared server, agree on it first.</p></div>
+
+<h2 id="time-set">The time command</h2>
+<p>With {{ab time/time_set}} unlocked and the Time Stone active, <code>/infinity time set &lt;time&gt;</code> works for you without operator
+  rights. It always moves the world <em>forward</em> to the requested time of day, so setting <code>1000</code> at <code>13000</code> skips to
+  the next morning. See <a href="@/commands.html#infinity-time-set">Commands</a>.</p>

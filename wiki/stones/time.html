@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Time Stone · Infinity Stone Core Wiki</title>
+<meta name="description" content="The Time Stone's daylight control, projectile stopping, server tick-rate control and time freeze, and the Eye of Agamotto.">
+<meta property="og:title" content="Time Stone · Infinity Stone Core Wiki">
+<meta property="og:description" content="The Time Stone's daylight control, projectile stopping, server tick-rate control and time freeze, and the Eye of Agamotto.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="stylesheet" href="../assets/css/wiki.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <a class="home-link" href="../../index.html">Pugmeowla</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <a class="sidebar-version" href="../compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
+      <details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="../index.html">Wiki Home</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/time.html" aria-current="page" class="active">Time Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities &amp; Progression</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li><li><a href="../progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="../compatibility.html">Compatibility &amp; Config</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li></ul></details>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki</a></li><li><a href="../stones/index.html">Infinity Stones</a></li><li aria-current="page">Time Stone</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../assets/img/stones/time_stone.png" alt=""><div><h1>Time Stone</h1><p class="lead">Speed the world up, slow it down, or stop it entirely. The green stone rests in the Eye of Agamotto.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#overview">Overview</a></li><li class="toc-l2"><a href="#abilities">Abilities</a></li><li class="toc-l2"><a href="#skill-tree">Skill tree costs</a></li><li class="toc-l2"><a href="#tick-rate">Slow Time steps</a></li><li class="toc-l2"><a href="#time-set">The time command</a></li></ol></details>
+    <article class="prose">
+<h2 id="overview">Overview<a class="heading-anchor" href="#overview" aria-label="Link to this section">#</a></h2>
+<div class="item-cards">
+  <div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img class="px item-detail-img" src="../assets/img/stones/time_stone.png" alt="Time Stone"><div><h3 class="no-toc">Time Stone</h3><code>infinity:time_stone</code></div></div>
+    <dl><dt>Color</dt><dd>Green (<code>#13CF55</code>)</dd><dt>Container</dt><dd><a class="chip item-chip" href="../items.html#item-eye-of-agamotto"><img src="../assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy">Eye of Agamotto</a></dd>
+    <dt>Found in</dt><dd><a href="../structures.html#sanctum-sanctorum">Sanctum Sanctorum</a>, Overworld</dd><dt>Power</dt><dd><code>infinity:time_stone</code></dd></dl>
+  </div></div>
+</div>
+<p>You have the Time Stone's power while holding it, wearing it in the Curios head slot, with it in your gauntlet, socketed in a
+  Cosmi-Rod, or while an Eye of Agamotto that still holds the stone is held, worn on your chest or in the Curios necklace slot.
+  There is only one Time Stone per world: see <a href="../containers.html#eye-of-agamotto">the Eye of Agamotto</a> for taking it out.</p>
+<p>Whenever a time power is running, your arm is raised, green time rings are drawn on you and a green tint covers your screen (switch the tint
+  off with the free Screen Toggle).</p>
+
+<h2 id="abilities">Abilities<a class="heading-anchor" href="#abilities" aria-label="Link to this section">#</a></h2>
+<div class="ability-list"><article class="ability-card" id="fast-forward" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Fast Forward Daylight Cycle<a class="heading-anchor" href="#fast-forward" aria-label="Link to Fast Forward Daylight Cycle">#</a></h3>
+    <p class="ability-summary">Hold to race through the day (+100 ticks of daytime every tick).</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>palladium:command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="projectile-stop" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/icons/no_arrow.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Stop Projectile<a class="heading-anchor" href="#projectile-stop" aria-label="Link to Stop Projectile">#</a></h3>
+    <p class="ability-summary">Projectiles that come within 2.5 blocks freeze in mid-air.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></p>
+    
+    <p>Arrows, spectral arrows, tridents, ender pearls, snowballs, eyes of ender, fireballs, eggs and experience bottles
+      (the <code>#infinity:projectiles</code> tag) hang in the air for 50 seconds, then carry on with their original motion.
+      They stay stopped through a world reload.</p>
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>infinity:projectile_stop</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-set" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Time Command<a class="heading-anchor" href="#time-set" aria-label="Link to Time Command">#</a></h3>
+    <p class="ability-summary">Lets you use /infinity time set <time>.</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></p>
+    
+    <p>See <a href="../commands.html#infinity-time-set">/infinity time set</a>. The world always moves forward to the
+      requested time of day.</p>
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>infinity:time_set</code></p>
+  </div>
+</article>
+<article class="ability-card" id="daylight-cycle-toggle" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Daylight Cycle Toggle<a class="heading-anchor" href="#daylight-cycle-toggle" aria-label="Link to Daylight Cycle Toggle">#</a></h3>
+    <p class="ability-summary">Free: clicking it flips the doDaylightCycle game rule.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">Free unlock</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></p>
+    
+    
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>palladium:command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="slow-time-dummy" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/icons/hourglass.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Slow Time<a class="heading-anchor" href="#slow-time-dummy" aria-label="Link to Slow Time">#</a></h3>
+    <p class="ability-summary">Unlocks Change Flow of Time: toggle it on, then scroll to change the server tick rate.</p>
+    <ul class="tags"><li class="tag tag-activation">Scroll</li><li class="tag tag-cost">5 Aspects of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></p>
+    
+    <p>While <strong>Change Flow of Time</strong> is on, scrolling down slows the world (each step removes 4 ticks
+      per second, down to 2 TPS) and scrolling up speeds it up (each step adds 4, up to 40 TPS). The green bar shows the
+      step; the middle is normal speed. Your step is remembered between uses and turning it off returns the server to 20 TPS.
+      You keep moving at normal speed. <strong>This affects the whole server.</strong></p>
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>infinity:time_flow</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-freeze-dummy" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/icons/stop.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Freeze Time<a class="heading-anchor" href="#time-freeze-dummy" aria-label="Link to Freeze Time">#</a></h3>
+    <p class="ability-summary">Unlocks Time Freeze: pauses the entire world while you keep moving.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">10 Aspects of Existence</li></ul>
+    <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#slow-time-dummy">Slow Time</a></p>
+    
+    <p>Press once to freeze time and again to resume. Everything except you stops; you can also walk on water while
+      time is frozen. <strong>Affects the whole server.</strong></p>
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>infinity:time_freeze</code></p>
+  </div>
+</article>
+<article class="ability-card" id="screen-toggle" data-group="time" style="--accent:#13CF55">
+  <div class="ability-icon"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Screen Toggle<a class="heading-anchor" href="#screen-toggle" aria-label="Link to Screen Toggle">#</a></h3>
+    <p class="ability-summary">Free: turns the green screen overlay shown while using time powers off or on.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">Free unlock</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>infinity:time_stone</code> · <code>palladium:command</code></p>
+  </div>
+</article></div>
+
+<h2 id="skill-tree">Skill tree costs<a class="heading-anchor" href="#skill-tree" aria-label="Link to this section">#</a></h2>
+<p>Fast Forward is the root. Slow Time (5) and Freeze Time (10) are the expensive steps.</p>
+<div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></td><td>1</td><td>—</td><td>Hold</td></tr><tr><td><a href="../stones/time.html#projectile-stop">Stop Projectile</a></td><td>1</td><td>Fast Forward Daylight Cycle</td><td>Toggle</td></tr><tr><td><a href="../stones/time.html#time-set">Time Command</a></td><td>1</td><td>Fast Forward Daylight Cycle</td><td>Passive</td></tr><tr><td><a href="../stones/time.html#daylight-cycle-toggle">Daylight Cycle Toggle</a></td><td>Free</td><td>Fast Forward Daylight Cycle</td><td>Key press</td></tr><tr><td><a href="../stones/time.html#slow-time-dummy">Slow Time</a></td><td>5</td><td>Fast Forward Daylight Cycle</td><td>Scroll</td></tr><tr><td><a href="../stones/time.html#time-freeze-dummy">Freeze Time</a></td><td>10</td><td>Slow Time</td><td>Toggle</td></tr><tr><td><a href="../stones/time.html#screen-toggle">Screen Toggle</a></td><td>Free</td><td>—</td><td>Key press</td></tr></tbody><tfoot><tr><td>Everything</td><td>18</td><td colspan="2"></td></tr></tfoot></table></div>
+
+<h2 id="tick-rate">Slow Time steps<a class="heading-anchor" href="#tick-rate" aria-label="Link to this section">#</a></h2>
+<p>Change Flow of Time changes the <strong>server's tick rate</strong> through Chrono API. Each step is 4 ticks per second:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Step</th><th>−5</th><th>−4</th><th>−3</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+  <tbody><tr><td>Ticks per second</td><td>40</td><td>36</td><td>32</td><td>28</td><td>24</td><td><strong>20</strong></td><td>16</td><td>12</td><td>8</td><td>4</td><td>2</td></tr></tbody>
+</table></div>
+<p>Scroll down to slow time (positive steps) and up to speed it up. The green bar shows the step, with the middle being normal speed.
+  While time is slowed you get hidden Speed and Haste so you keep up, and you're whitelisted from the tick-rate change.</p>
+<div class="callout warn"><span class="callout-title">Server-wide</span><p>Change Flow of Time and Time Freeze affect the whole server,
+  every player included, until you turn them off. On a shared server, agree on it first.</p></div>
+
+<h2 id="time-set">The time command<a class="heading-anchor" href="#time-set" aria-label="Link to this section">#</a></h2>
+<p>With <a class="ability-link" href="../stones/time.html#time-set">Time Command</a> unlocked and the Time Stone active, <code>/infinity time set &lt;time&gt;</code> works for you without operator
+  rights. It always moves the world <em>forward</em> to the requested time of day, so setting <code>1000</code> at <code>13000</code> skips to
+  the next morning. See <a href="../commands.html#infinity-time-set">Commands</a>.</p>
+
+    </article>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="../containers.html"><img src="../assets/img/renders/orb.png" alt="" class="px" loading="lazy"><span><strong>Stone Containers &amp; Tools</strong><small>The Tesseract, Scepter, Aether, Orb, Eye of Agamotto, Cosmi-Rod and Soul Guardian Telephone, and how items behave on the ground.</small></span></a><a class="related-card" href="../commands.html"><img src="../assets/img/icons/teleport.png" alt="" class="px" loading="lazy"><span><strong>Commands</strong><small>Every /infinity command with syntax, arguments, permissions, examples and what it does, grouped by system.</small></span></a><a class="related-card" href="../compatibility.html"><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px" loading="lazy"><span><strong>Compatibility &amp; Configuration</strong><small>Required and optional mods, every integration the mod has, the config file, and known limitations.</small></span></a><a class="related-card" href="../structures.html"><img src="../assets/img/renders/vormir_sand.png" alt="" class="px" loading="lazy"><span><strong>Structures</strong><small>Every structure the mod generates, where it appears, how rare it is, what's inside and how to find it.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../stones/power.html"><small>← Previous</small><span>Power Stone</span></a><a class="pager-link next" href="../stones/soul.html"><small>Next →</small><span>Soul Stone</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#overview">Overview</a></li><li class="toc-l2"><a href="#abilities">Abilities</a></li><li class="toc-l2"><a href="#skill-tree">Skill tree costs</a></li><li class="toc-l2"><a href="#tick-rate">Slow Time steps</a></li><li class="toc-l2"><a href="#time-set">The time command</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/wiki.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ground Items · Infinity Stone Core Wiki</title>
+<meta name="description" content="The ground_items format: make any item lie on the ground like the Infinity Stones, break open into other items, combine, or be drawn by a Palladium power.">
+<meta property="og:title" content="Ground Items · Infinity Stone Core Wiki">
+<meta property="og:description" content="The ground_items format: make any item lie on the ground like the Infinity Stones, break open into other items, combine, or be drawn by a Palladium power.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="stylesheet" href="../assets/css/wiki.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <a class="home-link" href="../../index.html">Pugmeowla</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <a class="sidebar-version" href="../compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
+      <details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="../index.html">Wiki Home</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities &amp; Progression</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li><li><a href="../progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html" aria-current="page" class="active">Ground Items</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="../compatibility.html">Compatibility &amp; Config</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li></ul></details>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki</a></li><li><a href="../addons/index.html">Addon Development</a></li><li aria-current="page">Ground Items</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../assets/img/renders/tesseract.png" alt=""><div><h1>Ground Items</h1><p class="lead">Make an item lie still on the ground, survive anything, and only be picked up by right-clicking.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#behaviour">What a ground item does</a></li><li class="toc-l2"><a href="#fields">Fields</a></li><li class="toc-l2"><a href="#examples">Examples from the mod</a></li></ol></details>
+    <article class="prose">
+<h2 id="behaviour">What a ground item does<a class="heading-anchor" href="#behaviour" aria-label="Link to this section">#</a></h2>
+<p>A dropped or thrown item with a file in <code>data/infinity/ground_items/</code> becomes an <code>infinity:ground_item</code> entity that:</p>
+<ul>
+  <li>keeps the throw's motion, so it lands in front of you;</li>
+  <li>is drawn as the dropped item (its model's <code>ground</code> display transform), lying still and resting on the ground;</li>
+  <li>keeps all of the stack's NBT (the gauntlet's stones and skin, names, enchantments…);</li>
+  <li>can't be destroyed, burnt, blown up or despawn, and rests at the bottom of the world instead of falling out;</li>
+  <li>isn't picked up by walking over it: <strong>right-click</strong> picks it up.</li>
+</ul>
+<p>Old armor stand props from earlier versions are turned into ground items when their chunk loads.</p>
+
+<h2 id="fields">Fields<a class="heading-anchor" href="#fields" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>item</code></td><td><strong>required</strong></td><td>The item. Must be registered; each item can only be one ground item.</td></tr>
+    <tr><td><code>spin</code></td><td><code>false</code></td><td>Spin like a dropped item; otherwise it lies still facing a random way.</td></tr>
+    <tr><td><code>bob</code></td><td><code>false</code></td><td>Float and bob like a dropped item; otherwise its lowest point rests on the ground.</td></tr>
+    <tr><td><code>scale</code></td><td><code>1</code></td><td>Size of the drawn item, on top of its ground display transform.</td></tr>
+    <tr><td><code>width</code> / <code>height</code></td><td><code>0.4</code></td><td>Size of the box you right-click and hit, in blocks.</td></tr>
+    <tr><td><code>unique</code></td><td><code>false</code></td><td>While a player carries this item, ground items of it disappear, so it can't be duplicated.</td></tr>
+    <tr><td><code>release</code></td><td>none</td><td>Hitting it breaks it open into <code>items</code> (each dropped as its own ground item, in the same spot) with a particle burst in <code>color</code> (<code>#RRGGBB</code>, default white).</td></tr>
+    <tr><td><code>combine</code></td><td><code>[]</code></td><td><code>[{"item": …, "result": …}]</code>: right-clicking it on the ground while holding <code>item</code> uses one up and turns it into <code>result</code> where it lies. Give the other item the reverse entry so it works whichever is on the ground.</td></tr>
+    <tr><td><code>power</code></td><td>none</td><td>Instead of drawing the item, place it as an invisible small armor stand wearing the stack, drawn by this Palladium power's render layers (the gauntlet and Eye of Agamotto use this). <code>release</code> still works; <code>spin</code>, <code>bob</code>, <code>scale</code>, <code>width</code>, <code>height</code> and <code>unique</code> don't apply.</td></tr>
+    <tr><td><code>slot</code></td><td>none</td><td>With <code>power</code>: the armor stand slot (<code>head</code>, <code>chest</code>, <code>legs</code>, <code>feet</code>, <code>mainhand</code>, <code>offhand</code>) that wears the stack, for render layers that read it. Left out, the stack stays hidden.</td></tr>
+  </tbody>
+</table></div>
+<p>A file with the same name in a higher-priority pack replaces the mod's. Restart after changes.</p>
+
+<h2 id="examples">Examples from the mod<a class="heading-anchor" href="#examples" aria-label="Link to this section">#</a></h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Container that breaks open">
+    <h3 class="tab-label no-toc">Container that breaks open</h3>
+<div class="code-block"><div class="code-head"><span>tesseract.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;item&quot;</span>: <span class="t-str">&quot;infinity:tesseract&quot;</span>,
+  <span class="t-key">&quot;release&quot;</span>: {
+    <span class="t-key">&quot;items&quot;</span>: [<span class="t-str">&quot;infinity:space_stone&quot;</span>],
+    <span class="t-key">&quot;color&quot;</span>: <span class="t-str">&quot;#66BFFF&quot;</span>
+  }
+}</code></pre></div>
+  </section>
+  <section data-tab="Unique stone that combines">
+    <h3 class="tab-label no-toc">Unique stone that combines</h3>
+<div class="code-block"><div class="code-head"><span>mind_stone.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;item&quot;</span>: <span class="t-str">&quot;infinity:mind_stone&quot;</span>,
+  <span class="t-key">&quot;unique&quot;</span>: <span class="t-bool">true</span>,
+  <span class="t-key">&quot;combine&quot;</span>: [
+    { <span class="t-key">&quot;item&quot;</span>: <span class="t-str">&quot;infinity:empty_scepter&quot;</span>, <span class="t-key">&quot;result&quot;</span>: <span class="t-str">&quot;infinity:scepter&quot;</span> }
+  ]
+}</code></pre></div>
+  </section>
+  <section data-tab="Drawn by a power">
+    <h3 class="tab-label no-toc">Drawn by a power</h3>
+<div class="code-block"><div class="code-head"><span>infinity_gauntlet.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;item&quot;</span>: <span class="t-str">&quot;infinity:infinity_gauntlet&quot;</span>,
+  <span class="t-key">&quot;power&quot;</span>: <span class="t-str">&quot;infinity:gauntlet_ground&quot;</span>,
+  <span class="t-key">&quot;slot&quot;</span>: <span class="t-str">&quot;head&quot;</span>
+}</code></pre></div>
+  </section>
+</div>
+<p>The mod ships ground item files for the six stones, the Tesseract, Scepter and Empty Scepter, Aether and Empty Aether, Orb, Eye of Agamotto,
+  Infinity Gauntlet, Cosmi-Rod and both swords.</p>
+
+    </article>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="../addons/index.html"><img src="../assets/img/renders/52-d_unit.png" alt="" class="px" loading="lazy"><span><strong>Addon Development</strong><small>How to extend Infinity Stone Core with addon packs: data-driven stones, skins, gauntlets and ground items, and Palladium integration.</small></span></a><a class="related-card" href="../addons/stones.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"><span><strong>Custom Stones</strong><small>The gauntlet_stones format: make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.</small></span></a><a class="related-card" href="../containers.html"><img src="../assets/img/renders/orb.png" alt="" class="px" loading="lazy"><span><strong>Stone Containers &amp; Tools</strong><small>The Tesseract, Scepter, Aether, Orb, Eye of Agamotto, Cosmi-Rod and Soul Guardian Telephone, and how items behave on the ground.</small></span></a><a class="related-card" href="../addons/custom-gauntlets.html"><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Custom Gauntlets</strong><small>The gauntlets format: make an item or power from another mod work as an Infinity Gauntlet, with stones drawn on the player model.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../addons/custom-gauntlets.html"><small>← Previous</small><span>Custom Gauntlets</span></a><a class="pager-link next" href="../addons/abilities.html"><small>Next →</small><span>Ability &amp; Condition Reference</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#behaviour">What a ground item does</a></li><li class="toc-l2"><a href="#fields">Fields</a></li><li class="toc-l2"><a href="#examples">Examples from the mod</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/wiki.js" defer></script>
+</body>
+</html>

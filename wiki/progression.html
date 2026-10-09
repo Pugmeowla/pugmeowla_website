@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-root="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Skill Trees &amp; Progression · Infinity Stone Core Wiki</title>
+<meta name="description" content="Aspects of Existence, how skill trees unlock, every stone's costs, Power Stone levels and Soul Storage.">
+<meta property="og:title" content="Skill Trees &amp; Progression · Infinity Stone Core Wiki">
+<meta property="og:description" content="Aspects of Existence, how skill trees unlock, every stone's costs, Power Stone levels and Soul Storage.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/wiki.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <a class="home-link" href="../index.html">Pugmeowla</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <a class="sidebar-version" href="compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
+      <details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="index.html">Wiki Home</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="finding-stones.html">Finding the Stones</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="stones/index.html">Overview</a></li><li><a href="stones/space.html">Space Stone</a></li><li><a href="stones/mind.html">Mind Stone</a></li><li><a href="stones/reality.html">Reality Stone</a></li><li><a href="stones/power.html">Power Stone</a></li><li><a href="stones/time.html">Time Stone</a></li><li><a href="stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="gauntlet/index.html">The Gauntlet</a></li><li><a href="gauntlet/snap.html">The Snap</a></li><li><a href="gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group" open><summary><img src="assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities &amp; Progression</span></summary><ul><li><a href="abilities.html">All Abilities</a></li><li><a href="progression.html" aria-current="page" class="active">Progression</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="items.html">Item Index</a></li><li><a href="containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="structures.html">Structures</a></li><li><a href="dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="addons/index.html">Overview</a></li><li><a href="addons/stones.html">Custom Stones</a></li><li><a href="addons/skins.html">Skin Files</a></li><li><a href="addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="addons/ground-items.html">Ground Items</a></li><li><a href="addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="compatibility.html">Compatibility &amp; Config</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></details>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki</a></li><li><a href="abilities.html">Abilities &amp; Progression</a></li><li aria-current="page">Skill Trees &amp; Progression</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="assets/img/renders/aspects_of_existance.png" alt=""><div><h1>Skill Trees &amp; Progression</h1><p class="lead">How you grow from holding a stone to wielding it. Costs, unlock order, power levels and souls.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#aspects-of-existence">Aspects of Existence</a></li><li class="toc-l2"><a href="#unlocking">How unlocking works</a></li><li class="toc-l2"><a href="#costs">Full cost per stone</a></li><li class="toc-l2"><a href="#power-levels">Power Stone levels</a></li><li class="toc-l2"><a href="#soul-storage">Soul Storage</a></li><li class="toc-l2"><a href="#advancements">Advancements</a></li></ol></details>
+    <article class="prose">
+<h2 id="aspects-of-existence">Aspects of Existence<a class="heading-anchor" href="#aspects-of-existence" aria-label="Link to this section">#</a></h2>
+<div class="item-cards"><div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img src="assets/img/renders/aspects_of_existance.png" alt="Aspects of Existence" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Aspects of Existence</h3><code>infinity:aspects_of_existance</code></div></div>
+    <p>The currency of every stone skill tree: abilities are bought with it.</p>
+    <dl><dt>How to get it</dt><dd>Infinity Temple chests (1–4 per chest), or craftable (see JEI).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dt>Category</dt><dd>Special Items</dd></dl>
+    <p><a class="button-link" href="progression.html#aspects-of-existence">Read more →</a></p>
+  </div></div><div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img src="assets/img/renders/shards_of_existance.png" alt="Shards of Existence" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Shards of Existence</h3><code>infinity:shards_of_existance</code></div></div>
+    <p>Fragments used to make more Aspects of Existence (see JEI).</p>
+    <dl><dt>How to get it</dt><dd>Infinity Temple chests.</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dt>Category</dt><dd>Special Items</dd></dl>
+    <p><a class="button-link" href="progression.html#aspects-of-existence">Read more →</a></p>
+  </div></div></div>
+<p>Every stone ability is bought with <a class="chip item-chip" href="items.html#item-aspects-of-existance"><img src="assets/img/renders/aspects_of_existance.png" alt="" class="px" loading="lazy">Aspects of Existence</a>. Find them in the chest of every
+  <a href="structures.html#infinity-temple">Infinity Temple</a> (1–4 per chest, plus a chance of Shards of Existence), or make them from
+  Shards (see JEI). They're also the currency for the Soul Guardian's explorer maps.</p>
+
+<h2 id="unlocking">How unlocking works<a class="heading-anchor" href="#unlocking" aria-label="Link to this section">#</a></h2>
+<ol>
+  <li>Get the stone's power (hold the stone, its container, put it in your gauntlet…).</li>
+  <li>Open Palladium's powers screen and pick the stone's tree.</li>
+  <li>Click an ability whose requirements are met. Its cost in Aspects of Existence is taken from your inventory and it's unlocked for good.</li>
+</ol>
+<p>Some unlocks are free (Flight Toggle, Screen Toggle, Daylight Cycle Toggle, Radiation Texture Toggle): clicking these in the tree
+  flips a setting each time. A few abilities also need other stones' powers at the same moment you buy and use them, such as
+  Black Hole, Meteor Storm and Immortality. Operators can unlock or lock everything with
+  <a href="commands.html#infinity-unlock-stones">/infinity unlock_stones</a>.</p>
+
+<h2 id="costs">Full cost per stone<a class="heading-anchor" href="#costs" aria-label="Link to this section">#</a></h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Space"><h3 class="tab-label no-toc">Space Stone</h3><div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="stones/space.html#force-field">Force Field</a></td><td>1</td><td>—</td><td>Toggle</td></tr><tr><td><a href="stones/space.html#jump-teleport">Jump Teleport</a></td><td>1</td><td>Force Field</td><td>Key press</td></tr><tr><td><a href="stones/space.html#teleport">Teleport GUI</a></td><td>1</td><td>Force Field</td><td>Key press</td></tr><tr><td><a href="stones/space.html#telekinesis">Telekinesis</a></td><td>1</td><td>Force Field</td><td>Toggle</td></tr><tr><td><a href="stones/space.html#spatial-lock">Spatial Lock</a></td><td>1</td><td>Telekinesis</td><td>Upgrade</td></tr><tr><td><a href="stones/space.html#black-hole">Black Hole</a></td><td>1</td><td>Teleport GUI</td><td>Toggle</td></tr><tr><td><a href="stones/space.html#water-breathing">Water Breathing</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/space.html#fall-immunity">Fall Damage Immunity</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/space.html#speed">Speed</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/space.html#step-assist">Step Assist</a></td><td>1</td><td>Speed</td><td>Passive</td></tr></tbody><tfoot><tr><td>Everything</td><td>10</td><td colspan="2"></td></tr></tfoot></table></div></section>
+  <section data-tab="Mind"><h3 class="tab-label no-toc">Mind Stone</h3><div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="stones/mind.html#passive">Pacify</a></td><td>1</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/mind.html#flight">Flight</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/mind.html#flight-toggle">Flight Toggle</a></td><td>Free</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/mind.html#intangibility">Intangibility</a></td><td>1</td><td>—</td><td>Toggle</td></tr><tr><td><a href="stones/mind.html#recipe">Recipes</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/mind.html#hero">Hero of the People</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/mind.html#night-vision">Night Vision</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/mind.html#clones">Mind Illusions</a></td><td>1</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/mind.html#mind-reading">Mind Reading</a></td><td>1</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/mind.html#disguise">Disguise</a></td><td>1</td><td>—</td><td>Key press</td></tr></tbody><tfoot><tr><td>Everything</td><td>9</td><td colspan="2"></td></tr></tfoot></table></div></section>
+  <section data-tab="Reality"><h3 class="tab-label no-toc">Reality Stone</h3><div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="stones/reality.html#save-dummy">Block Saving</a></td><td>128</td><td>—</td><td>Upgrade</td></tr><tr><td><a href="stones/reality.html#shrink-dummy">Size Changing</a></td><td>1</td><td>—</td><td>Scroll</td></tr><tr><td><a href="stones/reality.html#invisibility">Invisibility</a></td><td>1</td><td>—</td><td>Toggle</td></tr><tr><td><a href="stones/reality.html#weather-wheel">Change the Weather</a></td><td>1</td><td>—</td><td>Hold</td></tr></tbody><tfoot><tr><td>Everything</td><td>131</td><td colspan="2"></td></tr></tfoot></table></div></section>
+  <section data-tab="Power"><h3 class="tab-label no-toc">Power Stone</h3><div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="stones/power.html#impower">Energy Blast</a></td><td>1</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/power.html#knockback">Knockback Resistance</a></td><td>1</td><td>Energy Blast</td><td>Passive</td></tr><tr><td><a href="stones/power.html#power-blast-aim">Power Blast</a></td><td>1</td><td>Energy Blast</td><td>Hold</td></tr><tr><td><a href="stones/power.html#power-levels">Power Levels 1–11</a></td><td>434</td><td>—</td><td>Upgrade</td></tr><tr><td><a href="stones/power.html#explosion2">Cosmic Explosion</a></td><td>1</td><td>Power Blast</td><td>Upgrade</td></tr><tr><td><a href="stones/power.html#meteor-storm">Meteor Storm</a></td><td>1</td><td>Cosmic Explosion</td><td>Key press</td></tr><tr><td><a href="stones/power.html#radiation-texture-toggle">Radiation Texture Toggle</a></td><td>Free</td><td>—</td><td>Key press</td></tr></tbody><tfoot><tr><td>Everything</td><td>439</td><td colspan="2"></td></tr></tfoot></table></div></section>
+  <section data-tab="Time"><h3 class="tab-label no-toc">Time Stone</h3><div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></td><td>1</td><td>—</td><td>Hold</td></tr><tr><td><a href="stones/time.html#projectile-stop">Stop Projectile</a></td><td>1</td><td>Fast Forward Daylight Cycle</td><td>Toggle</td></tr><tr><td><a href="stones/time.html#time-set">Time Command</a></td><td>1</td><td>Fast Forward Daylight Cycle</td><td>Passive</td></tr><tr><td><a href="stones/time.html#daylight-cycle-toggle">Daylight Cycle Toggle</a></td><td>Free</td><td>Fast Forward Daylight Cycle</td><td>Key press</td></tr><tr><td><a href="stones/time.html#slow-time-dummy">Slow Time</a></td><td>5</td><td>Fast Forward Daylight Cycle</td><td>Scroll</td></tr><tr><td><a href="stones/time.html#time-freeze-dummy">Freeze Time</a></td><td>10</td><td>Slow Time</td><td>Toggle</td></tr><tr><td><a href="stones/time.html#screen-toggle">Screen Toggle</a></td><td>Free</td><td>—</td><td>Key press</td></tr></tbody><tfoot><tr><td>Everything</td><td>18</td><td colspan="2"></td></tr></tfoot></table></div></section>
+  <section data-tab="Soul"><h3 class="tab-label no-toc">Soul Stone</h3><div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="stones/soul.html#soul-storage">Soul Storage</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/soul.html#soul-heal">Soul Heal</a></td><td>1</td><td>Soul Storage</td><td>Key press</td></tr><tr><td><a href="stones/soul.html#soul-drain">Soul Drain</a></td><td>1</td><td>Soul Heal</td><td>Key press</td></tr><tr><td><a href="stones/soul.html#glow">Glow</a></td><td>1</td><td>—</td><td>Hold</td></tr><tr><td><a href="stones/soul.html#locateplayer-command">Locate Entity Command</a></td><td>1</td><td>Glow</td><td>Passive</td></tr><tr><td><a href="stones/soul.html#summon-zombie">Summon Zombie</a></td><td>1</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/soul.html#enter-soulworld">Enter / Exit Soulworld</a></td><td>1</td><td>—</td><td>Key press</td></tr><tr><td><a href="stones/soul.html#saturation">Saturation</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/soul.html#effect-immune">Effect Immunity</a></td><td>1</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/soul.html#regen">Regeneration</a></td><td>16</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/soul.html#health">Health</a></td><td>64</td><td>—</td><td>Passive</td></tr><tr><td><a href="stones/soul.html#immortal">Immortality</a></td><td>128</td><td>Health</td><td>Passive</td></tr></tbody><tfoot><tr><td>Everything</td><td>217</td><td colspan="2"></td></tr></tfoot></table></div></section>
+</div>
+
+<h2 id="power-levels">Power Stone levels<a class="heading-anchor" href="#power-levels" aria-label="Link to this section">#</a></h2>
+<p>The Power Stone's strength is a level from 0 to 11, kept in the <code>DamageCycle</code> scoreboard objective and shown on the purple bar
+  while you have the stone. Buy each level in the tree, in order, then choose your active level:</p>
+<ol>
+  <li>Turn on <strong>Damage Control</strong> from the ability bar.</li>
+  <li>Scroll up to raise the level, down to lower it. You can't go above the highest level you've bought.</li>
+</ol>
+<div class="table-wrap"><table>
+  <thead><tr><th>Level</th><th>Unlock cost</th><th>Total spent</th><th>Base attack damage (2<sup>level</sup>)</th><th>Energy Blast (3 × 2<sup>level</sup>)</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>—</td><td>—</td><td>1</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>2</td><td>2</td><td>6</td></tr>
+    <tr><td>2</td><td>4</td><td>6</td><td>4</td><td>12</td></tr>
+    <tr><td>3</td><td>8</td><td>14</td><td>8</td><td>24</td></tr>
+    <tr><td>4</td><td>12</td><td>26</td><td>16</td><td>48</td></tr>
+    <tr><td>5</td><td>18</td><td>44</td><td>32</td><td>96</td></tr>
+    <tr><td>6</td><td>26</td><td>70</td><td>64</td><td>192</td></tr>
+    <tr><td>7</td><td>36</td><td>106</td><td>128</td><td>384</td></tr>
+    <tr><td>8</td><td>48</td><td>154</td><td>256</td><td>768</td></tr>
+    <tr><td>9</td><td>64</td><td>218</td><td>512</td><td>1,536</td></tr>
+    <tr><td>10</td><td>88</td><td>306</td><td>1,024</td><td>3,072</td></tr>
+    <tr><td>11</td><td>128</td><td>434</td><td>2,048</td><td>6,144</td></tr>
+    <tr><td>11 + all six stones</td><td colspan="2">—</td><td>Infinite</td><td>Infinite</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><strong>Power Blast</strong> does 2<sup>level</sup> damage per hit; at full power it turns rainbow and explodes where it hits blocks.</li>
+  <li><strong>Rocket Burst</strong> damage is multiplied by level ÷ 11 (no damage at level 0) and becomes <strong>Power Cyclone</strong> at level 11.</li>
+  <li><strong>Meteor Storm</strong>'s moon is 1 + level blocks big.</li>
+  <li>Your base attack damage goes back to normal when you lose the Power Stone.</li>
+</ul>
+<p>If an operator locks the level unlocks again (for example with <code>/infinity lock_stones</code>), your level drops to the highest one you still have.</p>
+
+<h2 id="soul-storage">Soul Storage<a class="heading-anchor" href="#soul-storage" aria-label="Link to this section">#</a></h2>
+<p>With <a class="ability-link" href="stones/soul.html#soul-storage">Soul Storage</a> unlocked, every entity you kill stores one soul, up to <strong>50</strong>. Souls are kept in the
+  <code>SoulStorage</code> scoreboard objective and shown on the orange bar. Clones and mobs whose soul has been drained don't count.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ability</th><th>Souls</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td><a class="ability-link" href="stones/soul.html#soul-heal">Soul Heal</a></td><td>−1</td><td>Restores 2 hearts. Does nothing at full health or with no souls.</td></tr>
+    <tr><td><a class="ability-link" href="stones/soul.html#soul-drain">Soul Drain</a></td><td>+1</td><td>Drains the looked-at mob, which then stands still in greyscale.</td></tr>
+    <tr><td>Soul Drain while sneaking</td><td>−1</td><td>Gives a drained mob its soul back.</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="advancements">Advancements<a class="heading-anchor" href="#advancements" aria-label="Link to this section">#</a></h2>
+<p>The mod's advancement tab starts with <em>Pugmeowla's Infinity Stone Core</em> and follows the hunt: obtaining the gauntlet cast
+  (<em>Infinity Is Within Reach</em>), making the gauntlet (<em>"Fine, I'll do it myself"</em>), each container and its stone
+  (<em>The Jewel of Odin's Treasure Room</em>, <em>The Scepter of Loki</em>, <em>The Converter of Matter into Dark Matter</em>,
+  <em>The Power of a Celestial</em>, <em>The Sorcerers Quest</em>, and one per stone), the Cosmi-Rod (<em>It's called the Universal Weapon.
+  Oh, really?</em> and <em>Dance Battle</em>), the hammer (<em>It's Clobberin' Time!</em>), all six stones (<em>Six Stones, One Gauntlet</em>),
+  the Snap (<em>I Am Inevitable</em>) and destroying the stones (<em>Peace in our Time</em>).</p>
+
+    </article>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="abilities.html"><img src="assets/img/icons/energy_blast.png" alt="" class="px" loading="lazy"><span><strong>All Abilities</strong><small>Searchable list of every ability in the mod, with its stone, how it's activated, cooldown and unlock cost.</small></span></a><a class="related-card" href="stones/power.html"><img src="assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"><span><strong>Power Stone</strong><small>The Power Stone's level system, energy blast, power blast, rocket burst, power cyclone and meteor storm, and why you shouldn't hold it bare.</small></span></a><a class="related-card" href="stones/soul.html"><img src="assets/img/stones/soul_stone.png" alt="" class="px" loading="lazy"><span><strong>Soul Stone</strong><small>The Soul Stone's soul storage, healing and draining, the Soulworld, zombie army and the immortality passives, and how to earn it on Vormir.</small></span></a><a class="related-card" href="structures.html"><img src="assets/img/renders/vormir_sand.png" alt="" class="px" loading="lazy"><span><strong>Structures</strong><small>Every structure the mod generates, where it appears, how rare it is, what's inside and how to find it.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="abilities.html"><small>← Previous</small><span>All Abilities</span></a><a class="pager-link next" href="items.html"><small>Next →</small><span>Item Index</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#aspects-of-existence">Aspects of Existence</a></li><li class="toc-l2"><a href="#unlocking">How unlocking works</a></li><li class="toc-l2"><a href="#costs">Full cost per stone</a></li><li class="toc-l2"><a href="#power-levels">Power Stone levels</a></li><li class="toc-l2"><a href="#soul-storage">Soul Storage</a></li><li class="toc-l2"><a href="#advancements">Advancements</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="assets/js/search-index.js" defer></script>
+<script src="assets/js/wiki.js" defer></script>
+</body>
+</html>

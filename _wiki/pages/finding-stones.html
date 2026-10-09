@@ -1,0 +1,86 @@
+---
+title: Finding the Stones
+description: Where each Infinity Stone is hidden, how to get it out of its container, and a route that works.
+lead: One stone per container, one container per structure. Here's where they are and how to crack them open.
+icon: stones/soul_stone.png
+related: structures.html, dimensions.html, containers.html, stones/index.html
+---
+<h2>At a glance</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Stone</th><th>Container</th><th>Structure</th><th>Dimension</th><th>Getting the stone out</th></tr></thead>
+  <tbody>
+    <tr><td>{{stone space}}</td><td>{{item tesseract}}</td><td><a href="@/structures.html#norse-village">Norse Village</a></td><td>Overworld</td><td>Drop the Tesseract and hit it.</td></tr>
+    <tr><td>{{stone time}}</td><td>{{item eye_of_agamotto}}</td><td><a href="@/structures.html#sanctum-sanctorum">Sanctum Sanctorum</a></td><td>Overworld</td><td>Wear the Eye, open it, use Remove Time Stone.</td></tr>
+    <tr><td>{{stone mind}}</td><td>{{item scepter}}</td><td><a href="@/structures.html#sanctuary">Sanctuary</a></td><td>The End</td><td>Drop the Scepter and hit it.</td></tr>
+    <tr><td>{{stone reality}}</td><td>{{item aether}}</td><td><a href="@/structures.html#aether-chamber">Aether Chamber</a></td><td>Svartalfheim</td><td>Drop the Aether and hit it.</td></tr>
+    <tr><td>{{stone power}}</td><td>{{item orb}}</td><td><a href="@/structures.html#morag-temple">Morag Temple</a></td><td>Morag</td><td>Crack the combination lock, open the Orb, take the stone.</td></tr>
+    <tr><td>{{stone soul}}</td><td>—</td><td><a href="@/structures.html#vormir">Vormir</a></td><td>Vormir</td><td>Trade a Best Friend's Soul to the Soul Guardian.</td></tr>
+  </tbody>
+</table></div>
+<p>You don't have to take a stone out to use it: every container gives its stone's power while you hold it (the Eye while worn
+  or held). You do need the bare stone to put it in the {{page gauntlet/index.html Infinity Gauntlet}}.</p>
+
+<h2>Locating the structures</h2>
+<p>The five stone structures are each placed <strong>once per world</strong>, in a ring around the world origin (0, 0),
+  like strongholds. Approximate distances from the origin, worked out from their structure sets:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Structure</th><th>Where it can generate</th><th>Distance from 0, 0</th></tr></thead>
+  <tbody>
+    <tr><td>Sanctum Sanctorum</td><td>Overworld</td><td>about 7,300–14,000 blocks</td></tr>
+    <tr><td>Norse Village</td><td>Overworld</td><td>about 18,500–35,300 blocks</td></tr>
+    <tr><td>Sanctuary</td><td>The End</td><td>about 7,300–14,000 blocks</td></tr>
+    <tr><td>Aether Chamber</td><td>Svartalfheim (underground, around Y −60)</td><td>about 4,400–8,400 blocks</td></tr>
+    <tr><td>Morag Temple</td><td>Morag (on the ocean floor)</td><td>about 18,500–35,300 blocks</td></tr>
+  </tbody>
+</table></div>
+<p>Ways to find them:</p>
+<ul>
+  <li><strong>/locate</strong>: with cheats, <code>/locate structure infinity:sanctum</code> (or <code>norse_village</code>, <code>sanctuary</code>,
+    <code>aether</code>, <code>morag_temple</code>) while in the right dimension.</li>
+  <li><strong>Explorer maps</strong> from the Soul Guardian on Vormir (see below).</li>
+  <li><strong>JEI</strong> info pages on each stone and container describe where they are.</li>
+</ul>
+<div class="callout"><span class="callout-title">Decoys</span><p>Each of these structures also has a rare "fake" copy (1% chance per
+  region) that looks the same but has nothing in the frame or on the stand. If the container is missing, you may be in a decoy.</p></div>
+
+<h2 id="reaching-other-worlds">Reaching the other worlds</h2>
+<p>Vormir, Morag and Svartalfheim aren't connected by portals. Once you have the Space Stone, unlock
+  {{ab space/teleport}} and type the dimension ID (<code>infinity:vormir</code>, <code>infinity:morag</code>,
+  <code>infinity:svartelheim</code>) and coordinates. The dimension field suggests every dimension the server knows.
+  See {{page dimensions.html Dimensions &amp; Travel}} for coordinates and what to expect on each world.</p>
+
+<h2 id="route">A route that works</h2>
+<ol>
+  <li><strong>Space Stone</strong>: travel to the Norse Village and take the {{item tesseract}} from the item frame. Unlock Force Field, then
+    the Teleport GUI.</li>
+  <li><strong>Time Stone</strong>: the {{item eye_of_agamotto}} stands on an armor stand inside the Sanctum. Wear it on your chest or in the
+    Curios necklace slot, use <em>Open Eye</em>, then <em>Remove Time Stone</em>.</li>
+  <li><strong>Mind Stone</strong>: in the End, the {{item scepter}} hangs in a glow item frame in the Sanctuary.</li>
+  <li><strong>Reality Stone</strong>: portal to Svartalfheim and dig down to the Aether Chamber. Malekith guards the {{item aether}}.</li>
+  <li><strong>Power Stone</strong>: portal to Morag. The temple is underwater and trapped with dispensers of Arrows of Harming VII. Take the
+    {{item orb}} from its stand and crack it (see <a href="@/containers.html#orb">the Orb</a>).</li>
+  <li><strong>Soul Stone</strong>: get a {{item best_friends_soul}}, then portal to Vormir (around X 212, Z 99) and trade with the Soul Guardian.</li>
+</ol>
+
+<h2 id="soul-stone">The Soul Stone and the Soul Guardian</h2>
+<p>A soul for a soul. The first time you kill one of your own <strong>tamed pets</strong> (a tamed wolf, cat, parrot, or a tamed
+  horse-type animal), you receive a {{item best_friends_soul}} with the lore "How Could You". This happens once per player.</p>
+<p>On Vormir, the <strong>Soul Guardian</strong> villager waits at about <code>212 121 99</code>. It can't be hurt by anything except
+  <code>/kill</code> or the void, and isn't turned into a witch by lightning. Its trades, each usable once:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>You give</th><th>You get</th></tr></thead>
+  <tbody>
+    <tr><td>{{item best_friends_soul}}</td><td>{{item soul_stone}}</td></tr>
+    <tr><td>Clock + 16 {{item aspects_of_existance}}</td><td>Sanctum Sanctorum Explorer Map</td></tr>
+    <tr><td>Eye of Ender + 16 Aspects of Existence</td><td>Norse Village Explorer Map</td></tr>
+    <tr><td>Nether Star + 16 Aspects of Existence</td><td>Morag Temple Explorer Map</td></tr>
+    <tr><td>Red Dye + 16 Aspects of Existence</td><td>Aether Chamber Explorer Map</td></tr>
+    <tr><td>Book + 16 Aspects of Existence</td><td>Sanctuary Explorer Map</td></tr>
+  </tbody>
+</table></div>
+<div class="callout warn"><span class="callout-title">Known limitation: explorer maps</span>
+  <p>A bought map is filled in a few seconds after it lands in your inventory, searching from the Overworld spawn. The Sanctum
+  and Norse Village maps can find their Overworld structures; the Morag Temple, Aether Chamber and Sanctuary are in other
+  dimensions, so those three maps may stay blank.</p></div>
+<p>If the Soul Guardian is lost, an operator can bring it back with <a href="@/commands.html#infinity-soulguardian-respawn">/infinity soulguardian respawn</a>.
+  The {{item soul_guardian_telephone}} can also summon it to you.</p>

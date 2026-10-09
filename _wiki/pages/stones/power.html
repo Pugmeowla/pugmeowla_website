@@ -1,0 +1,41 @@
+---
+title: Power Stone
+description: The Power Stone's level system, energy blast, power blast, rocket burst, power cyclone and meteor storm, and why you shouldn't hold it bare.
+lead: Raw destructive energy that doubles with every level. Handle with care.
+icon: stones/power_stone.png
+related: progression.html, containers.html, stones/space.html, gauntlet/snap.html
+---
+<h2 id="overview">Overview</h2>
+<div class="item-cards">
+  <div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img class="px item-detail-img" src="@/assets/img/stones/power_stone.png" alt="Power Stone"><div><h3 class="no-toc">Power Stone</h3><code>infinity:power_stone</code></div></div>
+    <dl><dt>Color</dt><dd>Purple (<code>#C32AD1</code>)</dd><dt>Container</dt><dd>{{item orb}}</dd>
+    <dt>Found in</dt><dd><a href="@/structures.html#morag-temple">Morag Temple</a>, Morag</dd><dt>Power</dt><dd><code>infinity:power_stone</code></dd></dl>
+  </div></div>
+</div>
+<p>You have the Power Stone's power while holding it, wearing it in the Curios head slot, with it in your gauntlet, or socketed in a
+  Cosmi-Rod. Unlike the other containers, the Orb does <em>not</em> give you the stone's power: you have to
+  <a href="@/containers.html#orb">crack its lock</a> and take the stone out. There is only one Power Stone per world.</p>
+
+<div class="callout warn" id="radiation"><span class="callout-title">Cosmic radiation</span>
+  <p>Holding the bare Power Stone in your main or off hand, without it also being in your gauntlet, head slot or a Cosmi-Rod, is
+  unprotected. After half a second the stone overloads: you get Wither, you're rooted in place, a cyclone of energy fires rockets
+  around you, and radiation cracks spread over your skin. Move it somewhere protected as soon as you can.</p></div>
+
+<h2 id="abilities">Abilities</h2>
+{{abilities power}}
+
+<h2 id="skill-tree">Skill tree costs</h2>
+<p>Energy Blast is the root. The eleven level unlocks are bought one after another and make up most of the tree's cost.</p>
+{{costtable power}}
+
+<h2 id="levels">Levels in short</h2>
+<p>The Power Stone has a level from 0 to 11, stored in the <code>DamageCycle</code> scoreboard objective and shown on the purple bar.
+  You raise the <em>maximum</em> by buying levels in the skill tree and pick the <em>current</em> level with Damage Control and the
+  mouse wheel. While the stone is active your base attack damage is <strong>2<sup>level</sup></strong>, and Energy Blast, Power Blast,
+  Rocket Burst and Meteor Storm all scale with it. At level 11 with all six stones the level counts as maxed: damage becomes infinite.
+  Full table: {{page progression.html#power-levels Power Levels}}.</p>
+
+<h2 id="radiation-toggle">Radiation overlay</h2>
+<p>The glowing cracks drawn on your skin during Power Cyclone (and when the stone overloads) can be switched off with the free
+  {{ab power/radiation_texture_toggle}} unlock. It still works while you're burnt from the Snap.</p>

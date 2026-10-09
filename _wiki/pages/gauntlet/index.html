@@ -1,0 +1,77 @@
+---
+title: The Infinity Gauntlet
+nav: The Gauntlet
+description: Getting the Infinity Gauntlet, wearing it, the stone menu and its slots, controls, tooltips and how it's drawn.
+lead: Six sockets, every stone at once. How to get the gauntlet and how it works.
+icon: renders/infinity_gauntlet.png
+related: gauntlet/snap.html, gauntlet/skins.html, addons/custom-gauntlets.html, stones/index.html
+---
+<h2 id="getting-a-gauntlet">Getting a gauntlet</h2>
+{{itemcards infinity_gauntlet infinity_gauntlet_cast}}
+<p>Find an {{item infinity_gauntlet_cast}} in a village weaponsmith's chest, then make the gauntlet; the recipe (crafting table or
+  Tinkers' Construct casting) is shown in JEI. The gauntlet doesn't stack, has Epic rarity and is fire resistant.</p>
+
+<h2 id="wearing">Wearing it</h2>
+<p>The gauntlet gives you the <code>infinity:infinity_gauntlet</code> power, and with it the power of every stone inside, while it's in
+  one of these places:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Slot</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Curios hands</strong> slot</td><td>Recommended. Drawn on your arm, in first person too. The Curios visibility (eye) button hides it and its stones.</td></tr>
+    <tr><td><strong>Off hand</strong></td><td>Works the same, but isn't visible in first person.</td></tr>
+    <tr><td>Main hand</td><td>Works, with its own held model, but leaves your main hand busy; some abilities are designed for the off hand.</td></tr>
+  </tbody>
+</table></div>
+<p>If you have more than one, the one giving powers is the off hand gauntlet, then the Curios hands one, then any
+  {{page addons/custom-gauntlets.html custom gauntlet}} you're wearing. When the gauntlet is worn your off arm is shown even while
+  holding nothing in it.</p>
+<div class="callout compat"><span class="callout-title">Other things that act as a gauntlet</span>
+  <ul>
+    <li><strong>Pugmeowla's Infintrix</strong> (with Alien Evolution, Into the Omniverse or Omnitrix Evolution): an equipped Omnitrix works as a
+      gauntlet. Hold a stone and right-click, no Infinity Gauntlet needed. This is a custom gauntlet defined by that addon.</li>
+    <li><strong>Pugmeowla's Herbs of Wakanda</strong>: the Black Panther necklace, worn on the chest or in the Curios necklace slot, gives the
+      Infinity Gauntlet power.</li>
+  </ul></div>
+
+<h2 id="controls">Controls</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Input</th><th>Does</th></tr></thead>
+  <tbody>
+    <tr><td><kbd class="key">G</kbd> (Open Gauntlet)</td><td>Opens the stone menu of the gauntlet in your main hand, otherwise the one you're wearing (including custom gauntlets). Rebind it under <em>Controls → Infinity Stones</em>.</td></tr>
+    <tr><td>Right-click with the gauntlet in your main hand</td><td>Opens its stone menu.</td></tr>
+    <tr><td>Shift-click a stone in your inventory (menu open)</td><td>Puts it into a free slot: one of the six Infinity Stones goes to its own slot if that's free.</td></tr>
+    <tr><td>Palladium ability keys</td><td>Use the stones' abilities and the gauntlet's own (the Snap, skins).</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="stone-menu">The stone menu and slots</h2>
+{{figure src="gui/infinity_gauntlet.png" caption="The gauntlet's stone menu (textures/gui/infinity_gauntlet.png): six sockets above your inventory."}}
+<ul>
+  <li>There are six slots, one per knuckle socket. Their default order is Space, Mind, Reality, Power, Time, Soul.</li>
+  <li><strong>Any stone fits any slot.</strong> There's no fixed slot per stone; the stone is drawn at whichever socket you put it in.</li>
+  <li>The same stone can't be in two slots, and each slot takes one stone.</li>
+  <li>Anything defined as a stone fits, including stones added by addons (see {{page addons/stones.html Custom Stones}}).</li>
+  <li>The gauntlet you opened from your hand is locked in the hotbar while the menu is open, so you can't move it out from under yourself.</li>
+  <li>Stones are stored on the gauntlet item itself (its NBT), so they travel with it: drop it, store it, hand it to a friend.</li>
+</ul>
+<p>Inserting a stone plays the insert sound, puffs particles in the stone's color and plays a short hand animation; removing one plays the
+  removal sound. The stone's power is added or removed straight away.</p>
+<div class="callout warn"><span class="callout-title">Time Stone and the Eye</span><p>When the Time Stone stops being in your worn
+  gauntlet, the gauntlet runs <code>clear @s infinity:eye_of_agamotto</code>, removing any Eye of Agamotto from your inventory. Keep the
+  Eye somewhere else (a chest) if you move the stone between them.</p></div>
+
+<h2 id="tooltip">Tooltip and look</h2>
+<ul>
+  <li>The tooltip lists the stones inside, each in its own color, in a fixed order (Power, Space, Reality, Soul, Time, Mind, then addon stones).</li>
+  <li>The inventory icon colors each socket pixel with the stone in that slot.</li>
+  <li>When worn, held or lying on the ground, each stone is drawn as a glowing cube on its socket. Skins change the gauntlet around the stones;
+    see {{page gauntlet/skins.html Gauntlet Skins}}.</li>
+  <li>On the ground, the gauntlet keeps its stones and skin and is drawn standing up; right-click to pick it up.</li>
+</ul>
+
+<h2 id="gauntlet-tree">The gauntlet's own skill tree</h2>
+<p>The <code>infinity:infinity_gauntlet</code> power has a tree too. It holds information entries (use the Curios hands slot, Trinkets for
+  Fabric, Infintrix omnitrixes, the Snap and its aftermath), one entry per {{page gauntlet/skins.html skin}} that applies it, and
+  {{ab gauntlet/normal_gauntlet}}. The {{page gauntlet/snap.html Snap}} abilities appear in the ability bar once all six stones are in.</p>
+<div class="callout"><span class="callout-title">Trinkets</span><p>The mod ships Trinkets data (a glove slot) for a Fabric build,
+  but the current release is Forge only, so use Curios.</p></div>

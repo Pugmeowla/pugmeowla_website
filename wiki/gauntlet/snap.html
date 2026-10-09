@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The Snap · Infinity Stone Core Wiki</title>
+<meta name="description" content="The four six-stone gauntlet abilities, exactly what each one does, and the burn that follows.">
+<meta property="og:title" content="The Snap · Infinity Stone Core Wiki">
+<meta property="og:description" content="The four six-stone gauntlet abilities, exactly what each one does, and the burn that follows.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="stylesheet" href="../assets/css/wiki.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <a class="home-link" href="../../index.html">Pugmeowla</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <a class="sidebar-version" href="../compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
+      <details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="../index.html">Wiki Home</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html" aria-current="page" class="active">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities &amp; Progression</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li><li><a href="../progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="../compatibility.html">Compatibility &amp; Config</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li></ul></details>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki</a></li><li><a href="../gauntlet/index.html">Infinity Gauntlet</a></li><li aria-current="page">The Snap</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../assets/img/icons/snap.png" alt=""><div><h1>The Snap</h1><p class="lead">With all six stones in one gauntlet, you can change the world with a snap of your fingers. It will cost you.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#requirements">Requirements</a></li><li class="toc-l2"><a href="#abilities">The four abilities</a></li><li class="toc-l2"><a href="#what-happens">What happens when you snap</a></li><li class="toc-l3"><a href="#destroy-stones-ritual">Destroy Stones</a></li><li class="toc-l2"><a href="#burn">The burn</a></li><li class="toc-l3"><a href="#nano-gauntlet">Repairing the gauntlet</a></li><li class="toc-l2"><a href="#admins">For server admins</a></li></ol></details>
+    <article class="prose">
+<h2 id="requirements">Requirements<a class="heading-anchor" href="#requirements" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li>All six stones in your gauntlet (you have all six stone powers at once).</li>
+  <li>You're not still burnt from a previous Snap.</li>
+</ul>
+<p>The four abilities then appear in the gauntlet's ability bar. Each one needs a <strong>second press within 3 seconds</strong> to go
+  through; the first press only shows a warning such as "Press again to snap away half of all life".</p>
+
+<h2 id="abilities">The four abilities<a class="heading-anchor" href="#abilities" aria-label="Link to this section">#</a></h2>
+<div class="ability-list"><article class="ability-card" id="kill-half" data-group="gauntlet">
+  <div class="ability-icon"><img src="../assets/img/icons/snap.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Kill Half of All Entities<a class="heading-anchor" href="#kill-half" aria-label="Link to Kill Half of All Entities">#</a></h3>
+    <p class="ability-summary">The Snap: half of the living entities in your dimension turn to dust.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">No unlock needed</li><li class="tag tag-warn">Press twice to confirm</li></ul>
+    
+    <p class="ability-req"><span>Needs stones</span> <a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a> <a class="chip stone-chip" style="--accent:#FFD300" href="../stones/mind.html"><img src="../assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a> <a class="chip stone-chip" style="--accent:#FF0130" href="../stones/reality.html"><img src="../assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a> <a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a> <a class="chip stone-chip" style="--accent:#13CF55" href="../stones/time.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a> <a class="chip stone-chip" style="--accent:#DE7300" href="../stones/soul.html"><img src="../assets/img/stones/soul_stone.png" alt="" class="px" loading="lazy">Soul Stone</a></p>
+    <p>Press twice within 3 seconds. See <a href="../gauntlet/snap.html">The Snap</a>.</p>
+    <p class="ability-id"><code>infinity:infinity_gauntlet</code> · <code>palladium:command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="kill-hostile" data-group="gauntlet">
+  <div class="ability-icon"><img src="../assets/img/icons/snap.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Kill All Hostile<a class="heading-anchor" href="#kill-hostile" aria-label="Link to Kill All Hostile">#</a></h3>
+    <p class="ability-summary">Snaps every hostile mob in every dimension into a sealed Soulworld cell.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">No unlock needed</li><li class="tag tag-warn">Press twice to confirm</li></ul>
+    
+    <p class="ability-req"><span>Needs stones</span> <a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a> <a class="chip stone-chip" style="--accent:#FFD300" href="../stones/mind.html"><img src="../assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a> <a class="chip stone-chip" style="--accent:#FF0130" href="../stones/reality.html"><img src="../assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a> <a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a> <a class="chip stone-chip" style="--accent:#13CF55" href="../stones/time.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a> <a class="chip stone-chip" style="--accent:#DE7300" href="../stones/soul.html"><img src="../assets/img/stones/soul_stone.png" alt="" class="px" loading="lazy">Soul Stone</a></p>
+    
+    <p class="ability-id"><code>infinity:infinity_gauntlet</code> · <code>palladium:command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="kill-player" data-group="gauntlet">
+  <div class="ability-icon"><img src="../assets/img/icons/snap.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Kill Other Players<a class="heading-anchor" href="#kill-player" aria-label="Link to Kill Other Players">#</a></h3>
+    <p class="ability-summary">Snaps every other player into the Soulworld cell.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">No unlock needed</li><li class="tag tag-warn">Press twice to confirm</li></ul>
+    
+    <p class="ability-req"><span>Needs stones</span> <a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a> <a class="chip stone-chip" style="--accent:#FFD300" href="../stones/mind.html"><img src="../assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a> <a class="chip stone-chip" style="--accent:#FF0130" href="../stones/reality.html"><img src="../assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a> <a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a> <a class="chip stone-chip" style="--accent:#13CF55" href="../stones/time.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a> <a class="chip stone-chip" style="--accent:#DE7300" href="../stones/soul.html"><img src="../assets/img/stones/soul_stone.png" alt="" class="px" loading="lazy">Soul Stone</a></p>
+    
+    <p class="ability-id"><code>infinity:infinity_gauntlet</code> · <code>palladium:command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="destroy-stones" data-group="gauntlet">
+  <div class="ability-icon"><img src="../assets/img/icons/snap.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Destroy Stones<a class="heading-anchor" href="#destroy-stones" aria-label="Link to Destroy Stones">#</a></h3>
+    <p class="ability-summary">A 7 second ritual that destroys all six stones in the gauntlet.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">No unlock needed</li><li class="tag tag-warn">Press twice to confirm</li></ul>
+    
+    <p class="ability-req"><span>Needs stones</span> <a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a> <a class="chip stone-chip" style="--accent:#FFD300" href="../stones/mind.html"><img src="../assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a> <a class="chip stone-chip" style="--accent:#FF0130" href="../stones/reality.html"><img src="../assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a> <a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a> <a class="chip stone-chip" style="--accent:#13CF55" href="../stones/time.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a> <a class="chip stone-chip" style="--accent:#DE7300" href="../stones/soul.html"><img src="../assets/img/stones/soul_stone.png" alt="" class="px" loading="lazy">Soul Stone</a></p>
+    
+    <p class="ability-id"><code>infinity:infinity_gauntlet</code> · <code>palladium:animation_timer</code></p>
+  </div>
+</article></div>
+
+<h2 id="what-happens">What happens when you snap<a class="heading-anchor" href="#what-happens" aria-label="Link to this section">#</a></h2>
+<p>A flash goes off at your hand and a Wither scream and a thunder crack are heard everywhere. Over the next second every target
+  dissolves into white dust, one batch per tick.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Snap</th><th>Who</th><th>Where they go</th></tr></thead>
+  <tbody>
+    <tr><td>Kill Half</td><td>Half of all living entities <strong>in your current dimension</strong>, players included, except you. It's half of
+      each chunk separately (an odd one out is a coin flip), so no area is spared or wiped out entirely.</td><td>Killed.</td></tr>
+    <tr><td>Kill All Hostile</td><td>Every hostile mob in <strong>every dimension</strong>: everything in the <code>#infinity:snap_hostile</code> tag
+      (zombies, skeletons, creepers, spiders, endermen, illagers, the Warden, the Wither, the Ender Dragon and more).</td><td>The Snap cell in the Soulworld.</td></tr>
+    <tr><td>Kill Other Players</td><td>Every other player on the server.</td><td>The Snap cell in the Soulworld.</td></tr>
+  </tbody>
+</table></div>
+<p>The <strong>Snap cell</strong> is a sealed, lit bedrock room at <code>1000 78 1000</code> in the Soulworld with a single oak door. Snapped
+  players can walk out and find their way home: see <a href="../dimensions.html#soulworld">The Soulworld</a>.</p>
+<p>Only one Snap can run on a server at a time. If one is already running (or the Soulworld is missing) you'll see "A snap is already
+  in progress or the Soulworld is unavailable."</p>
+
+<h3 id="destroy-stones-ritual">Destroy Stones<a class="heading-anchor" href="#destroy-stones-ritual" aria-label="Link to this section">#</a></h3>
+<p>Turn it on with two presses and you start a 7 second ritual: you're slowed to a standstill, a beacon hum plays, and every second a
+  burst of one stone's color appears with a rising chime. A single press before the end cancels it. When it completes:</p>
+<ul>
+  <li>Every stone in your gauntlet is destroyed.</li>
+  <li>You're burnt (see below) and sent to the Soulworld at Y 72.</li>
+  <li>You get the <em>Peace in our Time</em> advancement.</li>
+</ul>
+
+<h2 id="burn">The burn<a class="heading-anchor" href="#burn" aria-label="Link to this section">#</a></h2>
+<p>Every Snap and Destroy Stones burns the player who did it:</p>
+<ul>
+  <li>Your max health drops to <strong>half a heart</strong> (and you're healed to that).</li>
+  <li>Most stone abilities are locked. Only the Space Stone's Teleport GUI and Jump Teleport, and the Power Stone's Radiation Texture Toggle,
+    keep working. You can't snap again.</li>
+  <li>Your arm is drawn burnt, and the gauntlet gets the <strong>Burnt Gauntlet</strong> skin. If it had another skin, that skin's unlock item
+    is given back to you.</li>
+  <li>It lasts <strong>one full Minecraft day</strong> (24,000 ticks of game time, 20 minutes). Dying doesn't end it early.</li>
+</ul>
+<p>When the day is over your health and abilities come back on their own.</p>
+
+<h3 id="nano-gauntlet">Repairing the gauntlet<a class="heading-anchor" href="#nano-gauntlet" aria-label="Link to this section">#</a></h3>
+<p>The <a href="../gauntlet/skins.html#skin-nano-gauntlet">Nano Gauntlet skin</a> (unlocked with a Palladium Vibranium Flux Capacitor) is the
+  only skin that can be applied over the Burnt Gauntlet while you're burnt. It repairs the look of the gauntlet and your arm, but the
+  half-heart health and locked abilities still last until the day is over.</p>
+
+<h2 id="admins">For server admins<a class="heading-anchor" href="#admins" aria-label="Link to this section">#</a></h2>
+<p>Operators can trigger every Snap without a gauntlet with <a href="../commands.html#infinity-gauntlet-snap">/infinity gauntlet snap</a>.
+  The command burns the player who runs it, like the real thing.</p>
+<p>Advancements: <em>I Am Inevitable</em> ("What did it cost?") for snapping away half of all life with the gauntlet, and <em>Peace in our Time</em> for destroying the stones.</p>
+
+    </article>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="../gauntlet/index.html"><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>The Infinity Gauntlet</strong><small>Getting the Infinity Gauntlet, wearing it, the stone menu and its slots, controls, tooltips and how it's drawn.</small></span></a><a class="related-card" href="../gauntlet/skins.html"><img src="../assets/img/skin-renders/dragon_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Gauntlet Skins</strong><small>Every Infinity Gauntlet skin, the item that unlocks it, and how applying and removing skins works.</small></span></a><a class="related-card" href="../dimensions.html"><img src="../assets/img/renders/morag_stone.png" alt="" class="px" loading="lazy"><span><strong>Dimensions &amp; Travel</strong><small>Vormir, Morag, Svartalfheim, the Garden, the Soulworld and the Marvel space dimension, and how to travel between them.</small></span></a><a class="related-card" href="../commands.html"><img src="../assets/img/icons/teleport.png" alt="" class="px" loading="lazy"><span><strong>Commands</strong><small>Every /infinity command with syntax, arguments, permissions, examples and what it does, grouped by system.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../gauntlet/index.html"><small>← Previous</small><span>The Infinity Gauntlet</span></a><a class="pager-link next" href="../gauntlet/skins.html"><small>Next →</small><span>Gauntlet Skins</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#requirements">Requirements</a></li><li class="toc-l2"><a href="#abilities">The four abilities</a></li><li class="toc-l2"><a href="#what-happens">What happens when you snap</a></li><li class="toc-l3"><a href="#destroy-stones-ritual">Destroy Stones</a></li><li class="toc-l2"><a href="#burn">The burn</a></li><li class="toc-l3"><a href="#nano-gauntlet">Repairing the gauntlet</a></li><li class="toc-l2"><a href="#admins">For server admins</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/wiki.js" defer></script>
+</body>
+</html>

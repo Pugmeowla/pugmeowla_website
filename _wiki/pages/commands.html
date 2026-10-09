@@ -1,0 +1,118 @@
+---
+title: Commands
+description: Every /infinity command with syntax, arguments, permissions, examples and what it does, grouped by system.
+lead: Everything lives under /infinity. Player commands are unlocked by abilities; admin commands need operator level 2.
+icon: icons/teleport.png
+related: gauntlet/snap.html, containers.html, stones/time.html, troubleshooting.html
+---
+<h2 id="summary">Summary</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Command</th><th>Who can use it</th><th>System</th></tr></thead>
+  <tbody>
+    <tr><td><a href="#infinity-time-set"><code>/infinity time set &lt;time&gt;</code></a></td><td>Anyone with the Time Command ability active</td><td>Time Stone</td></tr>
+    <tr><td><a href="#infinity-soul-locateplayer"><code>/infinity soul locateplayer &lt;target&gt;</code></a></td><td>Anyone with the Locate Entity Command ability active</td><td>Soul Stone</td></tr>
+    <tr><td><a href="#infinity-orb"><code>/infinity orb turn|take|insert</code></a></td><td>Anyone holding the Orb</td><td>Orb</td></tr>
+    <tr><td><a href="#infinity-gauntlet-skin"><code>/infinity gauntlet skin set|clear</code></a></td><td>Anyone</td><td>Gauntlet skins</td></tr>
+    <tr><td><a href="#infinity-gauntlet-snap"><code>/infinity gauntlet snap [type]</code></a></td><td>Operators (level 2)</td><td>The Snap</td></tr>
+    <tr><td><a href="#infinity-unlock-stones"><code>/infinity unlock_stones</code></a>, <code>lock_stones</code></td><td>Operators (level 2)</td><td>Skill trees</td></tr>
+    <tr><td><a href="#infinity-unlock-orb"><code>/infinity unlock_orb</code></a></td><td>Operators (level 2)</td><td>Orb</td></tr>
+    <tr><td><a href="#infinity-soulguardian-respawn"><code>/infinity soulguardian respawn</code></a></td><td>Operators (level 2)</td><td>Vormir</td></tr>
+  </tbody>
+</table></div>
+<p>All of these must be run by a player (not the server console or a command block), except <code>soulguardian respawn</code>, and act on
+  the player who runs them. Otherwise you'll see "This command can only be used by a player."</p>
+
+<h2 id="player-commands">Player commands</h2>
+
+<h3 id="infinity-time-set">/infinity time set</h3>
+<pre data-lang="command">/infinity time set &lt;time&gt;</pre>
+<div class="table-wrap"><table><tbody>
+  <tr><th>Argument</th><td><code>time</code>: a time of day, like <code>/time set</code>: ticks (<code>6000</code>) or with a unit (<code>1d</code>, <code>30s</code>, <code>100t</code>).</td></tr>
+  <tr><th>Requires</th><td>The Time Stone's {{ab time/time_set}} unlocked, with the Time Stone active. Without it the command does nothing.</td></tr>
+  <tr><th>Effect</th><td>Moves the world's clock <strong>forward</strong> to that time of day. If it's already later than that today, it skips to that time tomorrow.</td></tr>
+</tbody></table></div>
+<pre data-lang="command" data-title="Examples">
+/infinity time set 0
+/infinity time set 13000
+</pre>
+
+<h3 id="infinity-soul-locateplayer">/infinity soul locateplayer</h3>
+<pre data-lang="command">/infinity soul locateplayer &lt;target&gt;</pre>
+<div class="table-wrap"><table><tbody>
+  <tr><th>Argument</th><td><code>target</code>: one player (name or selector).</td></tr>
+  <tr><th>Requires</th><td>The Soul Stone's {{ab soul/locateplayer_command}} unlocked, with the Soul Stone active. Otherwise: "You are not worthy to use the locate ability."</td></tr>
+  <tr><th>Effect</th><td>Tells you where that player is: <em>The entity "Steve" is located at: 120, 64, -48</em>.</td></tr>
+</tbody></table></div>
+<pre data-lang="command" data-title="Example">/infinity soul locateplayer Pugmeowla</pre>
+
+<h3 id="infinity-orb">/infinity orb</h3>
+<pre data-lang="command">
+/infinity orb turn left
+/infinity orb turn right
+/infinity orb take
+/infinity orb insert
+</pre>
+<p>These are what the Orb's abilities run; you normally use the abilities instead. They only work while you hold the {{item orb}}.
+  <code>turn</code> advances or resets the combination lock, <code>take</code> takes the Power Stone out of an unlocked, open Orb, and <code>insert</code>
+  puts a Power Stone from your inventory back. See {{page containers.html#orb The Orb}}.</p>
+
+<h3 id="infinity-gauntlet-skin">/infinity gauntlet skin</h3>
+<pre data-lang="command">
+/infinity gauntlet skin set &lt;skin&gt;
+/infinity gauntlet skin clear
+</pre>
+<div class="table-wrap"><table><tbody>
+  <tr><th>Argument</th><td><code>skin</code>: a skin ID, suggested as you type (e.g. <code>netherite_gauntlet</code>, <code>dragon_gauntlet</code>). See {{page gauntlet/skins.html Gauntlet Skins}}.</td></tr>
+  <tr><th>Target</th><td>The Infinity Gauntlet in your main hand, otherwise the one you're wearing.</td></tr>
+  <tr><th>Effect</th><td><code>set</code> applies the skin directly (no item used). <code>clear</code> removes the skin and gives you that skin's unlock item.</td></tr>
+</tbody></table></div>
+<div class="callout warn"><span class="callout-title">For server owners</span><p>This command has no permission requirement, because
+  the skin abilities run it. Since <code>clear</code> hands back the skin's unlock item, you may want to limit it with a permissions mod on
+  public servers.</p></div>
+
+<h2 id="admin-commands">Admin commands</h2>
+
+<h3 id="infinity-gauntlet-snap">/infinity gauntlet snap</h3>
+<pre data-lang="command">/infinity gauntlet snap [half|hostile|players|destroy_stones]</pre>
+<div class="table-wrap"><table>
+  <thead><tr><th>Type</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td><em>(none)</em> or <code>half</code></td><td>Kills half of the living entities in your dimension, chunk by chunk.</td></tr>
+    <tr><td><code>hostile</code></td><td>Sends every <code>#infinity:snap_hostile</code> mob in every dimension to the Soulworld Snap cell.</td></tr>
+    <tr><td><code>players</code></td><td>Sends every other player to the Soulworld Snap cell.</td></tr>
+    <tr><td><code>destroy_stones</code></td><td>Empties the stones out of your worn gauntlet (or the one in your main hand).</td></tr>
+  </tbody>
+</table></div>
+<p>Every type <strong>burns you</strong> exactly like a real Snap: half a heart of health and locked abilities for a Minecraft day. Only one
+  snap runs at a time. Details: {{page gauntlet/snap.html The Snap}}.</p>
+
+<h3 id="infinity-unlock-stones">/infinity unlock_stones and lock_stones</h3>
+<pre data-lang="command">
+/infinity unlock_stones
+/infinity lock_stones
+</pre>
+<p>Unlocks (or locks) every ability of all six stone powers for <em>you</em>, using Palladium's <code>/ability unlock|lock &lt;player&gt; infinity:&lt;stone&gt; all</code>.
+  Prints "All Infinity Stones Abilities Unlocked!" or "…Locked!". To do it for another player or a single stone, use Palladium's
+  command directly:</p>
+<pre data-lang="command" data-title="Palladium equivalents">
+/ability unlock Steve infinity:space_stone all
+/ability lock Steve infinity:power_stone all
+</pre>
+
+<h3 id="infinity-unlock-orb">/infinity unlock_orb</h3>
+<pre data-lang="command">/infinity unlock_orb</pre>
+<p>Unlocks the Orb's combination lock for you, as if you'd entered the full combination. Prints "The Orb has been unlocked!"</p>
+
+<h3 id="infinity-soulguardian-respawn">/infinity soulguardian respawn</h3>
+<pre data-lang="command">/infinity soulguardian respawn</pre>
+<p>Spawns a new Soul Guardian, with fresh trades, at its spot on Vormir (<code>212 121 99</code>). Can be run from the console. Prints
+  "The Soul Guardian has returned to Vormir." or "Could not spawn the Soul Guardian." if Vormir isn't available. It doesn't remove an
+  existing Guardian.</p>
+
+<h2 id="useful-palladium-commands">Useful Palladium commands</h2>
+<p>Stones are ordinary Palladium powers, so Palladium's own commands work on them, which helps for testing and maps:</p>
+<pre data-lang="command">
+# Give or take a stone's power without the item
+/superpower add infinity:soul_stone Steve
+/superpower remove infinity:soul_stone Steve
+</pre>

@@ -1,0 +1,79 @@
+---
+title: Getting Started
+description: What the mod is, what you need to install, how the controls work and how a typical playthrough goes.
+lead: Everything you need before your first stone: requirements, controls, and the shape of a playthrough.
+icon: renders/infinity_gauntlet_cast.png
+related: finding-stones.html, progression.html, gauntlet/index.html, compatibility.html
+---
+<h2>What the mod is</h2>
+<p><strong>Pugmeowla's Infinity Stone Core</strong> is an addon for <a href="https://www.curseforge.com/minecraft/mc-mods/palladium">Palladium</a>
+  that reimagines Infinity Craft and the Lucraft Core / Heroes Expansion Infinity content for Minecraft 1.20.1. It adds:</p>
+<ul>
+  <li>The six {{page stones/index.html Infinity Stones}}, each a Palladium power with its own skill tree of abilities.</li>
+  <li>The {{page gauntlet/index.html Infinity Gauntlet}} with six stone slots, the {{page gauntlet/snap.html Snap}}, and {{count skins}} {{page gauntlet/skins.html gauntlet skins}}.</li>
+  <li>The stones' containers: {{item tesseract}}, {{item scepter}}, {{item aether}}, {{item orb}} and {{item eye_of_agamotto}}, plus the {{item cosmi-rod}}.</li>
+  <li>Unique {{page structures.html structures}} that hide each stone, and four alien {{page dimensions.html dimensions}} (Vormir, Morag, Svartalfheim and the Garden) plus the Soulworld.</li>
+  <li>Data-driven systems for {{page addons/index.html addon makers}}: custom stones, skins, gauntlets and ground items without Java.</li>
+</ul>
+
+<h2 id="installation">Installation and requirements</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Mod</th><th>Needed?</th><th>Version</th><th>What for</th></tr></thead>
+  <tbody>
+    <tr><td>Minecraft</td><td>Required</td><td>1.20.1</td><td></td></tr>
+    <tr><td>Forge</td><td>Required</td><td>47.x (built on 47.4.20)</td><td>The current release is Forge only.</td></tr>
+    <tr><td>Palladium</td><td>Required</td><td>1.20.1-4.2.0 or newer (built on 4.5.6)</td><td>Powers, abilities, skill trees, render layers. Install Palladium's own dependencies as listed on its page.</td></tr>
+    <tr><td>Chrono API</td><td>Required</td><td>1.0.0 or newer</td><td>Tick-rate control for the Time Stone's Slow Time and Time Freeze.</td></tr>
+    <tr><td>Curios API</td><td><span class="status optional">Recommended</span></td><td>any 1.20.1</td><td>Hands slot for the gauntlet, head slot for stones, necklace slot for the Eye of Agamotto.</td></tr>
+    <tr><td>Pehkui</td><td><span class="status optional">Recommended</span></td><td>3.7.12</td><td>Reality Stone size changing and invisibility scaling, Mind Stone intangibility hitbox.</td></tr>
+    <tr><td>JEI</td><td><span class="status optional">Optional</span></td><td>15.x</td><td>Recipes plus info pages that say where each stone and container is.</td></tr>
+    <tr><td>Tinkers' Construct</td><td><span class="status optional">Optional</span></td><td>1.20.1</td><td>Titanium and gold-titanium materials, molten metals and gauntlet casting.</td></tr>
+  </tbody>
+</table></div>
+<p>Drop the mod jar and the required mods into your <code>mods</code> folder. On a server, every mod above that you use must
+  be installed on both the server and the clients. See {{page compatibility.html Compatibility}} for the full list of
+  integrations.</p>
+
+<h2 id="controls">Controls</h2>
+<p>The mod uses Palladium's ability system, so most controls are Palladium's:</p>
+<ul>
+  <li><strong>Ability keys</strong>: abilities that need a key appear in Palladium's ability bar. Use Palladium's ability
+    keys to activate them; scroll-based abilities (Power levels, Slow Time, Size Changing) use the mouse wheel while their toggle is on.</li>
+  <li><strong>Skill trees</strong>: open Palladium's powers screen to see each stone's tree and buy abilities.</li>
+  <li><kbd class="key">G</kbd> <strong>Open Gauntlet</strong> (category <em>Infinity Stones</em> in the controls menu): opens the stone
+    menu of the gauntlet in your main hand, or the one you're wearing. Right-clicking an Infinity Gauntlet in your main hand does the same.</li>
+  <li><strong>Telekinesis</strong> and <strong>Black Hole</strong> take over the mouse while active: scroll to move, left-click to throw,
+    right-click to spatially lock (once unlocked).</li>
+</ul>
+<div class="callout tip"><span class="callout-title">Wear the gauntlet in the off hand or the Curios hands slot</span>
+  <p>That's where it gives you all its stones' powers and is drawn on your arm. In the main hand it still works for some
+  abilities, but the gauntlet's own tree recommends the off hand or Curios.</p></div>
+
+<h2 id="how-abilities-work">How abilities and unlocking work</h2>
+<p>Holding a stone (or having it in the gauntlet) gives you that stone's power. Nothing is unlocked at first: open the
+  stone's skill tree and click an ability to buy it with <a href="@/progression.html#aspects-of-existence">Aspects of Existence</a>
+  from your inventory. Many abilities need an earlier one first. Unlocks are saved on your player, so taking the stone out and
+  putting it back keeps your progress. Full costs are on {{page progression.html Skill Trees &amp; Progression}}.</p>
+
+<h2 id="playthrough">A typical playthrough</h2>
+<ol>
+  <li><strong>Gear up.</strong> Loot <a href="@/structures.html#infinity-temple">Infinity Temples</a> for Aspects of Existence and Shards
+    of Existence, and village weaponsmith chests for the {{item infinity_gauntlet_cast}}.</li>
+  <li><strong>Make the Infinity Gauntlet.</strong> Its recipe is in JEI. See {{page gauntlet/index.html The Infinity Gauntlet}}.</li>
+  <li><strong>Get the Space Stone first.</strong> The Tesseract sits in the <a href="@/structures.html#norse-village">Norse Village</a> in the
+    Overworld. The Space Stone's <em>Teleport GUI</em> is the way to reach the other worlds.</li>
+  <li><strong>Collect the rest</strong>: the Time Stone from the Sanctum Sanctorum, the Mind Stone from the Sanctuary in the End,
+    the Reality Stone from the Aether Chamber on Svartalfheim, the Power Stone from the Orb on Morag, and the Soul Stone on Vormir.
+    The step-by-step route is on {{page finding-stones.html Finding the Stones}}.</li>
+  <li><strong>Grow your trees</strong>, unlock the six-stone abilities (Immortality, full power), and decide whether the
+    {{page gauntlet/snap.html Snap}} is worth it.</li>
+</ol>
+
+<h2 id="tips">First tips</h2>
+<ul>
+  <li>Stones, containers and the gauntlet never despawn, burn or blow up when dropped; they lie on the ground and are picked up with
+    <strong>right-click</strong>. <a href="@/containers.html#ground-items">More on ground items</a>.</li>
+  <li>Don't carry a bare {{item power_stone}} in your hand without protection: it bombards you with cosmic radiation.
+    Put it in the gauntlet, the head slot or a Cosmi-Rod. See {{page stones/power.html Power Stone}}.</li>
+  <li>The Soul Guardian on Vormir sells explorer maps that lead to the stone structures.</li>
+</ul>

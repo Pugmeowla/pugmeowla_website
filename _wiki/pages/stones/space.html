@@ -1,0 +1,59 @@
+---
+title: Space Stone
+description: The Space Stone's portals, telekinesis, spatial lock, black hole and movement passives.
+lead: Bend distance itself. The blue stone is your ticket to every other world in the mod.
+icon: stones/space_stone.png
+related: stones/power.html, containers.html, dimensions.html, structures.html
+---
+<h2 id="overview">Overview</h2>
+<div class="item-cards">
+  <div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img class="px item-detail-img" src="@/assets/img/stones/space_stone.png" alt="Space Stone"><div><h3 class="no-toc">Space Stone</h3><code>infinity:space_stone</code></div></div>
+    <dl><dt>Color</dt><dd>Blue (<code>#0255FF</code>)</dd><dt>Container</dt><dd>{{item tesseract}}</dd>
+    <dt>Found in</dt><dd><a href="@/structures.html#norse-village">Norse Village</a>, Overworld</dd><dt>Power</dt><dd><code>infinity:space_stone</code></dd></dl>
+  </div></div>
+</div>
+<p>You have the Space Stone's power while holding the stone or the Tesseract in either hand, wearing the stone in the Curios head
+  slot, with it in your gauntlet, or socketed in a Cosmi-Rod. Get it out of the Tesseract by dropping the Tesseract and hitting it.</p>
+<p>Get this stone first: its {{ab space/teleport}} is how you reach Vormir, Morag and Svartalfheim.</p>
+
+<h2 id="abilities">Abilities</h2>
+{{abilities space}}
+
+<h2 id="skill-tree">Skill tree costs</h2>
+<p>Force Field is the root of the active abilities; Speed leads to Step Assist. Prices are in {{item aspects_of_existance}}.</p>
+{{costtable space}}
+
+<h2 id="portals">How portals behave</h2>
+<ul>
+  <li>A portal is a pair: one end opens 2.5 blocks in front of you, the other at the destination. Each end grows open over 3 seconds.</li>
+  <li>Anything that walks into either end, players and mobs alike, comes out of the other one on safe ground. Each entity has a one
+    second cooldown so it doesn't bounce back.</li>
+  <li><strong>Teleport GUI</strong> portals stay open until someone hits one end; both ends then close. The chunks at both ends stay
+    loaded while the pair is open.</li>
+  <li><strong>Jump Teleport</strong> portals close on their own after 3 seconds. If no block is in range you get the message
+    "No block found within range for the portal."</li>
+  <li>The menu's background, the portals' color, size, and a fire style (an orange ring of flames like Doctor Strange's sling ring)
+    are configurable by addons: see {{page addons/abilities.html Ability Reference}}.</li>
+</ul>
+{{figure src="gui/portal.png" caption="The Space Teleport menu background (textures/gui/portal.png)."}}
+
+<h2 id="telekinesis-controls">Telekinesis controls</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Input</th><th>While holding something</th></tr></thead>
+  <tbody>
+    <tr><td>Ability key</td><td>Toggle off: set it down (blocks are placed back where possible).</td></tr>
+    <tr><td>Mouse wheel</td><td>Move it closer or further (2–24 blocks).</td></tr>
+    <tr><td>Left-click</td><td>Throw it. Faster, bigger things hurt more when they hit.</td></tr>
+    <tr><td>Right-click</td><td>Spatial Lock it in place (after unlocking {{ab space/spatial_lock}}).</td></tr>
+  </tbody>
+</table></div>
+<p>A held block becomes a floating block entity. If it can't be placed back it drops as an item after 30 seconds in the air.
+  Picking up a spatially locked target frees it.</p>
+
+<h2 id="tips">Tips</h2>
+<ul>
+  <li>Force Field roots you in place: use it to tank a fight, not to escape one. Jump Teleport is the escape.</li>
+  <li>Black Hole and Meteor Storm both need the Power Stone too. With both stones in a gauntlet you get all of them.</li>
+  <li>The Teleport GUI and Jump Teleport keep working after the Snap, when the other stone abilities are locked.</li>
+</ul>

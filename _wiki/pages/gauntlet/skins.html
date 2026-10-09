@@ -1,0 +1,35 @@
+---
+title: Gauntlet Skins
+nav: Skins
+description: Every Infinity Gauntlet skin, the item that unlocks it, and how applying and removing skins works.
+lead: Nineteen ways to wear infinity. Each skin is unlocked by right-clicking with an item.
+icon: skin-renders/dragon_gauntlet.png
+related: gauntlet/index.html, addons/skins.html, gauntlet/snap.html, items.html
+---
+<h2 id="applying">Applying a skin</h2>
+<ol>
+  <li>Wear your Infinity Gauntlet (off hand or Curios hands slot) with <strong>no skin</strong> on it.</li>
+  <li>Hold the skin's unlock item in your <strong>main hand</strong>. The skin's apply ability shows up in the gauntlet's ability bar.</li>
+  <li><strong>Right-click.</strong> One unlock item is used up, the skin is applied and a sound plays (an anvil by default).</li>
+</ol>
+<p>The skin is stored on that gauntlet, so it keeps the skin wherever it goes: worn, held, on the ground or in a chest. Each skin also
+  has an entry in the gauntlet's skill tree with its description. If you hold an Infinity Gauntlet in your main hand, skin changes apply
+  to that one instead of the worn one.</p>
+<p>A few skins behave differently: the <em>Gauntlet with Fingers</em> applies as soon as you hold its item, the <em>Nano Gauntlet</em> can be
+  applied over the <em>Burnt Gauntlet</em>, and the <em>Fantastic Four Skin</em> is hidden from the ability bar.</p>
+
+<h2 id="removing">Removing a skin</h2>
+{{abilities gauntlet only=normal_gauntlet}}
+<p>To switch from one skin to another, return to the original gauntlet first, then apply the new skin.</p>
+
+<h2 id="all-skins">All skins</h2>
+<p>Pictures show each skin's inventory look, rendered from the mod's gauntlet model and the skin's item texture. Several skins also have
+  their own worn model and glow layers. Click a picture to enlarge it.</p>
+{{skingallery}}
+
+<h2 id="commands">Commands</h2>
+<p><code>/infinity gauntlet skin set &lt;skin&gt;</code> and <code>/infinity gauntlet skin clear</code> change the skin of the gauntlet in your main hand
+  (or your worn one) directly. See {{page commands.html#infinity-gauntlet-skin Commands}}.</p>
+
+<h2 id="make-your-own">Making your own</h2>
+<p>A skin is one JSON file plus three textures; no Java, models or render layers needed. See {{page addons/skins.html Skin Files}}.</p>
