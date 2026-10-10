@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Compatibility &amp; Configuration · Infinity Stone Core Wiki</title>
-<meta name="description" content="Required and optional mods, every integration the mod has, the config file, and known limitations.">
-<meta property="og:title" content="Compatibility &amp; Configuration · Infinity Stone Core Wiki">
-<meta property="og:description" content="Required and optional mods, every integration the mod has, the config file, and known limitations.">
+<title>Compatibility and Configuration · Infinity Stone Core Wiki 8.0</title>
+<meta name="description" content="Required and optional mods, every integration, the config file, upgrading old worlds and known problems.">
+<meta property="og:title" content="Compatibility and Configuration · Infinity Stone Core Wiki 8.0">
+<meta property="og:description" content="Required and optional mods, every integration, the config file, upgrading old worlds and known problems.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -18,9 +18,9 @@
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="topbar">
   <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
-  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki 8.0</small></span></a>
   <div class="search" role="search">
-    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <label class="visually-hidden" for="search-input">Search the 8.0 wiki</label>
     <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
       role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
     <kbd class="search-key" aria-hidden="true">/</kbd>
@@ -31,21 +31,22 @@
 <div class="shell has-toc">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
     <div class="sidebar-inner">
-      <a class="sidebar-version" href="compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
-      <details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="index.html">Wiki Home</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="finding-stones.html">Finding the Stones</a></li><li><a href="progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="stones/index.html">Overview</a></li><li><a href="stones/space.html">Space Stone</a></li><li><a href="stones/mind.html">Mind Stone</a></li><li><a href="stones/reality.html">Reality Stone</a></li><li><a href="stones/power.html">Power Stone</a></li><li><a href="stones/time.html">Time Stone</a></li><li><a href="stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="gauntlet/index.html">The Gauntlet</a></li><li><a href="gauntlet/snap.html">The Snap</a></li><li><a href="gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities</span></summary><ul><li><a href="abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="items.html">Item Index</a></li><li><a href="containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="structures.html">Structures</a></li><li><a href="dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="addons/index.html">Overview</a></li><li><a href="addons/stones.html">Custom Stones</a></li><li><a href="addons/skins.html">Skin Files</a></li><li><a href="addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="addons/ground-items.html">Ground Items</a></li><li><a href="addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group" open><summary><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="compatibility.html" aria-current="page" class="active">Compatibility &amp; Config</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></details>
+      <details class="version-switch"><summary><span>v8.0 · MC 1.20.1 · Forge</span></summary><p class="version-switch-title">Documentation version</p><ul><li><a href="compatibility.html" aria-current="true" class="active"><strong>8.0</strong><small>In development</small></a></li><li><a href="7.3/compatibility.html"><strong>7.3</strong><small>Current release</small></a></li></ul></details>
+      <details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="index.html">Wiki Home</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="finding-stones.html">Finding the Stones</a></li><li><a href="progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="stones/index.html">Overview</a></li><li><a href="stones/space.html">Space Stone</a></li><li><a href="stones/mind.html">Mind Stone</a></li><li><a href="stones/reality.html">Reality Stone</a></li><li><a href="stones/power.html">Power Stone</a></li><li><a href="stones/time.html">Time Stone</a></li><li><a href="stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="gauntlet/index.html">The Gauntlet</a></li><li><a href="gauntlet/snap.html">The Snap</a></li><li><a href="gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities</span></summary><ul><li><a href="abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="items.html">Item Index</a></li><li><a href="containers.html">Containers and Tools</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="structures.html">Structures</a></li><li><a href="dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="addons/index.html">Overview</a></li><li><a href="addons/stones.html">Custom Stones</a></li><li><a href="addons/skins.html">Skin Files</a></li><li><a href="addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="addons/ground-items.html">Ground Items</a></li><li><a href="addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group" open><summary><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="compatibility.html" aria-current="page" class="active">Compatibility and Config</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="credits.html">Credits</a></li></ul></details>
     </div>
   </nav>
   <div class="scrim" hidden></div>
   <main id="content" class="content" tabindex="-1">
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki</a></li><li><span>Help</span></li><li aria-current="page">Compatibility &amp; Configuration</li></ol></nav>
-    <header class="page-head"><img class="page-icon px" src="assets/img/renders/soul_guardian_telephone.png" alt=""><div><h1>Compatibility &amp; Configuration</h1><p class="lead">What the mod needs, what it works with, and the one setting you can change.</p></div></header>
-    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#versions">Versions</a></li><li class="toc-l2"><a href="#required">Required mods</a></li><li class="toc-l2"><a href="#integrations">Integrations</a></li><li class="toc-l2"><a href="#config">Configuration</a></li><li class="toc-l2"><a href="#world-upgrades">Upgrading old worlds</a></li><li class="toc-l2"><a href="#limitations">Known limitations</a></li></ol></details>
+    <p class="version-notice">These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is 7.3. <a href="7.3/index.html">Read the 7.3 docs</a></p>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki 8.0</a></li><li><span>Help</span></li><li aria-current="page">Compatibility and Configuration</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="assets/img/renders/soul_guardian_telephone.png" alt=""><div><h1>Compatibility and Configuration</h1><p class="lead">What the mod needs, what it works with, and the one setting you can change.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#versions">Versions</a></li><li class="toc-l2"><a href="#required">Required mods</a></li><li class="toc-l2"><a href="#integrations">Integrations</a></li><li class="toc-l2"><a href="#config">Config</a></li><li class="toc-l2"><a href="#world-upgrades">Old worlds</a></li><li class="toc-l2"><a href="#limitations">Known problems</a></li></ol></details>
     <article class="prose">
 <h2 id="versions">Versions<a class="heading-anchor" href="#versions" aria-label="Link to this section">#</a></h2>
 <div class="table-wrap"><table><tbody>
-  <tr><th>Mod version</th><td>7.4 (this wiki)</td></tr>
+  <tr><th>Mod version</th><td>8.0 (these pages)</td></tr>
   <tr><th>Minecraft</th><td>1.20.1</td></tr>
-  <tr><th>Loader</th><td>Forge (loader 43+ declared; built on Forge 47.4.20). No Fabric build is currently produced.</td></tr>
+  <tr><th>Loader</th><td>Forge (built on 47.4.20, any loader from 43 up is accepted). There's no Fabric build.</td></tr>
   <tr><th>Mod ID</th><td><code>infinity</code></td></tr>
 </tbody></table></div>
 
@@ -53,8 +54,8 @@
 <div class="table-wrap"><table>
   <thead><tr><th>Mod</th><th>Version range</th><th>Used for</th></tr></thead>
   <tbody>
-    <tr><td>Palladium</td><td><code>[1.20.1-4.2.0,)</code></td><td>The whole power system: stones, abilities, skill trees, render layers, addon packs.</td></tr>
-    <tr><td>Chrono API</td><td><code>[1.0.0,)</code></td><td>Tick rate changes and pausing for the Time Stone (Slow Time, Time Freeze, Time Immunity).</td></tr>
+    <tr><td>Palladium</td><td><code>[1.20.1-4.2.0,)</code></td><td>The whole power system: stones, abilities, skill trees, render layers and addon packs.</td></tr>
+    <tr><td>Chrono API</td><td><code>[1.0.0,)</code></td><td>Changing the tick rate and pausing time (Slow Time, Time Freeze, Time Immunity).</td></tr>
   </tbody>
 </table></div>
 
@@ -62,66 +63,71 @@
 <div class="table-wrap"><table>
   <thead><tr><th>Mod</th><th>What you get</th></tr></thead>
   <tbody>
-    <tr><td><strong>Curios API</strong></td><td>Hands slot for the Infinity Gauntlet (with its visibility toggle respected), head slot for the six stones, necklace slot for the Eye of Agamotto.</td></tr>
-    <tr><td><strong>Pehkui</strong></td><td>Reality Stone Size Changing and Invisibility scaling, Mind Stone Intangibility hitbox and reach. These parts do nothing without it.</td></tr>
-    <tr><td><strong>GeckoLib</strong> (through Palladium)</td><td>Animated and custom models: the Orb, Eye of Agamotto, gauntlet skins, stones on sockets, Malekith.</td></tr>
-    <tr><td><strong>JEI</strong></td><td>Info pages on the stones, containers, cast, shards, uru and dwarf star meteor explaining where they come from.</td></tr>
-    <tr id="tinkers-construct"><td><strong>Tinkers' Construct</strong></td><td>Titanium, gold-titanium alloy and ferro-titanium-gold alloy materials, four molten fluids (uru, titanium, gold-titanium alloy, ferro-titanium-gold alloy) and casting for the gauntlet and the ferro-titanium-gold ingot.</td></tr>
-    <tr><td><strong>Cosmos</strong></td><td>A "Marvel" solar system (dimension <code>infinity:marvel</code>) with the Garden, Vormir, Morag and Svartalfheim as planets you can fly to.</td></tr>
-    <tr><td><strong>Pugmeowla's Infintrix</strong> (+ Alien Evolution, Into the Omniverse, Omnitrix Evolution)</td><td>Omnitrixes act as custom gauntlets.</td></tr>
-    <tr><td><strong>Pugmeowla's Herbs of Wakanda</strong></td><td>The Black Panther necklace grants the Infinity Gauntlet power (chest or Curios necklace).</td></tr>
-    <tr><td><strong>Pugmeowla's Infinity Generator</strong></td><td>Its generator item appears in the Infinity Stone Core creative tab.</td></tr>
-    <tr><td><strong>Ultor Infinitus</strong> (Infinity Ultron)</td><td>A player with the <code>InfinityUltron</code> tag can fire the Mind Stone beam from the head.</td></tr>
-    <tr><td><strong>Powerborne</strong></td><td>A thrown Stormbreaker near a gauntlet wearer suspends the Soul Stone's defensive passives and deals damage.</td></tr>
-    <tr><td><strong>Palladium items</strong></td><td>Vibranium ingot / circuit / flux capacitors and the quartz flux capacitor unlock skins.</td></tr>
-    <tr><td><strong>Trinkets</strong></td><td>Glove slot data for a Fabric build. <span class="status legacy">Not used in the Forge release</span></td></tr>
+    <tr><td><img class="mod-logo" src="assets/img/compat/ad_astra.png" alt=""><strong>Ad Astra</strong></td><td>The Garden, Vormir, Morag and Svartalfheim as planets. You need a <strong>Tier 4 rocket</strong> to get to them.</td></tr>
+    <tr><td><img class="mod-logo" src="assets/img/compat/cosmic.png" alt=""><strong>Cosmic Horizons</strong></td><td>A Marvel solar system (dimension <code>infinity:marvel</code>) with the same four planets to fly to.</td></tr>
+    <tr><td><strong>Curios API</strong></td><td>Hands slot for the Infinity Gauntlet (its visibility button works too), head slot for the six stones, necklace slot for the Eye of Agamotto.</td></tr>
+    <tr><td><strong>Pehkui</strong></td><td>Reality Stone Size Changing and Invisibility scaling, and the Mind Stone's Intangibility hitbox and reach. Those parts do nothing without it.</td></tr>
+    <tr><td><strong>GeckoLib</strong> (through Palladium)</td><td>Animated and custom models: the Orb, the Eye of Agamotto, gauntlet skins, stones in their sockets and Malekith.</td></tr>
+    <tr><td><strong>JEI</strong></td><td>Info pages on the stones, containers, cast, shards, uru and dwarf star meteor saying where to find them.</td></tr>
+    <tr id="tinkers-construct"><td><strong>Tinkers' Construct</strong></td><td>Titanium, gold titanium alloy and ferro titanium gold alloy as materials, four molten fluids (uru, titanium, gold titanium alloy, ferro titanium gold alloy) and casting for the gauntlet and the ferro titanium gold ingot.</td></tr>
+    <tr><td><strong>Fsang's Heropack</strong></td><td>Steel and gold titanium share item tags with Fsang's, and Fsang's uru ingots can be used for uru plates.</td></tr>
+    <tr><td><strong>Pugmeowla's Infintrix</strong> (with Alien Evolution, Into the Omniverse or Omnitrix Evolution)</td><td>Omnitrixes work as custom gauntlets.</td></tr>
+    <tr><td><strong>Infinity Protocol</strong></td><td>The Iron Man MK85 suit works as a gauntlet, with the stones only showing during its nano gauntlet animation.</td></tr>
+    <tr><td><strong>Pugmeowla's Herbs of Wakanda</strong></td><td>The Black Panther necklace gives the Infinity Gauntlet power (chest or Curios necklace).</td></tr>
+    <tr><td><strong>Pugmeowla's Infinity Generator</strong></td><td>Its generator shows up in the Infinity Stone Core creative tab.</td></tr>
+    <tr><td><strong>Ultor Infinitus</strong> (Infinity Ultron)</td><td>A player with the <code>InfinityUltron</code> tag can fire the Mind Stone beam from their head.</td></tr>
+    <tr><td><strong>Powerborne</strong></td><td>A thrown Stormbreaker near someone wearing the gauntlet switches off the Soul Stone's defenses and hurts them.</td></tr>
+    <tr><td><strong>Palladium items</strong></td><td>Vibranium ingot, vibranium circuit and the flux capacitors unlock skins.</td></tr>
+    <tr><td><strong>Trinkets</strong></td><td>Glove slot data for a Fabric build. <span class="status legacy">Not used on Forge</span></td></tr>
   </tbody>
 </table></div>
 
-<h2 id="config">Configuration<a class="heading-anchor" href="#config" aria-label="Link to this section">#</a></h2>
-<p>The mod has one common config file, <code>config/infinity-common.toml</code>:</p>
+<h2 id="config">Config<a class="heading-anchor" href="#config" aria-label="Link to this section">#</a></h2>
+<p>There's one config file, <code>config/infinity-common.toml</code>:</p>
 <div class="code-block"><div class="code-head"><span>config/infinity-common.toml</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-text">[orb]
 	#Number of left/right turns in the Orb's combination lock.
 	#Each world gets its own random combination; changing this generates a new one.
 	#Range: 1 ~ 64
 	combinationLength = 15</code></pre></div>
-<p>Everything else is configured through data: the <a href="addons/index.html">addon systems</a>, Palladium power files, and tags such as
+<p>Everything else is set up through data: the <a href="addons/index.html">addon systems</a>, Palladium power files, and tags like
   <code>#infinity:snap_hostile</code> and <code>#infinity:projectiles</code>.</p>
 
-<h2 id="world-upgrades">Upgrading old worlds<a class="heading-anchor" href="#world-upgrades" aria-label="Link to this section">#</a></h2>
-<p>The mod converts content from earlier versions automatically:</p>
+<h2 id="world-upgrades">Old worlds<a class="heading-anchor" href="#world-upgrades" aria-label="Link to this section">#</a></h2>
+<p>Things from older versions get converted when you load the world:</p>
 <ul>
-  <li>Old armor stand props (stones and containers placed on the ground) become ground items when their chunk loads.</li>
-  <li>The old per-stone Cosmi-Rods become a single empty Cosmi-Rod.</li>
-  <li>Old <em>Empty Eye of Agamotto</em> items still work and become the normal Eye.</li>
-  <li>The Orb's "stone taken" state moves from an old marker block on Morag to world data; old force-loaded chunks on Morag and the Soulworld are released.</li>
-  <li>Worlds that already had Vormir built keep it; the Soul Guardian isn't spawned twice.</li>
-  <li>Projectiles stopped by the old Time Stone function are released.</li>
+  <li>Stones and containers placed on the ground as armor stand props turn into ground items when their chunk loads.</li>
+  <li>The old one rod per stone Cosmi-Rods turn into a single empty Cosmi-Rod.</li>
+  <li>Old <em>Empty Eye of Agamotto</em> items still work and turn into the normal Eye.</li>
+  <li>Whether the Power Stone was taken moves from an old marker block on Morag into world data, and old force loaded chunks on Morag and
+    the Soulworld are released.</li>
+  <li>Worlds that already built Vormir keep it, and the Soul Guardian isn't spawned twice.</li>
+  <li>Projectiles stopped by the old Time Stone function get let go.</li>
 </ul>
 
-<h2 id="limitations">Known limitations<a class="heading-anchor" href="#limitations" aria-label="Link to this section">#</a></h2>
+<h2 id="limitations">Known problems<a class="heading-anchor" href="#limitations" aria-label="Link to this section">#</a></h2>
 <ul>
-  <li>Slow Time and Time Freeze change the tick rate of the <strong>whole server</strong>.</li>
-  <li>Explorer maps for structures outside the Overworld (Morag Temple, Aether Chamber, Sanctuary) are filled from the Overworld and may stay blank.</li>
-  <li><code>/infinity gauntlet skin</code> needs no permission level, and <code>clear</code> returns the skin's unlock item.</li>
-  <li>Large Meteor Storms can cause lag.</li>
+  <li>Slow Time and Time Freeze change the tick rate for the <strong>whole server</strong>.</li>
+  <li>Explorer maps for structures outside the Overworld (Morag Temple, Aether Chamber, Sanctuary) are filled from the Overworld and can come out blank.</li>
+  <li><code>/infinity gauntlet skin</code> doesn't need a permission level, and <code>clear</code> gives back the skin's unlock item.</li>
+  <li>Big Meteor Storms can lag.</li>
   <li>Size Changing, Invisibility scaling and the Intangibility hitbox need Pehkui.</li>
-  <li>Some in-game descriptions are older than the code: the Soul Guardian Telephone sends the Guardian back after one minute, not ten, and Summon Zombie summons six zombies, not seven.</li>
+  <li>Some in-game descriptions are older than the code. The Soul Guardian Telephone sends the Guardian back after one minute, not ten,
+    and Summon Zombie summons six zombies, not seven.</li>
 </ul>
 
     </article>
-    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="getting-started.html"><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px" loading="lazy"><span><strong>Getting Started</strong><small>What the mod is, what you need to install, how the controls work and how a typical playthrough goes.</small></span></a><a class="related-card" href="troubleshooting.html"><img src="assets/img/renders/injection.png" alt="" class="px" loading="lazy"><span><strong>Troubleshooting &amp; FAQ</strong><small>Answers to the common questions and problems: abilities that won't unlock, missing stones, the Orb, the Snap burn, and addon files that don't load.</small></span></a><a class="related-card" href="addons/index.html"><img src="assets/img/renders/52-d_unit.png" alt="" class="px" loading="lazy"><span><strong>Addon Development</strong><small>How to extend Infinity Stone Core with addon packs: data-driven stones, skins, gauntlets and ground items, and Palladium integration.</small></span></a><a class="related-card" href="dimensions.html"><img src="assets/img/renders/morag_stone.png" alt="" class="px" loading="lazy"><span><strong>Dimensions &amp; Travel</strong><small>Vormir, Morag, Svartalfheim, the Garden, the Soulworld and the Marvel space dimension, and how to travel between them.</small></span></a></div></section>
-    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="addons/abilities.html"><small>← Previous</small><span>Ability &amp; Condition Reference</span></a><a class="pager-link next" href="troubleshooting.html"><small>Next →</small><span>Troubleshooting &amp; FAQ</span></a></nav>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="getting-started.html"><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px" loading="lazy"><span><strong>Getting Started</strong><small>What the mod is, what to install, how the controls work and how a normal playthrough goes.</small></span></a><a class="related-card" href="troubleshooting.html"><img src="assets/img/renders/injection.png" alt="" class="px" loading="lazy"><span><strong>Troubleshooting and FAQ</strong><small>Common questions and problems. Abilities that won't unlock, missing stones, the Orb, the Snap burn and addon files that don't load.</small></span></a><a class="related-card" href="addons/index.html"><img src="assets/img/renders/52-d_unit.png" alt="" class="px" loading="lazy"><span><strong>Addon Development</strong><small>How to extend Infinity Stone Core with addon packs. Custom stones, skins, gauntlets and ground items from JSON, and how it fits with Palladium.</small></span></a><a class="related-card" href="dimensions.html"><img src="assets/img/renders/morag_stone.png" alt="" class="px" loading="lazy"><span><strong>Dimensions and Travel</strong><small>Vormir, Morag, Svartalfheim, the Garden, the Soulworld and the Marvel space dimension, and how to get to them with the Space Stone, Ad Astra or Cosmic Horizons.</small></span></a></div></section>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="addons/abilities.html"><small>← Previous</small><span>Ability &amp; Condition Reference</span></a><a class="pager-link next" href="troubleshooting.html"><small>Next →</small><span>Troubleshooting and FAQ</span></a></nav>
     <footer class="footer">
-      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. These pages document version 8.0 for Minecraft 1.20.1.</p>
       <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../index.html">All projects</a></p>
     </footer>
   </main>
-  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#versions">Versions</a></li><li class="toc-l2"><a href="#required">Required mods</a></li><li class="toc-l2"><a href="#integrations">Integrations</a></li><li class="toc-l2"><a href="#config">Configuration</a></li><li class="toc-l2"><a href="#world-upgrades">Upgrading old worlds</a></li><li class="toc-l2"><a href="#limitations">Known limitations</a></li></ol></aside>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#versions">Versions</a></li><li class="toc-l2"><a href="#required">Required mods</a></li><li class="toc-l2"><a href="#integrations">Integrations</a></li><li class="toc-l2"><a href="#config">Config</a></li><li class="toc-l2"><a href="#world-upgrades">Old worlds</a></li><li class="toc-l2"><a href="#limitations">Known problems</a></li></ol></aside>
 </div>
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
-<script src="assets/js/search-index.js" defer></script>
+<script src="assets/js/search-8.0.js" defer></script>
 <script src="assets/js/wiki.js" defer></script>
 </body>
 </html>

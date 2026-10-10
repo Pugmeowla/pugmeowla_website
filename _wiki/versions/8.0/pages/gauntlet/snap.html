@@ -1,0 +1,67 @@
+---
+title: The Snap
+description: The four six stone gauntlet abilities, what each one does, and the burn afterwards.
+lead: With all six stones in one gauntlet you can snap. It costs you.
+icon: icons/snap.png
+related: gauntlet/index.html, gauntlet/skins.html, dimensions.html, commands.html
+---
+<h2 id="requirements">What you need</h2>
+<ul>
+  <li>All six stones in your gauntlet, so you have all six stone powers at once.</li>
+  <li>Not still being burnt from your last Snap.</li>
+</ul>
+<p>The four abilities then show up in the gauntlet's ability bar. Each one needs a <strong>second press within 3 seconds</strong>. The first
+  press only shows a warning, like "Press again to snap away half of all life".</p>
+
+<h2 id="abilities">The four abilities</h2>
+{{abilities gauntlet only=kill_half,kill_hostile,kill_player,destroy_stones}}
+
+<h2 id="what-happens">What happens when you snap</h2>
+<p>There's a flash at your hand, and everyone hears a Wither scream and a crack of thunder. Over the next second the targets turn to
+  white dust, a few each tick.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Snap</th><th>Who</th><th>Where they go</th></tr></thead>
+  <tbody>
+    <tr><td>Kill Half</td><td>Half of all living things <strong>in your current dimension</strong>, players included, but not you. It takes half
+      of each chunk on its own (an odd one out is a coin flip), so no area is spared and none is wiped out completely.</td><td>Killed.</td></tr>
+    <tr><td>Kill All Hostile</td><td>Every hostile mob in <strong>every dimension</strong>, meaning everything in the <code>#infinity:snap_hostile</code>
+      tag (zombies, skeletons, creepers, spiders, endermen, illagers, the Warden, the Wither, the Ender Dragon and more).</td><td>The Snap cell in the Soulworld.</td></tr>
+    <tr><td>Kill Other Players</td><td>Every other player on the server.</td><td>The Snap cell in the Soulworld.</td></tr>
+  </tbody>
+</table></div>
+<p>The <strong>Snap cell</strong> is a closed, lit bedrock room at <code>1000 78 1000</code> in the Soulworld with one oak door. Players who
+  got snapped can walk out and make their way home, see {{page dimensions.html#soulworld The Soulworld}}.</p>
+<p>Only one Snap can happen on a server at a time. If one's already going (or the Soulworld is missing) you get "A snap is already in
+  progress or the Soulworld is unavailable."</p>
+
+<h3 id="destroy-stones-ritual">Destroy Stones</h3>
+<p>Press it twice to start a 7 second ritual. You're slowed to a stop, a beacon hum plays, and every second a burst in one stone's color
+  goes off with a rising chime. One press before it finishes cancels it. When it finishes:</p>
+<ul>
+  <li>All the stones in your gauntlet are destroyed.</li>
+  <li>You get burnt (see below) and sent to the Soulworld at Y 72.</li>
+  <li>You get the <em>Peace in our Time</em> advancement.</li>
+</ul>
+
+<h2 id="burn">The burn</h2>
+<p>Every Snap and Destroy Stones burns whoever did it:</p>
+<ul>
+  <li>Your max health drops to <strong>half a heart</strong>, and you're healed to that.</li>
+  <li>Most stone abilities lock. The Space Stone's Teleport GUI and Jump Teleport and the Power Stone's Radiation Texture Toggle still
+    work. You can't snap again.</li>
+  <li>Your arm is drawn burnt and the gauntlet gets the <strong>Burnt Gauntlet</strong> skin. If it had a skin before, you get that skin's
+    unlock item back.</li>
+  <li>It lasts <strong>one full Minecraft day</strong> (24,000 ticks, about 20 minutes). Dying doesn't end it early.</li>
+</ul>
+<p>Once the day is over your health and abilities come back by themselves.</p>
+
+<h3 id="nano-gauntlet">Fixing the gauntlet</h3>
+<p>The {{page gauntlet/skins.html#skin-nano-gauntlet Nano Gauntlet skin}} (unlocked with a Palladium Vibranium Flux Capacitor) is the only
+  skin you can put over the Burnt Gauntlet while you're burnt. It fixes how the gauntlet and your arm look, but the half heart and locked
+  abilities stay until the day is up.</p>
+
+<h2 id="admins">For server admins</h2>
+<p>Operators can do any of the Snaps without a gauntlet using <a href="@/commands.html#infinity-gauntlet-snap">/infinity gauntlet snap</a>.
+  It burns whoever runs it, same as the real thing.</p>
+<p>Advancements: <em>I Am Inevitable</em> ("What did it cost?") for snapping away half of all life with the gauntlet, and <em>Peace in our
+  Time</em> for destroying the stones.</p>

@@ -1,0 +1,72 @@
+---
+title: Wiki Home
+nav: Wiki Home
+description: The wiki for Pugmeowla's Infinity Stone Core 7.3, the version on CurseForge and Modrinth.
+icon: logo.png
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-text">
+    <span class="hero-badge">Version {{version}} · current release · Minecraft 1.20.1 · Forge</span>
+    <h1 id="hero-title" class="no-toc"><span>Pugmeowla's</span>Infinity Stone Core 7.3</h1>
+    <p>7.3 is the version you get from CurseForge and Modrinth right now. It's a Palladium addon pack with KubeJS scripts, and it has
+      the Infinity Gauntlet, all six stones and their containers, the structures and the planets. These pages cover how 7.3 works.</p>
+    <div class="hero-actions">
+      <a class="button-link" href="@/getting-started.html">Get started</a>
+      <a class="button-link ghost" href="@/finding-stones.html">Find the stones</a>
+      <a class="button-link curseforge" href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a>
+      <a class="button-link modrinth" href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-orbit">
+      <img class="px" src="@w/assets/img/stones/power_stone.png" alt="" style="--a:0deg;--glow:#F12AFF">
+      <img class="px" src="@w/assets/img/stones/space_stone.png" alt="" style="--a:60deg;--glow:#6AC5FF">
+      <img class="px" src="@w/assets/img/stones/reality_stone.png" alt="" style="--a:120deg;--glow:#FF0130">
+      <img class="px" src="@w/assets/img/stones/soul_stone.png" alt="" style="--a:180deg;--glow:#FF8B00">
+      <img class="px" src="@w/assets/img/stones/time_stone.png" alt="" style="--a:240deg;--glow:#12E772">
+      <img class="px" src="@w/assets/img/stones/mind_stone.png" alt="" style="--a:300deg;--glow:#DAFF0A">
+    </div>
+    <img class="hero-gauntlet" src="@w/assets/img/logo.png" alt="">
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="quick">
+  <h2 id="quick" class="no-toc">Jump to</h2>
+  <nav class="quick-links" aria-label="Quick links">
+    <a href="@/getting-started.html#installation">What to install</a>
+    <a href="@/finding-stones.html">Where are the stones?</a>
+    <a href="@/dimensions.html#travel">Getting to the planets</a>
+    <a href="@/abilities.html">All abilities</a>
+    <a href="@/gauntlet/index.html">The gauntlet</a>
+    <a href="@/gauntlet/snap.html">The Snap</a>
+    <a href="@/commands.html">Commands</a>
+    <a href="@/gauntlet/skins.html">Gauntlet skins</a>
+  </nav>
+</section>
+
+<section class="home-section" aria-labelledby="six">
+  <h2 id="six" class="no-toc">The six stones</h2>
+  {{stonegrid}}
+</section>
+
+<section class="home-section" aria-labelledby="changes">
+  <h2 id="changes" class="no-toc">7.3 and 8.0</h2>
+  <div class="home-panel">
+    <p>8.0 is a big rewrite into a proper Java mod. If you're playing 7.3, these are the main things that work differently from the 8.0
+      pages:</p>
+    <ul>
+      <li>7.3 needs <strong>KubeJS</strong> and <strong>CoreWithStuff</strong>. 8.0 doesn't.</li>
+      <li>The gauntlet has one fixed slot per stone and opens through CoreWithStuff's menu.</li>
+      <li>The Cosmi-Rod turns into a different item for each stone, and Mind, Reality and Space have smaller trees.</li>
+      <li>Skins belong to the player, not the gauntlet.</li>
+      <li>The Snap is a wheel with five options, and half the world is sent to the Soulworld instead of killed.</li>
+      <li>The Orb's combination is the same in every world.</li>
+      <li>Commands aren't under <code>/infinity</code>, they're <code>/space_tp</code>, <code>/time_set</code>, <code>/locateplayer</code> and so on.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="explore">
+  <h2 id="explore" class="no-toc">Sections</h2>
+  {{pagecards getting-started.html stones/index.html gauntlet/index.html abilities.html items.html structures.html commands.html compatibility.html}}
+</section>

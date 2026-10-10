@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Addon Development · Infinity Stone Core Wiki</title>
-<meta name="description" content="How to extend Infinity Stone Core with addon packs: data-driven stones, skins, gauntlets and ground items, and Palladium integration.">
-<meta property="og:title" content="Addon Development · Infinity Stone Core Wiki">
-<meta property="og:description" content="How to extend Infinity Stone Core with addon packs: data-driven stones, skins, gauntlets and ground items, and Palladium integration.">
+<title>Addon Development · Infinity Stone Core Wiki 8.0</title>
+<meta name="description" content="How to extend Infinity Stone Core with addon packs. Custom stones, skins, gauntlets and ground items from JSON, and how it fits with Palladium.">
+<meta property="og:title" content="Addon Development · Infinity Stone Core Wiki 8.0">
+<meta property="og:description" content="How to extend Infinity Stone Core with addon packs. Custom stones, skins, gauntlets and ground items from JSON, and how it fits with Palladium.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -18,9 +18,9 @@
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="topbar">
   <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
-  <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki</small></span></a>
+  <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki 8.0</small></span></a>
   <div class="search" role="search">
-    <label class="visually-hidden" for="search-input">Search the wiki</label>
+    <label class="visually-hidden" for="search-input">Search the 8.0 wiki</label>
     <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
       role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
     <kbd class="search-key" aria-hidden="true">/</kbd>
@@ -31,18 +31,19 @@
 <div class="shell has-toc">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
     <div class="sidebar-inner">
-      <a class="sidebar-version" href="../compatibility.html">v7.4 · MC 1.20.1 · Forge</a>
-      <details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="../index.html">Wiki Home</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li><li><a href="../progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers &amp; Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html" aria-current="page" class="active">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="../compatibility.html">Compatibility &amp; Config</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li></ul></details>
+      <details class="version-switch"><summary><span>v8.0 · MC 1.20.1 · Forge</span></summary><p class="version-switch-title">Documentation version</p><ul><li><a href="../addons/index.html" aria-current="true" class="active"><strong>8.0</strong><small>In development</small></a></li><li><a href="../7.3/index.html"><strong>7.3</strong><small>Current release</small></a></li></ul></details>
+      <details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon" loading="lazy"><span>Getting Started</span></summary><ul><li><a href="../index.html">Wiki Home</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li><li><a href="../progression.html">Progression</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/stones/space_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon" loading="lazy"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon" loading="lazy"><span>Abilities</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon" loading="lazy"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers and Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon" loading="lazy"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon" loading="lazy"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon" loading="lazy"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html" aria-current="page" class="active">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon" loading="lazy"><span>Help</span></summary><ul><li><a href="../compatibility.html">Compatibility and Config</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li><li><a href="../credits.html">Credits</a></li></ul></details>
     </div>
   </nav>
   <div class="scrim" hidden></div>
   <main id="content" class="content" tabindex="-1">
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki</a></li><li><span>Addon Development</span></li><li aria-current="page">Addon Development</li></ol></nav>
-    <header class="page-head"><img class="page-icon px" src="../assets/img/renders/52-d_unit.png" alt=""><div><h1>Addon Development</h1><p class="lead">New stones, skins, gauntlets and props without writing Java. Everything here is JSON in an addon pack or a mod.</p></div></header>
-    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#extension-points">Extension points</a></li><li class="toc-l2"><a href="#rules">Rules shared by all four systems</a></li><li class="toc-l2"><a href="#addon-pack">Setting up an addon pack</a></li><li class="toc-l2"><a href="#palladium">Working with the mod's powers</a></li><li class="toc-l2"><a href="#in-game-docs">In-game reference</a></li><li class="toc-l2"><a href="#examples">Real examples</a></li></ol></details>
+    <p class="version-notice">These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is 7.3. <a href="../7.3/index.html">Read the 7.3 docs</a></p>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki 8.0</a></li><li><span>Addon Development</span></li><li aria-current="page">Addon Development</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../assets/img/renders/52-d_unit.png" alt=""><div><h1>Addon Development</h1><p class="lead">New stones, skins, gauntlets and props without writing Java. It's all JSON in an addon pack or a mod.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#extension-points">What you can add</a></li><li class="toc-l2"><a href="#rules">How these files are read</a></li><li class="toc-l2"><a href="#addon-pack">Making an addon pack</a></li><li class="toc-l2"><a href="#palladium">Using the mod's powers</a></li><li class="toc-l2"><a href="#in-game-docs">In-game reference</a></li><li class="toc-l2"><a href="#examples">Real examples</a></li></ol></details>
     <article class="prose">
-<h2 id="extension-points">Extension points<a class="heading-anchor" href="#extension-points" aria-label="Link to this section">#</a></h2>
-<div class="page-cards"><a class="page-card" href="../addons/stones.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"><span><strong>Custom Stones</strong><small>The gauntlet_stones format: make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.</small></span></a><a class="page-card" href="../addons/skins.html"><img src="../assets/img/skin-renders/dragon_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Gauntlet Skin Files</strong><small>The gauntlet_skins format: add an Infinity Gauntlet skin with one JSON file and its textures, including custom models, glow layers and replacement rules.</small></span></a><a class="page-card" href="../addons/custom-gauntlets.html"><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Custom Gauntlets</strong><small>The gauntlets format: make an item or power from another mod work as an Infinity Gauntlet, with stones drawn on the player model.</small></span></a><a class="page-card" href="../addons/ground-items.html"><img src="../assets/img/renders/tesseract.png" alt="" class="px" loading="lazy"><span><strong>Ground Items</strong><small>The ground_items format: make any item lie on the ground like the Infinity Stones, break open into other items, combine, or be drawn by a Palladium power.</small></span></a><a class="page-card" href="../addons/abilities.html"><img src="../assets/img/icons/energy_blast.png" alt="" class="px" loading="lazy"><span><strong>Ability &amp; Condition Reference</strong><small>Every ability type and condition the mod registers with Palladium, with their properties and defaults, for use in your own powers.</small></span></a></div>
+<h2 id="extension-points">What you can add<a class="heading-anchor" href="#extension-points" aria-label="Link to this section">#</a></h2>
+<div class="page-cards"><a class="page-card" href="../addons/stones.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"><span><strong>Custom Stones</strong><small>The gauntlet_stones format. Make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.</small></span></a><a class="page-card" href="../addons/skins.html"><img src="../assets/img/skin-renders/dragon_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Gauntlet Skin Files</strong><small>The gauntlet_skins format: add an Infinity Gauntlet skin with one JSON file and its textures, including custom models, glow layers and replacement rules.</small></span></a><a class="page-card" href="../addons/custom-gauntlets.html"><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Custom Gauntlets</strong><small>The gauntlets format: make an item or power from another mod work as an Infinity Gauntlet, with stones drawn on the player model.</small></span></a><a class="page-card" href="../addons/ground-items.html"><img src="../assets/img/renders/tesseract.png" alt="" class="px" loading="lazy"><span><strong>Ground Items</strong><small>The ground_items format: make any item lie on the ground like the Infinity Stones, break open into other items, combine, or be drawn by a Palladium power.</small></span></a><a class="page-card" href="../addons/abilities.html"><img src="../assets/img/icons/energy_blast.png" alt="" class="px" loading="lazy"><span><strong>Ability &amp; Condition Reference</strong><small>Every ability type and condition the mod registers with Palladium, with their properties and defaults, for use in your own powers.</small></span></a></div>
 <div class="table-wrap"><table>
   <thead><tr><th>System</th><th>Folder</th><th>One file per</th></tr></thead>
   <tbody>
@@ -50,77 +51,77 @@
     <tr><td><a href="../addons/skins.html">Gauntlet skins</a></td><td><code>data/infinity/gauntlet_skins/</code></td><td>skin</td></tr>
     <tr><td><a href="../addons/custom-gauntlets.html">Custom gauntlets</a></td><td><code>data/infinity/gauntlets/</code></td><td>item or power that acts as a gauntlet</td></tr>
     <tr><td><a href="../addons/ground-items.html">Ground items</a></td><td><code>data/infinity/ground_items/</code></td><td>item that lies on the ground like a stone</td></tr>
-    <tr><td>Palladium powers and abilities</td><td><code>data/&lt;namespace&gt;/palladium/powers/</code></td><td>power; can use the mod's <a href="../addons/abilities.html">ability types and conditions</a></td></tr>
+    <tr><td>Palladium powers</td><td><code>data/&lt;namespace&gt;/palladium/powers/</code></td><td>power, using the mod's <a href="../addons/abilities.html">ability types and conditions</a> if you want</td></tr>
   </tbody>
 </table></div>
 
-<h2 id="rules">Rules shared by all four systems<a class="heading-anchor" href="#rules" aria-label="Link to this section">#</a></h2>
+<h2 id="rules">How these files are read<a class="heading-anchor" href="#rules" aria-label="Link to this section">#</a></h2>
 <ul>
-  <li>Files always go in the <strong><code>infinity</code></strong> namespace folder (<code>data/infinity/…</code>), in your addon pack or mod. The <strong>file name
-    is the ID</strong>.</li>
-  <li>Files are read from every mod and every pack in the <code>addonpacks</code> folder. If two packs have a file with the same name, the
-    higher-priority pack wins, so an addon can replace one of the mod's own files.</li>
-  <li>File names starting with <code>_</code> are ignored (handy for templates and disabled files).</li>
-  <li>They're read once at startup. <strong>Restart the game</strong> after changing them; <code>/reload</code> isn't enough.</li>
-  <li>Parsing is lenient: an invalid value falls back to its default, an invalid file is skipped, and the problem is logged once
-    (<code>Gauntlet stone &lt;id&gt;: …</code>, <code>Gauntlet skin …</code>, <code>Custom gauntlet …</code>, <code>Ground item …</code>). Check
+  <li>They always go in the <strong><code>infinity</code></strong> namespace folder (<code>data/infinity/…</code>) of your pack or mod. The
+    <strong>file name is the ID</strong>.</li>
+  <li>The mod reads them from every mod and every pack in the <code>addonpacks</code> folder. If two packs have a file with the same name, the
+    higher priority pack wins, so an addon can replace one of the mod's own files.</li>
+  <li>File names starting with <code>_</code> are skipped, which is handy for templates and switched off files.</li>
+  <li>They're only read when the game starts, so <strong>restart</strong> after changing them. <code>/reload</code> won't pick them up.</li>
+  <li>A bad value falls back to its default and a broken file is skipped. Either way it gets logged once
+    (<code>Gauntlet stone &lt;id&gt;: …</code>, <code>Gauntlet skin …</code>, <code>Custom gauntlet …</code>, <code>Ground item …</code>), so check
     <code>logs/latest.log</code> if something doesn't show up.</li>
 </ul>
 
-<h2 id="addon-pack">Setting up an addon pack<a class="heading-anchor" href="#addon-pack" aria-label="Link to this section">#</a></h2>
-<p>Infinity Stone Core is a Palladium addon itself, and its content uses Palladium's addon pack format. The quickest way to extend it is
-  your own addon pack: a folder (or zip) in <code>.minecraft/addonpacks/</code>, containing data, assets and Palladium's <code>addon/</code> folder for
-  new items and blocks. See <a href="https://docs.threetag.net/docs/intro/">Palladium's documentation</a> for the pack format itself.</p>
-<div class="code-block"><div class="code-head"><span>Example: a pack that adds a stone</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-text">addonpacks/chaos_stone_pack/
+<h2 id="addon-pack">Making an addon pack<a class="heading-anchor" href="#addon-pack" aria-label="Link to this section">#</a></h2>
+<p>Infinity Stone Core is a Palladium addon itself, and its content uses Palladium's addon pack format. The easiest way to add to it is your
+  own addon pack: a folder (or zip) in <code>.minecraft/addonpacks/</code> with data, assets and Palladium's <code>addon/</code> folder for new
+  items and blocks. The pack format itself is covered in <a href="https://docs.threetag.net/docs/intro/">Palladium's documentation</a>.</p>
+<div class="code-block"><div class="code-head"><span>A pack that adds a stone</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-text">addonpacks/chaos_stone_pack/
 ├── pack.mcmeta
-├── addon/example/items/chaos_stone.json                 the item (Palladium addon item)
+├── addon/example/items/chaos_stone.json                 the item (a Palladium addon item)
 ├── assets/example/models/item/chaos_stone.json          {&quot;parent&quot;: &quot;infinity:item/infinity_stone&quot;}
 ├── assets/example/lang/en_us.json
 ├── data/example/palladium/powers/chaos_stone.json       the stone's power and abilities
 ├── data/infinity/gauntlet_stones/chaos_stone.json       makes it fit in the gauntlet
-└── data/infinity/ground_items/chaos_stone.json          optional: lies on the ground like a stone</code></pre></div>
-<p>The same files work inside a regular mod's <code>src/main/resources</code>.</p>
+└── data/infinity/ground_items/chaos_stone.json          optional, makes it lie on the ground like a stone</code></pre></div>
+<p>The same files work in a normal mod's <code>src/main/resources</code>.</p>
 
-<h2 id="palladium">Working with the mod's powers<a class="heading-anchor" href="#palladium" aria-label="Link to this section">#</a></h2>
+<h2 id="palladium">Using the mod's powers<a class="heading-anchor" href="#palladium" aria-label="Link to this section">#</a></h2>
 <ul>
   <li>The stone powers are <code>infinity:space_stone</code>, <code>infinity:mind_stone</code>, <code>infinity:reality_stone</code>,
-    <code>infinity:power_stone</code>, <code>infinity:time_stone</code> and <code>infinity:soul_stone</code>; the gauntlet's is
-    <code>infinity:infinity_gauntlet</code>. Use <code>palladium:has_power</code> to check for them.</li>
-  <li>To check what's in a gauntlet use <code>infinity:gauntlet_slot</code>; for "is this stone available at all" use
-    <code>infinity:stone_equipped</code>. All conditions and ability types are on the <a href="../addons/abilities.html">reference page</a>.</li>
-  <li>To add the generated skin abilities to your own power, put an entry <code>{"infinity:generate": "gauntlet_skins"}</code> among its abilities,
-    as the gauntlet power does: it's replaced with every skin's apply ability and skill tree entry at load time.</li>
-  <li>Scoreboard objectives the mod uses, which conditions and energy bars can read: <code>DamageCycle</code> (Power level),
-    <code>SoulStorage</code> (souls), <code>tickrateCycle</code> and <code>timestonesidebar</code> (Time Stone step), <code>power_stone</code> …
-    <code>mind_stone</code> (1 while that stone is in the worn gauntlet).</li>
+    <code>infinity:power_stone</code>, <code>infinity:time_stone</code> and <code>infinity:soul_stone</code>. The gauntlet's is
+    <code>infinity:infinity_gauntlet</code>. Check for them with <code>palladium:has_power</code>.</li>
+  <li>To check what's in a gauntlet use <code>infinity:gauntlet_slot</code>. To check whether a stone is available at all use
+    <code>infinity:stone_equipped</code>. Every condition and ability type is on the <a href="../addons/abilities.html">reference page</a>.</li>
+  <li>To give your own power the generated skin abilities, add an entry <code>{"infinity:generate": "gauntlet_skins"}</code> to its abilities,
+    like the gauntlet power does. When it loads, that entry is swapped for every skin's apply ability and tree entry.</li>
+  <li>Scoreboard objectives you can read in conditions and energy bars: <code>DamageCycle</code> (power level), <code>SoulStorage</code>
+    (souls), <code>tickrateCycle</code> and <code>timestonesidebar</code> (Time Stone step), and <code>power_stone</code> to <code>mind_stone</code>
+    (1 while that stone is in the worn gauntlet).</li>
 </ul>
 
 <h2 id="in-game-docs">In-game reference<a class="heading-anchor" href="#in-game-docs" aria-label="Link to this section">#</a></h2>
-<p>When Palladium generates its documentation (into <code>mods/documentation/</code>), the mod adds reference pages for its formats under
+<p>When Palladium generates its documentation (into <code>mods/documentation/</code>), the mod adds its own pages under
   <code>infinity/</code>: <code>gauntlet_stones.html</code>, <code>gauntlet_skins.html</code>, <code>custom_gauntlets.html</code> and
-  <code>ground_items.html</code>, and documents its ability and condition types in Palladium's own pages. They're generated from the code, so
-  they always match the version you have installed.</p>
+  <code>ground_items.html</code>. Its ability and condition types go into Palladium's own pages. They're generated from the code, so they
+  always match the version you have.</p>
 
 <h2 id="examples">Real examples<a class="heading-anchor" href="#examples" aria-label="Link to this section">#</a></h2>
 <ul>
   <li><strong>Pugmeowla's Infintrix</strong> turns four Omnitrixes into power gauntlets with gloves (custom gauntlets).</li>
-  <li><strong>Infinity Protocol</strong> makes the Iron Man MK85 suit an item gauntlet whose stones only show during its nano-gauntlet animation.</li>
-  <li>The mod's own <code>data/infinity/gauntlet_skins</code>, <code>gauntlet_stones</code> and <code>ground_items</code> folders are good templates.</li>
+  <li><strong>Infinity Protocol</strong> makes the Iron Man MK85 suit an item gauntlet whose stones only show during its nano gauntlet animation.</li>
+  <li>The mod's own <code>data/infinity/gauntlet_skins</code>, <code>gauntlet_stones</code> and <code>ground_items</code> folders are good to copy from.</li>
 </ul>
 
     </article>
-    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="../addons/stones.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"><span><strong>Custom Stones</strong><small>The gauntlet_stones format: make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.</small></span></a><a class="related-card" href="../addons/skins.html"><img src="../assets/img/skin-renders/sith_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Gauntlet Skin Files</strong><small>The gauntlet_skins format: add an Infinity Gauntlet skin with one JSON file and its textures, including custom models, glow layers and replacement rules.</small></span></a><a class="related-card" href="../addons/custom-gauntlets.html"><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Custom Gauntlets</strong><small>The gauntlets format: make an item or power from another mod work as an Infinity Gauntlet, with stones drawn on the player model.</small></span></a><a class="related-card" href="../addons/abilities.html"><img src="../assets/img/icons/energy_blast.png" alt="" class="px" loading="lazy"><span><strong>Ability &amp; Condition Reference</strong><small>Every ability type and condition the mod registers with Palladium, with their properties and defaults, for use in your own powers.</small></span></a></div></section>
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid"><a class="related-card" href="../addons/stones.html"><img src="../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"><span><strong>Custom Stones</strong><small>The gauntlet_stones format. Make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.</small></span></a><a class="related-card" href="../addons/skins.html"><img src="../assets/img/skin-renders/sith_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Gauntlet Skin Files</strong><small>The gauntlet_skins format: add an Infinity Gauntlet skin with one JSON file and its textures, including custom models, glow layers and replacement rules.</small></span></a><a class="related-card" href="../addons/custom-gauntlets.html"><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px" loading="lazy"><span><strong>Custom Gauntlets</strong><small>The gauntlets format: make an item or power from another mod work as an Infinity Gauntlet, with stones drawn on the player model.</small></span></a><a class="related-card" href="../addons/abilities.html"><img src="../assets/img/icons/energy_blast.png" alt="" class="px" loading="lazy"><span><strong>Ability &amp; Condition Reference</strong><small>Every ability type and condition the mod registers with Palladium, with their properties and defaults, for use in your own powers.</small></span></a></div></section>
     <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../commands.html"><small>← Previous</small><span>Commands</span></a><a class="pager-link next" href="../addons/stones.html"><small>Next →</small><span>Custom Stones</span></a></nav>
     <footer class="footer">
-      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. Documents mod version 7.4 for Minecraft 1.20.1.</p>
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. These pages document version 8.0 for Minecraft 1.20.1.</p>
       <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../index.html">All projects</a></p>
     </footer>
   </main>
-  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#extension-points">Extension points</a></li><li class="toc-l2"><a href="#rules">Rules shared by all four systems</a></li><li class="toc-l2"><a href="#addon-pack">Setting up an addon pack</a></li><li class="toc-l2"><a href="#palladium">Working with the mod's powers</a></li><li class="toc-l2"><a href="#in-game-docs">In-game reference</a></li><li class="toc-l2"><a href="#examples">Real examples</a></li></ol></aside>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#extension-points">What you can add</a></li><li class="toc-l2"><a href="#rules">How these files are read</a></li><li class="toc-l2"><a href="#addon-pack">Making an addon pack</a></li><li class="toc-l2"><a href="#palladium">Using the mod's powers</a></li><li class="toc-l2"><a href="#in-game-docs">In-game reference</a></li><li class="toc-l2"><a href="#examples">Real examples</a></li></ol></aside>
 </div>
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
-<script src="../assets/js/search-index.js" defer></script>
+<script src="../assets/js/search-8.0.js" defer></script>
 <script src="../assets/js/wiki.js" defer></script>
 </body>
 </html>

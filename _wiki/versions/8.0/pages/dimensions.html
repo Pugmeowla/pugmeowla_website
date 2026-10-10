@@ -1,0 +1,76 @@
+---
+title: Dimensions and Travel
+nav: Dimensions
+description: Vormir, Morag, Svartalfheim, the Garden, the Soulworld and the Marvel space dimension, and how to get to them with the Space Stone, Ad Astra or Cosmic Horizons.
+lead: Four planets, a pocket dimension for souls and a bit of space. How to get there and what you'll find.
+icon: renders/morag_stone.png
+related: structures.html, stones/space.html, stones/soul.html, compatibility.html
+---
+<h2 id="travel">Getting to the planets</h2>
+<p>Vormir, Morag, Svartalfheim and the Garden have no portal blocks. You get there with the Space Stone or with a rocket from a space
+  mod.</p>
+<div class="travel-options">
+  <div class="travel-option">
+    <img class="px" src="@w/assets/img/stones/space_stone.png" alt="">
+    <div><strong>The Space Stone</strong>
+      <p>Unlock {{ab space/teleport}}, type the dimension ID and some coordinates, and walk through. The dimension field suggests every
+      dimension the server has. Works without any other mod.</p></div>
+  </div>
+  <div class="travel-option">
+    <img src="@w/assets/img/compat/ad_astra.png" alt="Ad Astra logo">
+    <div><strong>Ad Astra</strong>
+      <p>The planets are in Ad Astra's planet list. You need a <strong>Tier 4 rocket</strong> to reach them, like Ad Astra's own far
+      planets.</p></div>
+  </div>
+  <div class="travel-option">
+    <img src="@w/assets/img/compat/cosmic.png" alt="Cosmic Horizons logo">
+    <div><strong>Cosmic Horizons</strong>
+      <p>The mod adds a Marvel solar system to Cosmic Horizons with the Garden, Vormir, Morag and Svartalfheim in it. Fly your ship there
+      and land on the planet you want.</p></div>
+  </div>
+</div>
+<pre data-lang="text" data-title="Teleport GUI examples">
+Dimension: infinity:vormir       X: 212   Y: 130   Z: 99      (the Soul Guardian)
+Dimension: infinity:morag        X: 0     Y: 120   Z: 0
+Dimension: infinity:svartelheim  X: 0     Y: 120   Z: 0
+Dimension: infinity:garden       X: 0     Y: 100   Z: 0
+</pre>
+<p>Portals always drop you on safe ground near the coordinates, so a rough Y is fine. Operators can also just use
+  <code>/execute in infinity:vormir run tp @s 212 130 99</code>.</p>
+
+<h2 id="vormir">Vormir</h2>
+<p><code>infinity:vormir</code>. Ground made of {{item vormir_sand}} and {{item vormir_stone}}, no sky light, sea level 63.</p>
+<p>The Soul Stone's planet. Vormir's Edge and the Soul Guardian are always in the same place, roughly X 0 to 271 and Z 0 to 191, with the
+  Guardian at <code>212 121 99</code>. See {{page structures.html#vormir Structures}} and {{page stones/soul.html#obtaining Soul Stone}}.</p>
+
+<h2 id="morag">Morag</h2>
+<p><code>infinity:morag</code>. Ground made of {{item morag_stone}}, no sky light, sea level 100.</p>
+<p>A flooded planet. The {{page structures.html#morag-temple Morag Temple}} with the Orb is on the ocean floor, a long way from the origin,
+  so bring water breathing (the Space Stone has it).</p>
+
+<h2 id="svartalfheim">Svartalfheim</h2>
+<p><code>infinity:svartelheim</code>. Ground made of {{item svartelheim_stone}} and {{item svartelheim_sand}}, no sky light, sea level 100.</p>
+<p>Home of the Dark Elves. {{page structures.html#uru-meteor Uru meteor craters}} are all over the surface, and the
+  {{page structures.html#aether-chamber Aether Chamber}} is buried near the bottom of the world.</p>
+
+<h2 id="garden">The Garden</h2>
+<p><code>infinity:garden</code>. Normal day and night, with garden, plains and river biomes.</p>
+<p>The quiet farm planet where Thanos retires. Beds and respawn anchors work and raids can happen. There are no stones or structures here,
+  it's somewhere to go once it's all over.</p>
+
+<h2 id="soulworld">The Soulworld</h2>
+<p><code>infinity:soulworld</code>. A flat world of smooth red sandstone under a thin layer of water. It's always noon.</p>
+<ul>
+  <li><strong>Getting in</strong>: the Soul Stone's {{ab soul/enter_soulworld}} (you and everything within 5 blocks, at Y 72), the
+    {{page gauntlet/snap.html Snap}} (hostile mobs and other players) or Destroy Stones.</li>
+  <li><strong>Getting out</strong>: Exit Soulworld sends everyone back where they came from. If you don't have that, walk to
+    <strong>X 0, Z 0</strong>. There's a 5 × 5 shaft straight down to an <strong>End portal</strong> at the bottom of the world.</li>
+  <li><strong>The Snap cell</strong> at <code>1000 78 1000</code> is a lit bedrock room with an oak door on the south side. Snapped mobs and
+    players end up inside it.</li>
+  <li>Anything sent back by Exit Soulworld that didn't come in through Enter Soulworld lands in the Overworld above the same X and Z, with
+    slow falling.</li>
+</ul>
+
+<h2 id="marvel">Marvel (space)</h2>
+<p><code>infinity:marvel</code>. An empty space dimension used for the Marvel solar system in Cosmic Horizons. You aren't meant to go there
+  without it.</p>

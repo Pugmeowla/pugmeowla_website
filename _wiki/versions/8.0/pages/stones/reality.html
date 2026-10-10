@@ -1,0 +1,47 @@
+---
+title: Reality Stone
+description: The Reality Stone's block copying, size changing, invisibility and weather control.
+lead: Change blocks, your size, the weather, and whether anyone can see you. The red stone is the Aether.
+icon: stones/reality_stone.png
+related: containers.html, dimensions.html, structures.html, compatibility.html
+---
+<h2 id="overview">Overview</h2>
+<div class="item-cards">
+  <div class="item-card"><div class="item-detail">
+    <div class="item-detail-head"><img class="px item-detail-img" src="@w/assets/img/stones/reality_stone.png" alt="Reality Stone"><div><h3 class="no-toc">Reality Stone</h3><code>infinity:reality_stone</code></div></div>
+    <dl><dt>Color</dt><dd>Red (<code>#FF0130</code>)</dd><dt>Container</dt><dd>{{item aether}}</dd>
+    <dt>Found in</dt><dd><a href="@/structures.html#aether-chamber">Aether Chamber</a>, Svartalfheim</dd><dt>Power</dt><dd><code>infinity:reality_stone</code></dd></dl>
+  </div></div>
+</div>
+<p>You get the Reality Stone's power by holding the stone or the Aether in either hand, wearing the stone in the Curios head slot,
+  putting it in your gauntlet, or putting it in a Cosmi-Rod. Drop the Aether and hit it to get the stone. To turn it back into the
+  Aether, hold the stone in your off hand and use {{ab aether/insert_reality_stone}} with an {{item empty_aether}}, or right-click an
+  Empty Aether on the ground while holding the stone.</p>
+
+<h2 id="abilities">Abilities</h2>
+{{abilities reality}}
+
+<h2 id="skill-tree">Skill tree costs</h2>
+<p>Block Saving costs 128 {{item aspects_of_existance}}. Everything else costs one.</p>
+{{costtable reality}}
+
+<h2 id="size-steps">Size Changing steps</h2>
+<p>Each scroll while Size Control is on moves one step. These are the height and width scales set through Pehkui:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Direction</th><th>Steps</th></tr></thead>
+  <tbody>
+    <tr><td>Scroll up (bigger)</td><td>2×, 3×, 4×, 5×. You also move faster.</td></tr>
+    <tr><td>Normal</td><td>1×</td></tr>
+    <tr><td>Scroll down (smaller)</td><td>0.9×, 0.8×, 0.7×, 0.6×, 0.5×, 0.4×, 0.3×, 0.2×, 0.1×</td></tr>
+  </tbody>
+</table></div>
+<div class="callout compat"><span class="callout-title">Pehkui</span><p>Size Changing, and the scaling part of Invisibility, use Pehkui's
+  <code>/scale</code> command. They don't do anything without Pehkui.</p></div>
+
+<h2 id="reality-paste">Copy and paste</h2>
+<ul>
+  <li>Copy works up to 30 blocks away and won't copy unbreakable blocks.</li>
+  <li>Paste changes the block you're looking at, or every non-air block within 5 blocks of it while you're sneaking.</li>
+  <li>Paste checks build permissions and claims, so it won't work on land you can't build on, and it never touches unbreakable blocks.</li>
+  <li>Your saved block stays through death and relogging. The Paste icon shows what it is.</li>
+</ul>

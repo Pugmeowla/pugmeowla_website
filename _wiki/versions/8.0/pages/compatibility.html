@@ -1,0 +1,82 @@
+---
+title: Compatibility and Configuration
+nav: Compatibility and Config
+description: Required and optional mods, every integration, the config file, upgrading old worlds and known problems.
+lead: What the mod needs, what it works with, and the one setting you can change.
+icon: renders/soul_guardian_telephone.png
+related: getting-started.html, troubleshooting.html, addons/index.html, dimensions.html
+---
+<h2 id="versions">Versions</h2>
+<div class="table-wrap"><table><tbody>
+  <tr><th>Mod version</th><td>8.0 (these pages)</td></tr>
+  <tr><th>Minecraft</th><td>1.20.1</td></tr>
+  <tr><th>Loader</th><td>Forge (built on 47.4.20, any loader from 43 up is accepted). There's no Fabric build.</td></tr>
+  <tr><th>Mod ID</th><td><code>infinity</code></td></tr>
+</tbody></table></div>
+
+<h2 id="required">Required mods</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Mod</th><th>Version range</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td>Palladium</td><td><code>[1.20.1-4.2.0,)</code></td><td>The whole power system: stones, abilities, skill trees, render layers and addon packs.</td></tr>
+    <tr><td>Chrono API</td><td><code>[1.0.0,)</code></td><td>Changing the tick rate and pausing time (Slow Time, Time Freeze, Time Immunity).</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="integrations">Integrations</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Mod</th><th>What you get</th></tr></thead>
+  <tbody>
+    <tr><td><img class="mod-logo" src="@w/assets/img/compat/ad_astra.png" alt=""><strong>Ad Astra</strong></td><td>The Garden, Vormir, Morag and Svartalfheim as planets. You need a <strong>Tier 4 rocket</strong> to get to them.</td></tr>
+    <tr><td><img class="mod-logo" src="@w/assets/img/compat/cosmic.png" alt=""><strong>Cosmic Horizons</strong></td><td>A Marvel solar system (dimension <code>infinity:marvel</code>) with the same four planets to fly to.</td></tr>
+    <tr><td><strong>Curios API</strong></td><td>Hands slot for the Infinity Gauntlet (its visibility button works too), head slot for the six stones, necklace slot for the Eye of Agamotto.</td></tr>
+    <tr><td><strong>Pehkui</strong></td><td>Reality Stone Size Changing and Invisibility scaling, and the Mind Stone's Intangibility hitbox and reach. Those parts do nothing without it.</td></tr>
+    <tr><td><strong>GeckoLib</strong> (through Palladium)</td><td>Animated and custom models: the Orb, the Eye of Agamotto, gauntlet skins, stones in their sockets and Malekith.</td></tr>
+    <tr><td><strong>JEI</strong></td><td>Info pages on the stones, containers, cast, shards, uru and dwarf star meteor saying where to find them.</td></tr>
+    <tr id="tinkers-construct"><td><strong>Tinkers' Construct</strong></td><td>Titanium, gold titanium alloy and ferro titanium gold alloy as materials, four molten fluids (uru, titanium, gold titanium alloy, ferro titanium gold alloy) and casting for the gauntlet and the ferro titanium gold ingot.</td></tr>
+    <tr><td><strong>Fsang's Heropack</strong></td><td>Steel and gold titanium share item tags with Fsang's, and Fsang's uru ingots can be used for uru plates.</td></tr>
+    <tr><td><strong>Pugmeowla's Infintrix</strong> (with Alien Evolution, Into the Omniverse or Omnitrix Evolution)</td><td>Omnitrixes work as custom gauntlets.</td></tr>
+    <tr><td><strong>Infinity Protocol</strong></td><td>The Iron Man MK85 suit works as a gauntlet, with the stones only showing during its nano gauntlet animation.</td></tr>
+    <tr><td><strong>Pugmeowla's Herbs of Wakanda</strong></td><td>The Black Panther necklace gives the Infinity Gauntlet power (chest or Curios necklace).</td></tr>
+    <tr><td><strong>Pugmeowla's Infinity Generator</strong></td><td>Its generator shows up in the Infinity Stone Core creative tab.</td></tr>
+    <tr><td><strong>Ultor Infinitus</strong> (Infinity Ultron)</td><td>A player with the <code>InfinityUltron</code> tag can fire the Mind Stone beam from their head.</td></tr>
+    <tr><td><strong>Powerborne</strong></td><td>A thrown Stormbreaker near someone wearing the gauntlet switches off the Soul Stone's defenses and hurts them.</td></tr>
+    <tr><td><strong>Palladium items</strong></td><td>Vibranium ingot, vibranium circuit and the flux capacitors unlock skins.</td></tr>
+    <tr><td><strong>Trinkets</strong></td><td>Glove slot data for a Fabric build. <span class="status legacy">Not used on Forge</span></td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="config">Config</h2>
+<p>There's one config file, <code>config/infinity-common.toml</code>:</p>
+<pre data-lang="text" data-title="config/infinity-common.toml">
+[orb]
+	#Number of left/right turns in the Orb's combination lock.
+	#Each world gets its own random combination; changing this generates a new one.
+	#Range: 1 ~ 64
+	combinationLength = 15
+</pre>
+<p>Everything else is set up through data: the {{page addons/index.html addon systems}}, Palladium power files, and tags like
+  <code>#infinity:snap_hostile</code> and <code>#infinity:projectiles</code>.</p>
+
+<h2 id="world-upgrades">Old worlds</h2>
+<p>Things from older versions get converted when you load the world:</p>
+<ul>
+  <li>Stones and containers placed on the ground as armor stand props turn into ground items when their chunk loads.</li>
+  <li>The old one rod per stone Cosmi-Rods turn into a single empty Cosmi-Rod.</li>
+  <li>Old <em>Empty Eye of Agamotto</em> items still work and turn into the normal Eye.</li>
+  <li>Whether the Power Stone was taken moves from an old marker block on Morag into world data, and old force loaded chunks on Morag and
+    the Soulworld are released.</li>
+  <li>Worlds that already built Vormir keep it, and the Soul Guardian isn't spawned twice.</li>
+  <li>Projectiles stopped by the old Time Stone function get let go.</li>
+</ul>
+
+<h2 id="limitations">Known problems</h2>
+<ul>
+  <li>Slow Time and Time Freeze change the tick rate for the <strong>whole server</strong>.</li>
+  <li>Explorer maps for structures outside the Overworld (Morag Temple, Aether Chamber, Sanctuary) are filled from the Overworld and can come out blank.</li>
+  <li><code>/infinity gauntlet skin</code> doesn't need a permission level, and <code>clear</code> gives back the skin's unlock item.</li>
+  <li>Big Meteor Storms can lag.</li>
+  <li>Size Changing, Invisibility scaling and the Intangibility hitbox need Pehkui.</li>
+  <li>Some in-game descriptions are older than the code. The Soul Guardian Telephone sends the Guardian back after one minute, not ten,
+    and Summon Zombie summons six zombies, not seven.</li>
+</ul>

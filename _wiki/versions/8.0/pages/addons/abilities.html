@@ -1,0 +1,51 @@
+---
+title: Ability & Condition Reference
+nav: Ability Reference
+description: Every ability type and condition the mod registers with Palladium, with their properties and defaults, for use in your own powers.
+lead: The ability types and conditions the stones are built from. You can use all of them in your own Palladium powers.
+icon: icons/energy_blast.png
+toc: h2
+related: addons/index.html, abilities.html, addons/stones.html, addons/custom-gauntlets.html
+---
+<h2 id="using">Using them</h2>
+<p>All of these work in any Palladium power file (<code>data/&lt;namespace&gt;/palladium/powers/*.json</code>) like Palladium's own types. Properties left
+  out use the defaults listed here. A power that gives a custom stone portals in a fire style might look like this:</p>
+<pre data-lang="json" data-title="data/example/palladium/powers/chaos_stone.json">
+{
+  "name": "Chaos Stone",
+  "icon": "example:chaos_stone",
+  "gui_display_type": "tree",
+  "abilities": {
+    "sling_ring": {
+      "type": "infinity:portal",
+      "title": "Sling Ring",
+      "style": "fire",
+      "size": 1.5,
+      "conditions": {
+        "enabling": [ { "type": "palladium:action", "key_type": "key_bind", "cooldown": 40 } ]
+      }
+    },
+    "blast": {
+      "type": "infinity:energy_blast",
+      "title": "Chaos Blast",
+      "damage": 8.0,
+      "color": "#E0115F",
+      "scale_with_power_level": false,
+      "conditions": {
+        "enabling": [ { "type": "palladium:action", "key_type": "key_bind", "cooldown": 10 } ],
+        "unlocking": [ { "type": "infinity:gauntlet_slot", "item": { "item": "example:chaos_stone" } } ]
+      }
+    }
+  }
+}
+</pre>
+<p>Palladium's generated documentation (<code>mods/documentation/</code>) lists the same types with the exact property formats for your installed version.</p>
+
+<h2 id="ability-types">Ability types</h2>
+{{reference abilities}}
+
+<h2 id="conditions">Conditions</h2>
+{{reference conditions}}
+
+<h2 id="other-types">Other registered types</h2>
+{{reference other}}

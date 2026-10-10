@@ -1,14 +1,13 @@
-// {{macro args}} used inside _wiki/pages. Each returns HTML; "@/" is the wiki root and is rewritten per page.
-import { site } from '../site.mjs';
-import { stones, stoneById } from '../data/stones.mjs';
-import { abilities, groups } from '../data/abilities.mjs';
-import { items, itemById, categories } from '../data/items.mjs';
-import { skins } from '../data/skins.mjs';
-import { abilityTypes, conditions, otherTypes } from '../data/reference.mjs';
+// {{macro args}} used inside pages. Each returns HTML. "@/" is the version root, "@w/" the wiki root (shared assets).
+// createMacros(data) builds the macro set for one documented version from that version's data files.
 import { escapeHtml, slugify, stripTags } from './util.mjs';
 
+export function createMacros({ site, stones, abilities, groups, items, categories, skins = [],
+  abilityTypes = [], conditions = [], otherTypes = [] }) {
+const stoneById = Object.fromEntries(stones.map((s) => [s.id, s]));
+const itemById = Object.fromEntries(items.map((item) => [item.id, item]));
 const img = (src, alt = '', cls = 'px') => src
-  ? `<img src="@/assets/img/${src}" alt="${escapeHtml(alt)}" class="${cls}" loading="lazy">`
+  ? `<img src="@w/assets/img/${src}" alt="${escapeHtml(alt)}" class="${cls}" loading="lazy">`
   : `<span class="${cls} img-missing" role="img" aria-label="${escapeHtml(alt || 'No image')}"></span>`;
 
 const fullId = (id) => (id.includes(':') ? id : `infinity:${id}`);
@@ -74,8 +73,8 @@ function itemDetail(item) {
   </div>`;
 }
 
-export const macros = {
-  version: () => escapeHtml(site.modVersion),
+const macros = {
+  version: () => escapeHtml(site.label),
 
   count([what]) {
     const lists = { abilities, items, skins, stones };
@@ -112,7 +111,7 @@ export const macros = {
   costtable([group]) {
     const list = abilities.filter((a) => a.group === group && a.cost !== null && a.cost !== undefined);
     const rows = list.map((a) => `<tr><td><a href="${abilityUrl(a)}">${escapeHtml(a.name)}</a></td><td>${a.cost === 0 ? 'Free' : a.cost}</td>`
-      + `<td>${(a.requires || []).map((k) => escapeHtml(getAbility(`${group}/${k}`).name)).join(', ') || '—'}</td><td>${escapeHtml(a.activation)}</td></tr>`).join('');
+      + `<td>${(a.requires || []).map((k) => escapeHtml(getAbility(`${group}/${k}`).name)).join(', ') || 'Nothing'}</td><td>${escapeHtml(a.activation)}</td></tr>`).join('');
     const total = list.reduce((sum, a) => sum + a.cost, 0);
     return `<div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead>`
       + `<tbody>${rows}</tbody><tfoot><tr><td>Everything</td><td>${total}</td><td colspan="2"></td></tr></tfoot></table></div>`;
@@ -157,8 +156,8 @@ export const macros = {
       return `<section role="tabpanel" id="panel-${s.id}" aria-labelledby="tab-${s.id}" class="selector-panel" style="--accent:${s.color}"${i ? ' hidden' : ''}>
   <div class="selector-visual">${img(`stones/${s.id}_stone.png`, s.name, 'px selector-stone')}</div>
   <div class="selector-info"><h3 class="no-toc">${escapeHtml(s.name)}</h3><p>${escapeHtml(s.tagline)}</p>
-  <dl><dt>Found in</dt><dd>${container}</dd><dt>Location</dt><dd><a href="@/structures.html#${slugify(s.structureName)}">${escapeHtml(s.structureName)}</a> (${escapeHtml(s.dimension)})</dd>
-  <dt>Abilities</dt><dd>${list.length} — ${list.slice(0, 5).map((a) => `<a href="${abilityUrl(a)}">${escapeHtml(a.name)}</a>`).join(', ')}${list.length > 5 ? '…' : ''}</dd></dl>
+  <dl><dt>Found in</dt><dd>${container}</dd><dt>Location</dt><dd><a href="@/structures.html#${s.anchor || slugify(s.structureName)}">${escapeHtml(s.structureName)}</a> (${escapeHtml(s.dimension)})</dd>
+  <dt>Abilities</dt><dd>${list.length}, including ${list.slice(0, 5).map((a) => `<a href="${abilityUrl(a)}">${escapeHtml(a.name)}</a>`).join(', ')}</dd></dl>
   <p><a class="button-link" href="@/stones/${s.id}.html">Open the ${escapeHtml(s.name)} page →</a></p></div>
 </section>`;
     }).join('');
@@ -191,7 +190,7 @@ export const macros = {
 
   skingallery() {
     return `<div class="skin-grid">${skins.map((skin) => `<article class="skin-card" id="skin-${slugify(skin.id)}">
-  <button type="button" class="skin-zoom" data-zoom="@/assets/img/skin-renders/${skin.id}.png" data-caption="${escapeHtml(skin.title)}" aria-label="Enlarge ${escapeHtml(skin.title)}">${img(`skin-renders/${skin.id}.png`, skin.title, 'px skin-img')}</button>
+  <button type="button" class="skin-zoom" data-zoom="@w/assets/img/skin-renders/${skin.id}.png" data-caption="${escapeHtml(skin.title)}" aria-label="Enlarge ${escapeHtml(skin.title)}">${img(`skin-renders/${skin.id}.png`, skin.title, 'px skin-img')}</button>
   <h3 class="no-toc">${escapeHtml(skin.title)}</h3>
   <p class="skin-unlock">${!skin.unlock
     ? '<span>Unlock:</span> <em>Secret</em>'
@@ -225,8 +224,11 @@ ${entry.props.length ? `<div class="table-wrap"><table><thead><tr><th>Property</
   },
 
   figure(args, options) {
-    return `<figure class="figure"><button type="button" class="zoomable" data-zoom="@/assets/img/${options.src}" data-caption="${escapeHtml(options.caption || '')}" aria-label="Enlarge image">`
-      + `<img src="@/assets/img/${options.src}" alt="${escapeHtml(options.alt || options.caption || '')}" class="${options.pixel === 'false' ? '' : 'px'}" loading="lazy"></button>`
+    return `<figure class="figure"><button type="button" class="zoomable" data-zoom="@w/assets/img/${options.src}" data-caption="${escapeHtml(options.caption || '')}" aria-label="Enlarge image">`
+      + `<img src="@w/assets/img/${options.src}" alt="${escapeHtml(options.alt || options.caption || '')}" class="${options.pixel === 'false' ? '' : 'px'}" loading="lazy"></button>`
       + `${options.caption ? `<figcaption>${options.caption}</figcaption>` : ''}</figure>`;
   },
 };
+
+return macros;
+}

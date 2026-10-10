@@ -1,0 +1,89 @@
+---
+title: Structures
+description: Every structure the mod adds, where it generates, how rare it is, what's inside and how to find it.
+lead: What generates where, and what each structure hides.
+icon: renders/vormir_sand.png
+related: finding-stones.html, dimensions.html, containers.html, commands.html
+---
+<h2 id="summary">Summary</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Structure</th><th>ID</th><th>Where</th><th>How common</th><th>What's there</th></tr></thead>
+  <tbody>
+    <tr><td><a href="#norse-village">Norse Village</a></td><td><code>infinity:norse_village</code></td><td>Overworld</td><td>One per world</td><td>{{item tesseract}}</td></tr>
+    <tr><td><a href="#sanctum-sanctorum">Sanctum Sanctorum</a></td><td><code>infinity:sanctum</code></td><td>Overworld</td><td>One per world</td><td>{{item eye_of_agamotto}}</td></tr>
+    <tr><td><a href="#sanctuary">Sanctuary</a></td><td><code>infinity:sanctuary</code></td><td>The End</td><td>One per world</td><td>{{item scepter}}</td></tr>
+    <tr><td><a href="#aether-chamber">Aether Chamber</a></td><td><code>infinity:aether</code></td><td>Svartalfheim, underground</td><td>One per world</td><td>{{item aether}}, Malekith</td></tr>
+    <tr><td><a href="#morag-temple">Morag Temple</a></td><td><code>infinity:morag_temple</code></td><td>Morag, ocean floor</td><td>One per world</td><td>{{item orb}}, arrow traps</td></tr>
+    <tr><td><a href="#vormir">Vormir's Edge</a></td><td>world feature</td><td>Vormir, always in the same place</td><td>One</td><td>The Soul Guardian</td></tr>
+    <tr><td><a href="#infinity-temple">Infinity Temple</a></td><td><code>infinity:infinity_temple</code></td><td>Overworld, any biome</td><td>Common</td><td>Loot chest, {{item temple_beacon}}</td></tr>
+    <tr><td><a href="#crashed-kree-ship">Crashed Kree Ship</a></td><td><code>infinity:crashed_kree_ship</code></td><td>Overworld, plains</td><td>Uncommon</td><td>{{item cosmi-rod}}</td></tr>
+    <tr><td><a href="#dwarf-star-meteor">Dwarf Star Meteor</a></td><td><code>infinity:dwarf_star_meteor</code></td><td>Overworld, any biome</td><td>Very common</td><td>{{item dwarf_star_meteor}}</td></tr>
+    <tr><td><a href="#uru-meteor">Uru Meteor</a></td><td><code>infinity:uru_meteor</code></td><td>Svartalfheim</td><td>Very common</td><td>{{item uru_ore}}</td></tr>
+  </tbody>
+</table></div>
+<p>You can find any of them with <code>/locate structure &lt;id&gt;</code> while you're in the right dimension. There aren't screenshots of the
+  structures here yet, the descriptions are from the structure files.</p>
+
+<h2 id="stone-structures">Stone structures</h2>
+<p>The five stone structures are placed like strongholds: exactly one per world, at a random angle on a ring around 0, 0. The distances
+  are rough and measured from the world origin.</p>
+
+<h3 id="norse-village">Norse Village</h3>
+<p>A small Norse church (15 × 24 × 23) in the Overworld, about <strong>18,500 to 35,300 blocks</strong> out. Dark oak signs and a lectern tell
+  its story, and the {{item tesseract}} hangs in an invisible item frame behind them. After the Nine Realms were at peace, Odin left the
+  Tesseract here in the care of Asgardian worshippers. It's a slightly redone version of the Norse Village from Lucraft's Heroes Expansion.</p>
+
+<h3 id="sanctum-sanctorum">Sanctum Sanctorum</h3>
+<p>Doctor Strange's sanctum (36 × 36 × 25), home of the Masters of the Mystic Arts, in the Overworld about <strong>7,300 to 14,000 blocks</strong>
+  out. The {{item eye_of_agamotto}} stands on an armor stand inside.</p>
+
+<h3 id="sanctuary">Sanctuary</h3>
+<p>Thanos's old domain (38 × 31 × 41), also called Chitauri space, out on the End islands about <strong>7,300 to 14,000 blocks</strong> from
+  the origin. The {{item scepter}} is on display in a glow item frame.</p>
+
+<h3 id="aether-chamber">Aether Chamber</h3>
+<p>A big buried chamber (56 × 118 × 57) that starts down around <strong>Y −60</strong> on Svartalfheim, about <strong>4,400 to 8,400 blocks</strong>
+  from the origin. The Dark Elves sealed the {{item aether}} in here after Bor decided it was too dangerous to destroy. It sits in a glow item
+  frame, guarded by <strong>Malekith</strong>: a husk with his own model, 100 health, 20 armor and 10 toughness, permanent Speed VI,
+  Strength VI and Resistance III, and Malekith's Sword. He's a proper fight, so bring armor.</p>
+
+<h3 id="morag-temple">Morag Temple</h3>
+<p>The flooded temple from Guardians of the Galaxy (71 × 28 × 34), on the ocean floor of Morag, about <strong>18,500 to 35,300 blocks</strong>
+  out. Two rows of dispensers full of <strong>Arrows of Harming VII</strong> cover the hall. The {{item orb}} rests on an armor stand.</p>
+
+<h3 id="vormir">Vormir's Edge</h3>
+<p>Vormir's cliff isn't a normal structure. It's built one chunk at a time, always in the same place on Vormir, covering X 0 to 271 and
+  Z 0 to 191 from Y 63 up. The <strong>Soul Guardian</strong> stands at the top at about <code>212 121 99</code> and only spawns once per world.
+  Vormir's Edge was built by DogBoi64. The Soul Guardian's trades are on {{page finding-stones.html#soul-stone Finding the Stones}}.</p>
+<div class="callout"><span class="callout-title">Older worlds</span><p>If your world already had Vormir from an older version of the mod,
+  it keeps it, and the Soul Guardian isn't spawned a second time.</p></div>
+
+<h3 id="decoys">Decoys</h3>
+<p>The Sanctum, Norse Village, Sanctuary, Aether Chamber and Morag Temple each have a <strong>fake</strong> twin (<code>*_fake</code>) with the
+  same building and nothing in the frame or on the stand. Fakes are rare (1% per 100 chunk region) and can show up anywhere their biome is
+  allowed. If you find one close to spawn, check how far from the origin you are.</p>
+
+<h3 id="history">How they used to be</h3>
+<ul>
+  <li>Before v3.3 the Morag Temple generated in the End.</li>
+  <li>In v3.3 and earlier the Aether Chamber was much smaller and generated in the Nether.</li>
+</ul>
+
+<h2 id="other-structures">Other structures</h2>
+
+<h3 id="infinity-temple">Infinity Temple</h3>
+<p>A small temple (11 × 7 × 11) all over the Overworld (one every 42 to 67 chunks, 69% chance). In the middle is a {{item temple_beacon}}
+  that shines a beam into the sky with no pyramid, so you can spot temples from far away. The chest always has <strong>1 to 4
+  {{item aspects_of_existance}}</strong>, plus 4 to 8 rolls of ores, ingots, diamonds, emeralds, golden apples, Palladium metals, the mod's own
+  metals and sometimes {{item shards_of_existance}}.</p>
+
+<h3 id="crashed-kree-ship">Crashed Kree Ship</h3>
+<p>A small crashed ship (24 × 8 × 7) in plains (one every 50 to 100 chunks, 20% chance). The chests are a joke ("Haha empty chests ;)").
+  The real prize is the {{item cosmi-rod}} in an invisible item frame. Like the Norse Village, it's a redone version of the one from
+  Heroes Expansion.</p>
+
+<h3 id="dwarf-star-meteor">Dwarf Star Meteor</h3>
+<p>A small crater (14 × 7 × 13) with {{item dwarf_star_meteor}} blocks in it. Common all over the Overworld (every 40 to 80 chunks, 95% chance).</p>
+
+<h3 id="uru-meteor">Uru Meteor</h3>
+<p>The same crater shape on Svartalfheim, made of Svartelheim Stone with {{item uru_ore}} in it.</p>

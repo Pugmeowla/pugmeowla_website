@@ -1,0 +1,87 @@
+---
+title: Skill Trees and Progression
+nav: Progression
+description: Aspects of Existence, how skill trees work, what every stone costs, Power Stone levels and Soul Storage.
+lead: What abilities cost, what order they unlock in, and how power levels and souls work.
+icon: renders/aspects_of_existance.png
+related: abilities.html, stones/power.html, stones/soul.html, structures.html
+---
+<h2 id="aspects-of-existence">Aspects of Existence</h2>
+{{itemcards aspects_of_existance shards_of_existance}}
+<p>Every stone ability is paid for with {{item aspects_of_existance}}. Every <a href="@/structures.html#infinity-temple">Infinity Temple</a>
+  chest has 1 to 4 of them, sometimes with some Shards of Existence too. You can also make them from Shards (see JEI). The Soul Guardian
+  takes them for its explorer maps as well.</p>
+
+<h2 id="unlocking">Unlocking abilities</h2>
+<ol>
+  <li>Get the stone's power (hold the stone or its container, put it in the gauntlet, and so on).</li>
+  <li>Open Palladium's powers screen and pick the stone's tree.</li>
+  <li>Click an ability whose requirements you meet. The Aspects are taken from your inventory and it stays unlocked.</li>
+</ol>
+<p>A few entries are free and work as switches. Flight Toggle, Screen Toggle, Daylight Cycle Toggle and Radiation Texture Toggle flip a
+  setting every time you click them. Some abilities also need other stones' powers at the moment you buy and use them, like Black Hole,
+  Meteor Storm and Immortality. Operators can unlock or lock everything with <a href="@/commands.html#infinity-unlock-stones">/infinity unlock_stones</a>.</p>
+
+<h2 id="costs">Costs per stone</h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Space"><h3 class="tab-label no-toc">Space Stone</h3>{{costtable space}}</section>
+  <section data-tab="Mind"><h3 class="tab-label no-toc">Mind Stone</h3>{{costtable mind}}</section>
+  <section data-tab="Reality"><h3 class="tab-label no-toc">Reality Stone</h3>{{costtable reality}}</section>
+  <section data-tab="Power"><h3 class="tab-label no-toc">Power Stone</h3>{{costtable power}}</section>
+  <section data-tab="Time"><h3 class="tab-label no-toc">Time Stone</h3>{{costtable time}}</section>
+  <section data-tab="Soul"><h3 class="tab-label no-toc">Soul Stone</h3>{{costtable soul}}</section>
+</div>
+
+<h2 id="power-levels">Power Stone levels</h2>
+<p>The Power Stone has a level from 0 to 11. It's kept in the <code>DamageCycle</code> scoreboard objective and shown on the purple
+  bar while you have the stone. Buy the levels in the tree one after another, then pick the one you want:</p>
+<ol>
+  <li>Turn on <strong>Damage Control</strong> in the ability bar.</li>
+  <li>Scroll up to go up a level and down to go down. You can't go past the highest level you've bought.</li>
+</ol>
+<div class="table-wrap"><table>
+  <thead><tr><th>Level</th><th>Cost</th><th>Total so far</th><th>Base attack damage (2<sup>level</sup>)</th><th>Energy Blast (3 × 2<sup>level</sup>)</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>Free</td><td>0</td><td>1</td><td>3</td></tr>
+    <tr><td>1</td><td>2</td><td>2</td><td>2</td><td>6</td></tr>
+    <tr><td>2</td><td>4</td><td>6</td><td>4</td><td>12</td></tr>
+    <tr><td>3</td><td>8</td><td>14</td><td>8</td><td>24</td></tr>
+    <tr><td>4</td><td>12</td><td>26</td><td>16</td><td>48</td></tr>
+    <tr><td>5</td><td>18</td><td>44</td><td>32</td><td>96</td></tr>
+    <tr><td>6</td><td>26</td><td>70</td><td>64</td><td>192</td></tr>
+    <tr><td>7</td><td>36</td><td>106</td><td>128</td><td>384</td></tr>
+    <tr><td>8</td><td>48</td><td>154</td><td>256</td><td>768</td></tr>
+    <tr><td>9</td><td>64</td><td>218</td><td>512</td><td>1,536</td></tr>
+    <tr><td>10</td><td>88</td><td>306</td><td>1,024</td><td>3,072</td></tr>
+    <tr><td>11</td><td>128</td><td>434</td><td>2,048</td><td>6,144</td></tr>
+    <tr><td>11 with all six stones</td><td colspan="2"></td><td>Infinite</td><td>Infinite</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><strong>Power Blast</strong> does 2<sup>level</sup> per hit. At full power it turns rainbow and explodes where it hits blocks.</li>
+  <li><strong>Rocket Burst</strong> damage is multiplied by level ÷ 11, so it does nothing at level 0. At level 11 it turns into <strong>Power Cyclone</strong>.</li>
+  <li><strong>Meteor Storm</strong> uses a moon 1 + level blocks across.</li>
+  <li>Your attack damage goes back to normal when you lose the Power Stone.</li>
+</ul>
+<p>If an operator locks your level unlocks again (with <code>/infinity lock_stones</code> for example), you drop to the highest level you
+  still have.</p>
+
+<h2 id="soul-storage">Soul Storage</h2>
+<p>Once you have {{ab soul/soul_storage}}, everything you kill gives you a soul, up to <strong>50</strong>. They're kept in the
+  <code>SoulStorage</code> scoreboard objective and shown on the orange bar. Clones and mobs you've already drained don't give one.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ability</th><th>Souls</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td>{{ab soul/soul_heal}}</td><td>−1</td><td>Heals 2 hearts. Does nothing at full health or with no souls.</td></tr>
+    <tr><td>{{ab soul/soul_drain}}</td><td>+1</td><td>Drains the mob you're looking at, which then stands still and turns grey.</td></tr>
+    <tr><td>Soul Drain while sneaking</td><td>−1</td><td>Gives a drained mob its soul back.</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="advancements">Advancements</h2>
+<p>The mod's advancement tab starts with <em>Pugmeowla's Infinity Stone Core</em> and follows the hunt: the gauntlet cast
+  (<em>Infinity Is Within Reach</em>), making the gauntlet (<em>"Fine, I'll do it myself"</em>), each container and its stone
+  (<em>The Jewel of Odin's Treasure Room</em>, <em>The Scepter of Loki</em>, <em>The Converter of Matter into Dark Matter</em>,
+  <em>The Power of a Celestial</em>, <em>The Sorcerers Quest</em>, plus one for each stone), the Cosmi-Rod (<em>It's called the Universal
+  Weapon. Oh, really?</em> and <em>Dance Battle</em>), the hammer (<em>It's Clobberin' Time!</em>), all six stones (<em>Six Stones, One
+  Gauntlet</em>), the Snap (<em>I Am Inevitable</em>) and destroying the stones (<em>Peace in our Time</em>).</p>

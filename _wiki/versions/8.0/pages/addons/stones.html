@@ -1,0 +1,99 @@
+---
+title: Custom Stones
+description: The gauntlet_stones format. Make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.
+lead: Any item can be an Infinity Stone. One file makes it fit the gauntlet, look like a stone and give a power.
+icon: stones/time_stone.png
+related: addons/index.html, addons/ground-items.html, addons/abilities.html, gauntlet/index.html
+---
+<h2 id="how-it-works">How it works</h2>
+<p>Every item that can go in the Infinity Gauntlet has a file in <code>data/infinity/gauntlet_stones/</code>, including the six Infinity
+  Stones. Once an item has one:</p>
+<ul>
+  <li>It fits in <strong>any</strong> of the gauntlet's six slots (but not twice), in custom gauntlets and in the Cosmi-Rod.</li>
+  <li>Everything is drawn from what's actually in each slot. The gauntlet's inventory icon colors that slot's pixel
+    (<code>textures/item/gauntlet_slots/slot_[n].png</code>), and the worn, held and ground models draw the stone on that slot's socket
+    (<code>geo/gauntlet_slots/slot_[n].geo.json</code>).</li>
+  <li>It looks like a 1.12.2 stone everywhere: its texture tinted with <code>color</code>, unlit, with two scrolling glints in
+    <code>glint_color</code>.</li>
+  <li>Its <code>power</code> is given while it's in any slot of the active gauntlet and taken away as soon as it comes out.</li>
+  <li>The gauntlet's tooltip lists it as " - Name" in <code>tooltip_color</code>, sorted by <code>tooltip_order</code>.</li>
+</ul>
+
+<h2 id="fields">Fields</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>item</code></td><td><strong>required</strong></td><td>The stone's item. It has to be registered, and an item can only be one stone.</td></tr>
+    <tr><td><code>color</code></td><td><code>#FFFFFF</code></td><td><code>#RRGGBB</code>. Tints the stone everywhere (item, gauntlet worn, held, on the ground, inventory icon, head) and colors its tooltip line and insert particles.</td></tr>
+    <tr><td><code>glint</code></td><td><code>true</code></td><td>Whether the two scrolling glints are drawn.</td></tr>
+    <tr><td><code>glint_color</code></td><td><code>color</code></td><td><code>#RRGGBB</code> color of the glints.</td></tr>
+    <tr><td><code>tooltip_color</code></td><td><code>color</code></td><td>Color of its line in the gauntlet tooltip. A chat color name (<code>aqua</code>, <code>light_purple</code>…) or <code>#RRGGBB</code>.</td></tr>
+    <tr><td><code>tooltip_order</code></td><td><code>100</code></td><td>Where it goes in the tooltip. Lower comes first. The six stones use 0 to 5.</td></tr>
+    <tr><td><code>power</code></td><td>none</td><td>Palladium power given while the stone is in any slot of the active gauntlet (off hand or Curios hands). In a Cosmi-Rod, a stone without <code>power</code> gives the power with the same ID as the item.</td></tr>
+    <tr><td><code>head</code></td><td><code>false</code></td><td>Lets the stone go in the Curios head slot, where it's drawn on the forehead and gives its power.</td></tr>
+    <tr><td><code>texture</code></td><td><code>infinity:textures/item/infinity_stone.png</code></td><td>The stone cube's texture, tinted by <code>color</code>. Uses the 1.12.2 layout, a 6×6×6 box UV cube on a 32×16 texture.</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="example">Example</h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Stone file">
+    <h3 class="tab-label no-toc">Stone file</h3>
+<pre data-lang="json" data-title="data/infinity/gauntlet_stones/chaos_stone.json">
+{
+  "item": "example:chaos_stone",
+  "color": "#E0115F",
+  "glint_color": "#FF7AA8",
+  "tooltip_color": "#E0115F",
+  "tooltip_order": 10,
+  "power": "example:chaos_stone",
+  "head": true
+}
+</pre>
+  </section>
+  <section data-tab="Item model">
+    <h3 class="tab-label no-toc">Item model</h3>
+    <p>To give the item the stone look in your inventory, use the mod's stone model as its parent:</p>
+<pre data-lang="json" data-title="assets/example/models/item/chaos_stone.json">
+{
+  "parent": "infinity:item/infinity_stone"
+}
+</pre>
+  </section>
+  <section data-tab="The real Time Stone">
+    <h3 class="tab-label no-toc">The real Time Stone</h3>
+<pre data-lang="json" data-title="data/infinity/gauntlet_stones/time_stone.json">
+{
+  "item": "infinity:time_stone",
+  "color": "#13CF55",
+  "glint_color": "#12E772",
+  "tooltip_color": "green",
+  "tooltip_order": 4
+}
+</pre>
+    <p>The six built-in stones don't have a <code>power</code>, because the gauntlet power hands those out itself.</p>
+  </section>
+</div>
+
+<h2 id="drawing">Drawing a stone yourself</h2>
+<p>Palladium render layers can draw any stone with the stone look using the layer type <code>infinity:stone</code>:</p>
+<pre data-lang="json" data-title="render layer">
+{
+  "type": "infinity:stone",
+  "stone": "example:chaos_stone",
+  "model": "example:geo/chaos_stone_socket.geo.json"
+}
+</pre>
+
+<h2 id="checking">Checking for a stone</h2>
+<p>Use the <code>infinity:gauntlet_slot</code> condition (or <code>infinity:gauntlet_slot_mainhand</code> for a held gauntlet) in other powers.
+  See {{page addons/abilities.html#conditions Conditions}}.</p>
+<pre data-lang="json">
+{
+  "type": "infinity:gauntlet_slot",
+  "item": { "item": "example:chaos_stone" }
+}
+</pre>
+
+<h2 id="ground">Making it act like a stone on the ground</h2>
+<p>Add a {{page addons/ground-items.html ground item}} file with <code>"unique": true</code> so dropped copies can't be duplicated.</p>

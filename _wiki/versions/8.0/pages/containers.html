@@ -1,0 +1,114 @@
+---
+title: Stone Containers and Tools
+nav: Containers and Tools
+description: The Tesseract, Scepter, Aether, Orb, Eye of Agamotto, Cosmi-Rod and Soul Guardian Telephone, and how items behave on the ground.
+lead: Every stone comes inside something. How each container works, how to open it, and the tools that go with them.
+icon: renders/orb.png
+related: finding-stones.html, items.html, stones/index.html, addons/ground-items.html
+---
+<h2 id="overview">Overview</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Container</th><th>Stone</th><th>Gives the power?</th><th>Getting the stone out</th><th>Putting it back</th></tr></thead>
+  <tbody>
+    <tr><td>{{item tesseract}}</td><td>{{stone space}}</td><td>Yes, in either hand</td><td>Hit it on the ground (the Tesseract is gone after)</td><td>Can't</td></tr>
+    <tr><td>{{item scepter}}</td><td>{{stone mind}}</td><td>Yes, in either hand</td><td>Hit it on the ground: you get the stone and an Empty Scepter</td><td>Right-click the Empty Scepter on the ground with the stone</td></tr>
+    <tr><td>{{item aether}}</td><td>{{stone reality}}</td><td>Yes, in either hand</td><td>Hit it on the ground (the Aether is gone after)</td><td>Empty Aether with the stone in your off hand, or right-click it on the ground</td></tr>
+    <tr><td>{{item orb}}</td><td>{{stone power}}</td><td>No</td><td>Crack the lock, open it, right-click</td><td>Open it and right-click with the stone</td></tr>
+    <tr><td>{{item eye_of_agamotto}}</td><td>{{stone time}}</td><td>Yes, held or worn, while the stone is in it</td><td>Wear it, open it, Remove Time Stone, or hit it on the ground</td><td>Wear it, open it, Insert Time Stone</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="tesseract">Tesseract</h2>
+{{itemcards tesseract}}
+<p>The Tesseract was kept in Odin's vault before it ended up in the Norse Village, looked after by the Asgardian worshippers there. In
+  either hand it gives you the Space Stone's power, and it counts as a Space source for {{ab power/meteor_storm}}. Its glowing core spins
+  inside the cube like it did in Heroes Expansion. Drop it and hit it to break it open, and the Space Stone falls out with a flash of blue.</p>
+
+<h2 id="scepter">Scepter</h2>
+{{itemcards scepter empty_scepter}}
+<p>Loki's Scepter is an iron tier sword with the Mind Stone in it. In either hand it gives the Mind Stone's power, and in your main hand
+  you also get the {{ab scepter/scepter_blast}}. Hit it on the ground to split it into the Mind Stone and an Empty Scepter. Right-click an
+  Empty Scepter on the ground while holding the Mind Stone to put it back together (or the other way round).</p>
+
+<h2 id="aether">Aether</h2>
+{{itemcards aether empty_aether}}
+<p>The Aether is the Reality Stone in liquid form, the weapon Malekith tried to use to put the universe back into darkness. In either hand
+  it gives the Reality Stone's power. Hit it on the ground to turn it back into the stone. To make an Aether again, hold the Reality Stone
+  in your off hand and an Empty Aether in your main hand and use:</p>
+{{abilities aether}}
+<p>You can also right-click an Empty Aether lying on the ground while holding the Reality Stone.</p>
+
+<h2 id="orb">Orb</h2>
+{{itemcards orb}}
+<p>The Orb from the Morag Temple vault has a combination lock. It does <strong>not</strong> give you the Power Stone's power while it's
+  closed. Hold it (the off hand works best) and its abilities show up in the ability bar:</p>
+{{abilities orb}}
+<h3 id="cracking-the-orb">Cracking the combination</h3>
+<ul>
+  <li>Every world has its own random sequence of left and right turns, <strong>15 turns long</strong> by default. The length is in the
+    {{page compatibility.html#config config}}, and changing it makes a new sequence.</li>
+  <li>Use <em>Rotate Left</em> and <em>Rotate Right</em>. A right turn just clicks. A wrong one plays a low note, puffs smoke and
+    <strong>sends you back to the start</strong>.</li>
+  <li>A wrong turn tells you the other direction was right for that step, so write the sequence down as you go.</li>
+  <li>After the last correct turn an iron door sound plays, sparks fly, and the Orb is unlocked <em>for you</em>. Unlocking is per
+    player, but the sequence is the same for everyone in the world.</li>
+</ul>
+<h3 id="opening-the-orb">Opening it and taking the stone</h3>
+<ul>
+  <li>Once it's unlocked, <em>Open / Close Orb</em> opens the shell and the Power Stone grows into view. You can open it as often as you
+    like after that.</li>
+  <li>With the Orb open, <strong>right-click</strong> to take the Power Stone. There's only one per world, so if someone already took it
+    you'll see "The Power Stone has already been taken from an Orb."</li>
+  <li>To put it back, open the Orb and right-click while holding the Power Stone in your other hand.</li>
+  <li><em>Lock Orb</em> locks it for you again, if you want to crack it again.</li>
+</ul>
+<p>Operators can skip the puzzle with <a href="@/commands.html#infinity-unlock-orb">/infinity unlock_orb</a>.</p>
+
+<h2 id="eye-of-agamotto">Eye of Agamotto</h2>
+{{itemcards eye_of_agamotto}}
+<p>Agamotto, the first Sorcerer Supreme, made the Eye to hold the Time Stone, and the Masters of the Mystic Arts kept it in the Sanctum
+  Sanctorum. Wear it on your chest (it counts as iron armor) or in the Curios <strong>necklace</strong> slot. While it still has the stone,
+  wearing or holding it gives you the Time Stone's power. Its abilities:</p>
+{{abilities eye}}
+<ul>
+  <li><em>Open Eye</em> opens it with an animation, and the stone starts glowing once it's open.</li>
+  <li><em>Remove Time Stone</em> (while it's open) gives you the stone and leaves the Eye empty. There's only one Time Stone per world, so
+    if it's already gone you'll see "The Time Stone has already been taken from an Eye of Agamotto."</li>
+  <li><em>Insert Time Stone</em> (while it's open and empty) needs the Time Stone in one of your hands.</li>
+  <li>Hitting the Eye while it's on the ground also lets the stone out. The Eye stays where it is.</li>
+  <li>Old <em>Empty Eye of Agamotto</em> items from earlier versions still work, and turn into the normal Eye when you put the stone in.</li>
+</ul>
+
+<h2 id="cosmi-rod">Cosmi-Rod</h2>
+{{itemcards cosmi-rod}}
+<p>Ronan the Accuser's Universal Weapon, found in the Crashed Kree Ship. It's a netherite tier weapon with a socket for one stone:</p>
+<ul>
+  <li><strong>Right-click</strong> with it in your main hand to open its one slot menu and put a stone in. Addon stones work too.</li>
+  <li>In either hand it gives you the power of the stone inside, which is drawn on the rod in its color. This is a safe way to carry the
+    Power Stone.</li>
+  <li>The tooltip shows which stone is in it. The old one rod per stone items from earlier versions turn into an empty rod.</li>
+</ul>
+<p>Holding it also gives you this:</p>
+{{abilities cosmi_rod}}
+
+<h2 id="soul-guardian-telephone">Soul Guardian Telephone</h2>
+{{itemcards soul_guardian_telephone}}
+{{abilities telephone}}
+<ul>
+  <li><strong>Right-click</strong> to bring the Soul Guardian from Vormir to you. The phone loads the Vormir area for the call.</li>
+  <li>The Guardian goes back to Vormir by itself after 1,200 ticks (one minute).</li>
+  <li><strong>Sneak and right-click</strong> to send it back straight away.</li>
+  <li>The cooldown is 24,000 ticks (one Minecraft day, 20 minutes).</li>
+</ul>
+
+<h2 id="ground-items">Items on the ground</h2>
+<p>The stones, all the containers, the gauntlet, the Cosmi-Rod and both swords behave differently when you drop or throw them:</p>
+<ul>
+  <li>They land where you threw them and lie flat instead of floating and spinning.</li>
+  <li>They can't be destroyed, burnt or blown up, they never despawn, and they stop at the bottom of the world instead of falling out.</li>
+  <li>Walking over them doesn't pick them up. <strong>Right-click</strong> them. They keep all their data (a gauntlet's stones and skin,
+    names, enchantments).</li>
+  <li>Containers with a stone break open when you hit them, and stones and empty containers join up when you right-click one with the other.</li>
+  <li>While someone is carrying a stone, any copy of it on the ground disappears, so stones can't be duplicated.</li>
+</ul>
+<p>Addons can make their own items work like this, see {{page addons/ground-items.html Ground Items}}.</p>

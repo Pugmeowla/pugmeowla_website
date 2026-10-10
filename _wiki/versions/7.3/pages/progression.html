@@ -1,0 +1,28 @@
+---
+title: Skill Trees and Progression
+nav: Progression
+description: What every 7.3 ability costs, the order they unlock in, and Power Stone levels.
+lead: Costs, unlock order and power levels in 7.3.
+icon: renders/aspects_of_existance.png
+related: abilities.html, stones/power.html, structures.html
+---
+<h2 id="aspects-of-existence">Aspects of Existence</h2>
+{{itemcards aspects_of_existance shards_of_existance}}
+<p>Every ability is bought with {{item aspects_of_existance}}, found in <a href="@/structures.html#infinity-temple">Infinity Temple</a> chests.
+  You can also make them from Shards of Existence (see JEI). Operators can unlock everything with <a href="@/commands.html#unlockstones">/unlockstones</a>.</p>
+
+<h2 id="costs">Costs per stone</h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Space"><h3 class="tab-label no-toc">Space Stone</h3>{{costtable space}}</section>
+  <section data-tab="Mind"><h3 class="tab-label no-toc">Mind Stone</h3>{{costtable mind}}</section>
+  <section data-tab="Reality"><h3 class="tab-label no-toc">Reality Stone</h3>{{costtable reality}}</section>
+  <section data-tab="Power"><h3 class="tab-label no-toc">Power Stone</h3>{{costtable power}}</section>
+  <section data-tab="Time"><h3 class="tab-label no-toc">Time Stone</h3>{{costtable time}}</section>
+  <section data-tab="Soul"><h3 class="tab-label no-toc">Soul Stone</h3>{{costtable soul}}</section>
+</div>
+
+<h2 id="power-levels">Power Stone levels</h2>
+<p>Same idea as 8.0. The level goes from 0 to 11 and lives in the <code>DamageCycle</code> objective. Buy the levels in order (2, 4, 8, 12,
+  18, 26, 36, 48, 64, 88 and 128 Aspects of Existence, 434 in total), turn on Damage Control and scroll to pick one. Your base attack damage
+  becomes 2<sup>level</sup>, so 1 at level 0 up to 2048 at level 11. Power Blast does the same 2<sup>level</sup> damage, and at level 11 with
+  all six stones it turns rainbow and does near infinite damage.</p>

@@ -1,0 +1,43 @@
+---
+title: Gauntlet Skins
+nav: Skins
+description: Every Infinity Gauntlet skin, the item that unlocks it, and how applying and removing skins works.
+lead: Nineteen skins, each unlocked by right-clicking with an item.
+icon: skin-renders/dragon_gauntlet.png
+related: gauntlet/index.html, addons/skins.html, gauntlet/snap.html, items.html
+---
+<h2 id="applying">Putting a skin on</h2>
+<ol>
+  <li>Wear your Infinity Gauntlet (off hand or Curios hands slot) with <strong>no skin</strong> on it.</li>
+  <li>Hold the skin's unlock item in your <strong>main hand</strong>. The skin's ability shows up in the gauntlet's ability bar.</li>
+  <li><strong>Right-click.</strong> One unlock item gets used up, the skin goes on and a sound plays (an anvil, for most of them).</li>
+</ol>
+<p>The skin is saved on that gauntlet, so it keeps it worn, held, on the ground or in a chest. Every skin also has an entry in the
+  gauntlet's skill tree with its description. If you're holding an Infinity Gauntlet in your main hand, the skin goes on that one
+  instead of the one you're wearing.</p>
+<p>A few work differently. The <em>Gauntlet with Fingers</em> goes on as soon as you hold its item, the <em>Nano Gauntlet</em> can go over
+  the <em>Burnt Gauntlet</em>, and the <em>Fantastic Four Skin</em> doesn't show in the ability bar.</p>
+
+<h2 id="removing">Taking a skin off</h2>
+{{abilities gauntlet only=normal_gauntlet}}
+<p>To swap skins, go back to the original gauntlet first and then put the new skin on.</p>
+
+<h2 id="all-skins">All skins</h2>
+<p>The pictures show what each skin looks like in your inventory, rendered from the gauntlet model with the skin's item texture. A lot
+  of them also have their own worn model and glow. Click one to see it bigger.</p>
+{{skingallery}}
+
+<h2 id="donation-skins">Where new skins come from</h2>
+<p>New skins come from donations on <a href="https://ko-fi.com/pugmeowla">Ko-fi</a>. If you want one:</p>
+<ul>
+  <li>You send the texture, and the model too if it's a custom shape. Custom models have to keep the stones where they are.</li>
+  <li>You pick the item that unlocks it. It can be a custom item, but it has to be obtainable in survival with a single crafting recipe.</li>
+  <li>More details on the <a href="https://discord.gg/jRZnRFabKP">Discord</a>.</li>
+</ul>
+
+<h2 id="commands">Commands</h2>
+<p><code>/infinity gauntlet skin set &lt;skin&gt;</code> and <code>/infinity gauntlet skin clear</code> change the skin of the gauntlet in your
+  main hand (or the one you're wearing) directly. See {{page commands.html#infinity-gauntlet-skin Commands}}.</p>
+
+<h2 id="make-your-own">Making your own</h2>
+<p>A skin is one JSON file and its textures. No Java, models or render layers needed. See {{page addons/skins.html Skin Files}}.</p>
