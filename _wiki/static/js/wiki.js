@@ -28,6 +28,15 @@
     if (inner && activeLink.offsetTop > inner.clientHeight - 80) inner.scrollTop = activeLink.offsetTop - inner.clientHeight / 2;
   }
 
+  // ───── Dismissable version notice ─────
+  $$('.version-notice-close').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var notice = button.parentNode;
+      notice.hidden = true;
+      try { localStorage.setItem('wiki-notice-' + notice.getAttribute('data-notice'), '1'); } catch (e) { /* storage blocked: hide for this page only */ }
+    });
+  });
+
   // ───── Global search ─────
   var input = $('#search-input'), results = $('#search-results');
   var index = (window.WIKI_INDEX || []).map(function (r) {

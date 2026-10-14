@@ -183,7 +183,10 @@ function renderer(v) {
     const other = versions.find((o) => o.id !== v.id && (v.id === site.released ? true : o.id === site.released));
     if (!v.notice || !other) return '';
     const href = `@w/${other.outDir ? `${other.outDir}/` : ''}index.html`;
-    return `<p class="version-notice">${v.notice} <a href="${href}">${escapeHtml(v.noticeLink || `Read the ${other.label} docs`)}</a></p>`;
+    // The inline script hides a dismissed notice before it paints, so it doesn't flash on every page.
+    return `<div class="version-notice" data-notice="${v.id}"><p>${v.notice} <a href="${href}">${escapeHtml(v.noticeLink || `Read the ${other.label} docs`)}</a></p>`
+      + `<button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button>`
+      + `<script>try{if(localStorage.getItem('wiki-notice-${v.id}'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>`;
   };
 
   const layout = (file, meta, content, toc, { base = null } = {}) => {
