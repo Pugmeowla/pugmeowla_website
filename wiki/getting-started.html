@@ -42,16 +42,16 @@
     <header class="page-head"><img class="page-icon px" src="assets/img/renders/infinity_gauntlet_cast.png" alt=""><div><h1>Getting Started</h1><p class="lead">What you need installed, how abilities are unlocked, and roughly how a playthrough goes.</p></div></header>
     <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#what-the-mod-is">What the mod is</a></li><li class="toc-l2"><a href="#installation">Installation</a></li><li class="toc-l2"><a href="#how-abilities-work">Buying abilities</a></li><li class="toc-l2"><a href="#playthrough">How a playthrough usually goes</a></li><li class="toc-l2"><a href="#tips">A few tips</a></li></ol></details>
     <article class="prose">
-<h2 id="what-the-mod-is">What the mod is<a class="heading-anchor" href="#what-the-mod-is" aria-label="Link to this section">#</a></h2>
+<h2 id="what-the-mod-is">What the mod adds<a class="heading-anchor" href="#what-the-mod-is" aria-label="Link to this section">#</a></h2>
 <p><strong>Pugmeowla's Infinity Stone Core</strong> is a full Infinity expansion for 1.20.1, made as an addon for
-  <a href="https://www.curseforge.com/minecraft/mc-mods/palladium">Palladium</a>. It isn't just a port. It brings over the Infinity
+  <a href="https://www.curseforge.com/minecraft/mc-mods/palladium">Palladium</a> as well as being a java mod. It isn't just a port. It brings over the Infinity
   content from <strong>Lucraft Core</strong>, <strong>Heroes Expansion</strong>, <strong>Speedster Heroes</strong>, <strong>Star Tech</strong>
-  and <strong>Infinity Craft</strong>, rebuilds it with Palladium's newer systems, and adds a lot that none of them had. It adds:</p>
+  and <strong>Infinity Craft</strong>, recreates it with Palladium's newer systems + java, and adds a lot more than what they had before. It adds:</p>
 <ul>
-  <li>The six <a href="stones/index.html">Infinity Stones</a>. Each one is a Palladium power with its own skill tree.</li>
-  <li>The <a href="gauntlet/index.html">Infinity Gauntlet</a>, the <a href="gauntlet/snap.html">Snap</a> and 19 <a href="gauntlet/skins.html">gauntlet skins</a>.</li>
+  <li>The six <a href="stones/index.html">Infinity Stones</a>.</li>
+  <li>The <a href="gauntlet/index.html">Infinity Gauntlet</a>, and the <a href="gauntlet/snap.html">Snap</a>.</li>
   <li>The containers the stones come in: <a class="chip item-chip" href="items.html#item-tesseract"><img src="assets/img/renders/tesseract.png" alt="" class="px" loading="lazy">Tesseract</a>, <a class="chip item-chip" href="items.html#item-scepter"><img src="assets/img/renders/scepter.png" alt="" class="px" loading="lazy">Scepter</a>, <a class="chip item-chip" href="items.html#item-aether"><img src="assets/img/renders/aether.png" alt="" class="px" loading="lazy">Aether</a>, <a class="chip item-chip" href="items.html#item-orb"><img src="assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a> and <a class="chip item-chip" href="items.html#item-eye-of-agamotto"><img src="assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy">Eye of Agamotto</a>, plus the <a class="chip item-chip" href="items.html#item-cosmi-rod"><img src="assets/img/renders/cosmi-rod.png" alt="" class="px" loading="lazy">Cosmi-Rod</a>.</li>
-  <li>A <a href="structures.html">structure</a> for each stone, four planets to visit (Vormir, Morag, Svartalfheim and the Garden) and the Soulworld. See <a href="dimensions.html">Dimensions</a>.</li>
+  <li>A <a href="structures.html">structure</a> for each stone, four planets to visit (Vormir, Morag, Svartalfheim and the Garden) and Soulworld. See <a href="dimensions.html">Dimensions</a>.</li>
   <li>JSON systems for <a href="addons/index.html">addon makers</a>: custom stones, skins, gauntlets with their own menus, ground items and
     skill tree themes.</li>
 </ul>
@@ -63,9 +63,9 @@
     <tr><td>Minecraft</td><td>Required</td><td>1.20.1</td><td></td></tr>
     <tr><td>Forge</td><td>Required</td><td>47.x (built on 47.4.20)</td><td>8.0 is Forge only.</td></tr>
     <tr><td>Palladium</td><td>Required</td><td>1.20.1-4.2.0 or newer (built on 4.5.6)</td><td>Powers, abilities, skill trees and render layers. Install whatever Palladium itself needs.</td></tr>
-    <tr><td>Chrono API</td><td><span class="status optional">Recommended</span></td><td>1.0.0 or newer</td><td>Slow Time and Time Freeze. They do nothing without it.</td></tr>
+    <tr><td>Chrono API</td><td>Required</td><td>1.0.0 or newer</td><td>Slow Time and Time Freeze. They do nothing without it.</td></tr>
     <tr><td>Curios API</td><td><span class="status optional">Recommended</span></td><td>any 1.20.1</td><td>Hands slot for the gauntlet, head slot for stones, necklace slot for the Eye of Agamotto.</td></tr>
-    <tr><td>Pehkui</td><td><span class="status optional">Recommended</span></td><td>3.7.12</td><td>Reality Stone size changing and invisibility, Mind Stone intangibility.</td></tr>
+    <tr><td>Pehkui</td><td>Required</td><td>3.7.12</td><td>Reality Stone size changing and invisibility, Mind Stone intangibility.</td></tr>
     <tr><td>Immersive Portals</td><td><span class="status optional">Optional</span></td><td>1.20.1 Forge, with Cloth Config</td><td>See-through Space Stone portals you walk straight through. See <a href="stones/space.html#immersive-portals">Space Stone</a>.</td></tr>
     <tr><td>Ad Astra or Cosmic Horizons</td><td><span class="status optional">Optional</span></td><td>1.20.1</td><td>Fly to the planets in a rocket. See <a href="dimensions.html#travel">Getting to the planets</a>.</td></tr>
     <tr><td>JEI</td><td><span class="status optional">Optional</span></td><td>15.x</td><td>Recipes, and info pages saying where each stone is.</td></tr>
@@ -77,15 +77,13 @@
 
 <h2 id="how-abilities-work">Buying abilities<a class="heading-anchor" href="#how-abilities-work" aria-label="Link to this section">#</a></h2>
 <p>Holding a stone, or having it in the gauntlet, gives you that stone's power. Nothing is unlocked at the start. Open the stone's
-  skill tree and click an ability to buy it with <a href="progression.html#aspects-of-existence">Aspects of Existence</a> from your
-  inventory. Lots of abilities need another one first. What you unlock is saved on you, so you keep it when you take the stone out
-  and put it back. Costs are on <a href="progression.html">Skill Trees and Progression</a>.</p>
+  skill tree and click an ability to buy it with <a href="progression.html#aspects-of-existence">Aspects of Existence</a>. Lots of abilities need another one first. Costs are on <a href="progression.html">Skill Trees and Progression</a>.</p>
 <p>Unlocked abilities show up in Palladium's ability bar and use Palladium's ability keys. How to use each one is on its stone's page
   and in the <a href="abilities.html">ability list</a>. Passives you'd rather not have running (Speed, Night Vision, Regeneration and so on)
   each have a free toggle in the skill tree.</p>
 <div class="callout tip"><span class="callout-title">Wear the gauntlet in your off hand or the Curios hands slot</span>
   <p>That's where it gives you every stone inside and shows on your arm. It still works in the main hand, but a few abilities are made
-  for the off hand. How to put stones in is on <a href="gauntlet/index.html">The Infinity Gauntlet</a>.</p></div>
+  for the off hand. How to put stones in is on <a href="gauntlet/index.html">this page</a>.</p></div>
 
 <h2 id="playthrough">How a playthrough usually goes<a class="heading-anchor" href="#playthrough" aria-label="Link to this section">#</a></h2>
 <ol>
@@ -97,8 +95,8 @@
     jumps you to the next dimension.</li>
   <li><strong>Get the rest</strong>: Power from the Orb on Morag, Reality from the Aether Chamber on Svartalfheim, Soul on Vormir,
     Time from the Sanctum Sanctorum and Mind from the Sanctuary in the End. Where each one is and how to get it out is on <a href="finding-stones.html">Finding the Stones</a>.</li>
-  <li><strong>Fill out the trees</strong>, unlock the six stone abilities like Immortality and full power, and think about whether
-    the <a href="gauntlet/snap.html">Snap</a> is worth it.</li>
+  <li><strong>Fill out the trees</strong>, unlock the six stone abilities like Immortality and full power, and maybe youd want to
+     <a href="gauntlet/snap.html">snap</a>.</li>
 </ol>
 
 <h2 id="tips">A few tips<a class="heading-anchor" href="#tips" aria-label="Link to this section">#</a></h2>
