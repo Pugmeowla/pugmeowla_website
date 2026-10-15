@@ -4,7 +4,6 @@ nav: Troubleshooting
 description: Common questions and problems. Abilities that won't unlock, missing stones, the Orb, the Snap burn and addon files that don't load.
 lead: Common problems and how to fix them.
 icon: renders/injection.png
-related: compatibility.html, getting-started.html, commands.html, addons/index.html
 ---
 <h2 id="abilities">Abilities</h2>
 <h3>I can't unlock anything in the skill tree</h3>
@@ -19,7 +18,16 @@ related: compatibility.html, getting-started.html, commands.html, addons/index.h
   sometimes: Rocket Burst below level 11, Power Cyclone only at level 11, Exit Soulworld only in the Soulworld, skin abilities only while
   you hold the unlock item, and the Snap only with six stones.</p>
 <h3>Size Changing or Invisibility does nothing</h3>
-<p>Install <strong>Pehkui</strong>. They use its <code>/scale</code> command.</p>
+<p>Install <strong>Pehkui</strong>. They use it to scale you.</p>
+<h3>A passive like Speed or Night Vision stopped working</h3>
+<p>Check its toggle in the stone's skill tree. Clicking a toggle switches the passive off, and it stays off (even after relogging) until
+  you click it again. A server admin may also have switched it off with
+  <a href="@/commands.html#infinity-ability">/infinity ability disable</a>: <code>/infinity ability list</code> shows what's disabled.</p>
+<h3>"Chrono API is not installed, so this ability does nothing"</h3>
+<p>Slow Time and Time Freeze need <a href="@/compatibility.html#chrono-api">Chrono API</a>. Install it on the server and every client.</p>
+<h3>Space Stone portals don't show the other side</h3>
+<p>That needs <a href="@/compatibility.html#immersive-portals">Immersive Portals</a> (and Cloth Config). Without it portals still work, you just
+  can't see through them. Only fully open Teleport GUI portals turn see-through. Jump Teleport portals never do.</p>
 <h3>Time Freeze or Slow Time froze everyone</h3>
 <p>That's how they work, they change the whole server's tick rate. Turn the ability off to go back to 20 TPS.</p>
 

@@ -14,9 +14,9 @@ export const nav = [
   { title: 'Getting Started', icon: 'renders/infinity_gauntlet_cast.png', pages: [
     'index.html', 'getting-started.html', 'finding-stones.html', 'progression.html',
   ] },
-  { title: 'Infinity Stones', icon: 'stones/space_stone.png', pages: [
-    'stones/index.html', 'stones/space.html', 'stones/mind.html', 'stones/reality.html',
-    'stones/power.html', 'stones/time.html', 'stones/soul.html',
+  { title: 'Infinity Stones', icon: 'stones/power_stone.png', pages: [
+    'stones/index.html', 'stones/power.html', 'stones/space.html', 'stones/reality.html',
+    'stones/soul.html', 'stones/time.html', 'stones/mind.html',
   ] },
   { title: 'Infinity Gauntlet', icon: 'renders/infinity_gauntlet.png', pages: [
     'gauntlet/index.html', 'gauntlet/snap.html', 'gauntlet/skins.html',
@@ -35,7 +35,7 @@ export const nav = [
   ] },
   { title: 'Addon Development', icon: 'renders/52-d_unit.png', pages: [
     'addons/index.html', 'addons/stones.html', 'addons/skins.html', 'addons/custom-gauntlets.html',
-    'addons/ground-items.html', 'addons/abilities.html',
+    'addons/ground-items.html', 'addons/ability-overlays.html', 'addons/abilities.html',
   ] },
   { title: 'Help', icon: 'renders/soul_guardian_telephone.png', pages: [
     'compatibility.html', 'troubleshooting.html', 'credits.html',

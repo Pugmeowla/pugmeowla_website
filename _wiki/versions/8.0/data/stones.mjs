@@ -1,20 +1,20 @@
 // The six Infinity Stones. Colors come from data/infinity/gauntlet_stones/*.json.
 export const stones = [
   {
+    id: 'power', item: 'infinity:power_stone', name: 'Power Stone', color: '#C32AD1', glint: '#F12AFF',
+    tagline: 'Scaling damage, beams, rockets and meteor storms.',
+    container: 'infinity:orb', containerName: 'Orb',
+    structure: 'morag_temple', structureName: 'Morag Temple', dimension: 'Morag',
+    sources: ['Power Stone held in either hand (dangerous without protection)', 'Power Stone in the Curios head slot',
+      'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Power Stone'],
+  },
+  {
     id: 'space', item: 'infinity:space_stone', name: 'Space Stone', color: '#0255FF', glint: '#6AC5FF',
     tagline: 'Portals, telekinesis and black holes.',
     container: 'infinity:tesseract', containerName: 'Tesseract',
     structure: 'norse_village', structureName: 'Norse Village', dimension: 'Overworld',
     sources: ['Space Stone or Tesseract held in either hand', 'Space Stone in the Curios head slot',
       'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Space Stone'],
-  },
-  {
-    id: 'mind', item: 'infinity:mind_stone', name: 'Mind Stone', color: '#FFD300', glint: '#DAFF0A',
-    tagline: 'Flight, illusions, mind reading and disguises.',
-    container: 'infinity:scepter', containerName: 'Scepter',
-    structure: 'sanctuary', structureName: 'Sanctuary', dimension: 'The End',
-    sources: ['Mind Stone or Scepter held in either hand', 'Mind Stone in the Curios head slot',
-      'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Mind Stone'],
   },
   {
     id: 'reality', item: 'infinity:reality_stone', name: 'Reality Stone', color: '#FF0130', glint: '#FF0130',
@@ -25,12 +25,12 @@ export const stones = [
       'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Reality Stone'],
   },
   {
-    id: 'power', item: 'infinity:power_stone', name: 'Power Stone', color: '#C32AD1', glint: '#F12AFF',
-    tagline: 'Scaling damage, beams, rockets and meteor storms.',
-    container: 'infinity:orb', containerName: 'Orb',
-    structure: 'morag_temple', structureName: 'Morag Temple', dimension: 'Morag',
-    sources: ['Power Stone held in either hand (dangerous without protection)', 'Power Stone in the Curios head slot',
-      'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Power Stone'],
+    id: 'soul', item: 'infinity:soul_stone', name: 'Soul Stone', color: '#DE7300', glint: '#FF8B00',
+    tagline: 'Souls, the Soulworld and near-immortality.',
+    container: null, containerName: null,
+    structure: 'vormir', structureName: "Vormir's Edge", anchor: 'vormir', dimension: 'Vormir',
+    sources: ['Soul Stone held in either hand', 'Soul Stone in the Curios head slot',
+      'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Soul Stone'],
   },
   {
     id: 'time', item: 'infinity:time_stone', name: 'Time Stone', color: '#13CF55', glint: '#12E772',
@@ -42,12 +42,12 @@ export const stones = [
       'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Time Stone'],
   },
   {
-    id: 'soul', item: 'infinity:soul_stone', name: 'Soul Stone', color: '#DE7300', glint: '#FF8B00',
-    tagline: 'Souls, the Soulworld and near-immortality.',
-    container: null, containerName: null,
-    structure: 'vormir', structureName: "Vormir's Edge", anchor: 'vormir', dimension: 'Vormir',
-    sources: ['Soul Stone held in either hand', 'Soul Stone in the Curios head slot',
-      'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Soul Stone'],
+    id: 'mind', item: 'infinity:mind_stone', name: 'Mind Stone', color: '#FFD300', glint: '#DAFF0A',
+    tagline: 'Flight, illusions, mind reading and disguises.',
+    container: 'infinity:scepter', containerName: 'Scepter',
+    structure: 'sanctuary', structureName: 'Sanctuary', dimension: 'The End',
+    sources: ['Mind Stone or Scepter held in either hand', 'Mind Stone in the Curios head slot',
+      'Infinity Gauntlet (or custom gauntlet) with the stone inserted', 'Cosmi-Rod holding the Mind Stone'],
   },
 ];
 

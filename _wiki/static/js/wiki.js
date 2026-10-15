@@ -13,15 +13,28 @@
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     scrim.hidden = !open;
-    if (open) { var active = $('a.active', sidebar) || $('a', sidebar); if (active) active.focus(); }
+    if (open) { var active = $('a.active', sidebar) || $('a', sidebar); if (active) active.focus({ preventScroll: true }); }
   }
+  var drawer = window.matchMedia('(max-width: 920px)');
   if (menu) {
     menu.addEventListener('click', function () { setNav(!document.body.classList.contains('nav-open')); });
     scrim.addEventListener('click', function () { setNav(false); });
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && document.body.classList.contains('nav-open')) { setNav(false); menu.focus(); }
     });
+    // Following a link (even to a part of this page) closes the drawer.
+    sidebar.addEventListener('click', function (event) { if (event.target.closest('a')) setNav(false); });
+    // Leaving phone width with the drawer open would leave the page unscrollable.
+    var reset = function () { if (!drawer.matches && document.body.classList.contains('nav-open')) setNav(false); };
+    if (drawer.addEventListener) drawer.addEventListener('change', reset); else if (drawer.addListener) drawer.addListener(reset);
   }
+  // In the drawer, opening one section closes the others so the list stays short.
+  $$('.nav-group', sidebar).forEach(function (group) {
+    group.addEventListener('toggle', function () {
+      if (!group.open || !drawer.matches) return;
+      $$('.nav-group', sidebar).forEach(function (other) { if (other !== group) other.open = false; });
+    });
+  });
   var activeLink = $('.sidebar a.active');
   if (activeLink && activeLink.scrollIntoView) {
     var inner = $('.sidebar-inner');

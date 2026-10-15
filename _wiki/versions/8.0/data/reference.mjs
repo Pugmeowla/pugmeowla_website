@@ -96,6 +96,22 @@ export const abilityTypes = [
     props: [['position', 'worn', 'worn (off hand / Curios), mainhand or ground (armor stand head)']] },
   { id: 'infinity:gauntlet_stones_layer', desc: 'Renders the stones of the gauntlet at the given position, each in the slot it occupies.',
     props: [['position', 'worn', 'worn, mainhand, ground, custom (the worn custom gauntlet) or head (stones with "head": true in the Curios head slot)']] },
+  { id: 'infinity:toggle', desc: 'A switch in the skill tree. Give it a palladium:experience_level_buyable unlocking condition with 0 levels: buying it switches \'setting\' (a player setting, on until first switched, read by the infinity:setting condition) or \'gamerule\' (a boolean game rule) over, shows the new state above the hotbar, and locks it again for the next click. Settings are saved with the player and synced to every client. The stones\' passive toggles use it.',
+    props: [['setting', '""', 'The player setting it switches, read by the infinity:setting condition (e.g. space_stone.speed)'],
+      ['gamerule', '""', 'Instead, a boolean game rule it switches for the whole world (e.g. doDaylightCycle)']] },
+  { id: 'infinity:effect_immunity', desc: 'While enabled, the listed effects can\'t be given to the entity (they are refused as they are applied, by potions, mobs or commands), and any of them it already has are removed when it starts. Used by the Soul Stone\'s Effect Immunity.',
+    props: [['effects', '[]', 'IDs of the effects it can\'t be given, e.g. minecraft:poison']] },
+  { id: 'infinity:score_step', desc: 'Each time it is enabled (usually by a palladium:action condition, e.g. scrolling), adds amount to the player\'s score in objective, kept between min and max, and plays sound.',
+    props: [['objective', '""', 'The scoreboard objective (created when first written)'], ['amount', '1', 'How much it adds; negative to take away'],
+      ['min', 'lowest int', 'Lowest score'], ['max', 'highest int', 'Highest score'], ['sound', '""', 'Sound played to the player on each step (empty for none)']] },
+  { id: 'infinity:dynamic_scale', desc: 'Scales the entity with Pehkui from a scoreboard, an energy bar, a Palladium property, experience levels or experience progress. Sizes glide over duration ticks, and back to normal when the ability is disabled. With steps, each whole value picks its own scale from the table. Needs Pehkui and does nothing without it. Based on DynamicPehkuiScale from Chrono Palladium by Ender/Nox. The Reality Stone\'s Size Control uses it.',
+    props: [['scale_types', '["base"]', 'base, width, height, hitbox, eye_height, model, motion, reach, jump_height, visibility, mining_speed and the other Pehkui scale types, or any Pehkui scale type ID'],
+      ['dynamic_property', '""', 'Where the value comes from: scoreboard, energy_bar, palladium_property, xp_level or xp'],
+      ['property', '""', 'What is read: the scoreboard objective, the energy bar, or a number property of this ability'],
+      ['multiplier', 'add', 'How amount is applied to the value: add, multiply or divide. Not used with steps'],
+      ['amount', '1', 'The amount added to, multiplied with or divided into the value'],
+      ['steps', '[]', 'Instead of multiplier and amount: the scale for each whole value, starting at first_step'],
+      ['first_step', '0', 'The value the first of the steps is for'], ['duration', '1', 'Ticks each size change (and the return to normal size) takes']] },
 ];
 
 export const conditions = [
@@ -117,6 +133,9 @@ export const conditions = [
   { id: 'infinity:telekinetic_grip', desc: 'The player is holding something with infinity:telekinesis, optionally matching entities and/or blocks. Server side: use in ability conditions, not render layers.',
     props: [['entities', '[]', 'Entity type IDs or #tags the held entity must match'], ['blocks', '[]', 'Block IDs or #tags the held block must match']] },
   { id: 'infinity:telekinetic_hold', desc: 'The entity is being held by someone\'s infinity:telekinesis. Server side.', props: [] },
+  { id: 'infinity:setting', desc: 'Checks whether a player setting switched by an infinity:toggle ability is on (or off with "on": false). Works on both sides, so render layers can use it.',
+    props: [['setting', '""', 'The setting\'s name, as in the infinity:toggle ability that switches it'], ['on', 'true', 'Whether the setting has to be on (the default, as every setting starts) or off']] },
+  { id: 'infinity:stormbreaker_near', desc: 'Whether a thrown Powerborne Stormbreaker is within 10 blocks of a player with the Infinity Gauntlet. Checked on the server. The Soul Stone\'s defenses use it.', props: [] },
 ];
 
 export const otherTypes = [

@@ -44,7 +44,8 @@ and image. It exits with an error listing any problem, so a green build means no
 ## Editing content
 
 - **A page**: edit `_wiki/versions/<version>/pages/<page>.html`. The header sets `title`, `description`, `lead`, `icon` (path under
-  `assets/img/`), `related` (comma-separated pages) and optionally `nav` (sidebar label) and `toc: h2`.
+  `assets/img/`) and optionally `nav` (sidebar label) and `toc: h2`. Each page ends with links to the previous and next
+  page in the nav order.
 - **A new page**: add the file, then add its path to `nav` in that version's `nav.mjs` (the build refuses pages that
   aren't in the nav).
 - **Links**: write `@/path.html` for pages in the same version, `@w/assets/img/...` for images and `@s/index.html` for

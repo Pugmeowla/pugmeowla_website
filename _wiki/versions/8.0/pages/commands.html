@@ -3,7 +3,6 @@ title: Commands
 description: Every /infinity command with its syntax, arguments, permissions, examples and what it does.
 lead: Everything is under /infinity. Player commands are unlocked by abilities. Admin commands need operator level 2.
 icon: icons/teleport.png
-related: gauntlet/snap.html, containers.html, stones/time.html, troubleshooting.html
 ---
 <h2 id="summary">Summary</h2>
 <div class="table-wrap"><table>
@@ -11,16 +10,20 @@ related: gauntlet/snap.html, containers.html, stones/time.html, troubleshooting.
   <tbody>
     <tr><td><a href="#infinity-time-set"><code>/infinity time set &lt;time&gt;</code></a></td><td>Anyone with the Time Command ability active</td><td>Time Stone</td></tr>
     <tr><td><a href="#infinity-soul-locateplayer"><code>/infinity soul locateplayer &lt;target&gt;</code></a></td><td>Anyone with the Locate Entity Command ability active</td><td>Soul Stone</td></tr>
-    <tr><td><a href="#infinity-orb"><code>/infinity orb turn|take|insert</code></a></td><td>Anyone holding the Orb</td><td>Orb</td></tr>
+    <tr><td><a href="#infinity-orb"><code>/infinity orb turn|take|insert|sync|reset</code></a></td><td>Anyone holding the Orb</td><td>Orb</td></tr>
     <tr><td><a href="#infinity-gauntlet-skin"><code>/infinity gauntlet skin set|clear</code></a></td><td>Anyone</td><td>Gauntlet skins</td></tr>
     <tr><td><a href="#infinity-gauntlet-snap"><code>/infinity gauntlet snap [type]</code></a></td><td>Operators (level 2)</td><td>The Snap</td></tr>
     <tr><td><a href="#infinity-unlock-stones"><code>/infinity unlock_stones</code></a> and <code>lock_stones</code></td><td>Operators (level 2)</td><td>Skill trees</td></tr>
     <tr><td><a href="#infinity-unlock-orb"><code>/infinity unlock_orb</code></a></td><td>Operators (level 2)</td><td>Orb</td></tr>
-    <tr><td><a href="#infinity-soulguardian-respawn"><code>/infinity soulguardian respawn</code></a></td><td>Operators (level 2)</td><td>Vormir</td></tr>
+    <tr><td><a href="#infinity-ability"><code>/infinity ability disable|enable|list</code></a></td><td>Operators (level 2)</td><td>Server rules</td></tr>
+    <tr><td><a href="#infinity-soul-zombies"><code>/infinity soul zombies</code></a></td><td>Operators (level 2)</td><td>Soul Stone</td></tr>
+    <tr><td><a href="#infinity-summon-malekith"><code>/infinity summon malekith</code></a></td><td>Operators (level 2)</td><td>Svartalfheim</td></tr>
+    <tr><td><a href="#infinity-soulguardian"><code>/infinity soulguardian call|return|respawn</code></a></td><td>Operators (level 2)</td><td>Vormir</td></tr>
   </tbody>
 </table></div>
-<p>All of these act on the player who runs them, so they have to be run by a player and not the console or a command block. The one
-  exception is <code>soulguardian respawn</code>. Otherwise you'll get "This command can only be used by a player."</p>
+<p>Most of these act on the player who runs them, so they have to be run by a player and not the console or a command block. The
+  exceptions are <code>ability</code>, <code>summon malekith</code>, <code>soulguardian return</code> and <code>soulguardian respawn</code>.
+  Abilities that run an admin command (Summon Zombie, the Soul Guardian Telephone) work for everyone, without operator rights.</p>
 
 <h2 id="player-commands">Player commands</h2>
 
@@ -51,10 +54,18 @@ related: gauntlet/snap.html, containers.html, stones/time.html, troubleshooting.
 /infinity orb turn right
 /infinity orb take
 /infinity orb insert
+/infinity orb sync
+/infinity orb reset
 </pre>
-<p>These are what the Orb's abilities run, so normally you'd just use the abilities. They only work while you're holding the {{item orb}}.
-  <code>turn</code> moves the combination lock on or resets it, <code>take</code> takes the Power Stone out of an unlocked, open Orb, and
-  <code>insert</code> puts a Power Stone from your inventory back in. See {{page containers.html#orb The Orb}}.</p>
+<p>These are what the Orb's abilities run, so normally you'd just use the abilities. They only work while you're holding the {{item orb}}.</p>
+<div class="table-wrap"><table><tbody>
+  <tr><th><code>turn left|right</code></th><td>Moves the combination lock on one step, or back to the start on a wrong turn.</td></tr>
+  <tr><th><code>take</code></th><td>Takes the Power Stone out of an unlocked, open Orb.</td></tr>
+  <tr><th><code>insert</code></th><td>Puts a Power Stone from your inventory back in.</td></tr>
+  <tr><th><code>sync</code></th><td>Run when you pick the Orb up. Starts the lock over, or leaves it open if you already cracked it.</td></tr>
+  <tr><th><code>reset</code></th><td>Locks the Orb again and forgets that you opened it (the <em>Lock Orb</em> ability).</td></tr>
+</tbody></table></div>
+<p>See {{page containers.html#orb The Orb}}.</p>
 
 <h3 id="infinity-gauntlet-skin">/infinity gauntlet skin</h3>
 <pre data-lang="command">
@@ -71,6 +82,27 @@ related: gauntlet/snap.html, containers.html, stones/time.html, troubleshooting.
   public server.</p></div>
 
 <h2 id="admin-commands">Admin commands</h2>
+
+<h3 id="infinity-ability">/infinity ability</h3>
+<pre data-lang="command">
+/infinity ability disable <target>
+/infinity ability enable <target>
+/infinity ability list
+</pre>
+<div class="table-wrap"><table><tbody>
+  <tr><th>Argument</th><td><code>target</code>: a whole power (<code>infinity:space_stone</code>) or one ability as <code>power#ability</code>
+    (<code>infinity:time_stone#time_freeze_dummy</code>). It suggests every target as you type, and the case doesn't matter.</td></tr>
+  <tr><th>Covers</th><td>The Infinity Stones (addon stones included) and this mod's other powers: the gauntlet, the Orb, the Cosmi-Rod and so on.</td></tr>
+  <tr><th>Does</th><td><code>disable</code> locks that power or ability for everyone on the server. <code>enable</code> lets it be used again.
+    <code>list</code> shows what's switched off.</td></tr>
+</tbody></table></div>
+<p>The list is Palladium's <code>disabledAbilities</code> setting in the world's <code>serverconfig/palladium-server.toml</code>, so it's saved
+  with the world. Entries other mods put there are left alone.</p>
+<pre data-lang="command" data-title="Examples">
+/infinity ability disable infinity:time_stone#time_freeze_dummy
+/infinity ability disable infinity:infinity_gauntlet#kill_half
+/infinity ability enable infinity:time_stone#time_freeze_dummy
+</pre>
 
 <h3 id="infinity-gauntlet-snap">/infinity gauntlet snap</h3>
 <pre data-lang="command">/infinity gauntlet snap [half|hostile|players|destroy_stones]</pre>
@@ -103,11 +135,32 @@ related: gauntlet/snap.html, containers.html, stones/time.html, troubleshooting.
 <pre data-lang="command">/infinity unlock_orb</pre>
 <p>Unlocks the Orb's combination for you, as if you'd entered it. Prints "The Orb has been unlocked!"</p>
 
-<h3 id="infinity-soulguardian-respawn">/infinity soulguardian respawn</h3>
-<pre data-lang="command">/infinity soulguardian respawn</pre>
-<p>Spawns a new Soul Guardian with fresh trades at its spot on Vormir (<code>212 121 99</code>). Works from the console. Prints "The Soul
-  Guardian has returned to Vormir." or "Could not spawn the Soul Guardian." if Vormir isn't there. It doesn't remove a Guardian that's
-  already there.</p>
+<h3 id="infinity-soul-zombies">/infinity soul zombies</h3>
+<pre data-lang="command">/infinity soul zombies</pre>
+<p>What the Soul Stone's {{ab soul/summon_zombie}} runs. Summons six zombies in Thanos armor where you stand: Transfer Zombie, Pugmeowla
+  Zombie, Dark Zombie and three unnamed ones. You and all six join the <code>peaceful</code> team, so they won't attack you.</p>
+
+<h3 id="infinity-summon-malekith">/infinity summon malekith</h3>
+<pre data-lang="command">/infinity summon malekith</pre>
+<p>Summons Malekith, the Dark Elf who guards the Aether, one block above the command's position. He has 100 health, 20 armor and 10
+  toughness, carries Malekith's Sword, and has permanent Resistance III, Speed VI and Strength VI. He never despawns. Works from the
+  console and command blocks.</p>
+
+<h3 id="infinity-soulguardian">/infinity soulguardian</h3>
+<pre data-lang="command">
+/infinity soulguardian call
+/infinity soulguardian return
+/infinity soulguardian respawn
+</pre>
+<div class="table-wrap"><table><tbody>
+  <tr><th><code>call</code></th><td>Brings the Soul Guardian to you, wherever it is. If its spot on Vormir isn't loaded, it's loaded until the
+    Guardian is found. It goes home by itself after one minute, even if the server restarts in between. This is what the
+    {{item soul_guardian_telephone}} runs.</td></tr>
+  <tr><th><code>return</code></th><td>Sends the Guardian home to Vormir straight away.</td></tr>
+  <tr><th><code>respawn</code></th><td>Spawns a new Soul Guardian with fresh trades at its spot on Vormir (<code>212 121 99</code>). Prints
+    "The Soul Guardian has returned to Vormir." or "Could not spawn the Soul Guardian." if Vormir isn't there. It doesn't remove a Guardian
+    that's already there.</td></tr>
+</tbody></table></div>
 
 <h2 id="useful-palladium-commands">Useful Palladium commands</h2>
 <p>The stones are normal Palladium powers, so Palladium's commands work on them. Handy for testing and maps:</p>

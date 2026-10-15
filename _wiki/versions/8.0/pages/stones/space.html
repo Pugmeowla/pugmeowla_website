@@ -3,7 +3,6 @@ title: Space Stone
 description: The Space Stone's portals, telekinesis, spatial lock, black hole and movement passives.
 lead: Portals, telekinesis and black holes. Get this one first, it's how you reach the other stones.
 icon: stones/space_stone.png
-related: stones/power.html, containers.html, dimensions.html, structures.html
 ---
 <h2 id="overview">Overview</h2>
 <div class="item-cards">
@@ -14,14 +13,16 @@ related: stones/power.html, containers.html, dimensions.html, structures.html
   </div></div>
 </div>
 <p>You get the Space Stone's power by holding the stone or the Tesseract in either hand, wearing the stone in the Curios head slot,
-  putting it in your gauntlet, or putting it in a Cosmi-Rod. To get it out of the Tesseract, drop the Tesseract and hit it.</p>
+  putting it in your gauntlet, or putting it in a Cosmi-Rod. To get it out of the Tesseract, drop the Tesseract and hit it.
+  Right-clicking with the Tesseract jumps you to the next dimension, see <a href="@/containers.html#tesseract">the Tesseract</a>.</p>
 <p>Its {{ab space/teleport}} is the easiest way to Vormir, Morag and Svartalfheim, which is why it's worth getting first.</p>
 
 <h2 id="abilities">Abilities</h2>
 {{abilities space}}
 
 <h2 id="skill-tree">Skill tree costs</h2>
-<p>Force Field leads to all the active abilities. Speed leads to Step Assist. Prices are in {{item aspects_of_existance}}.</p>
+<p>Force Field leads to all the active abilities. Speed leads to Step Assist. Prices are in {{item aspects_of_existance}}. Each passive
+  gets a free toggle once you own it, so you can switch it off without losing it.</p>
 {{costtable space}}
 
 <h2 id="portals">How portals work</h2>
@@ -30,14 +31,27 @@ related: stones/power.html, containers.html, dimensions.html, structures.html
     to open fully.</li>
   <li>Anything that walks into one end, players and mobs, comes out the other on safe ground. There's a one second cooldown per entity
     so you don't bounce straight back.</li>
-  <li><strong>Teleport GUI</strong> portals stay open until someone hits one end. Then both close. The chunks at both ends stay loaded
-    while they're open.</li>
+  <li><strong>Teleport GUI</strong> portals stay open until someone left-clicks the rim of one end, or anywhere on its back. Then both
+    close. The chunks at both ends stay loaded while they're open.</li>
   <li><strong>Jump Teleport</strong> portals close by themselves after 3 seconds. If there's no block in range you get "No block found
     within range for the portal."</li>
   <li>Addons can change the menu background, the portal color and size, and switch to a fire style (an orange ring of flames, like a
     sling ring portal). See {{page addons/abilities.html Ability Reference}}.</li>
 </ul>
 {{figure src="gui/portal.png" caption="The Space Teleport menu background (textures/gui/portal.png)."}}
+
+<h2 id="immersive-portals">With Immersive Portals</h2>
+<p>Install <strong>Immersive Portals</strong> (it needs Cloth Config) and portals from the {{ab space/teleport}} menu turn into real,
+  see-through portals once they've opened fully:</p>
+<ul>
+  <li>You see the destination through the portal, even in another dimension, and walk straight through without a loading screen.</li>
+  <li>They work both ways. Walk into the front of either end and you come out of the front of the other.</li>
+  <li>From behind, a portal is just the swirling surface, and left-clicking it closes the pair. Left-clicking the rim closes it from
+    the front.</li>
+  <li>The far end is nudged so the block grid lines up through the portal.</li>
+  <li>{{ab space/jump_teleport}} portals stay the normal, quick kind.</li>
+</ul>
+<p>Without Immersive Portals, everything works the old way: walk into an end and you're moved to the other.</p>
 
 <h2 id="telekinesis-controls">Telekinesis controls</h2>
 <div class="table-wrap"><table>

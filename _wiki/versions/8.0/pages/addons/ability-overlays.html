@@ -1,0 +1,136 @@
+---
+title: Ability Overlays
+description: Theme any power or ability in Palladium's skill tree with a JSON file in a resource pack, mod or addon pack. Colors, frames, icons, backgrounds and window art.
+lead: How abilities look in the skill tree. The stones are drawn in their own colors, and anything else can be themed with one JSON file.
+icon: renders/aspects_of_existance.png
+toc: h2
+---
+<h2 id="what-it-does">What it does</h2>
+<p>Infinity Stone Core themes Palladium's skill tree (the powers screen) in place. There's no new menu: Palladium's own textures are
+  tinted, so the layout, scrolling, tabs, tooltips, unlocking and buying all work exactly as before.</p>
+<p><strong>The Infinity Stones</strong> are drawn in their stone's <code>color</code> from <code>data/infinity/gauntlet_stones</code>: Power purple,
+  Space blue, Reality red, Soul orange, Time green and Mind yellow. A custom stone gets its own color too. That covers:</p>
+<ul>
+  <li>the ability frames, bright when unlocked and dim when locked</li>
+  <li>the title bar and description box you see when hovering an ability</li>
+  <li>the power's tab, brighter while it's open</li>
+  <li>the lines between abilities</li>
+</ul>
+<p>The Power Stone's tree also has its own background and window art.</p>
+<p><strong>Anything else</strong>, any power or single ability from any mod, can be themed by a JSON file in
+  <code>assets/&lt;namespace&gt;/ability_overlays/</code> of a resource pack, a mod or an addon pack. Files reload with resources
+  (<kbd class="key">F3</kbd> + <kbd class="key">T</kbd>), with no restart and no Java. A power or ability with neither a stone nor a file is drawn exactly as
+  Palladium draws it.</p>
+
+<h2 id="settings">Settings</h2>
+<p>Everything is optional except the target. Colors are <code>#RRGGBB</code>, or <code>#RRGGBBAA</code> for transparency, and tint (multiply) what
+  Palladium draws.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>ability</code></td><td></td><td>Target: one ability, as <code>power#ability</code>. Palladium's addon pack dev mode shows it in the ability's description.</td></tr>
+    <tr><td><code>power</code></td><td></td><td>Target: a power, meaning its tab, its lines and all its abilities.</td></tr>
+    <tr><td><code>accent_color</code></td><td>the stone's color, else white</td><td>The theme's color. Every color you leave out is worked out from it.</td></tr>
+    <tr><td><code>frame_color</code></td><td>accent, lightened</td><td>Frame of an unlocked ability.</td></tr>
+    <tr><td><code>locked_color</code></td><td>accent, dimmed</td><td>Frame of a locked ability.</td></tr>
+    <tr><td><code>hover_color</code></td><td>accent, lightened</td><td>Title bar shown while the ability is hovered.</td></tr>
+    <tr><td><code>background_color</code></td><td>accent, faint</td><td>The hovered ability's description box. Alpha makes it see-through.</td></tr>
+    <tr><td><code>title_color</code></td><td>white</td><td>The hovered ability's name.</td></tr>
+    <tr><td><code>description_color</code></td><td>light grey with a touch of accent</td><td>The hovered ability's description.</td></tr>
+    <tr><td><code>tab_color</code></td><td>accent, light</td><td>Power only: the power's tab.</td></tr>
+    <tr><td><code>selected_tab_color</code></td><td>accent, stronger</td><td>Power only: the tab while it's open.</td></tr>
+    <tr><td><code>line_color</code></td><td>accent</td><td>Power only: lines to unlocked abilities.</td></tr>
+    <tr><td><code>locked_line_color</code></td><td>accent, dark</td><td>Power only: lines to locked abilities.</td></tr>
+    <tr><td><code>frame_texture</code></td><td>Palladium's frame, tinted</td><td>26×26 texture (the whole file) drawn as the unlocked frame, untinted.</td></tr>
+    <tr><td><code>locked_frame_texture</code></td><td>Palladium's frame, tinted</td><td>26×26 texture drawn as the locked frame, untinted.</td></tr>
+    <tr><td><code>background_texture</code></td><td>the power's tiled background</td><td>Power only: an image drawn behind the abilities instead. It doesn't scroll.</td></tr>
+    <tr><td><code>window_textures</code></td><td>the stone's window art, if any</td><td>Power only: images drawn over Palladium's window, in order. They're never darkened while an ability is hovered.</td></tr>
+    <tr><td><code>icon</code></td><td>the ability's own icon</td><td>16×16 texture (the whole file) drawn as its icon in the skill tree. Locked abilities still show the padlock.</td></tr>
+    <tr><td><code>locked_icon</code></td><td>the padlock</td><td>16×16 texture drawn instead of the padlock while the ability is locked. Meant for abilities bought for 0 levels that lock themselves again as a switch. The stones' toggles use <code>infinity:textures/icon/toggle.png</code>.</td></tr>
+  </tbody>
+</table></div>
+<p><code>background_texture</code> and <code>window_textures</code> are drawn whole at 1:1, centred on Palladium's 252×196 window. So an image with the
+  window drawn in its middle, on a canvas of any size, lines up by itself. The Power Stone's file uses 512×256 images with the frame at
+  130, 30 and the side art on the same canvas:</p>
+<pre data-lang="json" data-title="assets/infinity/ability_overlays/power_stone.json">
+{
+  "power": "infinity:power_stone",
+  "background_texture": "infinity:textures/gui/powers/power_stone_background.png",
+  "window_textures": [
+    "infinity:textures/gui/powers/power_stone_details.png",
+    "infinity:textures/gui/powers/power_stone_frame.png"
+  ]
+}
+</pre>
+
+<h2 id="combining">How settings combine</h2>
+<ul>
+  <li>An ability's settings come from its own file, then its power's file, then the stone's color. Anything still missing is worked out
+    from the accent, so a file only has to name what it changes.</li>
+  <li>A file at the same path in a higher resource or addon pack replaces a lower one, like any resource.</li>
+  <li>Where different files theme the same target, the one whose ID sorts last wins for each setting it sets.</li>
+  <li>An invalid color or a texture that doesn't exist is logged (<code>Ability overlay &lt;file&gt;: ...</code>) and left out, so its default is
+    used. A file without a valid <code>ability</code> or <code>power</code> is skipped. Nothing here can crash the game.</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Accent only">
+    <h3 class="tab-label no-toc">Accent only</h3>
+    <p>The frame, hover bar, description box and text all follow the new accent.</p>
+<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_beam.json">
+{
+  "ability": "examplemod:frost_powers#frost_beam",
+  "accent_color": "#7FDBFF"
+}
+</pre>
+  </section>
+  <section data-tab="Custom frame">
+    <h3 class="tab-label no-toc">Custom frame</h3>
+    <p>Your mod or addon pack ships these textures at <code>assets/examplemod/textures/gui/...</code>.</p>
+<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_beam.json">
+{
+  "ability": "examplemod:frost_powers#frost_beam",
+  "frame_texture": "examplemod:textures/gui/frost_frame.png",
+  "locked_frame_texture": "examplemod:textures/gui/frost_frame_locked.png",
+  "icon": "examplemod:textures/gui/frost_beam_icon.png"
+}
+</pre>
+  </section>
+  <section data-tab="Every state">
+    <h3 class="tab-label no-toc">Every state</h3>
+    <p>The open ("selected") look belongs to a power's tab: set <code>tab_color</code> and <code>selected_tab_color</code> in a <code>power</code> file.</p>
+<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_beam.json">
+{
+  "ability": "examplemod:frost_powers#frost_beam",
+  "frame_color": "#A8E6FF",
+  "locked_color": "#3B4A55",
+  "hover_color": "#C9F1FF",
+  "background_color": "#10233ACC",
+  "title_color": "#FFFFFF",
+  "description_color": "#B5D9EA"
+}
+</pre>
+  </section>
+  <section data-tab="Re-theme a stone ability">
+    <h3 class="tab-label no-toc">Re-theme a stone ability</h3>
+    <p>In a resource pack. The Space Stone's other abilities, tab and lines stay blue.</p>
+<pre data-lang="json" data-title="assets/infinity/ability_overlays/space_teleport.json">
+{
+  "ability": "infinity:space_stone#teleport",
+  "accent_color": "#B388FF"
+}
+</pre>
+  </section>
+  <section data-tab="A whole power">
+    <h3 class="tab-label no-toc">A whole power</h3>
+    <p>From an addon pack, the file goes in <code>addonpacks/&lt;pack&gt;/assets/&lt;namespace&gt;/ability_overlays/</code>.</p>
+<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_powers.json">
+{
+  "power": "examplemod:frost_powers",
+  "accent_color": "#7FDBFF",
+  "selected_tab_color": "#C9F1FF"
+}
+</pre>
+  </section>
+</div>

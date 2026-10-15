@@ -4,7 +4,6 @@ nav: Containers and Tools
 description: The Tesseract, Scepter, Aether, Orb, Eye of Agamotto, Cosmi-Rod and Soul Guardian Telephone, and how items behave on the ground.
 lead: Every stone comes inside something. How each container works, how to open it, and the tools that go with them.
 icon: renders/orb.png
-related: finding-stones.html, items.html, stones/index.html, addons/ground-items.html
 ---
 <h2 id="overview">Overview</h2>
 <div class="table-wrap"><table>
@@ -22,7 +21,24 @@ related: finding-stones.html, items.html, stones/index.html, addons/ground-items
 {{itemcards tesseract}}
 <p>The Tesseract was kept in Odin's vault before it ended up in the Norse Village, looked after by the Asgardian worshippers there. In
   either hand it gives you the Space Stone's power, and it counts as a Space source for {{ab power/meteor_storm}}. Its glowing core spins
-  inside the cube like it did in Heroes Expansion. Drop it and hit it to break it open, and the Space Stone falls out with a flash of blue.</p>
+  inside the cube like it did in Heroes Expansion.</p>
+<h3 id="tesseract-travel">Jumping between dimensions</h3>
+<p><strong>Right-click</strong> with the Tesseract to jump to the next dimension, like the Heroes Expansion Tesseract (which picked one at
+  random). No skill tree unlock is needed.</p>
+<ul>
+  <li>It goes through every dimension on the server in turn: the Overworld, the Nether and the End first, then all the others
+    (this mod's planets and other mods' dimensions) by ID. Keep clicking to cycle round.</li>
+  <li>You land on solid, safe ground near the same spot (scaled like a Nether portal), otherwise near that world's spawn, otherwise near
+    0, 0. A dimension with nowhere safe to stand is skipped. If none has one, you get "The Tesseract finds nowhere safe to go."</li>
+  <li>For 5 seconds after you land, the new world itself can't hurt you (no air, another mod's heat or cold, suffocating). Mobs and
+    players still can.</li>
+  <li>There's a one second cooldown between jumps.</li>
+  <li>The Soulworld is left out by default. Server owners can leave out more dimensions, or whole mods, in the
+    {{page compatibility.html#config config}}.</li>
+</ul>
+<h3 id="opening-the-tesseract">Opening it</h3>
+<p>Drop it and hit it to break it open. The Tesseract rises in a growing burst of blue rays for 5 seconds and ends in a sphere of
+  light, and then the Space Stone falls out. You can't pick it up while it's opening.</p>
 
 <h2 id="scepter">Scepter</h2>
 {{itemcards scepter empty_scepter}}
@@ -33,7 +49,8 @@ related: finding-stones.html, items.html, stones/index.html, addons/ground-items
 <h2 id="aether">Aether</h2>
 {{itemcards aether empty_aether}}
 <p>The Aether is the Reality Stone in liquid form, the weapon Malekith tried to use to put the universe back into darkness. In either hand
-  it gives the Reality Stone's power. Hit it on the ground to turn it back into the stone. To make an Aether again, hold the Reality Stone
+  it gives the Reality Stone's power. Hit it on the ground and its lids swing open, red light bursts out and pours upward in a column for
+  5 seconds, and it ends in an explosion that leaves the Reality Stone behind. To make an Aether again, hold the Reality Stone
   in your off hand and an Empty Aether in your main hand and use:</p>
 {{abilities aether}}
 <p>You can also right-click an Empty Aether lying on the ground while holding the Reality Stone.</p>
@@ -60,7 +77,8 @@ related: finding-stones.html, items.html, stones/index.html, addons/ground-items
   <li>With the Orb open, <strong>right-click</strong> to take the Power Stone. There's only one per world, so if someone already took it
     you'll see "The Power Stone has already been taken from an Orb."</li>
   <li>To put it back, open the Orb and right-click while holding the Power Stone in your other hand.</li>
-  <li><em>Lock Orb</em> locks it for you again, if you want to crack it again.</li>
+  <li><em>Lock Orb</em> locks it for you again and forgets that you opened it, if you want to crack it again.</li>
+  <li>Picking the Orb up again starts the lock over, unless you've already cracked it, in which case it stays open for you.</li>
 </ul>
 <p>Operators can skip the puzzle with <a href="@/commands.html#infinity-unlock-orb">/infinity unlock_orb</a>.</p>
 
@@ -95,8 +113,10 @@ related: finding-stones.html, items.html, stones/index.html, addons/ground-items
 {{itemcards soul_guardian_telephone}}
 {{abilities telephone}}
 <ul>
-  <li><strong>Right-click</strong> to bring the Soul Guardian from Vormir to you. The phone loads the Vormir area for the call.</li>
-  <li>The Guardian goes back to Vormir by itself after 1,200 ticks (one minute).</li>
+  <li><strong>Right-click</strong> to bring the Soul Guardian to you, wherever it is. If its spot on Vormir isn't loaded, the phone loads
+    it until the Guardian is found.</li>
+  <li>The Guardian goes back to Vormir by itself after 1,200 ticks (one minute). Its way home is saved on it, so a server restart in
+    the middle doesn't strand it.</li>
   <li><strong>Sneak and right-click</strong> to send it back straight away.</li>
   <li>The cooldown is 24,000 ticks (one Minecraft day, 20 minutes).</li>
 </ul>
@@ -108,7 +128,8 @@ related: finding-stones.html, items.html, stones/index.html, addons/ground-items
   <li>They can't be destroyed, burnt or blown up, they never despawn, and they stop at the bottom of the world instead of falling out.</li>
   <li>Walking over them doesn't pick them up. <strong>Right-click</strong> them. They keep all their data (a gauntlet's stones and skin,
     names, enchantments).</li>
-  <li>Containers with a stone break open when you hit them, and stones and empty containers join up when you right-click one with the other.</li>
+  <li>Containers with a stone break open when you hit them, and stones and empty containers join up when you right-click one with the other.
+    The Tesseract and the Aether play an opening animation first.</li>
   <li>While someone is carrying a stone, any copy of it on the ground disappears, so stones can't be duplicated.</li>
 </ul>
 <p>Addons can make their own items work like this, see {{page addons/ground-items.html Ground Items}}.</p>

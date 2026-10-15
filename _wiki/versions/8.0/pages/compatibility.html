@@ -2,9 +2,8 @@
 title: Compatibility and Configuration
 nav: Compatibility and Config
 description: Required and optional mods, every integration, the config file, upgrading old worlds and known problems.
-lead: What the mod needs, what it works with, and the one setting you can change.
+lead: What the mod needs, what it works with, and the settings you can change.
 icon: renders/soul_guardian_telephone.png
-related: getting-started.html, troubleshooting.html, addons/index.html, dimensions.html
 ---
 <h2 id="versions">Versions</h2>
 <div class="table-wrap"><table><tbody>
@@ -19,14 +18,20 @@ related: getting-started.html, troubleshooting.html, addons/index.html, dimensio
   <thead><tr><th>Mod</th><th>Version range</th><th>Used for</th></tr></thead>
   <tbody>
     <tr><td>Palladium</td><td><code>[1.20.1-4.2.0,)</code></td><td>The whole power system: stones, abilities, skill trees, render layers and addon packs.</td></tr>
-    <tr><td>Chrono API</td><td><code>[1.0.0,)</code></td><td>Changing the tick rate and pausing time (Slow Time, Time Freeze, Time Immunity).</td></tr>
   </tbody>
 </table></div>
+<p>That's the only one. Chrono API used to be required too, and is optional in 8.0.</p>
 
 <h2 id="integrations">Integrations</h2>
 <div class="table-wrap"><table>
   <thead><tr><th>Mod</th><th>What you get</th></tr></thead>
   <tbody>
+    <tr id="immersive-portals"><td><strong>Immersive Portals</strong> (with Cloth Config) <span class="status new">New in 8.0</span></td><td>Space Stone
+      portals opened from the {{ab space/teleport}} menu become real portals: you see the other side through them and walk straight
+      through, both ways, even between dimensions. Without it they work as before. See {{page stones/space.html#immersive-portals Space Stone}}.</td></tr>
+    <tr id="chrono-api"><td><strong>Chrono API</strong> <code>[1.0.0,)</code></td><td>Changing the tick rate and pausing time: {{ab time/slow_time_dummy}},
+      {{ab time/time_freeze_dummy}} and the Time Stone's immunity to them. Without it those abilities show "Chrono API is not installed, so
+      this ability does nothing" and the rest of the Time Stone works as normal.</td></tr>
     <tr><td><img class="mod-logo" src="@w/assets/img/compat/ad_astra.png" alt=""><strong>Ad Astra</strong></td><td>The Garden, Vormir, Morag and Svartalfheim as planets. You need a <strong>Tier 4 rocket</strong> to get to them.</td></tr>
     <tr><td><img class="mod-logo" src="@w/assets/img/compat/cosmic.png" alt=""><strong>Cosmic Horizons</strong></td><td>A Marvel solar system (dimension <code>infinity:marvel</code>) with the same four planets to fly to.</td></tr>
     <tr><td><strong>Curios API</strong></td><td>Hands slot for the Infinity Gauntlet (its visibility button works too), head slot for the six stones, necklace slot for the Eye of Agamotto.</td></tr>
@@ -47,15 +52,21 @@ related: getting-started.html, troubleshooting.html, addons/index.html, dimensio
 </table></div>
 
 <h2 id="config">Config</h2>
-<p>There's one config file, <code>config/infinity-common.toml</code>:</p>
+<p>There's one config file, <code>config/infinity-common.toml</code>, with two settings:</p>
 <pre data-lang="text" data-title="config/infinity-common.toml">
 [orb]
 	#Number of left/right turns in the Orb's combination lock.
 	#Each world gets its own random combination; changing this generates a new one.
 	#Range: 1 ~ 64
 	combinationLength = 15
+
+[tesseract]
+	#Dimensions the Tesseract never takes players to, as IDs ("modid:name") or whole mods ("modid:*").
+	#Every other dimension, including other mods', is visited in turn wherever there is a safe place to land.
+	excludedDimensions = ["infinity:soulworld"]
 </pre>
-<p>Everything else is set up through data: the {{page addons/index.html addon systems}}, Palladium power files, and tags like
+<p>Server admins can also switch off any of the mod's abilities in game with
+  <a href="@/commands.html#infinity-ability">/infinity ability disable</a>. Everything else is set up through data: the {{page addons/index.html addon systems}}, Palladium power files, and tags like
   <code>#infinity:snap_hostile</code> and <code>#infinity:projectiles</code>.</p>
 
 <h2 id="world-upgrades">Old worlds</h2>
@@ -72,11 +83,11 @@ related: getting-started.html, troubleshooting.html, addons/index.html, dimensio
 
 <h2 id="limitations">Known problems</h2>
 <ul>
-  <li>Slow Time and Time Freeze change the tick rate for the <strong>whole server</strong>.</li>
+  <li>Slow Time and Time Freeze change the tick rate for the <strong>whole server</strong>, and do nothing without Chrono API.</li>
   <li>Explorer maps for structures outside the Overworld (Morag Temple, Aether Chamber, Sanctuary) are filled from the Overworld and can come out blank.</li>
   <li><code>/infinity gauntlet skin</code> doesn't need a permission level, and <code>clear</code> gives back the skin's unlock item.</li>
   <li>Big Meteor Storms can lag.</li>
   <li>Size Changing, Invisibility scaling and the Intangibility hitbox need Pehkui.</li>
   <li>Some in-game descriptions are older than the code. The Soul Guardian Telephone sends the Guardian back after one minute, not ten,
-    and Summon Zombie summons six zombies, not seven.</li>
+    and finds it wherever it is, and Summon Zombie summons six zombies, not seven.</li>
 </ul>

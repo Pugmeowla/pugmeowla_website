@@ -3,7 +3,6 @@ title: Ground Items
 description: The ground_items format: make any item lie on the ground like the Infinity Stones, break open into other items, combine, or be drawn by a Palladium power.
 lead: Make an item lie still on the ground, survive anything, and only be picked up by right-clicking.
 icon: renders/tesseract.png
-related: addons/index.html, addons/stones.html, containers.html, addons/custom-gauntlets.html
 ---
 <h2 id="behaviour">What a ground item does</h2>
 <p>A dropped or thrown item with a file in <code>data/infinity/ground_items/</code> becomes an <code>infinity:ground_item</code> entity that:</p>
@@ -23,16 +22,32 @@ related: addons/index.html, addons/stones.html, containers.html, addons/custom-g
     <tr><td><code>item</code></td><td><strong>required</strong></td><td>The item. Must be registered. Each item can only be one ground item.</td></tr>
     <tr><td><code>spin</code></td><td><code>false</code></td><td>Spin like a dropped item. Otherwise it lies still facing a random way.</td></tr>
     <tr><td><code>bob</code></td><td><code>false</code></td><td>Float and bob like a dropped item. Otherwise its lowest point rests on the ground.</td></tr>
-    <tr><td><code>scale</code></td><td><code>1</code></td><td>Size of the drawn item, on top of its ground display transform.</td></tr>
+    <tr><td><code>scale</code></td><td><code>1</code></td><td>Size of the drawn item on the ground, on top of its ground display transform. Only the ground: held, worn and inventory rendering don't change. The Orb uses <code>0.5</code>, since its item model is twice the size of the orb drawn in the hand.</td></tr>
     <tr><td><code>width</code> / <code>height</code></td><td><code>0.4</code></td><td>Size of the box you right-click and hit, in blocks.</td></tr>
     <tr><td><code>unique</code></td><td><code>false</code></td><td>While a player carries this item, ground items of it disappear, so it can't be duplicated.</td></tr>
-    <tr><td><code>release</code></td><td>none</td><td>Hitting it breaks it open into <code>items</code> (each dropped as its own ground item, in the same spot) with a particle burst in <code>color</code> (<code>#RRGGBB</code>, default white).</td></tr>
+    <tr><td><code>release</code></td><td>none</td><td>Hitting it breaks it open into <code>items</code> (each dropped as its own ground item, in the same spot) with a particle burst in <code>color</code> (<code>#RRGGBB</code>, default white). With an <a href="#opening"><code>opening</code></a> it plays that first and can't be picked up meanwhile. Ground items with a <code>power</code> always break open at once.</td></tr>
     <tr><td><code>combine</code></td><td><code>[]</code></td><td><code>[{"item": …, "result": …}]</code>: right-clicking it on the ground while holding <code>item</code> uses one up and turns it into <code>result</code> where it lies. Give the other item the reverse entry so it works whichever is on the ground.</td></tr>
     <tr><td><code>power</code></td><td>none</td><td>Instead of drawing the item, place it as an invisible small armor stand wearing the stack, drawn by this Palladium power's render layers (the gauntlet and Eye of Agamotto use this). <code>release</code> still works. <code>spin</code>, <code>bob</code>, <code>scale</code>, <code>width</code>, <code>height</code> and <code>unique</code> don't apply.</td></tr>
     <tr><td><code>slot</code></td><td>none</td><td>With <code>power</code>: the armor stand slot (<code>head</code>, <code>chest</code>, <code>legs</code>, <code>feet</code>, <code>mainhand</code>, <code>offhand</code>) that wears the stack, for render layers that read it. Left out, the stack stays hidden.</td></tr>
   </tbody>
 </table></div>
 <p>A file with the same name in a higher-priority pack replaces the mod's. Restart after changes.</p>
+
+<h2 id="opening">Opening animations</h2>
+<p>An <code>opening</code> inside <code>release</code> plays an animation between being hit and letting go of the items. The Tesseract and the
+  Aether use one.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>effect</code></td><td><strong>required</strong></td><td><code>"rays"</code>: Heroes Expansion's Tesseract, rising in a growing burst of rays in the release <code>color</code>, ending in a sphere of particles. <code>"plume"</code>: the 1.12.2 Aether, red squares bursting out then pouring upward in a column, ending in an explosion.</td></tr>
+    <tr><td><code>duration</code></td><td><code>100</code></td><td>Ticks, at most <code>1200</code>.</td></tr>
+    <tr><td><code>colors</code></td><td>the release <code>color</code></td><td><code>["#RRGGBB", ...]</code>: each plume square is a random shade between these.</td></tr>
+    <tr><td><code>model</code></td><td>the item's</td><td>Model drawn instead of the item meanwhile, like the item without its lid.</td></tr>
+    <tr><td><code>parts</code></td><td><code>[]</code></td><td>Models that swing open: <code>{"model": ..., "pivot": [x, y, z], "axis": "x"/"y"/"z", "angle": degrees, "ticks": 20}</code>, pivot in model pixels.</td></tr>
+  </tbody>
+</table></div>
+<p>Opening models are only loaded because a ground item names them. Give them <code>"parent": "&lt;the item's model&gt;"</code> and just their
+  own <code>elements</code>, so they share its textures and ground transform.</p>
 
 <h2 id="examples">Examples from the mod</h2>
 <div class="tabs" data-tabs>
@@ -43,7 +58,30 @@ related: addons/index.html, addons/stones.html, containers.html, addons/custom-g
   "item": "infinity:tesseract",
   "release": {
     "items": ["infinity:space_stone"],
-    "color": "#66BFFF"
+    "color": "#66BFFF",
+    "opening": { "effect": "rays", "duration": 100 }
+  }
+}
+</pre>
+  </section>
+  <section data-tab="Opening with moving parts">
+    <h3 class="tab-label no-toc">Opening with moving parts</h3>
+<pre data-lang="json" data-title="aether.json">
+{
+  "item": "infinity:aether",
+  "release": {
+    "items": ["infinity:reality_stone"],
+    "color": "#FF261A",
+    "opening": {
+      "effect": "plume",
+      "duration": 100,
+      "colors": ["#C81828", "#F85060"],
+      "model": "infinity:item/aether_open",
+      "parts": [
+        { "model": "infinity:item/aether_lid_left", "pivot": [5, 9, 8], "axis": "z", "angle": 75, "ticks": 20 },
+        { "model": "infinity:item/aether_lid_right", "pivot": [11, 9, 8], "axis": "z", "angle": -75, "ticks": 20 }
+      ]
+    }
   }
 }
 </pre>

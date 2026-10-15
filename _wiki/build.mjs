@@ -170,15 +170,6 @@ function renderer(v) {
     return `<nav class="pager" aria-label="Previous and next page">${link(prev, '← Previous', 'prev')}${link(next, 'Next →', 'next')}</nav>`;
   };
 
-  const related = (meta) => {
-    if (!meta.related) return '';
-    const files = meta.related.split(',').map((s) => s.trim()).filter(Boolean);
-    for (const f of files) if (!pages[f]) errors.push(`${v.id}: related page ${f} does not exist`);
-    return `<section class="related" aria-labelledby="related-heading"><h2 id="related-heading" class="no-toc">Related pages</h2><div class="related-grid">${
-      files.filter((f) => pages[f]).map((f) => `<a class="related-card" href="@/${f}">${pages[f].meta.icon ? img(pages[f].meta.icon) : ''}<span><strong>${escapeHtml(titleOf(f))}</strong><small>${escapeHtml(pages[f].meta.description || '')}</small></span></a>`).join('')
-    }</div></section>`;
-  };
-
   const notice = () => {
     const other = versions.find((o) => o.id !== v.id && (v.id === site.released ? true : o.id === site.released));
     if (!v.notice || !other) return '';
@@ -241,7 +232,6 @@ ${base ? `<script>${base}</script>` : ''}
     <article class="prose">
 ${content}
     </article>
-    ${related(meta)}
     ${pager(file)}
     <footer class="footer">
       <p><strong>${escapeHtml(site.modName)}</strong> by Pugmeowla. These pages document version ${escapeHtml(v.label)} for Minecraft ${escapeHtml(v.minecraft)}.</p>

@@ -3,7 +3,6 @@ title: Custom Stones
 description: The gauntlet_stones format. Make any item fit in the Infinity Gauntlet and Cosmi-Rod, with its own color, glint, tooltip, head slot support and power.
 lead: Any item can be an Infinity Stone. One file makes it fit the gauntlet, look like a stone and give a power.
 icon: stones/time_stone.png
-related: addons/index.html, addons/ground-items.html, addons/abilities.html, gauntlet/index.html
 ---
 <h2 id="how-it-works">How it works</h2>
 <p>Every item that can go in the Infinity Gauntlet has a file in <code>data/infinity/gauntlet_stones/</code>, including the six Infinity
@@ -29,7 +28,8 @@ related: addons/index.html, addons/ground-items.html, addons/abilities.html, gau
     <tr><td><code>glint_color</code></td><td><code>color</code></td><td><code>#RRGGBB</code> color of the glints.</td></tr>
     <tr><td><code>tooltip_color</code></td><td><code>color</code></td><td>Color of its line in the gauntlet tooltip. A chat color name (<code>aqua</code>, <code>light_purple</code>…) or <code>#RRGGBB</code>.</td></tr>
     <tr><td><code>tooltip_order</code></td><td><code>100</code></td><td>Where it goes in the tooltip. Lower comes first. The six stones use 0 to 5.</td></tr>
-    <tr><td><code>power</code></td><td>none</td><td>Palladium power given while the stone is in any slot of the active gauntlet (off hand or Curios hands). In a Cosmi-Rod, a stone without <code>power</code> gives the power with the same ID as the item.</td></tr>
+    <tr><td><code>power</code></td><td>none</td><td>Palladium power given while the stone is in any slot of the active gauntlet (off hand or Curios hands), and while it's held if <code>hand</code> is on. In a Cosmi-Rod, a stone without <code>power</code> gives the power with the same ID as the item.</td></tr>
+    <tr><td><code>hand</code></td><td><code>true</code></td><td>Gives the stone's <code>power</code> while the stone itself is held in either hand. The six built-in stones set it to <code>false</code>, because their held power comes from their own item powers.</td></tr>
     <tr><td><code>head</code></td><td><code>false</code></td><td>Lets the stone go in the Curios head slot, where it's drawn on the forehead and gives its power.</td></tr>
     <tr><td><code>texture</code></td><td><code>infinity:textures/item/infinity_stone.png</code></td><td>The stone cube's texture, tinted by <code>color</code>. Uses the 1.12.2 layout, a 6×6×6 box UV cube on a 32×16 texture.</td></tr>
   </tbody>
@@ -68,10 +68,12 @@ related: addons/index.html, addons/ground-items.html, addons/abilities.html, gau
   "color": "#13CF55",
   "glint_color": "#12E772",
   "tooltip_color": "green",
-  "tooltip_order": 4
+  "tooltip_order": 4,
+  "power": "infinity:time_stone",
+  "hand": false
 }
 </pre>
-    <p>The six built-in stones don't have a <code>power</code>, because the gauntlet power hands those out itself.</p>
+    <p>The six built-in stones name their own power like any addon stone, so the gauntlet gives it out the same way.</p>
   </section>
 </div>
 

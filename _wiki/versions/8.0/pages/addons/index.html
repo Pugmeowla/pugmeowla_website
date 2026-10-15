@@ -4,10 +4,9 @@ nav: Overview
 description: How to extend Infinity Stone Core with addon packs. Custom stones, skins, gauntlets and ground items from JSON, and how it fits with Palladium.
 lead: New stones, skins, gauntlets and props without writing Java. It's all JSON in an addon pack or a mod.
 icon: renders/52-d_unit.png
-related: addons/stones.html, addons/skins.html, addons/custom-gauntlets.html, addons/abilities.html
 ---
 <h2 id="extension-points">What you can add</h2>
-{{pagecards addons/stones.html|stones/time_stone.png addons/skins.html|skin-renders/dragon_gauntlet.png addons/custom-gauntlets.html|renders/infinity_gauntlet.png addons/ground-items.html|renders/tesseract.png addons/abilities.html|icons/energy_blast.png}}
+{{pagecards addons/stones.html|stones/time_stone.png addons/skins.html|skin-renders/dragon_gauntlet.png addons/custom-gauntlets.html|renders/infinity_gauntlet.png addons/ground-items.html|renders/tesseract.png addons/ability-overlays.html|renders/aspects_of_existance.png addons/abilities.html|icons/energy_blast.png}}
 <div class="table-wrap"><table>
   <thead><tr><th>System</th><th>Folder</th><th>One file per</th></tr></thead>
   <tbody>
@@ -15,6 +14,7 @@ related: addons/stones.html, addons/skins.html, addons/custom-gauntlets.html, ad
     <tr><td>{{page addons/skins.html Gauntlet skins}}</td><td><code>data/infinity/gauntlet_skins/</code></td><td>skin</td></tr>
     <tr><td>{{page addons/custom-gauntlets.html Custom gauntlets}}</td><td><code>data/infinity/gauntlets/</code></td><td>item or power that acts as a gauntlet</td></tr>
     <tr><td>{{page addons/ground-items.html Ground items}}</td><td><code>data/infinity/ground_items/</code></td><td>item that lies on the ground like a stone</td></tr>
+    <tr><td>{{page addons/ability-overlays.html Ability overlays}}</td><td><code>assets/&lt;namespace&gt;/ability_overlays/</code></td><td>power or ability themed in the skill tree (a resource, so it can go in a resource pack)</td></tr>
     <tr><td>Palladium powers</td><td><code>data/&lt;namespace&gt;/palladium/powers/</code></td><td>power, using the mod's {{page addons/abilities.html ability types and conditions}} if you want</td></tr>
   </tbody>
 </table></div>
@@ -50,22 +50,24 @@ addonpacks/chaos_stone_pack/
 
 <h2 id="palladium">Using the mod's powers</h2>
 <ul>
-  <li>The stone powers are <code>infinity:space_stone</code>, <code>infinity:mind_stone</code>, <code>infinity:reality_stone</code>,
-    <code>infinity:power_stone</code>, <code>infinity:time_stone</code> and <code>infinity:soul_stone</code>. The gauntlet's is
+  <li>The stone powers are <code>infinity:power_stone</code>, <code>infinity:space_stone</code>, <code>infinity:reality_stone</code>,
+    <code>infinity:soul_stone</code>, <code>infinity:time_stone</code> and <code>infinity:mind_stone</code>. The gauntlet's is
     <code>infinity:infinity_gauntlet</code>. Check for them with <code>palladium:has_power</code>.</li>
   <li>To check what's in a gauntlet use <code>infinity:gauntlet_slot</code>. To check whether a stone is available at all use
     <code>infinity:stone_equipped</code>. Every condition and ability type is on the {{page addons/abilities.html reference page}}.</li>
   <li>To give your own power the generated skin abilities, add an entry <code>{"infinity:generate": "gauntlet_skins"}</code> to its abilities,
     like the gauntlet power does. When it loads, that entry is swapped for every skin's apply ability and tree entry.</li>
   <li>Scoreboard objectives you can read in conditions and energy bars: <code>DamageCycle</code> (power level), <code>SoulStorage</code>
-    (souls), <code>tickrateCycle</code> and <code>timestonesidebar</code> (Time Stone step), and <code>power_stone</code> to <code>mind_stone</code>
-    (1 while that stone is in the worn gauntlet).</li>
+    (souls), and <code>tickrateCycle</code> and <code>timestonesidebar</code> (Time Stone step). The old <code>power_stone</code> to
+    <code>mind_stone</code> objectives for stones in the gauntlet are gone in 8.0: use <code>infinity:gauntlet_slot</code> instead.</li>
+  <li>To let players switch part of your power off, add an <code>infinity:toggle</code> ability and check its setting with the
+    <code>infinity:setting</code> condition, like the stones' passive toggles.</li>
 </ul>
 
 <h2 id="in-game-docs">In-game reference</h2>
 <p>When Palladium generates its documentation (into <code>mods/documentation/</code>), the mod adds its own pages under
-  <code>infinity/</code>: <code>gauntlet_stones.html</code>, <code>gauntlet_skins.html</code>, <code>custom_gauntlets.html</code> and
-  <code>ground_items.html</code>. Its ability and condition types go into Palladium's own pages. They're generated from the code, so they
+  <code>infinity/</code>: <code>gauntlet_stones.html</code>, <code>gauntlet_skins.html</code>, <code>custom_gauntlets.html</code>,
+  <code>ground_items.html</code> and <code>ability_overlays.html</code>. Its ability and condition types go into Palladium's own pages. They're generated from the code, so they
   always match the version you have.</p>
 
 <h2 id="examples">Real examples</h2>
