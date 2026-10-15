@@ -52,7 +52,7 @@ function abilityCard(ability) {
     ${requires.length ? `<p class="ability-req"><span>Requires</span> ${requires.join(', ')}</p>` : ''}
     ${needs.length ? `<p class="ability-req"><span>Needs stones</span> ${needs.map((id) => stoneChip(id)).join(' ')}</p>` : ''}
     ${ability.details || ''}
-    <p class="ability-id"><code>${escapeHtml(group.power)}</code> · <code>${escapeHtml(ability.type)}</code></p>
+    <p class="ability-id"><code>${escapeHtml(group.power)}</code>${ability.type ? ` · <code>${escapeHtml(ability.type)}</code>` : ''}</p>
   </div>
 </article>`;
 }
@@ -65,7 +65,8 @@ function stoneChip(id) {
 
 function itemDetail(item) {
   return `<div class="item-detail">
-    <div class="item-detail-head">${img(item.img, item.name, 'px item-detail-img')}<div><h3 class="no-toc">${escapeHtml(item.name)}</h3><code>${escapeHtml(item.id)}</code></div></div>
+    <div class="item-detail-head">${img(item.img, item.name, 'px item-detail-img')}<div><h3 class="no-toc">${escapeHtml(item.name)}</h3></div></div>
+    <code class="item-id">${escapeHtml(item.id)}</code>
     <p>${item.desc}</p>
     <dl><dt>How to get it</dt><dd>${item.obtain}</dd>${item.rarity ? `<dt>Rarity</dt><dd>${item.rarity}</dd>` : ''}
     <dt>Category</dt><dd>${escapeHtml(categories.find((c) => c.id === item.category).name)}</dd></dl>
@@ -190,7 +191,7 @@ const macros = {
 
   skingallery() {
     return `<div class="skin-grid">${skins.map((skin) => `<article class="skin-card" id="skin-${slugify(skin.id)}">
-  <button type="button" class="skin-zoom" data-zoom="@w/assets/img/skin-renders/${skin.id}.png" data-caption="${escapeHtml(skin.title)}" aria-label="Enlarge ${escapeHtml(skin.title)}">${img(`skin-renders/${skin.id}.png`, skin.title, 'px skin-img')}</button>
+  <button type="button" class="skin-zoom" data-zoom="@w/assets/img/skins/${skin.id}.png" data-caption="${escapeHtml(skin.title)}" aria-label="Enlarge ${escapeHtml(skin.title)}">${img(`skins/${skin.id}.png`, skin.title, 'px skin-img')}</button>
   <h3 class="no-toc">${escapeHtml(skin.title)}</h3>
   <p class="skin-unlock">${!skin.unlock
     ? '<span>Unlock:</span> <em>Secret</em>'

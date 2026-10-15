@@ -27,10 +27,9 @@ export const abilities = [
   {
     group: 'power', key: 'impower', name: 'Energy Blast', type: 'infinity:energy_blast',
     activation: 'Key press', cost: 1, requires: [], cooldown: 5, icon: 'icons/energy_blast.png',
-    summary: 'A magenta energy bolt that does 3 × 2^level damage.',
-    details: `<p>Hits the first thing in its path. The damage doubles with every
-      <a href="@/progression.html#power-levels">Power Stone level</a>, from 3 at level 0 to 6144 at level 11, and becomes infinite at
-      full power.</p>`,
+    summary: 'A magenta energy bolt whose damage scales with your power level.',
+    details: `<p>Hits the first thing in its path. The damage scales with your
+      <a href="@/stones/power.html#power-levels">power level</a> on the purple bar.</p>`,
   },
   {
     group: 'power', key: 'knockback', name: 'Knockback Resistance', type: 'palladium:attribute_modifier',
@@ -42,15 +41,15 @@ export const abilities = [
     activation: 'Hold', cost: 1, requires: ['impower'], icon: 'icons/power_blast.png',
     summary: 'Hold to fire a 100 block beam that smelts blocks and starts fires.',
     details: `<p>Does 2^level damage. At full power (level 11 with all six stones) it turns rainbow and explodes (power 4) wherever
-      it hits a block, every tick. Fired from your off hand.</p>`,
+      it hits a block. Fired from your off hand.</p>`,
   },
   {
-    group: 'power', key: 'power_levels', name: 'Power Levels 1 to 11', type: 'palladium:dummy (×11)',
+    group: 'power', key: 'power_levels', name: 'Power Levels 1 to 11', type: '',
     activation: 'Upgrade', cost: 434, requires: [], icon: S('power'),
     summary: 'Eleven levels you buy one by one. Each doubles your base attack damage.',
     details: `<p>They cost 2, 4, 8, 12, 18, 26, 36, 48, 64, 88 and 128 Aspects of Existence, 434 in total. Use
       <strong>Damage Control</strong> to pick which level is active. Full table on
-      <a href="@/progression.html#power-levels">Power Levels</a>.</p>`,
+      <a href="@/stones/power.html#power-levels">Power Levels</a>.</p>`,
   },
   {
     group: 'power', key: 'damage_control', name: 'Damage Control', type: 'palladium:command + infinity:power_level_change',
@@ -126,7 +125,8 @@ export const abilities = [
     summary: 'Pick up a mob or a block, move it around and throw it.',
     details: `<p>Turn it on while looking at an entity or solid block (up to 32 blocks away) and it floats in front of you.
       <strong>Scroll</strong> to move it between 2 and 24 blocks away and <strong>left-click</strong> to throw it. Thrown things
-      hurt whatever they hit. Turn it off to put it down, and blocks go back into the world. Unbreakable blocks and blocks with
+      act like a projectile, they hurt whatever they hit. Turn it off to put it down, and blocks realign to the grid and are placed back
+      down. Unbreakable blocks and blocks with
       block entities (chests, furnaces and so on) can't be picked up.</p>`,
   },
   {
@@ -219,12 +219,13 @@ export const abilities = [
     group: 'soul', key: 'soul_storage', name: 'Soul Storage', type: 'infinity:soul_storage',
     activation: 'Passive', cost: 1, requires: [], icon: S('soul'),
     summary: 'Everything you kill gives you a soul, up to 50 (the orange bar).',
-    details: `<p>Clones and mobs that were already drained don't count. See <a href="@/progression.html#soul-storage">Soul Storage</a>.</p>`,
+    details: `<p>Clones and mobs that were already drained don't count. See <a href="@/stones/soul.html#soul-storage">Soul Storage</a>.</p>`,
   },
   {
     group: 'soul', key: 'soul_heal', name: 'Soul Heal', type: 'infinity:soul_heal',
     activation: 'Key press', cost: 1, requires: ['soul_storage'], cooldown: 10, icon: S('soul'),
     summary: 'Spend 1 soul to heal 2 hearts.',
+    details: `<p>Most useful early on, before you can afford Health and Regeneration.</p>`,
   },
   {
     group: 'soul', key: 'soul_drain', name: 'Soul Drain', type: 'infinity:soul_drain',
@@ -249,12 +250,12 @@ export const abilities = [
     activation: 'Key press', cost: 1, requires: [], icon: S('soul'),
     summary: 'Summons six zombies in Thanos armor on your team.',
     details: `<p>Three named ones (Transfer Zombie, Pugmeowla Zombie and Dark Zombie) and three normal ones. You and the zombies
-      join the <code>peaceful</code> team so they don't go for you. Runs <a href="@/commands.html#infinity-soul-zombies">/infinity soul zombies</a>.</p>`,
+      join the <code>peaceful</code> team so they don't go for you.</p>`,
   },
   {
     group: 'soul', key: 'enter_soulworld', name: 'Enter / Exit Soulworld', type: 'infinity:pocket_dimension_enter / exit',
     activation: 'Key press', cost: 1, requires: [], icon: S('soul'),
-    summary: 'Takes you and everything within 5 blocks into the Soulworld. Use it again to come back.',
+    summary: 'Takes you into the Soulworld, along with every mob, animal and player within 5 blocks of you. Use it again to come back.',
     details: `<p>Everyone arrives at Y 72 above the same X and Z. Each mob remembers where it came from, so <em>Exit Soulworld</em>
       (which replaces the ability while you're inside) sends them all back to their own spot.</p>`,
   },

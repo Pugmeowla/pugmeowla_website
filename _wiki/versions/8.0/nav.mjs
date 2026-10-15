@@ -11,8 +11,9 @@ export const version = {
 };
 
 export const nav = [
+  { title: 'Wiki Home', icon: 'logo.png', link: true, pages: ['index.html'] },
   { title: 'Getting Started', icon: 'renders/infinity_gauntlet_cast.png', pages: [
-    'index.html', 'getting-started.html', 'finding-stones.html', 'progression.html',
+    'installation.html', 'getting-started.html', 'finding-stones.html', 'progression.html', 'advancements.html',
   ] },
   { title: 'Infinity Stones', icon: 'stones/power_stone.png', pages: [
     'stones/index.html', 'stones/power.html', 'stones/space.html', 'stones/reality.html',
@@ -38,6 +39,6 @@ export const nav = [
     'addons/ground-items.html', 'addons/ability-overlays.html', 'addons/abilities.html',
   ] },
   { title: 'Help', icon: 'renders/soul_guardian_telephone.png', pages: [
-    'compatibility.html', 'troubleshooting.html', 'credits.html',
+    'configuration.html', 'troubleshooting.html', 'credits.html',
   ] },
 ];

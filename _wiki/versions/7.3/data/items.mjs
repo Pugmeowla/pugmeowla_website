@@ -36,6 +36,8 @@ export const items = [
   ...current
     .filter((item) => item.id !== 'infinity:temple_beacon')
     .map((item) => (overrides[item.id] ? { ...item, ...overrides[item.id] } : item))
+    // 7.3 keeps Tinkers' Construct on its Compatibility page; 8.0 moved it to Installation.
+    .map((item) => (item.page?.startsWith('installation.html') ? { ...item, page: item.page.replace('installation.html', 'compatibility.html') } : item))
     .flatMap((item) => (item.id === 'infinity:cosmi-rod' ? [item, ...stoneRods] : [item])),
   {
     id: 'infinity:empty_eye_of_agamotto', name: 'Empty Eye of Agamotto', category: 'container', img: R('empty_eye_of_agamotto'),

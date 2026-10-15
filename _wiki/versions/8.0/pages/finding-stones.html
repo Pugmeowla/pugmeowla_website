@@ -8,12 +8,12 @@ icon: stones/soul_stone.png
 <div class="table-wrap"><table>
   <thead><tr><th>Stone</th><th>Container</th><th>Structure</th><th>Dimension</th><th>Getting the stone out</th></tr></thead>
   <tbody>
-    <tr><td>{{stone power}}</td><td>{{item orb}}</td><td><a href="@/structures.html#morag-temple">Morag Temple</a></td><td>Morag</td><td>Crack the combination, open the Orb, take the stone.</td></tr>
-    <tr><td>{{stone space}}</td><td>{{item tesseract}}</td><td><a href="@/structures.html#norse-village">Norse Village</a></td><td>Overworld</td><td>Drop the Tesseract and hit it.</td></tr>
-    <tr><td>{{stone reality}}</td><td>{{item aether}}</td><td><a href="@/structures.html#aether-chamber">Aether Chamber</a></td><td>Svartalfheim</td><td>Drop the Aether and hit it.</td></tr>
+    <tr><td>{{stone power}}</td><td>{{item orb}}</td><td><a href="@/structures.html#morag-temple">Morag Temple</a></td><td>Morag</td><td>Unlock the combination, open the Orb, take the stone.</td></tr>
+    <tr><td>{{stone space}}</td><td>{{item tesseract}}</td><td><a href="@/structures.html#norse-village">Norse Village</a></td><td>Overworld</td><td>Drop the Tesseract and left-click it.</td></tr>
+    <tr><td>{{stone reality}}</td><td>{{item aether}}</td><td><a href="@/structures.html#aether-chamber">Aether Chamber</a></td><td>Svartalfheim</td><td>Drop the Aether and left-click it.</td></tr>
     <tr><td>{{stone soul}}</td><td>None</td><td><a href="@/structures.html#vormir">Vormir's Edge</a></td><td>Vormir</td><td>Trade a Best Friend's Soul to the Soul Guardian.</td></tr>
-    <tr><td>{{stone time}}</td><td>{{item eye_of_agamotto}}</td><td><a href="@/structures.html#sanctum-sanctorum">Sanctum Sanctorum</a></td><td>Overworld</td><td>Wear the Eye, open it, use Remove Time Stone.</td></tr>
-    <tr><td>{{stone mind}}</td><td>{{item scepter}}</td><td><a href="@/structures.html#sanctuary">Sanctuary</a></td><td>The End</td><td>Drop the Scepter and hit it.</td></tr>
+    <tr><td>{{stone time}}</td><td>{{item eye_of_agamotto}}</td><td><a href="@/structures.html#sanctum-sanctorum">Sanctum Sanctorum</a></td><td>Overworld</td><td>Wear the Eye, open it, remove the Time Stone.</td></tr>
+    <tr><td>{{stone mind}}</td><td>{{item scepter}}</td><td><a href="@/structures.html#sanctuary">Sanctuary</a></td><td>The End</td><td>Drop the Scepter and left-click it.</td></tr>
   </tbody>
 </table></div>
 <p>You don't have to take a stone out to use it. Every container except the Orb gives you its stone's power while you hold it (or
@@ -21,7 +21,7 @@ icon: stones/soul_stone.png
 
 <h2 id="locating-the-structures">Finding the structures</h2>
 <p>There's only <strong>one of each</strong> stone structure per world. Five of them are placed like strongholds, at a random angle on
-  a ring around 0, 0. Going by their structure set files, they end up roughly this far from the origin. Vormir's Edge is the odd one
+  a ring around 0, 0. They end up roughly this far from the origin. Vormir's Edge is the odd one
   out: it's always in the same spot.</p>
 <div class="table-wrap"><table>
   <thead><tr><th>Structure</th><th>Stone</th><th>Where</th><th>Distance from 0, 0</th></tr></thead>
@@ -36,32 +36,31 @@ icon: stones/soul_stone.png
 </table></div>
 <p>To find them:</p>
 <ul>
-  <li><strong>/locate</strong> with cheats on: <code>/locate structure infinity:morag_temple</code> (or <code>norse_village</code>, <code>aether</code>,
-    <code>sanctum</code>, <code>sanctuary</code>) while you're in the right dimension.</li>
   <li><strong>Vormir</strong> doesn't need finding. Go to <code>infinity:vormir</code> and head for X 212, Z 99. The cliff is built around
     you as the chunks load.</li>
   <li><strong>Explorer maps</strong> from the Soul Guardian on Vormir (further down).</li>
   <li>The <strong>JEI</strong> info page on each stone and container says where it is.</li>
+  <li><strong>/locate</strong> with cheats on: <code>/locate structure infinity:morag_temple</code> (or <code>norse_village</code>, <code>aether</code>,
+    <code>sanctum</code>, <code>sanctuary</code>) while you're in the right dimension.</li>
 </ul>
 <div class="callout"><span class="callout-title">Decoys</span><p>Each of these structures except Vormir's Edge has a rare fake copy (1% chance per
   region) that looks the same but has an empty frame or stand. If the container isn't there, you might be in a fake one.</p></div>
 
 <h2 id="reaching-other-worlds">Getting to the other planets</h2>
-<p>Vormir, Morag and Svartalfheim don't have portal blocks. There are three ways to get there:</p>
+<p>Vormir, Morag and Svartalfheim don't have portal blocks. There are four ways to get there:</p>
 <ul>
   <li><strong>The Space Stone.</strong> Unlock {{ab space/teleport}}, type the dimension (<code>infinity:vormir</code>, <code>infinity:morag</code>
     or <code>infinity:svartelheim</code>) and some coordinates, and walk through.</li>
   <li><strong>The Tesseract.</strong> Right-click it to jump through the dimensions one after another until you reach the one you want.</li>
-  <li><strong>A rocket.</strong> With Ad Astra you need a <strong>Tier 4 rocket</strong>. Cosmic Horizons also has the planets in its
-    Marvel solar system.</li>
+  <li><strong>Ad Astra.</strong> Fly there in a <strong>Tier 4 rocket</strong>.</li>
+  <li><strong>Cosmic Horizons.</strong> The planets are in its Marvel solar system.</li>
 </ul>
 <p>Coordinates and what to expect on each planet are on {{page dimensions.html Dimensions and Travel}}.</p>
 
 <h2 id="route">Stone by stone</h2>
-<p>Whatever order you go in, get the Space Stone early: its {{ab space/teleport}} is how you reach Morag, Svartalfheim and Vormir without a rocket.</p>
 <ul>
   <li><strong>Power Stone</strong>: go to Morag. The temple is underwater and has dispensers full of Arrows of Harming VII. Take the
-    {{item orb}} off its stand and crack it (see <a href="@/containers.html#orb">the Orb</a>).</li>
+    {{item orb}} off its stand and unlock it (see <a href="@/containers.html#orb">the Orb</a>).</li>
   <li><strong>Space Stone</strong>: go to the Norse Village and take the {{item tesseract}} out of its item frame. Unlock Force Field and
     then the Teleport GUI.</li>
   <li><strong>Reality Stone</strong>: go to Svartalfheim and dig down to the Aether Chamber. Malekith guards the {{item aether}}.</li>
@@ -91,5 +90,5 @@ icon: stones/soul_stone.png
   <p>A map gets filled in a few seconds after it lands in your inventory, searching from the Overworld spawn. That works for the
   Sanctum and the Norse Village. The Morag Temple, Aether Chamber and Sanctuary are in other dimensions, so those three maps can come
   out blank.</p></div>
-<p>If the Soul Guardian goes missing, an operator can run <a href="@/commands.html#infinity-soulguardian">/infinity soulguardian respawn</a>.
-  The {{item soul_guardian_telephone}} can also bring it to you.</p>
+<p>The {{item soul_guardian_telephone}} can bring the Soul Guardian to you. If it goes missing, an operator can run
+  <a href="@/commands.html#infinity-soulguardian">/infinity soulguardian respawn</a>.</p>

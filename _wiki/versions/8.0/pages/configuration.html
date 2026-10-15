@@ -1,0 +1,45 @@
+---
+title: Configuration
+description: The config file, switching off abilities on a server, how old worlds are upgraded, and known problems.
+lead: The settings you can change, what happens to old worlds, and the known problems.
+icon: icons/teleport.png
+---
+<h2 id="config">Config</h2>
+<p>There's one config file, <code>config/infinity-common.toml</code>, with two settings:</p>
+<pre data-lang="text" data-title="config/infinity-common.toml">
+[orb]
+	#Number of left/right turns in the Orb's combination lock.
+	#Each world gets its own random combination; changing this generates a new one.
+	#Range: 1 ~ 64
+	combinationLength = 15
+
+[tesseract]
+	#Dimensions the Tesseract never takes players to, as IDs ("modid:name") or whole mods ("modid:*").
+	#Every other dimension, including other mods', is visited in turn wherever there is a safe place to land.
+	excludedDimensions = ["infinity:soulworld"]
+</pre>
+<p>Server admins can also switch off any of the mod's abilities in game with
+  <a href="@/commands.html#infinity-ability">/infinity ability disable</a>. Everything else is set up through data: the {{page addons/index.html addon systems}}, Palladium power files, and tags like
+  <code>#infinity:snap_hostile</code> and <code>#infinity:projectiles</code>.</p>
+
+<h2 id="world-upgrades">Old worlds</h2>
+<p>Things from older versions get converted when you load the world:</p>
+<ul>
+  <li>Stones and containers placed on the ground as armor stand props turn into ground items when their chunk loads.</li>
+  <li>The old one rod per stone Cosmi-Rods turn into a single empty Cosmi-Rod.</li>
+  <li>Old <em>Empty Eye of Agamotto</em> items still work and turn into the normal Eye.</li>
+  <li>Whether the Power Stone was taken moves from an old marker block on Morag into world data, and old force loaded chunks on Morag and
+    the Soulworld are released.</li>
+  <li>Worlds that already built Vormir keep it, and the Soul Guardian isn't spawned twice.</li>
+  <li>Projectiles stopped by the old Time Stone function get let go.</li>
+</ul>
+
+<h2 id="limitations">Known problems</h2>
+<ul>
+  <li>Slow Time and Time Freeze change the tick rate for the <strong>whole server</strong>.</li>
+  <li>Explorer maps for structures outside the Overworld (Morag Temple, Aether Chamber, Sanctuary) are filled from the Overworld and can come out blank.</li>
+  <li><code>/infinity gauntlet skin</code> doesn't need a permission level, and <code>clear</code> gives back the skin's unlock item.</li>
+  <li>Big Meteor Storms can lag.</li>
+  <li>Some in-game descriptions are older than the code. The Soul Guardian Telephone sends the Guardian back after one minute, not ten,
+    and finds it wherever it is, and Summon Zombie summons six zombies, not seven.</li>
+</ul>

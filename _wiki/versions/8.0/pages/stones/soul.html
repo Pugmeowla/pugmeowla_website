@@ -1,7 +1,6 @@
 ---
 title: Soul Stone
 description: The Soul Stone's soul storage, healing and draining, the Soulworld, zombie army and immortality, and how to get it on Vormir.
-lead: A soul for a soul. The orange stone waits on Vormir, and it costs you something you love.
 icon: stones/soul_stone.png
 ---
 <h2 id="overview">Overview</h2>
@@ -32,6 +31,18 @@ icon: stones/soul_stone.png
   Regeneration and Health each get a free toggle once you own them.</p>
 {{costtable soul}}
 
+<h2 id="soul-storage">Soul Storage</h2>
+<p>Once you have {{ab soul/soul_storage}}, everything you kill gives you a soul, up to <strong>50</strong>. They're kept in the
+  <code>SoulStorage</code> scoreboard objective and shown on the orange bar. Clones and mobs you've already drained don't give one.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ability</th><th>Souls</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td>{{ab soul/soul_heal}}</td><td>−1</td><td>Heals 2 hearts. Does nothing at full health or with no souls.</td></tr>
+    <tr><td>{{ab soul/soul_drain}}</td><td>+1</td><td>Drains the mob you're looking at, which then stands still and turns grey.</td></tr>
+    <tr><td>Soul Drain while sneaking</td><td>−1</td><td>Gives a drained mob its soul back.</td></tr>
+  </tbody>
+</table></div>
+
 <h2 id="soulworld">The Soulworld</h2>
 <p>Enter Soulworld takes you and everything within 5 blocks to <code>infinity:soulworld</code>, a flat orange world of smooth red
   sandstone with a thin layer of water on top. Everyone lands at Y 72 above the same X and Z. Use the same slot again (it turns into Exit
@@ -43,5 +54,5 @@ icon: stones/soul_stone.png
     abilities.</li>
   <li><strong>Powerborne's Stormbreaker</strong>: if you're wearing the Infinity Gauntlet and a thrown Stormbreaker from the Powerborne
     addon gets within 10 blocks of you, Saturation, Effect Immunity, Regeneration, Health and Immortality lock and you take 1 damage
-    every tick. See {{page compatibility.html Compatibility}}.</li>
+    every tick. See {{page installation.html#integrations Optional mods}}.</li>
 </ul>

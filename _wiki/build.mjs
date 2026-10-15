@@ -88,6 +88,30 @@ function processCode(html) {
   });
 }
 
+// Links every mention of another mod in page text to its page, with its icon in front. Text inside links, code,
+// headings and form controls is left alone, so nothing gets linked twice and IDs like palladium:command stay plain.
+const MOD_LINK_SKIP = new Set(['a', 'code', 'pre', 'h1', 'h2', 'h3', 'h4', 'script', 'style', 'button', 'summary', 'option', 'select', 'textarea', 'kbd']);
+function linkMods(html, mods) {
+  const entries = mods.flatMap((mod) => mod.names.map((name) => ({ mod, name })));
+  const pattern = new RegExp(`(?<![\\w])(?:${entries.map((e, i) => `(?<m${i}>${e.name})`).join('|')})(?![\\w])`, 'g');
+  let depth = 0;
+  return html.split(/(<[^>]+>)/).map((part) => {
+    if (part.startsWith('<')) {
+      const tag = part.match(/^<(\/?)([a-zA-Z0-9]+)/);
+      if (tag && MOD_LINK_SKIP.has(tag[2].toLowerCase())) depth = tag[1] ? Math.max(0, depth - 1) : depth + 1;
+      return part;
+    }
+    if (depth || !part.trim()) return part;
+    return part.replace(pattern, (...args) => {
+      const groups = args.at(-1);
+      const { mod } = entries[Number(Object.keys(groups).find((k) => groups[k] !== undefined).slice(1))];
+      // The icon stays on the same line as the first word; the rest of a long name can wrap.
+      const [first, ...rest] = args[0].split(' ');
+      return `<a class="mod-link" href="${mod.url}"><span class="mod-link-lead"><img class="mod-icon" src="@w/assets/img/compat/${mod.icon}.png" alt="" loading="lazy">${first}</span>${rest.length ? ` ${rest.join(' ')}` : ''}</a>`;
+    });
+  }).join('');
+}
+
 function processHeadings(html) {
   const used = new Set();
   const toc = [];
@@ -125,13 +149,21 @@ function renderer(v) {
   const sectionOf = (file) => nav.find((section) => section.pages.includes(file));
   const titleOf = (file) => pages[file]?.meta.title || file;
 
+  // Sidebar icons load straight away: on phones the menu is hidden until opened, and lazy icons would pop in late.
+  const navIcon = (src) => img(src, '', 'px nav-icon').replace(' loading="lazy"', '');
   const sidebar = (current) => nav.map((section) => {
+    // A one-page entry (the wiki home) is a plain link the same size as a section heading.
+    if (section.link) {
+      const file = section.pages[0];
+      const active = file === current;
+      return `<a class="nav-top${active ? ' active' : ''}" href="@/${file}"${active ? ' aria-current="page"' : ''}>${navIcon(section.icon)}<span>${escapeHtml(section.title)}</span></a>`;
+    }
     const open = section.pages.includes(current);
     const links = section.pages.map((file) => {
       const active = file === current;
       return `<li><a href="@/${file}"${active ? ' aria-current="page" class="active"' : ''}>${escapeHtml(pages[file]?.meta.nav || titleOf(file))}</a></li>`;
     }).join('');
-    return `<details class="nav-group"${open ? ' open' : ''}><summary>${img(section.icon, '', 'px nav-icon')}<span>${escapeHtml(section.title)}</span></summary><ul>${links}</ul></details>`;
+    return `<details class="nav-group"${open ? ' open' : ''}><summary>${navIcon(section.icon)}<span>${escapeHtml(section.title)}</span></summary><ul>${links}</ul></details>`;
   }).join('');
 
   // The version switcher: the same page in the other version when it exists, otherwise its home page.
@@ -151,10 +183,13 @@ function renderer(v) {
     if (file === 'index.html') return '';
     const section = sectionOf(file);
     const crumbs = [`<li><a href="@/index.html">Wiki ${escapeHtml(v.label)}</a></li>`];
-    if (section && section.pages[0] !== file && section.pages[0] !== 'index.html') {
-      crumbs.push(`<li><a href="@/${section.pages[0]}">${escapeHtml(section.title)}</a></li>`);
-    } else if (section && section.pages[0] !== 'index.html') {
-      crumbs.push(`<li><span>${escapeHtml(section.title)}</span></li>`);
+    // The section links to its overview page when it has one (stones/index.html and so on), otherwise it's plain text.
+    // It's left out when it would repeat the page's own title.
+    if (section && !section.link && section.title !== titleOf(file)) {
+      const overview = section.pages[0];
+      crumbs.push(overview !== file && overview !== 'index.html' && overview.endsWith('index.html')
+        ? `<li><a href="@/${overview}">${escapeHtml(section.title)}</a></li>`
+        : `<li><span>${escapeHtml(section.title)}</span></li>`);
     }
     crumbs.push(`<li aria-current="page">${escapeHtml(titleOf(file))}</li>`);
     return `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${crumbs.join('')}</ol></nav>`;
@@ -166,7 +201,7 @@ function renderer(v) {
     const prev = order[i - 1], next = order[i + 1];
     const link = (target, label, cls) => target
       ? `<a class="pager-link ${cls}" href="@/${target}"><small>${label}</small><span>${escapeHtml(titleOf(target))}</span></a>`
-      : '<span></span>';
+      : '';
     return `<nav class="pager" aria-label="Previous and next page">${link(prev, '← Previous', 'prev')}${link(next, 'Next →', 'next')}</nav>`;
   };
 
@@ -279,6 +314,12 @@ for (const v of versions) {
     const ctx = { path: file, label: `${v.id}/${file}`, errors, pages: v.pages };
     let html = expandMacros(page.body, ctx, v.macros);
     html = processCode(html);
+    // Long IDs, paths and options in inline code break after a ':', '/' or '|' instead of in the middle of a word,
+    // and inside tables (narrow columns) after a '_' too.
+    const softBreaks = (chars) => (whole, text) => `<code>${text.replace(new RegExp(`([${chars}])(?=[^\\s${chars}])`, 'g'), '$1<wbr>')}</code>`;
+    html = html.replace(/<table[\s\S]*?<\/table>/g, (table) => table.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|_')));
+    html = html.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|'));
+    if (v.data.mods && file !== 'index.html' && file !== '404.html') html = linkMods(html, v.data.mods);
     const { html: withIds, toc } = processHeadings(html);
 
     if (file === '404.html') {

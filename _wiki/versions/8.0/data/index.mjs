@@ -4,3 +4,4 @@ export { abilities, groups } from './abilities.mjs';
 export { items, categories } from './items.mjs';
 export { skins } from './skins.mjs';
 export { abilityTypes, conditions, otherTypes } from './reference.mjs';
+export { mods } from './mods.mjs';
