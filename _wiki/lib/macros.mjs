@@ -191,7 +191,10 @@ const macros = {
 
   skingallery() {
     return `<div class="skin-grid">${skins.map((skin) => `<article class="skin-card" id="skin-${slugify(skin.id)}">
-  <button type="button" class="skin-zoom" data-zoom="@w/assets/img/skins/${skin.id}.png" data-caption="${escapeHtml(skin.title)}" aria-label="Enlarge ${escapeHtml(skin.title)}">${img(`skins/${skin.id}.png`, skin.title, 'px skin-img')}</button>
+  <div class="skin-views">
+    <button type="button" class="skin-zoom skin-zoom-model" data-zoom="@w/assets/img/skin-models/${skin.id}.png" data-caption="${escapeHtml(skin.title)}, worn" aria-label="Enlarge ${escapeHtml(skin.title)} as worn">${img(`skin-models/${skin.id}.png`, `${skin.title} as worn`, 'px skin-model')}<span>Worn</span></button>
+    <button type="button" class="skin-zoom" data-zoom="@w/assets/img/skins/${skin.id}.png" data-caption="${escapeHtml(skin.title)}, item" aria-label="Enlarge ${escapeHtml(skin.title)} item">${img(`skins/${skin.id}.png`, `${skin.title} item`, 'px skin-img')}<span>Item</span></button>
+  </div>
   <h3 class="no-toc">${escapeHtml(skin.title)}</h3>
   <p class="skin-unlock">${!skin.unlock
     ? '<span>Unlock:</span> <em>Secret</em>'

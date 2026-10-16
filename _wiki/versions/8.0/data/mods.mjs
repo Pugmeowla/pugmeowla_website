@@ -12,6 +12,7 @@ export const mods = [
   { icon: 'infinity_generator', modrinth: M('pugmeowlas-infinity-generator'), curseforge: CF('pugmeowlas-infinity-generator'), names: ["Pugmeowla's Infinity Generator", 'Infinity Generator'] },
   { icon: 'infinity_protocol', modrinth: M('pugmeowlas-infinity-protocol'), curseforge: CF('pugmeowlas-infinity-protocol'), names: ["Pugmeowla's Infinity Protocol", 'Infinity Protocol'] },
   { icon: 'ultor_infinitus', modrinth: M('pugmeowlas-ultor-infinitus'), curseforge: CF('pugmeowlas-ultor-infinitus'), names: ["Pugmeowla's Ultor Infinitus", 'Ultor Infinitus'] },
+  { icon: 'satsu_iron_man', modrinth: M('satsu-iron-man-addon'), curseforge: CF('satsu-iron-man-addon'), names: ["Satsu's Iron Man Addon", "Satsu's Iron Man"] },
   { icon: 'fsang', modrinth: M('fsang18s-heropack'), curseforge: CF('fsang18s-heropack'), names: ["Fsang's Heropack", "Fsang's"] },
   { icon: 'tinkers', modrinth: M('tinkers-construct'), curseforge: CF('tinkers-construct'), names: ["Tinkers' Construct"] },
   { icon: 'immersive_portals', modrinth: M('immersiveportals'), curseforge: CF('immersive-portals-mod'), names: ['Immersive Portals'] },

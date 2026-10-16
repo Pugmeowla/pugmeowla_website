@@ -10,6 +10,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { decodePng, encodePng } from './png.mjs';
 import { renderModel } from './render-model.mjs';
+import { renderGeo } from './render-geo.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..', '..');
@@ -46,6 +47,9 @@ function copyDir(from, to, filter = () => true) {
 const notOverlay = (name) => !/_e\.png$|_glow\.png$/.test(name);
 // Item icons come from the model renders below.
 console.log('skins', copyDir(path.join(textures, 'item/gauntlet_skins'), path.join(out, 'skins')));
+// The Infinity Gauntlet's flat 2D item texture, used for every picture of the gauntlet on the wiki.
+fs.mkdirSync(path.join(out, 'items'), { recursive: true });
+fs.copyFileSync(path.join(textures, 'item/infinity_gauntlet_item.png'), path.join(out, 'items/infinity_gauntlet.png'));
 console.log('icons', copyDir(path.join(textures, 'icon'), path.join(out, 'icons')));
 console.log('blocks', copyDir(path.join(textures, 'block'), path.join(out, 'blocks')));
 fs.mkdirSync(path.join(out, 'gui'), { recursive: true });
@@ -138,12 +142,27 @@ for (const file of fs.readdirSync(models)) {
 }
 console.log('renders', rendered);
 
-// Gauntlet skins in the inventory: the gauntlet item model with the skin's item texture.
-const skinRenders = path.join(out, 'skin-renders');
-fs.mkdirSync(skinRenders, { recursive: true });
-for (const file of fs.readdirSync(path.join(textures, 'item/gauntlet_skins'))) {
-  const id = file.replace('.png', '');
-  const png = renderModel(assets, 'infinity:item/infinity_gauntlet', 128, { 0: `infinity:item/gauntlet_skins/${id}` });
-  if (png) fs.writeFileSync(path.join(skinRenders, `${id}.png`), png);
+// Gauntlet skins as worn: each skin's GeckoLib model (render.model, default geo/gauntlet) with its model texture
+// (render.texture, default textures/models/<id>.png) and its glow layer when render.glow is on, like GauntletSkin does.
+const skinModels = path.join(out, 'skin-models');
+fs.rmSync(skinModels, { recursive: true, force: true });
+fs.mkdirSync(skinModels, { recursive: true });
+const resourceFile = (ref, folder, extension) => {
+  const [namespace, rest] = ref.includes(':') ? ref.split(':') : ['infinity', ref];
+  return path.join(assets, namespace, folder, rest.endsWith(extension) ? rest : `${rest}${extension}`);
+};
+const skinDir = path.join(resources, 'data/infinity/gauntlet_skins');
+for (const file of fs.readdirSync(skinDir).filter((name) => name.endsWith('.json'))) {
+  const id = file.replace('.json', '');
+  const render = JSON.parse(fs.readFileSync(path.join(skinDir, file), 'utf8')).render || {};
+  const model = resourceFile(render.model || 'infinity:geo/gauntlet', '', '.geo.json');
+  const texture = render.texture ? resourceFile(render.texture, '', '') : path.join(textures, `models/${id}.png`);
+  const glowSetting = render.glow;
+  const glow = !glowSetting ? null
+    : typeof glowSetting === 'object' && glowSetting.texture ? resourceFile(glowSetting.texture, '', '')
+      : texture.replace(/\.png$/, '_glow.png');
+  const png = renderGeo(model, texture, { glowTexture: glow, size: 160, view: [25, 300, 0] });
+  if (png) fs.writeFileSync(path.join(skinModels, `${id}.png`), png);
+  else console.warn(`skin model: couldn't render ${id}`);
 }
-console.log('skin renders', fs.readdirSync(skinRenders).length);
+console.log('skin models', fs.readdirSync(skinModels).length);

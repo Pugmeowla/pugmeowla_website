@@ -18,7 +18,7 @@ export const nav = [
     'stones/index.html', 'stones/power.html', 'stones/space.html', 'stones/reality.html',
     'stones/soul.html', 'stones/time.html', 'stones/mind.html',
   ] },
-  { title: 'Infinity Gauntlet', icon: 'renders/infinity_gauntlet.png', pages: [
+  { title: 'Infinity Gauntlet', icon: 'items/infinity_gauntlet.png', pages: [
     'gauntlet/index.html', 'gauntlet/snap.html', 'gauntlet/skins.html',
   ] },
   { title: 'Abilities', icon: 'icons/energy_blast.png', pages: [

@@ -75,7 +75,7 @@ node _wiki/tools/sync-assets.mjs /path/to/infinity
 ```
 
 Copies icons, block and GUI textures from the mod, renders inventory-style icons from the mod's item models (Orb,
-Tesseract, Cosmi-Rod, gauntlet skins…) and the Infinity Stone icons (the stone texture tinted with each stone's color),
+Tesseract, Cosmi-Rod…), renders each gauntlet skin's worn GeckoLib model (`tools/render-geo.mjs`) and the Infinity Stone icons (the stone texture tinted with each stone's color),
 into `_wiki/static/img/`. Then run the build. On macOS it also regenerates the banner and favicon with `sips`.
 
 ## Publishing on GitHub Pages

@@ -54,7 +54,7 @@ export const items = [
   { id: 'infinity:empty_scepter', name: 'Empty Scepter', category: 'container', img: R('empty_scepter'), rarity: 'Epic', page: 'containers.html#scepter',
     obtain: 'Left behind when a Scepter is broken open.', desc: 'Iron tier sword. Right-click it on the ground while holding the Mind Stone to rebuild the Scepter.' },
 
-  { id: 'infinity:infinity_gauntlet', name: 'Infinity Gauntlet', category: 'gauntlet', img: R('infinity_gauntlet'), rarity: 'Epic', page: 'gauntlet/index.html',
+  { id: 'infinity:infinity_gauntlet', name: 'Infinity Gauntlet', category: 'gauntlet', img: 'items/infinity_gauntlet.png', rarity: 'Epic', page: 'gauntlet/index.html',
     obtain: 'Craftable, or cast with Tinkers\' Construct (see JEI). Needs the Infinity Gauntlet Cast.',
     desc: 'Six stone slots. Wear it in the off hand or the Curios hands slot and you can use every stone in it at once. Fire resistant.' },
   { id: 'infinity:infinity_gauntlet_cast', name: 'Infinity Gauntlet Cast', category: 'gauntlet', img: R('infinity_gauntlet_cast'), rarity: 'Rare', page: 'gauntlet/index.html#getting-a-gauntlet',

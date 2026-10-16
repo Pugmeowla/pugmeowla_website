@@ -336,6 +336,7 @@ for (const v of versions) {
     const softBreaks = (chars) => (whole, text) => `<code>${text.replace(new RegExp(`([${chars}])(?=[^\\s${chars}])`, 'g'), '$1<wbr>')}</code>`;
     html = html.replace(/<table[\s\S]*?<\/table>/g, (table) => table.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|_')));
     html = html.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|'));
+    html = html.replace(/<code class="item-id">([^<]+)<\/code>/g, (whole, text) => softBreaks(':_')(whole, text).replace('<code>', '<code class="item-id">'));
     if (v.data.mods && file !== 'index.html' && file !== '404.html') html = linkMods(html, v.data.mods);
     // Any link to a mod that's on both sites follows the reader's Modrinth / CurseForge choice (wiki.js swaps the href).
     for (const mod of v.data.mods || []) {

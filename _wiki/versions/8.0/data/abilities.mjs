@@ -483,7 +483,7 @@ export const abilities = [
   },
   {
     group: 'gauntlet', key: 'normal_gauntlet', page: 'gauntlet/skins.html', name: 'Return to Original Gauntlet', type: 'palladium:command',
-    activation: 'Key press', cost: null, requires: [], icon: 'renders/infinity_gauntlet.png',
+    activation: 'Key press', cost: null, requires: [], icon: 'items/infinity_gauntlet.png',
     summary: 'Takes the skin off and gives you its unlock item back.',
     details: `<p>Only there while a skin is on. While you're still burnt from the Snap it can't take off the Burnt Gauntlet.</p>`,
   },
