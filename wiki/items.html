@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/wiki.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -26,36 +26,56 @@
     <kbd class="search-key" aria-hidden="true">/</kbd>
     <div id="search-results" class="search-results" role="listbox" hidden></div>
   </div>
+  <div class="prefs prefs-top">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
   <a class="home-link" href="../index.html">Pugmeowla</a>
 </header>
 <div class="shell has-toc">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
     <div class="sidebar-inner">
-      <details class="version-switch"><summary><span>v8.0 · MC 1.20.1 · Forge</span></summary><p class="version-switch-title">Documentation version</p><ul><li><a href="items.html" aria-current="true" class="active"><strong>8.0</strong><small>In development</small></a></li><li><a href="7.3/items.html"><strong>7.3</strong><small>Current release</small></a></li></ul></details>
+      <div class="prefs prefs-drawer">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+      <p class="version-switch version-label">v8.0 · MC 1.20.1 · Forge</p>
       <a class="nav-top" href="index.html"><img src="assets/img/logo.png" alt="" class="px nav-icon"><span>Wiki Home</span></a><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon"><span>Getting Started</span></summary><ul><li><a href="installation.html">Installation</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="finding-stones.html">Finding the Stones</a></li><li><a href="progression.html">Progression</a></li><li><a href="advancements.html">Advancements</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/stones/power_stone.png" alt="" class="px nav-icon"><span>Infinity Stones</span></summary><ul><li><a href="stones/index.html">Overview</a></li><li><a href="stones/power.html">Power Stone</a></li><li><a href="stones/space.html">Space Stone</a></li><li><a href="stones/reality.html">Reality Stone</a></li><li><a href="stones/soul.html">Soul Stone</a></li><li><a href="stones/time.html">Time Stone</a></li><li><a href="stones/mind.html">Mind Stone</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon"><span>Infinity Gauntlet</span></summary><ul><li><a href="gauntlet/index.html">The Gauntlet</a></li><li><a href="gauntlet/snap.html">The Snap</a></li><li><a href="gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/energy_blast.png" alt="" class="px nav-icon"><span>Abilities</span></summary><ul><li><a href="abilities.html">All Abilities</a></li></ul></details><details class="nav-group" open><summary><img src="assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon"><span>Items &amp; Equipment</span></summary><ul><li><a href="items.html" aria-current="page" class="active">Item Index</a></li><li><a href="containers.html">Containers and Tools</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/vormir_stone.png" alt="" class="px nav-icon"><span>Exploration</span></summary><ul><li><a href="structures.html">Structures</a></li><li><a href="dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/teleport.png" alt="" class="px nav-icon"><span>Commands</span></summary><ul><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/52-d_unit.png" alt="" class="px nav-icon"><span>Addon Development</span></summary><ul><li><a href="addons/index.html">Overview</a></li><li><a href="addons/stones.html">Custom Stones</a></li><li><a href="addons/skins.html">Skin Files</a></li><li><a href="addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="addons/ground-items.html">Ground Items</a></li><li><a href="addons/ability-overlays.html">Ability Overlays</a></li><li><a href="addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon"><span>Help</span></summary><ul><li><a href="configuration.html">Configuration</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="credits.html">Credits</a></li></ul></details>
     </div>
   </nav>
   <div class="scrim" hidden></div>
   <main id="content" class="content" tabindex="-1">
-    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is 7.3. <a href="7.3/index.html">Read the 7.3 docs</a></p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
+    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is still 7.3.</p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
     <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki 8.0</a></li><li><span>Items &amp; Equipment</span></li><li aria-current="page">Item Index</li></ol></nav>
     <header class="page-head"><img class="page-icon px" src="assets/img/renders/cosmi-rod.png" alt=""><div><h1>Item Index</h1><p class="lead">Every item and block, from the stones down to the nuggets. Click an item for its details.</p></div></header>
     <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#all-items">All items</a></li><li class="toc-l2"><a href="#weapons">Weapons</a></li><li class="toc-l2"><a href="#thanos-armor">Thanos armor</a></li><li class="toc-l2"><a href="#fancy-bottle">Fancy Bottle</a></li><li class="toc-l2"><a href="#materials">Materials</a></li><li class="toc-l2"><a href="#blocks">Blocks</a></li><li class="toc-l2"><a href="#creative-tabs">Creative tabs</a></li></ol></details>
     <article class="prose">
 <h2 id="all-items">All items<a class="heading-anchor" href="#all-items" aria-label="Link to this section">#</a></h2>
 <p>Filter by name or ID, or by category. The pictures are rendered from the mod's own models and textures. Crafting recipes aren't on
-  this wiki, check <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a> in game.</p>
+  this wiki, check <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a> in game.</p>
 <div class="filter-panel" data-filter-list="items">
   <div class="filter-row"><label class="visually-hidden" for="item-filter">Filter items</label>
   <input id="item-filter" class="filter-input" type="search" placeholder="Filter by name or ID (e.g. uru, infinity:orb)…" autocomplete="off"></div>
   <div class="filter-chips" role="group" aria-label="Filter by category"><button type="button" class="filter-chip" data-filter-category="stone" aria-pressed="false">Infinity Stones</button><button type="button" class="filter-chip" data-filter-category="container" aria-pressed="false">Stone Containers</button><button type="button" class="filter-chip" data-filter-category="gauntlet" aria-pressed="false">Gauntlet</button><button type="button" class="filter-chip" data-filter-category="weapon" aria-pressed="false">Weapons &amp; Tools</button><button type="button" class="filter-chip" data-filter-category="armor" aria-pressed="false">Armor</button><button type="button" class="filter-chip" data-filter-category="special" aria-pressed="false">Special Items</button><button type="button" class="filter-chip" data-filter-category="material" aria-pressed="false">Materials</button><button type="button" class="filter-chip" data-filter-category="block" aria-pressed="false">Blocks</button><button type="button" class="filter-chip" data-filter-category="fluid" aria-pressed="false">Fluids</button><button type="button" class="filter-chip" data-filter-category="technical" aria-pressed="false">Technical</button></div>
-  <p class="filter-count" aria-live="polite"><span data-count>86</span> of 86 items</p>
+  <p class="filter-count" aria-live="polite"><span data-count>85</span> of 85 items</p>
   <ul class="item-grid"><li class="item-tile" id="item-power-stone" data-category="stone" data-text="power stone infinity:power_stone">
   <button type="button" class="item-open" aria-haspopup="dialog"><img src="assets/img/stones/power_stone.png" alt="" class="px item-img" loading="lazy"><span>Power Stone</span></button>
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/stones/power_stone.png" alt="Power Stone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Power Stone</h3></div></div>
     <code class="item-id">infinity:power_stone</code>
-    <p>Grants the Power Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
+    <p>Grants the Power Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
     <dl><dt>How to get it</dt><dd>Take it out of the unlocked Orb. Only one Power Stone exists per world.</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Infinity Stones</dd></dl>
     <p><a class="button-link" href="stones/power.html">Read more →</a></p>
@@ -66,7 +86,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/stones/space_stone.png" alt="Space Stone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Space Stone</h3></div></div>
     <code class="item-id">infinity:space_stone</code>
-    <p>Grants the Space Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
+    <p>Grants the Space Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
     <dl><dt>How to get it</dt><dd>Break a Tesseract open (left-click it while it lies on the ground).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Infinity Stones</dd></dl>
     <p><a class="button-link" href="stones/space.html">Read more →</a></p>
@@ -77,7 +97,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/stones/reality_stone.png" alt="Reality Stone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Reality Stone</h3></div></div>
     <code class="item-id">infinity:reality_stone</code>
-    <p>Grants the Reality Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
+    <p>Grants the Reality Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
     <dl><dt>How to get it</dt><dd>Break the Aether open (left-click it while it lies on the ground).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Infinity Stones</dd></dl>
     <p><a class="button-link" href="stones/reality.html">Read more →</a></p>
@@ -88,7 +108,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/stones/soul_stone.png" alt="Soul Stone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Soul Stone</h3></div></div>
     <code class="item-id">infinity:soul_stone</code>
-    <p>Grants the Soul Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
+    <p>Grants the Soul Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
     <dl><dt>How to get it</dt><dd>Trade a Best Friend's Soul to the Soul Guardian on Vormir.</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Infinity Stones</dd></dl>
     <p><a class="button-link" href="stones/soul.html">Read more →</a></p>
@@ -99,7 +119,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/stones/time_stone.png" alt="Time Stone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Time Stone</h3></div></div>
     <code class="item-id">infinity:time_stone</code>
-    <p>Grants the Time Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
+    <p>Grants the Time Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
     <dl><dt>How to get it</dt><dd>Take it out of the open Eye of Agamotto. Only one Time Stone exists per world.</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Infinity Stones</dd></dl>
     <p><a class="button-link" href="stones/time.html">Read more →</a></p>
@@ -110,7 +130,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/stones/mind_stone.png" alt="Mind Stone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Mind Stone</h3></div></div>
     <code class="item-id">infinity:mind_stone</code>
-    <p>Grants the Mind Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
+    <p>Grants the Mind Stone's power while held, worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, inserted in the Infinity Gauntlet or socketed in a Cosmi-Rod. Never despawns or burns when dropped.</p>
     <dl><dt>How to get it</dt><dd>Break the Scepter open (left-click it while it lies on the ground).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Infinity Stones</dd></dl>
     <p><a class="button-link" href="stones/mind.html">Read more →</a></p>
@@ -166,7 +186,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/empty_aether.png" alt="Empty Aether" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Empty Aether</h3></div></div>
     <code class="item-id">infinity:empty_aether</code>
     <p>To put the Reality Stone back in, hold the stone in your off hand and use Insert Reality Stone, or right-click the Empty Aether on the ground with the stone.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Stone Containers</dd></dl>
     <p><a class="button-link" href="containers.html#aether">Read more →</a></p>
   </div></template>
@@ -176,8 +196,8 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/renders/eye_of_agamotto.png" alt="Eye of Agamotto" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Eye of Agamotto</h3></div></div>
     <code class="item-id">infinity:eye_of_agamotto</code>
-    <p>Agamotto's amulet. Wear it on your chest (it counts as iron armor) or in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> necklace slot. It opens up to show the Time Stone and gives you the Time Stone's power while the stone is in it.</p>
-    <dl><dt>How to get it</dt><dd>Armor stand inside the Sanctum Sanctorum (Overworld). Also craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <p>Agamotto's amulet. Wear it on your chest (it counts as iron armor) or in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> necklace slot. It opens up to show the Time Stone and gives you the Time Stone's power while the stone is in it.</p>
+    <dl><dt>How to get it</dt><dd>Armor stand inside the Sanctum Sanctorum (Overworld). Also craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Stone Containers</dd></dl>
     <p><a class="button-link" href="containers.html#eye-of-agamotto">Read more →</a></p>
   </div></template>
@@ -209,8 +229,8 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/renders/infinity_gauntlet.png" alt="Infinity Gauntlet" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Infinity Gauntlet</h3></div></div>
     <code class="item-id">infinity:infinity_gauntlet</code>
-    <p>Six stone slots. Wear it in the off hand or the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands slot and you can use every stone in it at once. Fire resistant.</p>
-    <dl><dt>How to get it</dt><dd>Craftable, or cast with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>). Needs the Infinity Gauntlet Cast.</dd><dt>Rarity</dt><dd>Epic</dd>
+    <p>Six stone slots. Wear it in the off hand or the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands slot and you can use every stone in it at once. Fire resistant.</p>
+    <dl><dt>How to get it</dt><dd>Craftable, or cast with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>). Needs the Infinity Gauntlet Cast.</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Gauntlet</dd></dl>
     <p><a class="button-link" href="gauntlet/index.html">Read more →</a></p>
   </div></template>
@@ -243,7 +263,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/double_edged_sword.png" alt="Double-Edged Sword" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Double-Edged Sword</h3></div></div>
     <code class="item-id">infinity:double_edged_sword</code>
     <p>Thanos' double-bladed sword. Netherite tier, high damage, slow swing.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Weapons &amp; Tools</dd></dl>
     
   </div></template>
@@ -254,7 +274,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/single_edged_sword.png" alt="Single-Edged Sword" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Single-Edged Sword</h3></div></div>
     <code class="item-id">infinity:single_edged_sword</code>
     <p>Netherite tier sword. Swings faster than the Double-Edged Sword.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Weapons &amp; Tools</dd></dl>
     
   </div></template>
@@ -265,7 +285,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/hammer.png" alt="Hammer" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Hammer</h3></div></div>
     <code class="item-id">infinity:hammer</code>
     <p>Crafting tool for plates and dusts. It is handed back to you after crafting with it.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Weapons &amp; Tools</dd></dl>
     
   </div></template>
@@ -276,7 +296,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/injection.png" alt="Injection" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Injection</h3></div></div>
     <code class="item-id">infinity:injection</code>
     <p>Has no ability of its own in the core mod.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Weapons &amp; Tools</dd></dl>
     
   </div></template>
@@ -375,7 +395,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/aspects_of_existance.png" alt="Aspects of Existence" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Aspects of Existence</h3></div></div>
     <code class="item-id">infinity:aspects_of_existance</code>
     <p>What you spend in every stone's skill tree. All abilities are bought with it.</p>
-    <dl><dt>How to get it</dt><dd>Infinity Temple chests (1 to 4 per chest), or craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Infinity Temple chests (1 to 4 per chest), or craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="progression.html#aspects-of-existence">Read more →</a></p>
   </div></template>
@@ -385,7 +405,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/renders/shards_of_existance.png" alt="Shards of Existence" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Shards of Existence</h3></div></div>
     <code class="item-id">infinity:shards_of_existance</code>
-    <p>Fragments used to make more Aspects of Existence (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</p>
+    <p>Fragments used to make more Aspects of Existence (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</p>
     <dl><dt>How to get it</dt><dd>Infinity Temple chests.</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="progression.html#aspects-of-existence">Read more →</a></p>
@@ -408,7 +428,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/soul_guardian_telephone.png" alt="Soul Guardian Telephone" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Soul Guardian Telephone</h3></div></div>
     <code class="item-id">infinity:soul_guardian_telephone</code>
     <p>Right-click to call the Soul Guardian from Vormir to you. Sneak + right-click to send it back.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="containers.html#soul-guardian-telephone">Read more →</a></p>
   </div></template>
@@ -419,7 +439,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/fancy_bottle.png" alt="Fancy Bottle" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Fancy Bottle</h3></div></div>
     <code class="item-id">infinity:fancy_bottle</code>
     <p>Hold it in your main hand and you can bottle 3 experience levels into a Bottle o' Enchanting from its power screen.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="items.html#fancy-bottle">Read more →</a></p>
   </div></template>
@@ -430,7 +450,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/52-d_unit.png" alt="NP-Λ52 Unit" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">NP-Λ52 Unit</h3></div></div>
     <code class="item-id">infinity:52-d_unit</code>
     <p>Unlocks the (NP-Λ52) Enhanced Gauntlet skin.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="gauntlet/skins.html">Read more →</a></p>
   </div></template>
@@ -441,7 +461,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/endosym_ingot.png" alt="Endosymbiotic Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Endosymbiotic Ingot</h3></div></div>
     <code class="item-id">infinity:endosym_ingot</code>
     <p>Unlocks the Endosymbiotic Gauntlet skin.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="gauntlet/skins.html">Read more →</a></p>
   </div></template>
@@ -452,7 +472,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/ferro-titanium-gold_alloy_ingot.png" alt="Ferro-Titanium-Gold Alloy Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Ferro-Titanium-Gold Alloy Ingot</h3></div></div>
     <code class="item-id">infinity:ferro-titanium-gold_alloy_ingot</code>
     <p>Unlocks the Ferro-Titanium-Gold Alloy Gauntlet skin.</p>
-    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="gauntlet/skins.html">Read more →</a></p>
   </div></template>
@@ -463,7 +483,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/soul_infused_netherite_ingot.png" alt="Soul-Infused Netherite Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Soul-Infused Netherite Ingot</h3></div></div>
     <code class="item-id">infinity:soul_infused_netherite_ingot</code>
     <p>Unlocks the Soul Infused Netherite Gauntlet skin.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Special Items</dd></dl>
     <p><a class="button-link" href="gauntlet/skins.html">Read more →</a></p>
   </div></template>
@@ -474,7 +494,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/titanium_dust.png" alt="Titanium Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Titanium Dust</h3></div></div>
     <code class="item-id">infinity:titanium_dust</code>
     <p>Titanium crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -485,7 +505,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/titanium_ingot.png" alt="Titanium Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Titanium Ingot</h3></div></div>
     <code class="item-id">infinity:titanium_ingot</code>
     <p>Titanium crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -496,7 +516,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/titanium_nugget.png" alt="Titanium Nugget" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Titanium Nugget</h3></div></div>
     <code class="item-id">infinity:titanium_nugget</code>
     <p>Titanium crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -507,7 +527,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/titanium_plate.png" alt="Titanium Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Titanium Plate</h3></div></div>
     <code class="item-id">infinity:titanium_plate</code>
     <p>Titanium crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -518,7 +538,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/steel_dust.png" alt="Steel Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Steel Dust</h3></div></div>
     <code class="item-id">infinity:steel_dust</code>
     <p>Steel crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -529,7 +549,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/steel_ingot.png" alt="Steel Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Steel Ingot</h3></div></div>
     <code class="item-id">infinity:steel_ingot</code>
     <p>Steel crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -540,7 +560,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/steel_nugget.png" alt="Steel Nugget" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Steel Nugget</h3></div></div>
     <code class="item-id">infinity:steel_nugget</code>
     <p>Steel crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -551,7 +571,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/steel_plate.png" alt="Steel Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Steel Plate</h3></div></div>
     <code class="item-id">infinity:steel_plate</code>
     <p>Steel crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -562,7 +582,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_titanium_alloy_dust.png" alt="Gold-Titanium Alloy Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold-Titanium Alloy Dust</h3></div></div>
     <code class="item-id">infinity:gold_titanium_alloy_dust</code>
     <p>Gold-Titanium Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -573,7 +593,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_titanium_alloy_ingot.png" alt="Gold-Titanium Alloy Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold-Titanium Alloy Ingot</h3></div></div>
     <code class="item-id">infinity:gold_titanium_alloy_ingot</code>
     <p>Gold-Titanium Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -584,7 +604,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_titanium_alloy_nugget.png" alt="Gold-Titanium Alloy Nugget" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold-Titanium Alloy Nugget</h3></div></div>
     <code class="item-id">infinity:gold_titanium_alloy_nugget</code>
     <p>Gold-Titanium Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -595,7 +615,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_titanium_alloy_plate.png" alt="Gold-Titanium Alloy Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold-Titanium Alloy Plate</h3></div></div>
     <code class="item-id">infinity:gold_titanium_alloy_plate</code>
     <p>Gold-Titanium Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -606,7 +626,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_titanium_alloy_handle.png" alt="Gold-Titanium Alloy Handle" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold-Titanium Alloy Handle</h3></div></div>
     <code class="item-id">infinity:gold_titanium_alloy_handle</code>
     <p>Gold-Titanium Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -617,7 +637,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/dwarf_star_alloy_dust.png" alt="Dwarf Star Alloy Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Dwarf Star Alloy Dust</h3></div></div>
     <code class="item-id">infinity:dwarf_star_alloy_dust</code>
     <p>Dwarf Star Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -628,7 +648,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/dwarf_star_alloy_ingot.png" alt="Dwarf Star Alloy Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Dwarf Star Alloy Ingot</h3></div></div>
     <code class="item-id">infinity:dwarf_star_alloy_ingot</code>
     <p>Dwarf Star Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -639,7 +659,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/dwarf_star_alloy_nugget.png" alt="Dwarf Star Alloy Nugget" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Dwarf Star Alloy Nugget</h3></div></div>
     <code class="item-id">infinity:dwarf_star_alloy_nugget</code>
     <p>Dwarf Star Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -650,7 +670,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/dwarf_star_alloy_plate.png" alt="Dwarf Star Alloy Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Dwarf Star Alloy Plate</h3></div></div>
     <code class="item-id">infinity:dwarf_star_alloy_plate</code>
     <p>Dwarf Star Alloy crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -661,7 +681,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/uru_dust.png" alt="Uru Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Uru Dust</h3></div></div>
     <code class="item-id">infinity:uru_dust</code>
     <p>Uru crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -672,7 +692,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/uru_ingot.png" alt="Uru Ingot" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Uru Ingot</h3></div></div>
     <code class="item-id">infinity:uru_ingot</code>
     <p>Uru crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -683,7 +703,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/uru_nugget.png" alt="Uru Nugget" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Uru Nugget</h3></div></div>
     <code class="item-id">infinity:uru_nugget</code>
     <p>Uru crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -694,7 +714,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/uru_plate.png" alt="Uru Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Uru Plate</h3></div></div>
     <code class="item-id">infinity:uru_plate</code>
     <p>Uru crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -705,7 +725,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/uru_blade.png" alt="Uru Blade" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Uru Blade</h3></div></div>
     <code class="item-id">infinity:uru_blade</code>
     <p>Uru crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
+    <dl><dt>How to get it</dt><dd>Crafted or smelted (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Epic</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -727,7 +747,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/iron_dust.png" alt="Iron Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Iron Dust</h3></div></div>
     <code class="item-id">infinity:iron_dust</code>
     <p>Crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -738,7 +758,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/iron_plate.png" alt="Iron Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Iron Plate</h3></div></div>
     <code class="item-id">infinity:iron_plate</code>
     <p>Crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -749,7 +769,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_dust.png" alt="Gold Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold Dust</h3></div></div>
     <code class="item-id">infinity:gold_dust</code>
     <p>Crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -760,7 +780,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_plate.png" alt="Gold Plate" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold Plate</h3></div></div>
     <code class="item-id">infinity:gold_plate</code>
     <p>Crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -771,7 +791,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/coal_dust.png" alt="Coal Dust" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Coal Dust</h3></div></div>
     <code class="item-id">infinity:coal_dust</code>
     <p>Crafting material.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd><dt>Rarity</dt><dd>Common</dd>
     <dt>Category</dt><dd>Materials</dd></dl>
     <p><a class="button-link" href="items.html#materials">Read more →</a></p>
   </div></template>
@@ -792,7 +812,7 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><img src="assets/img/renders/dwarf_star_meteor.png" alt="Dwarf Star Meteor" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Dwarf Star Meteor</h3></div></div>
     <code class="item-id">infinity:dwarf_star_meteor</code>
-    <p>Used to make Dwarf Star Alloy (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</p>
+    <p>Used to make Dwarf Star Alloy (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</p>
     <dl><dt>How to get it</dt><dd>Dwarf star meteor craters in the Overworld.</dd>
     <dt>Category</dt><dd>Blocks</dd></dl>
     <p><a class="button-link" href="structures.html#dwarf-star-meteor">Read more →</a></p>
@@ -804,7 +824,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/titanium_block.png" alt="Titanium Block" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Titanium Block</h3></div></div>
     <code class="item-id">infinity:titanium_block</code>
     <p>Storage block.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
     <dt>Category</dt><dd>Blocks</dd></dl>
     <p><a class="button-link" href="items.html#blocks">Read more →</a></p>
   </div></template>
@@ -815,7 +835,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/steel_block.png" alt="Block of Steel" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Block of Steel</h3></div></div>
     <code class="item-id">infinity:steel_block</code>
     <p>Storage block.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
     <dt>Category</dt><dd>Blocks</dd></dl>
     <p><a class="button-link" href="items.html#blocks">Read more →</a></p>
   </div></template>
@@ -826,7 +846,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/gold_titanium_alloy_block.png" alt="Gold Titanium Alloy Block" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Gold Titanium Alloy Block</h3></div></div>
     <code class="item-id">infinity:gold_titanium_alloy_block</code>
     <p>Storage block.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
     <dt>Category</dt><dd>Blocks</dd></dl>
     <p><a class="button-link" href="items.html#blocks">Read more →</a></p>
   </div></template>
@@ -837,7 +857,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/dwarf_star_alloy_block.png" alt="Dwarf Star Alloy Block" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Dwarf Star Alloy Block</h3></div></div>
     <code class="item-id">infinity:dwarf_star_alloy_block</code>
     <p>Storage block.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
     <dt>Category</dt><dd>Blocks</dd></dl>
     <p><a class="button-link" href="items.html#blocks">Read more →</a></p>
   </div></template>
@@ -848,7 +868,7 @@
     <div class="item-detail-head"><img src="assets/img/renders/uru_block.png" alt="Uru Block" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Uru Block</h3></div></div>
     <code class="item-id">infinity:uru_block</code>
     <p>Storage block.</p>
-    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
+    <dl><dt>How to get it</dt><dd>Craftable (see <a class="mod-link" href="https://modrinth.com/mod/jei" data-modrinth="https://modrinth.com/mod/jei" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/jei"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/jei.png" alt="" loading="lazy">JEI</span></a>).</dd>
     <dt>Category</dt><dd>Blocks</dd></dl>
     <p><a class="button-link" href="items.html#blocks">Read more →</a></p>
   </div></template>
@@ -924,8 +944,8 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><span class="px item-detail-img img-missing" role="img" aria-label="Molten Uru Bucket"></span><div><h3 class="no-toc">Molten Uru Bucket</h3></div></div>
     <code class="item-id">infinity:molten_uru_bucket</code>
-    <p>Bucket of Molten Uru, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
-    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
+    <p>Bucket of Molten Uru, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
+    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
     <dt>Category</dt><dd>Fluids</dd></dl>
     <p><a class="button-link" href="installation.html#tinkers-construct">Read more →</a></p>
   </div></template>
@@ -935,8 +955,8 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><span class="px item-detail-img img-missing" role="img" aria-label="Molten Titanium Bucket"></span><div><h3 class="no-toc">Molten Titanium Bucket</h3></div></div>
     <code class="item-id">infinity:molten_titanium_bucket</code>
-    <p>Bucket of Molten Titanium, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
-    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
+    <p>Bucket of Molten Titanium, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
+    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
     <dt>Category</dt><dd>Fluids</dd></dl>
     <p><a class="button-link" href="installation.html#tinkers-construct">Read more →</a></p>
   </div></template>
@@ -946,8 +966,8 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><span class="px item-detail-img img-missing" role="img" aria-label="Molten Gold-Titanium Alloy Bucket"></span><div><h3 class="no-toc">Molten Gold-Titanium Alloy Bucket</h3></div></div>
     <code class="item-id">infinity:molten_gold_titanium_alloy_bucket</code>
-    <p>Bucket of Molten Gold-Titanium Alloy, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
-    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
+    <p>Bucket of Molten Gold-Titanium Alloy, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
+    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
     <dt>Category</dt><dd>Fluids</dd></dl>
     <p><a class="button-link" href="installation.html#tinkers-construct">Read more →</a></p>
   </div></template>
@@ -957,8 +977,8 @@
   <template><div class="item-detail">
     <div class="item-detail-head"><span class="px item-detail-img img-missing" role="img" aria-label="Molten Ferro-Titanium-Gold Alloy Bucket"></span><div><h3 class="no-toc">Molten Ferro-Titanium-Gold Alloy Bucket</h3></div></div>
     <code class="item-id">infinity:molten_ferro-titanium-gold_alloy_bucket</code>
-    <p>Bucket of Molten Ferro-Titanium-Gold Alloy, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
-    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
+    <p>Bucket of Molten Ferro-Titanium-Gold Alloy, used with <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> casting.</p>
+    <dl><dt>How to get it</dt><dd><a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> smeltery.</dd>
     <dt>Category</dt><dd>Fluids</dd></dl>
     <p><a class="button-link" href="installation.html#tinkers-construct">Read more →</a></p>
   </div></template>
@@ -972,17 +992,6 @@
     <dl><dt>How to get it</dt><dd>Not obtainable.</dd>
     <dt>Category</dt><dd>Technical</dd></dl>
     <p><a class="button-link" href="stones/space.html#teleport">Read more →</a></p>
-  </div></template>
-</li>
-<li class="item-tile" id="item-black-hole" data-category="technical" data-text="black hole infinity:black_hole">
-  <button type="button" class="item-open" aria-haspopup="dialog"><img src="assets/img/renders/black_hole.png" alt="" class="px item-img" loading="lazy"><span>Black Hole</span></button>
-  <template><div class="item-detail">
-    <div class="item-detail-head"><img src="assets/img/renders/black_hole.png" alt="Black Hole" class="px item-detail-img" loading="lazy"><div><h3 class="no-toc">Black Hole</h3></div></div>
-    <code class="item-id">infinity:black_hole</code>
-    <p>Used to draw the black hole.</p>
-    <dl><dt>How to get it</dt><dd>Not obtainable.</dd>
-    <dt>Category</dt><dd>Technical</dd></dl>
-    <p><a class="button-link" href="stones/space.html#black-hole">Read more →</a></p>
   </div></template>
 </li>
 <li class="item-tile" id="item-pugmeowla" data-category="technical" data-text="pugmeowla icon infinity:pugmeowla">
@@ -1034,7 +1043,7 @@
 <ul>
   <li><strong>Uru</strong>: mine <a class="chip item-chip" href="items.html#item-uru-ore"><img src="assets/img/renders/uru_ore.png" alt="" class="px" loading="lazy">Uru Ore</a> in meteor craters on Svartalfheim.</li>
   <li><strong>Dwarf Star Alloy</strong>: comes from <a class="chip item-chip" href="items.html#item-dwarf-star-meteor"><img src="assets/img/renders/dwarf_star_meteor.png" alt="" class="px" loading="lazy">Dwarf Star Meteor</a> blocks in Overworld meteor craters.</li>
-  <li><strong>Titanium</strong> goes along with <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s titanium. Titanium, gold titanium alloy and ferro titanium gold alloy are also <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> materials.</li>
+  <li><strong>Titanium</strong> goes along with <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s titanium. Titanium, gold titanium alloy and ferro titanium gold alloy are also <a class="mod-link" href="https://modrinth.com/mod/tinkers-construct" data-modrinth="https://modrinth.com/mod/tinkers-construct" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/tinkers.png" alt="" loading="lazy">Tinkers'</span> Construct</a> materials.</li>
   <li>The <a class="chip item-chip" href="items.html#item-hammer"><img src="assets/img/renders/hammer.png" alt="" class="px" loading="lazy">Hammer</a> you use for plates and dusts comes back to you after crafting.</li>
 </ul>
 

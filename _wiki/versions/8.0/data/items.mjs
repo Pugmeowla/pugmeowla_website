@@ -144,8 +144,6 @@ export const items = [
 
   { id: 'infinity:portal', name: 'Portal', category: 'technical', img: R('portal'), page: 'stones/space.html#teleport',
     obtain: 'Not obtainable.', desc: 'Worn by the invisible armor stands that make up Space Stone portals.' },
-  { id: 'infinity:black_hole', name: 'Black Hole', category: 'technical', img: R('black_hole'), page: 'stones/space.html#black-hole',
-    obtain: 'Not obtainable.', desc: 'Used to draw the black hole.' },
   { id: 'infinity:pugmeowla', name: 'Pugmeowla Icon', category: 'technical', img: R('pugmeowla'), page: 'items.html',
     obtain: 'Not obtainable.', desc: 'Advancement icon.' },
 ];

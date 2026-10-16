@@ -1,0 +1,13 @@
+# macOS Finder metadata
+.DS_Store
+
+# Local editor / tool settings
+.claude/
+.vscode/
+.idea/
+
+# Secrets: never commit these
+.env
+.env.*
+*.pem
+*.key

@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 <link rel="stylesheet" href="../assets/css/wiki.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -26,24 +26,44 @@
     <kbd class="search-key" aria-hidden="true">/</kbd>
     <div id="search-results" class="search-results" role="listbox" hidden></div>
   </div>
+  <div class="prefs prefs-top">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
   <a class="home-link" href="../../index.html">Pugmeowla</a>
 </header>
 <div class="shell has-toc">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
     <div class="sidebar-inner">
-      <details class="version-switch"><summary><span>v8.0 · MC 1.20.1 · Forge</span></summary><p class="version-switch-title">Documentation version</p><ul><li><a href="../addons/ability-overlays.html" aria-current="true" class="active"><strong>8.0</strong><small>In development</small></a></li><li><a href="../7.3/index.html"><strong>7.3</strong><small>Current release</small></a></li></ul></details>
+      <div class="prefs prefs-drawer">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+      <p class="version-switch version-label">v8.0 · MC 1.20.1 · Forge</p>
       <a class="nav-top" href="../index.html"><img src="../assets/img/logo.png" alt="" class="px nav-icon"><span>Wiki Home</span></a><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon"><span>Getting Started</span></summary><ul><li><a href="../installation.html">Installation</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li><li><a href="../progression.html">Progression</a></li><li><a href="../advancements.html">Advancements</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/stones/power_stone.png" alt="" class="px nav-icon"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon"><span>Abilities</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers and Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/ability-overlays.html" aria-current="page" class="active">Ability Overlays</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon"><span>Help</span></summary><ul><li><a href="../configuration.html">Configuration</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li><li><a href="../credits.html">Credits</a></li></ul></details>
     </div>
   </nav>
   <div class="scrim" hidden></div>
   <main id="content" class="content" tabindex="-1">
-    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is 7.3. <a href="../7.3/index.html">Read the 7.3 docs</a></p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
+    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is still 7.3.</p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
     <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki 8.0</a></li><li><a href="../addons/index.html">Addon Development</a></li><li aria-current="page">Ability Overlays</li></ol></nav>
     <header class="page-head"><img class="page-icon px" src="../assets/img/renders/aspects_of_existance.png" alt=""><div><h1>Ability Overlays</h1><p class="lead">How abilities look in the skill tree. The stones are drawn in their own colors, and anything else can be themed with one JSON file.</p></div></header>
     <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#what-it-does">What it does</a></li><li class="toc-l2"><a href="#settings">Settings</a></li><li class="toc-l2"><a href="#combining">How settings combine</a></li><li class="toc-l2"><a href="#examples">Examples</a></li></ol></details>
     <article class="prose">
 <h2 id="what-it-does">What it does<a class="heading-anchor" href="#what-it-does" aria-label="Link to this section">#</a></h2>
-<p>Infinity Stone Core themes <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s skill tree (the powers screen) in place. There's no new menu: <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s own textures are
+<p>Infinity Stone Core themes <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s skill tree (the powers screen) in place. There's no new menu: <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s own textures are
   tinted, so the layout, scrolling, tabs, tooltips, unlocking and buying all work exactly as before.</p>
 <p><strong>The Infinity Stones</strong> are drawn in their stone's <code>color</code> from <code>data/<wbr>infinity/<wbr>gauntlet_stones</code>: Power purple,
   Space blue, Reality red, Soul orange, Time green and Mind yellow. A custom stone gets its own color too. That covers:</p>
@@ -57,15 +77,15 @@
 <p><strong>Anything else</strong>, any power or single ability from any mod, can be themed by a JSON file in
   <code>assets/<wbr>&lt;namespace&gt;/<wbr>ability_overlays/</code> of a resource pack, a mod or an addon pack. Files reload with resources
   (<kbd class="key">F3</kbd> + <kbd class="key">T</kbd>), with no restart and no Java. A power or ability with neither a stone nor a file is drawn exactly as
-  <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> draws it.</p>
+  <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> draws it.</p>
 
 <h2 id="settings">Settings<a class="heading-anchor" href="#settings" aria-label="Link to this section">#</a></h2>
 <p>Everything is optional except the target. Colors are <code>#RRGGBB</code>, or <code>#RRGGBBAA</code> for transparency, and tint (multiply) what
-  <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> draws.</p>
+  <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> draws.</p>
 <div class="table-wrap"><table>
   <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
   <tbody>
-    <tr><td><code>ability</code></td><td></td><td>Target: one ability, as <code>power#ability</code>. <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s addon pack dev mode shows it in the ability's description.</td></tr>
+    <tr><td><code>ability</code></td><td></td><td>Target: one ability, as <code>power#ability</code>. <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s addon pack dev mode shows it in the ability's description.</td></tr>
     <tr><td><code>power</code></td><td></td><td>Target: a power, meaning its tab, its lines and all its abilities.</td></tr>
     <tr><td><code>accent_color</code></td><td>the stone's color, else white</td><td>The theme's color. Every color you leave out is worked out from it.</td></tr>
     <tr><td><code>frame_color</code></td><td>accent, lightened</td><td>Frame of an unlocked ability.</td></tr>
@@ -78,15 +98,15 @@
     <tr><td><code>selected_<wbr>tab_<wbr>color</code></td><td>accent, stronger</td><td>Power only: the tab while it's open.</td></tr>
     <tr><td><code>line_color</code></td><td>accent</td><td>Power only: lines to unlocked abilities.</td></tr>
     <tr><td><code>locked_<wbr>line_<wbr>color</code></td><td>accent, dark</td><td>Power only: lines to locked abilities.</td></tr>
-    <tr><td><code>frame_texture</code></td><td><a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s frame, tinted</td><td>26×26 texture (the whole file) drawn as the unlocked frame, untinted.</td></tr>
-    <tr><td><code>locked_<wbr>frame_<wbr>texture</code></td><td><a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s frame, tinted</td><td>26×26 texture drawn as the locked frame, untinted.</td></tr>
+    <tr><td><code>frame_texture</code></td><td><a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s frame, tinted</td><td>26×26 texture (the whole file) drawn as the unlocked frame, untinted.</td></tr>
+    <tr><td><code>locked_<wbr>frame_<wbr>texture</code></td><td><a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s frame, tinted</td><td>26×26 texture drawn as the locked frame, untinted.</td></tr>
     <tr><td><code>background_<wbr>texture</code></td><td>the power's tiled background</td><td>Power only: an image drawn behind the abilities instead. It doesn't scroll.</td></tr>
-    <tr><td><code>window_textures</code></td><td>the stone's window art, if any</td><td>Power only: images drawn over <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s window, in order. They're never darkened while an ability is hovered.</td></tr>
+    <tr><td><code>window_textures</code></td><td>the stone's window art, if any</td><td>Power only: images drawn over <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s window, in order. They're never darkened while an ability is hovered.</td></tr>
     <tr><td><code>icon</code></td><td>the ability's own icon</td><td>16×16 texture (the whole file) drawn as its icon in the skill tree. Locked abilities still show the padlock.</td></tr>
     <tr><td><code>locked_icon</code></td><td>the padlock</td><td>16×16 texture drawn instead of the padlock while the ability is locked. Meant for abilities bought for 0 levels that lock themselves again as a switch. The stones' toggles use <code>infinity:<wbr>textures/<wbr>icon/<wbr>toggle.png</code>.</td></tr>
   </tbody>
 </table></div>
-<p><code>background_texture</code> and <code>window_textures</code> are drawn whole at 1:1, centred on <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s 252×196 window. So an image with the
+<p><code>background_texture</code> and <code>window_textures</code> are drawn whole at 1:1, centred on <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s 252×196 window. So an image with the
   window drawn in its middle, on a canvas of any size, lines up by itself. The Power Stone's file uses 512×256 images with the frame at
   130, 30 and the side art on the same canvas:</p>
 <div class="code-block"><div class="code-head"><span>assets/infinity/ability_overlays/power_stone.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{

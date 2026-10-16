@@ -13,8 +13,13 @@ import { renderModel } from './render-model.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..', '..');
-const modDir = path.resolve(process.argv[2] || process.env.INFINITY_MOD_DIR
-  || '/Users/andre/Desktop/stuff/modding/java/infinity');
+// The mod's folder: the first argument, or the INFINITY_MOD_DIR environment variable.
+const modDirArg = process.argv[2] || process.env.INFINITY_MOD_DIR;
+if (!modDirArg) {
+  console.error('Pass the mod folder: node _wiki/tools/sync-assets.mjs path/to/infinity (or set INFINITY_MOD_DIR).');
+  process.exit(1);
+}
+const modDir = path.resolve(modDirArg);
 const resources = path.join(modDir, 'common/src/main/resources');
 const textures = path.join(resources, 'assets/infinity/textures');
 const out = path.join(root, '_wiki/static/img');

@@ -7,7 +7,7 @@ export const site = {
   discord: 'https://discord.gg/jRZnRFabKP',
   kofi: 'https://ko-fi.com/pugmeowla',
   // Versions shown in the version switcher, newest first. Each has a folder in _wiki/versions.
-  versions: ['8.0', '7.3'],
-  // The version players get from CurseForge and Modrinth right now.
+  versions: ['8.0'],
+  // The version players get from CurseForge and Modrinth right now. Older docs can be added back as versions/<id>.
   released: '7.3',
 };

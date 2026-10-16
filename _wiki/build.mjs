@@ -107,7 +107,7 @@ function linkMods(html, mods) {
       const { mod } = entries[Number(Object.keys(groups).find((k) => groups[k] !== undefined).slice(1))];
       // The icon stays on the same line as the first word; the rest of a long name can wrap.
       const [first, ...rest] = args[0].split(' ');
-      return `<a class="mod-link" href="${mod.url}"><span class="mod-link-lead"><img class="mod-icon" src="@w/assets/img/compat/${mod.icon}.png" alt="" loading="lazy">${first}</span>${rest.length ? ` ${rest.join(' ')}` : ''}</a>`;
+      return `<a class="mod-link" href="${mod.modrinth || mod.curseforge}"><span class="mod-link-lead"><img class="mod-icon" src="@w/assets/img/compat/${mod.icon}.png" alt="" loading="lazy">${first}</span>${rest.length ? ` ${rest.join(' ')}` : ''}</a>`;
     });
   }).join('');
 }
@@ -175,7 +175,10 @@ function renderer(v) {
       const status = other.id === site.released ? 'Current release' : other.status;
       return `<li><a href="${href}"${current ? ' aria-current="true" class="active"' : ''}><strong>${escapeHtml(other.label)}</strong><small>${escapeHtml(status)}</small></a></li>`;
     }).join('');
-    return `<details class="version-switch"><summary><span>v${escapeHtml(v.label)} · MC ${escapeHtml(v.minecraft)} · ${escapeHtml(v.loader)}</span></summary>`
+    const label = `v${escapeHtml(v.label)} · MC ${escapeHtml(v.minecraft)} · ${escapeHtml(v.loader)}`;
+    // With only one documented version there's nothing to switch to, so it's a plain label.
+    if (versions.length < 2) return `<p class="version-switch version-label">${label}</p>`;
+    return `<details class="version-switch"><summary><span>${label}</span></summary>`
       + `<p class="version-switch-title">Documentation version</p><ul>${items}</ul></details>`;
   };
 
@@ -207,14 +210,25 @@ function renderer(v) {
 
   const notice = () => {
     const other = versions.find((o) => o.id !== v.id && (v.id === site.released ? true : o.id === site.released));
-    if (!v.notice || !other) return '';
-    const href = `@w/${other.outDir ? `${other.outDir}/` : ''}index.html`;
+    if (!v.notice) return '';
+    // Links to the other version's docs when they're on the site; without them it's just the notice.
+    const link = other ? ` <a href="@w/${other.outDir ? `${other.outDir}/` : ''}index.html">${escapeHtml(v.noticeLink || `Read the ${other.label} docs`)}</a>` : '';
     // The inline script hides a dismissed notice before it paints, so it doesn't flash on every page.
-    return `<div class="version-notice" data-notice="${v.id}"><p>${v.notice} <a href="${href}">${escapeHtml(v.noticeLink || `Read the ${other.label} docs`)}</a></p>`
+    return `<div class="version-notice" data-notice="${v.id}"><p>${v.notice}${link}</p>`
       + `<button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button>`
       + `<script>try{if(localStorage.getItem('wiki-notice-${v.id}'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>`;
   };
 
+const prefs = (where) => `<div class="prefs prefs-${where}">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>`;
   const layout = (file, meta, content, toc, { base = null } = {}) => {
     const t = tocHtml(toc, meta.toc === 'h2' ? 2 : 3);
     const isHome = file === 'index.html';
@@ -235,7 +249,7 @@ ${base ? `<script>${base}</script>` : ''}
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="@w/assets/img/favicon.png">
 <link rel="stylesheet" href="@w/assets/css/wiki.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="${isHome ? 'home' : 'doc'}">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -249,11 +263,13 @@ ${base ? `<script>${base}</script>` : ''}
     <kbd class="search-key" aria-hidden="true">/</kbd>
     <div id="search-results" class="search-results" role="listbox" hidden></div>
   </div>
+  ${prefs('top')}
   <a class="home-link" href="@s/index.html">Pugmeowla</a>
 </header>
 <div class="shell${t.aside ? ' has-toc' : ''}">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
     <div class="sidebar-inner">
+      ${prefs('drawer')}
       ${switcher(file)}
       ${sidebar(file)}
     </div>
@@ -290,7 +306,8 @@ ${content}
 // ───────────── build ─────────────
 fs.rmSync(wikiDir, { recursive: true, force: true });
 fs.mkdirSync(wikiDir, { recursive: true });
-fs.cpSync(path.join(here, 'static'), path.join(wikiDir, 'assets'), { recursive: true });
+// Finder's .DS_Store files are never copied into the site.
+fs.cpSync(path.join(here, 'static'), path.join(wikiDir, 'assets'), { recursive: true, filter: (src) => path.basename(src) !== '.DS_Store' });
 
 const up = (n) => '../'.repeat(n);
 // Rewrites the link tokens for a page that sits `depth` folders below the wiki root, `inVersion` of them inside its version.
@@ -320,6 +337,11 @@ for (const v of versions) {
     html = html.replace(/<table[\s\S]*?<\/table>/g, (table) => table.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|_')));
     html = html.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|'));
     if (v.data.mods && file !== 'index.html' && file !== '404.html') html = linkMods(html, v.data.mods);
+    // Any link to a mod that's on both sites follows the reader's Modrinth / CurseForge choice (wiki.js swaps the href).
+    for (const mod of v.data.mods || []) {
+      if (!mod.modrinth || !mod.curseforge) continue;
+      html = html.split(`href="${mod.modrinth}"`).join(`href="${mod.modrinth}" data-modrinth="${mod.modrinth}" data-curseforge="${mod.curseforge}"`);
+    }
     const { html: withIds, toc } = processHeadings(html);
 
     if (file === '404.html') {
@@ -397,7 +419,7 @@ for (const [v, records] of allSearch) {
   for (const record of records) checkRef(path.join(wikiDir, v.outDir, 'index.html'), record.u, `${v.id} search index (${record.t})`);
 }
 
-console.log(`Built ${pageCount} pages in ${versions.length} versions (${versions.map((v) => v.id).join(', ')}) into wiki/`);
+console.log(`Built ${pageCount} pages in ${versions.length} version${versions.length === 1 ? "" : "s"} (${versions.map((v) => v.id).join(', ')}) into wiki/`);
 if (errors.length) {
   console.error(`\n${errors.length} problem(s):\n  ${[...new Set(errors)].join('\n  ')}`);
   process.exit(1);

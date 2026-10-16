@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 <link rel="stylesheet" href="../assets/css/wiki.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -26,18 +26,38 @@
     <kbd class="search-key" aria-hidden="true">/</kbd>
     <div id="search-results" class="search-results" role="listbox" hidden></div>
   </div>
+  <div class="prefs prefs-top">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
   <a class="home-link" href="../../index.html">Pugmeowla</a>
 </header>
 <div class="shell has-toc">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
     <div class="sidebar-inner">
-      <details class="version-switch"><summary><span>v8.0 · MC 1.20.1 · Forge</span></summary><p class="version-switch-title">Documentation version</p><ul><li><a href="../stones/time.html" aria-current="true" class="active"><strong>8.0</strong><small>In development</small></a></li><li><a href="../7.3/stones/time.html"><strong>7.3</strong><small>Current release</small></a></li></ul></details>
+      <div class="prefs prefs-drawer">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+      <p class="version-switch version-label">v8.0 · MC 1.20.1 · Forge</p>
       <a class="nav-top" href="../index.html"><img src="../assets/img/logo.png" alt="" class="px nav-icon"><span>Wiki Home</span></a><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon"><span>Getting Started</span></summary><ul><li><a href="../installation.html">Installation</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li><li><a href="../progression.html">Progression</a></li><li><a href="../advancements.html">Advancements</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/stones/power_stone.png" alt="" class="px nav-icon"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li><li><a href="../stones/time.html" aria-current="page" class="active">Time Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/energy_blast.png" alt="" class="px nav-icon"><span>Abilities</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../containers.html">Containers and Tools</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/icons/teleport.png" alt="" class="px nav-icon"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/ability-overlays.html">Ability Overlays</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon"><span>Help</span></summary><ul><li><a href="../configuration.html">Configuration</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li><li><a href="../credits.html">Credits</a></li></ul></details>
     </div>
   </nav>
   <div class="scrim" hidden></div>
   <main id="content" class="content" tabindex="-1">
-    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is 7.3. <a href="../7.3/index.html">Read the 7.3 docs</a></p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
+    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is still 7.3.</p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
     <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki 8.0</a></li><li><a href="../stones/index.html">Infinity Stones</a></li><li aria-current="page">Time Stone</li></ol></nav>
     <header class="page-head"><img class="page-icon px" src="../assets/img/stones/time_stone.png" alt=""><div><h1>Time Stone</h1></div></header>
     <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#overview">Overview</a></li><li class="toc-l2"><a href="#abilities">Abilities</a></li><li class="toc-l2"><a href="#skill-tree">Skill tree costs</a></li><li class="toc-l2"><a href="#tick-rate">Slow Time steps</a></li><li class="toc-l2"><a href="#time-set">The time command</a></li></ol></details>
@@ -50,8 +70,8 @@
     <dt>Found in</dt><dd><a href="../structures.html#sanctum-sanctorum">Sanctum Sanctorum</a>, Overworld</dd><dt>Power</dt><dd><code>infinity:<wbr>time_stone</code></dd></dl>
   </div></div>
 </div>
-<p>You get the Time Stone's power by holding it, wearing it in the <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, putting it in your gauntlet or a Cosmi-Rod, or by
-  holding or wearing (chest or <a class="mod-link" href="https://modrinth.com/mod/curios"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> necklace) an Eye of Agamotto that still has the stone in it. There's only one Time Stone per
+<p>You get the Time Stone's power by holding it, wearing it in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot, putting it in your gauntlet or a Cosmi-Rod, or by
+  holding or wearing (chest or <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> necklace) an Eye of Agamotto that still has the stone in it. There's only one Time Stone per
   world. Taking it out is explained under <a href="../containers.html#eye-of-agamotto">the Eye of Agamotto</a>.</p>
 <p>While a time power is running your arm goes up, green time rings appear on you and your screen gets a green tint. The free Screen
   Toggle turns the tint off.</p>
@@ -73,13 +93,14 @@
   <div class="ability-icon"><img src="../assets/img/icons/no_arrow.png" alt="" class="px" loading="lazy"></div>
   <div class="ability-body">
     <h3 class="ability-name no-toc">Stop Projectile<a class="heading-anchor" href="#projectile-stop" aria-label="Link to Stop Projectile">#</a></h3>
-    <p class="ability-summary">Projectiles that get within 2.5 blocks of you stop in the air.</p>
+    <p class="ability-summary">Projectiles that come within 6 blocks of you freeze in the air.</p>
     <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></p>
     
-    <p>Works on arrows, spectral arrows, tridents, ender pearls, snowballs, eyes of ender, fireballs, eggs and experience
-      bottles (the <code>#infinity:<wbr>projectiles</code> tag). They hang there for 50 seconds and then carry on the way they were
-      going, even after a world reload.</p>
+    <p>Works on every projectile except fishing bobbers: arrows, tridents, ender pearls, snowballs, fireballs and other mods'
+      projectiles too. Your own aren't stopped. A frozen projectile can't move, fall or hit anything for as long as it stays in
+      range. Once you move away or turn the ability off, it hangs for 2 more seconds and then carries on the way it was going.
+      Frozen projectiles stay frozen through a world reload.</p>
     <p class="ability-id"><code>infinity:<wbr>time_stone</code> · <code>infinity:<wbr>projectile_stop</code></p>
   </div>
 </article>
@@ -119,7 +140,7 @@
     <p>While <strong>Change Flow of Time</strong> is on, scroll down to slow the world (4 fewer ticks per second per step,
       down to 2 TPS) or up to speed it up (4 more per step, up to 40 TPS). The green bar shows the step and the middle is normal
       speed. Your step is remembered for next time. Turning it off puts the server back to 20 TPS. You keep moving at normal
-      speed. <strong>It affects the whole server.</strong> Needs <a class="mod-link" href="https://modrinth.com/mod/chronoapi"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>.</p>
+      speed. <strong>It affects the whole server.</strong> Needs <a class="mod-link" href="https://modrinth.com/mod/chronoapi" data-modrinth="https://modrinth.com/mod/chronoapi" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/chrono-api"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>.</p>
     <p class="ability-id"><code>infinity:<wbr>time_stone</code> · <code>infinity:<wbr>time_flow</code></p>
   </div>
 </article>
@@ -132,7 +153,7 @@
     <p class="ability-req"><span>Requires</span> <a href="../stones/time.html#slow-time-dummy">Slow Time</a></p>
     
     <p>Press once to freeze and again to unfreeze. You can walk on water while time is frozen.
-      <strong>It affects the whole server.</strong> Needs <a class="mod-link" href="https://modrinth.com/mod/chronoapi"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>.</p>
+      <strong>It affects the whole server.</strong> Needs <a class="mod-link" href="https://modrinth.com/mod/chronoapi" data-modrinth="https://modrinth.com/mod/chronoapi" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/chrono-api"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>.</p>
     <p class="ability-id"><code>infinity:<wbr>time_stone</code> · <code>infinity:<wbr>time_freeze</code></p>
   </div>
 </article>
@@ -154,7 +175,7 @@
 <div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="../stones/time.html#fast-forward">Fast Forward Daylight Cycle</a></td><td>1</td><td>Nothing</td><td>Hold</td></tr><tr><td><a href="../stones/time.html#projectile-stop">Stop Projectile</a></td><td>1</td><td>Fast Forward Daylight Cycle</td><td>Toggle</td></tr><tr><td><a href="../stones/time.html#time-set">Time Command</a></td><td>1</td><td>Fast Forward Daylight Cycle</td><td>Passive</td></tr><tr><td><a href="../stones/time.html#daylight-cycle-toggle">Daylight Cycle Toggle</a></td><td>Free</td><td>Fast Forward Daylight Cycle</td><td>Skill tree switch</td></tr><tr><td><a href="../stones/time.html#slow-time-dummy">Slow Time</a></td><td>5</td><td>Fast Forward Daylight Cycle</td><td>Scroll</td></tr><tr><td><a href="../stones/time.html#time-freeze-dummy">Freeze Time</a></td><td>10</td><td>Slow Time</td><td>Toggle</td></tr><tr><td><a href="../stones/time.html#screen-toggle">Screen Toggle</a></td><td>Free</td><td>Nothing</td><td>Skill tree switch</td></tr></tbody><tfoot><tr><td>Everything</td><td>18</td><td colspan="2"></td></tr></tfoot></table></div>
 
 <h2 id="tick-rate">Slow Time steps<a class="heading-anchor" href="#tick-rate" aria-label="Link to this section">#</a></h2>
-<p>Change Flow of Time sets the <strong>server's tick rate</strong> through <a class="mod-link" href="https://modrinth.com/mod/chronoapi"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>. Each step is 4 ticks per second:</p>
+<p>Change Flow of Time sets the <strong>server's tick rate</strong> through <a class="mod-link" href="https://modrinth.com/mod/chronoapi" data-modrinth="https://modrinth.com/mod/chronoapi" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/chrono-api"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>. Each step is 4 ticks per second:</p>
 <div class="table-wrap"><table>
   <thead><tr><th>Step</th><th>−5</th><th>−4</th><th>−3</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
   <tbody><tr><td>Ticks per second</td><td>40</td><td>36</td><td>32</td><td>28</td><td>24</td><td><strong>20</strong></td><td>16</td><td>12</td><td>8</td><td>4</td><td>2</td></tr></tbody>

@@ -6,8 +6,7 @@ export const version = {
   minecraft: '1.20.1',
   loader: 'Forge',
   outDir: '',
-  notice: 'These pages are for 8.0, which isn\'t out yet. The version on CurseForge and Modrinth is 7.3.',
-  noticeLink: 'Read the 7.3 docs',
+  notice: 'These pages are for 8.0, which isn\'t out yet. The version on CurseForge and Modrinth is still 7.3.',
 };
 
 export const nav = [

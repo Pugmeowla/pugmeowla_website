@@ -41,6 +41,50 @@
     if (inner && activeLink.offsetTop > inner.clientHeight - 80) inner.scrollTop = activeLink.offsetTop - inner.clientHeight / 2;
   }
 
+  // ───── Preferences: where mod links go, and light or dark ─────
+  // The inline script in <head> already set data-theme and data-platform before the page drew.
+  var html = document.documentElement;
+  function store(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* storage blocked: this page only */ } }
+  function applyPlatform(platform) {
+    html.setAttribute('data-platform', platform);
+    $$('a[data-modrinth][data-curseforge]').forEach(function (a) { a.href = a.getAttribute('data-' + platform); });
+    $$('[data-platform-choice]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-platform-choice') === platform)); });
+  }
+  var themeColor = $('meta[name="theme-color"]');
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    $$('.theme-toggle').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(theme === 'dark'));
+      b.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+    if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? '#2b221c' : '#eecd95');
+  }
+  applyPlatform(html.getAttribute('data-platform') === 'curseforge' ? 'curseforge' : 'modrinth');
+  applyTheme(html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  $$('[data-platform-choice]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var platform = b.getAttribute('data-platform-choice');
+      store('wiki-platform', platform);
+      applyPlatform(platform);
+    });
+  });
+  $$('.theme-toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      store('wiki-theme', theme);
+      applyTheme(theme);
+    });
+  });
+  // Follow the system setting until the reader picks one.
+  var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  if (systemDark && systemDark.addEventListener) {
+    systemDark.addEventListener('change', function (event) {
+      var picked = null;
+      try { picked = localStorage.getItem('wiki-theme'); } catch (e) { /* ignore */ }
+      if (!picked) applyTheme(event.matches ? 'dark' : 'light');
+    });
+  }
+
   // ───── Dismissable version notice ─────
   $$('.version-notice-close').forEach(function (button) {
     button.addEventListener('click', function () {

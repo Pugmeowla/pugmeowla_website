@@ -59,6 +59,15 @@ export const abilities = [
       Power Stone your base attack damage is 2^level, and it goes back to 1 when you lose the stone.</p>`,
   },
   {
+    group: 'power', key: 'super_punch', name: 'Super Punch', type: 'infinity:super_punch',
+    activation: 'Right-click', cost: null, requires: [], cooldown: 40, icon: 'icons/shockwave.png',
+    summary: 'While Damage Control is on, right-click to punch a shockwave that flings everything in its path and smashes blocks.',
+    details: `<p>The punch travels 12 blocks, hitting everything within 2 blocks of its path once and breaking the blocks it passes
+      through (never unbreakable ones). It does 3 damage, doubled for every <a href="@/stones/power.html#power-levels">power level</a>
+      and infinite at full power, and the kick pushes you back harder the higher your level. It only works while
+      <strong>Damage Control</strong> is switched on: turn Damage Control off and right-click goes back to normal. 2 second cooldown.</p>`,
+  },
+  {
     group: 'power', key: 'explosion2', name: 'Cosmic Explosion', type: 'palladium:dummy',
     activation: 'Upgrade', cost: 1, requires: ['power_blast_aim'], icon: 'icons/rocket_burst.png',
     summary: 'You can control the raw energy now. Unlocks Rocket Burst and Power Cyclone.',
@@ -105,8 +114,9 @@ export const abilities = [
     activation: 'Key press', cost: 1, requires: ['force_field'], icon: 'icons/teleport.png',
     summary: 'Opens a quick portal to the block you are looking at and jumps you through.',
     details: `<p>One portal opens in front of you and one at the block you're looking at, up to 256 blocks away. You land on
-      safe ground next to that block. Both close after 3 seconds and anything can use them until then. Still works while
-      you're burnt from the Snap.</p>`,
+      safe ground next to that block. Both close after 3 seconds and anything can use them until then. With Immersive Portals
+      they're real portals you walk through yourself, and they stay open for 7 seconds. Still works while you're burnt from the
+      Snap.</p>`,
   },
   {
     group: 'space', key: 'teleport', name: 'Teleport GUI', type: 'infinity:portal',
@@ -114,10 +124,10 @@ export const abilities = [
     summary: 'Type a dimension and coordinates and open a portal there.',
     details: `<p>Opens the <em>Space Teleport</em> menu. The dimension field suggests every dimension the server has, and you fill
       in X, Y and Z. <strong>Open Portal</strong> puts one portal 2.5 blocks in front of you and the other at the destination.
-      They stay open until someone left-clicks the rim of one (or its back), which closes both. This is how you get to the
+      They stay open until someone left-clicks the rim of one, which closes both. This is how you get to the
       mod's planets without a rocket. Still works while you're burnt from the Snap.</p>
       <p>With <strong>Immersive Portals</strong> installed, an open portal shows the other side through it and you walk
-      straight through, both ways. See <a href="@/stones/space.html#immersive-portals">Immersive Portals</a>.</p>`,
+      straight through, from either side. See <a href="@/stones/space.html#immersive-portals">Immersive Portals</a>.</p>`,
   },
   {
     group: 'space', key: 'telekinesis', name: 'Telekinesis', type: 'infinity:telekinesis',
@@ -319,10 +329,11 @@ export const abilities = [
   {
     group: 'time', key: 'projectile_stop', name: 'Stop Projectile', type: 'infinity:projectile_stop',
     activation: 'Toggle', cost: 1, requires: ['fast_forward'], icon: 'icons/no_arrow.png',
-    summary: 'Projectiles that get within 2.5 blocks of you stop in the air.',
-    details: `<p>Works on arrows, spectral arrows, tridents, ender pearls, snowballs, eyes of ender, fireballs, eggs and experience
-      bottles (the <code>#infinity:projectiles</code> tag). They hang there for 50 seconds and then carry on the way they were
-      going, even after a world reload.</p>`,
+    summary: 'Projectiles that come within 6 blocks of you freeze in the air.',
+    details: `<p>Works on every projectile except fishing bobbers: arrows, tridents, ender pearls, snowballs, fireballs and other mods'
+      projectiles too. Your own aren't stopped. A frozen projectile can't move, fall or hit anything for as long as it stays in
+      range. Once you move away or turn the ability off, it hangs for 2 more seconds and then carries on the way it was going.
+      Frozen projectiles stay frozen through a world reload.</p>`,
   },
   {
     group: 'time', key: 'time_set', name: 'Time Command', type: 'infinity:time_set',
@@ -433,8 +444,8 @@ export const abilities = [
     activation: 'Key press', cost: 1, requires: [], cooldown: 20, icon: S('mind'),
     summary: "Type a username and wear that player's skin and name.",
     details: `<p>The name can be 3 to 16 letters, digits or underscores. Everyone sees you with that player's skin and name tag.
-      <strong>Reset</strong> puts your own skin back. The disguise is only worn while the ability is unlocked, so losing the stone
-      takes it off.</p>`,
+      <strong>Reset</strong> puts your own skin back. Slim skins are drawn with slim arms. The disguise is only worn while the ability
+      is unlocked, so losing the stone takes it off.</p>`,
   },
   {
     group: 'scepter', key: 'scepter_blast', name: 'Scepter Power Blast', type: 'palladium:energy_beam',

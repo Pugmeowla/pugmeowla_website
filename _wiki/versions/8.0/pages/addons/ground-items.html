@@ -10,7 +10,8 @@ icon: renders/tesseract.png
   <li>It keeps the throw's motion, so it lands in front of you.</li>
   <li>It's drawn as the dropped item (its model's <code>ground</code> display transform), lying still on the ground.</li>
   <li>It keeps all of the stack's NBT (a gauntlet's stones and skin, names, enchantments and so on).</li>
-  <li>It can't be destroyed, burnt, blown up or despawn, and it stops at the bottom of the world instead of falling out.</li>
+  <li>It can't be destroyed, burnt, blown up or despawn. If it falls out of the world it rests at the bottom, unless it is or holds an
+    Infinity Stone (through <code>release</code>): then it reappears on the Overworld's surface near spawn and the server is told where.</li>
   <li>Walking over it doesn't pick it up. <strong>Right-click</strong> it.</li>
 </ul>
 <p>Old armor stand props from earlier versions are turned into ground items when their chunk loads.</p>
