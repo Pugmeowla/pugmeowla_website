@@ -8,7 +8,7 @@ export const site = {
   patreon: 'https://www.patreon.com/cw/Pugmeowla',
   kofi: 'https://ko-fi.com/pugmeowla',
   // Versions shown in the version switcher, newest first. Each has a folder in _wiki/versions.
-  versions: ['8.0'],
+  versions: ['8.0', '7.3'],
   // The version players get from CurseForge and Modrinth right now. Older docs can be added back as versions/<id>.
   released: '7.3',
 };

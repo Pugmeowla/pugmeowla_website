@@ -1,0 +1,46 @@
+---
+title: Stone Containers
+nav: Containers
+description: The 7.3 Orb, Tesseract, Aether, Eye of Agamotto and Scepter, how to get each stone out, and how dropped items behave.
+lead: Every stone comes inside something. How each container works in 7.3.
+icon: renders/orb.png
+---
+<h2 id="overview">Overview</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Container</th><th>Stone</th><th>Gives the power?</th><th>Getting the stone out</th><th>Putting it back</th></tr></thead>
+  <tbody>
+    <tr><td>{{item orb}}</td><td>{{stone power}}</td><td>No</td><td>Unlock it, open it, right-click</td><td>Open it and right-click with the stone</td></tr>
+    <tr><td>{{item tesseract}}</td><td>{{stone space}}</td><td>Yes, in either hand</td><td>Drop it and hit it</td><td>Can't</td></tr>
+    <tr><td>{{item aether}}</td><td>{{stone reality}}</td><td>Yes, in either hand</td><td>Drop it and hit it</td><td>Empty Aether with the stone in your off hand</td></tr>
+    <tr><td>{{item eye_of_agamotto}}</td><td>{{stone time}}</td><td>Yes, held or worn</td><td>Drop it and hit it (leaves an Empty Eye)</td><td>Can't</td></tr>
+    <tr><td>{{item scepter}}</td><td>{{stone mind}}</td><td>Yes, in either hand</td><td>Drop it and hit it (leaves an Empty Scepter)</td><td>Can't</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="orb">Orb</h2>
+<p>The Orb has a combination lock. Hold it and use <em>Rotate Left</em> and <em>Rotate Right</em>. A wrong turn plays a low note, puffs smoke and
+  sends you back to the start. In 7.3 the combination is <strong>the same in every world</strong> (it's on
+  {{page finding-stones.html#the-orb Finding the Stones}} if you want it). If you'd rather work it out, get a pen and paper ready: it's trial and error, so write down every turn as you find it. Unlocking is per player and lasts until you lock it again.</p>
+{{abilities orb}}
+<p>Once it's open, right-click to take the Power Stone, or right-click with the Power Stone in your other hand to put it back. Only one Power
+  Stone can be taken per world. 7.3 keeps track of that with a barrier block at <code>69420 -64 69420</code> on Morag.</p>
+
+<h2 id="tesseract">Tesseract</h2>
+<p>Gives the Space Stone's power in either hand. Drop it and hit it to get the stone out.</p>
+
+<h2 id="aether">Aether</h2>
+<p>Gives the Reality Stone's power in either hand. Drop it and hit it to get the stone out. To put it back, hold the stone in your off hand
+  and use:</p>
+{{abilities aether}}
+
+<h2 id="eye-of-agamotto">Eye of Agamotto</h2>
+<p>Wear it on your chest or in the Curios necklace slot, or hold it, for the Time Stone's power. Drop it and hit it to get the stone out,
+  which leaves an {{item empty_eye_of_agamotto}}.</p>
+
+<h2 id="scepter">Scepter</h2>
+<p>An iron tier sword with the Mind Stone. In your main hand it fires the Scepter Power Blast. Drop it and hit it to get the stone and an
+  {{item empty_scepter}}.</p>
+
+<h2 id="ground-items">On the ground</h2>
+<p>Stones, containers and the gauntlet dropped near a player turn into props on invisible armor stands. Hitting a container that holds a stone
+  breaks it open.</p>

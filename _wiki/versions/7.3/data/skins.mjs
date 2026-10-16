@@ -1,0 +1,20 @@
+// Skins in 7.3, defined directly in the gauntlet power (no gauntlet_skins folder yet). The unlock item is used up.
+export const skins = [
+  { id: 'netherite_gauntlet', title: 'Netherite Gauntlet', unlock: 'Netherite Ingot' },
+  { id: 'soul_netherite_gauntlet', title: 'Soul Infused Netherite Gauntlet', unlock: 'Soul-Infused Netherite Ingot' },
+  { id: 'rose_gauntlet', title: 'Rose-Gold Gauntlet', unlock: 'Cherry Planks' },
+  { id: 'cartoon_gauntlet', title: 'Cartoon Gauntlet', unlock: 'White Wool' },
+  { id: 'midnight', title: 'Midnight', unlock: 'Black Dye', notes: 'Has a glow layer.' },
+  { id: 'sith_gauntlet', title: 'Sith Gauntlet', unlock: 'Uru Ingot' },
+  { id: 'endosym_gauntlet', title: 'Endosymbiotic Gauntlet', unlock: 'Endosymbiotic Ingot' },
+  { id: 'ftg_gauntlet', title: 'Ferro-Titanium-Gold Alloy Gauntlet', unlock: 'Ferro-Titanium-Gold Alloy Ingot' },
+  { id: 'panther_gauntlet', title: 'Panther Gauntlet', unlock: 'Vibranium Ingot (Palladium)' },
+  { id: 'ultron_gauntlet', title: 'Ultron Gauntlet', unlock: 'Vibranium Circuit (Palladium)' },
+  { id: '52-d_gauntlet', title: '(NP-Λ52) Enhanced Gauntlet', unlock: 'NP-Λ52 Unit', notes: 'Plays its own sound when it goes on.' },
+  { id: 'dragon_gauntlet', title: 'Dragon Gauntlet', unlock: 'Dragon Head' },
+  { id: 'blaze_inc_gauntlet', title: 'Blaze Inc Gauntlet', unlock: 'Quartz Flux Capacitor (Palladium)', notes: 'A tribute to Blaze Inc.' },
+  { id: 'finger_gauntlet', title: 'Gauntlet with Fingers', unlock: 'Raw Chicken (just hold it)', notes: 'Goes on as soon as you hold the item.' },
+  { id: 'fantastic_four_skin', title: 'Fantastic Four Skin', unlock: null, notes: 'The unlock item is a secret.' },
+  { id: 'hand_of_terror', title: 'Hand of Terror', unlock: 'Orb', secret: true, notes: 'Requested by Terror.' },
+  { id: 'nano_gauntlet', title: 'Nano Gauntlet Skin', unlock: 'Vibranium Flux Capacitor (Palladium)', notes: 'Takes the Snap burn away when you put it on.' },
+];
