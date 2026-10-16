@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-root="">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Changelog · Infinity Stone Core Wiki 8.0</title>
+<meta name="description" content="Everything that changed from 7.3 to 8.0: requirements, the gauntlet, the Snap, every stone, containers, commands, worlds and the new systems for addon makers.">
+<meta property="og:title" content="Changelog · Infinity Stone Core Wiki 8.0">
+<meta property="og:description" content="Everything that changed from 7.3 to 8.0: requirements, the gauntlet, the Snap, every stone, containers, commands, worlds and the new systems for addon makers.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/wiki.css">
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki 8.0</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the 8.0 wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <div class="prefs prefs-top">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+  <a class="home-link" href="../index.html">Pugmeowla</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <div class="prefs prefs-drawer">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+      <p class="version-switch version-label">v8.0 · MC 1.20.1 · Forge</p>
+      <a class="nav-top" href="index.html"><img src="assets/img/logo.png" alt="" class="px nav-icon"><span>Wiki Home</span></a><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon"><span>Getting Started</span></summary><ul><li><a href="installation.html">Installation</a></li><li><a href="getting-started.html">Getting Started</a></li><li><a href="finding-stones.html">Finding the Stones</a></li><li><a href="progression.html">Progression</a></li><li><a href="advancements.html">Advancements</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/stones/power_stone.png" alt="" class="px nav-icon"><span>Infinity Stones</span></summary><ul><li><a href="stones/index.html">Overview</a></li><li><a href="stones/power.html">Power Stone</a></li><li><a href="stones/space.html">Space Stone</a></li><li><a href="stones/reality.html">Reality Stone</a></li><li><a href="stones/soul.html">Soul Stone</a></li><li><a href="stones/time.html">Time Stone</a></li><li><a href="stones/mind.html">Mind Stone</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/infinity_gauntlet.png" alt="" class="px nav-icon"><span>Infinity Gauntlet</span></summary><ul><li><a href="gauntlet/index.html">The Gauntlet</a></li><li><a href="gauntlet/snap.html">The Snap</a></li><li><a href="gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/energy_blast.png" alt="" class="px nav-icon"><span>Abilities</span></summary><ul><li><a href="abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon"><span>Items &amp; Equipment</span></summary><ul><li><a href="items.html">Item Index</a></li><li><a href="containers.html">Containers and Tools</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/vormir_stone.png" alt="" class="px nav-icon"><span>Exploration</span></summary><ul><li><a href="structures.html">Structures</a></li><li><a href="dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/icons/teleport.png" alt="" class="px nav-icon"><span>Commands</span></summary><ul><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/52-d_unit.png" alt="" class="px nav-icon"><span>Addon Development</span></summary><ul><li><a href="addons/index.html">Overview</a></li><li><a href="addons/stones.html">Custom Stones</a></li><li><a href="addons/skins.html">Skin Files</a></li><li><a href="addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="addons/ground-items.html">Ground Items</a></li><li><a href="addons/ability-overlays.html">Ability Overlays</a></li><li><a href="addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon"><span>Help</span></summary><ul><li><a href="configuration.html">Configuration</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="credits.html">Credits</a></li></ul></details><a class="nav-top active" href="changelog.html" aria-current="page"><img src="assets/img/icons/hourglass.png" alt="" class="px nav-icon"><span>Changelog</span></a>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is still 7.3.</p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki 8.0</a></li><li aria-current="page">Changelog</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="assets/img/icons/hourglass.png" alt=""><div><h1>Changelog</h1><p class="lead">7.3 to 8.0. The mod went from a Palladium addon pack with KubeJS scripts to a standard Java mod, and almost everything changed on the way.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#highlights">Highlights</a></li><li class="toc-l2"><a href="#requirements">Requirements</a></li><li class="toc-l2"><a href="#gauntlet">The Infinity Gauntlet</a></li><li class="toc-l2"><a href="#snap">The Snap</a></li><li class="toc-l2"><a href="#stones">The stones</a></li><li class="toc-l3"><a href="#power">Power Stone</a></li><li class="toc-l3"><a href="#space">Space Stone</a></li><li class="toc-l3"><a href="#reality">Reality Stone</a></li><li class="toc-l3"><a href="#soul">Soul Stone</a></li><li class="toc-l3"><a href="#time">Time Stone</a></li><li class="toc-l3"><a href="#mind">Mind Stone</a></li><li class="toc-l2"><a href="#containers">Containers and items</a></li><li class="toc-l2"><a href="#commands">Commands</a></li><li class="toc-l2"><a href="#worlds">Worlds and exploration</a></li><li class="toc-l2"><a href="#addons">For addon makers and server owners</a></li></ol></details>
+    <article class="prose">
+<h2 id="highlights">Highlights<a class="heading-anchor" href="#highlights" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li><strong>It is now a Java mod.</strong> 7.3 was an addon pack that used KubeJS scripts, <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> functions and CoreWithStuff. Version 8.0 was
+    remade from the ground up as a standard Java mod that's still a <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> addon, so its much more optimised and needs far fewer
+    dependency mods.</li>
+  <li><strong>Lots more abilities.</strong> Around 25 new abilities, including Mind Illusions, Mind Reading, Disguise, Spatial Lock,
+    Jump Teleport, Energy Blast, Super Punch, Rocket Burst, Power Cyclone, Soul Storage, Soul Heal and Soul Drain.</li>
+  <li><strong>A new gauntlet implementation.</strong> Any stone fits any slot, its own stone menu opens with <kbd class="key">G</kbd>, the stones and skins stay on the
+    gauntlet item with NBT.</li>
+  <li><strong>A new Snap.</strong> Four separate abilities you press twice to confirm, and Kill Half really kills half now. I got better at math.</li>
+  <li><strong>New ways to travel.</strong> Space Stone portals rebuilt from scratch, see-through portals with
+    <a href="installation.html#immersive-portals">Immersive Portals</a>, and a Tesseract that jumps between dimensions.</li>
+  <li><strong>Everything under <code>/infinity</code>.</strong> All commands moved there, with new admin commands.</li>
+  <li><strong>Custom Addons are much easier.</strong> JSON systems for custom stones, skins, gauntlets, ground items and skill tree themes.</li>
+</ul>
+
+<h2 id="requirements">Requirements<a class="heading-anchor" href="#requirements" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Mod</th><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td><a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>, <a class="mod-link" href="https://modrinth.com/mod/geckolib" data-modrinth="https://modrinth.com/mod/geckolib" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/geckolib"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/geckolib.png" alt="" loading="lazy">GeckoLib</span></a>, <a class="mod-link" href="https://modrinth.com/mod/chronoapi" data-modrinth="https://modrinth.com/mod/chronoapi" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/chrono-api"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>, <a class="mod-link" href="https://modrinth.com/mod/pehkui" data-modrinth="https://modrinth.com/mod/pehkui" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/pehkui"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/pehkui.png" alt="" loading="lazy">Pehkui</span></a></td><td>Required</td><td>Required</td></tr>
+    <tr><td>KubeJS</td><td>Required</td><td>Not needed</td></tr>
+    <tr><td>CoreWithStuff</td><td>Required</td><td>Not needed</td></tr>
+    <tr><td>Pantheon Sent, Colourful Hearts, Huge Structure Blocks</td><td>Required</td><td>Not needed</td></tr>
+    <tr><td><a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span> API</a></td><td>Required</td><td>Optional (recommended)</td></tr>
+    <tr><td><a class="mod-link" href="https://modrinth.com/mod/immersiveportals" data-modrinth="https://modrinth.com/mod/immersiveportals" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/immersive_portals.png" alt="" loading="lazy">Immersive</span> Portals</a></td><td>No support</td><td>Optional: see-through Space Stone portals</td></tr>
+    <tr><td>Satsu's Iron Man Addon (MK85)</td><td>Gauntlet power through a script, with <a class="mod-link" href="https://modrinth.com/mod/pugmeowlas-infinity-protocol" data-modrinth="https://modrinth.com/mod/pugmeowlas-infinity-protocol" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-protocol"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/infinity_protocol.png" alt="" loading="lazy">Infinity</span> Protocol</a></td><td><a class="mod-link" href="https://modrinth.com/mod/pugmeowlas-infinity-protocol" data-modrinth="https://modrinth.com/mod/pugmeowlas-infinity-protocol" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-protocol"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/infinity_protocol.png" alt="" loading="lazy">Infinity</span> Protocol</a>'s MK85 is a proper custom gauntlet</td></tr>
+  </tbody>
+</table></div>
+<p>The full list is on <a href="installation.html">Installation and Compatibility</a>.</p>
+
+<h2 id="gauntlet">The Infinity Gauntlet<a class="heading-anchor" href="#gauntlet" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th></th><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td>Stone menu</td><td>CoreWithStuff's menu, one fixed slot per stone</td><td>Its own menu. Any stone fits any slot, addon stones too</td></tr>
+    <tr><td>Opening it</td><td>Right-click in the main hand, or the Open GUI ability</td><td>The <kbd class="key">G</kbd> key, or right-click in the main hand</td></tr>
+    <tr><td>Where the stones live</td><td>On the player</td><td>On the gauntlet item, so they go wherever it goes</td></tr>
+    <tr><td>Where it gives powers</td><td>Off hand, main hand, <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands or <a class="mod-link" href="https://modrinth.com/mod/trinkets" data-modrinth="https://modrinth.com/mod/trinkets" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/trinkets"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/trinkets.png" alt="" loading="lazy">Trinkets</span></a> glove</td><td>Off hand or <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands</td></tr>
+    <tr><td>Skins</td><td>17, belonging to the player</td><td>19 (new: Cheeselander and the Burnt Gauntlet), belonging to the gauntlet</td></tr>
+    <tr><td>Other things as gauntlets</td><td>Omnitrixes and the Black Panther necklace, built in</td><td>Any item or power, through <a href="addons/custom-gauntlets.html">custom gauntlet</a> files</td></tr>
+  </tbody>
+</table></div>
+<p>The gauntlet also shows its stones properly in its tooltip, has a first-person look based on <a class="mod-link" href="https://modrinth.com/mod/lucraftcore" data-modrinth="https://modrinth.com/mod/lucraftcore" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/lucraft-core"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/lucraft_core.png" alt="" loading="lazy">Lucraft</span> Core</a>'s. See <a href="gauntlet/index.html">The Infinity Gauntlet</a>.</p>
+
+<h2 id="snap">The Snap<a class="heading-anchor" href="#snap" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li>7.3's <strong>Snap wheel</strong> with five options is now <strong>four separate abilities</strong>: Kill Half of All Entities, Kill All
+    Hostile, Kill Other Players and Destroy Stones. Each one needs pressing twice within 3 seconds, so you can't snap by accident.</li>
+  <li><strong>Kill Half really kills.</strong> In 7.3 the snapped half was sent to the Soulworld. Now they turn to dust. Kill All Hostile and
+    Kill Other Players still send their targets to a locked cell in the Soulworld.</li>
+  <li><strong>Bring Back the Snapped is gone</strong>, since nothing is stored in the Soulworld any more.</li>
+  <li>The burn works the same way: half a heart and locked abilities for a Minecraft day.</li>
+</ul>
+<p>More on <a href="gauntlet/snap.html">The Snap</a>.</p>
+
+<h2 id="stones">The stones<a class="heading-anchor" href="#stones" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li><strong>All six</strong> now work in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> head slot. In 7.3 only the Mind Stone did.</li>
+  <li>Each stone's skill tree is drawn in its own color, and most passives have a free <strong>toggle</strong> so you can switch them off.</li>
+  <li>The Power Stone's power is now <code>infinity:<wbr>power_stone</code> (it was <code>infinity:<wbr>power_stone_passive</code>).</li>
+</ul>
+
+<h3 id="power"><a class="chip stone-chip" style="--accent:#C32AD1" href="stones/power.html"><img src="assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a><a class="heading-anchor" href="#power" aria-label="Link to this section">#</a></h3>
+<ul>
+  <li><strong>New:</strong> <a class="ability-link" href="stones/power.html#impower">Energy Blast</a> (a damaging bolt that scales with your power level) replaces 7.3's Impower, which gave
+    Health Boost and Resistance.</li>
+  <li><strong>New:</strong> <a class="ability-link" href="stones/power.html#super-punch">Super Punch</a>, <a class="ability-link" href="stones/power.html#rocket-burst">Rocket Burst</a> and <a class="ability-link" href="stones/power.html#power-cyclone">Power Cyclone</a>.</li>
+  <li><strong>Changed:</strong> Cosmic Explosion was a ring of TNT around you. It's now the unlock for Rocket Burst and Power Cyclone.</li>
+  <li><strong>Changed:</strong> <a class="ability-link" href="stones/power.html#meteor-storm">Meteor Storm</a> breaks a moon apart over the spot you look at, sized by your power level, instead of
+    dropping 20 deepslate meteors.</li>
+  <li><strong>Changed:</strong> at full power, <a class="ability-link" href="stones/power.html#power-blast-aim">Power Blast</a> explodes where it hits instead of summoning TNT.</li>
+  <li><strong>Changed:</strong> holding the bare stone used to set off a ring of TNT and give you Wither. Now the stone becomes unstable, and
+    a cyclone of energy fires rockets around you.</li>
+</ul>
+
+<h3 id="space"><a class="chip stone-chip" style="--accent:#0255FF" href="stones/space.html"><img src="assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a><a class="heading-anchor" href="#space" aria-label="Link to this section">#</a></h3>
+<ul>
+  <li><strong>New:</strong> <a class="ability-link" href="stones/space.html#jump-teleport">Jump Teleport</a> (a portal pair to the block you look at) replaces 7.3's look-at Teleport.</li>
+  <li><strong>New:</strong> <a class="ability-link" href="stones/space.html#spatial-lock">Spatial Lock</a> freezes whatever you hold with Telekinesis in place.</li>
+  <li><strong>Removed:</strong> the Teleport Command and <code>/space_tp</code>. The rebuilt <a class="ability-link" href="stones/space.html#teleport">Teleport GUI</a> menu does the same job
+    without CoreWithStuff.</li>
+  <li><strong>Changed:</strong> <a class="ability-link" href="stones/space.html#telekinesis">Telekinesis</a> picks up blocks as well as mobs, is a toggle instead of a hold, and throws what you
+    hold like a projectile.</li>
+  <li><strong>Changed:</strong> <a class="ability-link" href="stones/space.html#black-hole">Black Hole</a> follows where you look and can be thrown, instead of staying put.</li>
+  <li><strong>Changed:</strong> the tree starts at Force Field instead of being one long line, and the portals work with <a class="mod-link" href="https://modrinth.com/mod/immersiveportals" data-modrinth="https://modrinth.com/mod/immersiveportals" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/immersive_portals.png" alt="" loading="lazy">Immersive</span> Portals</a>.</li>
+</ul>
+
+<h3 id="reality"><a class="chip stone-chip" style="--accent:#FF0130" href="stones/reality.html"><img src="assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a><a class="heading-anchor" href="#reality" aria-label="Link to this section">#</a></h3>
+<ul>
+  <li><strong>Changed:</strong> Block Duplication, which added blocks you looked at to your inventory, became <strong>Copy Block</strong> and
+    <strong>Paste Block</strong>. Copy any block, then turn other blocks (or everything around you) into it.</li>
+  <li><strong>Removed:</strong> Effects, which gave everything within 100 blocks Blindness, Nausea, Darkness and Slowness.</li>
+</ul>
+
+<h3 id="soul"><a class="chip stone-chip" style="--accent:#DE7300" href="stones/soul.html"><img src="assets/img/stones/soul_stone.png" alt="" class="px" loading="lazy">Soul Stone</a><a class="heading-anchor" href="#soul" aria-label="Link to this section">#</a></h3>
+<ul>
+  <li><strong>New:</strong> <a class="ability-link" href="stones/soul.html#soul-storage">Soul Storage</a>, <a class="ability-link" href="stones/soul.html#soul-heal">Soul Heal</a> and <a class="ability-link" href="stones/soul.html#soul-drain">Soul Drain</a>. Kill things to store up to 50 souls,
+    spend them on healing, or pull the soul out of a mob.</li>
+  <li><strong>Changed:</strong> Exit Soulworld sends everyone back to the exact spot they came from. In 7.3 it dropped them above the same X
+    and Z in the Overworld.</li>
+  <li><strong>Changed:</strong> <a class="ability-link" href="stones/soul.html#effect-immune">Effect Immunity</a> stops bad effects from being applied at all, instead of clearing them every tick.</li>
+</ul>
+
+<h3 id="time"><a class="chip stone-chip" style="--accent:#13CF55" href="stones/time.html"><img src="assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a><a class="heading-anchor" href="#time" aria-label="Link to this section">#</a></h3>
+<ul>
+  <li><strong>Changed:</strong> <a class="ability-link" href="stones/time.html#projectile-stop">Stop Projectile</a> catches every projectile within 6 blocks (not just a set list), holds it as long as
+    it's near you and lets it go 2 seconds after.</li>
+  <li><strong>Changed:</strong> the Time Command uses <code>/<wbr>infinity time set</code> and always moves time forward.</li>
+  <li><strong>Changed:</strong> Slow Time and Freeze Time talk to <a class="mod-link" href="https://modrinth.com/mod/chronoapi" data-modrinth="https://modrinth.com/mod/chronoapi" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/chrono-api"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a> directly instead of running its commands, and keep you moving at
+    normal speed.</li>
+</ul>
+
+<h3 id="mind"><a class="chip stone-chip" style="--accent:#FFD300" href="stones/mind.html"><img src="assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a><a class="heading-anchor" href="#mind" aria-label="Link to this section">#</a></h3>
+<ul>
+  <li><strong>New:</strong> <a class="ability-link" href="stones/mind.html#clones">Mind Illusions</a>, <a class="ability-link" href="stones/mind.html#mind-reading">Mind Reading</a> and <a class="ability-link" href="stones/mind.html#disguise">Disguise</a>.</li>
+  <li><strong>Changed:</strong> <a class="ability-link" href="stones/mind.html#intangibility">Intangibility</a> has a 10 second cooldown.</li>
+</ul>
+
+<h2 id="containers">Containers and items<a class="heading-anchor" href="#containers" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th></th><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td><a class="chip item-chip" href="items.html#item-cosmi-rod"><img src="assets/img/renders/cosmi-rod.png" alt="" class="px" loading="lazy">Cosmi-Rod</a></td><td>A separate item for each stone</td><td>One rod with a socket for any stone, addon stones included, plus the <a class="ability-link" href="containers.html#shockwave">Shockwave</a> ability</td></tr>
+    <tr><td><a class="chip item-chip" href="items.html#item-orb"><img src="assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a></td><td>The same 15-turn combination in every world</td><td>A random combination per world, with its length in the config</td></tr>
+    <tr><td><a class="chip item-chip" href="items.html#item-eye-of-agamotto"><img src="assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy">Eye of Agamotto</a></td><td>Taking the stone out left an Empty Eye</td><td>One animated Eye you open, take the stone from and put it back into</td></tr>
+    <tr><td><a class="chip item-chip" href="items.html#item-tesseract"><img src="assets/img/renders/tesseract.png" alt="" class="px" loading="lazy">Tesseract</a></td><td>Only held for the Space Stone's power</td><td>Right-click to jump to the next dimension, and it opens with a burst of rays</td></tr>
+    <tr><td><a class="chip item-chip" href="items.html#item-aether"><img src="assets/img/renders/aether.png" alt="" class="px" loading="lazy">Aether</a></td><td>Broke open straight away</td><td>Its lids swing open and red light pours out first</td></tr>
+    <tr><td>Dropped stones and containers</td><td>Props on invisible armor stands</td><td>Proper ground items that can't be destroyed, and stones are rescued from the void</td></tr>
+    <tr><td>Telephone</td><td>Only worked if the Guardian was loaded</td><td>Finds the Soul Guardian wherever it is, and it always gets home</td></tr>
+  </tbody>
+</table></div>
+<p>Also new: the <a class="chip item-chip" href="items.html#item-temple-beacon"><span class="px img-missing" role="img" aria-label="No image"></span>Temple Beacon</a>. The old Black Hole item is gone.</p>
+
+<h2 id="commands">Commands<a class="heading-anchor" href="#commands" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td><code>/<wbr>space_<wbr>tp &lt;x&gt; &lt;y&gt; &lt;z&gt; &lt;dimension&gt;</code></td><td>Removed. Use the <a class="ability-link" href="stones/space.html#teleport">Teleport GUI</a> menu</td></tr>
+    <tr><td><code>/<wbr>time_<wbr>set &lt;time&gt;</code></td><td><code>/<wbr>infinity time set &lt;time&gt;</code></td></tr>
+    <tr><td><code>/<wbr>locateplayer &lt;player&gt;</code></td><td><code>/<wbr>infinity soul locateplayer &lt;player&gt;</code></td></tr>
+    <tr><td><code>/unlockstones</code></td><td><code>/<wbr>infinity unlock_<wbr>stones</code> and <code>/<wbr>infinity lock_<wbr>stones</code></td></tr>
+    <tr><td><code>/unlock_orb</code></td><td><code>/<wbr>infinity unlock_<wbr>orb</code></td></tr>
+    <tr><td>None</td><td>New: <code>/<wbr>infinity ability</code>, <code>/<wbr>infinity gauntlet snap</code>, <code>/<wbr>infinity gauntlet skin</code>, <code>/infinity orb</code>, <code>/<wbr>infinity soulguardian</code>, <code>/<wbr>infinity summon malekith</code> and <code>/<wbr>infinity soul zombies</code></td></tr>
+  </tbody>
+</table></div>
+<p>All of them are on <a href="commands.html">Commands</a>.</p>
+
+<h2 id="worlds">Worlds and exploration<a class="heading-anchor" href="#worlds" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li>Vormir's Edge is built one chunk at a time as you explore, instead of all at once, so Huge Structure Blocks isn't needed.</li>
+  <li>The Garden is now a planet in <a class="mod-link" href="https://modrinth.com/mod/ad-astra" data-modrinth="https://modrinth.com/mod/ad-astra" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/ad-astra"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/ad_astra.png" alt="" loading="lazy">Ad</span> Astra</a> too.</li>
+  <li>The world remembers whether the Power Stone and Time Stone were taken in its own save data, instead of a barrier block on Morag.</li>
+  <li>Six new advancements, including a hidden one. See <a href="advancements.html">Advancements</a>.</li>
+  <li>Old 7.3 worlds are converted when they load. What changes is on <a href="configuration.html#world-upgrades">Configuration</a>.</li>
+</ul>
+
+<h2 id="addons">For addon makers and server owners<a class="heading-anchor" href="#addons" aria-label="Link to this section">#</a></h2>
+<ul>
+  <li><a href="addons/stones.html">Custom stones</a>, <a href="addons/skins.html">gauntlet skins</a>, <a href="addons/custom-gauntlets.html">custom gauntlets</a>
+    with their own menus, <a href="addons/ground-items.html">ground items</a> and <a href="addons/ability-overlays.html">skill tree themes</a>, all from
+    JSON.</li>
+  <li>43 ability types and 14 conditions you can use in your own <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> powers. See the <a href="addons/abilities.html">Ability Reference</a>.</li>
+  <li>A config file and <a href="commands.html#infinity-ability">/infinity ability disable</a> to switch any ability off on a server.</li>
+</ul>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="credits.html"><small>← Previous</small><span>Credits</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. These pages document version 8.0 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#highlights">Highlights</a></li><li class="toc-l2"><a href="#requirements">Requirements</a></li><li class="toc-l2"><a href="#gauntlet">The Infinity Gauntlet</a></li><li class="toc-l2"><a href="#snap">The Snap</a></li><li class="toc-l2"><a href="#stones">The stones</a></li><li class="toc-l3"><a href="#power">Power Stone</a></li><li class="toc-l3"><a href="#space">Space Stone</a></li><li class="toc-l3"><a href="#reality">Reality Stone</a></li><li class="toc-l3"><a href="#soul">Soul Stone</a></li><li class="toc-l3"><a href="#time">Time Stone</a></li><li class="toc-l3"><a href="#mind">Mind Stone</a></li><li class="toc-l2"><a href="#containers">Containers and items</a></li><li class="toc-l2"><a href="#commands">Commands</a></li><li class="toc-l2"><a href="#worlds">Worlds and exploration</a></li><li class="toc-l2"><a href="#addons">For addon makers and server owners</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="assets/js/search-8.0.js" defer></script>
+<script src="assets/js/wiki.js" defer></script>
+</body>
+</html>

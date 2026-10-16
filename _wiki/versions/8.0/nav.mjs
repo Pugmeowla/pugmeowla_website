@@ -40,4 +40,5 @@ export const nav = [
   { title: 'Help', icon: 'renders/soul_guardian_telephone.png', pages: [
     'configuration.html', 'troubleshooting.html', 'credits.html',
   ] },
+  { title: 'Changelog', icon: 'icons/hourglass.png', link: true, pages: ['changelog.html'] },
 ];

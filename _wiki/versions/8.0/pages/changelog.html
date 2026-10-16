@@ -1,0 +1,173 @@
+---
+title: Changelog
+description: Everything that changed from 7.3 to 8.0: requirements, the gauntlet, the Snap, every stone, containers, commands, worlds and the new systems for addon makers.
+lead: 7.3 to 8.0. The mod went from a Palladium addon pack with KubeJS scripts to a standard Java mod, and almost everything changed on the way.
+icon: icons/hourglass.png
+---
+<h2 id="highlights">Highlights</h2>
+<ul>
+  <li><strong>A real Java mod.</strong> 7.3 was an addon pack held together with KubeJS scripts, Palladium functions and CoreWithStuff. 8.0 is
+    rebuilt from the ground up as a standard Java mod that's still a Palladium addon, so it's faster, more reliable and needs far fewer
+    other mods.</li>
+  <li><strong>Every stone got bigger.</strong> Around 25 new abilities, including Mind Illusions, Mind Reading, Disguise, Spatial Lock,
+    Jump Teleport, Energy Blast, Super Punch, Rocket Burst, Power Cyclone, Soul Storage, Soul Heal and Soul Drain.</li>
+  <li><strong>A new gauntlet.</strong> Any stone fits any slot, its own stone menu opens with <kbd class="key">G</kbd>, the stones stay on the
+    gauntlet item, and skins belong to the gauntlet.</li>
+  <li><strong>A new Snap.</strong> Four separate abilities you press twice to confirm, and Kill Half really kills now.</li>
+  <li><strong>New ways to travel.</strong> Space Stone portals rebuilt from scratch, see-through portals with
+    <a href="@/installation.html#immersive-portals">Immersive Portals</a>, and a Tesseract that jumps between dimensions.</li>
+  <li><strong>Everything under <code>/infinity</code>.</strong> All commands moved there, with new admin commands.</li>
+  <li><strong>Built for addons.</strong> JSON systems for custom stones, skins, gauntlets, ground items and skill tree themes.</li>
+</ul>
+
+<h2 id="requirements">Requirements</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Mod</th><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td>Palladium, GeckoLib, Chrono API, Pehkui</td><td>Required</td><td>Required</td></tr>
+    <tr><td>KubeJS</td><td>Required</td><td>Not needed</td></tr>
+    <tr><td>CoreWithStuff</td><td>Required</td><td>Not needed</td></tr>
+    <tr><td>Pantheon Sent, Colourful Hearts, Huge Structure Blocks</td><td>Required</td><td>Not needed</td></tr>
+    <tr><td>Curios API</td><td>Required</td><td>Optional (recommended)</td></tr>
+    <tr><td>Immersive Portals</td><td>No support</td><td>Optional: see-through Space Stone portals</td></tr>
+    <tr><td>Satsu's Iron Man Addon (MK85)</td><td>Gauntlet power through a script, with Infinity Protocol</td><td>Infinity Protocol's MK85 is a proper custom gauntlet</td></tr>
+  </tbody>
+</table></div>
+<p>The full list is on {{page installation.html Installation and Compatibility}}.</p>
+
+<h2 id="gauntlet">The Infinity Gauntlet</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th></th><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td>Stone menu</td><td>CoreWithStuff's menu, one fixed slot per stone</td><td>Its own menu. Any stone fits any slot, addon stones too</td></tr>
+    <tr><td>Opening it</td><td>Right-click in the main hand, or the Open GUI ability</td><td>The <kbd class="key">G</kbd> key, or right-click in the main hand</td></tr>
+    <tr><td>Where the stones live</td><td>On the player</td><td>On the gauntlet item, so they go wherever it goes</td></tr>
+    <tr><td>Where it gives powers</td><td>Off hand, main hand, Curios hands or Trinkets glove</td><td>Off hand or Curios hands</td></tr>
+    <tr><td>Skins</td><td>17, belonging to the player</td><td>19 (new: Cheeselander and the Burnt Gauntlet), belonging to the gauntlet</td></tr>
+    <tr><td>Other things as gauntlets</td><td>Omnitrixes and the Black Panther necklace, built in</td><td>Any item or power, through {{page addons/custom-gauntlets.html custom gauntlet}} files</td></tr>
+  </tbody>
+</table></div>
+<p>The gauntlet also shows its stones properly in its tooltip, has a first-person look based on Lucraft Core's, and no longer has the
+  syncing problems 7.3's tree warned about. See {{page gauntlet/index.html The Infinity Gauntlet}}.</p>
+
+<h2 id="snap">The Snap</h2>
+<ul>
+  <li>7.3's <strong>Snap wheel</strong> with five options is now <strong>four separate abilities</strong>: Kill Half of All Entities, Kill All
+    Hostile, Kill Other Players and Destroy Stones. Each one needs pressing twice within 3 seconds, so you can't snap by accident.</li>
+  <li><strong>Kill Half really kills.</strong> In 7.3 the snapped half was sent to the Soulworld. Now they turn to dust. Kill All Hostile and
+    Kill Other Players still send their targets to a locked cell in the Soulworld.</li>
+  <li><strong>Bring Back the Snapped is gone</strong>, since nothing is stored in the Soulworld any more.</li>
+  <li>Destroy Stones is a 7 second ritual with a burst for each stone, and it earns <em>Peace in our Time</em>.</li>
+  <li>The burn works the same way: half a heart and locked abilities for a Minecraft day.</li>
+</ul>
+<p>More on {{page gauntlet/snap.html The Snap}}.</p>
+
+<h2 id="stones">The stones</h2>
+<ul>
+  <li><strong>All six</strong> now work in the Curios head slot. In 7.3 only the Mind Stone did.</li>
+  <li>Each stone's skill tree is drawn in its own color, and most passives have a free <strong>toggle</strong> so you can switch them off.</li>
+  <li>The Power Stone's power is now <code>infinity:power_stone</code> (it was <code>infinity:power_stone_passive</code>).</li>
+</ul>
+
+<h3 id="power">{{stone power}}</h3>
+<ul>
+  <li><strong>New:</strong> {{ab power/impower}} (a damaging bolt that scales with your power level) replaces 7.3's Impower, which gave
+    Health Boost and Resistance.</li>
+  <li><strong>New:</strong> {{ab power/super_punch}}, {{ab power/rocket_burst}} and {{ab power/power_cyclone}}.</li>
+  <li><strong>Changed:</strong> Cosmic Explosion was a ring of TNT around you. It's now the unlock for Rocket Burst and Power Cyclone.</li>
+  <li><strong>Changed:</strong> {{ab power/meteor_storm}} breaks a moon apart over the spot you look at, sized by your power level, instead of
+    dropping 20 deepslate meteors.</li>
+  <li><strong>Changed:</strong> at full power, {{ab power/power_blast_aim}} explodes where it hits instead of summoning TNT.</li>
+  <li><strong>Changed:</strong> holding the bare stone used to set off a ring of TNT and give you Wither. Now the stone becomes unstable, and
+    a cyclone of energy fires rockets around you.</li>
+</ul>
+
+<h3 id="space">{{stone space}}</h3>
+<ul>
+  <li><strong>New:</strong> {{ab space/jump_teleport}} (a portal pair to the block you look at) replaces 7.3's look-at Teleport.</li>
+  <li><strong>New:</strong> {{ab space/spatial_lock}} freezes whatever you hold with Telekinesis in place.</li>
+  <li><strong>Removed:</strong> the Teleport Command and <code>/space_tp</code>. The rebuilt {{ab space/teleport}} menu does the same job
+    without CoreWithStuff.</li>
+  <li><strong>Changed:</strong> {{ab space/telekinesis}} picks up blocks as well as mobs, is a toggle instead of a hold, and throws what you
+    hold like a projectile.</li>
+  <li><strong>Changed:</strong> {{ab space/black_hole}} follows where you look and can be thrown, instead of staying put.</li>
+  <li><strong>Changed:</strong> the tree starts at Force Field instead of being one long line, and the portals work with Immersive Portals.</li>
+</ul>
+
+<h3 id="reality">{{stone reality}}</h3>
+<ul>
+  <li><strong>Changed:</strong> Block Duplication, which added blocks you looked at to your inventory, became <strong>Copy Block</strong> and
+    <strong>Paste Block</strong>. Copy any block, then turn other blocks (or everything around you) into it.</li>
+  <li><strong>Removed:</strong> Effects, which gave everything within 100 blocks Blindness, Nausea, Darkness and Slowness.</li>
+</ul>
+
+<h3 id="soul">{{stone soul}}</h3>
+<ul>
+  <li><strong>New:</strong> {{ab soul/soul_storage}}, {{ab soul/soul_heal}} and {{ab soul/soul_drain}}. Kill things to store up to 50 souls,
+    spend them on healing, or pull the soul out of a mob.</li>
+  <li><strong>Changed:</strong> Exit Soulworld sends everyone back to the exact spot they came from. In 7.3 it dropped them above the same X
+    and Z in the Overworld.</li>
+  <li><strong>Changed:</strong> {{ab soul/effect_immune}} stops bad effects from being applied at all, instead of clearing them every tick.</li>
+</ul>
+
+<h3 id="time">{{stone time}}</h3>
+<ul>
+  <li><strong>Changed:</strong> {{ab time/projectile_stop}} catches every projectile within 6 blocks (not just a set list), holds it as long as
+    it's near you and lets it go 2 seconds after.</li>
+  <li><strong>Changed:</strong> the Time Command uses <code>/infinity time set</code> and always moves time forward.</li>
+  <li><strong>Changed:</strong> Slow Time and Freeze Time talk to Chrono API directly instead of running its commands, and keep you moving at
+    normal speed.</li>
+</ul>
+
+<h3 id="mind">{{stone mind}}</h3>
+<ul>
+  <li><strong>New:</strong> {{ab mind/clones}}, {{ab mind/mind_reading}} and {{ab mind/disguise}}.</li>
+  <li><strong>Changed:</strong> {{ab mind/intangibility}} has a 10 second cooldown.</li>
+</ul>
+
+<h2 id="containers">Containers and items</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th></th><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td>{{item cosmi-rod}}</td><td>A separate item for each stone</td><td>One rod with a socket for any stone, addon stones included, plus the {{ab cosmi_rod/shockwave}} ability</td></tr>
+    <tr><td>{{item orb}}</td><td>The same 15-turn combination in every world</td><td>A random combination per world, with its length in the config</td></tr>
+    <tr><td>{{item eye_of_agamotto}}</td><td>Taking the stone out left an Empty Eye</td><td>One animated Eye you open, take the stone from and put it back into</td></tr>
+    <tr><td>{{item tesseract}}</td><td>Only held for the Space Stone's power</td><td>Right-click to jump to the next dimension, and it opens with a burst of rays</td></tr>
+    <tr><td>{{item aether}}</td><td>Broke open straight away</td><td>Its lids swing open and red light pours out first</td></tr>
+    <tr><td>Dropped stones and containers</td><td>Props on invisible armor stands</td><td>Proper ground items that can't be destroyed, and stones are rescued from the void</td></tr>
+    <tr><td>Telephone</td><td>Only worked if the Guardian was loaded</td><td>Finds the Soul Guardian wherever it is, and it always gets home</td></tr>
+  </tbody>
+</table></div>
+<p>Also new: the {{item temple_beacon}}. The old Black Hole item is gone.</p>
+
+<h2 id="commands">Commands</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>7.3</th><th>8.0</th></tr></thead>
+  <tbody>
+    <tr><td><code>/space_tp &lt;x&gt; &lt;y&gt; &lt;z&gt; &lt;dimension&gt;</code></td><td>Removed. Use the {{ab space/teleport}} menu</td></tr>
+    <tr><td><code>/time_set &lt;time&gt;</code></td><td><code>/infinity time set &lt;time&gt;</code></td></tr>
+    <tr><td><code>/locateplayer &lt;player&gt;</code></td><td><code>/infinity soul locateplayer &lt;player&gt;</code></td></tr>
+    <tr><td><code>/unlockstones</code></td><td><code>/infinity unlock_stones</code> and <code>/infinity lock_stones</code></td></tr>
+    <tr><td><code>/unlock_orb</code></td><td><code>/infinity unlock_orb</code></td></tr>
+    <tr><td>None</td><td>New: <code>/infinity ability</code>, <code>/infinity gauntlet snap</code>, <code>/infinity gauntlet skin</code>, <code>/infinity orb</code>, <code>/infinity soulguardian</code>, <code>/infinity summon malekith</code> and <code>/infinity soul zombies</code></td></tr>
+  </tbody>
+</table></div>
+<p>All of them are on {{page commands.html Commands}}.</p>
+
+<h2 id="worlds">Worlds and exploration</h2>
+<ul>
+  <li>Vormir's Edge is built one chunk at a time as you explore, instead of all at once, so Huge Structure Blocks isn't needed.</li>
+  <li>The Garden is now a planet in Ad Astra too.</li>
+  <li>The world remembers whether the Power Stone and Time Stone were taken in its own save data, instead of a barrier block on Morag.</li>
+  <li>Six new advancements, including a hidden one. See {{page advancements.html Advancements}}.</li>
+  <li>Old 7.3 worlds are converted when they load. What changes is on {{page configuration.html#world-upgrades Configuration}}.</li>
+</ul>
+
+<h2 id="addons">For addon makers and server owners</h2>
+<ul>
+  <li>{{page addons/stones.html Custom stones}}, {{page addons/skins.html gauntlet skins}}, {{page addons/custom-gauntlets.html custom gauntlets}}
+    with their own menus, {{page addons/ground-items.html ground items}} and {{page addons/ability-overlays.html skill tree themes}}, all from
+    JSON.</li>
+  <li>43 ability types and 14 conditions you can use in your own Palladium powers. See the {{page addons/abilities.html Ability Reference}}.</li>
+  <li>A config file and <a href="@/commands.html#infinity-ability">/infinity ability disable</a> to switch any ability off on a server.</li>
+</ul>
