@@ -15,11 +15,11 @@ export const groups = {
   mind: { name: 'Mind Stone', power: 'infinity:mind_stone', page: 'stones/mind.html' },
   scepter: { name: 'Scepter', power: 'infinity:mind_stone', page: 'stones/mind.html' },
   gauntlet: { name: 'Infinity Gauntlet', power: 'infinity:infinity_gauntlet', page: 'gauntlet/snap.html' },
-  cosmi_rod: { name: 'Cosmi-Rod', power: 'infinity:cosmi_rod', page: 'containers.html' },
-  orb: { name: 'Orb', power: 'infinity:orb', page: 'containers.html' },
-  eye: { name: 'Eye of Agamotto', power: 'infinity:eye_of_agamotto', page: 'containers.html' },
-  aether: { name: 'Empty Aether', power: 'infinity:empty_aether', page: 'containers.html' },
-  telephone: { name: 'Soul Guardian Telephone', power: 'infinity:soul_guardian_telephone', page: 'containers.html' },
+  cosmi_rod: { name: 'Cosmi-Rod', power: 'infinity:cosmi_rod', page: 'tools.html' },
+  orb: { name: 'Orb', power: 'infinity:orb', page: 'stones/containers.html' },
+  eye: { name: 'Eye of Agamotto', power: 'infinity:eye_of_agamotto', page: 'stones/containers.html' },
+  aether: { name: 'Empty Aether', power: 'infinity:empty_aether', page: 'stones/containers.html' },
+  telephone: { name: 'Soul Guardian Telephone', power: 'infinity:soul_guardian_telephone', page: 'tools.html' },
 };
 
 export const abilities = [

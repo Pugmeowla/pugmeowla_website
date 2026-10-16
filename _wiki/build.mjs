@@ -107,7 +107,7 @@ function linkMods(html, mods) {
       const { mod } = entries[Number(Object.keys(groups).find((k) => groups[k] !== undefined).slice(1))];
       // The icon stays on the same line as the first word; the rest of a long name can wrap.
       const [first, ...rest] = args[0].split(' ');
-      return `<a class="mod-link" href="${mod.modrinth || mod.curseforge}"><span class="mod-link-lead"><img class="mod-icon" src="@w/assets/img/compat/${mod.icon}.png" alt="" loading="lazy">${first}</span>${rest.length ? ` ${rest.join(' ')}` : ''}</a>`;
+      return `<a class="mod-link" href="${mod.modrinth || mod.curseforge || mod.url}"><span class="mod-link-lead"><img class="mod-icon" src="@w/assets/img/compat/${mod.icon}.png" alt="" loading="lazy">${first}</span>${rest.length ? ` ${rest.join(' ')}` : ''}</a>`;
     });
   }).join('');
 }

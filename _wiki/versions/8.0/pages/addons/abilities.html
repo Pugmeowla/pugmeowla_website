@@ -8,36 +8,72 @@ toc: h2
 ---
 <h2 id="using">Using them</h2>
 <p>All of these work in any Palladium power file (<code>data/&lt;namespace&gt;/palladium/powers/*.json</code>) like Palladium's own types. Properties left
-  out use the defaults listed here. A power that gives a custom stone portals in a fire style might look like this:</p>
-<pre data-lang="json" data-title="data/example/palladium/powers/chaos_stone.json">
+  out use the defaults listed here. This is part of the Test Stone's power from the {{page addons/index.html#addon-pack test pack}}: a
+  power level on its own energy bar, an energy blast that scales with it, and a Sling Ring portal in the fire style.</p>
+<pre data-lang="json" data-title="data/infinity_test_stone/palladium/powers/test_stone.json">
 {
-  "name": "Chaos Stone",
-  "icon": "example:chaos_stone",
+  "name": "Test Stone",
+  "icon": "infinity_test_stone:test_stone",
+  "background": "minecraft:textures/block/pink_concrete.png",
   "gui_display_type": "tree",
+  "energy_bars": {
+    "level": {
+      "color": "#FF69B4",
+      "max": 5,
+      "min": 0,
+      "synced_value": { "type": "score", "objective": "TestStoneLevel", "fallback": 0 }
+    }
+  },
   "abilities": {
-    "sling_ring": {
-      "type": "infinity:portal",
-      "title": "Sling Ring",
-      "style": "fire",
-      "size": 1.5,
+    "level": {
+      "type": "infinity:power_level",
+      "title": "Power Level",
+      "description": "Level 0-5 shown on the level bar. Damage abilities below scale with it.",
+      "hidden_in_bar": true,
+      "hidden": true,
+      "objective": "TestStoneLevel",
+      "max_level": 5
+    },
+    "level_up": {
+      "type": "infinity:power_level_change",
+      "title": "Level Up",
+      "description": "Raises the power level.",
+      "bar_color": "pink",
+      "gui_position": [0, 1],
+      "amount": 1,
       "conditions": {
-        "enabling": [ { "type": "palladium:action", "key_type": "key_bind", "cooldown": 40 } ]
+        "enabling": [ { "type": "palladium:action", "cooldown": 0 } ]
       }
     },
     "blast": {
       "type": "infinity:energy_blast",
-      "title": "Chaos Blast",
-      "damage": 8.0,
-      "color": "#E0115F",
-      "scale_with_power_level": false,
+      "title": "Energy Blast",
+      "description": "Fires a pink blast whose damage doubles with each level.",
+      "bar_color": "pink",
+      "gui_position": [2, 1],
+      "damage": 6.0,
+      "color": "#FF69B4",
+      "scale_with_power_level": true,
       "conditions": {
-        "enabling": [ { "type": "palladium:action", "key_type": "key_bind", "cooldown": 10 } ],
-        "unlocking": [ { "type": "infinity:gauntlet_slot", "item": { "item": "example:chaos_stone" } } ]
+        "enabling": [ { "type": "palladium:action", "cooldown": 10 } ]
+      }
+    },
+    "sling_ring": {
+      "type": "infinity:portal",
+      "title": "Sling Ring",
+      "description": "Opens the portal menu and travels through a ring of sparks, like Doctor Strange.",
+      "bar_color": "orange",
+      "gui_position": [5, 2],
+      "style": "fire",
+      "conditions": {
+        "enabling": [ { "type": "palladium:action", "cooldown": 40 } ]
       }
     }
   }
 }
 </pre>
+<p>The full file in the test pack uses nearly every ability type on this page. To lock an ability until the stone is in a gauntlet, add
+  <code>"unlocking": [ { "type": "infinity:gauntlet_slot", "item": { "item": "infinity_test_stone:test_stone" } } ]</code> to its conditions.</p>
 <p>Palladium's generated documentation (<code>mods/documentation/</code>) lists the same types with the exact property formats for your installed version.</p>
 
 <h2 id="ability-types">Ability types</h2>

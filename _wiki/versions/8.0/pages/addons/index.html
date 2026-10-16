@@ -35,17 +35,63 @@ icon: renders/52-d_unit.png
 <h2 id="addon-pack">Making an addon pack</h2>
 <p>Infinity Stone Core is a Palladium addon itself, and its content uses Palladium's addon pack format. The easiest way to add to it is your
   own addon pack: a folder (or zip) in <code>.minecraft/addonpacks/</code> with data, assets and Palladium's <code>addon/</code> folder for new
-  items and blocks. The pack format itself is covered in <a href="https://docs.threetag.net/docs/intro/">Palladium's documentation</a>.</p>
-<pre data-lang="text" data-title="A pack that adds a stone">
-addonpacks/chaos_stone_pack/
+  items and blocks. The pack format itself is covered in <a href="https://docs.threetag.net/docs/intro/">Palladium's documentation</a>,
+  and the <a href="https://squirrelcontrol.threetag.net/template-generator">Palladium addon pack template generator</a> makes an empty
+  pack to start from.</p>
+<p>The examples on these pages come from <code>infinity_test_stone</code>, a working test pack that adds a pink Test Stone:</p>
+<pre data-lang="text" data-title="addonpacks/infinity_test_stone">
+infinity_test_stone/
 ├── pack.mcmeta
-├── addon/example/items/chaos_stone.json                 the item (a Palladium addon item)
-├── assets/example/models/item/chaos_stone.json          {"parent": "infinity:item/infinity_stone"}
-├── assets/example/lang/en_us.json
-├── data/example/palladium/powers/chaos_stone.json       the stone's power and abilities
-├── data/infinity/gauntlet_stones/chaos_stone.json       makes it fit in the gauntlet
-└── data/infinity/ground_items/chaos_stone.json          optional, makes it lie on the ground like a stone
+├── addon/infinity_test_stone/items/test_stone.json                  the item (a Palladium addon item)
+├── assets/infinity_test_stone/models/item/test_stone.json           {"parent": "infinity:item/infinity_stone"}
+├── assets/infinity_test_stone/lang/en_us.json                       the item's name
+├── assets/infinity_test_stone/ability_overlays/illusions.json       optional, themes one ability in the skill tree
+├── data/infinity_test_stone/palladium/powers/test_stone.json        the stone's power and abilities
+├── data/infinity/gauntlet_stones/test_stone.json                    makes it fit in the gauntlet
+└── data/infinity/ground_items/test_stone.json                       optional, makes it lie on the ground like a stone
 </pre>
+<div class="tabs" data-tabs>
+  <section data-tab="pack.mcmeta">
+    <h3 class="tab-label no-toc">pack.mcmeta</h3>
+<pre data-lang="json" data-title="pack.mcmeta">
+{
+  "pack": {
+    "id": "infinity_test_stone",
+    "version": "1.0.0",
+    "description": "Test Gauntlet Stone addon for Pugmeowla's Infinity Stone Core",
+    "pack_format": 15
+  },
+  "dependencies": {
+    "common": {
+      "infinity": ">=7.4"
+    }
+  }
+}
+</pre>
+  </section>
+  <section data-tab="Item">
+    <h3 class="tab-label no-toc">Item</h3>
+<pre data-lang="json" data-title="addon/infinity_test_stone/items/test_stone.json">
+{
+  "max_stack_size": 1,
+  "rarity": "epic",
+  "is_fire_resistant": true,
+  "creative_mode_tab": {
+    "tab": "infinity:infinity",
+    "after": "infinity:mind_stone"
+  }
+}
+</pre>
+  </section>
+  <section data-tab="Name">
+    <h3 class="tab-label no-toc">Name</h3>
+<pre data-lang="json" data-title="assets/infinity_test_stone/lang/en_us.json">
+{
+  "item.infinity_test_stone.test_stone": "Test Stone"
+}
+</pre>
+  </section>
+</div>
 <p>The same files work in a normal mod's <code>src/main/resources</code>.</p>
 
 <h2 id="palladium">Using the mod's powers</h2>
@@ -72,7 +118,11 @@ addonpacks/chaos_stone_pack/
 
 <h2 id="examples">Real examples</h2>
 <ul>
-  <li><strong>Pugmeowla's Infintrix</strong> turns four Omnitrixes into power gauntlets with gloves (custom gauntlets).</li>
-  <li><strong>Infinity Protocol</strong> makes the Iron Man MK85 suit an item gauntlet whose stones only show during its nano gauntlet animation.</li>
+  <li><strong>Pugmeowla's Infintrix</strong> turns four Omnitrixes into power gauntlets: the Prototype, Recalibrated and Ultimatrix with
+    gloves, and the Omniverse Omnitrix with its stones around the watch face. Its own power uses <code>infinity:gauntlet_slot</code>: with
+    the Power Stone in, the Omnitrix times you back in straight away, and with all six it unlocks every alien and Master Control, which a
+    Snap burn takes away again.</li>
+  <li><strong>Pugmeowla's Infinity Protocol</strong> makes the Iron Man MK85 suit from Satsu's Iron Man Addon a power gauntlet, worn only
+    while the suit's nano gauntlet is out. With all six stones in, it also keeps refilling the suit's energy, nanites and Pym particles.</li>
   <li>The mod's own <code>data/infinity/gauntlet_skins</code>, <code>gauntlet_stones</code> and <code>ground_items</code> folders are good to copy from.</li>
 </ul>

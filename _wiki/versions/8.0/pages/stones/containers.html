@@ -1,8 +1,8 @@
 ---
-title: Stone Containers and Tools
-nav: Containers and Tools
-description: The Orb, Tesseract, Aether, Eye of Agamotto, Scepter, Cosmi-Rod and Soul Guardian Telephone, and how items behave on the ground.
-lead: Every stone comes inside something. How each container works, how to open it, and the tools that go with them.
+title: Stone Containers
+nav: Containers
+description: The Orb, Tesseract, Aether, Eye of Agamotto and Scepter, how to get each stone out and put it back, and how items behave on the ground.
+lead: Every stone comes inside something. How each container works and how to open it.
 icon: renders/orb.png
 ---
 <h2 id="overview">Overview</h2>
@@ -23,6 +23,8 @@ icon: renders/orb.png
   closed. Hold it (the off hand works best) and its abilities show up in the ability bar:</p>
 {{abilities orb}}
 <h3 id="cracking-the-orb">Unlocking the combination</h3>
+<div class="callout"><span class="callout-title">Get a pen and paper ready</span><p>Unlocking the Orb is trial and error. Write down
+  every turn as you find it, because one wrong turn sends you back to the start.</p></div>
 <ul>
   <li>Every world has its own random sequence of left and right turns, <strong>15 turns long</strong> by default. The length is in the
     {{page configuration.html#config config}}, and changing it makes a new sequence.</li>
@@ -96,30 +98,6 @@ icon: renders/orb.png
 <p>Loki's Scepter is an iron tier sword with the Mind Stone in it. In either hand it gives the Mind Stone's power, and in your main hand
   you also get the {{ab scepter/scepter_blast}}. Left-click it on the ground to split it into the Mind Stone and an Empty Scepter. Right-click an
   Empty Scepter on the ground while holding the Mind Stone to put it back together (or the other way round).</p>
-
-<h2 id="cosmi-rod">Cosmi-Rod</h2>
-{{itemcards cosmi-rod}}
-<p>Ronan the Accuser's Universal Weapon, found in the Crashed Kree Ship. It's a netherite tier weapon with a socket for one stone:</p>
-<ul>
-  <li><strong>Right-click</strong> with it in your main hand to open its one slot menu and put a stone in. Addon stones work too.</li>
-  <li>In either hand it gives you the power of the stone inside, which is drawn on the rod in its color. This is a safe way to carry the
-    Power Stone.</li>
-  <li>The tooltip shows which stone is in it. The old one rod per stone items from earlier versions turn into an empty rod.</li>
-</ul>
-<p>Holding it also gives you this:</p>
-{{abilities cosmi_rod}}
-
-<h2 id="soul-guardian-telephone">Soul Guardian Telephone</h2>
-{{itemcards soul_guardian_telephone}}
-{{abilities telephone}}
-<ul>
-  <li><strong>Right-click</strong> to bring the Soul Guardian to you, wherever it is. If its spot on Vormir isn't loaded, the phone loads
-    it until the Guardian is found.</li>
-  <li>The Guardian goes back to Vormir by itself after 1,200 ticks (one minute). Its way home is saved on it, so a server restart in
-    the middle doesn't strand it.</li>
-  <li><strong>Sneak and right-click</strong> to send it back straight away.</li>
-  <li>The cooldown is 24,000 ticks (one Minecraft day, 20 minutes).</li>
-</ul>
 
 <h2 id="ground-items">Items on the ground</h2>
 <p>The stones, all the containers, the gauntlet, the Cosmi-Rod and both swords behave differently when you drop or throw them:</p>

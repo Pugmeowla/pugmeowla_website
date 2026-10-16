@@ -15,7 +15,7 @@ export const nav = [
     'installation.html', 'getting-started.html', 'finding-stones.html', 'progression.html', 'advancements.html',
   ] },
   { title: 'Infinity Stones', icon: 'stones/power_stone.png', pages: [
-    'stones/index.html', 'stones/power.html', 'stones/space.html', 'stones/reality.html',
+    'stones/index.html', 'stones/containers.html', 'stones/power.html', 'stones/space.html', 'stones/reality.html',
     'stones/soul.html', 'stones/time.html', 'stones/mind.html',
   ] },
   { title: 'Infinity Gauntlet', icon: 'items/infinity_gauntlet.png', pages: [
@@ -25,7 +25,7 @@ export const nav = [
     'abilities.html',
   ] },
   { title: 'Items & Equipment', icon: 'renders/cosmi-rod.png', pages: [
-    'items.html', 'containers.html',
+    'items.html', 'tools.html',
   ] },
   { title: 'Exploration', icon: 'renders/vormir_stone.png', pages: [
     'structures.html', 'dimensions.html',

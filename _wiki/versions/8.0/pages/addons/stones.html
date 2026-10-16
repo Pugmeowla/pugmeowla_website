@@ -39,22 +39,21 @@ icon: stones/time_stone.png
 <div class="tabs" data-tabs>
   <section data-tab="Stone file">
     <h3 class="tab-label no-toc">Stone file</h3>
-<pre data-lang="json" data-title="data/infinity/gauntlet_stones/chaos_stone.json">
+<p>The Test Stone from the {{page addons/index.html#addon-pack test pack}}:</p>
+<pre data-lang="json" data-title="data/infinity/gauntlet_stones/test_stone.json">
 {
-  "item": "example:chaos_stone",
-  "color": "#E0115F",
-  "glint_color": "#FF7AA8",
-  "tooltip_color": "#E0115F",
-  "tooltip_order": 10,
-  "power": "example:chaos_stone",
-  "head": true
+  "item": "infinity_test_stone:test_stone",
+  "color": "#FF69B4",
+  "glint_color": "#FFC2E2",
+  "tooltip_order": 6,
+  "power": "infinity_test_stone:test_stone"
 }
 </pre>
   </section>
   <section data-tab="Item model">
     <h3 class="tab-label no-toc">Item model</h3>
     <p>To give the item the stone look in your inventory, use the mod's stone model as its parent:</p>
-<pre data-lang="json" data-title="assets/example/models/item/chaos_stone.json">
+<pre data-lang="json" data-title="assets/infinity_test_stone/models/item/test_stone.json">
 {
   "parent": "infinity:item/infinity_stone"
 }
@@ -82,8 +81,8 @@ icon: stones/time_stone.png
 <pre data-lang="json" data-title="render layer">
 {
   "type": "infinity:stone",
-  "stone": "example:chaos_stone",
-  "model": "example:geo/chaos_stone_socket.geo.json"
+  "stone": "infinity_test_stone:test_stone",
+  "model": "infinity_test_stone:geo/test_stone_socket.geo.json"
 }
 </pre>
 
@@ -93,7 +92,7 @@ icon: stones/time_stone.png
 <pre data-lang="json">
 {
   "type": "infinity:gauntlet_slot",
-  "item": { "item": "example:chaos_stone" }
+  "item": { "item": "infinity_test_stone:test_stone" }
 }
 </pre>
 

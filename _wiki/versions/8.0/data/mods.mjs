@@ -1,6 +1,7 @@
 // Other mods the 8.0 pages mention. The build links every mention in page text (outside code, headings and existing
 // links, and not on the wiki home) with the mod's icon (assets/img/compat/<icon>.png) in front. Links go to Modrinth or
 // CurseForge, whichever the reader picked in the top bar; a mod only on one of them always links there.
+// A creator that isn't a mod (a YouTube channel) has url instead of modrinth and curseforge.
 // names: the spellings to link, longest first where one contains another. A name may be a regular expression source.
 const M = (slug) => `https://modrinth.com/mod/${slug}`;
 const CF = (slug) => `https://www.curseforge.com/minecraft/mc-mods/${slug}`;
@@ -13,6 +14,9 @@ export const mods = [
   { icon: 'infinity_protocol', modrinth: M('pugmeowlas-infinity-protocol'), curseforge: CF('pugmeowlas-infinity-protocol'), names: ["Pugmeowla's Infinity Protocol", 'Infinity Protocol'] },
   { icon: 'ultor_infinitus', modrinth: M('pugmeowlas-ultor-infinitus'), curseforge: CF('pugmeowlas-ultor-infinitus'), names: ["Pugmeowla's Ultor Infinitus", 'Ultor Infinitus'] },
   { icon: 'satsu_iron_man', modrinth: M('satsu-iron-man-addon'), curseforge: CF('satsu-iron-man-addon'), names: ["Satsu's Iron Man Addon", "Satsu's Iron Man"] },
+  { icon: 'rangers_superheros', modrinth: M('rangers-superheros'), curseforge: null, names: ['Rangers? Super[Hh]ero(?:e)?s'] },
+  // The YouTube channel, not the gauntlet skin named after it.
+  { icon: 'blaze_inc', modrinth: null, curseforge: null, url: 'https://www.youtube.com/@BlazeInc', names: ['Blaze Inc(?! Gauntlet)'] },
   { icon: 'fsang', modrinth: M('fsang18s-heropack'), curseforge: CF('fsang18s-heropack'), names: ["Fsang's Heropack", "Fsang's"] },
   { icon: 'tinkers', modrinth: M('tinkers-construct'), curseforge: CF('tinkers-construct'), names: ["Tinkers' Construct"] },
   { icon: 'immersive_portals', modrinth: M('immersiveportals'), curseforge: CF('immersive-portals-mod'), names: ['Immersive Portals'] },

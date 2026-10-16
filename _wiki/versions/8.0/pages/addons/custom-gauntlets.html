@@ -18,13 +18,115 @@ icon: items/infinity_gauntlet.png
 </table></div>
 <p>An Infinity Gauntlet in the off hand or Curios hands slot takes priority, then custom gauntlets in file name order.</p>
 
-<h2 id="worked-example">Worked example</h2>
-<p>A glove from <code>examplemod</code>, worn in the Curios hands slot or off hand, with the stones on its knuckles. These six positions are the
+<h2 id="worked-example">Worked examples</h2>
+<p>The first three are the real files from {{page addons/index.html#examples Infintrix and Infinity Protocol}}. Their six positions are the
   Infinity Gauntlet's own sockets, a good start for anything on the left hand.</p>
+<div class="tabs" data-tabs>
+  <section data-tab="Omnitrix with a glove">
+    <h3 class="tab-label no-toc">Omnitrix with a glove</h3>
+    <p>Infintrix's Prototype Omnitrix from Alien Evolution. While the player has the Omnitrix's power it's a gauntlet, and once a stone is
+      in, the <code>infintrix:prototype_infintrix</code> glove is drawn under the stones.</p>
+<pre data-lang="json" data-title="data/infinity/gauntlets/prototype_omnitrix.json">
+{
+  "name": "Prototype Omnitrix",
+  "equipment": {
+    "power": "alienevo:prototype_omnitrix"
+  },
+  "slots": [
+    { "origin": [7.65, 11.75, -1.15] },
+    { "origin": [7.65, 12.85, -0.55] },
+    { "origin": [7.65, 11.75, 0.15] },
+    { "origin": [7.65, 11.75, -2.35] },
+    { "origin": [4.55, 12.15, -2.65], "slim_origin": [4.55, 12.15, -2.65], "size": [0.9, 0.9, 0.9] },
+    { "origin": [7.65, 11.75, 1.45] }
+  ],
+  "slim_offset": [-1, 0, 0],
+  "render_layer": "infintrix:prototype_infintrix",
+  "powers": ["infintrix:infintrix"]
+}
+</pre>
+  </section>
+  <section data-tab="The glove's render layer">
+    <h3 class="tab-label no-toc">The glove's render layer</h3>
+    <p>A normal GeckoLib Palladium render layer, with a slim arm version.</p>
+<pre data-lang="json" data-title="assets/infintrix/palladium/render_layers/prototype_infintrix.json">
+{
+  "type": "geckolib:default",
+  "model": {
+    "normal": "infintrix:geo/prototype_infintrix.geo.json",
+    "slim": "infintrix:geo/prototype_infintrix_slim.geo.json"
+  },
+  "texture": "infintrix:textures/models/prototype_infintrix.png",
+  "bones": {
+    "head": "head",
+    "body": "body",
+    "right_arm": "right_arm",
+    "left_arm": "left_arm",
+    "right_leg": "right_leg",
+    "left_leg": "left_leg"
+  }
+}
+</pre>
+  </section>
+  <section data-tab="Stones on a watch face">
+    <h3 class="tab-label no-toc">Stones on a watch face</h3>
+    <p>Infintrix's Omniverse Omnitrix has no glove. Its stones are thin slivers around the watch face, two rows of three.</p>
+<pre data-lang="json" data-title="data/infinity/gauntlets/omniverse_omnitrix.json">
+{
+  "name": "Omniverse Omnitrix",
+  "equipment": {
+    "power": "aeo:omniverse_omnitrix"
+  },
+  "slots": [
+    { "origin": [7.75, 16.15, -0.145], "size": [0.9, 0.25, 0.29] },
+    { "origin": [7.75, 13.6, 0.288], "size": [0.9, 0.25, 0.29] },
+    { "origin": [7.75, 16.15, 0.288], "size": [0.9, 0.25, 0.29] },
+    { "origin": [7.75, 16.15, -0.578], "size": [0.9, 0.25, 0.29] },
+    { "origin": [7.75, 13.6, -0.578], "size": [0.9, 0.25, 0.29] },
+    { "origin": [7.75, 13.6, -0.145], "size": [0.9, 0.25, 0.29] }
+  ],
+  "slim_offset": [-1, 0, 0],
+  "powers": ["infintrix:infintrix"]
+}
+</pre>
+  </section>
+  <section data-tab="Iron Man suit">
+    <h3 class="tab-label no-toc">Iron Man suit</h3>
+    <p>Infinity Protocol's gauntlet for the Iron Man MK85 suit from Satsu's Iron Man Addon. Its <code>equipment</code> is Infinity
+      Protocol's own power, which a tick function gives players wearing the MK85 mask while they have the <code>IronGauntlet</code> tag, and
+      takes away when the tag goes. It draws the mod's <code>infinity:nano_gauntlet_85</code> layer and always gives the gauntlet power.</p>
+<pre data-lang="json" data-title="data/infinity/gauntlets/protocol.json">
+{
+  "name": "Protocol",
+  "equipment": {
+    "power": "infinity_protocol:infinity_stone_iron_man"
+  },
+  "slots": [
+    { "origin": [7.65, 11.75, -1.15] },
+    { "origin": [7.65, 13.25, -0.55] },
+    { "origin": [7.65, 11.75, 0.15] },
+    { "origin": [7.65, 11.75, -2.35] },
+    { "origin": [4.55, 12.15, -2.65], "slim_origin": [4.55, 12.15, -2.65], "size": [0.9, 0.9, 0.9] },
+    { "origin": [7.65, 11.75, 1.45] }
+  ],
+  "slim_offset": [-1, 0, 0],
+  "render_layer": "infinity:nano_gauntlet_85",
+  "powers": ["infinity:infinity_gauntlet"]
+}
+</pre>
+<pre data-lang="text" data-title="data/infinity_protocol/functions/tick.mcfunction">
+execute as @a[tag=IronGauntlet,palladium.power=satsu_iron_man_addon:iron_man/marks/mark_85/mask] run superpower add infinity_protocol:infinity_stone_iron_man @s
+execute as @a[tag=!IronGauntlet,palladium.power=satsu_iron_man_addon:iron_man/marks/mark_85/mask] run superpower remove infinity_protocol:infinity_stone_iron_man @s
+</pre>
+  </section>
+  <section data-tab="An item">
+    <h3 class="tab-label no-toc">An item</h3>
+    <p>An item gauntlet keeps its stones on the item. Here a Power Glove item from the <code>infinity_test_stone</code> pack counts while
+      it's in the Curios hands slot or the off hand.</p>
 <pre data-lang="json" data-title="data/infinity/gauntlets/power_glove.json">
 {
   "name": "Power Glove",
-  "equipment": { "item": "examplemod:power_glove", "slots": ["curios:hands", "offhand"] },
+  "equipment": { "item": "infinity_test_stone:power_glove", "slots": ["curios:hands", "offhand"] },
   "slots": [
     { "origin": [7.65, 11.75, -1.15] },
     { "origin": [7.65, 13.25, -0.55] },
@@ -36,6 +138,8 @@ icon: items/infinity_gauntlet.png
   "slim_offset": [-1, 0, 0]
 }
 </pre>
+  </section>
+</div>
 
 <h2 id="equipment">Equipment</h2>
 <div class="table-wrap"><table>
@@ -81,7 +185,7 @@ icon: items/infinity_gauntlet.png
   can look like anything and have 1 to 27 slots, each taking stones or other items.</p>
 <pre data-lang="json" data-title="&quot;gui&quot; in a custom gauntlet file">
 "gui": {
-  "texture": "examplemod:textures/gui/power_glove.png",
+  "texture": "infinity_test_stone:textures/gui/power_glove.png",
   "size": [176, 166],
   "inventory": [8, 84],
   "title": [8, 6],
@@ -132,5 +236,5 @@ icon: items/infinity_gauntlet.png
 <h2 id="condition">Checking for it</h2>
 <p>Use <code>infinity:custom_gauntlet</code> in your own powers, optionally with <code>gauntlet</code> set to an ID:</p>
 <pre data-lang="json">
-{ "type": "infinity:custom_gauntlet", "gauntlet": "power_glove" }
+{ "type": "infinity:custom_gauntlet", "gauntlet": "prototype_omnitrix" }
 </pre>

@@ -50,8 +50,18 @@ icon: renders/tesseract.png
 <p>Opening models are only loaded because a ground item names them. Give them <code>"parent": "&lt;the item's model&gt;"</code> and just their
   own <code>elements</code>, so they share its textures and ground transform.</p>
 
-<h2 id="examples">Examples from the mod</h2>
+<h2 id="examples">Examples</h2>
 <div class="tabs" data-tabs>
+  <section data-tab="An addon stone">
+    <h3 class="tab-label no-toc">An addon stone</h3>
+    <p>From the {{page addons/index.html#addon-pack test pack}}. <code>unique</code> stops the Test Stone being duplicated.</p>
+<pre data-lang="json" data-title="data/infinity/ground_items/test_stone.json">
+{
+  "item": "infinity_test_stone:test_stone",
+  "unique": true
+}
+</pre>
+  </section>
   <section data-tab="Container that breaks open">
     <h3 class="tab-label no-toc">Container that breaks open</h3>
 <pre data-lang="json" data-title="tesseract.json">

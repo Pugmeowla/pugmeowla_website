@@ -75,34 +75,47 @@ toc: h2
 
 <h2 id="examples">Examples</h2>
 <div class="tabs" data-tabs>
+  <section data-tab="From the test pack">
+    <h3 class="tab-label no-toc">From the test pack</h3>
+    <p>The Test Stone's Clones ability in turquoise, with the Mind Stone's illusion icon. The rest of the Test Stone stays pink.</p>
+<pre data-lang="json" data-title="assets/infinity_test_stone/ability_overlays/illusions.json">
+{
+  "ability": "infinity_test_stone:test_stone#illusions",
+  "accent_color": "#40E0D0",
+  "background_color": "#9FEDE6E6",
+  "locked_color": "#3A5A57",
+  "icon": "infinity:textures/icon/illusion.png"
+}
+</pre>
+  </section>
   <section data-tab="Accent only">
     <h3 class="tab-label no-toc">Accent only</h3>
     <p>The frame, hover bar, description box and text all follow the new accent.</p>
-<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_beam.json">
+<pre data-lang="json" data-title="assets/infinity_test_stone/ability_overlays/illusions.json">
 {
-  "ability": "examplemod:frost_powers#frost_beam",
-  "accent_color": "#7FDBFF"
+  "ability": "infinity_test_stone:test_stone#illusions",
+  "accent_color": "#40E0D0"
 }
 </pre>
   </section>
   <section data-tab="Custom frame">
     <h3 class="tab-label no-toc">Custom frame</h3>
-    <p>Your mod or addon pack ships these textures at <code>assets/examplemod/textures/gui/...</code>.</p>
-<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_beam.json">
+    <p>Your mod or addon pack ships these textures at <code>assets/infinity_test_stone/textures/gui/...</code>.</p>
+<pre data-lang="json" data-title="assets/infinity_test_stone/ability_overlays/illusions.json">
 {
-  "ability": "examplemod:frost_powers#frost_beam",
-  "frame_texture": "examplemod:textures/gui/frost_frame.png",
-  "locked_frame_texture": "examplemod:textures/gui/frost_frame_locked.png",
-  "icon": "examplemod:textures/gui/frost_beam_icon.png"
+  "ability": "infinity_test_stone:test_stone#illusions",
+  "frame_texture": "infinity_test_stone:textures/gui/illusions_frame.png",
+  "locked_frame_texture": "infinity_test_stone:textures/gui/illusions_frame_locked.png",
+  "icon": "infinity_test_stone:textures/gui/illusions_icon.png"
 }
 </pre>
   </section>
   <section data-tab="Every state">
     <h3 class="tab-label no-toc">Every state</h3>
     <p>The open ("selected") look belongs to a power's tab: set <code>tab_color</code> and <code>selected_tab_color</code> in a <code>power</code> file.</p>
-<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_beam.json">
+<pre data-lang="json" data-title="assets/infinity_test_stone/ability_overlays/illusions.json">
 {
-  "ability": "examplemod:frost_powers#frost_beam",
+  "ability": "infinity_test_stone:test_stone#illusions",
   "frame_color": "#A8E6FF",
   "locked_color": "#3B4A55",
   "hover_color": "#C9F1FF",
@@ -125,11 +138,11 @@ toc: h2
   <section data-tab="A whole power">
     <h3 class="tab-label no-toc">A whole power</h3>
     <p>From an addon pack, the file goes in <code>addonpacks/&lt;pack&gt;/assets/&lt;namespace&gt;/ability_overlays/</code>.</p>
-<pre data-lang="json" data-title="assets/examplemod/ability_overlays/frost_powers.json">
+<pre data-lang="json" data-title="assets/infinity_test_stone/ability_overlays/test_stone.json">
 {
-  "power": "examplemod:frost_powers",
-  "accent_color": "#7FDBFF",
-  "selected_tab_color": "#C9F1FF"
+  "power": "infinity_test_stone:test_stone",
+  "accent_color": "#FF69B4",
+  "selected_tab_color": "#FFC2E2"
 }
 </pre>
   </section>

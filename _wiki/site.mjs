@@ -5,6 +5,7 @@ export const site = {
   curseforge: 'https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core',
   modrinth: 'https://modrinth.com/mod/pugmeowlas-infinity-stone-core',
   discord: 'https://discord.gg/jRZnRFabKP',
+  patreon: 'https://www.patreon.com/cw/Pugmeowla',
   kofi: 'https://ko-fi.com/pugmeowla',
   // Versions shown in the version switcher, newest first. Each has a folder in _wiki/versions.
   versions: ['8.0'],
