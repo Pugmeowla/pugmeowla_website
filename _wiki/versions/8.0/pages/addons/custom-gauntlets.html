@@ -161,6 +161,7 @@ execute as @a[tag=!IronGauntlet,palladium.power=satsu_iron_man_addon:iron_man/ma
     <tr><td><code>slim_offset</code></td><td><code>[0, 0, 0]</code></td><td>Added to every origin for slim-armed players, usually <code>[-1, 0, 0]</code> on the left arm.</td></tr>
     <tr><td><code>render_layer</code></td><td>none</td><td>Palladium render layer drawn under the stones while at least one is inserted, e.g. a glove.</td></tr>
     <tr><td><code>render_conditions</code></td><td><code>[]</code></td><td>Palladium conditions that must all pass for the render layer and stones to be drawn (checked on the client), e.g. only during an animation.</td></tr>
+    <tr><td><code>first_person_tilt</code></td><td><code>false</code></td><td>Draws the arm wearing it tilted in first person, like the Infinity Gauntlet's, while it's worn and <code>render_conditions</code> pass. For an item in your hand, that's the hand holding it. Worn anywhere else (or as a power), it's the arm its stones are on, while that hand is empty.</td></tr>
     <tr><td><code>powers</code></td><td><code>[]</code></td><td>Extra power IDs given while it's worn, with or without stones.</td></tr>
     <tr><td><code>tooltip_items</code></td><td>items named like the power</td><td>Power gauntlets only: item IDs or <code>#tags</code> whose tooltip lists the viewing player's stones. Item gauntlets always show the stones they hold.</td></tr>
   </tbody>

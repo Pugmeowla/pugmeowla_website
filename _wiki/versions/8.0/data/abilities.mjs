@@ -319,6 +319,11 @@ export const abilities = [
     details: `<p>Every hit is cancelled before it lands, shown with soul particles. That includes damage that normally goes through
       invulnerability.</p>`,
   },
+  {
+    group: 'soul', key: 'immortality_toggle', name: 'Immortality Toggle', type: 'infinity:toggle',
+    activation: 'Skill tree switch', cost: 0, requires: ['immortal'], icon: 'icons/toggle.png',
+    summary: 'Free. Click it in the skill tree to turn Immortality off, so you take damage and can die again, or back on.',
+  },
 
   // Time Stone
   {
@@ -482,9 +487,9 @@ export const abilities = [
     summary: 'Takes 7 seconds and destroys all six stones in the gauntlet.',
   },
   {
-    group: 'gauntlet', key: 'normal_gauntlet', page: 'gauntlet/skins.html', name: 'Return to Original Gauntlet', type: 'palladium:command',
+    group: 'gauntlet', key: 'normal_gauntlet', page: 'gauntlet/skins.html', name: 'Return to Original Gauntlet', type: 'infinity:set_gauntlet_skin',
     activation: 'Key press', cost: null, requires: [], icon: 'items/infinity_gauntlet.png',
-    summary: 'Takes the skin off and gives you its unlock item back.',
+    summary: 'Takes the skin off the gauntlet you hold or wear in the Curios hands slot, and gives you its unlock item back.',
     details: `<p>Only there while a skin is on. While you're still burnt from the Snap it can't take off the Burnt Gauntlet.</p>`,
   },
 

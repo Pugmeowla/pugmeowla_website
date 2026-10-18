@@ -74,11 +74,11 @@ export const items = [
 
   ...['helmet', 'chestplate', 'leggings', 'boots'].flatMap((piece) => [
     { id: `infinity:thanos_classic_${piece}`, name: `Thanos' ${piece[0].toUpperCase() + piece.slice(1)} (Classic)`, category: 'armor',
-      img: R(`thanos_classic_${piece}`), rarity: 'Epic', page: 'items.html#thanos-armor',
-      obtain: 'Creative tab or commands.', desc: 'Netherite armor with a comic-style Thanos look.' },
+      img: R(`thanos_classic_${piece}`), rarity: 'Epic', page: 'armor.html',
+      obtain: 'Tailoring Bench: yellow and blue fabric and uru plates, with a Hammer.', desc: 'Netherite armor with the comic Thanos look.' },
     { id: `infinity:thanos_mcu_${piece}`, name: `Thanos' ${piece[0].toUpperCase() + piece.slice(1)} (MCU)`, category: 'armor',
-      img: R(`thanos_mcu_${piece}`), rarity: 'Epic', page: 'items.html#thanos-armor',
-      obtain: 'Creative tab or commands.', desc: 'Netherite armor with the MCU Thanos look.' },
+      img: R(`thanos_mcu_${piece}`), rarity: 'Epic', page: 'armor.html',
+      obtain: 'Tailoring Bench: yellow and black fabric and uru plates, with a Hammer.', desc: 'Netherite armor with the MCU Thanos look.' },
   ]),
 
   { id: 'infinity:aspects_of_existance', name: 'Aspects of Existence', category: 'special', img: R('aspects_of_existance'), rarity: 'Epic', page: 'progression.html#aspects-of-existence',

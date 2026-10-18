@@ -26,7 +26,7 @@ export const nav = [
     'abilities.html',
   ] },
   { title: 'Items & Equipment', icon: 'renders/cosmi-rod.png', pages: [
-    'items.html', 'tools.html',
+    'items.html', 'tools.html', 'armor.html',
   ] },
   { title: 'Exploration', icon: 'renders/vormir_stone.png', pages: [
     'structures.html', 'dimensions.html',

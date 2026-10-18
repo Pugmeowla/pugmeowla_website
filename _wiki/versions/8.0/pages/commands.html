@@ -74,11 +74,10 @@ icon: icons/teleport.png
 </pre>
 <div class="table-wrap"><table><tbody>
   <tr><th>Argument</th><td><code>skin</code>: a skin ID. It suggests them as you type (like <code>netherite_gauntlet</code> or <code>dragon_gauntlet</code>). See {{page gauntlet/skins.html Gauntlet Skins}}.</td></tr>
-  <tr><th>Target</th><td>The Infinity Gauntlet in your main hand, otherwise the one you're wearing.</td></tr>
+  <tr><th>Target</th><td>The Infinity Gauntlet in your main hand, otherwise the one in your off hand. A gauntlet in the Curios hands slot isn't changed. Without a gauntlet in either hand you get "You need to hold an Infinity Gauntlet".</td></tr>
   <tr><th>Does</th><td><code>set</code> puts the skin on straight away without using an item. <code>clear</code> takes the skin off and gives you its unlock item.</td></tr>
 </tbody></table></div>
-<div class="callout warn"><span class="callout-title">For server owners</span><p>This command doesn't need any permission level, because the
-  skin abilities run it. Since <code>clear</code> gives back the skin's unlock item, you might want to limit it with a permissions mod on a
+<div class="callout warn"><span class="callout-title">For server owners</span><p>This command doesn't need any permission level. Since <code>clear</code> gives back the skin's unlock item, you might want to limit it with a permissions mod on a
   public server.</p></div>
 
 <h2 id="admin-commands">Admin commands</h2>

@@ -9,14 +9,14 @@ icon: skins/sith_gauntlet.png
 <div class="table-wrap"><table>
   <thead><tr><th>What</th><th>How</th></tr></thead>
   <tbody>
-    <tr><td>Apply ability and skill tree entry</td><td>Added to the <code>infinity:infinity_gauntlet</code> power where its <code>{"infinity:generate": "gauntlet_skins"}</code> placeholder sits.</td></tr>
+    <tr><td>Apply ability (<code>infinity:set_gauntlet_skin</code>) and skill tree entry</td><td>Added to the <code>infinity:infinity_gauntlet</code> power where its <code>{"infinity:generate": "gauntlet_skins"}</code> placeholder sits.</td></tr>
     <tr><td>Inventory item look</td><td>The gauntlet's item model, retextured with the skin's icon texture.</td></tr>
     <tr><td>Worn, main hand and ground look</td><td>A generated Palladium (GeckoLib) render layer, picked by the <code>infinity:gauntlet_skin_layer</code> abilities.</td></tr>
-    <tr><td><code>/infinity gauntlet skin set|clear</code></td><td>Suggests the skin, and gives back its unlock item on clear.</td></tr>
+    <tr><td><code>/infinity gauntlet skin set|clear</code></td><td>Suggests the skin, and gives back its unlock item on clear. Only changes a gauntlet held in the main or off hand.</td></tr>
     <tr><td><code>infinity:gauntlet_skin</code> condition</td><td>Works with the skin ID.</td></tr>
   </tbody>
 </table></div>
-<p>The apply ability uses one unlock item (held in the main hand), sets the skin, plays the apply sound and runs <code>apply_commands</code>. It only
+<p>The apply ability uses one unlock item (held in the main hand), sets the skin, plays the apply sound and runs <code>apply_commands</code>. It reaches a gauntlet held in either hand or worn in the Curios hands slot. It only
   appears while the gauntlet has no skin, or one listed in <code>can_replace</code>.</p>
 
 <h2 id="worked-example">Worked example: a Gold Gauntlet</h2>

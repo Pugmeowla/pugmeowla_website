@@ -105,6 +105,8 @@ export const abilityTypes = [
     props: [['action', 'open', 'open, close, remove_stone or insert_stone']] },
   { id: 'infinity:gauntlet_skin_layer', desc: 'Renders the skin of the gauntlet at the given position, as defined in data/infinity/gauntlet_skins.',
     props: [['position', 'worn', 'worn (off hand / Curios), mainhand or ground (armor stand head)']] },
+  { id: 'infinity:set_gauntlet_skin', desc: 'Players only. Puts skin on the gauntlet held in either hand or worn in the Curios hands slot, then runs commands like palladium:command. With an empty skin it takes the skin off and gives its unlock item back. The skin files generate these for the gauntlet\'s skill tree, and you can use it in your own powers to change skins.',
+    props: [['skin', '""', 'Skin ID to apply. Empty removes the gauntlet\'s skin'], ['commands', '[]', 'Commands run as the player afterwards']] },
   { id: 'infinity:gauntlet_stones_layer', desc: 'Renders the stones of the gauntlet at the given position, each in the slot it occupies.',
     props: [['position', 'worn', 'worn, mainhand, ground, custom (the worn custom gauntlet) or head (stones with "head": true in the Curios head slot)']] },
   { id: 'infinity:super_punch', desc: 'Punches a shockwave forward from the hand: it travels range blocks at speed, hurting and flinging every entity within size of its path once, and breaking the blocks it passes through when blocks is true. The user is pushed back by recoil. Use a palladium:action condition (e.g. right_click) with a cooldown so one press is one punch. To allow it only while another ability is on, as the Power Stone does with Damage Control, give it a palladium:ability_enabled unlocking condition.',
