@@ -251,9 +251,13 @@ export const abilities = [
     summary: 'Hold to see every mob and player within 100 blocks outlined in orange.',
   },
   {
-    group: 'soul', key: 'locateplayer_command', name: 'Locate Entity Command', type: 'infinity:locate_player',
+    group: 'soul', key: 'locateplayer_command', name: 'Locate Entity', type: 'infinity:locate_player',
     activation: 'Passive', cost: 1, requires: ['glow'], icon: S('soul'),
-    summary: 'Lets you use /infinity soul locateplayer <player>.',
+    summary: 'Lets you use /infinity soul locateentity <name> to find a player or named mob, and makes Mind Reading show where its target is.',
+    details: `<p>The command finds the online player with that name, otherwise the closest living thing with that name (a mob named
+      with a name tag), in your dimension first and then the others. It tells you the coordinates and the dimension. With it
+      unlocked, the Mind Stone's Mind Reading also shows where its target is and can read a mind by name from anywhere. Anything with
+      soul immunity can't be found.</p>`,
   },
   {
     group: 'soul', key: 'summon_zombie', name: 'Summon Zombie', type: 'palladium:command',
@@ -381,7 +385,14 @@ export const abilities = [
     summary: 'Mobs within 5 blocks stop attacking you. Sneak and use it to undo.',
     details: `<p>You and everything within 5 blocks join the <code>peaceful</code> scoreboard team, so those mobs leave you alone.
       Use it while <strong>sneaking</strong> (Un-Pacify) to take nearby mobs off the team again. Works well with the Soul Stone's
-      Summon Zombie.</p>`,
+      Summon Zombie. Anything with mental immunity, like another Mind Stone user, isn't pacified.</p>`,
+  },
+  {
+    group: 'mind', key: 'mental_immunity', name: 'Mental Immunity', type: 'infinity:mental_immunity',
+    activation: 'Passive', cost: null, requires: [], icon: S('mind'), defensive: true,
+    summary: "Always on with the Mind Stone. Other players can't read your mind, pacify you or fool you with a disguise.",
+    details: `<p>Hidden from the skill tree and ability bar. Someone else's Mind Reading shows "That mind is shielded", their Pacify
+      skips you, and you see a disguised player's real skin and name. Your own abilities still work on you.</p>`,
   },
   {
     group: 'mind', key: 'flight', name: 'Flight', type: 'palladium:flight',
@@ -438,11 +449,15 @@ export const abilities = [
   {
     group: 'mind', key: 'mind_reading', name: 'Mind Reading', type: 'infinity:mind_reading',
     activation: 'Key press', cost: 1, requires: [], cooldown: 20, icon: S('mind'),
-    summary: 'Look at a mob or player (up to 32 blocks) to see its health, effects, gear, inventory and target.',
+    summary: 'Look at a mob or player (up to 32 blocks) to see its health, effects, gear, inventory and target. With Locate Entity, read any mind by name from anywhere.',
     details: `<p>Opens a view you can't take anything out of. The top row has a name tag whose tooltip shows the type, health,
       absorption, armor, owner and current target (plus food and level for players), followed by up to 8 active effects. Below
       that are the six equipment slots, then the inventory of a player, a mob that carries items (villagers, allays, piglins)
-      or a horse with a chest.</p>`,
+      or a horse with a chest.</p>
+      <p>With the Soul Stone's Locate Entity unlocked, the name tag also shows where the target is and in which
+      dimension, and using Mind Reading while looking at nothing opens a menu: type a player's or named mob's name to read their mind
+      from anywhere. Someone with the Mind Stone (mental immunity) can't be read ("That mind is shielded"), and soul immunity hides
+      their location.</p>`,
   },
   {
     group: 'mind', key: 'disguise', name: 'Disguise', type: 'infinity:disguise',
@@ -450,7 +465,8 @@ export const abilities = [
     summary: "Type a username and wear that player's skin and name.",
     details: `<p>The name can be 3 to 16 letters, digits or underscores. Everyone sees you with that player's skin and name tag.
       <strong>Reset</strong> puts your own skin back. Slim skins are drawn with slim arms. The disguise is only worn while the ability
-      is unlocked, so losing the stone takes it off.</p>`,
+      is unlocked, so losing the stone takes it off. Players with mental immunity (anyone with the Mind Stone) still see your real
+      skin and name.</p>`,
   },
   {
     group: 'scepter', key: 'scepter_blast', name: 'Scepter Power Blast', type: 'palladium:energy_beam',

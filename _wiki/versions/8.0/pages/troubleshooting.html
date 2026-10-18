@@ -70,7 +70,8 @@ icon: renders/injection.png
 <h3>My custom stone, skin or gauntlet doesn't show up</h3>
 <ul>
   <li>Restart the game. These files are only read at startup.</li>
-  <li>The file has to be in the <code>infinity</code> namespace (<code>data/infinity/gauntlet_skins/…</code>), not your own.</li>
+  <li>The file has to be in an <code>infinity</code> folder: <code>data/&lt;your namespace&gt;/infinity/gauntlet_skins/…</code> (or the older
+    <code>data/infinity/gauntlet_skins/…</code>), not straight in <code>data/&lt;your namespace&gt;/gauntlet_skins/</code>.</li>
   <li>File names starting with <code>_</code> are skipped.</li>
   <li>Search <code>logs/latest.log</code> for <code>Gauntlet stone</code>, <code>Gauntlet skin</code>, <code>Custom gauntlet</code> or <code>Ground item</code>.
     Every skipped file or ignored value is logged once with the reason.</li>

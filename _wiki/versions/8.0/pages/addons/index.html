@@ -6,25 +6,29 @@ lead: New stones, skins, gauntlets and props without writing Java. It's all JSON
 icon: renders/52-d_unit.png
 ---
 <h2 id="extension-points">What you can add</h2>
-{{pagecards addons/stones.html|stones/time_stone.png addons/skins.html|skins/dragon_gauntlet.png addons/custom-gauntlets.html|items/infinity_gauntlet.png addons/ground-items.html|renders/tesseract.png addons/ability-overlays.html|renders/aspects_of_existance.png addons/abilities.html|icons/energy_blast.png}}
+{{pagecards addons/stones.html|stones/time_stone.png addons/skins.html|skins/dragon_gauntlet.png addons/custom-gauntlets.html|items/infinity_gauntlet.png addons/ground-items.html|renders/tesseract.png addons/ability-overlays.html|renders/aspects_of_existance.png addons/immunities.html|stones/mind_stone.png addons/abilities.html|icons/energy_blast.png}}
 <div class="table-wrap"><table>
   <thead><tr><th>System</th><th>Folder</th><th>One file per</th></tr></thead>
   <tbody>
-    <tr><td>{{page addons/stones.html Gauntlet stones}}</td><td><code>data/infinity/gauntlet_stones/</code></td><td>item that fits in the gauntlet</td></tr>
-    <tr><td>{{page addons/skins.html Gauntlet skins}}</td><td><code>data/infinity/gauntlet_skins/</code></td><td>skin</td></tr>
-    <tr><td>{{page addons/custom-gauntlets.html Custom gauntlets}}</td><td><code>data/infinity/gauntlets/</code></td><td>item or power that acts as a gauntlet</td></tr>
-    <tr><td>{{page addons/ground-items.html Ground items}}</td><td><code>data/infinity/ground_items/</code></td><td>item that lies on the ground like a stone</td></tr>
+    <tr><td>{{page addons/stones.html Gauntlet stones}}</td><td><code>data/&lt;namespace&gt;/infinity/gauntlet_stones/</code></td><td>item that fits in the gauntlet</td></tr>
+    <tr><td>{{page addons/skins.html Gauntlet skins}}</td><td><code>data/&lt;namespace&gt;/infinity/gauntlet_skins/</code></td><td>skin</td></tr>
+    <tr><td>{{page addons/custom-gauntlets.html Custom gauntlets}}</td><td><code>data/&lt;namespace&gt;/infinity/gauntlets/</code></td><td>item or power that acts as a gauntlet</td></tr>
+    <tr><td>{{page addons/ground-items.html Ground items}}</td><td><code>data/&lt;namespace&gt;/infinity/ground_items/</code></td><td>item that lies on the ground like a stone</td></tr>
+    <tr><td>{{page addons/stones.html#containers Stone containers}}</td><td><code>data/&lt;namespace&gt;/infinity/stone_containers/</code></td><td>item holding a stone that glows with it</td></tr>
     <tr><td>{{page addons/ability-overlays.html Ability overlays}}</td><td><code>assets/&lt;namespace&gt;/ability_overlays/</code></td><td>power or ability themed in the skill tree (a resource, so it can go in a resource pack)</td></tr>
     <tr><td>Palladium powers</td><td><code>data/&lt;namespace&gt;/palladium/powers/</code></td><td>power, using the mod's {{page addons/abilities.html ability types and conditions}} if you want</td></tr>
+    <tr><td>{{page addons/immunities.html Immunities}}</td><td>abilities in a Palladium power</td><td>kind of stone manipulation others can't use on it (mental, reality, soul, spatial)</td></tr>
   </tbody>
 </table></div>
 
 <h2 id="rules">How these files are read</h2>
 <ul>
-  <li>They always go in the <strong><code>infinity</code></strong> namespace folder (<code>data/infinity/…</code>) of your pack or mod. The
-    <strong>file name is the ID</strong>.</li>
-  <li>The mod reads them from every mod and every pack in the <code>addonpacks</code> folder. If two packs have a file with the same name, the
-    higher priority pack wins, so an addon can replace one of the mod's own files.</li>
+  <li>They go in <code>data/&lt;namespace&gt;/infinity/&lt;folder&gt;/</code>, where <code>&lt;namespace&gt;</code> is your mod or pack ID. The
+    ID is <code>&lt;namespace&gt;:&lt;file name&gt;</code> (for example <code>gem_core:ruby_gauntlet</code>), so two addons can never replace each
+    other's files by accident.</li>
+  <li>The older <code>data/infinity/&lt;folder&gt;/</code> still works, with just the file name as the ID. The mod's own files live there, so a
+    file with the same name there in a higher priority pack replaces one of the mod's own.</li>
+  <li>The mod reads them from every mod and every pack in the <code>addonpacks</code> folder.</li>
   <li>File names starting with <code>_</code> are skipped, which is handy for templates and switched off files.</li>
   <li>They're only read when the game starts, so <strong>restart</strong> after changing them. <code>/reload</code> won't pick them up.</li>
   <li>A bad value falls back to its default and a broken file is skipped. Either way it gets logged once
@@ -38,7 +42,8 @@ icon: renders/52-d_unit.png
   items and blocks. The pack format itself is covered in <a href="https://docs.threetag.net/docs/intro/">Palladium's documentation</a>,
   and the <a href="https://squirrelcontrol.threetag.net/template-generator">Palladium addon pack template generator</a> makes an empty
   pack to start from.</p>
-<p>The examples on these pages come from <code>infinity_test_stone</code>, a working test pack that adds a pink Test Stone:</p>
+<p>The examples on these pages come from <code>infinity_test_stone</code>, a working test pack that adds a pink Test Stone. It was made
+  before namespaced folders, so its stone and ground item files use the older <code>data/infinity/</code> folder, which still works:</p>
 <pre data-lang="text" data-title="addonpacks/infinity_test_stone">
 infinity_test_stone/
 ├── pack.mcmeta
@@ -113,7 +118,7 @@ infinity_test_stone/
 <h2 id="in-game-docs">In-game reference</h2>
 <p>When Palladium generates its documentation (into <code>mods/documentation/</code>), the mod adds its own pages under
   <code>infinity/</code>: <code>gauntlet_stones.html</code>, <code>gauntlet_skins.html</code>, <code>custom_gauntlets.html</code>,
-  <code>ground_items.html</code> and <code>ability_overlays.html</code>. Its ability and condition types go into Palladium's own pages. They're generated from the code, so they
+  <code>ground_items.html</code>, <code>stone_containers.html</code> and <code>ability_overlays.html</code>. Its ability and condition types go into Palladium's own pages. They're generated from the code, so they
   always match the version you have.</p>
 
 <h2 id="examples">Real examples</h2>

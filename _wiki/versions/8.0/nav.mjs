@@ -35,7 +35,7 @@ export const nav = [
   ] },
   { title: 'Addon Development', icon: 'renders/52-d_unit.png', pages: [
     'addons/index.html', 'addons/stones.html', 'addons/skins.html', 'addons/custom-gauntlets.html',
-    'addons/ground-items.html', 'addons/ability-overlays.html', 'addons/abilities.html',
+    'addons/ground-items.html', 'addons/ability-overlays.html', 'addons/immunities.html', 'addons/abilities.html',
   ] },
   { title: 'Help', icon: 'renders/soul_guardian_telephone.png', pages: [
     'configuration.html', 'troubleshooting.html', 'credits.html',

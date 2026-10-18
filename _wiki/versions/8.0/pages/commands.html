@@ -9,7 +9,7 @@ icon: icons/teleport.png
   <thead><tr><th>Command</th><th>Who can use it</th><th>For</th></tr></thead>
   <tbody>
     <tr><td><a href="#infinity-time-set"><code>/infinity time set &lt;time&gt;</code></a></td><td>Anyone with the Time Command ability active</td><td>Time Stone</td></tr>
-    <tr><td><a href="#infinity-soul-locateplayer"><code>/infinity soul locateplayer &lt;target&gt;</code></a></td><td>Anyone with the Locate Entity Command ability active</td><td>Soul Stone</td></tr>
+    <tr><td><a href="#infinity-soul-locateentity"><code>/infinity soul locateentity &lt;name&gt;</code></a></td><td>Anyone with the Locate Entity Command ability active</td><td>Soul Stone</td></tr>
     <tr><td><a href="#infinity-orb"><code>/infinity orb turn|take|insert|sync|reset</code></a></td><td>Anyone holding the Orb</td><td>Orb</td></tr>
     <tr><td><a href="#infinity-gauntlet-skin"><code>/infinity gauntlet skin set|clear</code></a></td><td>Anyone</td><td>Gauntlet skins</td></tr>
     <tr><td><a href="#infinity-gauntlet-snap"><code>/infinity gauntlet snap [type]</code></a></td><td>Operators (level 2)</td><td>The Snap</td></tr>
@@ -39,14 +39,15 @@ icon: icons/teleport.png
 /infinity time set 13000
 </pre>
 
-<h3 id="infinity-soul-locateplayer">/infinity soul locateplayer</h3>
-<pre data-lang="command">/infinity soul locateplayer <target></pre>
+<h3 id="infinity-soul-locateentity">/infinity soul locateentity</h3>
+<pre data-lang="command">/infinity soul locateentity <name></pre>
 <div class="table-wrap"><table><tbody>
-  <tr><th>Argument</th><td><code>target</code>: one player, by name or selector.</td></tr>
+  <tr><th>Argument</th><td><code>name</code>: a player's name (it suggests online players), or the name of a mob named with a name tag. Case doesn't matter.</td></tr>
   <tr><th>Needs</th><td>The Soul Stone's {{ab soul/locateplayer_command}} unlocked and the Soul Stone active. Otherwise you get "You are not worthy to use the locate ability."</td></tr>
-  <tr><th>Does</th><td>Tells you where that player is, like <em>The entity "Steve" is located at: 120, 64, -48</em>.</td></tr>
+  <tr><th>Does</th><td>Finds the online player with that name, otherwise the closest living thing with that name, in your dimension first and then the others. It tells you where, like <em>The entity "Steve" is located at: 120, 64, -48 (minecraft:overworld)</em>.</td></tr>
+  <tr><th>Fails</th><td>"No entity named … can be found." when there's no match, and "The soul of … is hidden from you." when the target has soul immunity.</td></tr>
 </tbody></table></div>
-<pre data-lang="command" data-title="Example">/infinity soul locateplayer Pugmeowla</pre>
+<pre data-lang="command" data-title="Example">/infinity soul locateentity Pugmeowla</pre>
 
 <h3 id="infinity-orb">/infinity orb</h3>
 <pre data-lang="command">

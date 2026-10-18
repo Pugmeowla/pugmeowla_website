@@ -20,15 +20,19 @@ icon: skins/sith_gauntlet.png
   appears while the gauntlet has no skin, or one listed in <code>can_replace</code>.</p>
 
 <h2 id="worked-example">Worked example: a Gold Gauntlet</h2>
-<p><strong>1. Definition.</strong> The file name is the skin ID.</p>
-<pre data-lang="json" data-title="data/infinity/gauntlet_skins/gold_gauntlet.json">
+<p>Skin files go in <code>data/&lt;namespace&gt;/infinity/gauntlet_skins/</code>, where <code>&lt;namespace&gt;</code> is your mod or pack ID. The skin
+  ID is <code>&lt;namespace&gt;:&lt;file name&gt;</code> and its textures are looked up in your namespace, so two mods can't replace each
+  other's skins. The older <code>data/infinity/gauntlet_skins/</code> folder still works, with just the file name as the ID: that's
+  where the mod's own skins live.</p>
+<p><strong>1. Definition.</strong> In the Test Stone pack, this is the skin <code>infinity_test_stone:gold_gauntlet</code>.</p>
+<pre data-lang="json" data-title="data/infinity_test_stone/infinity/gauntlet_skins/gold_gauntlet.json">
 {
   "title": "Gold Gauntlet",
   "unlock_item": "minecraft:gold_ingot",
   "description": "Unlock by right-clicking with a Gold Ingot in your main hand."
 }
 </pre>
-<p><strong>2. Textures</strong>, named after the ID, in <code>assets/infinity/textures/</code>:</p>
+<p><strong>2. Textures</strong>, named after the file, in <code>assets/infinity_test_stone/textures/</code>:</p>
 <div class="table-wrap"><table>
   <thead><tr><th>File</th><th>Used for</th></tr></thead>
   <tbody>
@@ -37,7 +41,8 @@ icon: skins/sith_gauntlet.png
   </tbody>
 </table></div>
 <p>That's it. Restart the game. Missing textures or models fall back to the normal gauntlet's, with a warning in the log.</p>
-<p>Instead of <code>description</code> you can add the lang key <code>ability.infinity.gauntlet.gold_gauntlet.description</code>.</p>
+<p>Instead of <code>description</code> you can add the lang key <code>ability.infinity_test_stone.gauntlet.gold_gauntlet.description</code>
+  (<code>ability.&lt;namespace&gt;.gauntlet.&lt;file name&gt;.description</code>).</p>
 
 <h2 id="fields">All fields</h2>
 <p>Only <code>unlock_item</code> is required.</p>
@@ -54,8 +59,8 @@ icon: skins/sith_gauntlet.png
     <tr><td><code>gui_position</code></td><td>next free slot</td><td><code>[x, y]</code> in the gauntlet's skill tree. Without it: the first free slot in rows of five (x = −1 to 1, step 0.5) from y = 2.5.</td></tr>
     <tr><td><code>can_replace</code></td><td><code>[]</code></td><td>Skin IDs this skin may be applied over. Normally the gauntlet must have no skin.</td></tr>
     <tr><td><code>apply_commands</code></td><td><code>[]</code></td><td>Extra commands run as the player after applying.</td></tr>
-    <tr><td><code>icon</code></td><td><code>infinity:item/gauntlet_skins/&lt;id&gt;</code></td><td>Skill tree icon <em>and</em> inventory item texture, as a sprite under <code>textures/</code> (no <code>textures/</code> or <code>.png</code>. A full texture path is accepted too).</td></tr>
-    <tr><td><code>render.texture</code></td><td><code>infinity:textures/models/&lt;id&gt;.png</code></td><td>Model texture.</td></tr>
+    <tr><td><code>icon</code></td><td><code>&lt;namespace&gt;:item/gauntlet_skins/&lt;file name&gt;</code></td><td>Skill tree icon <em>and</em> inventory item texture, as a sprite under <code>textures/</code> (no <code>textures/</code> or <code>.png</code>. A full texture path is accepted too).</td></tr>
+    <tr><td><code>render.texture</code></td><td><code>&lt;namespace&gt;:textures/models/&lt;file name&gt;.png</code></td><td>Model texture.</td></tr>
     <tr><td><code>render.model</code></td><td><code>infinity:geo/gauntlet</code></td><td>GeckoLib model prefix, without <code>.geo.json</code>. <code>_mainhand</code> and <code>_ground</code> are appended for those positions, so a custom shape needs all three files.</td></tr>
     <tr><td><code>render.glow</code></td><td>off</td><td><code>true</code> adds an emissive layer using <code>&lt;texture&gt;_glow.png</code>. An object allows <code>texture</code>, <code>enchantment_glint</code>, <code>conditions</code> (Palladium conditions, e.g. night only) and <code>positions</code> (any of <code>worn</code>, <code>mainhand</code>, <code>ground</code>).</td></tr>
     <tr><td><code>render.layers</code></td><td>none</td><td><code>{"worn": "infinity_test_stone:my_layer", …}</code>: use your own Palladium render layer for that position instead of the generated one.</td></tr>

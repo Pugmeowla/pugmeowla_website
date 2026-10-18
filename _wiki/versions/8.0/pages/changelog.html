@@ -65,6 +65,7 @@ icon: icons/hourglass.png
 <h2 id="stones">The stones</h2>
 <ul>
   <li><strong>All six</strong> now work in the Curios head slot. In 7.3 only the Mind Stone did.</li>
+  <li>Stones <strong>glow brighter</strong> while you use their abilities, and so do the Scepter, Aether and Eye of Agamotto. See {{page stones/index.html#glow The Infinity Stones}}.</li>
   <li>Each stone's skill tree is drawn in its own color, and most passives have a free <strong>toggle</strong> so you can switch them off.</li>
   <li>The Power Stone's power is now <code>infinity:power_stone</code> (it was <code>infinity:power_stone_passive</code>).</li>
 </ul>
@@ -146,7 +147,7 @@ icon: icons/hourglass.png
   <tbody>
     <tr><td><code>/space_tp &lt;x&gt; &lt;y&gt; &lt;z&gt; &lt;dimension&gt;</code></td><td>Removed. Use the {{ab space/teleport}} menu</td></tr>
     <tr><td><code>/time_set &lt;time&gt;</code></td><td><code>/infinity time set &lt;time&gt;</code></td></tr>
-    <tr><td><code>/locateplayer &lt;player&gt;</code></td><td><code>/infinity soul locateplayer &lt;player&gt;</code></td></tr>
+    <tr><td><code>/locateplayer &lt;player&gt;</code></td><td><code>/infinity soul locateentity &lt;name&gt;</code>, which finds named mobs too</td></tr>
     <tr><td><code>/unlockstones</code></td><td><code>/infinity unlock_stones</code> and <code>/infinity lock_stones</code></td></tr>
     <tr><td><code>/unlock_orb</code></td><td><code>/infinity unlock_orb</code></td></tr>
     <tr><td>None</td><td>New: <code>/infinity ability</code>, <code>/infinity gauntlet snap</code>, <code>/infinity gauntlet skin</code>, <code>/infinity orb</code>, <code>/infinity soulguardian</code>, <code>/infinity summon malekith</code> and <code>/infinity soul zombies</code></td></tr>
@@ -166,8 +167,9 @@ icon: icons/hourglass.png
 <h2 id="addons">For addon makers and server owners</h2>
 <ul>
   <li>{{page addons/stones.html Custom stones}}, {{page addons/skins.html gauntlet skins}}, {{page addons/custom-gauntlets.html custom gauntlets}}
-    with their own menus, {{page addons/ground-items.html ground items}} and {{page addons/ability-overlays.html skill tree themes}}, all from
-    JSON.</li>
-  <li>44 ability types and 14 conditions you can use in your own Palladium powers. See the {{page addons/abilities.html Ability Reference}}.</li>
-  <li>A config file and <a href="@/commands.html#infinity-ability">/infinity ability disable</a> to switch any ability off on a server.</li>
+    with their own menus, {{page addons/ground-items.html ground items}}, {{page addons/stones.html#containers glowing stone containers}} and
+    {{page addons/ability-overlays.html skill tree themes}}, all from JSON, in your own namespace so addons can't overwrite each other.</li>
+  <li>{{page addons/immunities.html Immunities}}: mental, reality, soul and spatial immunity, as abilities, conditions, tags and a Java API.</li>
+  <li>48 ability types and 18 conditions you can use in your own Palladium powers. See the {{page addons/abilities.html Ability Reference}}.</li>
+  <li>A {{page configuration.html#config config file}} (with switches for the real and fake structures) and <a href="@/commands.html#infinity-ability">/infinity ability disable</a> to switch any ability off on a server.</li>
 </ul>

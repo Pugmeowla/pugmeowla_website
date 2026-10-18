@@ -5,7 +5,7 @@ lead: The settings you can change, what happens to old worlds, and the known pro
 icon: icons/teleport.png
 ---
 <h2 id="config">Config</h2>
-<p>There's one config file, <code>config/infinity-common.toml</code>, with two settings:</p>
+<p>There's one config file, <code>config/infinity-common.toml</code>, with four settings:</p>
 <pre data-lang="text" data-title="config/infinity-common.toml">
 [orb]
 	#Number of left/right turns in the Orb's combination lock.
@@ -17,7 +17,17 @@ icon: icons/teleport.png
 	#Dimensions the Tesseract never takes players to, as IDs ("modid:name") or whole mods ("modid:*").
 	#Every other dimension, including other mods', is visited in turn wherever there is a safe place to land.
 	excludedDimensions = ["infinity:soulworld"]
+
+[structures]
+	#Whether the real Infinity structures generate in new chunks: aether, crashed_kree_ship,
+	#dwarf_star_meteor, infinity_temple, morag_temple, norse_village, sanctuary, sanctum and uru_meteor.
+	realStructures = true
+	#Whether the fake look-alike structures (aether_fake, morag_temple_fake, norse_village_fake,
+	#sanctuary_fake, sanctum_fake) generate in new chunks.
+	fakeStructures = true
 </pre>
+<p>Switching structures off only affects chunks generated after the change. <code>/locate</code> and the Soul Guardian's explorer maps
+  skip switched-off structures too, so they never point at one that isn't there. Vormir's Edge isn't affected.</p>
 <p>Server admins can also switch off any of the mod's abilities in game with
   <a href="@/commands.html#infinity-ability">/infinity ability disable</a>. Everything else is set up through data: the {{page addons/index.html addon systems}}, Palladium power files, and tags like
   <code>#infinity:snap_hostile</code> and <code>#infinity:projectiles</code>.</p>

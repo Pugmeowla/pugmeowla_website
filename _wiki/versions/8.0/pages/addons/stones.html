@@ -5,8 +5,8 @@ lead: Any item can be an Infinity Stone. One file makes it fit the gauntlet, loo
 icon: stones/time_stone.png
 ---
 <h2 id="how-it-works">How it works</h2>
-<p>Every item that can go in the Infinity Gauntlet has a file in <code>data/infinity/gauntlet_stones/</code>, including the six Infinity
-  Stones. Once an item has one:</p>
+<p>Every item that can go in the Infinity Gauntlet has a file in <code>data/&lt;namespace&gt;/infinity/gauntlet_stones/</code> (your mod or
+  pack ID as the namespace), or in the older <code>data/infinity/gauntlet_stones/</code> where the six Infinity Stones' files are. Once an item has one:</p>
 <ul>
   <li>It fits in <strong>any</strong> of the gauntlet's six slots (but not twice), in custom gauntlets and in the Cosmi-Rod.</li>
   <li>Everything is drawn from what's actually in each slot. The gauntlet's inventory icon colors that slot's pixel
@@ -32,6 +32,9 @@ icon: stones/time_stone.png
     <tr><td><code>hand</code></td><td><code>true</code></td><td>Gives the stone's <code>power</code> while the stone itself is held in either hand. The six built-in stones set it to <code>false</code>, because their held power comes from their own item powers.</td></tr>
     <tr><td><code>head</code></td><td><code>false</code></td><td>Lets the stone go in the Curios head slot, where it's drawn on the forehead and gives its power.</td></tr>
     <tr><td><code>texture</code></td><td><code>infinity:textures/item/infinity_stone.png</code></td><td>The stone cube's texture, tinted by <code>color</code>. Uses the 1.12.2 layout, a 6×6×6 box UV cube on a 32×16 texture.</td></tr>
+    <tr><td><code>scale</code></td><td><code>1</code></td><td>Size of the stone wherever it's drawn (in the gauntlet, on the head, held and on the ground, but not in inventories), about its own center. A number, or <code>{"base": 1, "width": 1, "height": 1}</code> to stretch it (width is x and z, each times <code>base</code>). <code>0</code> counts as <code>1</code>.</td></tr>
+    <tr><td><code>glow_abilities</code></td><td><code>[]</code></td><td>Abilities that make the stone glow brighter while one is on for whoever holds or wears it (gauntlet, custom gauntlet, Cosmi-Rod, head or hand). An ability of the stone's own <code>power</code> by name, or any ability as <code>power#ability</code>. Best for abilities that stay on for a while: held keys and toggles.</td></tr>
+    <tr><td><code>glow_color</code></td><td><code>color</code></td><td><code>#RRGGBB</code> added over the stone while it glows, pulsing slowly.</td></tr>
   </tbody>
 </table></div>
 
@@ -69,12 +72,42 @@ icon: stones/time_stone.png
   "tooltip_color": "green",
   "tooltip_order": 4,
   "power": "infinity:time_stone",
-  "hand": false
+  "hand": false,
+  "glow_abilities": [
+    "reset_time_speed",
+    "time_freeze",
+    "fast_forward",
+    "projectile_stop"
+  ]
 }
 </pre>
     <p>The six built-in stones name their own power like any addon stone, so the gauntlet gives it out the same way.</p>
   </section>
 </div>
+
+<h2 id="containers">Containers that glow with their stone</h2>
+<p>An item that holds a stone, like the Scepter or the Tesseract, can glow along with it. Each one is a file in
+  <code>data/&lt;namespace&gt;/infinity/stone_containers/</code>. Only the item's own model changes: held, on the ground and in inventories.
+  Problems are logged as <code>Stone container &lt;id&gt;: …</code>. Restart after changes.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>item</code></td><td><strong>required</strong></td><td>The container's item.</td></tr>
+    <tr><td><code>stone</code></td><td>none</td><td>The stone inside it. Its <code>glow_color</code>, <code>glow_abilities</code> and <code>power</code> are the defaults for the keys below.</td></tr>
+    <tr><td><code>glow_abilities</code></td><td>the stone's</td><td>Abilities that make it glow while one is on for whoever holds it: by name for one of <code>power</code>'s abilities, or <code>power#ability</code>.</td></tr>
+    <tr><td><code>power</code></td><td>the stone's</td><td>The power whose abilities <code>glow_abilities</code> names without a <code>power#</code>.</td></tr>
+    <tr><td><code>glow_color</code></td><td>the stone's, or <code>#FFFFFF</code></td><td><code>#RRGGBB</code> added over it while it glows.</td></tr>
+    <tr><td><code>glow_texture</code></td><td>none</td><td>A mask laid over the item's texture: only its non-transparent pixels glow, whatever their color. It should match the item texture's layout. Without it the whole item glows.</td></tr>
+  </tbody>
+</table></div>
+<pre data-lang="json" data-title="data/infinity/stone_containers/scepter.json">
+{
+  "item": "infinity:scepter",
+  "stone": "infinity:mind_stone",
+  "glow_texture": "infinity:textures/item/scepter_e.png"
+}
+</pre>
+<p>The mod ships files for the Tesseract, Aether, Eye of Agamotto and Scepter. The Tesseract's has no mask, so the whole cube glows.</p>
 
 <h2 id="drawing">Drawing a stone yourself</h2>
 <p>Palladium render layers can draw any stone with the stone look using the layer type <code>infinity:stone</code>:</p>

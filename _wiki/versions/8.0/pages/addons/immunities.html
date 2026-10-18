@@ -1,0 +1,71 @@
+---
+title: Immunities
+description: Mental, reality, soul and spatial immunity. Abilities that stop other players' stones from working on an entity, the conditions and tags that check for them, and the Java API.
+lead: Four abilities that make something immune to one kind of stone manipulation by others.
+icon: stones/mind_stone.png
+---
+<h2 id="how-it-works">How it works</h2>
+<p>Each immunity is an ability type you put in a Palladium power. Give it conditions like any ability, or none to keep it on whenever
+  the power is there. While it's on, other players' stone abilities of that kind don't work on the entity. Its own abilities still
+  work on itself.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Ability</th><th>What it blocks</th></tr></thead>
+  <tbody>
+    <tr><td><code>infinity:mental_immunity</code></td><td>{{ab mind/mind_reading}} ("That mind is shielded"), {{ab mind/passive}}, and {{ab mind/disguise}}: an immune player sees others' real skin and name.</td></tr>
+    <tr><td><code>infinity:reality_immunity</code></td><td>Nothing built in yet, since no Reality Stone ability targets other entities. It's there for addon abilities and commands.</td></tr>
+    <tr><td><code>infinity:soul_immunity</code></td><td>{{ab soul/soul_drain}} ("That soul is shielded"), being taken along by {{ab soul/enter_soulworld}}, <a href="@/commands.html#infinity-soul-locateentity">/infinity soul locateentity</a>, and the location line of Mind Reading.</td></tr>
+    <tr><td><code>infinity:spatial_immunity</code></td><td>{{ab space/telekinesis}} and {{ab space/spatial_lock}} can't grab or lock it (it's dropped as soon as it becomes immune), and {{ab space/black_hole}} doesn't pull it.</td></tr>
+  </tbody>
+</table></div>
+<p>The Mind Stone has mental immunity built in as a hidden passive, so anyone channeling it is immune. The Time Stone's
+  <code>infinity:time_immunity</code> works the same way for Slow Time and Freeze Time.</p>
+
+<h2 id="adding">Adding one</h2>
+<div class="tabs" data-tabs>
+  <section data-tab="The Mind Stone's">
+    <h3 class="tab-label no-toc">The Mind Stone's</h3>
+<pre data-lang="json" data-title="data/infinity/palladium/powers/mind_stone.json (part)">
+"mental_immunity": {
+  "type": "infinity:mental_immunity",
+  "title": "Mental Immunity",
+  "hidden": true,
+  "hidden_in_bar": true
+}
+</pre>
+  </section>
+  <section data-tab="On a toggle">
+    <h3 class="tab-label no-toc">On a toggle</h3>
+    <p>Spatial immunity for the Test Stone, only while a key toggles it on.</p>
+<pre data-lang="json" data-title="data/infinity_test_stone/palladium/powers/test_stone.json (part)">
+"anchor": {
+  "type": "infinity:spatial_immunity",
+  "title": "Anchor",
+  "description": "Telekinesis, Spatial Lock and black holes can't move you.",
+  "bar_color": "pink",
+  "conditions": {
+    "enabling": [ { "type": "palladium:toggle" } ]
+  }
+}
+</pre>
+  </section>
+</div>
+
+<h2 id="checking">Checking for them</h2>
+<p><strong>Conditions.</strong> <code>infinity:is_mental_immune</code>, <code>infinity:is_reality_immune</code>, <code>infinity:is_soul_immune</code>
+  and <code>infinity:is_spatial_immune</code> check the entity the condition runs on, on either side. They have no settings.</p>
+<pre data-lang="json">
+{ "type": "palladium:not", "conditions": [ { "type": "infinity:is_soul_immune" } ] }
+</pre>
+<p><strong>Commands.</strong> While immune, the entity has the scoreboard tag <code>infinity_mental_immune</code>,
+  <code>infinity_reality_immune</code>, <code>infinity_soul_immune</code> or <code>infinity_spatial_immune</code>, so a selector can skip it.
+  The Mind Stone's Pacify does exactly this:</p>
+<pre data-lang="command">execute as @e[distance=..5,tag=!infinity_mental_immune] run team join peaceful</pre>
+<p><strong>Java.</strong> <code>net.pugmeowla.infinity.api.InfinityImmunity</code> has a static check for each, which works on both sides
+  and is false for anything that isn't a living entity. <code>isTimeImmune</code> checks time immunity the same way.</p>
+<pre data-lang="java">
+import net.pugmeowla.infinity.api.InfinityImmunity;
+
+if (!InfinityImmunity.isSoulImmune(target)) {
+    // Your ability's effect here.
+}
+</pre>
