@@ -35,17 +35,14 @@ function boxUv([sx, sy, sz]) {
 }
 
 /**
- * geoFile: the model. texture / glowTexture: PNG files. view: [pitch, yaw, roll] in degrees applied after the model's
- * own transforms. Returns a PNG buffer, or null if the model or texture is missing.
+ * The textured quads of one GeckoLib model in view space. texture / glow: decoded PNGs. view: [pitch, yaw, roll] in
+ * degrees applied after the model's own transforms; flip turns it upside down (the worn gauntlet hangs fingers down).
  */
-export function renderGeo(geoFile, textureFile, { glowTexture = null, size = 128, view = [25, 210, 0], flip = true } = {}) {
-  if (!fs.existsSync(geoFile)) return null;
-  const texture = loadPng(textureFile);
-  if (!texture) return null;
-  const glow = loadPng(glowTexture);
+export function geoQuads(geoFile, texture, { glow = null, view = [25, 210, 0], flip = true, emissive = false, hide = [] } = {}) {
   const geometry = JSON.parse(fs.readFileSync(geoFile, 'utf8'))['minecraft:geometry'][0];
   const texW = geometry.description.texture_width, texH = geometry.description.texture_height;
   const bones = Object.fromEntries((geometry.bones || []).map((bone) => [bone.name, bone]));
+  const hidden = (bone) => { for (let b = bone; b; b = b.parent ? bones[b.parent] : null) if (hide.includes(b.name)) return true; return false; };
 
   // A point in a bone's space through the bone and every parent, outermost last.
   const throughBones = (point, bone) => {
@@ -56,7 +53,6 @@ export function renderGeo(geoFile, textureFile, { glowTexture = null, size = 128
     return p;
   };
   const viewOf = (p) => {
-    // The worn model hangs from the shoulder with the fingers down; turned over, the gauntlet stands upright.
     let v = flip ? rotate(p, 'z', 180) : p;
     v = rotate(v, 'y', view[1]);
     v = rotate(v, 'x', view[0]);
@@ -65,6 +61,7 @@ export function renderGeo(geoFile, textureFile, { glowTexture = null, size = 128
 
   const quads = [];
   for (const bone of geometry.bones || []) {
+    if (hidden(bone)) continue;
     for (const cube of bone.cubes || []) {
       const inflate = cube.inflate || 0;
       const [sx, sy, sz] = cube.size;
@@ -94,11 +91,37 @@ export function renderGeo(geoFile, textureFile, { glowTexture = null, size = 128
         const tip = place(definition.normal);
         const normal = viewOf([tip[0] - origin[0], tip[1] - origin[1], tip[2] - origin[2]]);
         const points = corners.map(viewOf);
-        const shade = shadeFor([normal[0], normal[1], normal[2]]);
-        quads.push({ points, uvs: uvCorners, texture, shade });
+        const shade = emissive ? 1 : shadeFor([normal[0], normal[1], normal[2]]);
+        quads.push({ points, uvs: uvCorners, texture, shade, emissive });
         if (glow) quads.push({ points, uvs: uvCorners, texture: glow, shade: 1, emissive: true });
       }
     }
   }
-  return rasterize(quads, size, 0.86);
+  return quads;
+}
+
+/**
+ * geoFile: the model. texture / glowTexture: PNG files. view: [pitch, yaw, roll] in degrees applied after the model's
+ * own transforms. Returns a PNG buffer, or null if the model or texture is missing.
+ */
+export function renderGeo(geoFile, textureFile, { glowTexture = null, size = 128, view = [25, 210, 0], flip = true } = {}) {
+  if (!fs.existsSync(geoFile)) return null;
+  const texture = loadPng(textureFile);
+  if (!texture) return null;
+  return rasterize(geoQuads(geoFile, texture, { glow: loadPng(glowTexture), view, flip }), size, 0.86);
+}
+
+/**
+ * Several models drawn together, like a player and the armor on it. parts: [{ geo, texture, glow?, emissive?, hide? }]
+ * (file paths; hide lists bone names to leave out). A part whose files are missing is skipped.
+ */
+export function renderGeos(parts, { size = 160, view = [15, 210, 0], flip = false, fill = 0.86 } = {}) {
+  const quads = [];
+  for (const part of parts) {
+    if (!fs.existsSync(part.geo)) continue;
+    const texture = loadPng(part.texture);
+    if (!texture) continue;
+    quads.push(...geoQuads(part.geo, texture, { glow: loadPng(part.glow), view, flip, emissive: part.emissive, hide: part.hide }));
+  }
+  return rasterize(quads, size, fill);
 }

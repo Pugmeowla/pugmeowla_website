@@ -33,6 +33,9 @@ export const nav = [
   { title: 'Commands', icon: 'icons/teleport.png', pages: [
     'commands.html',
   ] },
+  { title: 'Infinity Addon Mods', icon: 'renders/aspects_of_existance.png', pages: [
+    'mods/infintrix.html', 'mods/infinity-protocol.html', 'mods/infinity-generator.html', 'mods/herbs-of-wakanda.html',
+  ] },
   { title: 'Addon Development', icon: 'renders/52-d_unit.png', pages: [
     'addons/index.html', 'addons/stones.html', 'addons/skins.html', 'addons/custom-gauntlets.html',
     'addons/ground-items.html', 'addons/ability-overlays.html', 'addons/immunities.html', 'addons/abilities.html',

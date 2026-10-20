@@ -5,7 +5,7 @@ lead: The settings you can change, what happens to old worlds, and the known pro
 icon: icons/teleport.png
 ---
 <h2 id="config">Config</h2>
-<p>There's one config file, <code>config/infinity-common.toml</code>, with four settings:</p>
+<p>There's one config file, <code>config/infinity-common.toml</code>, with five settings:</p>
 <pre data-lang="text" data-title="config/infinity-common.toml">
 [orb]
 	#Number of left/right turns in the Orb's combination lock.
@@ -25,9 +25,16 @@ icon: icons/teleport.png
 	#Whether the fake look-alike structures (aether_fake, morag_temple_fake, norse_village_fake,
 	#sanctuary_fake, sanctum_fake) generate in new chunks.
 	fakeStructures = true
+
+[recipes]
+	#Whether a recipe asking for one mod's titanium, steel, uru, etc. accepts the same material from any mod
+	#(its Forge tag). Applies when recipes load: on world load or /reload.
+	unifyMaterials = true
 </pre>
 <p>Switching structures off only affects chunks generated after the change. <code>/locate</code> and the Soul Guardian's explorer maps
   skip switched-off structures too, so they never point at one that isn't there. Vormir's Edge isn't affected.</p>
+<p><code>unifyMaterials</code> switches off {{page items.html#shared-materials shared materials}} in recipes. The items stay in
+  their shared tags, so recipes that already ask for a tag still take any of them.</p>
 <p>Server admins can also switch off any of the mod's abilities in game with
   <a href="@/commands.html#infinity-ability">/infinity ability disable</a>. Everything else is set up through data: the {{page addons/index.html addon systems}}, Palladium power files, and tags like
   <code>#infinity:snap_hostile</code> and <code>#infinity:projectiles</code>.</p>

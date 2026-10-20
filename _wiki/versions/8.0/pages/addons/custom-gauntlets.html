@@ -21,11 +21,13 @@ icon: items/infinity_gauntlet.png
 <p>An Infinity Gauntlet in the off hand or Curios hands slot takes priority, then custom gauntlets in file name order.</p>
 
 <h2 id="worked-example">Worked examples</h2>
-<p>The first three are the real files from {{page addons/index.html#examples Infintrix and Infinity Protocol}}. Their six positions are the
+<p>The first five are the real files from {{page mods/infintrix.html Infintrix}}, {{page mods/infinity-protocol.html Infinity Protocol}} and
+  {{page mods/herbs-of-wakanda.html Herbs of Wakanda}}. Their six positions are the
   Infinity Gauntlet's own sockets, a good start for anything on the left hand.</p>
 <div class="tabs" data-tabs>
   <section data-tab="Omnitrix with a glove">
     <h3 class="tab-label no-toc">Omnitrix with a glove</h3>
+    {{figure src="models/infintrix_prototype.png" caption="How it looks with stones in, on the Prototype Omnitrix."}}
     <p>Infintrix's Prototype Omnitrix from Alien Evolution. While the player has the Omnitrix's power it's a gauntlet, and once a stone is
       in, the <code>infintrix:prototype_infintrix</code> glove is drawn under the stones.</p>
 <pre data-lang="json" data-title="data/infinity/gauntlets/prototype_omnitrix.json">
@@ -94,31 +96,63 @@ icon: items/infinity_gauntlet.png
   </section>
   <section data-tab="Iron Man suit">
     <h3 class="tab-label no-toc">Iron Man suit</h3>
-    <p>Infinity Protocol's gauntlet for the Iron Man MK85 suit from Satsu's Iron Man Addon. Its <code>equipment</code> is Infinity
-      Protocol's own power, which a tick function gives players wearing the MK85 mask while they have the <code>IronGauntlet</code> tag, and
-      takes away when the tag goes. It draws the mod's <code>infinity:nano_gauntlet_85</code> layer and always gives the gauntlet power.</p>
-<pre data-lang="json" data-title="data/infinity/gauntlets/protocol.json">
+    {{figure src="models/protocol_nano_gauntlet.png" caption="How it looks with stones in."}}
+    <p>Infinity Protocol's Mark 85 from Satsu's Iron Man Addon. It's an item gauntlet worn in that mod's suit slot, and its
+      <code>render_conditions</code> wait until the suit's left arm has fully formed before the nano gauntlet and stones are drawn.</p>
+<pre data-lang="json" data-title="data/infinity/gauntlets/protocol_mark_85.json">
 {
-  "name": "Protocol",
+  "name": "Mark 85",
   "equipment": {
-    "power": "infinity_protocol:infinity_stone_iron_man"
+    "item": "satsu_iron_man_addon:marks/mark_85/main",
+    "slots": ["curios:tecnology_armor"]
   },
   "slots": [
     { "origin": [7.65, 11.75, -1.15] },
     { "origin": [7.65, 13.25, -0.55] },
     { "origin": [7.65, 11.75, 0.15] },
     { "origin": [7.65, 11.75, -2.35] },
-    { "origin": [4.55, 12.15, -2.65], "slim_origin": [4.55, 12.15, -2.65], "size": [0.9, 0.9, 0.9] },
+    { "origin": [4.55, 12.15, -2.65], "size": [0.9, 0.9, 0.9] },
     { "origin": [7.65, 11.75, 1.45] }
   ],
-  "slim_offset": [-1, 0, 0],
   "render_layer": "infinity:nano_gauntlet_85",
-  "powers": ["infinity:infinity_gauntlet"]
+  "render_conditions": [
+    {
+      "type": "palladium:string_property",
+      "property": "satsu_iron_man_addon.left_arm",
+      "comparator": "equals",
+      "compare_to": "on"
+    },
+    {
+      "type": "palladium:ability_integer_property",
+      "power": "satsu_iron_man_addon:iron_man/marks/mark_85/main",
+      "ability": "left_arm_animation",
+      "property": "value",
+      "min": 17,
+      "max": 17
+    }
+  ],
+  "powers": ["infinity_protocol:suit"]
 }
 </pre>
-<pre data-lang="text" data-title="data/infinity_protocol/functions/tick.mcfunction">
-execute as @a[tag=IronGauntlet,palladium.power=satsu_iron_man_addon:iron_man/marks/mark_85/mask] run superpower add infinity_protocol:infinity_stone_iron_man @s
-execute as @a[tag=!IronGauntlet,palladium.power=satsu_iron_man_addon:iron_man/marks/mark_85/mask] run superpower remove infinity_protocol:infinity_stone_iron_man @s
+  </section>
+  <section data-tab="A necklace">
+    <h3 class="tab-label no-toc">A necklace</h3>
+    {{figure src="models/wakanda_necklace.png" caption="How it looks with stones in."}}
+    <p>Herbs of Wakanda's Black Panther's Necklace, worn on the chest or in the Curios necklace slot. Its stones are placed on the
+      <code>body</code> bone, in a row across the chest.</p>
+<pre data-lang="json" data-title="data/infinity/gauntlets/black_panther_necklace.json">
+{
+  "name": "Black Panther's Necklace",
+  "equipment": {"item": "wakanda:black_panther_necklace", "slots": ["curios:necklace", "chest"]},
+  "slots": [
+    {"bone": "body", "origin": [-1.1, 20.3, -2.9], "size": [1, 1, 0.8]},
+    {"bone": "body", "origin": [1.25, 21.4, -2.9], "size": [1, 1, 0.8]},
+    {"bone": "body", "origin": [2.45, 22.55, -2.9], "size": [1, 1, 0.8]},
+    {"bone": "body", "origin": [-2.25, 21.4, -2.9], "size": [1, 1, 0.8]},
+    {"bone": "body", "origin": [0.1, 20.3, -2.9], "size": [1, 1, 0.8]},
+    {"bone": "body", "origin": [-3.45, 22.55, -2.9], "size": [1, 1, 0.8]}
+  ]
+}
 </pre>
   </section>
   <section data-tab="An item">
@@ -160,7 +194,7 @@ execute as @a[tag=!IronGauntlet,palladium.power=satsu_iron_man_addon:iron_man/ma
     <tr><td><code>equipment</code></td><td><strong>required</strong></td><td>See above.</td></tr>
     <tr><td><code>slots</code></td><td><code>[]</code></td><td>Placements, by menu slot (the Infinity Gauntlet menu's six slots are Space, Mind, Reality, Power, Time, Soul). <code>null</code> leaves a slot undrawn. A stone in it still works.</td></tr>
     <tr><td><code>gui</code></td><td>the Infinity Gauntlet's menu</td><td>The stone menu's texture and slots. See <a href="#gui">below</a>.</td></tr>
-    <tr><td><code>slim_offset</code></td><td><code>[0, 0, 0]</code></td><td>Added to every origin for slim-armed players, usually <code>[-1, 0, 0]</code> on the left arm.</td></tr>
+    <tr><td><code>slim_offset</code></td><td><code>[0, 0, 0]</code></td><td>Added to every origin for slim-armed players, usually <code>[-1, 0, 0]</code> on the left arm. Leave it out when the stones sit on armor or a glove that's always drawn at classic width, or they end up inside it.</td></tr>
     <tr><td><code>render_layer</code></td><td>none</td><td>Palladium render layer drawn under the stones while at least one is inserted, e.g. a glove.</td></tr>
     <tr><td><code>render_conditions</code></td><td><code>[]</code></td><td>Palladium conditions that must all pass for the render layer and stones to be drawn (checked on the client), e.g. only during an animation.</td></tr>
     <tr><td><code>first_person_tilt</code></td><td><code>false</code></td><td>Draws the arm wearing it tilted in first person, like the Infinity Gauntlet's, while it's worn and <code>render_conditions</code> pass. For an item in your hand, that's the hand holding it. Worn anywhere else (or as a power), it's the arm its stones are on, while that hand is empty.</td></tr>

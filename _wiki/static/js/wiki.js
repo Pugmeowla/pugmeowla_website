@@ -257,7 +257,8 @@
       var trigger = event.target.closest('[data-zoom]');
       if (trigger) { event.preventDefault(); openLightbox(trigger.getAttribute('data-zoom'), trigger.getAttribute('data-caption')); }
     });
-    lightbox.addEventListener('click', function (event) { if (event.target === lightbox || event.target.closest('.lightbox-close')) closeLightbox(); });
+    // Any click except on the picture itself closes it: the backdrop, the caption, the close button.
+    lightbox.addEventListener('click', function (event) { if (event.target.tagName !== 'IMG') closeLightbox(); });
     document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && !lightbox.hidden) closeLightbox(); });
   }
 

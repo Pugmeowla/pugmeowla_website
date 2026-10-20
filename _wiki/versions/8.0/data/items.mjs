@@ -132,13 +132,13 @@ export const items = [
     ['svartelheim_stone', 'Svartelheim Stone', 'Svartalfheim'], ['svartelheim_sand', 'Svartelheim Sand', 'Svartalfheim']].map(([id, name, where]) => ({
     id: `infinity:${id}`, name, category: 'block', img: R(id), page: 'dimensions.html', obtain: `Generates in ${where}.`, desc: `Terrain block of ${where}.`,
   })),
-  { id: 'infinity:temple_beacon', name: 'Temple Beacon', category: 'block', img: null, page: 'structures.html#infinity-temple',
+  { id: 'infinity:temple_beacon', name: 'Temple Beacon', category: 'block', img: R('temple_beacon'), page: 'structures.html#infinity-temple',
     obtain: 'Only found in Infinity Temples. Otherwise creative or commands, and it drops nothing when broken.',
     desc: 'A beacon that always shines, without a pyramid. Stained glass above it tints the beam like a normal beacon.' },
 
   ...[['molten_uru', 'Molten Uru'], ['molten_titanium', 'Molten Titanium'], ['molten_gold_titanium_alloy', 'Molten Gold-Titanium Alloy'],
     ['molten_ferro-titanium-gold_alloy', 'Molten Ferro-Titanium-Gold Alloy']].map(([id, name]) => ({
-    id: `infinity:${id}_bucket`, name: `${name} Bucket`, category: 'fluid', img: null, page: 'installation.html#tinkers-construct',
+    id: `infinity:${id}_bucket`, name: `${name} Bucket`, category: 'fluid', img: R(`${id}_bucket`), page: 'installation.html#tinkers-construct',
     obtain: "Tinkers' Construct smeltery.", desc: `Bucket of ${name}, used with Tinkers' Construct casting.`,
   })),
 

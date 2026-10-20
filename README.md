@@ -78,6 +78,17 @@ Copies icons, block and GUI textures from the mod, renders inventory-style icons
 Tesseract, Cosmi-Rod…), renders each gauntlet skin's worn GeckoLib model (`tools/render-geo.mjs`) and the Infinity Stone icons (the stone texture tinted with each stone's color),
 into `_wiki/static/img/`. Then run the build. On macOS it also regenerates the banner and favicon with `sips`.
 
+```
+node _wiki/tools/render-extras.mjs /path/to/infinity [--addonpacks <folder>] [--generator <unzipped jar>] [--omnitrix <folder>] [--vanilla <folder>]
+```
+
+Renders the pictures in `_wiki/static/img/models/`: the Infinity Gauntlet and the addon mods' gauntlets worn on the player
+with their stones in (Infintrix, Infinity Protocol, Herbs of Wakanda), the Burnt Gauntlet, the Time Stone rings, Malekith and
+the Infinity Generator's blocks. `--addonpacks` defaults to the mod's `forge/run/addonpacks`. `--omnitrix` is a folder with the
+Alien Evolution, Into the Omniverse and Omnitrix Evolution jars unzipped into it, so the Infintrix gloves are drawn on their Omnitrix. `--vanilla`
+is a folder with the `assets` of the 1.20.1 client jar and Forge's universal jar unzipped into it, for the Temple Beacon and
+the molten metal buckets in `renders/`.
+
 ## Publishing on GitHub Pages
 
 1. Push this folder to a repository.

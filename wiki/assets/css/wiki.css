@@ -589,6 +589,8 @@ html.js .tabs > section > .tab-label { display: none; }
 .figure-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; align-items: start; }
 .figure-row .figure { margin: 0; }
 .figure-row .figure .zoomable { display: block; width: 100%; }
+.figure-row .figure img { margin: 0 auto; }
+.generator-row { grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr)); }
 
 @media (max-width: 360px) {
   .index-side { padding-left: 0; }

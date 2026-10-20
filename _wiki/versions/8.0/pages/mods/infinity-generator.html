@@ -1,0 +1,57 @@
+---
+title: Infinity Generator
+nav: Infinity Generator
+description: How the Infinity Generator connects to Infinity Stone Core. A block that turns an Infinity Stone into Forge Energy, its recipe and its config.
+lead: A block that runs on an Infinity Stone and powers the machines around it.
+icon: compat/infinity_generator.png
+---
+<h2 id="what-it-does">What it does</h2>
+<p>The Infinity Generator is an addon by currentbrick that needs Infinity Stone Core. Put an Infinity Stone in it and it makes Forge
+  Energy (FE) for any machine that takes it. The stone isn't used up, so the generator runs for as long as the stone stays inside.</p>
+<p><a class="button-link" href="https://modrinth.com/mod/pugmeowlas-infinity-generator">Modrinth</a>
+  <a class="button-link ghost" href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-generator">CurseForge</a></p>
+
+<h2 id="making-it">Making it</h2>
+<p>The recipe comes from Infinity Stone Core, and the generator shows up in its creative tab.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Row</th><th>Ingredients</th></tr></thead>
+  <tbody>
+    <tr><td>Top</td><td>{{item dwarf_star_alloy_plate}}, Vibranium Circuit, {{item dwarf_star_alloy_plate}}</td></tr>
+    <tr><td>Middle</td><td>Steel block, Nether Star, steel block</td></tr>
+    <tr><td>Bottom</td><td>{{item dwarf_star_alloy_plate}}, Vibranium Flux Capacitor, {{item dwarf_star_alloy_plate}}</td></tr>
+  </tbody>
+</table></div>
+<p>The Vibranium Circuit and Vibranium Flux Capacitor are Palladium items. Any steel block works (<code>#forge:blocks/steel</code>), like
+  {{item steel_block}}. Mine the generator with an iron pickaxe or better: it drops itself, keeping its name.</p>
+
+<h2 id="using-it">Using it</h2>
+<div class="figure-row generator-row">
+  {{figure src="models/infinity_generator.png" caption="Empty"}}
+  {{figure src="models/infinity_generator_power.png" caption="Power Stone"}}
+  {{figure src="models/infinity_generator_space.png" caption="Space Stone"}}
+  {{figure src="models/infinity_generator_reality.png" caption="Reality Stone"}}
+  {{figure src="models/infinity_generator_soul.png" caption="Soul Stone"}}
+  {{figure src="models/infinity_generator_time.png" caption="Time Stone"}}
+  {{figure src="models/infinity_generator_mind.png" caption="Mind Stone"}}
+</div>
+<ul>
+  <li>Right-click it to open its menu, which has one slot. Only the six Infinity Stones and the {{item tesseract}} fit.</li>
+  <li>The block changes to show which stone is inside, and the Tesseract counts as the Space Stone.</li>
+  <li>While a stone is in, it makes energy every tick until it's full, and sends it out to every block touching it that takes FE, on all
+    six sides.</li>
+  <li>Take the stone out and it stops making energy, but keeps sending out what it has stored.</li>
+</ul>
+<div class="callout warn"><span class="callout-title">Stones in a generator</span><p>A stone sitting in a generator isn't in anyone's gauntlet,
+  so nobody gets its power, and there's still only one of each stone per world.</p></div>
+
+<h2 id="config">Config</h2>
+<p>The generator's numbers are in its own common config file. The defaults are huge on purpose: it's powered by an Infinity Stone.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Setting</th><th>Default</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><code>energyGenerated</code></td><td>1,000,000</td><td>FE made every tick while a stone is inside</td></tr>
+    <tr><td><code>maxCapacity</code></td><td>1,000,000</td><td>FE it can store</td></tr>
+    <tr><td><code>maxTransfer</code></td><td>1,000,000</td><td>FE it can send to each neighbouring block per tick</td></tr>
+  </tbody>
+</table></div>
+<p>Each setting can go up to 2,147,483,647.</p>
