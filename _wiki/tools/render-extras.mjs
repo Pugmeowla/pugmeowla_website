@@ -120,11 +120,16 @@ if (omnitrixMods) {
 const infintrix = pack('infintrix-3.0-beta-3.4');
 if (fs.existsSync(infintrix)) {
   const glove = (name) => ({ geo: geo(name, 'infintrix', infintrix), texture: tex(name, 'infintrix', infintrix) });
-  const slots = (file) => gauntletFile('infintrix-3.0-beta-3.4', file).slots;
-  jobs.infintrix_prototype = [[arm(), ...(omnitrix.prototype || []), glove('prototype_infintrix'), ...stones(slots('prototype_omnitrix.json'))], LEFT_ARM];
-  jobs.infintrix_recalibrated = [[arm(), ...(omnitrix.recal || []), glove('ult_infintrix'), ...stones(slots('recal_omnitrix.json'))], LEFT_ARM];
-  jobs.infintrix_ultimatrix = [[arm(), ...(omnitrix.ultimatrix || []), glove('ult_infintrix'), ...stones(slots('ult_omnitrix.json'))], LEFT_ARM];
-  if (omnitrix.omniverse) jobs.infintrix_omniverse = [[arm(), ...omnitrix.omniverse, ...stones(slots('omniverse_omnitrix.json'))], LEFT_ARM];
+  // Each Omnitrix with the glove its gauntlet file names as render_layer (if any) and the stones at its placements.
+  const omnitrixGauntlet = (file, watch) => {
+    const definition = gauntletFile('infintrix-3.0-beta-3.4', file);
+    const layer = definition.render_layer ? [glove(definition.render_layer.split(':')[1])] : [];
+    return [[arm(), ...(watch || []), ...layer, ...stones(definition.slots)], LEFT_ARM];
+  };
+  jobs.infintrix_prototype = omnitrixGauntlet('prototype_omnitrix.json', omnitrix.prototype);
+  jobs.infintrix_recalibrated = omnitrixGauntlet('recal_omnitrix.json', omnitrix.recal);
+  jobs.infintrix_ultimatrix = omnitrixGauntlet('ult_omnitrix.json', omnitrix.ultimatrix);
+  if (omnitrix.omniverse) jobs.infintrix_omniverse = omnitrixGauntlet('omniverse_omnitrix.json', omnitrix.omniverse);
 }
 const wakanda = path.join(addonpacks, 'wakanda-1.0.0/assets/wakanda');
 if (fs.existsSync(wakanda)) {

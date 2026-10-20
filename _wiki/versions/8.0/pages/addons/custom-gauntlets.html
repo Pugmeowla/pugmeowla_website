@@ -29,7 +29,8 @@ icon: items/infinity_gauntlet.png
     <h3 class="tab-label no-toc">Omnitrix with a glove</h3>
     {{figure src="models/infintrix_prototype.png" caption="How it looks with stones in, on the Prototype Omnitrix."}}
     <p>Infintrix's Prototype Omnitrix from Alien Evolution. While the player has the Omnitrix's power it's a gauntlet, and once a stone is
-      in, the <code>infintrix:prototype_infintrix</code> glove is drawn under the stones.</p>
+      in, the <code>infintrix:prototype_infintrix</code> glove is drawn under the stones. Each stone has its own <code>slim_origin</code>,
+      since slim arms are narrower.</p>
 <pre data-lang="json" data-title="data/infinity/gauntlets/prototype_omnitrix.json">
 {
   "name": "Prototype Omnitrix",
@@ -37,14 +38,13 @@ icon: items/infinity_gauntlet.png
     "power": "alienevo:prototype_omnitrix"
   },
   "slots": [
-    { "origin": [7.65, 11.75, -1.15] },
-    { "origin": [7.65, 12.85, -0.55] },
-    { "origin": [7.65, 11.75, 0.15] },
-    { "origin": [7.65, 11.75, -2.35] },
-    { "origin": [4.55, 12.15, -2.65], "slim_origin": [4.55, 12.15, -2.65], "size": [0.9, 0.9, 0.9] },
-    { "origin": [7.65, 11.75, 1.45] }
+    { "origin": [7.5856, 11.6159, -1.1051], "slim_origin": [6.4852, 11.6159, -1.1051], "size": [0.961, 0.8649, 0.8649] },
+    { "origin": [7.5856, 12.8571, -0.5285], "slim_origin": [6.4852, 12.8571, -0.5285], "size": [0.961, 0.8649, 0.8649] },
+    { "origin": [7.5856, 11.6159, 0.1441], "slim_origin": [6.4852, 11.6159, 0.1441], "size": [0.961, 0.8649, 0.8649] },
+    { "origin": [7.5856, 11.6159, -2.2583], "slim_origin": [6.4852, 11.6159, -2.2583], "size": [0.961, 0.8649, 0.8649] },
+    { "origin": [4.6066, 12.0003, -2.5465], "slim_origin": [4.701, 12.0003, -2.4465], "size": [0.8649, 0.8649, 0.8649] },
+    { "origin": [7.5856, 11.6159, 1.3934], "slim_origin": [6.4852, 11.6159, 1.3934], "size": [0.961, 0.8649, 0.8649] }
   ],
-  "slim_offset": [-1, 0, 0],
   "render_layer": "infintrix:prototype_infintrix",
   "powers": ["infintrix:infintrix"]
 }
@@ -52,7 +52,8 @@ icon: items/infinity_gauntlet.png
   </section>
   <section data-tab="The glove's render layer">
     <h3 class="tab-label no-toc">The glove's render layer</h3>
-    <p>A normal GeckoLib Palladium render layer, with a slim arm version.</p>
+    <p>A normal GeckoLib Palladium render layer, with a slim arm version. Its texture gets an overlay picked by the watch's
+      <code>AlienEvo.BasePrimary</code> score, so the glove matches the colour the player gave the Omnitrix.</p>
 <pre data-lang="json" data-title="assets/infintrix/palladium/render_layers/prototype_infintrix.json">
 {
   "type": "geckolib:default",
@@ -60,7 +61,16 @@ icon: items/infinity_gauntlet.png
     "normal": "infintrix:geo/prototype_infintrix.geo.json",
     "slim": "infintrix:geo/prototype_infintrix_slim.geo.json"
   },
-  "texture": "infintrix:textures/models/prototype_infintrix.png",
+  "texture": {
+    "base": "infintrix:textures/models/prototype_infintrix.png",
+    "transformers": [
+      { "type": "palladium:overlay", "overlay": "infintrix:textures/models/prototype_glove/primary_#A.png" }
+    ],
+    "variables": {
+      "A": { "type": "palladium:objective_score", "objective": "AlienEvo.BasePrimary" }
+    },
+    "output": "infintrix:textures/models/prototype_glove/glove_#A.png"
+  },
   "bones": {
     "head": "head",
     "body": "body",

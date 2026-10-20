@@ -112,6 +112,16 @@ function linkMods(html, mods) {
   }).join('');
 }
 
+// Rows of pictures are laid out symmetrically: the column count is picked from how many there are (4 → 2 × 2, 6 → 3 + 3,
+// 7 → 4 + 3), and a shorter last row is centered. Phones get two columns.
+function balanceFigureRows(html) {
+  const columns = (count) => (count <= 3 ? count : count === 4 ? 2 : count <= 6 ? 3 : 4);
+  return html.replace(/<div class="figure-row([^"]*)">([\s\S]*?<\/figure>)\s*<\/div>/g, (whole, extra, inner) => {
+    const count = (inner.match(/<figure\b/g) || []).length;
+    return `<div class="figure-row${extra}" style="--cols:${columns(count)}">${inner}</div>`;
+  });
+}
+
 function processHeadings(html) {
   const used = new Set();
   const toc = [];
@@ -336,6 +346,7 @@ for (const v of versions) {
     const softBreaks = (chars) => (whole, text) => `<code>${text.replace(new RegExp(`([${chars}])(?=[^\\s${chars}])`, 'g'), '$1<wbr>')}</code>`;
     html = html.replace(/<table[\s\S]*?<\/table>/g, (table) => table.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|_')));
     html = html.replace(/<code>([^<]{16,})<\/code>/g, softBreaks(':/|'));
+    html = balanceFigureRows(html);
     html = html.replace(/<code class="item-id">([^<]+)<\/code>/g, (whole, text) => softBreaks(':_')(whole, text).replace('<code>', '<code class="item-id">'));
     if (v.data.mods && file !== 'index.html' && file !== '404.html') html = linkMods(html, v.data.mods);
     // Any link to a mod that's on both sites follows the reader's Modrinth / CurseForge choice (wiki.js swaps the href).

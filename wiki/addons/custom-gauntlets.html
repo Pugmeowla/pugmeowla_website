@@ -87,35 +87,45 @@
     <h3 class="tab-label no-toc">Omnitrix with a glove</h3>
     <figure class="figure"><button type="button" class="zoomable" data-zoom="../assets/img/models/infintrix_prototype.png" data-caption="How it looks with stones in, on the Prototype Omnitrix." aria-label="Enlarge image"><img src="../assets/img/models/infintrix_prototype.png" alt="How it looks with stones in, on the Prototype Omnitrix." class="px" loading="lazy"></button><figcaption>How it looks with stones in, on the Prototype Omnitrix.</figcaption></figure>
     <p><a class="mod-link" href="https://modrinth.com/mod/pugmeowlas-infintrix" data-modrinth="https://modrinth.com/mod/pugmeowlas-infintrix" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infintrix"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/infintrix.png" alt="" loading="lazy">Infintrix</span></a>'s Prototype Omnitrix from <a class="mod-link" href="https://modrinth.com/mod/alienevo" data-modrinth="https://modrinth.com/mod/alienevo" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/alienevo"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/alien_evolution.png" alt="" loading="lazy">Alien</span> Evolution</a>. While the player has the Omnitrix's power it's a gauntlet, and once a stone is
-      in, the <code>infintrix:<wbr>prototype_infintrix</code> glove is drawn under the stones.</p>
+      in, the <code>infintrix:<wbr>prototype_infintrix</code> glove is drawn under the stones. Each stone has its own <code>slim_origin</code>,
+      since slim arms are narrower.</p>
 <div class="code-block"><div class="code-head"><span>data/infinity/gauntlets/prototype_omnitrix.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
   <span class="t-key">&quot;name&quot;</span>: <span class="t-str">&quot;Prototype Omnitrix&quot;</span>,
   <span class="t-key">&quot;equipment&quot;</span>: {
     <span class="t-key">&quot;power&quot;</span>: <span class="t-str">&quot;alienevo:prototype_omnitrix&quot;</span>
   },
   <span class="t-key">&quot;slots&quot;</span>: [
-    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.65</span>, <span class="t-num">11.75</span>, <span class="t-num">-1.15</span>] },
-    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.65</span>, <span class="t-num">12.85</span>, <span class="t-num">-0.55</span>] },
-    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.65</span>, <span class="t-num">11.75</span>, <span class="t-num">0.15</span>] },
-    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.65</span>, <span class="t-num">11.75</span>, <span class="t-num">-2.35</span>] },
-    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">4.55</span>, <span class="t-num">12.15</span>, <span class="t-num">-2.65</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">4.55</span>, <span class="t-num">12.15</span>, <span class="t-num">-2.65</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.9</span>, <span class="t-num">0.9</span>, <span class="t-num">0.9</span>] },
-    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.65</span>, <span class="t-num">11.75</span>, <span class="t-num">1.45</span>] }
+    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.5856</span>, <span class="t-num">11.6159</span>, <span class="t-num">-1.1051</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">6.4852</span>, <span class="t-num">11.6159</span>, <span class="t-num">-1.1051</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.961</span>, <span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>] },
+    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.5856</span>, <span class="t-num">12.8571</span>, <span class="t-num">-0.5285</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">6.4852</span>, <span class="t-num">12.8571</span>, <span class="t-num">-0.5285</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.961</span>, <span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>] },
+    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.5856</span>, <span class="t-num">11.6159</span>, <span class="t-num">0.1441</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">6.4852</span>, <span class="t-num">11.6159</span>, <span class="t-num">0.1441</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.961</span>, <span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>] },
+    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.5856</span>, <span class="t-num">11.6159</span>, <span class="t-num">-2.2583</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">6.4852</span>, <span class="t-num">11.6159</span>, <span class="t-num">-2.2583</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.961</span>, <span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>] },
+    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">4.6066</span>, <span class="t-num">12.0003</span>, <span class="t-num">-2.5465</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">4.701</span>, <span class="t-num">12.0003</span>, <span class="t-num">-2.4465</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>] },
+    { <span class="t-key">&quot;origin&quot;</span>: [<span class="t-num">7.5856</span>, <span class="t-num">11.6159</span>, <span class="t-num">1.3934</span>], <span class="t-key">&quot;slim_origin&quot;</span>: [<span class="t-num">6.4852</span>, <span class="t-num">11.6159</span>, <span class="t-num">1.3934</span>], <span class="t-key">&quot;size&quot;</span>: [<span class="t-num">0.961</span>, <span class="t-num">0.8649</span>, <span class="t-num">0.8649</span>] }
   ],
-  <span class="t-key">&quot;slim_offset&quot;</span>: [<span class="t-num">-1</span>, <span class="t-num">0</span>, <span class="t-num">0</span>],
   <span class="t-key">&quot;render_layer&quot;</span>: <span class="t-str">&quot;infintrix:prototype_infintrix&quot;</span>,
   <span class="t-key">&quot;powers&quot;</span>: [<span class="t-str">&quot;infintrix:infintrix&quot;</span>]
 }</code></pre></div>
   </section>
   <section data-tab="The glove's render layer">
     <h3 class="tab-label no-toc">The glove's render layer</h3>
-    <p>A normal <a class="mod-link" href="https://modrinth.com/mod/geckolib" data-modrinth="https://modrinth.com/mod/geckolib" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/geckolib"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/geckolib.png" alt="" loading="lazy">GeckoLib</span></a> <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> render layer, with a slim arm version.</p>
+    <p>A normal <a class="mod-link" href="https://modrinth.com/mod/geckolib" data-modrinth="https://modrinth.com/mod/geckolib" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/geckolib"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/geckolib.png" alt="" loading="lazy">GeckoLib</span></a> <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> render layer, with a slim arm version. Its texture gets an overlay picked by the watch's
+      <code>AlienEvo.BasePrimary</code> score, so the glove matches the colour the player gave the Omnitrix.</p>
 <div class="code-block"><div class="code-head"><span>assets/infintrix/palladium/render_layers/prototype_infintrix.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
   <span class="t-key">&quot;type&quot;</span>: <span class="t-str">&quot;geckolib:default&quot;</span>,
   <span class="t-key">&quot;model&quot;</span>: {
     <span class="t-key">&quot;normal&quot;</span>: <span class="t-str">&quot;infintrix:geo/prototype_infintrix.geo.json&quot;</span>,
     <span class="t-key">&quot;slim&quot;</span>: <span class="t-str">&quot;infintrix:geo/prototype_infintrix_slim.geo.json&quot;</span>
   },
-  <span class="t-key">&quot;texture&quot;</span>: <span class="t-str">&quot;infintrix:textures/models/prototype_infintrix.png&quot;</span>,
+  <span class="t-key">&quot;texture&quot;</span>: {
+    <span class="t-key">&quot;base&quot;</span>: <span class="t-str">&quot;infintrix:textures/models/prototype_infintrix.png&quot;</span>,
+    <span class="t-key">&quot;transformers&quot;</span>: [
+      { <span class="t-key">&quot;type&quot;</span>: <span class="t-str">&quot;palladium:overlay&quot;</span>, <span class="t-key">&quot;overlay&quot;</span>: <span class="t-str">&quot;infintrix:textures/models/prototype_glove/primary_#A.png&quot;</span> }
+    ],
+    <span class="t-key">&quot;variables&quot;</span>: {
+      <span class="t-key">&quot;A&quot;</span>: { <span class="t-key">&quot;type&quot;</span>: <span class="t-str">&quot;palladium:objective_score&quot;</span>, <span class="t-key">&quot;objective&quot;</span>: <span class="t-str">&quot;AlienEvo.BasePrimary&quot;</span> }
+    },
+    <span class="t-key">&quot;output&quot;</span>: <span class="t-str">&quot;infintrix:textures/models/prototype_glove/glove_#A.png&quot;</span>
+  },
   <span class="t-key">&quot;bones&quot;</span>: {
     <span class="t-key">&quot;head&quot;</span>: <span class="t-str">&quot;head&quot;</span>,
     <span class="t-key">&quot;body&quot;</span>: <span class="t-str">&quot;body&quot;</span>,

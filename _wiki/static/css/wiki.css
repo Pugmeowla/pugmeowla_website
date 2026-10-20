@@ -586,11 +586,13 @@ html.js .tabs > section > .tab-label { display: none; }
 .credits-list { list-style: none; padding: 0 !important; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 12px; }
 .credits-list li { margin: 0 !important; padding: 10px 14px; border-radius: 14px; background: var(--panel-soft); border: 1px solid var(--hairline); }
 .credits-list small { display: block; color: var(--text-soft); }
-.figure-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; align-items: start; }
+/* Symmetric rows: --cols is set by the build from the number of pictures, and a shorter last row is centered. */
+.figure-row { --cols: 2; --gap: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); align-items: flex-start; }
+.figure-row > .figure { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols)); min-width: 0; }
+@media (max-width: 640px) { .figure-row { --cols: 2 !important; } }
 .figure-row .figure { margin: 0; }
 .figure-row .figure .zoomable { display: block; width: 100%; }
 .figure-row .figure img { margin: 0 auto; }
-.generator-row { grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr)); }
 
 @media (max-width: 360px) {
   .index-side { padding-left: 0; }
