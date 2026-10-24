@@ -415,7 +415,8 @@ export const abilities = [
     activation: 'Toggle', cost: 24, requires: [], cooldown: 200, icon: S('mind'),
     summary: 'Walk through blocks and mobs. Nothing can hurt you while it is on.',
     details: `<p>You pass through blocks (up and down too while flying) and every hit is cancelled. Your reach and hitbox shrink to
-      almost nothing while it's on, which uses Pehkui. 10 second cooldown afterwards.</p>`,
+      almost nothing while it's on, which uses Pehkui. It lasts up to 10 seconds at a time and recharges while it's off. With all six
+      Infinity Stones it has no cooldown: it stays on as long as you like.</p>`,
   },
   {
     group: 'mind', key: 'recipe', name: 'Recipes', type: 'palladium:command',
