@@ -20,7 +20,7 @@ icon: stones/reality_stone.png
 {{abilities reality}}
 
 <h2 id="skill-tree">Skill tree costs</h2>
-<p>Block Saving costs 128 {{item aspects_of_existance}}. Everything else costs one.</p>
+<p>Prices are in {{item aspects_of_existance}}. Block Saving, which copies blocks, is by far the most expensive at 64.</p>
 {{costtable reality}}
 
 <h2 id="size-steps">Size Changing steps</h2>
@@ -39,5 +39,6 @@ icon: stones/reality_stone.png
   <li>Copy works up to 30 blocks away and won't copy unbreakable blocks.</li>
   <li>Paste changes the block you're looking at, or every non-air block within 5 blocks of it while you're sneaking.</li>
   <li>Paste checks build permissions and claims, so it won't work on land you can't build on, and it never touches unbreakable blocks.</li>
+  <li>Only full blocks can be saved (not grass, flowers, crops, slabs or doors). Copy looks through those to the full block behind.</li>
   <li>Your saved block stays through death and relogging. The Paste icon shows what it is.</li>
 </ul>

@@ -12,7 +12,7 @@ icon: renders/orb.png
     <tr><td>{{item orb}}</td><td>{{stone power}}</td><td>No</td><td>Unlock it, open it, right-click</td><td>Open it and right-click with the stone</td></tr>
     <tr><td>{{item tesseract}}</td><td>{{stone space}}</td><td>Yes, in either hand</td><td>Left-click it on the ground (the Tesseract is gone after)</td><td>Can't</td></tr>
     <tr><td>{{item aether}}</td><td>{{stone reality}}</td><td>Yes, in either hand</td><td>Left-click it on the ground (the Aether is gone after)</td><td>Empty Aether with the stone in your off hand, or right-click it on the ground</td></tr>
-    <tr><td>{{item eye_of_agamotto}}</td><td>{{stone time}}</td><td>Yes, held or worn, while the stone is in it</td><td>Wear it, open it, Remove Time Stone, or left-click it on the ground</td><td>Wear it, open it, Insert Time Stone</td></tr>
+    <tr><td>{{item eye_of_agamotto}}</td><td>{{stone time}}</td><td>Yes, held or worn, while the stone is in it</td><td>Wear it, open it, right-click with an empty hand, or left-click it on the ground</td><td>Wear it, open it, right-click holding the stone</td></tr>
     <tr><td>{{item scepter}}</td><td>{{stone mind}}</td><td>Yes, in either hand</td><td>Left-click it on the ground: you get the stone and an Empty Scepter</td><td>Right-click the Empty Scepter on the ground with the stone</td></tr>
   </tbody>
 </table></div>
@@ -20,7 +20,9 @@ icon: renders/orb.png
 <h2 id="orb">Orb</h2>
 {{itemcards orb}}
 <p>The Orb from the Morag Temple vault has a combination lock. It does <strong>not</strong> give you the Power Stone's power while it's
-  closed. Hold it (the off hand works best) and its abilities show up in the ability bar:</p>
+  closed. Hold it in either hand and its abilities show up in the ability bar. You hold it in both hands in front of your chest,
+  a half in each, and in first person it sits in the middle of your view. <em>Rotate Left</em> rolls the left half down and
+  <em>Rotate Right</em> the right half up, and opening it spins both back into line and pulls them apart around the Power Stone:</p>
 {{abilities orb}}
 <h3 id="cracking-the-orb">Unlocking the combination</h3>
 <div class="callout"><span class="callout-title">Get a pen and paper ready</span><p>Unlocking the Orb is trial and error. Write down
@@ -38,6 +40,8 @@ icon: renders/orb.png
 <ul>
   <li>Once it's unlocked, <em>Open / Close Orb</em> opens the shell and the Power Stone grows into view. You can open it as often as you
     like after that.</li>
+  <li>While it's open the Power Stone is exposed: it's as unstable as holding the bare stone, with the explosions that come with it,
+    but none of its abilities can be used until you take it out.</li>
   <li>With the Orb open, <strong>right-click</strong> to take the Power Stone. There's only one per world, so if someone already took it
     you'll see "The Power Stone has already been taken from an Orb."</li>
   <li>To put it back, open the Orb and right-click while holding the Power Stone in your other hand.</li>
@@ -83,20 +87,26 @@ icon: renders/orb.png
 <p>Agamotto, the first Sorcerer Supreme, made the Eye to hold the Time Stone, and the Masters of the Mystic Arts kept it in the Sanctum
   Sanctorum. Wear it on your chest (it counts as iron armor) or in the Curios <strong>necklace</strong> slot. While it still has the stone,
   wearing or holding it gives you the Time Stone's power. Its abilities:</p>
+<div class="callout warn"><span class="callout-title">Be careful where you wear it</span><p>In the <strong>chest</strong> slot the Eye
+  takes damage like any armor and can break, and the Time Stone is lost with it. In the Curios <strong>necklace</strong> slot it never
+  breaks, so wear it there if you can.</p></div>
 {{abilities eye}}
 <ul>
-  <li><em>Open Eye</em> opens it with an animation, and the stone starts glowing once it's open.</li>
-  <li><em>Remove Time Stone</em> (while it's open) gives you the stone and leaves the Eye empty. There's only one Time Stone per world, so
+  <li><em>Open Eye</em> opens it with an animation, and the stone starts glowing once it's open. It stays open (or closed) when you take
+    it off, put it on a suit stand or put it back on.</li>
+  <li><em>Remove Time Stone</em>: right-click with an empty hand while it's open. It gives you the stone and leaves the Eye empty. There's only one Time Stone per world, so
     if it's already gone you'll see "The Time Stone has already been taken from an Eye of Agamotto."</li>
-  <li><em>Insert Time Stone</em> (while it's open and empty) needs the Time Stone in one of your hands.</li>
-  <li>Hitting the Eye while it's on the ground also lets the stone out. The Eye stays where it is.</li>
+  <li><em>Insert Time Stone</em>: right-click while it's open and empty, holding the Time Stone in either hand.</li>
+  <li>Hitting the Eye while it's on the ground also lets the stone out. The Eye stays where it is, and always lies there closed.</li>
+  <li>Every Eye shows the world's one Time Stone: once it's out, every Eye of Agamotto item and worn Eye is drawn without it, and crafting
+    a new Eye (which uses up a Time Stone) puts it back in all of them.</li>
   <li>Old <em>Empty Eye of Agamotto</em> items from earlier versions still work, and turn into the normal Eye when you put the stone in.</li>
 </ul>
 
 <h2 id="scepter">Scepter</h2>
 {{itemcards scepter empty_scepter}}
-<p>Loki's Scepter is an iron tier sword with the Mind Stone in it. In either hand it gives the Mind Stone's power, and in your main hand
-  you also get the {{ab scepter/scepter_blast}}. Left-click it on the ground to split it into the Mind Stone and an Empty Scepter. Right-click an
+<p>Loki's Scepter is an iron tier sword with the Mind Stone in it. In either hand it gives the Mind Stone's power and the {{ab scepter/scepter_blast}}, fired
+  from the arm holding it. Left-click it on the ground to split it into the Mind Stone and an Empty Scepter. Right-click an
   Empty Scepter on the ground while holding the Mind Stone to put it back together (or the other way round).</p>
 <p>The Scepter, the Aether and the Eye of Agamotto glow brighter while you use one of their stone's glowing abilities, like the
   stones themselves. See {{page stones/index.html#glow The Infinity Stones}}.</p>

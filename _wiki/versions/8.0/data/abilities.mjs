@@ -26,19 +26,21 @@ export const abilities = [
   // Power Stone
   {
     group: 'power', key: 'impower', name: 'Energy Blast', type: 'infinity:energy_blast',
-    activation: 'Key press', cost: 1, requires: [], cooldown: 5, icon: 'icons/energy_blast.png',
+    activation: 'Key press', cost: 2, requires: [], cooldown: 5, icon: 'icons/energy_blast.png',
     summary: 'A magenta energy bolt whose damage scales with your power level.',
     details: `<p>Hits the first thing in its path. The damage scales with your
-      <a href="@/stones/power.html#power-levels">power level</a> on the purple bar.</p>`,
+      <a href="@/stones/power.html#power-levels">power level</a> on the purple bar.</p>
+      <p>It leaves from the stone: your arm snaps up and it fires from the hand with the gauntlet or the stone, from the top
+      of a Cosmi-Rod's staff, or from the middle of an open Orb, and still goes where your crosshair is.</p>`,
   },
   {
     group: 'power', key: 'knockback', name: 'Knockback Resistance', type: 'palladium:attribute_modifier',
-    activation: 'Passive', cost: 1, requires: ['impower'], icon: S('power'),
+    activation: 'Passive', cost: 3, requires: ['impower'], icon: S('power'),
     summary: 'Nothing knocks you back.',
   },
   {
     group: 'power', key: 'power_blast_aim', name: 'Power Blast', type: 'infinity:power_blast',
-    activation: 'Hold', cost: 1, requires: ['impower'], icon: 'icons/power_blast.png',
+    activation: 'Hold', cost: 6, requires: ['impower'], icon: 'icons/power_blast.png',
     summary: 'Hold to fire a 100 block beam that smelts blocks and starts fires.',
     details: `<p>Does 2^level damage. At full power (level 11 with all six stones) it turns rainbow and explodes (power 4) wherever
       it hits a block. Fired from your off hand.</p>`,
@@ -69,7 +71,7 @@ export const abilities = [
   },
   {
     group: 'power', key: 'explosion2', name: 'Cosmic Explosion', type: 'palladium:dummy',
-    activation: 'Upgrade', cost: 1, requires: ['power_blast_aim'], icon: 'icons/rocket_burst.png',
+    activation: 'Upgrade', cost: 12, requires: ['power_blast_aim'], icon: 'icons/rocket_burst.png',
     summary: 'You can control the raw energy now. Unlocks Rocket Burst and Power Cyclone.',
   },
   {
@@ -88,7 +90,7 @@ export const abilities = [
   },
   {
     group: 'power', key: 'meteor_storm', name: 'Meteor Storm', type: 'infinity:meteor_storm',
-    activation: 'Key press', cost: 1, requires: ['explosion2'], needsStones: ['power', 'space'], icon: 'icons/meteor.png',
+    activation: 'Key press', cost: 32, requires: ['explosion2'], needsStones: ['power', 'space'], icon: 'icons/meteor.png',
     summary: 'Breaks a moon apart and drops the pieces where you are looking.',
     details: `<p>Needs the Space Stone too, from the gauntlet, a held Tesseract or Space Stone, the head slot or a Cosmi-Rod.
       Reaches up to 256 blocks. The moon is 1 + your power level blocks across. You can only have one storm going at a time, and
@@ -103,7 +105,7 @@ export const abilities = [
   // Space Stone
   {
     group: 'space', key: 'force_field', name: 'Force Field', type: 'palladium:attribute_modifier + infinity:force_field',
-    activation: 'Toggle', cost: 1, requires: [], icon: 'icons/force_field.png',
+    activation: 'Toggle', cost: 4, requires: [], icon: 'icons/force_field.png',
     summary: 'A shield bubble that blocks attacks but stops you moving.',
     details: `<p>While it's up you get a huge armor and toughness boost, a shield is drawn around you, and you can't walk, strafe
       or jump. Hits from anything dealing less than <strong>23</strong> damage are blocked. Iron Golems, Wardens, Vindicators,
@@ -111,7 +113,7 @@ export const abilities = [
   },
   {
     group: 'space', key: 'jump_teleport', name: 'Jump Teleport', type: 'infinity:jump_portal',
-    activation: 'Key press', cost: 1, requires: ['force_field'], icon: 'icons/teleport.png',
+    activation: 'Key press', cost: 6, requires: ['force_field'], icon: 'icons/teleport.png',
     summary: 'Opens a quick portal to the block you are looking at and jumps you through.',
     details: `<p>One portal opens in front of you and one at the block you're looking at, up to 256 blocks away. You land on
       safe ground next to that block. Both close after 3 seconds and anything can use them until then. With Immersive Portals
@@ -120,7 +122,7 @@ export const abilities = [
   },
   {
     group: 'space', key: 'teleport', name: 'Teleport GUI', type: 'infinity:portal',
-    activation: 'Key press', cost: 1, requires: ['force_field'], icon: 'icons/teleport.png',
+    activation: 'Key press', cost: 10, requires: ['force_field'], icon: 'icons/teleport.png',
     summary: 'Type a dimension and coordinates and open a portal there.',
     details: `<p>Opens the <em>Space Teleport</em> menu. The dimension field suggests every dimension the server has, and you fill
       in X, Y and Z. <strong>Open Portal</strong> puts one portal 2.5 blocks in front of you and the other at the destination.
@@ -131,7 +133,7 @@ export const abilities = [
   },
   {
     group: 'space', key: 'telekinesis', name: 'Telekinesis', type: 'infinity:telekinesis',
-    activation: 'Toggle', cost: 1, requires: ['force_field'], icon: S('space'),
+    activation: 'Toggle', cost: 8, requires: ['force_field'], icon: S('space'),
     summary: 'Pick up a mob or a block, move it around and throw it.',
     details: `<p>Turn it on while looking at an entity or solid block (up to 32 blocks away) and it floats in front of you.
       <strong>Scroll</strong> to move it between 2 and 24 blocks away and <strong>left-click</strong> to throw it. Thrown things
@@ -141,14 +143,14 @@ export const abilities = [
   },
   {
     group: 'space', key: 'spatial_lock', name: 'Spatial Lock', type: 'infinity:spatial_lock',
-    activation: 'Upgrade', cost: 1, requires: ['telekinesis'], icon: S('space'),
+    activation: 'Upgrade', cost: 6, requires: ['telekinesis'], icon: S('space'),
     summary: 'Right-click while holding something with Telekinesis to freeze it in place.',
     details: `<p>Locked things can't move, fall or be knocked back. A held block stays floating. Pick it up with Telekinesis
       again to free it. Locks are saved with the world.</p>`,
   },
   {
     group: 'space', key: 'black_hole', name: 'Black Hole', type: 'infinity:black_hole',
-    activation: 'Toggle', cost: 1, requires: ['teleport'], needsStones: ['power', 'space'], icon: 'icons/black_hole.png',
+    activation: 'Toggle', cost: 32, requires: ['teleport'], needsStones: ['power', 'space'], icon: 'icons/black_hole.png',
     summary: 'Summon a black hole that follows your aim, then throw it.',
     details: `<p>Needs the Power Stone as well. The black hole grows in front of you, follows where you look and pulls in mobs
       and blocks. <strong>Left-click</strong> throws it and it collapses by itself a bit later. Turning it off before you throw
@@ -156,17 +158,17 @@ export const abilities = [
   },
   {
     group: 'space', key: 'water_breathing', name: 'Water Breathing', type: 'palladium:command',
-    activation: 'Passive', cost: 1, requires: [], icon: S('space'),
+    activation: 'Passive', cost: 2, requires: [], icon: S('space'),
     summary: 'Breathe underwater.',
   },
   {
     group: 'space', key: 'fall_immunity', name: 'Fall Damage Immunity', type: 'palladium:damage_immunity',
-    activation: 'Passive', cost: 1, requires: [], icon: S('space'),
+    activation: 'Passive', cost: 3, requires: [], icon: S('space'),
     summary: 'No fall damage.',
   },
   {
     group: 'space', key: 'speed', name: 'Speed', type: 'palladium:attribute_modifier',
-    activation: 'Passive', cost: 1, requires: [], icon: S('space'),
+    activation: 'Passive', cost: 2, requires: [], icon: S('space'),
     summary: 'Adds 0.05 to your movement speed, about 50% faster on foot.',
   },
   {
@@ -198,16 +200,17 @@ export const abilities = [
   // Reality Stone
   {
     group: 'reality', key: 'save_dummy', name: 'Block Saving', type: 'palladium:dummy',
-    activation: 'Upgrade', cost: 128, requires: [], icon: S('reality'),
+    activation: 'Upgrade', cost: 64, requires: [], icon: S('reality'),
     summary: 'Unlocks Copy Block and Paste Block.',
-    details: `<p><strong>Copy Block</strong> saves the block you're looking at, up to 30 blocks away. Unbreakable blocks can't be
-      copied. <strong>Paste Block</strong> turns the block you're looking at into your saved block, or every non-air block within 5
+    details: `<p><strong>Copy Block</strong> saves the full block you're looking at, up to 30 blocks away, looking through grass,
+      flowers and other partial blocks. Only full blocks can be saved, so you can't paste floating grass or wheat off farmland, and
+      unbreakable blocks can't be copied. <strong>Paste Block</strong> turns the block you're looking at into your saved block, or every non-air block within 5
       blocks if you're sneaking. Paste respects build permissions and claims. Your saved block stays through death and relogging
       and shows as the Paste icon.</p>`,
   },
   {
     group: 'reality', key: 'shrink_dummy', name: 'Size Changing', type: 'palladium:dummy + palladium:command',
-    activation: 'Scroll', cost: 1, requires: [], icon: S('reality'),
+    activation: 'Scroll', cost: 8, requires: [], icon: S('reality'),
     summary: 'Unlocks Size Control. Turn it on and scroll to grow up to 5× or shrink to 0.1×.',
     details: `<p>Turn on <strong>Size Control</strong> in the ability bar and scroll. Down shrinks you (0.9×, 0.8× and so on down to
       0.1×) and up grows you (2×, 3×, 4×, 5×, and you move faster when you're bigger). Turning Size Control off puts you back to
@@ -215,31 +218,31 @@ export const abilities = [
   },
   {
     group: 'reality', key: 'invisibility', name: 'Invisibility', type: 'palladium:invisibility',
-    activation: 'Toggle', cost: 1, requires: [], icon: S('reality'),
+    activation: 'Toggle', cost: 6, requires: [], icon: S('reality'),
     summary: 'Properly invisible. No body, no armor, no name tag.',
   },
   {
     group: 'reality', key: 'weather_wheel', name: 'Change the Weather', type: 'palladium:ability_wheel',
-    activation: 'Hold', cost: 1, requires: [], icon: 'icons/weather_wheel.png',
+    activation: 'Hold', cost: 3, requires: [], icon: 'icons/weather_wheel.png',
     summary: 'Hold for a wheel with Clear, Rain and Thunder.',
   },
 
   // Soul Stone
   {
     group: 'soul', key: 'soul_storage', name: 'Soul Storage', type: 'infinity:soul_storage',
-    activation: 'Passive', cost: 1, requires: [], icon: S('soul'),
+    activation: 'Passive', cost: 4, requires: [], icon: S('soul'),
     summary: 'Everything you kill gives you a soul, up to 50 (the orange bar).',
     details: `<p>Clones and mobs that were already drained don't count. See <a href="@/stones/soul.html#soul-storage">Soul Storage</a>.</p>`,
   },
   {
     group: 'soul', key: 'soul_heal', name: 'Soul Heal', type: 'infinity:soul_heal',
-    activation: 'Key press', cost: 1, requires: ['soul_storage'], cooldown: 10, icon: S('soul'),
+    activation: 'Key press', cost: 6, requires: ['soul_storage'], cooldown: 10, icon: S('soul'),
     summary: 'Spend 1 soul to heal 2 hearts.',
     details: `<p>Most useful early on, before you can afford Health and Regeneration.</p>`,
   },
   {
     group: 'soul', key: 'soul_drain', name: 'Soul Drain', type: 'infinity:soul_drain',
-    activation: 'Key press', cost: 1, requires: ['soul_heal'], cooldown: 10, icon: S('soul'),
+    activation: 'Key press', cost: 12, requires: ['soul_heal'], cooldown: 10, icon: S('soul'),
     summary: 'Pull the soul out of the mob you look at (8 blocks). It stands still and turns grey.',
     details: `<p>Gives you 1 soul. Use it while <strong>sneaking</strong> to give a drained mob its soul back for 1 soul. Players,
       bosses (<code>#forge:bosses</code>), clones and mobs that already have no AI can't be drained. The mob stays drained after a
@@ -247,12 +250,12 @@ export const abilities = [
   },
   {
     group: 'soul', key: 'glow', name: 'Glow', type: 'palladium:entity_glow',
-    activation: 'Hold', cost: 1, requires: [], icon: S('soul'),
+    activation: 'Hold', cost: 3, requires: [], icon: S('soul'),
     summary: 'Hold to see every mob and player within 100 blocks outlined in orange.',
   },
   {
     group: 'soul', key: 'locateplayer_command', name: 'Locate Entity', type: 'infinity:locate_player',
-    activation: 'Passive', cost: 1, requires: ['glow'], icon: S('soul'),
+    activation: 'Passive', cost: 4, requires: ['glow'], icon: S('soul'),
     summary: 'Lets you use /infinity soul locateentity <name> to find a player or named mob, and makes Mind Reading show where its target is.',
     details: `<p>The command finds the online player with that name, otherwise the closest living thing with that name (a mob named
       with a name tag), in your dimension first and then the others. It tells you the coordinates and the dimension. With it
@@ -261,26 +264,27 @@ export const abilities = [
   },
   {
     group: 'soul', key: 'summon_zombie', name: 'Summon Zombie', type: 'palladium:command',
-    activation: 'Key press', cost: 1, requires: [], icon: S('soul'),
-    summary: 'Summons six zombies in Thanos armor on your team.',
-    details: `<p>Three named ones (Transfer Zombie, Pugmeowla Zombie and Dark Zombie) and three normal ones. You and the zombies
-      join the <code>peaceful</code> team so they don't go for you.</p>`,
+    activation: 'Key press', cost: 3, requires: [], icon: S('soul'),
+    summary: 'Summons up to six zombies in Thanos armor on your team, one stored soul each.',
+    details: `<p>Three named ones (Transfer Zombie, Pugmeowla Zombie and Dark Zombie) and three normal ones, never babies. Each costs one
+      soul from Soul Storage, so with fewer souls you get fewer zombies (named ones first) and with none you get nothing. You and the
+      zombies join the <code>peaceful</code> team so they don't go for you.</p>`,
   },
   {
     group: 'soul', key: 'enter_soulworld', name: 'Enter / Exit Soulworld', type: 'infinity:pocket_dimension_enter / exit',
-    activation: 'Key press', cost: 1, requires: [], icon: S('soul'),
+    activation: 'Key press', cost: 8, requires: [], icon: S('soul'),
     summary: 'Takes you into the Soulworld, along with every mob, animal and player within 5 blocks of you. Use it again to come back.',
     details: `<p>Everyone arrives at Y 72 above the same X and Z. Each mob remembers where it came from, so <em>Exit Soulworld</em>
       (which replaces the ability while you're inside) sends them all back to their own spot.</p>`,
   },
   {
     group: 'soul', key: 'saturation', name: 'Saturation', type: 'palladium:command',
-    activation: 'Passive', cost: 1, requires: [], icon: S('soul'), defensive: true,
+    activation: 'Passive', cost: 4, requires: [], icon: S('soul'), defensive: true,
     summary: 'You never get hungry.',
   },
   {
     group: 'soul', key: 'effect_immune', name: 'Effect Immunity', type: 'infinity:effect_immunity',
-    activation: 'Passive', cost: 1, requires: [], icon: S('soul'), defensive: true,
+    activation: 'Passive', cost: 16, requires: [], icon: S('soul'), defensive: true,
     summary: 'Bad effects can\'t be given to you at all, and any you already have are cleared.',
     details: `<p>Covers Poison, Wither, Slowness, Weakness, Mining Fatigue, Hunger, Nausea, Blindness, Darkness, Bad Omen and Bad
       Luck. They're refused as they're applied, whether they come from a potion, a mob or a command.</p>`,
@@ -292,7 +296,7 @@ export const abilities = [
   },
   {
     group: 'soul', key: 'health', name: 'Health', type: 'palladium:attribute_modifier',
-    activation: 'Passive', cost: 64, requires: [], icon: S('soul'), defensive: true,
+    activation: 'Passive', cost: 48, requires: [], icon: S('soul'), defensive: true,
     summary: 'Close to infinite max health.',
   },
   {
@@ -332,12 +336,12 @@ export const abilities = [
   // Time Stone
   {
     group: 'time', key: 'fast_forward', name: 'Fast Forward Daylight Cycle', type: 'palladium:command',
-    activation: 'Hold', cost: 1, requires: [], icon: S('time'),
+    activation: 'Hold', cost: 2, requires: [], icon: S('time'),
     summary: 'Hold to speed through the day (100 ticks of daytime every tick).',
   },
   {
     group: 'time', key: 'projectile_stop', name: 'Stop Projectile', type: 'infinity:projectile_stop',
-    activation: 'Toggle', cost: 1, requires: ['fast_forward'], icon: 'icons/no_arrow.png',
+    activation: 'Toggle', cost: 10, requires: ['fast_forward'], icon: 'icons/no_arrow.png',
     summary: 'Projectiles that come within 6 blocks of you freeze in the air.',
     details: `<p>Works on every projectile except fishing bobbers: arrows, tridents, ender pearls, snowballs, fireballs and other mods'
       projectiles too. Your own aren't stopped. A frozen projectile can't move, fall or hit anything for as long as it stays in
@@ -346,7 +350,7 @@ export const abilities = [
   },
   {
     group: 'time', key: 'time_set', name: 'Time Command', type: 'infinity:time_set',
-    activation: 'Passive', cost: 1, requires: ['fast_forward'], icon: S('time'),
+    activation: 'Passive', cost: 4, requires: ['fast_forward'], icon: S('time'),
     summary: 'Lets you use /infinity time set <time>.',
     details: `<p>See <a href="@/commands.html#infinity-time-set">/infinity time set</a>. Time always moves forward to the time you
       ask for.</p>`,
@@ -358,7 +362,7 @@ export const abilities = [
   },
   {
     group: 'time', key: 'slow_time_dummy', name: 'Slow Time', type: 'infinity:time_flow',
-    activation: 'Scroll', cost: 5, requires: ['fast_forward'], icon: 'icons/hourglass.png',
+    activation: 'Scroll', cost: 12, requires: ['fast_forward'], icon: 'icons/hourglass.png',
     summary: 'Unlocks Change Flow of Time. Turn it on and scroll to change the server tick rate.',
     details: `<p>While <strong>Change Flow of Time</strong> is on, scroll down to slow the world (4 fewer ticks per second per step,
       down to 2 TPS) or up to speed it up (4 more per step, up to 40 TPS). The green bar shows the step and the middle is normal
@@ -367,7 +371,7 @@ export const abilities = [
   },
   {
     group: 'time', key: 'time_freeze_dummy', name: 'Freeze Time', type: 'infinity:time_freeze',
-    activation: 'Toggle', cost: 10, requires: ['slow_time_dummy'], icon: 'icons/stop.png',
+    activation: 'Toggle', cost: 32, requires: ['slow_time_dummy'], icon: 'icons/stop.png',
     summary: 'Unlocks Time Freeze. Everything stops except you.',
     details: `<p>Press once to freeze and again to unfreeze. You can walk on water while time is frozen.
       <strong>It affects the whole server.</strong> Needs Chrono API.</p>`,
@@ -381,7 +385,7 @@ export const abilities = [
   // Mind Stone
   {
     group: 'mind', key: 'passive', name: 'Pacify', type: 'palladium:command',
-    activation: 'Key press', cost: 1, requires: [], icon: S('mind'),
+    activation: 'Key press', cost: 10, requires: [], icon: S('mind'),
     summary: 'Mobs within 5 blocks stop attacking you. Sneak and use it to undo.',
     details: `<p>You and everything within 5 blocks join the <code>peaceful</code> scoreboard team, so those mobs leave you alone.
       Use it while <strong>sneaking</strong> (Un-Pacify) to take nearby mobs off the team again. Works well with the Soul Stone's
@@ -396,7 +400,7 @@ export const abilities = [
   },
   {
     group: 'mind', key: 'flight', name: 'Flight', type: 'palladium:flight',
-    activation: 'Passive', cost: 1, requires: [], icon: 'icons/fly.png',
+    activation: 'Passive', cost: 16, requires: [], icon: 'icons/fly.png',
     summary: 'Fly.',
     details: `<p>Works when the stone comes from the gauntlet, a held Mind Stone or Scepter, the Curios head slot or a Cosmi-Rod.
       If you'd rather use another mod's flight, the free <em>Flight Toggle</em> turns it off and on.</p>`,
@@ -408,7 +412,7 @@ export const abilities = [
   },
   {
     group: 'mind', key: 'intangibility', name: 'Intangibility', type: 'palladium:intangibility',
-    activation: 'Toggle', cost: 1, requires: [], cooldown: 200, icon: S('mind'),
+    activation: 'Toggle', cost: 24, requires: [], cooldown: 200, icon: S('mind'),
     summary: 'Walk through blocks and mobs. Nothing can hurt you while it is on.',
     details: `<p>You pass through blocks (up and down too while flying) and every hit is cancelled. Your reach and hitbox shrink to
       almost nothing while it's on, which uses Pehkui. 10 second cooldown afterwards.</p>`,
@@ -420,12 +424,12 @@ export const abilities = [
   },
   {
     group: 'mind', key: 'hero', name: 'Hero of the People', type: 'palladium:command',
-    activation: 'Passive', cost: 1, requires: [], icon: S('mind'),
+    activation: 'Passive', cost: 4, requires: [], icon: S('mind'),
     summary: 'Permanent Hero of the Village VI.',
   },
   {
     group: 'mind', key: 'night_vision', name: 'Night Vision', type: 'palladium:command',
-    activation: 'Passive', cost: 1, requires: [], icon: S('mind'),
+    activation: 'Passive', cost: 2, requires: [], icon: S('mind'),
     summary: 'Permanent Night Vision.',
   },
   {
@@ -440,7 +444,7 @@ export const abilities = [
   },
   {
     group: 'mind', key: 'clones', name: 'Mind Illusions', type: 'infinity:clones',
-    activation: 'Key press', cost: 1, requires: [], cooldown: 400, icon: 'icons/illusion.png',
+    activation: 'Key press', cost: 8, requires: [], cooldown: 400, icon: 'icons/illusion.png',
     summary: 'Three copies of you for 60 seconds.',
     details: `<p>The clones look exactly like you, with your skin, armor, held items, render layers and name tag. Each has 20
       health. They follow you like a tamed wolf, fight back, and attack whatever you hit. Mobs after you pick randomly between
@@ -448,7 +452,7 @@ export const abilities = [
   },
   {
     group: 'mind', key: 'mind_reading', name: 'Mind Reading', type: 'infinity:mind_reading',
-    activation: 'Key press', cost: 1, requires: [], cooldown: 20, icon: S('mind'),
+    activation: 'Key press', cost: 4, requires: [], cooldown: 20, icon: S('mind'),
     summary: 'Look at a mob or player (up to 32 blocks) to see its health, effects, gear, inventory and target. With Locate Entity, read any mind by name from anywhere.',
     details: `<p>Opens a view you can't take anything out of. The top row has a name tag whose tooltip shows the type, health,
       absorption, armor, owner and current target (plus food and level for players), followed by up to 8 active effects. Below
@@ -461,7 +465,7 @@ export const abilities = [
   },
   {
     group: 'mind', key: 'disguise', name: 'Disguise', type: 'infinity:disguise',
-    activation: 'Key press', cost: 1, requires: [], cooldown: 20, icon: S('mind'),
+    activation: 'Key press', cost: 6, requires: [], cooldown: 20, icon: S('mind'),
     summary: "Type a username and wear that player's skin and name.",
     details: `<p>The name can be 3 to 16 letters, digits or underscores. Everyone sees you with that player's skin and name tag.
       <strong>Reset</strong> puts your own skin back. Slim skins are drawn with slim arms. The disguise is only worn while the ability
@@ -539,8 +543,8 @@ export const abilities = [
   },
   {
     group: 'eye', key: 'remove_stone', name: 'Remove / Insert Time Stone', type: 'infinity:eye_of_agamotto',
-    activation: 'Key press', cost: null, requires: [], cooldown: 10, icon: S('time'),
-    summary: 'Take the Time Stone out of the open Eye, or put a held one back.',
+    activation: 'Right-click', cost: null, requires: [], cooldown: 10, icon: S('time'),
+    summary: 'Right-click with an empty hand to take the Time Stone out of the open Eye, or holding the stone to put it back.',
   },
   {
     group: 'aether', key: 'insert_reality_stone', name: 'Insert Reality Stone', type: 'palladium:command',

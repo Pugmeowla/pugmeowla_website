@@ -118,6 +118,21 @@ const macros = {
       + `<tbody>${rows}</tbody><tfoot><tr><td>Everything</td><td>${total}</td><td colspan="2"></td></tr></tfoot></table></div>`;
   },
 
+  // Every stone's skill tree bought out, from the same costs as costtable, with how many temple chests or Shards that is.
+  costtotals() {
+    const totals = stones.map((s) => ({ stone: s, total: abilities
+      .filter((a) => a.group === s.id && typeof a.cost === 'number').reduce((sum, a) => sum + a.cost, 0) }));
+    const all = totals.reduce((sum, t) => sum + t.total, 0);
+    const rows = totals.map(({ stone, total }) => `<tr><td><a href="@/stones/${stone.id}.html">${escapeHtml(stone.name)}</a></td>`
+      + `<td>${total.toLocaleString('en-US')}</td></tr>`).join('');
+    return `<div class="callout"><span class="callout-title">Fun fact: maxing out every stone</span>`
+      + `<p>Buying every ability in all six skill trees takes <strong>${all.toLocaleString('en-US')}</strong> Aspects of Existence. `
+      + `That's about ${Math.round(all / 2.5).toLocaleString('en-US')} Infinity Temple chests at 2.5 a chest, `
+      + `or ${Math.ceil(all / 4).toLocaleString('en-US')} Shards of Existence crafted 4 at a time.</p>`
+      + `<div class="table-wrap"><table><thead><tr><th>Stone</th><th>Aspects to max it</th></tr></thead><tbody>${rows}</tbody>`
+      + `<tfoot><tr><td>All six</td><td>${all.toLocaleString('en-US')}</td></tr></tfoot></table></div></div>`;
+  },
+
   abilityindex() {
     const groupButtons = Object.entries(groups)
       .filter(([id]) => abilities.some((a) => a.group === id))
