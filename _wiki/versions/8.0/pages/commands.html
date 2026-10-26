@@ -15,6 +15,7 @@ icon: icons/teleport.png
     <tr><td><a href="#infinity-gauntlet-snap"><code>/infinity gauntlet snap [type]</code></a></td><td>Operators (level 2)</td><td>The Snap</td></tr>
     <tr><td><a href="#infinity-unlock-stones"><code>/infinity unlock_stones</code></a> and <code>lock_stones</code></td><td>Operators (level 2)</td><td>Skill trees</td></tr>
     <tr><td><a href="#infinity-unlock-orb"><code>/infinity unlock_orb</code></a></td><td>Operators (level 2)</td><td>Orb</td></tr>
+    <tr><td><a href="#infinity-locate-real"><code>/infinity locate_real &lt;structure&gt;</code></a></td><td>Operators (level 2)</td><td>Structures</td></tr>
     <tr><td><a href="#infinity-ability"><code>/infinity ability disable|enable|list</code></a></td><td>Operators (level 2)</td><td>Server rules</td></tr>
     <tr><td><a href="#infinity-soul-zombies"><code>/infinity soul zombies</code></a></td><td>Operators (level 2)</td><td>Soul Stone</td></tr>
     <tr><td><a href="#infinity-summon-malekith"><code>/infinity summon malekith</code></a></td><td>Operators (level 2)</td><td>Svartalfheim</td></tr>
@@ -134,6 +135,13 @@ icon: icons/teleport.png
 <h3 id="infinity-unlock-orb">/infinity unlock_orb</h3>
 <pre data-lang="command">/infinity unlock_orb</pre>
 <p>Unlocks the Orb's combination for you, as if you'd entered it. Prints "The Orb has been unlocked!"</p>
+
+<h3 id="infinity-locate-real">/infinity locate_real &lt;structure&gt;</h3>
+<pre data-lang="command">/infinity locate_real infinity:morag_temple</pre>
+<p>Shows where the real one of a structure with {{page structures.html#decoys fakes}} is (<code>infinity:aether</code>,
+  <code>morag_temple</code>, <code>norse_village</code>, <code>sanctuary</code> or <code>sanctum</code>), in any dimension, with coordinates
+  you can click to teleport there. The real structures and their fakes share one ID, so <code>/locate</code> and Explorer's Compass find
+  whichever is closest.</p>
 
 <h3 id="infinity-soul-zombies">/infinity soul zombies</h3>
 <pre data-lang="command">/infinity soul zombies</pre>

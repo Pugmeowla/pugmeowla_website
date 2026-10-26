@@ -78,7 +78,8 @@
     <tr><td><a href="#uru-meteor">Uru Meteor</a></td><td><code>infinity:<wbr>uru_<wbr>meteor</code></td><td>Svartalfheim</td><td>Very common</td><td><a class="chip item-chip" href="items.html#item-uru-ore"><img src="assets/img/renders/uru_ore.png" alt="" class="px" loading="lazy">Uru Ore</a></td></tr>
   </tbody>
 </table></div>
-<p>You can find any of them except Vormir's Edge with <code>/<wbr>locate structure &lt;id&gt;</code> while you're in the right dimension. Vormir's Edge is always next to 0, 0 on Vormir. The Sanctuary, Morag Temple, Vormir's
+<p>You can find any of them except Vormir's Edge with <code>/<wbr>locate structure &lt;id&gt;</code> while you're in the right dimension, though for
+  the five with <a href="#decoys">fakes</a> it may find a fake. Vormir's Edge is always next to 0, 0 on Vormir. The Sanctuary, Morag Temple, Vormir's
   Edge and Uru Meteor don't have screenshots here yet.</p>
 
 <h2 id="stone-structures">Stone structures<a class="heading-anchor" href="#stone-structures" aria-label="Link to this section">#</a></h2>
@@ -87,7 +88,7 @@
 
 <h3 id="morag-temple">Morag Temple<a class="heading-anchor" href="#morag-temple" aria-label="Link to this section">#</a></h3>
 <p>The flooded temple from Guardians of the Galaxy (71 × 28 × 34), on the ocean floor of Morag, about <strong>18,500 to 35,300 blocks</strong>
-  out. Two rows of dispensers full of <strong>Arrows of Harming VII</strong> cover the hall. The <a class="chip item-chip" href="items.html#item-orb"><img src="assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a> rests on an armor stand. Built by DogBoi64.</p>
+  out. Where the sea is shallow it sinks into the floor, so it is always fully under water, and so are its fakes. The courtyard is open to the sea, but the sealed hall inside stays dry. Two rows of dispensers full of <strong>Arrows of Harming VII</strong> cover the hall. The <a class="chip item-chip" href="items.html#item-orb"><img src="assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a> rests on an armor stand. Built by DogBoi64.</p>
 
 <h3 id="norse-village">Norse Village<a class="heading-anchor" href="#norse-village" aria-label="Link to this section">#</a></h3>
 <p>A small Norse church (15 × 24 × 23) in the Overworld, about <strong>18,500 to 35,300 blocks</strong> out. Dark oak signs and a lectern tell
@@ -126,10 +127,13 @@
   the origin. The <a class="chip item-chip" href="items.html#item-scepter"><img src="assets/img/renders/scepter.png" alt="" class="px" loading="lazy">Scepter</a> is on display in an invisible glow item frame.</p>
 
 <h3 id="decoys">Decoys<a class="heading-anchor" href="#decoys" aria-label="Link to this section">#</a></h3>
-<p>The Sanctum, Norse Village, Sanctuary, Aether Chamber and Morag Temple each have a <strong>fake</strong> twin (<code>*_fake</code>) with the
+<p>The Sanctum, Norse Village, Sanctuary, Aether Chamber and Morag Temple each have a <strong>fake</strong> twin with the
   same building and nothing on the floor, in the frame or on the stand. Fakes are rare (1% per 100 chunk region) and can show up anywhere their biome is
   allowed. If you find one close to spawn, check how far from the origin you are. Server owners can switch the fakes off, or the real
   structures, in the <a href="configuration.html#config">config</a>.</p>
+<p>Each fake uses its real structure's ID (<code>infinity:<wbr>morag_temple</code> for both Morag Temples, and so on), so <code>/locate</code> and
+  mods like Explorer's Compass can't tell them apart and lead to whichever is closer. The Soul Guardian's explorer maps always lead to the
+  real one. Operators can find it with <a href="commands.html#infinity-locate-real">/infinity locate_real</a>.</p>
 
 <h3 id="history">How they used to be<a class="heading-anchor" href="#history" aria-label="Link to this section">#</a></h3>
 <ul>

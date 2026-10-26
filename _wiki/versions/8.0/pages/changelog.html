@@ -136,7 +136,8 @@ icon: icons/hourglass.png
   <tbody>
     <tr><td>{{item cosmi-rod}}</td><td>A separate item for each stone</td><td>One rod with a socket for any stone, addon stones included, plus the {{ab cosmi_rod/shockwave}} ability</td></tr>
     <tr><td>{{item orb}}</td><td>The same 15-turn combination in every world</td><td>A random combination per world, with its length in the config</td></tr>
-    <tr><td>{{item eye_of_agamotto}}</td><td>Taking the stone out left an Empty Eye</td><td>One animated Eye you open, take the stone from and put it back into, and every Eye shows whether the world's one Time Stone is in it</td></tr>
+    <tr><td>{{item eye_of_agamotto}}</td><td>Taking the stone out left an Empty Eye</td><td>One animated Eye you open, take the stone from and put it back into, and every Eye shows whether the world's one Time Stone is in it. If it breaks, the stone drops instead of being lost</td></tr>
+    <tr><td>{{item scepter}}</td><td>Breaking it lost the Mind Stone</td><td>If it breaks from durability, the Mind Stone drops on the ground</td></tr>
     <tr><td>{{item tesseract}}</td><td>Only held for the Space Stone's power</td><td>Right-click to jump to the next dimension, and it opens with a burst of rays</td></tr>
     <tr><td>{{item aether}}</td><td>Broke open straight away</td><td>Its lids swing open and red light pours out first</td></tr>
     <tr><td>Dropped stones and containers</td><td>Props on invisible armor stands</td><td>Proper ground items that can't be destroyed, and stones are rescued from the void</td></tr>
@@ -155,7 +156,7 @@ icon: icons/hourglass.png
     <tr><td><code>/locateplayer &lt;player&gt;</code></td><td><code>/infinity soul locateentity &lt;name&gt;</code>, which finds named mobs too</td></tr>
     <tr><td><code>/unlockstones</code></td><td><code>/infinity unlock_stones</code> and <code>/infinity lock_stones</code></td></tr>
     <tr><td><code>/unlock_orb</code></td><td><code>/infinity unlock_orb</code></td></tr>
-    <tr><td>None</td><td>New: <code>/infinity ability</code>, <code>/infinity gauntlet snap</code>, <code>/infinity gauntlet skin</code>, <code>/infinity orb</code>, <code>/infinity soulguardian</code>, <code>/infinity summon malekith</code> and <code>/infinity soul zombies</code></td></tr>
+    <tr><td>None</td><td>New: <code>/infinity ability</code>, <code>/infinity gauntlet snap</code>, <code>/infinity gauntlet skin</code>, <code>/infinity orb</code>, <code>/infinity soulguardian</code>, <code>/infinity summon malekith</code>, <code>/infinity soul zombies</code> and <code>/infinity locate_real</code></td></tr>
   </tbody>
 </table></div>
 <p>All of them are on {{page commands.html Commands}}.</p>
@@ -164,6 +165,9 @@ icon: icons/hourglass.png
 <ul>
   <li>Vormir's Edge is built one chunk at a time as you explore, instead of all at once, so Huge Structure Blocks isn't needed.</li>
   <li>The Garden is now a planet in Ad Astra too.</li>
+  <li>The Morag Temple generates dry instead of full of water, so its redstone works, and always fully under the sea.</li>
+  <li>Fake structures share the real ones' IDs, so <code>/locate</code> and Explorer's Compass can't tell them apart.</li>
+  <li>The Soul Guardian's explorer maps always show the real structure, in its own dimension, so the Morag, Aether Chamber and Sanctuary maps no longer come out blank.</li>
   <li>The world remembers whether the Power Stone and Time Stone were taken in its own save data, instead of a barrier block on Morag.</li>
   <li>Six new advancements, including a hidden one. See {{page advancements.html Advancements}}.</li>
   <li>Old 7.3 worlds are converted when they load. What changes is on {{page configuration.html#world-upgrades Configuration}}.</li>

@@ -42,10 +42,16 @@ icon: renders/injection.png
 <p>The bare Power Stone in your hand isn't protected. Put it in the gauntlet, the Curios head slot or a Cosmi-Rod.</p>
 <h3>My stone disappeared from the ground</h3>
 <p>Stones are unique. While anyone is carrying a stone, copies of it on the ground vanish. Check if someone already has it.</p>
+<h3>Effects look wrong with shaders</h3>
+<p>With an Oculus shader pack on, the stones are drawn the way packs expect, so each keeps its own color and its glint and glow
+  shine in that color, like an enderman's eyes. How bright that glow looks depends on the pack's bloom settings.</p>
+<p>Shield bubbles and the Tesseract's glass are drawn with the wearer like any other layer, so what's
+  inside them may not show through. Soul-drained mobs keep their colors instead of turning grey, because the grey effect can't be drawn
+  through a shader pack. Anything else that looks broken only with shaders on, report it with the shader pack's name.</p>
 <h3>I can't find a structure, or the explorer map is blank</h3>
 <p>There's one of each stone structure per world, thousands of blocks from the origin (see {{page finding-stones.html#locating-the-structures Finding the Stones}}).
-  The maps for Morag, Svartalfheim and the End are filled from the Overworld and can stay blank. Use <code>/locate structure</code> in that
-  dimension, or go and look.</p>
+  The Soul Guardian's maps show the real structure in its own dimension. <code>/locate structure</code> may lead to a
+  {{page structures.html#decoys fake}}; an operator can use {{page commands.html#infinity-locate-real /infinity locate_real}}.</p>
 <h3>How do I get to Vormir, Morag or Svartalfheim?</h3>
 <p>Use the Space Stone's Teleport GUI and type <code>infinity:vormir</code> (or the others) and some coordinates. With Ad Astra you can fly
   there in a Tier 4 rocket, or use Cosmic Horizons. See {{page dimensions.html#travel Dimensions}}.</p>
