@@ -622,3 +622,379 @@ html.js .tabs > section > .tab-label { display: none; }
   html { font-size: 112.5%; }
   .shell { max-width: 2400px; }
 }
+
+/* Recipe cards: several crafting grids side by side, each with its name and an optional note. */
+.recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 14px; margin: 14px 0 24px; }
+.recipe { margin: 0; padding: 14px 16px; background: var(--surface); border: 1px solid var(--hairline-strong); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+.recipe-title { margin: 0 0 8px; font-size: 1rem; color: var(--text-strong); }
+.recipe .craft { margin: 0; flex-wrap: nowrap; gap: 10px; }
+.recipe figcaption { margin-top: 8px; font-size: 0.88rem; color: var(--text-soft); }
+/* Crafting grids ({{recipe}}): a 3 × 3 grid of slots, an arrow and the result. */
+.craft { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 12px 0 20px; }
+.craft-grid { display: grid; grid-template-columns: repeat(3, 48px); gap: 4px; }
+.craft-cell { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--hairline-strong); border-radius: var(--radius-small); background: var(--panel-soft); text-align: center; line-height: 1.05; overflow: hidden; }
+.craft-cell img { width: 36px; height: 36px; }
+.craft-cell small { font-size: 0.58rem; color: var(--text-soft); padding: 2px; }
+.craft-cell b { position: absolute; right: 3px; bottom: 1px; font-size: 0.78rem; color: var(--text-strong); }
+.craft-arrow { font-size: 1.4rem; color: var(--text-faint); }
+.craft-out { width: 56px; height: 56px; }
+
+/* ───── Deus Chrono-Machina: the logo's greens and golds, toned down so text stays easy to read. ───── */
+html[data-wiki="deus"] {
+  --bg-start: #e6efd6;
+  --bg-end: #a9c78f;
+  --panel: #f3f7ea;
+  --panel-soft: #f9fbf3;
+  --card: #ffffff;
+  --surface: #ffffff;
+  --border: #bccfa6;
+  --divider: #dfe8d0;
+  --text-strong: #1d2818;
+  --text: #2f3b29;
+  --text-soft: #4f5d47;
+  --text-faint: #65725d;
+  --text-on-bg: #26341f;
+  --accent: #2f6d24;
+  --accent-strong: #22521a;
+  --button-bg: #2f6d24;
+  --button-bg-hover: #22521a;
+  --gold: #c9962f;
+  --hairline: rgba(40, 60, 30, 0.14);
+  --hairline-strong: rgba(40, 60, 30, 0.26);
+  --callout-bg: #fbf5e4; --callout-border: #e6d3a0;
+  --callout-tip-bg: #eff7e7; --callout-tip-border: #bfdca8;
+  --callout-compat-bg: #f2f6ea; --lilac-border: #cddbbb; --notice-bg: rgba(243, 247, 234, 0.95);
+  --tag-gold-bg: #f8eccc; --tag-gold-text: #6f500d; --tag-purple-bg: #e5efd9;
+  --mark-bg: #f1e3a0; --code-bg: #eef2e4; --code-text: #3a5326; --row-hover: #f8fbf2; --challenge-border: #d9bd6a;
+  --shadow-panel: 0 1px 2px rgba(20, 40, 10, 0.05), 0 12px 32px -16px rgba(20, 40, 10, 0.22);
+}
+html[data-wiki="deus"][data-theme="dark"] {
+  --bg-start: #111811;
+  --bg-end: #1b2718;
+  --panel: #182118;
+  --panel-soft: #1d281d;
+  --card: #151d15;
+  --surface: #151d15;
+  --border: #3a5233;
+  --divider: rgba(220, 240, 200, 0.1);
+  --hairline: rgba(220, 240, 200, 0.11);
+  --hairline-strong: rgba(220, 240, 200, 0.2);
+  --text-strong: #eef4e6;
+  --text: #d6e0cb;
+  --text-soft: #adbca0;
+  --text-faint: #8d9c80;
+  --text-on-bg: #cbd8bd;
+  --accent: #9ccf72;
+  --accent-strong: #bbe09a;
+  --button-bg: #3b7429;
+  --button-bg-hover: #4a8a34;
+  --gold: #dcb455;
+  --callout-bg: #2a2716; --callout-border: #5c5026;
+  --callout-tip-bg: #19291a; --callout-tip-border: #2f4d2b;
+  --callout-compat-bg: #1d281d; --lilac-border: #3a5233; --notice-bg: #1d281d;
+  --tag-gold-bg: #3a3218; --tag-gold-text: #e3c26a; --tag-purple-bg: #213320;
+  --mark-bg: #4f4718; --code-bg: #1d291e; --code-text: #c3e0a3; --row-hover: rgba(220, 240, 200, 0.03); --challenge-border: #6e6128;
+}
+/* A few soft green and gold lights over the gradient. Kept faint: they sit behind the sidebar text. */
+html[data-wiki="deus"] body::before {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(214, 236, 150, 0.5) 0, transparent 24%),
+    radial-gradient(circle at 80% 12%, rgba(236, 214, 140, 0.35) 0, transparent 20%),
+    radial-gradient(circle at 24% 84%, rgba(150, 196, 110, 0.3) 0, transparent 26%),
+    linear-gradient(160deg, var(--bg-start) 0%, #c8dcb0 50%, var(--bg-end) 100%);
+}
+html[data-wiki="deus"][data-theme="dark"] body::before {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(140, 190, 90, 0.08) 0, transparent 24%),
+    radial-gradient(circle at 80% 12%, rgba(220, 180, 85, 0.06) 0, transparent 20%),
+    linear-gradient(160deg, var(--bg-start) 0%, var(--bg-end) 100%);
+}
+/* Gold rims, like the logo's octagon. */
+html[data-wiki="deus"] .hero-gauntlet { border: 3px solid var(--gold); }
+html[data-wiki="deus"] .page-head .page-icon, html[data-wiki="deus"] .ability-icon { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 55%, transparent); }
+
+/* Skill trees ({{skilltree}}): an Omnitrix-style screen. Black slots with gray rims on machined metal, lime when picked. */
+.skill-tree { display: grid; gap: 14px; margin: 16px 0 28px; }
+.st-scroll { overflow-x: auto; border-radius: var(--radius-panel); border: 3px solid var(--gold, #e0a92e); background: linear-gradient(rgba(8, 12, 8, 0.72), rgba(8, 12, 8, 0.72)), #1b1f1a url(../img/deus/machined_metal.png) repeat; background-size: auto, 64px; image-rendering: pixelated; box-shadow: inset 0 0 0 2px #0b0d0a, inset 0 0 60px rgba(0, 0, 0, 0.55); }
+/* The board has the tree's own size in pixels; auto margins center it, and the frame scrolls when it's wider than the page. */
+.st-scroll { display: flex; }
+.st-board { position: relative; flex: none; margin: 40px auto; padding: 0; box-sizing: content-box; border: 0 solid transparent; border-width: 0 40px; }
+.st-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.st-lines path { fill: none; stroke: #9aa196; stroke-width: 5; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.st-lines path.on { stroke: #b3ff40; filter: drop-shadow(0 0 3px rgba(179, 255, 64, 0.8)); }
+.st-node { position: absolute; width: 52px; height: 52px; transform: translate(-50%, -50%); display: grid; place-items: center; padding: 0; cursor: pointer;
+  background: #0d0f0d; border: 3px solid #8a8f88; border-radius: 4px; box-shadow: 0 0 0 2px #0b0d0a, 0 4px 10px rgba(0, 0, 0, 0.5); transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease); }
+.st-node img { width: 34px; height: 34px; }
+.st-node.st-free { border-color: #c9a23a; }
+.st-node:hover, .st-node:focus-visible { transform: translate(-50%, -50%) scale(1.08); outline: none; }
+.st-node[aria-pressed="true"] { border-color: #b3ff40; box-shadow: 0 0 0 2px #0b0d0a, 0 0 16px rgba(179, 255, 64, 0.7); }
+.st-panels { display: grid; gap: 10px; }
+.st-info { background: var(--surface); border: 1px solid var(--hairline-strong); border-left: 4px solid var(--accent, #7fc63a); border-radius: var(--radius-card); padding: 14px 16px; box-shadow: var(--shadow-card); }
+.js .st-info:not(.active) { display: none; }
+.st-info-head { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.st-info-head h3 { margin: 0; }
+.st-info-icon { width: 40px; height: 40px; background: #0d0f0d; border: 2px solid #8a8f88; border-radius: 4px; padding: 3px; }
+.st-info dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 8px 0 0; }
+.st-info dt { font-weight: 600; color: var(--text-strong); }
+.st-info dd { margin: 0; }
+.st-info .ability-id { margin: 10px 0 0; font-size: 0.82rem; color: var(--text-faint); }
+.st-legend { font-size: 0.9rem; color: var(--text-soft); }
+.st-legend i { display: inline-block; width: 12px; height: 12px; border: 2px solid; border-radius: 2px; vertical-align: -1px; margin: 0 4px 0 10px; background: #0d0f0d; }
+
+/* ───── wiki/index.html: one big card per mod, in that mod's colors ───── */
+.hub { max-width: 1080px; margin: 0 auto; padding: 56px 20px 72px; }
+.hub-head { text-align: center; margin-bottom: 36px; }
+.hub-head h1 { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--text-strong); letter-spacing: -0.02em; margin: 10px 0 8px; }
+.hub-head p { color: var(--text-on-bg); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+.hub-back { color: var(--text-on-bg); text-decoration: none; font-weight: 600; }
+.hub-back:hover { color: var(--text-strong); }
+.hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 28px; }
+.hub-card { position: relative; display: flex; flex-direction: column; overflow: hidden; text-decoration: none; color: var(--text);
+  background: var(--surface); border-radius: 22px; border: 2px solid color-mix(in srgb, var(--hub) 45%, transparent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 20px 44px -22px color-mix(in srgb, var(--hub) 70%, transparent);
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease); }
+.hub-card:hover, .hub-card:focus-visible { transform: translateY(-4px); border-color: var(--hub-glow); outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 28px 56px -22px color-mix(in srgb, var(--hub) 85%, transparent); color: var(--text); }
+.hub-art { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--hub); }
+.hub-art img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.hub-card:hover .hub-art img { transform: scale(1.04); }
+.hub-body { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 46px 26px 26px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--hub) 10%, var(--surface)) 0%, var(--surface) 70%); flex: 1; }
+.hub-logo { position: absolute; top: -40px; left: 22px; width: 76px; height: 76px; border-radius: 50%; background: var(--surface);
+  border: 3px solid var(--hub-glow); box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.4); object-fit: contain; }
+.hub-body strong { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.2; color: var(--text-strong); }
+.hub-tagline { color: var(--text-soft); font-size: 1.02rem; }
+.hub-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.hub-meta span { font-size: 0.82rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; color: var(--text-strong);
+  background: color-mix(in srgb, var(--hub) 12%, var(--surface)); border: 1px solid color-mix(in srgb, var(--hub) 28%, transparent); }
+.hub-go { align-self: flex-start; margin-top: 12px; padding: 10px 18px; border-radius: 999px; font-weight: 700; color: #fff; background: var(--hub);
+  box-shadow: 0 6px 14px -8px var(--hub); transition: background var(--ease); }
+.hub-card:hover .hub-go { background: color-mix(in srgb, var(--hub) 80%, #000); }
+html[data-theme="dark"] .hub-go { background: color-mix(in srgb, var(--hub) 85%, #fff); }
+
+/* Folding ability rows (site.collapsibleAbilities): closed, one line each; open, the full card below the row. */
+.ability-list:has(.ability-fold) { gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); align-items: start; }
+.ability-fold { display: block; padding: 0; overflow: hidden; box-shadow: var(--shadow-card); }
+.ability-fold > summary { display: grid; grid-template-columns: 40px minmax(0, 1fr) 14px; align-items: center; gap: 10px; padding: 10px 12px; cursor: pointer; list-style: none; }
+.ability-fold > summary::-webkit-details-marker { display: none; }
+.ability-fold > summary::after { content: ''; width: 8px; height: 8px; border-right: 2px solid var(--text-faint); border-bottom: 2px solid var(--text-faint); transform: rotate(45deg); transition: transform var(--ease); justify-self: center; margin-top: -4px; }
+.ability-fold[open] > summary::after { transform: rotate(-135deg); margin-top: 4px; }
+.ability-fold > summary:hover { background: var(--row-hover); }
+.ability-fold .ability-icon { width: 40px; height: 40px; }
+.ability-fold .ability-icon img { width: 100%; height: 100%; }
+.ability-fold-text { display: flex; flex-direction: column; min-width: 0; }
+.ability-fold .ability-name { font-size: 1rem; color: var(--text-strong); }
+.ability-fold .ability-summary { margin: 0; font-size: 0.9rem; color: var(--text-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ability-fold[open] .ability-summary { white-space: normal; color: var(--text); }
+.ability-fold > .ability-body { padding: 4px 12px 12px; border-top: 1px solid var(--hairline); }
+.ability-fold > .ability-body .tags { margin-top: 10px; }
+@media (max-width: 560px) {
+  .ability-fold > .ability-body { padding-left: 14px; }
+}
+
+/* A picture beside its text, stacking on phones. media-split-wide gives the picture column more room (a row of two). */
+.media-split { display: grid; grid-template-columns: minmax(160px, 240px) minmax(0, 1fr); gap: 24px; align-items: start; margin: 12px 0 18px; }
+.media-split-wide { grid-template-columns: minmax(220px, 340px) minmax(0, 1fr); }
+.media-split > .figure, .media-split > .figure-row { margin: 0; }
+.media-split > div > p:first-child { margin-top: 0; }
+.media-split-big { grid-template-columns: minmax(200px, 300px) minmax(0, 1fr); }
+.media-split > div > h3:first-child { margin-top: 0; }
+/* Small stat boxes in a row (mob stats). */
+.stat-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; margin: 10px 0 0; }
+.stat-list > .wide { grid-column: 1 / -1; }
+.stat-list > div { padding: 8px 10px; background: var(--panel-soft); border: 1px solid var(--hairline); border-radius: var(--radius-small); }
+.stat-list dt { font-size: 0.78rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.04em; }
+.stat-list dd { margin: 0; font-weight: 600; color: var(--text-strong); }
+@media (max-width: 720px) { .media-split, .media-split-wide, .media-split-big { grid-template-columns: 1fr; } .media-split > .figure { max-width: 260px; } }
+/* A row of small pictures that stays on one line (Maltruant's five fragments). */
+.figure-row.figure-strip { --cols: 5 !important; gap: 8px; }
+.figure-strip .figure figcaption { font-size: 0.78rem; }
+/* Compact name-and-description cards, several per row (Maltruant's skills). */
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 8px; margin: 10px 0 22px; }
+.skill-grid > div { padding: 10px 12px; background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius-small); }
+.skill-grid dt { font-weight: 700; color: var(--text-strong); }
+.skill-grid dd { margin: 2px 0 0; font-size: 0.9rem; color: var(--text-soft); }
+.list-columns { columns: 2 260px; column-gap: 28px; }
+.list-columns li { break-inside: avoid; }
+
+/* A section that starts closed (a long table you don't always need). */
+.fold-section { margin: 10px 0 22px; border: 1px solid var(--hairline-strong); border-radius: var(--radius-card); background: var(--surface); }
+.fold-section > summary { padding: 10px 14px; cursor: pointer; font-weight: 600; color: var(--text-strong); }
+.fold-section[open] > summary { border-bottom: 1px solid var(--hairline); }
+.fold-section > .table-wrap { margin: 0; border: 0; border-radius: 0 0 var(--radius-card) var(--radius-card); }
+
+.fold-section > .recipe-grid { margin: 0; padding: 14px; }
+.fold-section > summary small { color: var(--text-faint); font-weight: 400; }
+.craft-arrow small { display: block; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; }
+/* Inside an item popup the recipe takes the popup's width. */
+.recipe-grid-small { grid-template-columns: 1fr; margin: 12px 0; }
+/* Recipe cards use smaller slots so two or three fit side by side. */
+.recipe-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 236px), 1fr)); }
+.recipe .craft-grid { grid-template-columns: repeat(3, 40px); gap: 3px; }
+.recipe .craft-cell { width: 40px; height: 40px; }
+.recipe .craft-cell img { width: 30px; height: 30px; }
+.recipe .craft-out { width: 48px; height: 48px; }
+.recipe .craft-cell small { font-size: 0.52rem; }
+.recipe { padding: 12px 14px; }
+
+/* Empty filler slots in a skill tree (no ability, just part of the shape). */
+.st-node.st-blank { cursor: default; opacity: 0.55; box-shadow: 0 0 0 2px #0b0d0a; }
+.st-node.st-blank:hover { transform: translate(-50%, -50%); }
+
+/* ───── Deus Chrono-Machina modules ─────
+   Borderless tiles tinted in shades of green and gold, titles in a darker "ink" of the tile's colour, small uppercase labels.
+   Nothing moves unless you can click it. Tables are replaced by these on the Deus pages. */
+.tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px; margin: 10px 0 16px; }
+.tile { padding: 12px 14px; border-radius: 12px; min-width: 0; }
+.tile h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 1rem; line-height: 1.25; }
+.tile-icon { width: 22px; height: 22px; flex: none; object-fit: contain; }
+.tile .stat-list { margin: 0; }
+/* The altar layout as a map of the five fragments. */
+.altar-map { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); gap: 8px; margin: 10px 0 16px; }
+.altar-slot { display: grid; grid-template-columns: 36px 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; padding: 10px 12px; border-radius: 12px; }
+.altar-slot img { grid-row: 1 / 3; width: 36px; height: 36px; }
+.altar-slot small { color: var(--text-soft); font-size: 0.8rem; }
+.altar-empty { background: repeating-linear-gradient(135deg, transparent 0 8px, var(--hairline) 8px 16px) !important; }
+.altar-gap { display: grid; place-items: center; height: 22px; color: var(--text-faint); font-size: 0.78rem; }
+.altar-gap span::before, .altar-gap span::after { content: '·'; margin: 0 6px; }
+
+html[data-wiki="deus"] {
+  --c1: #5fae3a; --c2: #d4a53a; --c3: #3f8a2e; --c4: #b8973f;
+  --tile-tint: 15%; --tile-base: #ffffff;
+}
+html[data-wiki="deus"][data-theme="dark"] { --tile-tint: 20%; --tile-base: #141c14; }
+html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .st-info, .adv, .item-card, .page-card, .altar-slot, .fold-section, .callout) {
+  --c: var(--c1);
+  --ink: color-mix(in srgb, var(--c) 45%, var(--text-strong));
+  background: color-mix(in srgb, var(--c) var(--tile-tint), var(--tile-base));
+  border: 0; box-shadow: none; border-radius: 12px; min-width: 0;
+}
+html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+2) { --c: var(--c2); }
+html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+3) { --c: var(--c3); }
+html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+4) { --c: var(--c4); }
+html[data-wiki="deus"] .callout.warn { --c: var(--c2); }
+/* Only things you can click react to the mouse. */
+html[data-wiki="deus"] .page-card:hover { filter: brightness(0.97); }
+html[data-wiki="deus"] :is(.tile h4, .skill-grid dt, .recipe-title, .ability-name, .st-info h3, .adv-head strong, .page-card strong, .altar-slot strong) { color: var(--ink); }
+/* Long words and values wrap inside their tile instead of running out of it. */
+html[data-wiki="deus"] :is(.tile, .skill-grid > div, .ability-card, .adv, .recipe, .stat-list > div) { overflow-wrap: anywhere; }
+/* Labels: small, uppercase, in the tile's colour. */
+html[data-wiki="deus"] .stat-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 90px), 1fr)); gap: 6px; }
+html[data-wiki="deus"] .stat-list dt { color: color-mix(in srgb, var(--text) 62%, var(--c, var(--c1))); font-weight: 600; font-size: 0.7rem; }
+html[data-wiki="deus"] .stat-list > div { background: color-mix(in srgb, var(--tile-base) 70%, transparent); border: 0; border-radius: 8px; min-width: 0; }
+html[data-wiki="deus"] .craft-cell { border: 0; background: color-mix(in srgb, var(--tile-base) 75%, transparent); border-radius: 8px; }
+html[data-wiki="deus"] .fold-section[open] > summary { border-bottom: 0; }
+html[data-wiki="deus"] :is(.ability-icon, .adv > img) { background: color-mix(in srgb, var(--tile-base) 75%, transparent); border: 0; box-shadow: none; border-radius: 10px; }
+html[data-wiki="deus"] .st-info { border-left: 0; }
+
+/* Abilities: one big grid of tiles, each showing everything about the ability, so nothing opens and pushes the page. */
+html[data-wiki="deus"] .ability-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)) !important; gap: 8px; }
+html[data-wiki="deus"] .ability-card { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
+html[data-wiki="deus"] .ability-card .ability-icon { width: 40px; height: 40px; }
+html[data-wiki="deus"] .ability-card .ability-icon img { width: 30px; height: 30px; }
+html[data-wiki="deus"] .ability-card .ability-name { font-size: 1rem !important; }
+html[data-wiki="deus"] .ability-card .ability-body > * + * { margin-top: 6px; }
+html[data-wiki="deus"] .ability-card .ability-summary { font-weight: 400; font-size: 0.92rem; }
+html[data-wiki="deus"] .ability-card .tags .tag { font-size: 0.72rem; }
+
+/* Recipes: the grid fills the card, the slots grow with it. */
+.recipe .craft { display: grid; grid-template-columns: minmax(0, 3fr) auto minmax(0, 1.15fr); align-items: center; gap: 10px; }
+.recipe .craft-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; width: 100%; max-width: 200px; }
+.recipe .craft-cell, .recipe .craft-out { width: 100%; height: auto; aspect-ratio: 1; }
+.recipe .craft-out { max-width: 76px; }
+.recipe .craft-cell img { width: 72%; height: 72%; }
+.recipe .craft-cell small { font-size: 0.56rem; }
+
+/* Advancements flow into as many columns as fit. */
+html[data-wiki="deus"] .adv-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)) !important; gap: 8px; }
+html[data-wiki="deus"] .adv { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
+html[data-wiki="deus"] .adv > img { width: 40px; height: 40px; padding: 6px; }
+html[data-wiki="deus"] .adv-head .tag { font-size: 0.68rem; }
+
+/* Less air between sections, and text runs the full width. */
+html[data-wiki="deus"] .lead, html[data-wiki="deus"] .prose > :is(p, ul, ol, .callout) { max-width: none; }
+html[data-wiki="deus"] .prose h2 { margin-top: 1.6em; padding-top: 0.8em; }
+html[data-wiki="deus"] .prose h3 { margin-top: 1.2em; }
+html[data-wiki="deus"] .prose > * + * { margin-top: 0.8em; }
+html[data-wiki="deus"] :is(.skill-grid, .recipe-grid) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 8px; margin: 10px 0 16px; }
+html[data-wiki="deus"] .skill-grid > div { padding: 10px 12px; }
+/* Deus pages use the folding "On this page" above the content, so the content gets the right-hand column too. */
+@media (min-width: 761px) {
+  html[data-wiki="deus"] .shell.has-toc { grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
+  html[data-wiki="deus"] .toc { display: none; }
+
+}
+html[data-wiki="deus"] .ability-id code { white-space: nowrap; }
+html[data-wiki="deus"] .prose > h2:first-child { margin-top: 0; padding-top: 0; }
+/* Hero buttons may wrap their label instead of running out of the button. */
+html[data-wiki="deus"] .hero-actions { max-width: 460px; }
+html[data-wiki="deus"] .hero-actions .button-link { white-space: normal; text-align: center; line-height: 1.2; padding: 8px 14px; }
+/* Symmetric grids: wiki.js picks a column count that splits the items evenly (4 -> 2 + 2, 6 -> 3 + 3) and sets --cols.
+   A shorter last row is centered. */
+html[data-wiki="deus"] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards)[style*="--cols"] { display: flex !important; flex-wrap: wrap; justify-content: center; }
+html[data-wiki="deus"] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards)[style*="--cols"] > * { flex: 0 0 calc((100% - (var(--cols) - 1) * 12px) / var(--cols)); margin: 0; }
+html[data-wiki="deus"] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list) { gap: 12px !important; }
+/* The narrowest a tile can be before the grid drops a column. */
+html[data-wiki="deus"] .tile-grid { --min: 220px; }
+html[data-wiki="deus"] .skill-grid { --min: 190px; }
+html[data-wiki="deus"] .recipe-grid { --min: 280px; }
+html[data-wiki="deus"] .adv-list { --min: 300px; }
+html[data-wiki="deus"] .ability-list { --min: 320px; }
+/* A big picture beside its text, for the page's main subject (Maltruant). */
+.media-split-hero { grid-template-columns: minmax(240px, 44%) minmax(0, 1fr); }
+@media (max-width: 720px) { .media-split-hero { grid-template-columns: 1fr; } .media-split-hero > .figure { max-width: none; } }
+
+/* Roomier tiles. */
+html[data-wiki="deus"] .tile { padding: 16px 18px; }
+html[data-wiki="deus"] .skill-grid > div { padding: 14px 16px; }
+html[data-wiki="deus"] :is(.ability-card, .adv, .recipe) { padding: 16px 18px; }
+html[data-wiki="deus"] .stat-list { gap: 8px; }
+html[data-wiki="deus"] .stat-list > div { padding: 8px 10px; }
+/* Recipes: the grid, arrow and result stay together, centered in the card. */
+.recipe .craft { grid-template-columns: minmax(0, 190px) auto minmax(0, 64px); justify-content: center; }
+/* Clockwork's four uniforms on one line. */
+.figure-row.figure-strip-4 { --cols: 4 !important; }
+/* The twelve murals as big, sharp tiles. */
+.mural-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin: 12px 0 18px; }
+.mural-grid figure { margin: 0; text-align: center; }
+.mural-grid img { display: block; width: 100%; aspect-ratio: 1; border-radius: 10px; image-rendering: pixelated; }
+.mural-grid figcaption { margin-top: 6px; font-size: 0.82rem; font-weight: 600; color: var(--text-soft); }
+@media (max-width: 900px) { .mural-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .mural-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Stat boxes: 4 make a square, or one row when the tile is wide enough; 8 make two rows of 4 or four rows of 2. */
+html[data-wiki="deus"] .tile { container-type: inline-size; }
+html[data-wiki="deus"] .stat-list:has(> :nth-child(4):last-child), html[data-wiki="deus"] .stat-list:has(> :nth-child(8):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@container (min-width: 440px) {
+  html[data-wiki="deus"] .stat-list:has(> :nth-child(4):last-child), html[data-wiki="deus"] .stat-list:has(> :nth-child(8):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+/* Label and value on one line each, for values too long for a narrow box (requirements). */
+html[data-wiki="deus"] .stat-list.stat-rows { grid-template-columns: 1fr !important; gap: 6px; }
+html[data-wiki="deus"] .stat-rows > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+html[data-wiki="deus"] .stat-rows dd { text-align: right; }
+/* The mod's own banner on the home page. */
+.mod-banner { display: block; width: 100%; height: auto; border-radius: 16px; margin-bottom: 16px; }
+/* Screenshots beside text: a wider picture column. flip puts the picture on the right. */
+.media-split-photo { grid-template-columns: minmax(240px, 44%) minmax(0, 1fr); }
+.media-split-flip { grid-template-columns: minmax(0, 1fr) minmax(240px, 46%); }
+.media-split-photo .figure img { border-radius: 10px; }
+@media (max-width: 720px) { .media-split-photo, .media-split-flip { grid-template-columns: 1fr; } .media-split-photo > .figure { max-width: none; } }
+.tile-avatar { width: 32px; height: 32px; border-radius: 8px; }
+.tile-role { margin: -4px 0 6px !important; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-faint); }
+.tile p { margin: 0; }
+
+.mural-pictures { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; margin: 12px 0 18px; }
+.mural-pictures figure { margin: 0; text-align: center; }
+.mural-picture { display: grid; grid-template-columns: repeat(2, 1fr); border-radius: 10px; overflow: hidden; }
+.mural-picture img { display: block; width: 100%; aspect-ratio: 1; image-rendering: pixelated; }
+.mural-pictures figcaption { margin-top: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text-soft); }
+.mural-pictures figcaption small { font-weight: 400; color: var(--text-faint); }
+html[data-wiki="deus"] .stat-rows dd { min-width: 0; flex: 1 1 auto; }
+html[data-wiki="deus"] .stat-rows dt { flex: none; }
+.media-stack { display: grid; gap: 12px; } .media-stack .figure { margin: 0; }
+
+.nowrap { white-space: nowrap; }
+/* Where to start: the cards share the row evenly. */
+html[data-wiki="deus"] .page-cards { --min: 200px; gap: 12px; }
+/* No "On this page" on the Deus pages. */
+html[data-wiki="deus"] :is(.toc-inline, .toc) { display: none !important; }

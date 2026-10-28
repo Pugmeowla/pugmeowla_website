@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" data-root="" data-wiki="deus">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Abilities · Deus Chrono-Machina Wiki 7.0</title>
+<meta name="description" content="Every Clockwork ability - temporal rays, timeflows and his own powers, with how you use them, cooldowns and energy cost.">
+<meta property="og:title" content="Abilities · Deus Chrono-Machina Wiki 7.0">
+<meta property="og:description" content="Every Clockwork ability - temporal rays, timeflows and his own powers, with how you use them, cooldowns and energy cost.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#a9c78f">
+<link rel="icon" type="image/png" href="../assets/img/deus/logo.png">
+<link rel="stylesheet" href="../assets/css/wiki.css?v=e688f01f">
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="index.html"><img src="../assets/img/deus/logo.png" alt="" width="40" height="40"><span>Deus Chrono-Machina<small>Wiki 7.0</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the 7.0 wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, mobs…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <div class="prefs prefs-top">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+  <a class="home-link" href="../index.html">All wikis</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <div class="prefs prefs-drawer">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+      <p class="version-switch version-label">v7.0 · MC 1.20.1 · Forge</p>
+      <a class="nav-top" href="index.html"><img src="../assets/img/deus/logo.png" alt="" class="px nav-icon"><span>Wiki Home</span></a><details class="nav-group"><summary><img src="../assets/img/deus/items/timeclock_gear.png" alt="" class="px nav-icon"><span>Getting Started</span></summary><ul><li><a href="installation.html">Installation</a></li><li><a href="getting-dna.html">Getting the DNA</a></li><li><a href="advancements.html">Advancements</a></li></ul></details><details class="nav-group" open><summary><img src="../assets/img/deus/items/chronosapien_dna.png" alt="" class="px nav-icon"><span>Clockwork</span></summary><ul><li><a href="clockwork.html">Clockwork</a></li><li><a href="skill-tree.html">Skill Tree</a></li><li><a href="abilities.html" aria-current="page" class="active">Abilities</a></li><li><a href="upgrade.html">Upgrade Fusion</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/deus/items/galvan_compass.png" alt="" class="px nav-icon"><span>Items &amp; Blocks</span></summary><ul><li><a href="items.html">Items &amp; Blocks</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/deus/items/maltruant_key.png" alt="" class="px nav-icon"><span>Mobs &amp; Bosses</span></summary><ul><li><a href="mobs.html">Mobs</a></li><li><a href="maltruant.html">Maltruant</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/deus/items/chrono_ore.png" alt="" class="px nav-icon"><span>World</span></summary><ul><li><a href="world.html">World</a></li><li><a href="commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="../assets/img/deus/icons/rotate_key.png" alt="" class="px nav-icon"><span>Help</span></summary><ul><li><a href="credits.html">Credits</a></li></ul></details><a class="nav-top" href="changelog.html"><img src="../assets/img/deus/icons/rollback_time.png" alt="" class="px nav-icon"><span>Changelog</span></a>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Wiki 7.0</a></li><li><span>Clockwork</span></li><li aria-current="page">Abilities</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../assets/img/deus/icons/stop.png" alt=""><div><h1>Abilities</h1><p class="lead">Everything Clockwork can do, grouped by kind.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#temporal-rays">Temporal rays</a></li><li class="toc-l2"><a href="#timeflow">Timeflow</a></li><li class="toc-l2"><a href="#clockwork">Clockwork</a></li><li class="toc-l2"><a href="#activation-types">Activation types</a></li></ol></details>
+    <article class="prose">
+<h2 id="temporal-rays">Temporal rays<a class="heading-anchor" href="#temporal-rays" aria-label="Link to this section">#</a></h2>
+<div class="media-split media-split-photo">
+<figure class="figure"><button type="button" class="zoomable" data-zoom="../assets/img/deus/photos/ray.jpg" data-caption="A temporal ray" aria-label="Enlarge image"><img src="../assets/img/deus/photos/ray.jpg" alt="A temporal ray" class="" loading="lazy"></button><figcaption>A temporal ray</figcaption></figure>
+<div>
+<p>Pick a ray in the Temporal Arsenal, then hold the key to fire. All rays reach 64 blocks, need Temporal Energy to start and share a
+  5 second cooldown. Rays that hit blocks age them into <a href="world.html#aged-blocks">Aged Blocks</a>.</p>
+</div>
+</div>
+<div class="ability-list"><article class="ability-card" id="time-blast" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_beam.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Basic Temporal Ray<a class="heading-anchor" href="#time-blast" aria-label="Link to Basic Temporal Ray">#</a></h3>
+    <p class="ability-summary">A temporal beam from the chest: 3 damage, 64 blocks. Hitting blocks ages them.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-upgrade" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_beam_upgrade.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Enhanced Temporal Ray<a class="heading-anchor" href="#time-blast-upgrade" aria-label="Link to Enhanced Temporal Ray">#</a></h3>
+    <p class="ability-summary">A stronger ray that slows its targets and speeds up time-based block changes (crops, saplings).</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="beam-boost" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_beam_upgrade.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Temporal Ray Overcharge<a class="heading-anchor" href="#beam-boost" aria-label="Link to Temporal Ray Overcharge">#</a></h3>
+    <p class="ability-summary">While a ray is firing, overcharge it for +2 damage, more sparks and a bigger beam.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> +1 while it runs</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-stop" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_beam_stop.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Stasis Ray<a class="heading-anchor" href="#time-blast-stop" aria-label="Link to Stasis Ray">#</a></h3>
+    <p class="ability-summary">Stops its target in time. Only while no timeflow is running.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-restore" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_beam_restore.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Restoration Ray<a class="heading-anchor" href="#time-blast-restore" aria-label="Link to Restoration Ray">#</a></h3>
+    <p class="ability-summary">Restores the target's flow of time: unfreezes it and clears harmful effects.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-rollback" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/rollback_time.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Reversion Ray<a class="heading-anchor" href="#time-blast-rollback" aria-label="Link to Reversion Ray">#</a></h3>
+    <p class="ability-summary">While Slow Time is on: puts the target back in an earlier state, or heals it when there is none.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-detransform" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/detransform.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Omnitrix Timeout Ray<a class="heading-anchor" href="#time-blast-detransform" aria-label="Link to Omnitrix Timeout Ray">#</a></h3>
+    <p class="ability-summary">While Slow Time is on: forces another player's Omnitrix to time out.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-recharge" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/recharge.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Recharge Ray<a class="heading-anchor" href="#time-blast-recharge" aria-label="Link to Recharge Ray">#</a></h3>
+    <p class="ability-summary">While Accelerate Time is on: fully recharges another player's Omnitrix.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 100 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-blast-remove" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_beam_remove.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Timeline Erasure Ray<a class="heading-anchor" href="#time-blast-remove" aria-label="Link to Timeline Erasure Ray">#</a></h3>
+    <p class="ability-summary">Charge it up to erase the target from the timeline: a huge beam that deals 7 damage.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 5 s</li></ul>
+    
+    
+    <p class="ability-req"><span>Energy</span> 200 to fire</p>
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article>
+<article class="ability-card" id="10k-beam" data-group="rays">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/chronosapien_hand_cannon.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">10K Hand Cannon<a class="heading-anchor" href="#10k-beam" aria-label="Link to 10K Hand Cannon">#</a></h3>
+    <p class="ability-summary">With the Prototype or 10K Omnitrix uniform, Temporal Charge is replaced by a hand cannon: hold right-click to charge an erasure beam or an energy shot.</p>
+    <ul class="tags"><li class="tag tag-activation">Right-click</li><li class="tag">Cooldown 2 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>energy_beam</code></p>
+  </div>
+</article></div>
+
+<h2 id="timeflow">Timeflow<a class="heading-anchor" href="#timeflow" aria-label="Link to this section">#</a></h2>
+<div class="media-split media-split-photo">
+<figure class="figure"><button type="button" class="zoomable" data-zoom="../assets/img/deus/photos/slow_time.jpg" data-caption="Slow Time" aria-label="Enlarge image"><img src="../assets/img/deus/photos/slow_time.jpg" alt="Slow Time" class="" loading="lazy"></button><figcaption>Slow Time</figcaption></figure>
+<div>
+<p>Hold the Timeflow key to charge, then let go. The charge decides how long it lasts. Only one timeflow runs at a time; End Timeflow stops
+  it early. Slowed and stopped mobs really are slowed: their tick rate changes, so their attacks, movement and animations all wait.</p>
+</div>
+</div>
+<div class="ability-list"><article class="ability-card" id="slow-time" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/slow_time.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Slow Time<a class="heading-anchor" href="#slow-time" aria-label="Link to Slow Time">#</a></h3>
+    <p class="ability-summary">Hold to charge, then everything around you slows to the chosen time-flow rate. You stay at full speed.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 4 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="accelerate-time" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/accelerate_time.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Accelerate Time<a class="heading-anchor" href="#accelerate-time" aria-label="Link to Accelerate Time">#</a></h3>
+    <p class="ability-summary">Hold to charge, then speed up the time around you to the chosen rate while you stay in control.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 4 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="scroll-control" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/scroll_control_slow.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Change Flow of Time<a class="heading-anchor" href="#scroll-control" aria-label="Link to Change Flow of Time">#</a></h3>
+    <p class="ability-summary">While Slow or Accelerate Time is on, toggle this and scroll to pick one of five time-flow rates. Shown on screen.</p>
+    <ul class="tags"><li class="tag tag-activation">Scroll</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="daylight-cycle" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/daylight_cycle.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Daylight Cycle<a class="heading-anchor" href="#daylight-cycle" aria-label="Link to Daylight Cycle">#</a></h3>
+    <p class="ability-summary">While Accelerate Time is on, speed up the day and night cycle too.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="stop" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/stop.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Time Control<a class="heading-anchor" href="#stop" aria-label="Link to Time Control">#</a></h3>
+    <p class="ability-summary">Hold to charge, then stop time completely around you. You can still move, attack and walk on water.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 4 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="beyondtime-area" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/beyondtime.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Beyond Time<a class="heading-anchor" href="#beyondtime-area" aria-label="Link to Beyond Time">#</a></h3>
+    <p class="ability-summary">During Time Control, lets nearby mobs and players move again for a while.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 1 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="restoptime-area" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/restoptime.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Restop Time<a class="heading-anchor" href="#restoptime-area" aria-label="Link to Restop Time">#</a></h3>
+    <p class="ability-summary">During Time Control, freezes nearby mobs and players again.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 1 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="stoptime-speed" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/stoptime_speed.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Speed Up<a class="heading-anchor" href="#stoptime-speed" aria-label="Link to Speed Up">#</a></h3>
+    <p class="ability-summary">During Time Control, move at high speed.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-god-control" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/detransform_area.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Infinite Timeflow<a class="heading-anchor" href="#time-god-control" aria-label="Link to Infinite Timeflow">#</a></h3>
+    <p class="ability-summary">During Time Control, scroll to push the stopped timeline forwards or rewind it, while everything else stays frozen.</p>
+    <ul class="tags"><li class="tag tag-activation">Scroll</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code></p>
+  </div>
+</article>
+<article class="ability-card" id="rewind-time" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/rollback_time.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Time Rewind<a class="heading-anchor" href="#rewind-time" aria-label="Link to Time Rewind">#</a></h3>
+    <p class="ability-summary">Reverses time across the area around you: blocks and mobs go back to where they were.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag">Cooldown 4 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="timeflow-end" data-group="timeflow">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/stop.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">End Timeflow<a class="heading-anchor" href="#timeflow-end" aria-label="Link to End Timeflow">#</a></h3>
+    <p class="ability-summary">Ends the running timeflow early and brings back normal time.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article></div>
+
+<h2 id="clockwork">Clockwork<a class="heading-anchor" href="#clockwork" aria-label="Link to this section">#</a></h2>
+<div class="ability-list"><article class="ability-card" id="rotate-key" data-group="body">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/rotate_key.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Temporal Charge<a class="heading-anchor" href="#rotate-key" aria-label="Link to Temporal Charge">#</a></h3>
+    <p class="ability-summary">Hold right-click with an empty hand to turn the key on your head and fill the Temporal Energy meter. Slows you while you wind it.</p>
+    <ul class="tags"><li class="tag tag-activation">Right-click</li><li class="tag">Cooldown 4 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>animation_timer</code></p>
+  </div>
+</article>
+<article class="ability-card" id="temporal-orb" data-group="body">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/temporal_orb.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Temporal Singularity<a class="heading-anchor" href="#temporal-orb" aria-label="Link to Temporal Singularity">#</a></h3>
+    <p class="ability-summary">Gather an Omnitrix-colored orb of temporal energy. When it bursts it freezes everything alive and turns the terrain gray.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code></p>
+  </div>
+</article>
+<article class="ability-card" id="time-anchor" data-group="body">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/time_anchor.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Temporal Anchor<a class="heading-anchor" href="#time-anchor" aria-label="Link to Temporal Anchor">#</a></h3>
+    <p class="ability-summary">Standing still, record your state. When it runs out, when you press it again, or when you would die, you go back to it. Same dimension only.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="detransform-area" data-group="body">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/detransform_area.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Detransform All<a class="heading-anchor" href="#detransform-area" aria-label="Link to Detransform All">#</a></h3>
+    <p class="ability-summary">Forces every transformed player within 10 blocks back to human.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 3 s</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>command</code></p>
+  </div>
+</article>
+<article class="ability-card" id="fire-resistance" data-group="body">
+  <div class="ability-icon"><img src="../assets/img/deus/icons/stop.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Chronosapien Body<a class="heading-anchor" href="#fire-resistance" aria-label="Link to Chronosapien Body">#</a></h3>
+    <p class="ability-summary">The clockwork body takes no fire or freezing damage, and shrugs off falls.</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li></ul>
+    
+    
+    
+    <p class="ability-id"><code>chrono_machina:<wbr>chronosapien</code> · <code>palladium:<wbr>damage_immunity</code></p>
+  </div>
+</article></div>
+
+<h2 id="activation-types">Activation types<a class="heading-anchor" href="#activation-types" aria-label="Link to this section">#</a></h2>
+<dl class="skill-grid">
+  <div><dt>Hold</dt><dd>Hold the key down. Rays fire while held; timeflows charge while held and start when you let go.</dd></div>
+  <div><dt>Key press</dt><dd>Press its key once.</dd></div>
+  <div><dt>Toggle</dt><dd>Press once to turn it on and again to turn it off.</dd></div>
+  <div><dt>Scroll</dt><dd>Use the mouse wheel while it's available.</dd></div>
+  <div><dt>Right-click</dt><dd>Hold right-click with an empty hand.</dd></div>
+  <div><dt>Passive</dt><dd>Always on.</dd></div>
+  <div><dt>Unlock</dt><dd>An entry in the skill tree. Unlocking it opens up the abilities listed on it.</dd></div>
+</dl>
+<p>Cooldowns are in seconds (20 ticks is 1 second).</p>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="skill-tree.html"><small>← Previous</small><span>Skill Tree</span></a><a class="pager-link next" href="upgrade.html"><small>Next →</small><span>Upgrade Fusion</span></a></nav>
+    <footer class="footer">
+      <p><strong>Deus Chrono-Machina</strong> by Rolmi and Pugmeowla. These pages document version 7.0 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/members/pugmeowla/projects">CurseForge</a> · <a href="https://modrinth.com/mod/deus-chrono-machina">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#temporal-rays">Temporal rays</a></li><li class="toc-l2"><a href="#timeflow">Timeflow</a></li><li class="toc-l2"><a href="#clockwork">Clockwork</a></li><li class="toc-l2"><a href="#activation-types">Activation types</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="../assets/js/search-deus-7.0.js" defer></script>
+<script src="../assets/js/wiki.js?v=19af54d0" defer></script>
+</body>
+</html>

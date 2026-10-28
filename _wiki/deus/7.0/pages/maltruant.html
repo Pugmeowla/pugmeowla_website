@@ -1,0 +1,111 @@
+---
+title: Maltruant
+description: Maltruant, the boss - the five fragments, building the altar, summoning him, his three phases and his drops.
+lead: The Chronian who wants to erase every timeline. Gather his five fragments, put them back together on his altar, and stop him.
+icon: deus/items/maltruant_spawn_egg.png
+---
+<h2>The five fragments</h2>
+<div class="media-split media-split-hero">
+{{figure src="deus/models/maltruant.png" caption="Maltruant" pixel="false"}}
+<div>
+<p>Each world has one of each fragment, buried 2,000 to 4,000 blocks from 0, 0 at Y −48 to −17, each in a different direction. A sixth
+  spot holds the <a href="@/world.html#maltruant-altar">Maltruant Altar</a>.</p>
+<div class="figure-row figure-strip">
+  {{figure src="deus/models/maltruant_part1_block.png" caption="Part I" pixel="false"}}
+  {{figure src="deus/models/maltruant_part2_block.png" caption="Part II" pixel="false"}}
+  {{figure src="deus/models/maltruant_key_block.png" caption="Key" pixel="false"}}
+  {{figure src="deus/models/maltruant_gear_block.png" caption="Gear" pixel="false"}}
+  {{figure src="deus/models/maltruant_hex_block.png" caption="Hex" pixel="false"}}
+</div>
+<p>Find them with the {{item galvan_compass}} (sneak + right-click) or, as an operator, <a href="@/commands.html"><code>/chrono locate</code></a>.
+  Getting close to a fragment for the first time brings <a href="@/mobs.html#maltruants-devotees">Exo-Skull and Subdora</a> through time
+  portals (at most once every 90 seconds). Collect all five for the Assembling Evil advancement.</p>
+</div>
+</div>
+
+<h2>Summoning</h2>
+<p>Place the fragments on the altar in this layout, all at the same height (north is up). Gear and Hex can swap places.</p>
+<div class="media-split media-split-photo media-split-flip">
+<div class="altar-map" role="img" aria-label="Altar layout: Gear or Hex at x−5 z−1 and x−5 z; Part II at x z; Key at x−5 z+4; Part I at x z+4">
+<div class="altar-slot"><img class="px" src="@w/assets/img/deus/items/maltruant_gear.png" alt=""><strong>Gear or Hex</strong><small>x − 5, z − 1</small></div><div class="altar-slot altar-empty"></div>
+<div class="altar-slot"><img class="px" src="@w/assets/img/deus/items/maltruant_hex.png" alt=""><strong>Gear or Hex</strong><small>x − 5, z</small></div><div class="altar-slot altar-anchor"><img class="px" src="@w/assets/img/deus/items/maltruant_part2.png" alt=""><strong>Part II</strong><small>x, z · the anchor</small></div>
+<div class="altar-gap"><span>3 blocks</span></div><div class="altar-gap"><span>3 blocks</span></div>
+<div class="altar-slot"><img class="px" src="@w/assets/img/deus/items/maltruant_key.png" alt=""><strong>Key</strong><small>x − 5, z + 4</small></div><div class="altar-slot"><img class="px" src="@w/assets/img/deus/items/maltruant_part1.png" alt=""><strong>Part I</strong><small>x, z + 4</small></div>
+</div>
+{{figure src="deus/photos/altar_parts.jpg" caption="The altar with its parts in place" pixel="false"}}
+</div>
+<p>When the last one goes down, the five parts lift off, float together and a red portal opens. Maltruant steps out a few seconds later.
+  It doesn't work on Peaceful, or while another Maltruant is already active near the altar.</p>
+<div class="callout warn"><span class="callout-title">Be ready</span><p>Bring armor, food and healing. Don't do it near your base:
+  his attacks and his arrival age the blocks around the altar.</p></div>
+
+<h2>The fight</h2>
+<div class="figure-row">
+  {{figure src="deus/photos/maltruant.jpg" caption="Maltruant in game" pixel="false"}}
+</div>
+<div class="tile-grid">
+  <div class="tile"><h4>I</h4><dl class="stat-list"><div><dt>Health</dt><dd>600 to 401</dd></div><div><dt>Attack</dt><dd>8</dd></div><div><dt>Armor</dt><dd>30</dd></div><div><dt>Music</dt><dd>Khyber&#8209;Netic</dd></div></dl></div>
+  <div class="tile"><h4>II</h4><dl class="stat-list"><div><dt>Health</dt><dd>400 to 201</dd></div><div><dt>Attack</dt><dd>12</dd></div><div><dt>Armor</dt><dd>37.5</dd></div><div><dt>Music</dt><dd>Big Bad Psyphon</dd></div></dl></div>
+  <div class="tile"><h4>III</h4><dl class="stat-list"><div><dt>Health</dt><dd>200 to 0</dd></div><div><dt>Attack</dt><dd>16</dd></div><div><dt>Armor</dt><dd>45</dd></div><div><dt>Music</dt><dd>Future Mal&#8209;Formed</dd></div></dl></div>
+</div>
+<p>Attack damage also scales with difficulty. Maltruant doesn't follow a fixed pattern. He reads what you're doing, forecasts your attacks,
+  dodges projectiles and picks his next move from 28 skills. He also knows the attacks of other mods' bosses (Cataclysm, Twilight Forest,
+  Ice and Fire, Mowzie's Mobs, Alex's Caves, Iron's Spells and more), so bringing them along won't catch him out. While he's around,
+  Omnitrixes nearby can glitch.</p>
+<div class="callout tip"><span class="callout-title">What works</span><p>Full diamond armor and the Diamond Champion are still the
+  best picks against him. As Clockwork you can fire back into his beams and clash with them. The {{item galvan_emp}} makes him take more damage.</p></div>
+
+<h3>Active skills</h3>
+<dl class="skill-grid">
+  <div><dt>Temporal Striker</dt><dd>A fast close-range attack.</dd></div>
+  <div><dt>Chrono Crusher</dt><dd>A heavier strike that cracks the ground.</dd></div>
+  <div><dt>Singularity Uppercut</dt><dd>Launches you upwards, then follows up with a chest beam.</dd></div>
+  <div><dt>Ruinous Barrage</dt><dd>Advances while throwing a series of heavy punches.</dd></div>
+  <div><dt>Timebreaker Grip</dt><dd>Grabs you and throws you away.</dd></div>
+  <div><dt>Cataclysmic Swing</dt><dd>Swings a grabbed target into the ground again and again, then throws it.</dd></div>
+  <div><dt>Heavenfall Execution</dt><dd>Chases you into the air, grabs you and slams you into the ground.</dd></div>
+  <div><dt>Chrono Impact</dt><dd>Leaps at you and lands with a powerful impact.</dd></div>
+  <div><dt>Crimson Hand Cannon</dt><dd>A focused beam from one hand.</dd></div>
+  <div><dt>Heart of Ruin</dt><dd>A sustained beam from the chest core.</dd></div>
+  <div><dt>Twin Erasure</dt><dd>Beams from both hands at once.</dd></div>
+  <div><dt>Temporal Crossfire</dt><dd>Several beams at once from different angles.</dd></div>
+  <div><dt>Rift Volley</dt><dd>A volley of temporal projectiles.</dd></div>
+  <div><dt>Paradox Counter</dt><dd>Answers your attacks with a temporal beam.</dd></div>
+  <div><dt>Vanishing Assault</dt><dd>Teleports around the arena, then strikes.</dd></div>
+  <div><dt>Temporal Shockwave</dt><dd>A close-range shockwave that knocks you back.</dd></div>
+  <div><dt>Worldbreaker</dt><dd>Hits the ground and damages everything around him.</dd></div>
+  <div><dt>Chrono Bind</dt><dd>Holds you in place with temporal energy for a moment.</dd></div>
+  <div><dt>Aegis Shatter</dt><dd>A powerful attack that breaks through your defenses (Armor Break).</dd></div>
+  <div><dt>Entropy Ray</dt><dd>Slowly erases the blocks and entities it touches.</dd></div>
+  <div><dt>Eventide</dt><dd>Slows time around him.</dd></div>
+  <div><dt>Frozen Moment</dt><dd>Freezes your projectiles in mid-air.</dd></div>
+</dl>
+
+<h3>Ultimate skills</h3>
+<dl class="skill-grid">
+  <div><dt>Temporal Doomsday</dt><dd>Uses the Time Bomb to freeze, move and erase targets.</dd></div>
+  <div><dt>Octagon Oblivion</dt><dd>A ring of synchronized beams for a devastating attack.</dd></div>
+</dl>
+
+<h3>Passive skills</h3>
+<dl class="skill-grid">
+  <div><dt>Echoes of Maltruant</dt><dd>Summons copies of himself to help.</dd></div>
+  <div><dt>Timeborn Heralds</dt><dd>Calls Exo-Skull and Subdora into the fight.</dd></div>
+  <div><dt>Paradox Phase</dt><dd>Briefly phases out of time to dodge an attack.</dd></div>
+  <div><dt>Chrono Bastion</dt><dd>Guards against incoming attacks, then counterattacks.</dd></div>
+</dl>
+
+<h2 id="rewards">Rewards</h2>
+<ul class="list-columns">
+  <li>{{item chronosapien_time_bomb_block}} and {{item disc_maltruant_p3}}, always</li>
+  <li>{{item timeclock_key}} and 6 to 12 {{item timeclock_gear}}, always</li>
+  <li>A note from Rook Blonko, always</li>
+  <li>Mending book (50%), Time Reborn V book (25%)</li>
+  <li>{{item chronosapien_dna}} (two 10% rolls), {{item time_beast_spawn_egg}} (5%)</li>
+</ul>
+<div class="media-split media-split-photo">
+{{figure src="deus/photos/time_bomb.jpg" caption="The Chronosapien Time Bomb" pixel="false"}}
+<div>
+<p>When Maltruant is beaten and explodes, his five fragments and the altar generate again somewhere new, so you can fight him again.</p>
+</div>
+</div>

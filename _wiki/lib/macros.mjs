@@ -1,16 +1,22 @@
 // {{macro args}} used inside pages. Each returns HTML. "@/" is the version root, "@w/" the wiki root (shared assets).
 // createMacros(data) builds the macro set for one documented version from that version's data files.
 import { escapeHtml, slugify, stripTags } from './util.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Pictures of vanilla and Palladium ingredients, copied by tools/sync-ingredients.mjs.
+const ingredientDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '../static/img/ingredients');
 
 export function createMacros({ site, stones, abilities, groups, items, categories, skins = [],
-  abilityTypes = [], conditions = [], otherTypes = [] }) {
+  abilityTypes = [], conditions = [], otherTypes = [], recipes = [], trees = {} }) {
 const stoneById = Object.fromEntries(stones.map((s) => [s.id, s]));
 const itemById = Object.fromEntries(items.map((item) => [item.id, item]));
 const img = (src, alt = '', cls = 'px') => src
   ? `<img src="@w/assets/img/${src}" alt="${escapeHtml(alt)}" class="${cls}" loading="lazy">`
   : `<span class="${cls} img-missing" role="img" aria-label="${escapeHtml(alt || 'No image')}"></span>`;
 
-const fullId = (id) => (id.includes(':') ? id : `infinity:${id}`);
+const fullId = (id) => (id.includes(':') ? id : `${site.namespace}:${id}`);
 const getItem = (id) => {
   const item = itemById[fullId(id)];
   if (!item) throw new Error(`unknown item ${id}`);
@@ -28,21 +34,44 @@ const seconds = (ticks) => {
   const s = ticks / 20;
   return `${Number.isInteger(s) ? s : s.toFixed(2).replace(/0+$/, '')} s`;
 };
+// costName is singular, like "Aspect of Existence"; the plural adds an s to its first word.
 const costLabel = (cost) => cost === null || cost === undefined ? 'No unlock needed' : cost === 0 ? 'Free unlock'
-  : `${cost} Aspect${cost === 1 ? '' : 's'} of Existence`;
+  : `${cost} ${cost === 1 ? site.costName : site.costName.replace(/^(\S+)/, '$1s')}`;
+
+// The tags on an ability card or skill tree panel: how you use it, its cooldown, what it costs.
+function abilityTags(ability) {
+  const meta = [`<li class="tag tag-activation">${escapeHtml(ability.activation)}</li>`];
+  if (ability.cooldown) meta.push(`<li class="tag">Cooldown ${seconds(ability.cooldown)}</li>`);
+  // Wikis without an unlock currency (site.costName) show the skill-tree step in ability.unlock instead.
+  if (site.costName) meta.push(`<li class="tag tag-cost">${costLabel(ability.cost)}</li>`);
+  else if (ability.unlock) meta.push(`<li class="tag tag-cost">${escapeHtml(ability.unlock)}</li>`);
+  if (ability.confirm) meta.push('<li class="tag tag-warn">Press twice to confirm</li>');
+  return meta;
+}
 
 function abilityCard(ability) {
   const group = groups[ability.group];
   const stoneColor = stoneById[ability.group]?.color;
-  const meta = [`<li class="tag tag-activation">${escapeHtml(ability.activation)}</li>`];
-  if (ability.cooldown) meta.push(`<li class="tag">Cooldown ${seconds(ability.cooldown)}</li>`);
-  meta.push(`<li class="tag tag-cost">${costLabel(ability.cost)}</li>`);
-  if (ability.confirm) meta.push('<li class="tag tag-warn">Press twice to confirm</li>');
+  const meta = abilityTags(ability);
   const requires = (ability.requires || []).map((key) => {
     const other = getAbility(`${ability.group}/${key}`);
     return `<a href="${abilityUrl(other)}">${escapeHtml(other.name)}</a>`;
   });
   const needs = (ability.needsStones || []).filter((id) => id !== ability.group || ability.needsStones.length === 6);
+  const rest = `${requires.length ? `<p class="ability-req"><span>Requires</span> ${requires.join(', ')}</p>` : ''}
+    ${needs.length ? `<p class="ability-req"><span>Needs stones</span> ${needs.map((id) => stoneChip(id)).join(' ')}</p>` : ''}
+    ${ability.details || ''}
+    <p class="ability-id"><code>${escapeHtml(group.power)}</code>${ability.type ? ` · <code>${escapeHtml(ability.type)}</code>` : ''}</p>`;
+  // site.collapsibleAbilities: a one-line row (icon, name, summary cut short, how you use it) that opens to the rest.
+  if (site.collapsibleAbilities) {
+    return `<details class="ability-card ability-fold" id="${slugify(ability.key)}" data-group="${ability.group}"${stoneColor ? ` style="--accent:${stoneColor}"` : ''}>
+  <summary><span class="ability-icon">${img(ability.icon, '')}</span><span class="ability-fold-text"><strong class="ability-name">${escapeHtml(ability.name)}</strong>`
+      + `<span class="ability-summary">${ability.summary}</span></span></summary>
+  <div class="ability-body"><ul class="tags">${meta.join('')}</ul>
+    ${rest}
+  </div>
+</details>`;
+  }
   return `<article class="ability-card" id="${slugify(ability.key)}" data-group="${ability.group}"${stoneColor ? ` style="--accent:${stoneColor}"` : ''}>
   <div class="ability-icon">${img(ability.icon, '')}</div>
   <div class="ability-body">
@@ -63,6 +92,47 @@ function stoneChip(id) {
   return `<a class="chip stone-chip" style="--accent:${stone.color}" href="@/stones/${id}.html">${img(`stones/${id}_stone.png`, '')}${escapeHtml(stone.name)}</a>`;
 }
 
+// ───── Crafting grids, shared by {{recipe}}, {{recipebook}} and the item popups ─────
+const titleCase = (text) => text.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+// A tag shows this wiki's own item of that material when there is one (#forge:ingots/titanium -> Titanium Ingot).
+const TAG_KINDS = { ingots: 'ingot', plates: 'plate', dusts: 'dust', nuggets: 'nugget', storage_blocks: 'block', blocks: 'block', gems: 'gem' };
+function ingredientCell(id, pic) {
+  if (!id) return '<span class="craft-cell"></span>';
+  let item = itemById[id.startsWith('#') ? '' : fullId(id)], label;
+  if (id.startsWith('#')) {
+    const [kind, material] = id.slice(1).split(':').pop().split('/');
+    label = material ? `Any ${titleCase(material)} ${titleCase(TAG_KINDS[kind] || kind)}` : titleCase(kind);
+    if (material && TAG_KINDS[kind]) item = itemById[`${site.namespace}:${material}_${TAG_KINDS[kind]}`];
+  }
+  if (item) return `<a class="craft-cell" href="@/items.html#${itemAnchor(item)}" title="${escapeHtml(label || item.name)}">${img(item.img, label || item.name)}</a>`;
+  const name = label || titleCase(id.split(':').pop());
+  const copied = !id.startsWith('#') && `${id.replace(':', '_')}.png`;
+  if (!pic && copied && fs.existsSync(path.join(ingredientDir, copied))) pic = `ingredients/${copied}`;
+  return `<span class="craft-cell" title="${escapeHtml(name)}">${pic ? img(pic, name) : `<small>${escapeHtml(name)}</small>`}</span>`;
+}
+function craftHtml(cells, out, count, station) {
+  return `<div class="craft"><div class="craft-grid">${cells.join('')}</div><span class="craft-arrow" aria-hidden="true">${station ? `<small>${station}</small>` : ''}→</span>`
+    + `<a class="craft-cell craft-out" href="@/items.html#${itemAnchor(out)}" title="${escapeHtml(out.name)}">${img(out.img, out.name)}${count > 1 ? `<b>${count}</b>` : ''}</a></div>`;
+}
+const recipeCard = (title, craft, note) => `<figure class="recipe">${title ? `<h4 class="recipe-title">${escapeHtml(title)}</h4>` : ''}${craft}`
+  + `${note ? `<figcaption>${note}</figcaption>` : ''}</figure>`;
+// A recipe from data/recipes.mjs, laid out in a 3 × 3 grid (shapeless ones fill it from the top left).
+function dataRecipe(r) {
+  const out = itemById[r.out];
+  let cells;
+  if (r.type === 'shaped') {
+    cells = r.rows.concat(['', '', '']).slice(0, 3).flatMap((row) => [...row.padEnd(3, ' ')].map((c) => ingredientCell(c === ' ' ? '' : r.key[c])));
+  } else if (r.type === 'smelting') {
+    cells = [null, null, null, null, r.ingredients[0], null, null, null, null].map((id) => ingredientCell(id));
+  } else {
+    cells = [...r.ingredients, ...Array(9).fill(null)].slice(0, 9).map((id) => ingredientCell(id));
+  }
+  const note = [r.type === 'shapeless' ? 'Shapeless' : '', r.note || ''].filter(Boolean).join(' · ');
+  return recipeCard(out.name, craftHtml(cells, out, r.count, r.type === 'smelting' ? 'Furnace' : ''), note);
+}
+const usableRecipes = recipes.filter((r) => itemById[r.out]);
+const recipesFor = (id) => usableRecipes.filter((r) => r.out === id);
+
 function itemDetail(item) {
   return `<div class="item-detail">
     <div class="item-detail-head">${img(item.img, item.name, 'px item-detail-img')}<div><h3 class="no-toc">${escapeHtml(item.name)}</h3></div></div>
@@ -70,6 +140,7 @@ function itemDetail(item) {
     <p>${item.desc}</p>
     <dl><dt>How to get it</dt><dd>${item.obtain}</dd>${item.rarity ? `<dt>Rarity</dt><dd>${item.rarity}</dd>` : ''}
     <dt>Category</dt><dd>${escapeHtml(categories.find((c) => c.id === item.category).name)}</dd></dl>
+    ${recipesFor(item.id).length ? `<div class="recipe-grid recipe-grid-small">${recipesFor(item.id).map(dataRecipe).join('')}</div>` : ''}
     ${item.page && item.page !== 'items.html' ? `<p><a class="button-link" href="@/${item.page}">Read more →</a></p>` : ''}
   </div>`;
 }
@@ -102,6 +173,9 @@ const macros = {
   abilities([group], options) {
     let list = abilities.filter((a) => a.group === group);
     if (!list.length) throw new Error(`no abilities in group ${group}`);
+    // notree: only the ones that aren't in the group's {{skilltree}}.
+    if (options.notree) list = list.filter((a) => !a.pos);
+    if (!list.length) return '';
     if (options.only) {
       const keys = options.only.split(',');
       list = keys.map((key) => getAbility(`${group}/${key}`));
@@ -241,6 +315,98 @@ const macros = {
 ${entry.props.length ? `<div class="table-wrap"><table><thead><tr><th>Property</th><th>Default</th><th>Description</th></tr></thead><tbody>${
   entry.props.map(([name, def, desc]) => `<tr><td><code>${escapeHtml(name)}</code></td><td><code>${escapeHtml(def)}</code></td><td>${escapeHtml(desc)}</td></tr>`).join('')}</tbody></table></div>` : ''}`).join('\n');
   },
+
+  // A skill tree drawn like the in-game screen: nodes at their gui_position, elbow lines from each parent, and an info
+  // panel for the node you click (wiki.js). Without JavaScript every panel shows, as a list. Nodes need pos: [x, y].
+  // unit: pixels per gui_position unit (the board's size; it scrolls sideways when wider than the page).
+  // bg: the power's background, a color (#64209c) or a tiled texture under assets/img (default: Alien Evolution's machined metal).
+  skilltree([group], options) {
+    // From data/trees.mjs when the wiki has it (every node in the game's tree, dummies too, with the game's parents);
+    // otherwise from the abilities that have a pos.
+    const tree = trees[group];
+    const nodes = tree ? tree.map((n) => {
+      const a = n.ability && getAbility(`${group}/${n.ability}`);
+      return a ? { ...a, pos: n.pos, parents: n.parents, treeKey: n.key }
+        : { group, key: n.key, treeKey: n.key, name: n.name, summary: n.summary || 'A step in the skill tree.', icon: n.icon, cost: n.cost,
+          activation: 'Unlock', type: 'palladium:dummy', pos: n.pos, parents: n.parents, blank: /^dummy\d*$/.test(n.name) };
+    }) : abilities.filter((a) => a.group === group && a.pos);
+    if (!nodes.length) throw new Error(`no skill tree nodes in ${group}`);
+    const byTreeKey = Object.fromEntries(nodes.map((n) => [n.treeKey || n.key, n]));
+    const parentsOf = (n) => (n.parents ? n.parents.map((k) => byTreeKey[k]?.key) : n.requires || []).filter(Boolean);
+    const xs = nodes.map((n) => n.pos[0]), ys = nodes.map((n) => n.pos[1]);
+    const minX = Math.min(...xs), minY = Math.min(...ys);
+    const spanX = Math.max(...xs) - minX, spanY = Math.max(...ys) - minY;
+    const unit = Number(options.unit || 150);
+    const at = (n) => [(n.pos[0] - minX) * 100, (n.pos[1] - minY) * 100];
+    const pct = (v, span) => (span ? (v / (span * 100)) * 100 : 50);
+    const byKey = Object.fromEntries(nodes.map((n) => [n.key, n]));
+    const lines = nodes.flatMap((n) => parentsOf(n).filter((k) => byKey[k]).map((k) => {
+      const [x1, y1] = at(byKey[k]), [x2, y2] = at(n), mid = (x1 + x2) / 2;
+      return `<path d="M${x1} ${y1}H${mid}V${y2}H${x2}" data-from="${k}" data-to="${n.key}"/>`;
+    })).join('');
+    const free = (n) => (site.costName ? !n.cost : n.unlock === 'Free');
+    const live = nodes.filter((n) => !n.blank);
+    const buttons = nodes.map((n) => {
+      const [x, y] = at(n);
+      const i = live.indexOf(n);
+      // Blank filler slots (the game uses them to draw letters) are just empty frames.
+      if (n.blank) return `<span class="st-node st-blank" style="left:${pct(x, spanX)}%;top:${pct(y, spanY)}%" aria-hidden="true"></span>`;
+      // The node carries the entry's anchor, so links to <page>#<key> (search, the ability list) land on the tree.
+      return `<button type="button" class="st-node${free(n) ? ' st-free' : ''}" id="${slugify(n.key)}" data-node="${n.key}" aria-pressed="${i === 0}" `
+        + `style="left:${pct(x, spanX)}%;top:${pct(y, spanY)}%" title="${escapeHtml(n.name)}">${img(n.icon, n.name)}</button>`;
+    }).join('');
+    const link = (k) => `<a href="#${slugify(k)}" data-node-link="${k}">${escapeHtml(byKey[k].name)}</a>`;
+    const panels = live.map((n, i) => {
+      const needs = parentsOf(n).map((k) => (byKey[k] ? link(k) : macros.ab([`${group}/${k}`]))).join(', ');
+      const children = live.filter((o) => parentsOf(o).includes(n.key)).map((o) => link(o.key)).join(', ');
+      const gives = (n.gives || []).map((ref) => macros.ab([ref])).join(', ');
+      const stonesNeeded = (n.needsStones || []).filter((id) => id !== n.group || n.needsStones.length === 6);
+      return `<section class="st-info${i === 0 ? ' active' : ''}" data-info="${n.key}" aria-live="polite">
+  <div class="st-info-head">${img(n.icon, '', 'px st-info-icon')}<div><h3 class="no-toc">${escapeHtml(n.name)}</h3><ul class="tags">${abilityTags(n).join('')}</ul></div></div>
+  <p>${n.summary}</p>
+  ${n.details || ''}
+  <dl>${gives ? `<dt>Unlocks</dt><dd>${gives}</dd>` : ''}<dt>Needs</dt><dd>${needs || 'Nothing, it\'s a starting entry'}</dd>${children ? `<dt>Leads to</dt><dd>${children}</dd>` : ''}${stonesNeeded.length ? `<dt>Stones</dt><dd>${stonesNeeded.map((id) => stoneChip(id)).join(' ')}</dd>` : ''}</dl>
+  <p class="ability-id"><code>${escapeHtml(groups[n.group].power)}</code> · <code>${escapeHtml(n.type || n.key)}</code></p>
+</section>`;
+    }).join('');
+    const accent = stoneById[group]?.color;
+    return `<div class="skill-tree" data-skill-tree${accent ? ` style="--accent:${accent}"` : ''}>
+  <div class="st-scroll"${!options.bg ? '' : options.bg.startsWith('#') ? ` style="background-color:${options.bg};background-image:linear-gradient(rgba(8, 10, 8, 0.45), rgba(8, 10, 8, 0.45))"` : ` style="background-image:linear-gradient(rgba(8, 10, 8, 0.55), rgba(8, 10, 8, 0.55)),url(@w/assets/img/${options.bg})"`}><div class="st-board" style="width:${Math.max(spanX * unit, 60)}px;height:${Math.max(spanY * unit, 60)}px">
+    <svg class="st-lines" viewBox="0 0 ${Math.max(spanX * 100, 1)} ${Math.max(spanY * 100, 1)}" preserveAspectRatio="none" aria-hidden="true">${lines}</svg>
+    ${buttons}
+  </div></div>
+  <div class="st-panels">${panels}</div>
+</div>`;
+  },
+
+  // A crafting grid: {{recipe rows="ckc,lxr,cgc" c=alienevo:upgrade_crystal k=timeclock_key ... out=chronosapien_dna count=6}}.
+  // title and note add a heading and a line under it; put several in <div class="recipe-grid"> to lay them out side by side.
+  // Letters are lowercase; a space or "." is an empty slot. Items not in this wiki's list show their name, with a
+  // picture from the options' img_<letter> when given.
+  recipe(args, options) {
+    const rows = options.rows.split(',').map((row) => row.padEnd(3, ' '));
+    const cells = rows.flatMap((row) => [...row].map((c) => (c === ' ' || c === '.' ? ingredientCell('') : ingredientCell(options[c], options[`img_${c}`]))));
+    const craft = craftHtml(cells, getItem(options.out), Number(options.count || 1));
+    return options.title || options.note ? recipeCard(options.title, craft, options.note) : craft;
+  },
+
+  // Every recipe in data/recipes.mjs, one folding section per item category (materials start closed).
+  recipebook() {
+    return categories.map((c) => {
+      const list = usableRecipes.filter((r) => itemById[r.out].category === c.id);
+      if (!list.length) return '';
+      return `<details class="fold-section"${c.id === 'material' || c.id === 'block' ? '' : ' open'}><summary>${escapeHtml(c.name)} <small>(${list.length})</small></summary>`
+        + `<div class="recipe-grid">${list.map(dataRecipe).join('')}</div></details>`;
+    }).join('\n');
+  },
+
+  // The recipes for some items: {{recipes infinity_gauntlet tesseract}}.
+  recipes(ids) {
+    const list = ids.flatMap((id) => recipesFor(fullId(id)));
+    if (!list.length) throw new Error(`no recipes for ${ids.join(', ')}`);
+    return `<div class="recipe-grid">${list.map(dataRecipe).join('')}</div>`;
+  },
+
 
   figure(args, options) {
     return `<figure class="figure"><button type="button" class="zoomable" data-zoom="@w/assets/img/${options.src}" data-caption="${escapeHtml(options.caption || '')}" aria-label="Enlarge image">`

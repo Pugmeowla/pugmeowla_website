@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../" data-wiki="infinity">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Gauntlet Skin Files · Infinity Stone Core Wiki 8.0</title>
+<meta name="description" content="The gauntlet_skins format: add an Infinity Gauntlet skin with one JSON file and its textures, including custom models, glow layers and replacement rules.">
+<meta property="og:title" content="Gauntlet Skin Files · Infinity Stone Core Wiki 8.0">
+<meta property="og:description" content="The gauntlet_skins format: add an Infinity Gauntlet skin with one JSON file and its textures, including custom models, glow layers and replacement rules.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
+</head>
+<body class="doc">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
+  <a class="brand" href="../index.html"><img src="../../assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki 8.0</small></span></a>
+  <div class="search" role="search">
+    <label class="visually-hidden" for="search-input">Search the 8.0 wiki</label>
+    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div id="search-results" class="search-results" role="listbox" hidden></div>
+  </div>
+  <div class="prefs prefs-top">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+  <a class="home-link" href="../../index.html">All wikis</a>
+</header>
+<div class="shell has-toc">
+  <nav id="sidebar" class="sidebar" aria-label="Wiki">
+    <div class="sidebar-inner">
+      <div class="prefs prefs-drawer">
+    <div class="platform-switch" role="group" aria-label="Open mod links on">
+      <button type="button" data-platform-choice="modrinth" aria-pressed="true">Modrinth</button>
+      <button type="button" data-platform-choice="curseforge" aria-pressed="false">CurseForge</button>
+    </div>
+    <button type="button" class="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1z" fill="currentColor"/></svg>
+      <svg class="icon-sun" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g></svg>
+    </button>
+  </div>
+      <details class="version-switch"><summary><span>v8.0 · MC 1.20.1 · Forge</span></summary><p class="version-switch-title">Documentation version</p><ul><li><a href="../../infinity/addons/skins.html" aria-current="true" class="active"><strong>8.0</strong><small>In development</small></a></li><li><a href="../../infinity/7.3/index.html"><strong>7.3</strong><small>Current release</small></a></li></ul></details>
+      <a class="nav-top" href="../index.html"><img src="../../assets/img/logo.png" alt="" class="px nav-icon"><span>Wiki Home</span></a><details class="nav-group"><summary><img src="../../assets/img/renders/infinity_gauntlet_cast.png" alt="" class="px nav-icon"><span>Getting Started</span></summary><ul><li><a href="../installation.html">Installation</a></li><li><a href="../getting-started.html">Getting Started</a></li><li><a href="../finding-stones.html">Finding the Stones</a></li><li><a href="../progression.html">Progression</a></li><li><a href="../advancements.html">Advancements</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/stones/power_stone.png" alt="" class="px nav-icon"><span>Infinity Stones</span></summary><ul><li><a href="../stones/index.html">Overview</a></li><li><a href="../stones/containers.html">Containers</a></li><li><a href="../stones/power.html">Power Stone</a></li><li><a href="../stones/space.html">Space Stone</a></li><li><a href="../stones/reality.html">Reality Stone</a></li><li><a href="../stones/soul.html">Soul Stone</a></li><li><a href="../stones/time.html">Time Stone</a></li><li><a href="../stones/mind.html">Mind Stone</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/items/infinity_gauntlet.png" alt="" class="px nav-icon"><span>Infinity Gauntlet</span></summary><ul><li><a href="../gauntlet/index.html">The Gauntlet</a></li><li><a href="../gauntlet/snap.html">The Snap</a></li><li><a href="../gauntlet/skins.html">Skins</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/icons/energy_blast.png" alt="" class="px nav-icon"><span>Abilities</span></summary><ul><li><a href="../abilities.html">All Abilities</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/renders/cosmi-rod.png" alt="" class="px nav-icon"><span>Items &amp; Equipment</span></summary><ul><li><a href="../items.html">Item Index</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../armor.html">Armor</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/renders/vormir_stone.png" alt="" class="px nav-icon"><span>Exploration</span></summary><ul><li><a href="../structures.html">Structures</a></li><li><a href="../dimensions.html">Dimensions</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/icons/teleport.png" alt="" class="px nav-icon"><span>Commands</span></summary><ul><li><a href="../commands.html">Commands</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/renders/aspects_of_existance.png" alt="" class="px nav-icon"><span>Infinity Addon Mods</span></summary><ul><li><a href="../mods/infintrix.html">Infintrix</a></li><li><a href="../mods/infinity-protocol.html">Infinity Protocol</a></li><li><a href="../mods/infinity-generator.html">Infinity Generator</a></li><li><a href="../mods/herbs-of-wakanda.html">Herbs of Wakanda</a></li></ul></details><details class="nav-group" open><summary><img src="../../assets/img/renders/52-d_unit.png" alt="" class="px nav-icon"><span>Addon Development</span></summary><ul><li><a href="../addons/index.html">Overview</a></li><li><a href="../addons/stones.html">Custom Stones</a></li><li><a href="../addons/skins.html" aria-current="page" class="active">Skin Files</a></li><li><a href="../addons/custom-gauntlets.html">Custom Gauntlets</a></li><li><a href="../addons/ground-items.html">Ground Items</a></li><li><a href="../addons/ability-overlays.html">Ability Overlays</a></li><li><a href="../addons/immunities.html">Immunities</a></li><li><a href="../addons/abilities.html">Ability Reference</a></li></ul></details><details class="nav-group"><summary><img src="../../assets/img/renders/soul_guardian_telephone.png" alt="" class="px nav-icon"><span>Help</span></summary><ul><li><a href="../configuration.html">Configuration</a></li><li><a href="../troubleshooting.html">Troubleshooting</a></li><li><a href="../credits.html">Credits</a></li></ul></details><a class="nav-top" href="../changelog.html"><img src="../../assets/img/icons/hourglass.png" alt="" class="px nav-icon"><span>Changelog</span></a>
+    </div>
+  </nav>
+  <div class="scrim" hidden></div>
+  <main id="content" class="content" tabindex="-1">
+    <div class="version-notice" data-notice="8.0"><p>These pages are for 8.0, which isn't out yet. The version on CurseForge and Modrinth is still 7.3. <a href="../../infinity/7.3/index.html">Read the 7.3 docs</a></p><button type="button" class="version-notice-close" aria-label="Dismiss notice">×</button><script>try{if(localStorage.getItem('wiki-notice-8.0'))document.currentScript.parentNode.hidden=true}catch(e){}</script></div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Wiki 8.0</a></li><li><a href="../addons/index.html">Addon Development</a></li><li aria-current="page">Gauntlet Skin Files</li></ol></nav>
+    <header class="page-head"><img class="page-icon px" src="../../assets/img/skins/sith_gauntlet.png" alt=""><div><h1>Gauntlet Skin Files</h1><p class="lead">A skin is one JSON file plus its textures. The mod generates the apply ability, skill tree entry, item look and render layers for you.</p></div></header>
+    <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#what-you-get">What one file gives you</a></li><li class="toc-l2"><a href="#worked-example">Worked example: a Gold Gauntlet</a></li><li class="toc-l2"><a href="#fields">All fields</a></li><li class="toc-l2"><a href="#examples">Examples from the mod</a></li><li class="toc-l2"><a href="#extending">Extending the format (Java)</a></li></ol></details>
+    <article class="prose">
+<h2 id="what-you-get">What one file gives you<a class="heading-anchor" href="#what-you-get" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>What</th><th>How</th></tr></thead>
+  <tbody>
+    <tr><td>Apply ability (<code>infinity:<wbr>set_<wbr>gauntlet_<wbr>skin</code>) and skill tree entry</td><td>Added to the <code>infinity:<wbr>infinity_<wbr>gauntlet</code> power where its <code>{"infinity:<wbr>generate": "gauntlet_<wbr>skins"}</code> placeholder sits.</td></tr>
+    <tr><td>Inventory item look</td><td>The gauntlet's item model, retextured with the skin's icon texture.</td></tr>
+    <tr><td>Worn, main hand and ground look</td><td>A generated <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> (<a class="mod-link" href="https://modrinth.com/mod/geckolib" data-modrinth="https://modrinth.com/mod/geckolib" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/geckolib"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/geckolib.png" alt="" loading="lazy">GeckoLib</span></a>) render layer, picked by the <code>infinity:<wbr>gauntlet_<wbr>skin_<wbr>layer</code> abilities.</td></tr>
+    <tr><td><code>/<wbr>infinity gauntlet skin set|<wbr>clear</code></td><td>Suggests the skin, and gives back its unlock item on clear. Only changes a gauntlet held in the main or off hand.</td></tr>
+    <tr><td><code>infinity:<wbr>gauntlet_<wbr>skin</code> condition</td><td>Works with the skin ID.</td></tr>
+  </tbody>
+</table></div>
+<p>The apply ability uses one unlock item (held in the main hand), sets the skin, plays the apply sound and runs <code>apply_commands</code>. It reaches a gauntlet held in either hand or worn in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands slot. It only
+  appears while the gauntlet has no skin, or one listed in <code>can_replace</code>.</p>
+
+<h2 id="worked-example">Worked example: a Gold Gauntlet<a class="heading-anchor" href="#worked-example" aria-label="Link to this section">#</a></h2>
+<p>Skin files go in <code>data/<wbr>&lt;namespace&gt;/<wbr>infinity/<wbr>gauntlet_skins/</code>, where <code>&lt;namespace&gt;</code> is your mod or pack ID. The skin
+  ID is <code>&lt;namespace&gt;:<wbr>&lt;file name&gt;</code> and its textures are looked up in your namespace, so two mods can't replace each
+  other's skins. The older <code>data/<wbr>infinity/<wbr>gauntlet_skins/</code> folder still works, with just the file name as the ID: that's
+  where the mod's own skins live.</p>
+<p><strong>1. Definition.</strong> In the Test Stone pack, this is the skin <code>infinity_test_stone:<wbr>gold_gauntlet</code>.</p>
+<div class="code-block"><div class="code-head"><span>data/infinity_test_stone/infinity/gauntlet_skins/gold_gauntlet.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;title&quot;</span>: <span class="t-str">&quot;Gold Gauntlet&quot;</span>,
+  <span class="t-key">&quot;unlock_item&quot;</span>: <span class="t-str">&quot;minecraft:gold_ingot&quot;</span>,
+  <span class="t-key">&quot;description&quot;</span>: <span class="t-str">&quot;Unlock by right-clicking with a Gold Ingot in your main hand.&quot;</span>
+}</code></pre></div>
+<p><strong>2. Textures</strong>, named after the file, in <code>assets/<wbr>infinity_test_stone/<wbr>textures/</code>:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>File</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td><code>models/<wbr>gold_<wbr>gauntlet.png</code></td><td>The gauntlet worn, in the main hand and on the ground (same UV layout as <code>models/<wbr>gauntlet.png</code> for <code>geo/<wbr>gauntlet.geo.json</code>).</td></tr>
+    <tr><td><code>item/<wbr>gauntlet_<wbr>skins/<wbr>gold_<wbr>gauntlet.png</code></td><td>Inventory item <em>and</em> skill tree icon (same layout as <code>item/<wbr>infinity_<wbr>gauntlet_<wbr>item.png</code>).</td></tr>
+  </tbody>
+</table></div>
+<p>That's it. Restart the game. Missing textures or models fall back to the normal gauntlet's, with a warning in the log.</p>
+<p>Instead of <code>description</code> you can add the lang key <code>ability.infinity_test_stone.gauntlet.gold_gauntlet.description</code>
+  (<code>ability.&lt;namespace&gt;.gauntlet.&lt;file name&gt;.description</code>).</p>
+
+<h2 id="fields">All fields<a class="heading-anchor" href="#fields" aria-label="Link to this section">#</a></h2>
+<p>Only <code>unlock_item</code> is required.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>unlock_item</code></td><td><strong>required</strong></td><td>Item held in the main hand to apply the skin. One is consumed, and given back when the skin is removed. Must be a registered item, or the skin is skipped.</td></tr>
+    <tr><td><code>title</code></td><td>ID in title case</td><td>Name in the skill tree and ability bar.</td></tr>
+    <tr><td><code>description</code></td><td>lang key <code>ability.infinity.gauntlet.&lt;id&gt;.description</code></td><td>Text or text component shown in the skill tree.</td></tr>
+    <tr><td><code>apply_on</code></td><td><code>right_click</code></td><td><code>right_click</code>, or <code>hold</code> to apply as soon as the item is held.</td></tr>
+    <tr><td><code>apply_sound</code></td><td><code>minecraft:<wbr>block.anvil.land</code></td><td>Sound played on apply.</td></tr>
+    <tr><td><code>bar_color</code></td><td><code>black</code></td><td>Ability bar color (a <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> ability color name).</td></tr>
+    <tr><td><code>hidden_in_bar</code></td><td><code>false</code></td><td>Hide the apply ability from the ability bar, for secret skins.</td></tr>
+    <tr><td><code>gui_position</code></td><td>next free slot</td><td><code>[x, y]</code> in the gauntlet's skill tree. Without it: the first free slot in rows of five (x = −1 to 1, step 0.5) from y = 2.5.</td></tr>
+    <tr><td><code>can_replace</code></td><td><code>[]</code></td><td>Skin IDs this skin may be applied over. Normally the gauntlet must have no skin.</td></tr>
+    <tr><td><code>apply_commands</code></td><td><code>[]</code></td><td>Extra commands run as the player after applying.</td></tr>
+    <tr><td><code>icon</code></td><td><code>&lt;namespace&gt;:<wbr>item/<wbr>gauntlet_<wbr>skins/<wbr>&lt;file name&gt;</code></td><td>Skill tree icon <em>and</em> inventory item texture, as a sprite under <code>textures/</code> (no <code>textures/</code> or <code>.png</code>. A full texture path is accepted too).</td></tr>
+    <tr><td><code>render.texture</code></td><td><code>&lt;namespace&gt;:<wbr>textures/<wbr>models/<wbr>&lt;file name&gt;.png</code></td><td>Model texture.</td></tr>
+    <tr><td><code>render.model</code></td><td><code>infinity:<wbr>geo/<wbr>gauntlet</code></td><td><a class="mod-link" href="https://modrinth.com/mod/geckolib" data-modrinth="https://modrinth.com/mod/geckolib" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/geckolib"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/geckolib.png" alt="" loading="lazy">GeckoLib</span></a> model prefix, without <code>.geo.json</code>. <code>_mainhand</code> and <code>_ground</code> are appended for those positions, so a custom shape needs all three files.</td></tr>
+    <tr><td><code>render.glow</code></td><td>off</td><td><code>true</code> adds an emissive layer using <code>&lt;texture&gt;_<wbr>glow.png</code>. An object allows <code>texture</code>, <code>enchantment_<wbr>glint</code>, <code>conditions</code> (<a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> conditions, e.g. night only) and <code>positions</code> (any of <code>worn</code>, <code>mainhand</code>, <code>ground</code>).</td></tr>
+    <tr><td><code>render.layers</code></td><td>none</td><td><code>{"worn": "infinity_<wbr>test_<wbr>stone:<wbr>my_<wbr>layer", …}</code>: use your own <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> render layer for that position instead of the generated one.</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="examples">Examples from the mod<a class="heading-anchor" href="#examples" aria-label="Link to this section">#</a></h2>
+<div class="tabs" data-tabs>
+  <section data-tab="Minimal">
+    <h3 class="tab-label no-toc">Minimal</h3>
+<div class="code-block"><div class="code-head"><span>netherite_gauntlet.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;title&quot;</span>: <span class="t-str">&quot;Netherite Gauntlet&quot;</span>,
+  <span class="t-key">&quot;unlock_item&quot;</span>: <span class="t-str">&quot;minecraft:netherite_ingot&quot;</span>,
+  <span class="t-key">&quot;gui_position&quot;</span>: [<span class="t-num">0</span>, <span class="t-num">2.5</span>]
+}</code></pre></div>
+  </section>
+  <section data-tab="Custom model + glint">
+    <h3 class="tab-label no-toc">Custom model + glint</h3>
+<div class="code-block"><div class="code-head"><span>dragon_gauntlet.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;title&quot;</span>: <span class="t-str">&quot;Dragon Gauntlet&quot;</span>,
+  <span class="t-key">&quot;unlock_item&quot;</span>: <span class="t-str">&quot;minecraft:dragon_head&quot;</span>,
+  <span class="t-key">&quot;bar_color&quot;</span>: <span class="t-str">&quot;purple&quot;</span>,
+  <span class="t-key">&quot;gui_position&quot;</span>: [<span class="t-num">0</span>, <span class="t-num">4</span>],
+  <span class="t-key">&quot;render&quot;</span>: {
+    <span class="t-key">&quot;model&quot;</span>: <span class="t-str">&quot;infinity:geo/dragon_gauntlet&quot;</span>,
+    <span class="t-key">&quot;glow&quot;</span>: { <span class="t-key">&quot;enchantment_glint&quot;</span>: <span class="t-bool">true</span> }
+  }
+}</code></pre></div>
+  </section>
+  <section data-tab="Glow at night">
+    <h3 class="tab-label no-toc">Glow at night</h3>
+<div class="code-block"><div class="code-head"><span>midnight.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;title&quot;</span>: <span class="t-str">&quot;Midnight&quot;</span>,
+  <span class="t-key">&quot;unlock_item&quot;</span>: <span class="t-str">&quot;minecraft:black_dye&quot;</span>,
+  <span class="t-key">&quot;gui_position&quot;</span>: [<span class="t-num">-1</span>, <span class="t-num">3.5</span>],
+  <span class="t-key">&quot;render&quot;</span>: {
+    <span class="t-key">&quot;glow&quot;</span>: {
+      <span class="t-key">&quot;positions&quot;</span>: [<span class="t-str">&quot;worn&quot;</span>],
+      <span class="t-key">&quot;conditions&quot;</span>: [ { <span class="t-key">&quot;type&quot;</span>: <span class="t-str">&quot;palladium:night&quot;</span> } ]
+    }
+  }
+}</code></pre></div>
+  </section>
+  <section data-tab="Apply on hold">
+    <h3 class="tab-label no-toc">Apply on hold</h3>
+<div class="code-block"><div class="code-head"><span>finger_gauntlet.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;title&quot;</span>: <span class="t-str">&quot;Gauntlet with Fingers&quot;</span>,
+  <span class="t-key">&quot;unlock_item&quot;</span>: <span class="t-str">&quot;minecraft:chicken&quot;</span>,
+  <span class="t-key">&quot;apply_sound&quot;</span>: <span class="t-str">&quot;minecraft:entity.generic.eat&quot;</span>,
+  <span class="t-key">&quot;apply_on&quot;</span>: <span class="t-str">&quot;hold&quot;</span>,
+  <span class="t-key">&quot;gui_position&quot;</span>: [<span class="t-num">1</span>, <span class="t-num">2.5</span>],
+  <span class="t-key">&quot;render&quot;</span>: {
+    <span class="t-key">&quot;model&quot;</span>: <span class="t-str">&quot;infinity:geo/finger_gauntlet&quot;</span>,
+    <span class="t-key">&quot;texture&quot;</span>: <span class="t-str">&quot;infinity:textures/models/gauntlet.png&quot;</span>
+  }
+}</code></pre></div>
+  </section>
+  <section data-tab="Replace + commands">
+    <h3 class="tab-label no-toc">Replace + commands</h3>
+<div class="code-block"><div class="code-head"><span>nano_gauntlet.json</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-json">{
+  <span class="t-key">&quot;title&quot;</span>: <span class="t-str">&quot;Nano Gauntlet Skin&quot;</span>,
+  <span class="t-key">&quot;unlock_item&quot;</span>: <span class="t-str">&quot;palladium:vibranium_flux_capacitor&quot;</span>,
+  <span class="t-key">&quot;apply_sound&quot;</span>: <span class="t-str">&quot;infinity:nano_gauntlet&quot;</span>,
+  <span class="t-key">&quot;bar_color&quot;</span>: <span class="t-str">&quot;red&quot;</span>,
+  <span class="t-key">&quot;gui_position&quot;</span>: [<span class="t-num">-1</span>, <span class="t-num">2.5</span>],
+  <span class="t-key">&quot;can_replace&quot;</span>: [<span class="t-str">&quot;gauntlet_burn&quot;</span>],
+  <span class="t-key">&quot;apply_commands&quot;</span>: [<span class="t-str">&quot;tag @s remove burn_texture&quot;</span>]
+}</code></pre></div>
+  </section>
+</div>
+
+<h2 id="extending">Extending the format (Java)<a class="heading-anchor" href="#extending" aria-label="Link to this section">#</a></h2>
+<p><code>GauntletSkin</code> keeps the raw JSON (<code>skin.json</code>), so new code can read a new key without changing the parser. Apply abilities
+  are built in <code>GauntletSkinAbilities</code> and render layers in <code>GauntletSkin.renderLayerJson</code>.</p>
+
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../addons/stones.html"><small>← Previous</small><span>Custom Stones</span></a><a class="pager-link next" href="../addons/custom-gauntlets.html"><small>Next →</small><span>Custom Gauntlets</span></a></nav>
+    <footer class="footer">
+      <p><strong>Pugmeowla's Infinity Stone Core</strong> by Pugmeowla. These pages document version 8.0 for Minecraft 1.20.1.</p>
+      <p><a href="https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core">CurseForge</a> · <a href="https://modrinth.com/mod/pugmeowlas-infinity-stone-core">Modrinth</a> · <a href="https://discord.gg/jRZnRFabKP">Discord</a> · <a href="../../../index.html">All projects</a></p>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ol><li class="toc-l2"><a href="#what-you-get">What one file gives you</a></li><li class="toc-l2"><a href="#worked-example">Worked example: a Gold Gauntlet</a></li><li class="toc-l2"><a href="#fields">All fields</a></li><li class="toc-l2"><a href="#examples">Examples from the mod</a></li><li class="toc-l2"><a href="#extending">Extending the format (Java)</a></li></ol></aside>
+</div>
+<button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
+<script src="../../assets/js/search-infinity-8.0.js" defer></script>
+<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+</body>
+</html>

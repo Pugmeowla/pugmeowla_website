@@ -1,14 +1,16 @@
-// Builds the Infinity Stone Core wiki for every documented version:
-//   _wiki/versions/<id>/{pages,data,nav.mjs}  ->  wiki/ (latest) and wiki/<id>/ (older versions)
+// Builds every mod wiki in site.mjs, each for every documented version:
+//   _wiki/<wiki>/<id>/{pages,data,nav.mjs}  ->  wiki/<dir>/ (latest) and wiki/<dir>/<id>/ (older versions)
+// plus wiki/index.html, the list of wikis.
 //   node _wiki/build.mjs
 // No dependencies. Fails (exit code 1) on broken internal links, missing anchors or missing images.
 //
 // Link tokens in pages and macros: "@/" is the version's root, "@w/" the wiki root (shared assets),
 // "@s/" the website root (the homepage).
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { site } from './site.mjs';
+import { wikis } from './site.mjs';
 import { createMacros } from './lib/macros.mjs';
 import { highlight } from './lib/highlight.mjs';
 import { escapeHtml, slugify, stripTags } from './lib/util.mjs';
@@ -17,6 +19,9 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const siteRoot = path.resolve(here, '..');
 const wikiDir = path.join(siteRoot, 'wiki');
 const errors = [];
+// A short hash of each shared file, added to its link (wiki.css?v=…), so browsers load the new copy after a change.
+const stamp = (file) => crypto.createHash('sha1').update(fs.readFileSync(path.join(here, 'static', file))).digest('hex').slice(0, 8);
+const cssV = stamp('css/wiki.css'), jsV = stamp('js/wiki.js');
 
 // ───────────── load versions ─────────────
 function listPages(dir, prefix = '') {
@@ -39,19 +44,26 @@ function parsePage(dir, file) {
 }
 
 const versions = [];
+for (const site of wikis) {
+const siblings = [];
 for (const id of site.versions) {
-  const dir = path.join(here, 'versions', id);
-  const { version, nav } = await import(pathToFileURL(path.join(dir, 'nav.mjs')));
+  const dir = path.join(here, site.id, id);
+  const { version: own, nav } = await import(pathToFileURL(path.join(dir, 'nav.mjs')));
+  // nav.mjs gives the folder inside the wiki's own folder.
+  const version = { ...own, outDir: [site.dir, own.outDir].filter(Boolean).join('/') };
   const data = await import(pathToFileURL(path.join(dir, 'data', 'index.mjs')));
   const pagesDir = path.join(dir, 'pages');
   const pages = Object.fromEntries(listPages(pagesDir).map((file) => [file, parsePage(pagesDir, file)]));
   const order = nav.flatMap((section) => section.pages);
-  for (const file of order) if (!pages[file]) errors.push(`${id}: nav lists missing page ${file}`);
+  for (const file of order) if (!pages[file]) errors.push(`${site.id} ${id}: nav lists missing page ${file}`);
   for (const file of Object.keys(pages)) {
-    if (!order.includes(file) && file !== '404.html') errors.push(`${id}: page ${file} is not in the nav`);
+    if (!order.includes(file) && file !== '404.html') errors.push(`${site.id} ${id}: page ${file} is not in the nav`);
   }
-  versions.push({ ...version, nav, pages, order, data,
-    macros: createMacros({ site: { ...site, ...version }, ...data }) });
+  const v = { ...version, wiki: site, siblings, nav, pages, order, data,
+    macros: createMacros({ site: { ...site, ...version }, ...data }) };
+  siblings.push(v);
+  versions.push(v);
+}
 }
 
 // ───────────── page rendering ─────────────
@@ -155,7 +167,7 @@ function tocHtml(toc, depth = 3) {
 }
 
 function renderer(v) {
-  const { pages, nav, order } = v;
+  const { pages, nav, order, wiki: site, siblings: versions } = v;
   const sectionOf = (file) => nav.find((section) => section.pages.includes(file));
   const titleOf = (file) => pages[file]?.meta.title || file;
 
@@ -246,7 +258,7 @@ const prefs = (where) => `<div class="prefs prefs-${where}">
     const description = meta.description || `${site.modName} documentation.`;
     const head = meta.icon && !isHome ? `<img class="page-icon px" src="@w/assets/img/${meta.icon}" alt="">` : '';
     return `<!DOCTYPE html>
-<html lang="en" data-root="@/">
+<html lang="en" data-root="@/" data-wiki="${site.id}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -256,25 +268,25 @@ ${base ? `<script>${base}</script>` : ''}
 <meta property="og:title" content="${escapeHtml(title)}">
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#eecd95">
-<link rel="icon" type="image/png" href="@w/assets/img/favicon.png">
-<link rel="stylesheet" href="@w/assets/css/wiki.css">
+<meta name="theme-color" content="${site.themeColor || '#eecd95'}">
+<link rel="icon" type="image/png" href="@w/assets/img/${site.favicon || site.logo}">
+<link rel="stylesheet" href="@w/assets/css/wiki.css?v=${cssV}">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="${isHome ? 'home' : 'doc'}">
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="topbar">
   <button type="button" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span></button>
-  <a class="brand" href="@/index.html"><img src="@w/assets/img/logo.png" alt="" width="40" height="40"><span>Infinity Stone Core<small>Wiki ${escapeHtml(v.label)}</small></span></a>
+  <a class="brand" href="@/index.html"><img src="@w/assets/img/${site.logo}" alt="" width="40" height="40"><span>${escapeHtml(site.brand)}<small>Wiki ${escapeHtml(v.label)}</small></span></a>
   <div class="search" role="search">
     <label class="visually-hidden" for="search-input">Search the ${escapeHtml(v.label)} wiki</label>
-    <input id="search-input" type="search" placeholder="Search abilities, items, commands…" autocomplete="off" spellcheck="false"
+    <input id="search-input" type="search" placeholder="${escapeHtml(site.searchPlaceholder)}" autocomplete="off" spellcheck="false"
       role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
     <kbd class="search-key" aria-hidden="true">/</kbd>
     <div id="search-results" class="search-results" role="listbox" hidden></div>
   </div>
   ${prefs('top')}
-  <a class="home-link" href="@s/index.html">Pugmeowla</a>
+  <a class="home-link" href="@w/index.html">All wikis</a>
 </header>
 <div class="shell${t.aside ? ' has-toc' : ''}">
   <nav id="sidebar" class="sidebar" aria-label="Wiki">
@@ -295,7 +307,7 @@ ${content}
     </article>
     ${pager(file)}
     <footer class="footer">
-      <p><strong>${escapeHtml(site.modName)}</strong> by Pugmeowla. These pages document version ${escapeHtml(v.label)} for Minecraft ${escapeHtml(v.minecraft)}.</p>
+      <p><strong>${escapeHtml(site.modName)}</strong> by ${escapeHtml(site.author)}. These pages document version ${escapeHtml(v.label)} for Minecraft ${escapeHtml(v.minecraft)}.</p>
       <p><a href="${site.curseforge}">CurseForge</a> · <a href="${site.modrinth}">Modrinth</a> · <a href="${site.discord}">Discord</a> · <a href="@s/index.html">All projects</a></p>
     </footer>
   </main>
@@ -303,8 +315,8 @@ ${content}
 </div>
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
-<script src="@w/assets/js/search-${v.id}.js" defer></script>
-<script src="@w/assets/js/wiki.js" defer></script>
+<script src="@w/assets/js/search-${site.id}-${v.id}.js" defer></script>
+<script src="@w/assets/js/wiki.js?v=${jsV}" defer></script>
 </body>
 </html>
 `;
@@ -321,11 +333,13 @@ fs.cpSync(path.join(here, 'static'), path.join(wikiDir, 'assets'), { recursive: 
 
 const up = (n) => '../'.repeat(n);
 // Rewrites the link tokens for a page that sits `depth` folders below the wiki root, `inVersion` of them inside its version.
-const finalize = (html, depth, inVersion) => html
+// root overrides where "@/" points (the 404 page sits at the site root but links into the Infinity wiki).
+const finalize = (html, depth, inVersion, root = up(inVersion)) => html
   .replace(/(href|src|data-zoom)="@w\//g, `$1="${up(depth)}`)
+  .replace(/url\(@w\//g, `url(${up(depth)}`)
   .replace(/(href|src)="@s\//g, `$1="${up(depth + 1)}`)
-  .replace(/(href|src)="@\//g, `$1="${up(inVersion)}`)
-  .replace(/data-root="@\/"/, `data-root="${up(inVersion)}"`);
+  .replace(/(href|src)="@\//g, `$1="${root}`)
+  .replace(/data-root="@\/"/, `data-root="${root}"`);
 
 const allSearch = [];
 let pageCount = 0;
@@ -338,7 +352,7 @@ for (const v of versions) {
   for (const file of [...v.order, '404.html']) {
     const page = v.pages[file];
     if (!page) continue;
-    const ctx = { path: file, label: `${v.id}/${file}`, errors, pages: v.pages };
+    const ctx = { path: file, label: `${v.wiki.id} ${v.id}/${file}`, errors, pages: v.pages };
     let html = expandMacros(page.body, ctx, v.macros);
     html = processCode(html);
     // Long IDs, paths and options in inline code break after a ':', '/' or '|' instead of in the middle of a word,
@@ -358,11 +372,15 @@ for (const v of versions) {
 
     if (file === '404.html') {
       // GitHub Pages serves the site root's 404.html for every missing path, so its links resolve against a <base>.
-      if (v.outDir) continue;
+      // Only the first wiki's latest version makes it. Old links from before the wikis moved into their own folders
+      // (wiki/stones/power.html) are sent on to the Infinity wiki.
+      if (v !== versions[0]) continue;
+      const dirs = ['assets', 'index.html', ...wikis.map((w) => w.dir)].join('|').replace(/\./g, '\\.');
       const base = `(function(){var s=location.pathname.split('/').filter(Boolean),i=s.indexOf('wiki'),r;`
         + `if(i>=0)r='/'+s.slice(0,i).join('/')+(i?'/':'');else if(/github\\.io$/.test(location.hostname)&&s.length>1)r='/'+s[0]+'/';else r='/';`
+        + `if(i>=0&&s.length>i+1&&!/^(${dirs})$/.test(s[i+1])){location.replace(r+'wiki/${v.outDir}/'+s.slice(i+1).join('/')+location.hash);return}`
         + `document.write('<base href="'+r+'wiki/">')})()`;
-      fs.writeFileSync(path.join(siteRoot, '404.html'), finalize(layout(file, page.meta, withIds, toc, { base }), 0, 0));
+      fs.writeFileSync(path.join(siteRoot, '404.html'), finalize(layout(file, page.meta, withIds, toc, { base }), 0, 0, `${v.outDir}/`));
       continue;
     }
 
@@ -391,10 +409,50 @@ for (const v of versions) {
   for (const item of items) {
     searchRecords.push({ k: 'item', t: item.name, s: item.id, u: `items.html#item-${slugify(item.id.split(':')[1])}`, x: stripTags(item.desc) });
   }
-  fs.writeFileSync(path.join(wikiDir, `assets/js/search-${v.id}.js`),
+  fs.writeFileSync(path.join(wikiDir, `assets/js/search-${v.wiki.id}-${v.id}.js`),
     `// Generated by _wiki/build.mjs\nwindow.WIKI_INDEX=${JSON.stringify(searchRecords)};\n`);
   allSearch.push([v, searchRecords]);
 }
+
+// ───────────── the list of wikis ─────────────
+// wiki/index.html: one card per mod, linking to its latest docs.
+fs.writeFileSync(path.join(wikiDir, 'index.html'), `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pugmeowla's mod wikis</title>
+<meta name="description" content="Wikis for Pugmeowla's Minecraft mods.">
+<meta name="theme-color" content="#eecd95">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/wiki.css?v=${cssV}">
+<script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t;d.classList.add('js');try{t=localStorage.getItem('wiki-theme')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'))})()</script>
+</head>
+<body class="wiki-hub">
+<main id="content" class="hub">
+  <header class="hub-head">
+    <a class="hub-back" href="../index.html">← Pugmeowla</a>
+    <h1>Mod Wikis</h1>
+    <p>Guides, items, abilities and bosses for each of Pugmeowla's mods. Pick one to dive in.</p>
+  </header>
+  <div class="hub-grid">${wikis.map((w) => {
+    const latest = versions.find((v) => v.wiki === w && v.id === w.versions[0]);
+    const pages = latest.order.length;
+    return `<a class="hub-card" href="${latest.outDir}/index.html" style="--hub:${w.hub.color};--hub-glow:${w.hub.glow}">
+    <span class="hub-art"><img src="../${w.hub.image}" alt="" loading="lazy"></span>
+    <span class="hub-body">
+      <img class="hub-logo" src="assets/img/${w.logo}" alt="" width="72" height="72">
+      <strong>${escapeHtml(w.brand)}</strong>
+      <span class="hub-tagline">${escapeHtml(w.hub.tagline)}</span>
+      <span class="hub-meta"><span>v${escapeHtml(latest.label)}</span><span>MC ${escapeHtml(latest.minecraft)}</span><span>${escapeHtml(latest.loader)}</span><span>${pages} pages</span></span>
+      <span class="hub-go">Open the wiki →</span>
+    </span>
+  </a>`;
+  }).join('')}</div>
+</main>
+</body>
+</html>
+`);
 
 // ───────────── verify links, anchors and images ─────────────
 const htmlFiles = [path.join(siteRoot, 'index.html')];
@@ -431,7 +489,7 @@ for (const [v, records] of allSearch) {
   for (const record of records) checkRef(path.join(wikiDir, v.outDir, 'index.html'), record.u, `${v.id} search index (${record.t})`);
 }
 
-console.log(`Built ${pageCount} pages in ${versions.length} version${versions.length === 1 ? "" : "s"} (${versions.map((v) => v.id).join(', ')}) into wiki/`);
+console.log(`Built ${pageCount} pages in ${versions.length} versions (${versions.map((v) => `${v.wiki.id} ${v.id}`).join(', ')}) into wiki/`);
 if (errors.length) {
   console.error(`\n${errors.length} problem(s):\n  ${[...new Set(errors)].join('\n  ')}`);
   process.exit(1);

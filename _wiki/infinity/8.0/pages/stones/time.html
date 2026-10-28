@@ -18,12 +18,16 @@ icon: stones/time_stone.png
   Toggle turns the tint off.</p>
 
 <h2 id="abilities">Abilities</h2>
-{{abilities time}}
+<p>Click an ability in the tree to see what it does, what it costs and what it needs. Lines show what has to come first.</p>
+{{skilltree time bg=gui/powers/time_background_block.png unit=170}}
+{{abilities time notree=1}}
 
 {{figure src="models/time_rings.png" caption="The green time rings around your arm while Fast Forward, Stop Projectile, Slow Time or Freeze Time is on."}}
 <h2 id="skill-tree">Skill tree costs</h2>
 <p>Fast Forward comes first. Slow Time (12) and Freeze Time (32) are the expensive ones.</p>
+<details class="fold-section"><summary>Full cost table</summary>
 {{costtable time}}
+</details>
 
 <h2 id="tick-rate">Slow Time steps</h2>
 <p>Change Flow of Time sets the <strong>server's tick rate</strong> through Chrono API. Each step is 4 ticks per second:</p>

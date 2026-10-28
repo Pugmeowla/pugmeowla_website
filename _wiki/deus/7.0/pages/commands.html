@@ -1,0 +1,24 @@
+---
+title: Commands
+description: The /chrono commands players and server admins use.
+lead: Deus Chrono-Machina registers one root command, <code>/chrono</code>. Almost all of it is used by the mod itself; this is the part that's useful to you.
+icon: deus/icons/detect.png
+---
+<h2><code>/chrono locate</code></h2>
+<pre data-lang="command">/chrono locate</pre>
+<p>Needs permission level 2 (operators). Lists where Maltruant's five fragments and the altar are in the current world. Click a position to
+  put a <code>/tp</code> command for it in your chat box. Anything not generated yet shows as <em>unspawned</em>.</p>
+
+<h2><code>/alienautoadd</code></h2>
+<p>An Alien Evolution command. Adds an alien to your Omnitrix without its DNA, so it's the quick way to try the Chronosapien.</p>
+
+<h2>Summoning mobs</h2>
+<pre data-lang="command">/summon chrono:time_beast
+/summon chrono:maltruant</pre>
+<p>Time Beasts and Maltruant summoned this way come through a time portal, like from their spawn eggs. Other entity IDs:
+  <code>chrono:exo_skull</code>, <code>chrono:subdora</code> and <code>chrono:ship</code>.</p>
+
+<h2>Internal commands</h2>
+<p>The rest of <code>/chrono</code> (<code>beamImpact</code>, <code>grayblock</code>, <code>timeflow</code>, <code>skillPulse</code>,
+  <code>maltruant ai</code> and so on) is run by Clockwork's Palladium powers and for debugging Maltruant. Running them by hand can leave
+  time stopped or blocks gray, so leave them alone.</p>

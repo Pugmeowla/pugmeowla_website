@@ -1,0 +1,37 @@
+---
+title: Items & Blocks
+description: Every item and block in Deus Chrono-Machina with its ID and how to get it, plus the Time Reborn enchantment.
+lead: Everything in the Deus Chrono-Machina creative tab. Click an item for its ID and how to get it.
+icon: deus/items/galvan_compass.png
+---
+<h2 id="all">All items</h2>
+{{itemgallery}}
+
+<h2>Galvan gadgets</h2>
+{{itemcards galvan_compass galvan_emp}}
+<div class="recipe-grid">
+{{recipe title="Galvan Compass" rows="pcp,ctc,pcp" p=alienevo:galvan_metal img_p=deus/items/galvan_metal.png c=alienevo:upgrade_chip img_c=deus/items/upgrade_chip.png t=minecraft:clock out=galvan_compass}}
+{{recipe title="Galvan EMP" rows="gcg,lnr,gcg" g=timeclock_gear c=alienevo:upgrade_crystal img_c=deus/items/upgrade_crystal.png l=timeclock_chip1 n=minecraft:nether_star r=timeclock_chip2 out=galvan_emp}}
+</div>
+<div class="media-split media-split-photo">
+{{figure src="deus/photos/ore_detection.jpg" caption="The Galvan Compass finding ores" pixel="false"}}
+<div>
+<p>Right-click to highlight ores within 10 blocks for a moment (up to 15 at once). Sneak + right-click to point it at the nearest of
+  Maltruant's fragments, and at the Maltruant Altar. The needle also shows on your HUD.</p>
+</div>
+</div>
+<p>The EMP is your counter to Chronosapiens: inside its field they're stunned, and every mob takes more damage. Maltruant knows this and
+  tries to stay out of it.</p>
+
+<h2>Time Reborn</h2>
+<p><strong>Time Reborn</strong> (<code>chrono:time_reborn</code>, up to level 5) goes on weapons and chestplates. Time Beasts drop it as a
+  level I book; Maltruant has a 25% chance of a level V book.</p>
+<dl class="skill-grid">
+  <div><dt>Weapon</dt><dd>Hits deal +2 damage and give Slowness II for 5 seconds. Kills have a 25% chance to drop a {{item time_reborn_device}}
+      holding the mob, if its max health is at most 30 × the level.</dd></div>
+  <div><dt>Chestplate</dt><dd>10% chance to cancel a hit. Once every 3 minutes, a hit that would kill you is cancelled and time rewinds you instead.</dd></div>
+</dl>
+
+<h2>Armor Break</h2>
+<p><strong>Armor Break</strong> (<code>chrono:armor_break</code>) is a status effect from Maltruant's guard-breaking attacks. It strips
+  armor while it lasts, so stop and heal rather than trading hits.</p>

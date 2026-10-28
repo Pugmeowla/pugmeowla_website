@@ -1,0 +1,59 @@
+---
+title: Getting the DNA
+description: How to unlock the Chronosapien - Timeclock Gears, the DNA parts, every recipe and where the gears drop.
+lead: The Chronosapien isn't in your Omnitrix from the start. You build a sample of Chronosapien DNA out of Timeclock parts and inject it.
+icon: deus/items/chronosapien_dna.png
+---
+<h2>Quick tutorial</h2>
+<ol>
+  <li>Collect <strong>Timeclock Gears</strong> {{item timeclock_gear}}: kill Time Beasts, mine Chrono Ore, loot villages and bastions.</li>
+  <li>Get some <strong>Upgrade Chips</strong> and <strong>Upgrade Crystals</strong> from Alien Evolution.</li>
+  <li>Craft a Timeclock Key, both Timeclock Chips and a Timeclock Core.</li>
+  <li>Craft {{item chronosapien_dna}} and right-click it. The Chronosapien is now in your Omnitrix.</li>
+</ol>
+<p>All together that's <strong>15 Timeclock Gears</strong> (6 for the Key, 2 for each Chip, 4 for the Core, 1 more for the DNA), 6 Upgrade
+  Chips and 5 Upgrade Crystals.</p>
+
+<h2>Where Timeclock Gears come from</h2>
+<div class="tile-grid">
+  <div class="tile"><h4><a href="@/mobs.html#time-beast">Time Beast</a></h4><dl class="stat-list"><div><dt>Gears</dt><dd>2 to 4</dd></div><div><dt>Chance</dt><dd>Always</dd></div></dl></div>
+  <div class="tile"><h4><a href="@/maltruant.html">Maltruant</a></h4><dl class="stat-list"><div><dt>Gears</dt><dd>6 to 12</dd></div><div><dt>Chance</dt><dd>Always</dd></div></dl></div>
+  <div class="tile"><h4><a href="@/world.html#chrono-ore">Chrono Ore</a> (and Deepslate Chrono Ore)</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>Always</dd></div></dl></div>
+  <div class="tile"><h4>Crafting a Timeclock Key back down</h4><dl class="stat-list"><div><dt>Gears</dt><dd>6</dd></div><div><dt>Chance</dt><dd>Always</dd></div></dl></div>
+  <div class="tile"><h4>Suspicious sand and gravel (archaeology)</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>5%</dd></div></dl></div>
+  <div class="tile"><h4>Raid Evokers</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>5%, +1% per Looting level</dd></div></dl></div>
+  <div class="tile"><h4>Bastion chests (Nether)</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>3%</dd></div></dl></div>
+  <div class="tile"><h4>Village chests</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>1%</dd></div></dl></div>
+  <div class="tile"><h4>Piglin bartering</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>1%</dd></div></dl></div>
+  <div class="tile"><h4>Hero of the Village gifts</h4><dl class="stat-list"><div><dt>Gears</dt><dd>1</dd></div><div><dt>Chance</dt><dd>1%</dd></div></dl></div>
+</div>
+<p>Time Beasts guard <a href="@/world.html#maltruants-area">Maltruant's Area</a>, a small ruin in the biomes where Alien Evolution's Galvan
+  capsules land. They're the fastest way to farm gears, and also drop the Key (5%) and, very rarely, a ready-made DNA sample (0.1%).</p>
+
+<h2>Recipes</h2>
+<p>The Upgrade Chip, Upgrade Crystal and Galvan Metal come from Alien Evolution. Check JEI for how to get them in your version.</p>
+
+<div class="recipe-grid">
+{{recipe title="Timeclock Key" rows="g.g,ggg,.g." g=timeclock_gear out=timeclock_key}}
+{{recipe title="Timeclock Gears" note="Takes a Key apart again." rows="...,.k.,..." k=timeclock_key out=timeclock_gear count=6}}
+{{recipe title="Timeclock Chip I" rows=".g.,.x.,.g." g=timeclock_gear x=alienevo:upgrade_chip img_x=deus/items/upgrade_chip.png out=timeclock_chip1}}
+{{recipe title="Timeclock Chip II" rows="...,gxg,..." g=timeclock_gear x=alienevo:upgrade_chip img_x=deus/items/upgrade_chip.png out=timeclock_chip2}}
+{{recipe title="Timeclock Core" rows="gcg,cxc,gcg" g=timeclock_gear c=alienevo:upgrade_chip img_c=deus/items/upgrade_chip.png x=alienevo:upgrade_crystal img_x=deus/items/upgrade_crystal.png out=timeclock_core}}
+{{recipe title="Chronosapien DNA" rows="ckc,lxr,cgc" c=alienevo:upgrade_crystal img_c=deus/items/upgrade_crystal.png k=timeclock_key l=timeclock_chip1 x=timeclock_core r=timeclock_chip2 g=timeclock_gear out=chronosapien_dna}}
+</div>
+<p>A Timeclock Chip on its own in the grid turns into the other one, so a spare of either works.</p>
+
+<h2>Injecting the DNA</h2>
+<div class="media-split media-split-photo">
+{{figure src="deus/photos/injecting.jpg" caption="Injecting the DNA" pixel="false"}}
+<div>
+<p>Hold the DNA and right-click. "Chronosapien DNA was injected into the Omnitrix." means it worked and the DNA is used up.
+  It won't be used if:</p>
+<ul>
+  <li>your Omnitrix already has Chronosapien DNA,</li>
+  <li>your Omnitrix playlists are full (make room first), or</li>
+  <li>Alien Evolution didn't load the Chronosapien alien file (a broken install).</li>
+</ul>
+</div>
+</div>
+<p>Once you have him, see <a href="@/clockwork.html">Clockwork</a> and his <a href="@/skill-tree.html">skill tree</a>.</p>

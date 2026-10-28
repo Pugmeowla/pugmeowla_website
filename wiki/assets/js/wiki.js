@@ -389,4 +389,70 @@
       text.focus();
     });
   });
+
+  // ───── Skill trees: click a node to show its panel and light up the lines into it ─────
+  $$('[data-skill-tree]').forEach(function (tree) {
+    var nodes = $$('.st-node', tree);
+    function pick(key, focus) {
+      nodes.forEach(function (n) {
+        var on = n.getAttribute('data-node') === key;
+        n.setAttribute('aria-pressed', String(on));
+        if (on && focus) n.focus();
+      });
+      $$('.st-info', tree).forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-info') === key); });
+      $$('.st-lines path', tree).forEach(function (l) {
+        l.classList.toggle('on', l.getAttribute('data-to') === key || l.getAttribute('data-from') === key);
+      });
+    }
+    nodes.forEach(function (n) { n.addEventListener('click', function () { pick(n.getAttribute('data-node')); }); });
+    // "Needs" and "Leads to" links move around the tree instead of jumping down the page.
+    tree.addEventListener('click', function (event) {
+      var link = event.target.closest('[data-node-link]');
+      if (!link) return;
+      event.preventDefault();
+      pick(link.getAttribute('data-node-link'), true);
+    });
+    // A link to one entry (skill-tree.html#stop-dummy) lands on its node; open that entry's panel too.
+    function fromHash() {
+      var node = location.hash && tree.querySelector('.st-node[id="' + location.hash.slice(1).replace(/"/g, '') + '"]');
+      if (!node) return false;
+      pick(node.getAttribute('data-node'));
+      return true;
+    }
+    window.addEventListener('hashchange', fromHash);
+    if (!fromHash() && nodes[0]) pick(nodes[0].getAttribute('data-node'));
+  });
+
+  // ───── Folding ability rows: a link to one (abilities.html#slow_time) opens it ─────
+  function openTarget() {
+    var el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el && el.tagName === 'DETAILS') el.open = true;
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+
+  // ───── Symmetric grids (Deus): the fewest rows that fit, with the items shared out evenly between them ─────
+  // 10 items in room for 7 become 5 + 5, 16 in room for 4 become 4 × 4. If the last row would still be short, a column
+  // count that divides the items exactly is used instead, as long as it adds at most two rows (16 in room for 3: 2 × 8).
+  function columnsFor(count, max) {
+    if (count <= max) return count;
+    var rows = Math.ceil(count / max), cols = Math.ceil(count / rows);
+    if (count % cols === 0) return cols;
+    for (var c = cols - 1; c >= 2; c--) if (count % c === 0 && count / c <= rows + 2) return c;
+    return cols;
+  }
+  if (document.documentElement.getAttribute('data-wiki') === 'deus') {
+    var grids = $$('.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards');
+    var balance = function () {
+      grids.forEach(function (grid) {
+        grid.style.removeProperty('--cols');
+        var min = parseFloat(getComputedStyle(grid).getPropertyValue('--min')) || 220;
+        var gap = parseFloat(getComputedStyle(grid).columnGap) || 12;
+        var max = Math.max(1, Math.floor((grid.clientWidth + gap) / (min + gap)));
+        grid.style.setProperty('--cols', String(columnsFor(grid.children.length, max)));
+      });
+    };
+    balance();
+    if (window.ResizeObserver) new ResizeObserver(balance).observe(document.querySelector('.content') || document.body);
+  }
 })();
