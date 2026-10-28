@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-<link rel="stylesheet" href="../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -63,23 +63,20 @@
     <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#summary">Summary</a></li><li class="toc-l2"><a href="#player-commands">Player commands</a></li><li class="toc-l3"><a href="#infinity-time-set">/infinity time set</a></li><li class="toc-l3"><a href="#infinity-soul-locateentity">/infinity soul locateentity</a></li><li class="toc-l3"><a href="#infinity-orb">/infinity orb</a></li><li class="toc-l3"><a href="#infinity-gauntlet-skin">/infinity gauntlet skin</a></li><li class="toc-l2"><a href="#admin-commands">Admin commands</a></li><li class="toc-l3"><a href="#infinity-ability">/infinity ability</a></li><li class="toc-l3"><a href="#infinity-gauntlet-snap">/infinity gauntlet snap</a></li><li class="toc-l3"><a href="#infinity-unlock-stones">/infinity unlock_stones and lock_stones</a></li><li class="toc-l3"><a href="#infinity-unlock-orb">/infinity unlock_orb</a></li><li class="toc-l3"><a href="#infinity-locate-real">/infinity locate_real &lt;structure&gt;</a></li><li class="toc-l3"><a href="#infinity-soul-zombies">/infinity soul zombies</a></li><li class="toc-l3"><a href="#infinity-summon-malekith">/infinity summon malekith</a></li><li class="toc-l3"><a href="#infinity-soulguardian">/infinity soulguardian</a></li><li class="toc-l2"><a href="#useful-palladium-commands">Useful Palladium commands</a></li></ol></details>
     <article class="prose">
 <h2 id="summary">Summary<a class="heading-anchor" href="#summary" aria-label="Link to this section">#</a></h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>Command</th><th>Who can use it</th><th>For</th></tr></thead>
-  <tbody>
-    <tr><td><a href="#infinity-time-set"><code>/<wbr>infinity time set &lt;time&gt;</code></a></td><td>Anyone with the Time Command ability active</td><td>Time Stone</td></tr>
-    <tr><td><a href="#infinity-soul-locateentity"><code>/<wbr>infinity soul locateentity &lt;name&gt;</code></a></td><td>Anyone with the Locate Entity Command ability active</td><td>Soul Stone</td></tr>
-    <tr><td><a href="#infinity-orb"><code>/<wbr>infinity orb turn|<wbr>take|<wbr>insert|<wbr>sync|<wbr>reset</code></a></td><td>Anyone holding the Orb</td><td>Orb</td></tr>
-    <tr><td><a href="#infinity-gauntlet-skin"><code>/<wbr>infinity gauntlet skin set|<wbr>clear</code></a></td><td>Anyone</td><td>Gauntlet skins</td></tr>
-    <tr><td><a href="#infinity-gauntlet-snap"><code>/<wbr>infinity gauntlet snap [type]</code></a></td><td>Operators (level 2)</td><td>The Snap</td></tr>
-    <tr><td><a href="#infinity-unlock-stones"><code>/<wbr>infinity unlock_<wbr>stones</code></a> and <code>lock_stones</code></td><td>Operators (level 2)</td><td>Skill trees</td></tr>
-    <tr><td><a href="#infinity-unlock-orb"><code>/<wbr>infinity unlock_<wbr>orb</code></a></td><td>Operators (level 2)</td><td>Orb</td></tr>
-    <tr><td><a href="#infinity-locate-real"><code>/<wbr>infinity locate_<wbr>real &lt;structure&gt;</code></a></td><td>Operators (level 2)</td><td>Structures</td></tr>
-    <tr><td><a href="#infinity-ability"><code>/<wbr>infinity ability disable|<wbr>enable|<wbr>list</code></a></td><td>Operators (level 2)</td><td>Server rules</td></tr>
-    <tr><td><a href="#infinity-soul-zombies"><code>/<wbr>infinity soul zombies</code></a></td><td>Operators (level 2)</td><td>Soul Stone</td></tr>
-    <tr><td><a href="#infinity-summon-malekith"><code>/<wbr>infinity summon malekith</code></a></td><td>Operators (level 2)</td><td>Svartalfheim</td></tr>
-    <tr><td><a href="#infinity-soulguardian"><code>/<wbr>infinity soulguardian call|<wbr>return|<wbr>respawn</code></a></td><td>Operators (level 2)</td><td>Vormir</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><a href="#infinity-time-set"><code>/<wbr>infinity time set &lt;time&gt;</code></a></h4><dl class="stat-list"><div class="wide"><dt>Who can use it</dt><dd>Anyone with the Time Command ability active</dd></div><div><dt>For</dt><dd>Time Stone</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-soul-locateentity"><code>/<wbr>infinity soul locateentity &lt;name&gt;</code></a></h4><dl class="stat-list"><div class="wide"><dt>Who can use it</dt><dd>Anyone with the Locate Entity Command ability active</dd></div><div><dt>For</dt><dd>Soul Stone</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-orb"><code>/<wbr>infinity orb turn|<wbr>take|<wbr>insert|<wbr>sync|<wbr>reset</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Anyone holding the Orb</dd></div><div><dt>For</dt><dd>Orb</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-gauntlet-skin"><code>/<wbr>infinity gauntlet skin set|<wbr>clear</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Anyone</dd></div><div><dt>For</dt><dd>Gauntlet skins</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-gauntlet-snap"><code>/<wbr>infinity gauntlet snap [type]</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>The Snap</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-unlock-stones"><code>/<wbr>infinity unlock_stones</code></a> and <code>lock_stones</code></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Skill trees</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-unlock-orb"><code>/<wbr>infinity unlock_orb</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Orb</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-locate-real"><code>/<wbr>infinity locate_real &lt;structure&gt;</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Structures</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-ability"><code>/<wbr>infinity ability disable|<wbr>enable|<wbr>list</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Server rules</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-soul-zombies"><code>/<wbr>infinity soul zombies</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Soul Stone</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-summon-malekith"><code>/<wbr>infinity summon malekith</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Svartalfheim</dd></div></dl></div>
+  <div class="tile"><h4><a href="#infinity-soulguardian"><code>/<wbr>infinity soulguardian call|<wbr>return|<wbr>respawn</code></a></h4><dl class="stat-list"><div><dt>Who can use it</dt><dd>Operators (level 2)</dd></div><div><dt>For</dt><dd>Vormir</dd></div></dl></div>
+</div>
 <p>Most of these act on the player who runs them, so they have to be run by a player and not the console or a command block. The
   exceptions are <code>ability</code>, <code>summon malekith</code>, <code>soulguardian return</code> and <code>soulguardian respawn</code>.
   Abilities that run an admin command (Summon Zombie, the Soul Guardian Telephone) work for everyone, without operator rights.</p>
@@ -88,22 +85,22 @@
 
 <h3 id="infinity-time-set">/infinity time set<a class="heading-anchor" href="#infinity-time-set" aria-label="Link to this section">#</a></h3>
 <div class="code-block"><div class="code-head"><span>COMMAND</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">time</span> <span class="t-lit">set</span> <span class="t-arg">&lt;time&gt;</span></code></pre></div>
-<div class="table-wrap"><table><tbody>
-  <tr><th>Argument</th><td><code>time</code>: a time of day, the same as <code>/time set</code>. Plain ticks (<code>6000</code>) or with a unit (<code>1d</code>, <code>30s</code>, <code>100t</code>).</td></tr>
-  <tr><th>Needs</th><td>The Time Stone's <a class="ability-link" href="stones/time.html#time-set">Time Command</a> unlocked and the Time Stone active. Without that, nothing happens.</td></tr>
-  <tr><th>Does</th><td>Moves the clock <strong>forward</strong> to that time of day. If that time has already passed today, it goes to that time tomorrow.</td></tr>
-</tbody></table></div>
+<dl class="skill-grid">
+  <div><dt>Argument</dt><dd><code>time</code>: a time of day, the same as <code>/time set</code>. Plain ticks (<code>6000</code>) or with a unit (<code>1d</code>, <code>30s</code>, <code>100t</code>).</dd></div>
+  <div><dt>Needs</dt><dd>The Time Stone's <a class="ability-link" href="stones/time.html#time-set">Time Command</a> unlocked and the Time Stone active. Without that, nothing happens.</dd></div>
+  <div><dt>Does</dt><dd>Moves the clock <strong>forward</strong> to that time of day. If that time has already passed today, it goes to that time tomorrow.</dd></div>
+</dl>
 <div class="code-block"><div class="code-head"><span>Examples</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">time</span> <span class="t-lit">set</span> <span class="t-num">0</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">time</span> <span class="t-lit">set</span> <span class="t-num">13000</span></code></pre></div>
 
 <h3 id="infinity-soul-locateentity">/infinity soul locateentity<a class="heading-anchor" href="#infinity-soul-locateentity" aria-label="Link to this section">#</a></h3>
 <div class="code-block"><div class="code-head"><span>COMMAND</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">soul</span> <span class="t-lit">locateentity</span> <span class="t-arg">&lt;name&gt;</span></code></pre></div>
-<div class="table-wrap"><table><tbody>
-  <tr><th>Argument</th><td><code>name</code>: a player's name (it suggests online players), or the name of a mob named with a name tag. Case doesn't matter.</td></tr>
-  <tr><th>Needs</th><td>The Soul Stone's <a class="ability-link" href="stones/soul.html#locateplayer-command">Locate Entity</a> unlocked and the Soul Stone active. Otherwise you get "You are not worthy to use the locate ability."</td></tr>
-  <tr><th>Does</th><td>Finds the online player with that name, otherwise the closest living thing with that name, in your dimension first and then the others. It tells you where, like <em>The entity "Steve" is located at: 120, 64, -48 (minecraft:overworld)</em>.</td></tr>
-  <tr><th>Fails</th><td>"No entity named … can be found." when there's no match, and "The soul of … is hidden from you." when the target has soul immunity.</td></tr>
-</tbody></table></div>
+<dl class="skill-grid">
+  <div><dt>Argument</dt><dd><code>name</code>: a player's name (it suggests online players), or the name of a mob named with a name tag. Case doesn't matter.</dd></div>
+  <div><dt>Needs</dt><dd>The Soul Stone's <a class="ability-link" href="stones/soul.html#locateplayer-command">Locate Entity</a> unlocked and the Soul Stone active. Otherwise you get "You are not worthy to use the locate ability."</dd></div>
+  <div><dt>Does</dt><dd>Finds the online player with that name, otherwise the closest living thing with that name, in your dimension first and then the others. It tells you where, like <em>The entity "Steve" is located at: 120, 64, -48 (minecraft:overworld)</em>.</dd></div>
+  <div><dt>Fails</dt><dd>"No entity named … can be found." when there's no match, and "The soul of … is hidden from you." when the target has soul immunity.</dd></div>
+</dl>
 <div class="code-block"><div class="code-head"><span>Example</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">soul</span> <span class="t-lit">locateentity</span> <span class="t-lit">Pugmeowla</span></code></pre></div>
 
 <h3 id="infinity-orb">/infinity orb<a class="heading-anchor" href="#infinity-orb" aria-label="Link to this section">#</a></h3>
@@ -114,23 +111,23 @@
 <span class="t-cmd">/infinity</span> <span class="t-lit">orb</span> <span class="t-lit">sync</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">orb</span> <span class="t-lit">reset</span></code></pre></div>
 <p>These are what the Orb's abilities run, so normally you'd just use the abilities. They only work while you're holding the <a class="chip item-chip" href="items.html#item-orb"><img src="../assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a>.</p>
-<div class="table-wrap"><table><tbody>
-  <tr><th><code>turn left|right</code></th><td>Moves the combination lock on one step, or back to the start on a wrong turn.</td></tr>
-  <tr><th><code>take</code></th><td>Takes the Power Stone out of an unlocked, open Orb.</td></tr>
-  <tr><th><code>insert</code></th><td>Puts a Power Stone from your inventory back in.</td></tr>
-  <tr><th><code>sync</code></th><td>Run when you pick the Orb up. Starts the lock over, or leaves it open if you already unlocked it.</td></tr>
-  <tr><th><code>reset</code></th><td>Locks the Orb again and forgets that you opened it (the <em>Lock Orb</em> ability).</td></tr>
-</tbody></table></div>
+<dl class="skill-grid">
+  <div><dt><code>turn left|right</code></dt><dd>Moves the combination lock on one step, or back to the start on a wrong turn.</dd></div>
+  <div><dt><code>take</code></dt><dd>Takes the Power Stone out of an unlocked, open Orb.</dd></div>
+  <div><dt><code>insert</code></dt><dd>Puts a Power Stone from your inventory back in.</dd></div>
+  <div><dt><code>sync</code></dt><dd>Run when you pick the Orb up. Starts the lock over, or leaves it open if you already unlocked it.</dd></div>
+  <div><dt><code>reset</code></dt><dd>Locks the Orb again and forgets that you opened it (the <em>Lock Orb</em> ability).</dd></div>
+</dl>
 <p>See <a href="stones/containers.html#orb">The Orb</a>.</p>
 
 <h3 id="infinity-gauntlet-skin">/infinity gauntlet skin<a class="heading-anchor" href="#infinity-gauntlet-skin" aria-label="Link to this section">#</a></h3>
 <div class="code-block"><div class="code-head"><span>COMMAND</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">gauntlet</span> <span class="t-lit">skin</span> <span class="t-lit">set</span> <span class="t-arg">&lt;skin&gt;</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">gauntlet</span> <span class="t-lit">skin</span> <span class="t-lit">clear</span></code></pre></div>
-<div class="table-wrap"><table><tbody>
-  <tr><th>Argument</th><td><code>skin</code>: a skin ID. It suggests them as you type (like <code>netherite_<wbr>gauntlet</code> or <code>dragon_gauntlet</code>). See <a href="gauntlet/skins.html">Gauntlet Skins</a>.</td></tr>
-  <tr><th>Target</th><td>The Infinity Gauntlet in your main hand, otherwise the one in your off hand. A gauntlet in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands slot isn't changed. Without a gauntlet in either hand you get "You need to hold an Infinity Gauntlet".</td></tr>
-  <tr><th>Does</th><td><code>set</code> puts the skin on straight away without using an item. <code>clear</code> takes the skin off and gives you its unlock item.</td></tr>
-</tbody></table></div>
+<dl class="skill-grid">
+  <div><dt>Argument</dt><dd><code>skin</code>: a skin ID. It suggests them as you type (like <code>netherite_gauntlet</code> or <code>dragon_gauntlet</code>). See <a href="gauntlet/skins.html">Gauntlet Skins</a>.</dd></div>
+  <div><dt>Target</dt><dd>The Infinity Gauntlet in your main hand, otherwise the one in your off hand. A gauntlet in the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> hands slot isn't changed. Without a gauntlet in either hand you get "You need to hold an Infinity Gauntlet".</dd></div>
+  <div><dt>Does</dt><dd><code>set</code> puts the skin on straight away without using an item. <code>clear</code> takes the skin off and gives you its unlock item.</dd></div>
+</dl>
 <div class="callout warn"><span class="callout-title">For server owners</span><p>This command doesn't need any permission level. Since <code>clear</code> gives back the skin's unlock item, you might want to limit it with a permissions mod on a
   public server.</p></div>
 
@@ -140,13 +137,13 @@
 <div class="code-block"><div class="code-head"><span>COMMAND</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">ability</span> <span class="t-lit">disable</span> <span class="t-arg">&lt;target&gt;</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">ability</span> <span class="t-lit">enable</span> <span class="t-arg">&lt;target&gt;</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">ability</span> <span class="t-lit">list</span></code></pre></div>
-<div class="table-wrap"><table><tbody>
-  <tr><th>Argument</th><td><code>target</code>: a whole power (<code>infinity:<wbr>space_<wbr>stone</code>) or one ability as <code>power#ability</code>
-    (<code>infinity:<wbr>time_<wbr>stone#time_<wbr>freeze_<wbr>dummy</code>). It suggests every target as you type, and the case doesn't matter.</td></tr>
-  <tr><th>Covers</th><td>The Infinity Stones (addon stones included) and this mod's other powers: the gauntlet, the Orb, the Cosmi-Rod and so on.</td></tr>
-  <tr><th>Does</th><td><code>disable</code> locks that power or ability for everyone on the server. <code>enable</code> lets it be used again.
-    <code>list</code> shows what's switched off.</td></tr>
-</tbody></table></div>
+<dl class="skill-grid">
+  <div><dt>Argument</dt><dd><code>target</code>: a whole power (<code>infinity:<wbr>space_stone</code>) or one ability as <code>power#ability</code>
+    (<code>infinity:<wbr>time_stone#time_freeze_dummy</code>). It suggests every target as you type, and the case doesn't matter.</dd></div>
+  <div><dt>Covers</dt><dd>The Infinity Stones (addon stones included) and this mod's other powers: the gauntlet, the Orb, the Cosmi-Rod and so on.</dd></div>
+  <div><dt>Does</dt><dd><code>disable</code> locks that power or ability for everyone on the server. <code>enable</code> lets it be used again.
+    <code>list</code> shows what's switched off.</dd></div>
+</dl>
 <p>The list is <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a>'s <code>disabledAbilities</code> setting in the world's <code>serverconfig/<wbr>palladium-server.toml</code>, so it's saved
   with the world. Entries other mods put there are left alone.</p>
 <div class="code-block"><div class="code-head"><span>Examples</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">ability</span> <span class="t-lit">disable</span> <span class="t-lit">infinity:time_stone#time_freeze_dummy</span>
@@ -155,15 +152,12 @@
 
 <h3 id="infinity-gauntlet-snap">/infinity gauntlet snap<a class="heading-anchor" href="#infinity-gauntlet-snap" aria-label="Link to this section">#</a></h3>
 <div class="code-block"><div class="code-head"><span>COMMAND</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">gauntlet</span> <span class="t-lit">snap</span> <span class="t-opt">[half|hostile|players|destroy_stones]</span></code></pre></div>
-<div class="table-wrap"><table>
-  <thead><tr><th>Type</th><th>What it does</th></tr></thead>
-  <tbody>
-    <tr><td><em>(nothing)</em> or <code>half</code></td><td>Kills half of the living things in your dimension, chunk by chunk.</td></tr>
-    <tr><td><code>hostile</code></td><td>Sends every <code>#infinity:<wbr>snap_<wbr>hostile</code> mob in every dimension to the Snap cell in the Soulworld.</td></tr>
-    <tr><td><code>players</code></td><td>Sends every other player to the Snap cell.</td></tr>
-    <tr><td><code>destroy_stones</code></td><td>Empties the stones out of your worn gauntlet (or the one in your main hand).</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt><em>(nothing)</em> or <code>half</code></dt><dd>Kills half of the living things in your dimension, chunk by chunk.</dd></div>
+  <div><dt><code>hostile</code></dt><dd>Sends every <code>#infinity:<wbr>snap_hostile</code> mob in every dimension to the Snap cell in the Soulworld.</dd></div>
+  <div><dt><code>players</code></dt><dd>Sends every other player to the Snap cell.</dd></div>
+  <div><dt><code>destroy_stones</code></dt><dd>Empties the stones out of your worn gauntlet (or the one in your main hand).</dd></div>
+</dl>
 <p>All of them <strong>burn you</strong> just like a real Snap: half a heart and locked abilities for a Minecraft day. Only one Snap runs at
   a time. More on <a href="gauntlet/snap.html">The Snap</a>.</p>
 
@@ -204,15 +198,15 @@
 <div class="code-block"><div class="code-head"><span>COMMAND</span><button type="button" class="copy-button" aria-label="Copy code">Copy</button></div><pre><code class="lang-command"><span class="t-cmd">/infinity</span> <span class="t-lit">soulguardian</span> <span class="t-lit">call</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">soulguardian</span> <span class="t-lit">return</span>
 <span class="t-cmd">/infinity</span> <span class="t-lit">soulguardian</span> <span class="t-lit">respawn</span></code></pre></div>
-<div class="table-wrap"><table><tbody>
-  <tr><th><code>call</code></th><td>Brings the Soul Guardian to you, wherever it is. If its spot on Vormir isn't loaded, it's loaded until the
+<dl class="skill-grid">
+  <div><dt><code>call</code></dt><dd>Brings the Soul Guardian to you, wherever it is. If its spot on Vormir isn't loaded, it's loaded until the
     Guardian is found. It goes home by itself after one minute, even if the server restarts in between. This is what the
-    <a class="chip item-chip" href="items.html#item-soul-guardian-telephone"><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px" loading="lazy">Soul Guardian Telephone</a> runs.</td></tr>
-  <tr><th><code>return</code></th><td>Sends the Guardian home to Vormir straight away.</td></tr>
-  <tr><th><code>respawn</code></th><td>Spawns a new Soul Guardian with fresh trades at its spot on Vormir (<code>212 121 99</code>). Prints
+    <a class="chip item-chip" href="items.html#item-soul-guardian-telephone"><img src="../assets/img/renders/soul_guardian_telephone.png" alt="" class="px" loading="lazy">Soul Guardian Telephone</a> runs.</dd></div>
+  <div><dt><code>return</code></dt><dd>Sends the Guardian home to Vormir straight away.</dd></div>
+  <div><dt><code>respawn</code></dt><dd>Spawns a new Soul Guardian with fresh trades at its spot on Vormir (<code>212 121 99</code>). Prints
     "The Soul Guardian has returned to Vormir." or "Could not spawn the Soul Guardian." if Vormir isn't there. It doesn't remove a Guardian
-    that's already there.</td></tr>
-</tbody></table></div>
+    that's already there.</dd></div>
+</dl>
 <figure class="figure"><button type="button" class="zoomable" data-zoom="../assets/img/models/malekith.png" data-caption="Malekith." aria-label="Enlarge image"><img src="../assets/img/models/malekith.png" alt="Malekith." class="px" loading="lazy"></button><figcaption>Malekith.</figcaption></figure>
 
 <h2 id="useful-palladium-commands">Useful Palladium commands<a class="heading-anchor" href="#useful-palladium-commands" aria-label="Link to this section">#</a></h2>
@@ -233,6 +227,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

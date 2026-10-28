@@ -18,36 +18,30 @@ icon: renders/tesseract.png
 <p>Old armor stand props from earlier versions are turned into ground items when their chunk loads.</p>
 
 <h2 id="fields">Fields</h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
-  <tbody>
-    <tr><td><code>item</code></td><td><strong>required</strong></td><td>The item. Must be registered. Each item can only be one ground item.</td></tr>
-    <tr><td><code>spin</code></td><td><code>false</code></td><td>Spin like a dropped item. Otherwise it lies still facing a random way.</td></tr>
-    <tr><td><code>bob</code></td><td><code>false</code></td><td>Float and bob like a dropped item. Otherwise its lowest point rests on the ground.</td></tr>
-    <tr><td><code>scale</code></td><td><code>1</code></td><td>Size of the drawn item on the ground, on top of its ground display transform. Only the ground: held, worn and inventory rendering don't change. The Orb uses <code>0.5</code>, since its item model is twice the size of the orb drawn in the hand. A number, or <code>{"base": 1, "width": 1, "height": 1}</code> to stretch it (width is x and z, each times <code>base</code>). <code>0</code> counts as <code>1</code>. The hitbox is <code>width</code> and <code>height</code> below.</td></tr>
-    <tr><td><code>width</code> / <code>height</code></td><td><code>0.4</code></td><td>Size of the box you right-click and hit, in blocks.</td></tr>
-    <tr><td><code>unique</code></td><td><code>false</code></td><td>While a player carries this item, ground items of it disappear, so it can't be duplicated.</td></tr>
-    <tr><td><code>release</code></td><td>none</td><td>Hitting it breaks it open into <code>items</code> (each dropped as its own ground item, in the same spot) with a particle burst in <code>color</code> (<code>#RRGGBB</code>, default white). With an <a href="#opening"><code>opening</code></a> it plays that first and can't be picked up meanwhile. Ground items with a <code>power</code> always break open at once.</td></tr>
-    <tr><td><code>combine</code></td><td><code>[]</code></td><td><code>[{"item": …, "result": …}]</code>: right-clicking it on the ground while holding <code>item</code> uses one up and turns it into <code>result</code> where it lies. Give the other item the reverse entry so it works whichever is on the ground.</td></tr>
-    <tr><td><code>power</code></td><td>none</td><td>Instead of drawing the item, place it as an invisible small armor stand wearing the stack, drawn by this Palladium power's render layers (the gauntlet and Eye of Agamotto use this). <code>release</code> still works. <code>spin</code>, <code>bob</code>, <code>scale</code>, <code>width</code>, <code>height</code> and <code>unique</code> don't apply.</td></tr>
-    <tr><td><code>slot</code></td><td>none</td><td>With <code>power</code>: the armor stand slot (<code>head</code>, <code>chest</code>, <code>legs</code>, <code>feet</code>, <code>mainhand</code>, <code>offhand</code>) that wears the stack, for render layers that read it. Left out, the stack stays hidden.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>item</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><strong>required</strong></dd></div><div class="wide"><dt>Meaning</dt><dd>The item. Must be registered. Each item can only be one ground item.</dd></div></dl></div>
+  <div class="tile"><h4><code>spin</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>false</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Spin like a dropped item. Otherwise it lies still facing a random way.</dd></div></dl></div>
+  <div class="tile"><h4><code>bob</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>false</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Float and bob like a dropped item. Otherwise its lowest point rests on the ground.</dd></div></dl></div>
+  <div class="tile"><h4><code>scale</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>1</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Size of the drawn item on the ground, on top of its ground display transform. Only the ground: held, worn and inventory rendering don't change. The Orb uses <code>0.5</code>, since its item model is twice the size of the orb drawn in the hand. A number, or <code>{"base": 1, "width": 1, "height": 1}</code> to stretch it (width is x and z, each times <code>base</code>). <code>0</code> counts as <code>1</code>. The hitbox is <code>width</code> and <code>height</code> below.</dd></div></dl></div>
+  <div class="tile"><h4><code>width</code> / <code>height</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>0.4</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Size of the box you right-click and hit, in blocks.</dd></div></dl></div>
+  <div class="tile"><h4><code>unique</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>false</code></dd></div><div class="wide"><dt>Meaning</dt><dd>While a player carries this item, ground items of it disappear, so it can't be duplicated.</dd></div></dl></div>
+  <div class="tile"><h4><code>release</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd>Hitting it breaks it open into <code>items</code> (each dropped as its own ground item, in the same spot) with a particle burst in <code>color</code> (<code>#RRGGBB</code>, default white). With an <a href="#opening"><code>opening</code></a> it plays that first and can't be picked up meanwhile. Ground items with a <code>power</code> always break open at once.</dd></div></dl></div>
+  <div class="tile"><h4><code>combine</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>[]</code></dd></div><div class="wide"><dt>Meaning</dt><dd><code>[{"item": …, "result": …}]</code>: right-clicking it on the ground while holding <code>item</code> uses one up and turns it into <code>result</code> where it lies. Give the other item the reverse entry so it works whichever is on the ground.</dd></div></dl></div>
+  <div class="tile"><h4><code>power</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd>Instead of drawing the item, place it as an invisible small armor stand wearing the stack, drawn by this Palladium power's render layers (the gauntlet and Eye of Agamotto use this). <code>release</code> still works. <code>spin</code>, <code>bob</code>, <code>scale</code>, <code>width</code>, <code>height</code> and <code>unique</code> don't apply.</dd></div></dl></div>
+  <div class="tile"><h4><code>slot</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd>With <code>power</code>: the armor stand slot (<code>head</code>, <code>chest</code>, <code>legs</code>, <code>feet</code>, <code>mainhand</code>, <code>offhand</code>) that wears the stack, for render layers that read it. Left out, the stack stays hidden.</dd></div></dl></div>
+</div>
 <p>A file with the same name in a higher-priority pack replaces the mod's. Restart after changes.</p>
 
 <h2 id="opening">Opening animations</h2>
 <p>An <code>opening</code> inside <code>release</code> plays an animation between being hit and letting go of the items. The Tesseract and the
   Aether use one.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
-  <tbody>
-    <tr><td><code>effect</code></td><td><strong>required</strong></td><td><code>"rays"</code>: Heroes Expansion's Tesseract, rising in a growing burst of rays in the release <code>color</code>, ending in a sphere of particles. <code>"plume"</code>: the 1.12.2 Aether, red squares bursting out then pouring upward in a column, ending in an explosion.</td></tr>
-    <tr><td><code>duration</code></td><td><code>100</code></td><td>Ticks, at most <code>1200</code>.</td></tr>
-    <tr><td><code>colors</code></td><td>the release <code>color</code></td><td><code>["#RRGGBB", ...]</code>: each plume square is a random shade between these.</td></tr>
-    <tr><td><code>model</code></td><td>the item's</td><td>Model drawn instead of the item meanwhile, like the item without its lid.</td></tr>
-    <tr><td><code>parts</code></td><td><code>[]</code></td><td>Models that swing open: <code>{"model": ..., "pivot": [x, y, z], "axis": "x"/"y"/"z", "angle": degrees, "ticks": 20}</code>, pivot in model pixels.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>effect</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><strong>required</strong></dd></div><div class="wide"><dt>Meaning</dt><dd><code>"rays"</code>: Heroes Expansion's Tesseract, rising in a growing burst of rays in the release <code>color</code>, ending in a sphere of particles. <code>"plume"</code>: the 1.12.2 Aether, red squares bursting out then pouring upward in a column, ending in an explosion.</dd></div></dl></div>
+  <div class="tile"><h4><code>duration</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>100</code></dd></div><div><dt>Meaning</dt><dd>Ticks, at most <code>1200</code>.</dd></div></dl></div>
+  <div class="tile"><h4><code>colors</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>the release <code>color</code></dd></div><div class="wide"><dt>Meaning</dt><dd><code>["#RRGGBB", ...]</code>: each plume square is a random shade between these.</dd></div></dl></div>
+  <div class="tile"><h4><code>model</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>the item's</dd></div><div class="wide"><dt>Meaning</dt><dd>Model drawn instead of the item meanwhile, like the item without its lid.</dd></div></dl></div>
+  <div class="tile"><h4><code>parts</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>[]</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Models that swing open: <code>{"model": ..., "pivot": [x, y, z], "axis": "x"/"y"/"z", "angle": degrees, "ticks": 20}</code>, pivot in model pixels.</dd></div></dl></div>
+</div>
 <p>Opening models are only loaded because a ground item names them. Give them <code>"parent": "&lt;the item's model&gt;"</code> and just their
   own <code>elements</code>, so they share its textures and ground transform.</p>
 

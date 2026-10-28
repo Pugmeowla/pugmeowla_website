@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -74,15 +74,12 @@
   <figure class="figure"><button type="button" class="zoomable" data-zoom="../../assets/img/models/infintrix_recalibrated.png" data-caption="Recalibrated Omnitrix with its stones in the watch." aria-label="Enlarge image"><img src="../../assets/img/models/infintrix_recalibrated.png" alt="Recalibrated Omnitrix with its stones in the watch." class="px" loading="lazy"></button><figcaption>Recalibrated Omnitrix with its stones in the watch.</figcaption></figure>
   <figure class="figure"><button type="button" class="zoomable" data-zoom="../../assets/img/models/infintrix_ultimatrix.png" data-caption="Ultimatrix with its glove." aria-label="Enlarge image"><img src="../../assets/img/models/infintrix_ultimatrix.png" alt="Ultimatrix with its glove." class="px" loading="lazy"></button><figcaption>Ultimatrix with its glove.</figcaption></figure>
   <figure class="figure"><button type="button" class="zoomable" data-zoom="../../assets/img/models/infintrix_omniverse.png" data-caption="Omniverse Omnitrix with stones around the face." aria-label="Enlarge image"><img src="../../assets/img/models/infintrix_omniverse.png" alt="Omniverse Omnitrix with stones around the face." class="px" loading="lazy"></button><figcaption>Omniverse Omnitrix with stones around the face.</figcaption></figure></div>
-<div class="table-wrap"><table>
-  <thead><tr><th>Omnitrix</th><th>Power it checks</th><th>How the stones look</th></tr></thead>
-  <tbody>
-    <tr><td>Prototype Omnitrix</td><td><code>alienevo:<wbr>prototype_<wbr>omnitrix</code></td><td>A glove over your hand with the stones on its knuckles. It takes the colour you gave the watch's base.</td></tr>
-    <tr><td>Recalibrated Omnitrix</td><td><code>alienevo:<wbr>recal_<wbr>omnitrix</code></td><td>No glove: six small stones set into the watch itself, around the face</td></tr>
-    <tr><td>Ultimatrix (<a class="mod-link" href="https://modrinth.com/mod/omni-evo" data-modrinth="https://modrinth.com/mod/omni-evo" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/omni-evo"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/omnitrix_evolution.png" alt="" loading="lazy">Omnitrix</span> Evolution</a>)</td><td><code>alienevo:<wbr>ult_<wbr>omnitrix</code></td><td>A glove over your hand with the stones on its knuckles. Once you customise the Ultimatrix, the glove takes its colours too.</td></tr>
-    <tr><td>Omniverse Omnitrix</td><td><code>aeo:<wbr>omniverse_<wbr>omnitrix</code></td><td>No glove: six thin stones around the watch face, two rows of three</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4>Prototype Omnitrix</h4><dl class="stat-list"><div><dt>Power it checks</dt><dd><code>alienevo:<wbr>prototype_omnitrix</code></dd></div><div class="wide"><dt>How the stones look</dt><dd>A glove over your hand with the stones on its knuckles. It takes the colour you gave the watch's base.</dd></div></dl></div>
+  <div class="tile"><h4>Recalibrated Omnitrix</h4><dl class="stat-list"><div><dt>Power it checks</dt><dd><code>alienevo:<wbr>recal_omnitrix</code></dd></div><div class="wide"><dt>How the stones look</dt><dd>No glove: six small stones set into the watch itself, around the face</dd></div></dl></div>
+  <div class="tile"><h4>Ultimatrix (Omnitrix Evolution)</h4><dl class="stat-list"><div><dt>Power it checks</dt><dd><code>alienevo:<wbr>ult_omnitrix</code></dd></div><div class="wide"><dt>How the stones look</dt><dd>A glove over your hand with the stones on its knuckles. Once you customise the Ultimatrix, the glove takes its colours too.</dd></div></dl></div>
+  <div class="tile"><h4>Omniverse Omnitrix</h4><dl class="stat-list"><div><dt>Power it checks</dt><dd><code>aeo:<wbr>omniverse_omnitrix</code></dd></div><div class="wide"><dt>How the stones look</dt><dd>No glove: six thin stones around the watch face, two rows of three</dd></div></dl></div>
+</div>
 <p>The Prototype and Ultimatrix gloves only appear once at least one stone is in. Slim-armed players get a slim version of each
   glove, and the stones move to fit slim arms on every Omnitrix.</p>
 
@@ -97,14 +94,11 @@
 </ul>
 
 <h2 id="stone-effects">What the stones do to the Omnitrix<a class="heading-anchor" href="#stone-effects" aria-label="Link to this section">#</a></h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>With</th><th>What happens</th></tr></thead>
-  <tbody>
-    <tr><td><a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a> in the Omnitrix</td><td>The Omnitrix recharges straight away when it times out, so you can transform again at once.</td></tr>
-    <tr><td>All six stones</td><td>Unlocks every ability of the Omnitrix you're wearing, and gives you Master Control.</td></tr>
-    <tr><td>The Snap's burn</td><td>Master Control is taken away and the Omnitrix times out: 5 minutes for the Omniverse Omnitrix, about 2.5 minutes for the others. The instant recharge stays off until it has nearly recharged.</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt><a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a> in the Omnitrix</dt><dd>The Omnitrix recharges straight away when it times out, so you can transform again at once.</dd></div>
+  <div><dt>All six stones</dt><dd>Unlocks every ability of the Omnitrix you're wearing, and gives you Master Control.</dd></div>
+  <div><dt>The Snap's burn</dt><dd>Master Control is taken away and the Omnitrix times out: 5 minutes for the Omniverse Omnitrix, about 2.5 minutes for the others. The instant recharge stays off until it has nearly recharged.</dd></div>
+</dl>
 
     </article>
     <nav class="pager" aria-label="Previous and next page"><a class="pager-link prev" href="../commands.html"><small>← Previous</small><span>Commands</span></a><a class="pager-link next" href="../mods/infinity-protocol.html"><small>Next →</small><span>Pugmeowla's Infinity Protocol</span></a></nav>
@@ -118,6 +112,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

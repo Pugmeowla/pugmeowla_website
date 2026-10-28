@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -205,9 +205,12 @@
   <p class="ability-id"><code>infinity:<wbr>power_stone</code> · <code>infinity:<wbr>meteor_storm</code></p>
 </section></div>
 </div>
-<div class="ability-list"><details class="ability-card ability-fold" id="power-levels" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Power Levels 1 to 11</strong><span class="ability-summary">Eleven levels you buy one by one. Each doubles your base attack damage.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Upgrade</li><li class="tag tag-cost">434 Aspects of Existence</li></ul>
+<div class="ability-list"><article class="ability-card" id="power-levels" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Power Levels 1 to 11<a class="heading-anchor" href="#power-levels" aria-label="Link to Power Levels 1 to 11">#</a></h3>
+    <p class="ability-summary">Eleven levels you buy one by one. Each doubles your base attack damage.</p>
+    <ul class="tags"><li class="tag tag-activation">Upgrade</li><li class="tag tag-cost">434 Aspects of Existence</li></ul>
     
     
     <p>They cost 2, 4, 8, 12, 18, 26, 36, 48, 64, 88 and 128 Aspects of Existence, 434 in total. Use
@@ -215,37 +218,46 @@
       <a href="../stones/power.html#power-levels">Power Levels</a>.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="damage-control" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Damage Control</strong><span class="ability-summary">Turn it on, then scroll to set your active power level.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Scroll</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="damage-control" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Damage Control<a class="heading-anchor" href="#damage-control" aria-label="Link to Damage Control">#</a></h3>
+    <p class="ability-summary">Turn it on, then scroll to set your active power level.</p>
+    <ul class="tags"><li class="tag tag-activation">Scroll</li><li class="tag tag-cost">No unlock needed</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#power-levels">Power Levels 1 to 11</a></p>
     
     <p>You can't go above the highest level you've bought. The purple bar shows the level (0 to 11). While you have the
       Power Stone your base attack damage is 2^level, and it goes back to 1 when you lose the stone.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone</code> · <code>palladium:<wbr>command + infinity:<wbr>power_level_change</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="rocket-burst" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../assets/img/icons/rocket_burst.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Rocket Burst</strong><span class="ability-summary">Below level 11, fires five homing rockets.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="rocket-burst" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../assets/img/icons/rocket_burst.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Rocket Burst<a class="heading-anchor" href="#rocket-burst" aria-label="Link to Rocket Burst">#</a></h3>
+    <p class="ability-summary">Below level 11, fires five homing rockets.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#explosion2">Cosmic Explosion</a></p>
     
     <p>The rockets explode when they hit and never hurt you, and you're immune to explosions while they fire. Damage
       scales with level ÷ 11, so they do nothing at level 0. At level 11 this becomes Power Cyclone. 5 second cooldown.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone</code> · <code>infinity:<wbr>rocket_burst</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="power-cyclone" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../assets/img/icons/rocket_burst.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Power Cyclone</strong><span class="ability-summary">Level 11 only. Hold to turn into a cyclone of energy that fires a rocket every second.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="power-cyclone" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../assets/img/icons/rocket_burst.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Power Cyclone<a class="heading-anchor" href="#power-cyclone" aria-label="Link to Power Cyclone">#</a></h3>
+    <p class="ability-summary">Level 11 only. Hold to turn into a cyclone of energy that fires a rocket every second.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">No unlock needed</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#explosion2">Cosmic Explosion</a></p>
     
     <p>You can't move, explosions don't hurt you, and radiation cracks spread over your skin without harming you. The
       cracks can be hidden with Radiation Texture Toggle.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone</code> · <code>infinity:<wbr>power_cyclone</code></p>
   </div>
-</details></div>
+</article></div>
 
 <h2 id="skill-tree">Skill tree costs<a class="heading-anchor" href="#skill-tree" aria-label="Link to this section">#</a></h2>
 <p>Energy Blast comes first. Prices follow how strong each ability is, from 2 for Energy Blast to 32 for Meteor Storm, but the eleven
@@ -304,6 +316,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

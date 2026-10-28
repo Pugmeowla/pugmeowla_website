@@ -6,16 +6,13 @@ lead: Every stone comes inside something. How each container works and how to op
 icon: renders/orb.png
 ---
 <h2 id="overview">Overview</h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>Container</th><th>Stone</th><th>Gives the power?</th><th>Getting the stone out</th><th>Putting it back</th></tr></thead>
-  <tbody>
-    <tr><td>{{item orb}}</td><td>{{stone power}}</td><td>No</td><td>Unlock it, open it, right-click</td><td>Open it and right-click with the stone</td></tr>
-    <tr><td>{{item tesseract}}</td><td>{{stone space}}</td><td>Yes, in either hand</td><td>Left-click it on the ground (the Tesseract is gone after)</td><td>Can't</td></tr>
-    <tr><td>{{item aether}}</td><td>{{stone reality}}</td><td>Yes, in either hand</td><td>Left-click it on the ground (the Aether is gone after)</td><td>Empty Aether with the stone in your off hand, or right-click it on the ground</td></tr>
-    <tr><td>{{item eye_of_agamotto}}</td><td>{{stone time}}</td><td>Yes, held or worn, while the stone is in it</td><td>Wear it, open it, right-click with an empty hand, or left-click it on the ground</td><td>Wear it, open it, right-click holding the stone</td></tr>
-    <tr><td>{{item scepter}}</td><td>{{stone mind}}</td><td>Yes, in either hand</td><td>Left-click it on the ground: you get the stone and an Empty Scepter</td><td>Right-click the Empty Scepter on the ground with the stone</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4>{{item orb}}</h4><dl class="stat-list"><div><dt>Stone</dt><dd>{{stone power}}</dd></div><div><dt>Gives the power?</dt><dd>No</dd></div><div><dt>Getting the stone out</dt><dd>Unlock it, open it, right-click</dd></div><div><dt>Putting it back</dt><dd>Open it and right-click with the stone</dd></div></dl></div>
+  <div class="tile"><h4>{{item tesseract}}</h4><dl class="stat-list"><div><dt>Stone</dt><dd>{{stone space}}</dd></div><div><dt>Gives the power?</dt><dd>Yes, in either hand</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Left-click it on the ground (the Tesseract is gone after)</dd></div><div><dt>Putting it back</dt><dd>Can't</dd></div></dl></div>
+  <div class="tile"><h4>{{item aether}}</h4><dl class="stat-list"><div><dt>Stone</dt><dd>{{stone reality}}</dd></div><div><dt>Gives the power?</dt><dd>Yes, in either hand</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Left-click it on the ground (the Aether is gone after)</dd></div><div class="wide"><dt>Putting it back</dt><dd>Empty Aether with the stone in your off hand, or right-click it on the ground</dd></div></dl></div>
+  <div class="tile"><h4>{{item eye_of_agamotto}}</h4><dl class="stat-list"><div><dt>Stone</dt><dd>{{stone time}}</dd></div><div class="wide"><dt>Gives the power?</dt><dd>Yes, held or worn, while the stone is in it</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Wear it, open it, right-click with an empty hand, or left-click it on the ground</dd></div><div class="wide"><dt>Putting it back</dt><dd>Wear it, open it, right-click holding the stone</dd></div></dl></div>
+  <div class="tile"><h4>{{item scepter}}</h4><dl class="stat-list"><div><dt>Stone</dt><dd>{{stone mind}}</dd></div><div><dt>Gives the power?</dt><dd>Yes, in either hand</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Left-click it on the ground: you get the stone and an Empty Scepter</dd></div><div class="wide"><dt>Putting it back</dt><dd>Right-click the Empty Scepter on the ground with the stone</dd></div></dl></div>
+</div>
 
 <h2 id="orb">Orb</h2>
 {{itemcards orb}}

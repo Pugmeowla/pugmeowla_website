@@ -7,19 +7,16 @@ icon: renders/52-d_unit.png
 ---
 <h2 id="extension-points">What you can add</h2>
 {{pagecards addons/stones.html|stones/time_stone.png addons/skins.html|skins/dragon_gauntlet.png addons/custom-gauntlets.html|items/infinity_gauntlet.png addons/ground-items.html|renders/tesseract.png addons/ability-overlays.html|renders/aspects_of_existance.png addons/immunities.html|stones/mind_stone.png addons/abilities.html|icons/energy_blast.png}}
-<div class="table-wrap"><table>
-  <thead><tr><th>System</th><th>Folder</th><th>One file per</th></tr></thead>
-  <tbody>
-    <tr><td>{{page addons/stones.html Gauntlet stones}}</td><td><code>data/&lt;namespace&gt;/infinity/gauntlet_stones/</code></td><td>item that fits in the gauntlet</td></tr>
-    <tr><td>{{page addons/skins.html Gauntlet skins}}</td><td><code>data/&lt;namespace&gt;/infinity/gauntlet_skins/</code></td><td>skin</td></tr>
-    <tr><td>{{page addons/custom-gauntlets.html Custom gauntlets}}</td><td><code>data/&lt;namespace&gt;/infinity/gauntlets/</code></td><td>item or power that acts as a gauntlet</td></tr>
-    <tr><td>{{page addons/ground-items.html Ground items}}</td><td><code>data/&lt;namespace&gt;/infinity/ground_items/</code></td><td>item that lies on the ground like a stone</td></tr>
-    <tr><td>{{page addons/stones.html#containers Stone containers}}</td><td><code>data/&lt;namespace&gt;/infinity/stone_containers/</code></td><td>item holding a stone that glows with it</td></tr>
-    <tr><td>{{page addons/ability-overlays.html Ability overlays}}</td><td><code>assets/&lt;namespace&gt;/ability_overlays/</code></td><td>power or ability themed in the skill tree (a resource, so it can go in a resource pack)</td></tr>
-    <tr><td>Palladium powers</td><td><code>data/&lt;namespace&gt;/palladium/powers/</code></td><td>power, using the mod's {{page addons/abilities.html ability types and conditions}} if you want</td></tr>
-    <tr><td>{{page addons/immunities.html Immunities}}</td><td>abilities in a Palladium power</td><td>kind of stone manipulation others can't use on it (mental, reality, soul, spatial)</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4>{{page addons/stones.html Gauntlet stones}}</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>data/&lt;namespace&gt;/infinity/gauntlet_stones/</code></dd></div><div><dt>One file per</dt><dd>item that fits in the gauntlet</dd></div></dl></div>
+  <div class="tile"><h4>{{page addons/skins.html Gauntlet skins}}</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>data/&lt;namespace&gt;/infinity/gauntlet_skins/</code></dd></div><div><dt>One file per</dt><dd>skin</dd></div></dl></div>
+  <div class="tile"><h4>{{page addons/custom-gauntlets.html Custom gauntlets}}</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>data/&lt;namespace&gt;/infinity/gauntlets/</code></dd></div><div><dt>One file per</dt><dd>item or power that acts as a gauntlet</dd></div></dl></div>
+  <div class="tile"><h4>{{page addons/ground-items.html Ground items}}</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>data/&lt;namespace&gt;/infinity/ground_items/</code></dd></div><div class="wide"><dt>One file per</dt><dd>item that lies on the ground like a stone</dd></div></dl></div>
+  <div class="tile"><h4>{{page addons/stones.html#containers Stone containers}}</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>data/&lt;namespace&gt;/infinity/stone_containers/</code></dd></div><div class="wide"><dt>One file per</dt><dd>item holding a stone that glows with it</dd></div></dl></div>
+  <div class="tile"><h4>{{page addons/ability-overlays.html Ability overlays}}</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>assets/&lt;namespace&gt;/ability_overlays/</code></dd></div><div class="wide"><dt>One file per</dt><dd>power or ability themed in the skill tree (a resource, so it can go in a resource pack)</dd></div></dl></div>
+  <div class="tile"><h4>Palladium powers</h4><dl class="stat-list"><div class="wide"><dt>Folder</dt><dd><code>data/&lt;namespace&gt;/palladium/powers/</code></dd></div><div><dt>One file per</dt><dd>power, using the mod's {{page addons/abilities.html ability types and conditions}} if you want</dd></div></dl></div>
+  <div class="tile"><h4>{{page addons/immunities.html Immunities}}</h4><dl class="stat-list"><div><dt>Folder</dt><dd>abilities in a Palladium power</dd></div><div class="wide"><dt>One file per</dt><dd>kind of stone manipulation others can't use on it (mental, reality, soul, spatial)</dd></div></dl></div>
+</div>
 
 <h2 id="rules">How these files are read</h2>
 <ul>

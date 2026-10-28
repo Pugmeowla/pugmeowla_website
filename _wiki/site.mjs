@@ -23,7 +23,6 @@ export const wikis = [
     // Ability cards show what an ability costs to unlock in this currency.
     costName: 'Aspect of Existence',
     searchPlaceholder: 'Search abilities, items, commands…',
-    collapsibleAbilities: true,
     curseforge: 'https://www.curseforge.com/minecraft/mc-mods/pugmeowlas-infinity-stone-core',
     modrinth: 'https://modrinth.com/mod/pugmeowlas-infinity-stone-core',
     // Versions shown in the version switcher, newest first. Each has a folder in _wiki/infinity.

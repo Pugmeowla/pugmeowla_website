@@ -841,7 +841,7 @@ html[data-theme="dark"] .hub-go { background: color-mix(in srgb, var(--hub) 85%,
 .st-node.st-blank { cursor: default; opacity: 0.55; box-shadow: 0 0 0 2px #0b0d0a; }
 .st-node.st-blank:hover { transform: translate(-50%, -50%); }
 
-/* ───── Deus Chrono-Machina modules ─────
+/* ───── Modules (both wikis; started on the Deus wiki) ─────
    Borderless tiles tinted in shades of green and gold, titles in a darker "ink" of the tile's colour, small uppercase labels.
    Nothing moves unless you can click it. Tables are replaced by these on the Deus pages. */
 .tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px; margin: 10px 0 16px; }
@@ -858,44 +858,44 @@ html[data-theme="dark"] .hub-go { background: color-mix(in srgb, var(--hub) 85%,
 .altar-gap { display: grid; place-items: center; height: 22px; color: var(--text-faint); font-size: 0.78rem; }
 .altar-gap span::before, .altar-gap span::after { content: '·'; margin: 0 6px; }
 
-html[data-wiki="deus"] {
+html[data-wiki] {
   --c1: #5fae3a; --c2: #d4a53a; --c3: #3f8a2e; --c4: #b8973f;
   --tile-tint: 15%; --tile-base: #ffffff;
 }
-html[data-wiki="deus"][data-theme="dark"] { --tile-tint: 20%; --tile-base: #141c14; }
-html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .st-info, .adv, .item-card, .page-card, .altar-slot, .fold-section, .callout) {
+html[data-wiki][data-theme="dark"] { --tile-tint: 20%; --tile-base: #141c14; }
+html[data-wiki] :is(.tile, .skill-grid > div, .recipe, .ability-card, .st-info, .adv, .item-card, .page-card, .altar-slot, .fold-section, .callout) {
   --c: var(--c1);
   --ink: color-mix(in srgb, var(--c) 45%, var(--text-strong));
   background: color-mix(in srgb, var(--c) var(--tile-tint), var(--tile-base));
   border: 0; box-shadow: none; border-radius: 12px; min-width: 0;
 }
-html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+2) { --c: var(--c2); }
-html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+3) { --c: var(--c3); }
-html[data-wiki="deus"] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+4) { --c: var(--c4); }
-html[data-wiki="deus"] .callout.warn { --c: var(--c2); }
+html[data-wiki] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+2) { --c: var(--c2); }
+html[data-wiki] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+3) { --c: var(--c3); }
+html[data-wiki] :is(.tile, .skill-grid > div, .recipe, .ability-card, .adv, .page-card, .altar-slot):nth-child(4n+4) { --c: var(--c4); }
+html[data-wiki] .callout.warn { --c: var(--c2); }
 /* Only things you can click react to the mouse. */
-html[data-wiki="deus"] .page-card:hover { filter: brightness(0.97); }
-html[data-wiki="deus"] :is(.tile h4, .skill-grid dt, .recipe-title, .ability-name, .st-info h3, .adv-head strong, .page-card strong, .altar-slot strong) { color: var(--ink); }
+html[data-wiki] .page-card:hover { filter: brightness(0.97); }
+html[data-wiki] :is(.tile h4, .skill-grid dt, .recipe-title, .ability-name, .st-info h3, .adv-head strong, .page-card strong, .altar-slot strong) { color: var(--ink); }
 /* Long words and values wrap inside their tile instead of running out of it. */
-html[data-wiki="deus"] :is(.tile, .skill-grid > div, .ability-card, .adv, .recipe, .stat-list > div) { overflow-wrap: anywhere; }
+html[data-wiki] :is(.tile, .skill-grid > div, .ability-card, .adv, .recipe, .stat-list > div) { overflow-wrap: break-word; min-width: 0; }
 /* Labels: small, uppercase, in the tile's colour. */
-html[data-wiki="deus"] .stat-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 90px), 1fr)); gap: 6px; }
-html[data-wiki="deus"] .stat-list dt { color: color-mix(in srgb, var(--text) 62%, var(--c, var(--c1))); font-weight: 600; font-size: 0.7rem; }
-html[data-wiki="deus"] .stat-list > div { background: color-mix(in srgb, var(--tile-base) 70%, transparent); border: 0; border-radius: 8px; min-width: 0; }
-html[data-wiki="deus"] .craft-cell { border: 0; background: color-mix(in srgb, var(--tile-base) 75%, transparent); border-radius: 8px; }
-html[data-wiki="deus"] .fold-section[open] > summary { border-bottom: 0; }
-html[data-wiki="deus"] :is(.ability-icon, .adv > img) { background: color-mix(in srgb, var(--tile-base) 75%, transparent); border: 0; box-shadow: none; border-radius: 10px; }
-html[data-wiki="deus"] .st-info { border-left: 0; }
+html[data-wiki] .stat-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 90px), 1fr)); gap: 6px; }
+html[data-wiki] .stat-list dt { color: color-mix(in srgb, var(--text) 62%, var(--c, var(--c1))); font-weight: 600; font-size: 0.7rem; }
+html[data-wiki] .stat-list > div { background: color-mix(in srgb, var(--tile-base) 70%, transparent); border: 0; border-radius: 8px; min-width: 0; }
+html[data-wiki] .craft-cell { border: 0; background: color-mix(in srgb, var(--tile-base) 75%, transparent); border-radius: 8px; }
+html[data-wiki] .fold-section[open] > summary { border-bottom: 0; }
+html[data-wiki] :is(.ability-icon, .adv > img) { background: color-mix(in srgb, var(--tile-base) 75%, transparent); border: 0; box-shadow: none; border-radius: 10px; }
+html[data-wiki] .st-info { border-left: 0; }
 
 /* Abilities: one big grid of tiles, each showing everything about the ability, so nothing opens and pushes the page. */
-html[data-wiki="deus"] .ability-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)) !important; gap: 8px; }
-html[data-wiki="deus"] .ability-card { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
-html[data-wiki="deus"] .ability-card .ability-icon { width: 40px; height: 40px; }
-html[data-wiki="deus"] .ability-card .ability-icon img { width: 30px; height: 30px; }
-html[data-wiki="deus"] .ability-card .ability-name { font-size: 1rem !important; }
-html[data-wiki="deus"] .ability-card .ability-body > * + * { margin-top: 6px; }
-html[data-wiki="deus"] .ability-card .ability-summary { font-weight: 400; font-size: 0.92rem; }
-html[data-wiki="deus"] .ability-card .tags .tag { font-size: 0.72rem; }
+html[data-wiki] .ability-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)) !important; gap: 8px; }
+html[data-wiki] .ability-card { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
+html[data-wiki] .ability-card .ability-icon { width: 40px; height: 40px; }
+html[data-wiki] .ability-card .ability-icon img { width: 30px; height: 30px; }
+html[data-wiki] .ability-card .ability-name { font-size: 1rem !important; }
+html[data-wiki] .ability-card .ability-body > * + * { margin-top: 6px; }
+html[data-wiki] .ability-card .ability-summary { font-weight: 400; font-size: 0.92rem; }
+html[data-wiki] .ability-card .tags .tag { font-size: 0.72rem; }
 
 /* Recipes: the grid fills the card, the slots grow with it. */
 .recipe .craft { display: grid; grid-template-columns: minmax(0, 3fr) auto minmax(0, 1.15fr); align-items: center; gap: 10px; }
@@ -906,50 +906,50 @@ html[data-wiki="deus"] .ability-card .tags .tag { font-size: 0.72rem; }
 .recipe .craft-cell small { font-size: 0.56rem; }
 
 /* Advancements flow into as many columns as fit. */
-html[data-wiki="deus"] .adv-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)) !important; gap: 8px; }
-html[data-wiki="deus"] .adv { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
-html[data-wiki="deus"] .adv > img { width: 40px; height: 40px; padding: 6px; }
-html[data-wiki="deus"] .adv-head .tag { font-size: 0.68rem; }
+html[data-wiki] .adv-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)) !important; gap: 8px; }
+html[data-wiki] .adv { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 14px; }
+html[data-wiki] .adv > img { width: 40px; height: 40px; padding: 6px; }
+html[data-wiki] .adv-head .tag { font-size: 0.68rem; }
 
 /* Less air between sections, and text runs the full width. */
-html[data-wiki="deus"] .lead, html[data-wiki="deus"] .prose > :is(p, ul, ol, .callout) { max-width: none; }
-html[data-wiki="deus"] .prose h2 { margin-top: 1.6em; padding-top: 0.8em; }
-html[data-wiki="deus"] .prose h3 { margin-top: 1.2em; }
-html[data-wiki="deus"] .prose > * + * { margin-top: 0.8em; }
-html[data-wiki="deus"] :is(.skill-grid, .recipe-grid) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 8px; margin: 10px 0 16px; }
-html[data-wiki="deus"] .skill-grid > div { padding: 10px 12px; }
+html[data-wiki] .lead, html[data-wiki] .prose > :is(p, ul, ol, .callout) { max-width: none; }
+html[data-wiki] .prose h2 { margin-top: 1.6em; padding-top: 0.8em; }
+html[data-wiki] .prose h3 { margin-top: 1.2em; }
+html[data-wiki] .prose > * + * { margin-top: 0.8em; }
+html[data-wiki] :is(.skill-grid, .recipe-grid) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 8px; margin: 10px 0 16px; }
+html[data-wiki] .skill-grid > div { padding: 10px 12px; }
 /* Deus pages use the folding "On this page" above the content, so the content gets the right-hand column too. */
 @media (min-width: 761px) {
-  html[data-wiki="deus"] .shell.has-toc { grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
-  html[data-wiki="deus"] .toc { display: none; }
+  html[data-wiki] .shell.has-toc { grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
+  html[data-wiki] .toc { display: none; }
 
 }
-html[data-wiki="deus"] .ability-id code { white-space: nowrap; }
-html[data-wiki="deus"] .prose > h2:first-child { margin-top: 0; padding-top: 0; }
+html[data-wiki] .ability-id code { white-space: nowrap; }
+html[data-wiki] .prose > h2:first-child { margin-top: 0; padding-top: 0; }
 /* Hero buttons may wrap their label instead of running out of the button. */
-html[data-wiki="deus"] .hero-actions { max-width: 460px; }
-html[data-wiki="deus"] .hero-actions .button-link { white-space: normal; text-align: center; line-height: 1.2; padding: 8px 14px; }
+html[data-wiki] .hero-actions { max-width: 460px; }
+html[data-wiki] .hero-actions .button-link { white-space: normal; text-align: center; line-height: 1.2; padding: 8px 14px; }
 /* Symmetric grids: wiki.js picks a column count that splits the items evenly (4 -> 2 + 2, 6 -> 3 + 3) and sets --cols.
    A shorter last row is centered. */
-html[data-wiki="deus"] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards)[style*="--cols"] { display: flex !important; flex-wrap: wrap; justify-content: center; }
-html[data-wiki="deus"] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards)[style*="--cols"] > * { flex: 0 0 calc((100% - (var(--cols) - 1) * 12px) / var(--cols)); margin: 0; }
-html[data-wiki="deus"] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list) { gap: 12px !important; }
+html[data-wiki] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards)[style*="--cols"] { display: flex !important; flex-wrap: wrap; justify-content: center; }
+html[data-wiki] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards)[style*="--cols"] > * { flex: 0 0 calc((100% - (var(--cols) - 1) * 12px) / var(--cols)); margin: 0; }
+html[data-wiki] :is(.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list) { gap: 12px !important; }
 /* The narrowest a tile can be before the grid drops a column. */
-html[data-wiki="deus"] .tile-grid { --min: 220px; }
-html[data-wiki="deus"] .skill-grid { --min: 190px; }
-html[data-wiki="deus"] .recipe-grid { --min: 280px; }
-html[data-wiki="deus"] .adv-list { --min: 300px; }
-html[data-wiki="deus"] .ability-list { --min: 320px; }
+html[data-wiki] .tile-grid { --min: 220px; }
+html[data-wiki] .skill-grid { --min: 190px; }
+html[data-wiki] .recipe-grid { --min: 280px; }
+html[data-wiki] .adv-list { --min: 300px; }
+html[data-wiki] .ability-list { --min: 320px; }
 /* A big picture beside its text, for the page's main subject (Maltruant). */
 .media-split-hero { grid-template-columns: minmax(240px, 44%) minmax(0, 1fr); }
 @media (max-width: 720px) { .media-split-hero { grid-template-columns: 1fr; } .media-split-hero > .figure { max-width: none; } }
 
 /* Roomier tiles. */
-html[data-wiki="deus"] .tile { padding: 16px 18px; }
-html[data-wiki="deus"] .skill-grid > div { padding: 14px 16px; }
-html[data-wiki="deus"] :is(.ability-card, .adv, .recipe) { padding: 16px 18px; }
-html[data-wiki="deus"] .stat-list { gap: 8px; }
-html[data-wiki="deus"] .stat-list > div { padding: 8px 10px; }
+html[data-wiki] .tile { padding: 16px 18px; }
+html[data-wiki] .skill-grid > div { padding: 14px 16px; }
+html[data-wiki] :is(.ability-card, .adv, .recipe) { padding: 16px 18px; }
+html[data-wiki] .stat-list { gap: 8px; }
+html[data-wiki] .stat-list > div { padding: 8px 10px; }
 /* Recipes: the grid, arrow and result stay together, centered in the card. */
 .recipe .craft { grid-template-columns: minmax(0, 190px) auto minmax(0, 64px); justify-content: center; }
 /* Clockwork's four uniforms on one line. */
@@ -963,15 +963,15 @@ html[data-wiki="deus"] .stat-list > div { padding: 8px 10px; }
 @media (max-width: 520px) { .mural-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 /* Stat boxes: 4 make a square, or one row when the tile is wide enough; 8 make two rows of 4 or four rows of 2. */
-html[data-wiki="deus"] .tile { container-type: inline-size; }
-html[data-wiki="deus"] .stat-list:has(> :nth-child(4):last-child), html[data-wiki="deus"] .stat-list:has(> :nth-child(8):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+html[data-wiki] .tile { container-type: inline-size; }
+html[data-wiki] .stat-list:has(> :nth-child(4):last-child), html[data-wiki] .stat-list:has(> :nth-child(8):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @container (min-width: 440px) {
-  html[data-wiki="deus"] .stat-list:has(> :nth-child(4):last-child), html[data-wiki="deus"] .stat-list:has(> :nth-child(8):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  html[data-wiki] .stat-list:has(> :nth-child(4):last-child), html[data-wiki] .stat-list:has(> :nth-child(8):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 /* Label and value on one line each, for values too long for a narrow box (requirements). */
-html[data-wiki="deus"] .stat-list.stat-rows { grid-template-columns: 1fr !important; gap: 6px; }
-html[data-wiki="deus"] .stat-rows > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
-html[data-wiki="deus"] .stat-rows dd { text-align: right; }
+html[data-wiki] .stat-list.stat-rows { grid-template-columns: 1fr !important; gap: 6px; }
+html[data-wiki] .stat-rows > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+html[data-wiki] .stat-rows dd { text-align: right; }
 /* The mod's own banner on the home page. */
 .mod-banner { display: block; width: 100%; height: auto; border-radius: 16px; margin-bottom: 16px; }
 /* Screenshots beside text: a wider picture column. flip puts the picture on the right. */
@@ -989,12 +989,38 @@ html[data-wiki="deus"] .stat-rows dd { text-align: right; }
 .mural-picture img { display: block; width: 100%; aspect-ratio: 1; image-rendering: pixelated; }
 .mural-pictures figcaption { margin-top: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text-soft); }
 .mural-pictures figcaption small { font-weight: 400; color: var(--text-faint); }
-html[data-wiki="deus"] .stat-rows dd { min-width: 0; flex: 1 1 auto; }
-html[data-wiki="deus"] .stat-rows dt { flex: none; }
+html[data-wiki] .stat-rows dd { min-width: 0; flex: 1 1 auto; }
+html[data-wiki] .stat-rows dt { flex: none; }
 .media-stack { display: grid; gap: 12px; } .media-stack .figure { margin: 0; }
 
 .nowrap { white-space: nowrap; }
 /* Where to start: the cards share the row evenly. */
-html[data-wiki="deus"] .page-cards { --min: 200px; gap: 12px; }
+html[data-wiki] .page-cards { --min: 200px; gap: 12px; }
 /* No "On this page" on the Deus pages. */
-html[data-wiki="deus"] :is(.toc-inline, .toc) { display: none !important; }
+html[data-wiki] :is(.toc-inline, .toc) { display: none !important; }
+
+/* The Infinity wiki's tiles: shades of its purple and gold. */
+html[data-wiki="infinity"] { --c1: #9b3fb5; --c2: #d99a2b; --c3: #7a3a96; --c4: #c08a3a; --tile-tint: 12%; --tile-base: #ffffff; }
+html[data-wiki="infinity"][data-theme="dark"] { --tile-tint: 18%; --tile-base: #2a221d; }
+
+/* Infinity tiles hold item and stone chips, so they need more room before sharing a row; otherwise they wrap to the next one. */
+html[data-wiki="infinity"] .tile-grid { --min: 300px; }
+html[data-wiki="infinity"] .skill-grid { --min: 260px; }
+html[data-wiki="infinity"] .ability-list { --min: 340px; }
+html[data-wiki="infinity"] .stat-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); }
+html[data-wiki] .skill-grid dt { display: flex; align-items: center; gap: 8px; }
+html[data-wiki] .skill-grid dt .tile-icon { width: 24px; height: 24px; }
+/* An item card with a recipe puts the recipe beside the details when the card is wide, instead of under them. */
+.item-card { container-type: inline-size; }
+@container (min-width: 560px) {
+  .item-detail:has(> .recipe-grid) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); column-gap: 20px; align-content: start; }
+  .item-detail:has(> .recipe-grid) > * { grid-column: 1; }
+  .item-detail:has(> .recipe-grid) > .recipe-grid { grid-column: 2; grid-row: 1 / span 20; margin: 0; align-self: start; }
+}
+/* A recipe inside a tinted card or folding section gets a lighter box, so every recipe looks the same: a box of its own. */
+html[data-wiki] :is(.item-card, .fold-section, .item-dialog) .recipe { background: color-mix(in srgb, var(--tile-base) 82%, transparent); }
+/* Crafting slots: a faint tint and outline in the tile's colour, so the grid shows on light and tinted boxes alike. */
+html[data-wiki] .craft-cell {
+  background: color-mix(in srgb, var(--c, var(--c1)) 9%, var(--tile-base));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c, var(--c1)) 32%, transparent);
+}

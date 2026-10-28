@@ -6,16 +6,13 @@ lead: A skin is one JSON file plus its textures. The mod generates the apply abi
 icon: skins/sith_gauntlet.png
 ---
 <h2 id="what-you-get">What one file gives you</h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>What</th><th>How</th></tr></thead>
-  <tbody>
-    <tr><td>Apply ability (<code>infinity:set_gauntlet_skin</code>) and skill tree entry</td><td>Added to the <code>infinity:infinity_gauntlet</code> power where its <code>{"infinity:generate": "gauntlet_skins"}</code> placeholder sits.</td></tr>
-    <tr><td>Inventory item look</td><td>The gauntlet's item model, retextured with the skin's icon texture.</td></tr>
-    <tr><td>Worn, main hand and ground look</td><td>A generated Palladium (GeckoLib) render layer, picked by the <code>infinity:gauntlet_skin_layer</code> abilities.</td></tr>
-    <tr><td><code>/infinity gauntlet skin set|clear</code></td><td>Suggests the skin, and gives back its unlock item on clear. Only changes a gauntlet held in the main or off hand.</td></tr>
-    <tr><td><code>infinity:gauntlet_skin</code> condition</td><td>Works with the skin ID.</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt>Apply ability (<code>infinity:set_gauntlet_skin</code>) and skill tree entry</dt><dd>Added to the <code>infinity:infinity_gauntlet</code> power where its <code>{"infinity:generate": "gauntlet_skins"}</code> placeholder sits.</dd></div>
+  <div><dt>Inventory item look</dt><dd>The gauntlet's item model, retextured with the skin's icon texture.</dd></div>
+  <div><dt>Worn, main hand and ground look</dt><dd>A generated Palladium (GeckoLib) render layer, picked by the <code>infinity:gauntlet_skin_layer</code> abilities.</dd></div>
+  <div><dt><code>/infinity gauntlet skin set|clear</code></dt><dd>Suggests the skin, and gives back its unlock item on clear. Only changes a gauntlet held in the main or off hand.</dd></div>
+  <div><dt><code>infinity:gauntlet_skin</code> condition</dt><dd>Works with the skin ID.</dd></div>
+</dl>
 <p>The apply ability uses one unlock item (held in the main hand), sets the skin, plays the apply sound and runs <code>apply_commands</code>. It reaches a gauntlet held in either hand or worn in the Curios hands slot. It only
   appears while the gauntlet has no skin, or one listed in <code>can_replace</code>.</p>
 
@@ -33,39 +30,33 @@ icon: skins/sith_gauntlet.png
 }
 </pre>
 <p><strong>2. Textures</strong>, named after the file, in <code>assets/infinity_test_stone/textures/</code>:</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>File</th><th>Used for</th></tr></thead>
-  <tbody>
-    <tr><td><code>models/gold_gauntlet.png</code></td><td>The gauntlet worn, in the main hand and on the ground (same UV layout as <code>models/gauntlet.png</code> for <code>geo/gauntlet.geo.json</code>).</td></tr>
-    <tr><td><code>item/gauntlet_skins/gold_gauntlet.png</code></td><td>Inventory item <em>and</em> skill tree icon (same layout as <code>item/infinity_gauntlet_item.png</code>).</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt><code>models/gold_gauntlet.png</code></dt><dd>The gauntlet worn, in the main hand and on the ground (same UV layout as <code>models/gauntlet.png</code> for <code>geo/gauntlet.geo.json</code>).</dd></div>
+  <div><dt><code>item/gauntlet_skins/gold_gauntlet.png</code></dt><dd>Inventory item <em>and</em> skill tree icon (same layout as <code>item/infinity_gauntlet_item.png</code>).</dd></div>
+</dl>
 <p>That's it. Restart the game. Missing textures or models fall back to the normal gauntlet's, with a warning in the log.</p>
 <p>Instead of <code>description</code> you can add the lang key <code>ability.infinity_test_stone.gauntlet.gold_gauntlet.description</code>
   (<code>ability.&lt;namespace&gt;.gauntlet.&lt;file name&gt;.description</code>).</p>
 
 <h2 id="fields">All fields</h2>
 <p>Only <code>unlock_item</code> is required.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
-  <tbody>
-    <tr><td><code>unlock_item</code></td><td><strong>required</strong></td><td>Item held in the main hand to apply the skin. One is consumed, and given back when the skin is removed. Must be a registered item, or the skin is skipped.</td></tr>
-    <tr><td><code>title</code></td><td>ID in title case</td><td>Name in the skill tree and ability bar.</td></tr>
-    <tr><td><code>description</code></td><td>lang key <code>ability.infinity.gauntlet.&lt;id&gt;.description</code></td><td>Text or text component shown in the skill tree.</td></tr>
-    <tr><td><code>apply_on</code></td><td><code>right_click</code></td><td><code>right_click</code>, or <code>hold</code> to apply as soon as the item is held.</td></tr>
-    <tr><td><code>apply_sound</code></td><td><code>minecraft:block.anvil.land</code></td><td>Sound played on apply.</td></tr>
-    <tr><td><code>bar_color</code></td><td><code>black</code></td><td>Ability bar color (a Palladium ability color name).</td></tr>
-    <tr><td><code>hidden_in_bar</code></td><td><code>false</code></td><td>Hide the apply ability from the ability bar, for secret skins.</td></tr>
-    <tr><td><code>gui_position</code></td><td>next free slot</td><td><code>[x, y]</code> in the gauntlet's skill tree. Without it: the first free slot in rows of five (x = −1 to 1, step 0.5) from y = 2.5.</td></tr>
-    <tr><td><code>can_replace</code></td><td><code>[]</code></td><td>Skin IDs this skin may be applied over. Normally the gauntlet must have no skin.</td></tr>
-    <tr><td><code>apply_commands</code></td><td><code>[]</code></td><td>Extra commands run as the player after applying.</td></tr>
-    <tr><td><code>icon</code></td><td><code>&lt;namespace&gt;:item/gauntlet_skins/&lt;file name&gt;</code></td><td>Skill tree icon <em>and</em> inventory item texture, as a sprite under <code>textures/</code> (no <code>textures/</code> or <code>.png</code>. A full texture path is accepted too).</td></tr>
-    <tr><td><code>render.texture</code></td><td><code>&lt;namespace&gt;:textures/models/&lt;file name&gt;.png</code></td><td>Model texture.</td></tr>
-    <tr><td><code>render.model</code></td><td><code>infinity:geo/gauntlet</code></td><td>GeckoLib model prefix, without <code>.geo.json</code>. <code>_mainhand</code> and <code>_ground</code> are appended for those positions, so a custom shape needs all three files.</td></tr>
-    <tr><td><code>render.glow</code></td><td>off</td><td><code>true</code> adds an emissive layer using <code>&lt;texture&gt;_glow.png</code>. An object allows <code>texture</code>, <code>enchantment_glint</code>, <code>conditions</code> (Palladium conditions, e.g. night only) and <code>positions</code> (any of <code>worn</code>, <code>mainhand</code>, <code>ground</code>).</td></tr>
-    <tr><td><code>render.layers</code></td><td>none</td><td><code>{"worn": "infinity_test_stone:my_layer", …}</code>: use your own Palladium render layer for that position instead of the generated one.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>unlock_item</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><strong>required</strong></dd></div><div class="wide"><dt>Meaning</dt><dd>Item held in the main hand to apply the skin. One is consumed, and given back when the skin is removed. Must be a registered item, or the skin is skipped.</dd></div></dl></div>
+  <div class="tile"><h4><code>title</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>ID in title case</dd></div><div class="wide"><dt>Meaning</dt><dd>Name in the skill tree and ability bar.</dd></div></dl></div>
+  <div class="tile"><h4><code>description</code></h4><dl class="stat-list"><div class="wide"><dt>Default</dt><dd>lang key <code>ability.infinity.gauntlet.&lt;id&gt;.description</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Text or text component shown in the skill tree.</dd></div></dl></div>
+  <div class="tile"><h4><code>apply_on</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>right_click</code></dd></div><div class="wide"><dt>Meaning</dt><dd><code>right_click</code>, or <code>hold</code> to apply as soon as the item is held.</dd></div></dl></div>
+  <div class="tile"><h4><code>apply_sound</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>minecraft:block.anvil.land</code></dd></div><div><dt>Meaning</dt><dd>Sound played on apply.</dd></div></dl></div>
+  <div class="tile"><h4><code>bar_color</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>black</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Ability bar color (a Palladium ability color name).</dd></div></dl></div>
+  <div class="tile"><h4><code>hidden_in_bar</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>false</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Hide the apply ability from the ability bar, for secret skins.</dd></div></dl></div>
+  <div class="tile"><h4><code>gui_position</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>next free slot</dd></div><div class="wide"><dt>Meaning</dt><dd><code>[x, y]</code> in the gauntlet's skill tree. Without it: the first free slot in rows of five (x = −1 to 1, step 0.5) from y = 2.5.</dd></div></dl></div>
+  <div class="tile"><h4><code>can_replace</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>[]</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Skin IDs this skin may be applied over. Normally the gauntlet must have no skin.</dd></div></dl></div>
+  <div class="tile"><h4><code>apply_commands</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>[]</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Extra commands run as the player after applying.</dd></div></dl></div>
+  <div class="tile"><h4><code>icon</code></h4><dl class="stat-list"><div class="wide"><dt>Default</dt><dd><code>&lt;namespace&gt;:item/gauntlet_skins/&lt;file name&gt;</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Skill tree icon <em>and</em> inventory item texture, as a sprite under <code>textures/</code> (no <code>textures/</code> or <code>.png</code>. A full texture path is accepted too).</dd></div></dl></div>
+  <div class="tile"><h4><code>render.texture</code></h4><dl class="stat-list"><div class="wide"><dt>Default</dt><dd><code>&lt;namespace&gt;:textures/models/&lt;file name&gt;.png</code></dd></div><div><dt>Meaning</dt><dd>Model texture.</dd></div></dl></div>
+  <div class="tile"><h4><code>render.model</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>infinity:geo/gauntlet</code></dd></div><div class="wide"><dt>Meaning</dt><dd>GeckoLib model prefix, without <code>.geo.json</code>. <code>_mainhand</code> and <code>_ground</code> are appended for those positions, so a custom shape needs all three files.</dd></div></dl></div>
+  <div class="tile"><h4><code>render.glow</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>off</dd></div><div class="wide"><dt>Meaning</dt><dd><code>true</code> adds an emissive layer using <code>&lt;texture&gt;_glow.png</code>. An object allows <code>texture</code>, <code>enchantment_glint</code>, <code>conditions</code> (Palladium conditions, e.g. night only) and <code>positions</code> (any of <code>worn</code>, <code>mainhand</code>, <code>ground</code>).</dd></div></dl></div>
+  <div class="tile"><h4><code>render.layers</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd><code>{"worn": "infinity_test_stone:my_layer", …}</code>: use your own Palladium render layer for that position instead of the generated one.</dd></div></dl></div>
+</div>
 
 <h2 id="examples">Examples from the mod</h2>
 <div class="tabs" data-tabs>

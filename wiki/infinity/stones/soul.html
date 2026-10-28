@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -216,15 +216,12 @@
 <h2 id="soul-storage">Soul Storage<a class="heading-anchor" href="#soul-storage" aria-label="Link to this section">#</a></h2>
 <p>Once you have <a class="ability-link" href="../stones/soul.html#soul-storage">Soul Storage</a>, everything you kill gives you a soul, up to <strong>50</strong>. They're kept in the
   <code>SoulStorage</code> scoreboard objective and shown on the orange bar. Clones and mobs you've already drained don't give one.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Ability</th><th>Souls</th><th>What it does</th></tr></thead>
-  <tbody>
-    <tr><td><a class="ability-link" href="../stones/soul.html#soul-heal">Soul Heal</a></td><td>−1</td><td>Heals 2 hearts. Does nothing at full health or with no souls.</td></tr>
-    <tr><td><a class="ability-link" href="../stones/soul.html#soul-drain">Soul Drain</a></td><td>+1</td><td>Drains the mob you're looking at, which then stands still and turns grey.</td></tr>
-    <tr><td>Soul Drain while sneaking</td><td>−1</td><td>Gives a drained mob its soul back.</td></tr>
-    <tr><td><a class="ability-link" href="../stones/soul.html#summon-zombie">Summon Zombie</a></td><td>−1 per zombie</td><td>Raises up to six zombies, one per soul. With fewer souls you get fewer zombies, named ones first.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><a class="ability-link" href="../stones/soul.html#soul-heal">Soul Heal</a></h4><dl class="stat-list"><div><dt>Souls</dt><dd>−1</dd></div><div class="wide"><dt>What it does</dt><dd>Heals 2 hearts. Does nothing at full health or with no souls.</dd></div></dl></div>
+  <div class="tile"><h4><a class="ability-link" href="../stones/soul.html#soul-drain">Soul Drain</a></h4><dl class="stat-list"><div><dt>Souls</dt><dd>+1</dd></div><div class="wide"><dt>What it does</dt><dd>Drains the mob you're looking at, which then stands still and turns grey.</dd></div></dl></div>
+  <div class="tile"><h4>Soul Drain while sneaking</h4><dl class="stat-list"><div><dt>Souls</dt><dd>−1</dd></div><div><dt>What it does</dt><dd>Gives a drained mob its soul back.</dd></div></dl></div>
+  <div class="tile"><h4><a class="ability-link" href="../stones/soul.html#summon-zombie">Summon Zombie</a></h4><dl class="stat-list"><div><dt>Souls</dt><dd>−1 per zombie</dd></div><div class="wide"><dt>What it does</dt><dd>Raises up to six zombies, one per soul. With fewer souls you get fewer zombies, named ones first.</dd></div></dl></div>
+</div>
 
 <h2 id="locate-entity">Finding anyone<a class="heading-anchor" href="#locate-entity" aria-label="Link to this section">#</a></h2>
 <p><a class="ability-link" href="../stones/soul.html#locateplayer-command">Locate Entity</a> lets you use <a href="../commands.html#infinity-soul-locateentity">/infinity soul locateentity</a>
@@ -259,6 +256,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

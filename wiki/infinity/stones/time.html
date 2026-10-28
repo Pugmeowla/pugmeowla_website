@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -152,10 +152,9 @@
 
 <h2 id="tick-rate">Slow Time steps<a class="heading-anchor" href="#tick-rate" aria-label="Link to this section">#</a></h2>
 <p>Change Flow of Time sets the <strong>server's tick rate</strong> through <a class="mod-link" href="https://modrinth.com/mod/chronoapi" data-modrinth="https://modrinth.com/mod/chronoapi" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/chrono-api"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/chrono_api.png" alt="" loading="lazy">Chrono</span> API</a>. Each step is 4 ticks per second:</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Step</th><th>−5</th><th>−4</th><th>−3</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
-  <tbody><tr><td>Ticks per second</td><td>40</td><td>36</td><td>32</td><td>28</td><td>24</td><td><strong>20</strong></td><td>16</td><td>12</td><td>8</td><td>4</td><td>2</td></tr></tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4>Ticks per second</h4><dl class="stat-list"><div><dt>−5</dt><dd>40</dd></div><div><dt>−4</dt><dd>36</dd></div><div><dt>−3</dt><dd>32</dd></div><div><dt>−2</dt><dd>28</dd></div><div><dt>−1</dt><dd>24</dd></div><div><dt>0</dt><dd><strong>20</strong></dd></div><div><dt>1</dt><dd>16</dd></div><div><dt>2</dt><dd>12</dd></div><div><dt>3</dt><dd>8</dd></div><div><dt>4</dt><dd>4</dd></div><div><dt>5</dt><dd>2</dd></div></dl></div>
+</div>
 <p>Scroll down to slow things down and up to speed them up. The green bar shows the step, with the middle being normal speed. The tick
   rate change doesn't apply to you, so you move at normal speed while everything else slows down.</p>
 <div class="callout warn"><span class="callout-title">This is server wide</span><p>Change Flow of Time and Time Freeze affect the whole
@@ -178,6 +177,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

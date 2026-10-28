@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -70,80 +70,104 @@
   a ring of TNT around you after half a second and gives you Wither. Put it in the gauntlet or a Cosmi-Rod.</p></div>
 
 <h2 id="abilities">Abilities<a class="heading-anchor" href="#abilities" aria-label="Link to this section">#</a></h2>
-<div class="ability-list"><details class="ability-card ability-fold" id="impower" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/icons/impower.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Impower</strong><span class="ability-summary">Health Boost VI and Resistance IV for 90 seconds.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 120 s</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+<div class="ability-list"><article class="ability-card" id="impower" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/icons/impower.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Impower<a class="heading-anchor" href="#impower" aria-label="Link to Impower">#</a></h3>
+    <p class="ability-summary">Health Boost VI and Resistance IV for 90 seconds.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 120 s</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="knockback" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Knockback Resistance</strong><span class="ability-summary">Nothing knocks you back.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+</article>
+<article class="ability-card" id="knockback" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Knockback Resistance<a class="heading-anchor" href="#knockback" aria-label="Link to Knockback Resistance">#</a></h3>
+    <p class="ability-summary">Nothing knocks you back.</p>
+    <ul class="tags"><li class="tag tag-activation">Passive</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#impower">Impower</a></p>
     
     
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>attribute_modifier</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="power-blast-aim" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/icons/power_blast.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Power Blast</strong><span class="ability-summary">Hold to fire a 100 block beam that smelts blocks and starts fires. Damage is 2^level.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+</article>
+<article class="ability-card" id="power-blast-aim" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/icons/power_blast.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Power Blast<a class="heading-anchor" href="#power-blast-aim" aria-label="Link to Power Blast">#</a></h3>
+    <p class="ability-summary">Hold to fire a 100 block beam that smelts blocks and starts fires. Damage is 2^level.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#impower">Impower</a></p>
     
     <p>At level 11 with all six stones the beam turns rainbow, does near infinite damage and summons TNT where it hits
       blocks. Fired from your off hand.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>energy_beam</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="power-levels" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Power Levels 1 to 11</strong><span class="ability-summary">Eleven levels you buy one by one. Each doubles your base attack damage.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Upgrade</li><li class="tag tag-cost">434 Aspects of Existence</li></ul>
+</article>
+<article class="ability-card" id="power-levels" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Power Levels 1 to 11<a class="heading-anchor" href="#power-levels" aria-label="Link to Power Levels 1 to 11">#</a></h3>
+    <p class="ability-summary">Eleven levels you buy one by one. Each doubles your base attack damage.</p>
+    <ul class="tags"><li class="tag tag-activation">Upgrade</li><li class="tag tag-cost">434 Aspects of Existence</li></ul>
     
     
     <p>They cost 2, 4, 8, 12, 18, 26, 36, 48, 64, 88 and 128 Aspects of Existence. Use <strong>Damage Control</strong> to
       pick the active one. See <a href="../progression.html#power-levels">Power Levels</a>.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>dummy (×11)</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="damage-control" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Damage Control</strong><span class="ability-summary">Turn it on, then scroll to set your active power level.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Scroll</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="damage-control" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Damage Control<a class="heading-anchor" href="#damage-control" aria-label="Link to Damage Control">#</a></h3>
+    <p class="ability-summary">Turn it on, then scroll to set your active power level.</p>
+    <ul class="tags"><li class="tag tag-activation">Scroll</li><li class="tag tag-cost">No unlock needed</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#power-levels">Power Levels 1 to 11</a></p>
     
     <p>Your base attack damage is set to 2^level (1 at level 0, 2048 at level 11) and goes back to 1 when you lose the stone.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="explosion2" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/icons/rocket_burst.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Cosmic Explosion</strong><span class="ability-summary">Hold to set off a ring of TNT 8 blocks around you, over and over. Explosions don’t hurt you.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+</article>
+<article class="ability-card" id="explosion2" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/icons/rocket_burst.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Cosmic Explosion<a class="heading-anchor" href="#explosion2" aria-label="Link to Cosmic Explosion">#</a></h3>
+    <p class="ability-summary">Hold to set off a ring of TNT 8 blocks around you, over and over. Explosions don’t hurt you.</p>
+    <ul class="tags"><li class="tag tag-activation">Hold</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#power-blast-aim">Power Blast</a></p>
     
     
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="meteor-storm" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/icons/meteor.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Meteor Storm</strong><span class="ability-summary">Drops 20 deepslate meteors from 70 blocks up, spread up to 50 blocks around you.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
+</article>
+<article class="ability-card" id="meteor-storm" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/icons/meteor.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Meteor Storm<a class="heading-anchor" href="#meteor-storm" aria-label="Link to Meteor Storm">#</a></h3>
+    <p class="ability-summary">Drops 20 deepslate meteors from 70 blocks up, spread up to 50 blocks around you.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">1 Aspect of Existence</li></ul>
     <p class="ability-req"><span>Requires</span> <a href="../stones/power.html#explosion2">Cosmic Explosion</a></p>
     <p class="ability-req"><span>Needs stones</span> <a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../../../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a></p>
     <p>Needs the Space Stone too. Spamming it can lag.</p>
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="radiation-texture-toggle" data-group="power" style="--accent:#C32AD1">
-  <summary><span class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Radiation Texture Toggle</strong><span class="ability-summary">Free. Click it to hide or show the radiation cracks on your skin.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">Free unlock</li></ul>
+</article>
+<article class="ability-card" id="radiation-texture-toggle" data-group="power" style="--accent:#C32AD1">
+  <div class="ability-icon"><img src="../../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Radiation Texture Toggle<a class="heading-anchor" href="#radiation-texture-toggle" aria-label="Link to Radiation Texture Toggle">#</a></h3>
+    <p class="ability-summary">Free. Click it to hide or show the radiation cracks on your skin.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">Free unlock</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:<wbr>power_stone_passive</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details></div>
+</article></div>
 
 <h2 id="skill-tree">Skill tree costs<a class="heading-anchor" href="#skill-tree" aria-label="Link to this section">#</a></h2>
 <div class="table-wrap"><table><thead><tr><th>Ability</th><th>Cost</th><th>Unlock after</th><th>Use</th></tr></thead><tbody><tr><td><a href="../stones/power.html#impower">Impower</a></td><td>1</td><td>Nothing</td><td>Key press</td></tr><tr><td><a href="../stones/power.html#knockback">Knockback Resistance</a></td><td>1</td><td>Impower</td><td>Passive</td></tr><tr><td><a href="../stones/power.html#power-blast-aim">Power Blast</a></td><td>1</td><td>Impower</td><td>Hold</td></tr><tr><td><a href="../stones/power.html#power-levels">Power Levels 1 to 11</a></td><td>434</td><td>Nothing</td><td>Upgrade</td></tr><tr><td><a href="../stones/power.html#explosion2">Cosmic Explosion</a></td><td>1</td><td>Power Blast</td><td>Hold</td></tr><tr><td><a href="../stones/power.html#meteor-storm">Meteor Storm</a></td><td>1</td><td>Cosmic Explosion</td><td>Key press</td></tr><tr><td><a href="../stones/power.html#radiation-texture-toggle">Radiation Texture Toggle</a></td><td>Free</td><td>Nothing</td><td>Key press</td></tr></tbody><tfoot><tr><td>Everything</td><td>439</td><td colspan="2"></td></tr></tfoot></table></div>
@@ -161,6 +185,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../../assets/js/search-infinity-7.3.js" defer></script>
-<script src="../../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

@@ -18,16 +18,13 @@ icon: icons/snap.png
 <h2 id="what-happens">What happens when you snap</h2>
 <p>There's a flash at your hand, and everyone hears a Wither scream and a crack of thunder. Over the next second the targets turn to
   white dust, a few each tick.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Snap</th><th>Who</th><th>Where they go</th></tr></thead>
-  <tbody>
-    <tr><td>Kill Half</td><td>Half of all living things <strong>in your current dimension</strong>, players included, but not you. It takes half
-      of each chunk on its own (an odd one out is a coin flip), so no area is spared and none is wiped out completely.</td><td>Killed.</td></tr>
-    <tr><td>Kill All Hostile</td><td>Every hostile mob in <strong>every dimension</strong>, meaning everything in the <code>#infinity:snap_hostile</code>
-      tag (zombies, skeletons, creepers, spiders, endermen, illagers, the Warden, the Wither, the Ender Dragon and more).</td><td>The Snap cell in the Soulworld.</td></tr>
-    <tr><td>Kill Other Players</td><td>Every other player on the server.</td><td>The Snap cell in the Soulworld.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4>Kill Half</h4><dl class="stat-list"><div class="wide"><dt>Who</dt><dd>Half of all living things <strong>in your current dimension</strong>, players included, but not you. It takes half
+      of each chunk on its own (an odd one out is a coin flip), so no area is spared and none is wiped out completely.</dd></div><div><dt>Where they go</dt><dd>Killed.</dd></div></dl></div>
+  <div class="tile"><h4>Kill All Hostile</h4><dl class="stat-list"><div class="wide"><dt>Who</dt><dd>Every hostile mob in <strong>every dimension</strong>, meaning everything in the <code>#infinity:snap_hostile</code>
+      tag (zombies, skeletons, creepers, spiders, endermen, illagers, the Warden, the Wither, the Ender Dragon and more).</dd></div><div><dt>Where they go</dt><dd>The Snap cell in the Soulworld.</dd></div></dl></div>
+  <div class="tile"><h4>Kill Other Players</h4><dl class="stat-list"><div><dt>Who</dt><dd>Every other player on the server.</dd></div><div><dt>Where they go</dt><dd>The Snap cell in the Soulworld.</dd></div></dl></div>
+</div>
 <p>The <strong>Snap cell</strong> is a closed, lit bedrock room at <code>1000 78 1000</code> in the Soulworld with one oak door. Players who
   got snapped can walk out and make their way home, see {{page dimensions.html#soulworld The Soulworld}}.</p>
 <p>Only one Snap can happen on a server at a time. If one's already going (or the Soulworld is missing) you get "A snap is already in

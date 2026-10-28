@@ -8,15 +8,12 @@ icon: stones/mind_stone.png
 <p>Each immunity is an ability type you put in a Palladium power. Give it conditions like any ability, or none to keep it on whenever
   the power is there. While it's on, other players' stone abilities of that kind don't work on the entity. Its own abilities still
   work on itself.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Ability</th><th>What it blocks</th></tr></thead>
-  <tbody>
-    <tr><td><code>infinity:mental_immunity</code></td><td>{{ab mind/mind_reading}} ("That mind is shielded"), {{ab mind/passive}}, and {{ab mind/disguise}}: an immune player sees others' real skin and name.</td></tr>
-    <tr><td><code>infinity:reality_immunity</code></td><td>Nothing built in yet, since no Reality Stone ability targets other entities. It's there for addon abilities and commands.</td></tr>
-    <tr><td><code>infinity:soul_immunity</code></td><td>{{ab soul/soul_drain}} ("That soul is shielded"), being taken along by {{ab soul/enter_soulworld}}, <a href="@/commands.html#infinity-soul-locateentity">/infinity soul locateentity</a>, and the location line of Mind Reading.</td></tr>
-    <tr><td><code>infinity:spatial_immunity</code></td><td>{{ab space/telekinesis}} and {{ab space/spatial_lock}} can't grab or lock it (it's dropped as soon as it becomes immune), and {{ab space/black_hole}} doesn't pull it.</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt><code>infinity:mental_immunity</code></dt><dd>{{ab mind/mind_reading}} ("That mind is shielded"), {{ab mind/passive}}, and {{ab mind/disguise}}: an immune player sees others' real skin and name.</dd></div>
+  <div><dt><code>infinity:reality_immunity</code></dt><dd>Nothing built in yet, since no Reality Stone ability targets other entities. It's there for addon abilities and commands.</dd></div>
+  <div><dt><code>infinity:soul_immunity</code></dt><dd>{{ab soul/soul_drain}} ("That soul is shielded"), being taken along by {{ab soul/enter_soulworld}}, <a href="@/commands.html#infinity-soul-locateentity">/infinity soul locateentity</a>, and the location line of Mind Reading.</dd></div>
+  <div><dt><code>infinity:spatial_immunity</code></dt><dd>{{ab space/telekinesis}} and {{ab space/spatial_lock}} can't grab or lock it (it's dropped as soon as it becomes immune), and {{ab space/black_hole}} doesn't pull it.</dd></div>
+</dl>
 <p>The Mind Stone has mental immunity built in as a hidden passive, so anyone channeling it is immune. The Time Stone's
   <code>infinity:time_immunity</code> works the same way for Slow Time and Freeze Time.</p>
 

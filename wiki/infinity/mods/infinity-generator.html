@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -70,14 +70,11 @@
 
 <h2 id="making-it">Making it<a class="heading-anchor" href="#making-it" aria-label="Link to this section">#</a></h2>
 <p>The recipe comes from Infinity Stone Core, and the generator shows up in its creative tab.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Row</th><th>Ingredients</th></tr></thead>
-  <tbody>
-    <tr><td>Top</td><td><a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a>, Vibranium Circuit, <a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a></td></tr>
-    <tr><td>Middle</td><td>Steel block, Nether Star, steel block</td></tr>
-    <tr><td>Bottom</td><td><a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a>, Vibranium Flux Capacitor, <a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a></td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt>Top</dt><dd><a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a>, Vibranium Circuit, <a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a></dd></div>
+  <div><dt>Middle</dt><dd>Steel block, Nether Star, steel block</dd></div>
+  <div><dt>Bottom</dt><dd><a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a>, Vibranium Flux Capacitor, <a class="chip item-chip" href="../items.html#item-dwarf-star-alloy-plate"><img src="../../assets/img/renders/dwarf_star_alloy_plate.png" alt="" class="px" loading="lazy">Dwarf Star Alloy Plate</a></dd></div>
+</dl>
 <p>The Vibranium Circuit and Vibranium Flux Capacitor are <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> items. Any steel block works (<code>#forge:<wbr>blocks/<wbr>steel</code>), like
   <a class="chip item-chip" href="../items.html#item-steel-block"><img src="../../assets/img/renders/steel_block.png" alt="" class="px" loading="lazy">Block of Steel</a>. Mine the generator with an iron pickaxe or better: it drops itself, keeping its name.</p>
 
@@ -102,14 +99,11 @@
 
 <h2 id="config">Config<a class="heading-anchor" href="#config" aria-label="Link to this section">#</a></h2>
 <p>The generator's numbers are in its own common config file. The defaults are huge on purpose: it's powered by an Infinity Stone.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Setting</th><th>Default</th><th>What it does</th></tr></thead>
-  <tbody>
-    <tr><td><code>energyGenerated</code></td><td>1,000,000</td><td>FE made every tick while a stone is inside</td></tr>
-    <tr><td><code>maxCapacity</code></td><td>1,000,000</td><td>FE it can store</td></tr>
-    <tr><td><code>maxTransfer</code></td><td>1,000,000</td><td>FE it can send to each neighbouring block per tick</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>energyGenerated</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>1,000,000</dd></div><div class="wide"><dt>What it does</dt><dd>FE made every tick while a stone is inside</dd></div></dl></div>
+  <div class="tile"><h4><code>maxCapacity</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>1,000,000</dd></div><div><dt>What it does</dt><dd>FE it can store</dd></div></dl></div>
+  <div class="tile"><h4><code>maxTransfer</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>1,000,000</dd></div><div class="wide"><dt>What it does</dt><dd>FE it can send to each neighbouring block per tick</dd></div></dl></div>
+</div>
 <p>Each setting can go up to 2,147,483,647.</p>
 
     </article>
@@ -124,6 +118,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

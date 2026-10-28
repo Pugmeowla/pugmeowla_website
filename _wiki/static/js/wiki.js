@@ -431,7 +431,7 @@
   window.addEventListener('hashchange', openTarget);
   openTarget();
 
-  // ───── Symmetric grids (Deus): the fewest rows that fit, with the items shared out evenly between them ─────
+  // ───── Symmetric grids: the fewest rows that fit, with the items shared out evenly between them ─────
   // 10 items in room for 7 become 5 + 5, 16 in room for 4 become 4 × 4. If the last row would still be short, a column
   // count that divides the items exactly is used instead, as long as it adds at most two rows (16 in room for 3: 2 × 8).
   function columnsFor(count, max) {
@@ -441,7 +441,7 @@
     for (var c = cols - 1; c >= 2; c--) if (count % c === 0 && count / c <= rows + 2) return c;
     return cols;
   }
-  if (document.documentElement.getAttribute('data-wiki') === 'deus') {
+  if (document.documentElement.getAttribute('data-wiki')) {
     var grids = $$('.tile-grid, .skill-grid, .recipe-grid, .ability-list, .adv-list, .page-cards');
     var balance = function () {
       grids.forEach(function (grid) {

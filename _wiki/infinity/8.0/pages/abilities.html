@@ -1,29 +1,65 @@
 ---
 title: All Abilities
-description: Every ability in the mod with its stone, how you use it, its cooldown and what it costs. Searchable.
-lead: Every ability from every stone, tool and container. Click one for the details.
+description: Every ability in the mod, grouped by stone, tool and container, with how you use it, its cooldown and what it costs.
+lead: Every ability from every stone, tool and container, grouped by where it comes from.
 icon: icons/energy_blast.png
 ---
-<h2 id="list">Ability list</h2>
-<p>Type to filter by name, effect or ability type, or narrow it down by source or activation. <code>AoE</code> is the cost in
-  {{item aspects_of_existance}}. You can link to a filtered list with <code>?q=</code> and <code>?source=</code>, like
-  <a href="@/abilities.html?source=power">abilities.html?source=power</a>.</p>
-{{abilityindex}}
+<p>Every ability, grouped by where it comes from. Costs are in {{item aspects_of_existance}}, spent in that stone's skill tree. Each stone's
+  page draws its skill tree and explains how the abilities fit together.</p>
+
+<h2 id="power">Power Stone</h2>
+<p>{{stone power}} · See the {{page stones/power.html Power Stone}} page for its skill tree.</p>
+{{abilities power}}
+
+<h2 id="space">Space Stone</h2>
+<p>{{stone space}} · See the {{page stones/space.html Space Stone}} page for its skill tree.</p>
+{{abilities space}}
+
+<h2 id="reality">Reality Stone</h2>
+<p>{{stone reality}} · See the {{page stones/reality.html Reality Stone}} page for its skill tree.</p>
+{{abilities reality}}
+
+<h2 id="soul">Soul Stone</h2>
+<p>{{stone soul}} · See the {{page stones/soul.html Soul Stone}} page for its skill tree.</p>
+{{abilities soul}}
+
+<h2 id="time">Time Stone</h2>
+<p>{{stone time}} · See the {{page stones/time.html Time Stone}} page for its skill tree.</p>
+{{abilities time}}
+
+<h2 id="mind">Mind Stone</h2>
+<p>{{stone mind}} · See the {{page stones/mind.html Mind Stone}} page for its skill tree.</p>
+{{abilities mind}}
+<h3 id="scepter">Scepter</h3>
+{{abilities scepter}}
+
+<h2 id="gauntlet">Infinity Gauntlet</h2>
+<p>See {{page gauntlet/snap.html The Snap}} for what each snap does.</p>
+{{abilities gauntlet}}
+
+<h2 id="tools-and-containers">Tools and containers</h2>
+<h3 id="cosmi-rod">Cosmi-Rod</h3>
+{{abilities cosmi_rod}}
+<h3 id="soul-guardian-telephone">Soul Guardian Telephone</h3>
+{{abilities telephone}}
+<h3 id="orb">Orb</h3>
+{{abilities orb}}
+<h3 id="eye-of-agamotto">Eye of Agamotto</h3>
+{{abilities eye}}
+<h3 id="empty-aether">Empty Aether</h3>
+{{abilities aether}}
 
 <h2 id="activation-types">Activation types</h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>Activation</th><th>How you use it</th></tr></thead>
-  <tbody>
-    <tr><td>Key press</td><td>Press its key once. With a cooldown you have to wait before using it again.</td></tr>
-    <tr><td>Toggle</td><td>Press once to turn it on and again to turn it off.</td></tr>
-    <tr><td>Hold</td><td>On while you hold the key down.</td></tr>
-    <tr><td>Scroll</td><td>Turn its toggle on, then use the mouse wheel.</td></tr>
-    <tr><td>Passive</td><td>Always on once unlocked, as long as you have the stone's power.</td></tr>
-    <tr><td>Upgrade</td><td>A skill tree unlock that turns on or changes other abilities. Does nothing by itself.</td></tr>
-    <tr><td>Right-click</td><td>Right-click with the item in your hand.</td></tr>
-    <tr><td>Skill tree switch</td><td>A free entry in the skill tree. Click it to turn a passive (or a setting) off or back on, and the new
-      state shows above your hotbar. It locks itself again straight away, ready for the next click. Your choice is saved on you.</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt>Key press</dt><dd>Press its key once. With a cooldown you have to wait before using it again.</dd></div>
+  <div><dt>Toggle</dt><dd>Press once to turn it on and again to turn it off.</dd></div>
+  <div><dt>Hold</dt><dd>On while you hold the key down.</dd></div>
+  <div><dt>Scroll</dt><dd>Turn its toggle on, then use the mouse wheel.</dd></div>
+  <div><dt>Passive</dt><dd>Always on once unlocked, as long as you have the stone's power.</dd></div>
+  <div><dt>Upgrade</dt><dd>A skill tree unlock that turns on or changes other abilities. Does nothing by itself.</dd></div>
+  <div><dt>Right-click</dt><dd>Right-click with the item in your hand.</dd></div>
+  <div><dt>Skill tree switch</dt><dd>A free entry in the skill tree. Click it to turn a passive (or a setting) off or back on, and the new
+      state shows above your hotbar. It locks itself again straight away, ready for the next click. Your choice is saved on you.</dd></div>
+</dl>
 <p>Cooldowns are in seconds (20 ticks is 1 second). Abilities marked "Press twice to confirm" ignore the first press and just show a
   warning. Press again within 3 seconds to go through with it.</p>

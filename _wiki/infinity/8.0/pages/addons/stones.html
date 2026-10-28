@@ -19,24 +19,21 @@ icon: stones/time_stone.png
 </ul>
 
 <h2 id="fields">Fields</h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
-  <tbody>
-    <tr><td><code>item</code></td><td><strong>required</strong></td><td>The stone's item. It has to be registered, and an item can only be one stone.</td></tr>
-    <tr><td><code>color</code></td><td><code>#FFFFFF</code></td><td><code>#RRGGBB</code>. Tints the stone everywhere (item, gauntlet worn, held, on the ground, inventory icon, head) and colors its tooltip line and insert particles.</td></tr>
-    <tr><td><code>glint</code></td><td><code>true</code></td><td>Whether the two scrolling glints are drawn.</td></tr>
-    <tr><td><code>glint_color</code></td><td><code>color</code></td><td><code>#RRGGBB</code> color of the glints.</td></tr>
-    <tr><td><code>tooltip_color</code></td><td><code>color</code></td><td>Color of its line in the gauntlet tooltip. A chat color name (<code>aqua</code>, <code>light_purple</code>…) or <code>#RRGGBB</code>.</td></tr>
-    <tr><td><code>tooltip_order</code></td><td><code>100</code></td><td>Where it goes in the tooltip. Lower comes first. The six stones use 0 to 5.</td></tr>
-    <tr><td><code>power</code></td><td>none</td><td>Palladium power given while the stone is in any slot of the active gauntlet (off hand or Curios hands), and while it's held if <code>hand</code> is on. In a Cosmi-Rod, a stone without <code>power</code> gives the power with the same ID as the item.</td></tr>
-    <tr><td><code>hand</code></td><td><code>true</code></td><td>Gives the stone's <code>power</code> while the stone itself is held in either hand. The six built-in stones set it to <code>false</code>, because their held power comes from their own item powers.</td></tr>
-    <tr><td><code>head</code></td><td><code>false</code></td><td>Lets the stone go in the Curios head slot, where it's drawn on the forehead and gives its power.</td></tr>
-    <tr><td><code>texture</code></td><td><code>infinity:textures/item/infinity_stone.png</code></td><td>The stone cube's texture, tinted by <code>color</code>. Uses the 1.12.2 layout, a 6×6×6 box UV cube on a 32×16 texture.</td></tr>
-    <tr><td><code>scale</code></td><td><code>1</code></td><td>Size of the stone wherever it's drawn (in the gauntlet, on the head, held and on the ground, but not in inventories), about its own center. A number, or <code>{"base": 1, "width": 1, "height": 1}</code> to stretch it (width is x and z, each times <code>base</code>). <code>0</code> counts as <code>1</code>.</td></tr>
-    <tr><td><code>glow_abilities</code></td><td><code>[]</code></td><td>Abilities that make the stone glow brighter while one is on for whoever holds or wears it (gauntlet, custom gauntlet, Cosmi-Rod, head or hand). An ability of the stone's own <code>power</code> by name, or any ability as <code>power#ability</code>. Best for abilities that stay on for a while: held keys and toggles.</td></tr>
-    <tr><td><code>glow_color</code></td><td><code>color</code></td><td><code>#RRGGBB</code> added over the stone while it glows, pulsing slowly.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>item</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><strong>required</strong></dd></div><div class="wide"><dt>Meaning</dt><dd>The stone's item. It has to be registered, and an item can only be one stone.</dd></div></dl></div>
+  <div class="tile"><h4><code>color</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>#FFFFFF</code></dd></div><div class="wide"><dt>Meaning</dt><dd><code>#RRGGBB</code>. Tints the stone everywhere (item, gauntlet worn, held, on the ground, inventory icon, head) and colors its tooltip line and insert particles.</dd></div></dl></div>
+  <div class="tile"><h4><code>glint</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>true</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Whether the two scrolling glints are drawn.</dd></div></dl></div>
+  <div class="tile"><h4><code>glint_color</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>color</code></dd></div><div><dt>Meaning</dt><dd><code>#RRGGBB</code> color of the glints.</dd></div></dl></div>
+  <div class="tile"><h4><code>tooltip_color</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>color</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Color of its line in the gauntlet tooltip. A chat color name (<code>aqua</code>, <code>light_purple</code>…) or <code>#RRGGBB</code>.</dd></div></dl></div>
+  <div class="tile"><h4><code>tooltip_order</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>100</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Where it goes in the tooltip. Lower comes first. The six stones use 0 to 5.</dd></div></dl></div>
+  <div class="tile"><h4><code>power</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd>Palladium power given while the stone is in any slot of the active gauntlet (off hand or Curios hands), and while it's held if <code>hand</code> is on. In a Cosmi-Rod, a stone without <code>power</code> gives the power with the same ID as the item.</dd></div></dl></div>
+  <div class="tile"><h4><code>hand</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>true</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Gives the stone's <code>power</code> while the stone itself is held in either hand. The six built-in stones set it to <code>false</code>, because their held power comes from their own item powers.</dd></div></dl></div>
+  <div class="tile"><h4><code>head</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>false</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Lets the stone go in the Curios head slot, where it's drawn on the forehead and gives its power.</dd></div></dl></div>
+  <div class="tile"><h4><code>texture</code></h4><dl class="stat-list"><div class="wide"><dt>Default</dt><dd><code>infinity:textures/item/infinity_stone.png</code></dd></div><div class="wide"><dt>Meaning</dt><dd>The stone cube's texture, tinted by <code>color</code>. Uses the 1.12.2 layout, a 6×6×6 box UV cube on a 32×16 texture.</dd></div></dl></div>
+  <div class="tile"><h4><code>scale</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>1</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Size of the stone wherever it's drawn (in the gauntlet, on the head, held and on the ground, but not in inventories), about its own center. A number, or <code>{"base": 1, "width": 1, "height": 1}</code> to stretch it (width is x and z, each times <code>base</code>). <code>0</code> counts as <code>1</code>.</dd></div></dl></div>
+  <div class="tile"><h4><code>glow_abilities</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>[]</code></dd></div><div class="wide"><dt>Meaning</dt><dd>Abilities that make the stone glow brighter while one is on for whoever holds or wears it (gauntlet, custom gauntlet, Cosmi-Rod, head or hand). An ability of the stone's own <code>power</code> by name, or any ability as <code>power#ability</code>. Best for abilities that stay on for a while: held keys and toggles.</dd></div></dl></div>
+  <div class="tile"><h4><code>glow_color</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><code>color</code></dd></div><div class="wide"><dt>Meaning</dt><dd><code>#RRGGBB</code> added over the stone while it glows, pulsing slowly.</dd></div></dl></div>
+</div>
 
 <h2 id="example">Example</h2>
 <div class="tabs" data-tabs>
@@ -89,17 +86,14 @@ icon: stones/time_stone.png
 <p>An item that holds a stone, like the Scepter or the Tesseract, can glow along with it. Each one is a file in
   <code>data/&lt;namespace&gt;/infinity/stone_containers/</code>. Only the item's own model changes: held, on the ground and in inventories.
   Problems are logged as <code>Stone container &lt;id&gt;: …</code>. Restart after changes.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Key</th><th>Default</th><th>Meaning</th></tr></thead>
-  <tbody>
-    <tr><td><code>item</code></td><td><strong>required</strong></td><td>The container's item.</td></tr>
-    <tr><td><code>stone</code></td><td>none</td><td>The stone inside it. Its <code>glow_color</code>, <code>glow_abilities</code> and <code>power</code> are the defaults for the keys below.</td></tr>
-    <tr><td><code>glow_abilities</code></td><td>the stone's</td><td>Abilities that make it glow while one is on for whoever holds it: by name for one of <code>power</code>'s abilities, or <code>power#ability</code>.</td></tr>
-    <tr><td><code>power</code></td><td>the stone's</td><td>The power whose abilities <code>glow_abilities</code> names without a <code>power#</code>.</td></tr>
-    <tr><td><code>glow_color</code></td><td>the stone's, or <code>#FFFFFF</code></td><td><code>#RRGGBB</code> added over it while it glows.</td></tr>
-    <tr><td><code>glow_texture</code></td><td>none</td><td>A mask laid over the item's texture: only its non-transparent pixels glow, whatever their color. It should match the item texture's layout. Without it the whole item glows.</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>item</code></h4><dl class="stat-list"><div><dt>Default</dt><dd><strong>required</strong></dd></div><div><dt>Meaning</dt><dd>The container's item.</dd></div></dl></div>
+  <div class="tile"><h4><code>stone</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd>The stone inside it. Its <code>glow_color</code>, <code>glow_abilities</code> and <code>power</code> are the defaults for the keys below.</dd></div></dl></div>
+  <div class="tile"><h4><code>glow_abilities</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>the stone's</dd></div><div class="wide"><dt>Meaning</dt><dd>Abilities that make it glow while one is on for whoever holds it: by name for one of <code>power</code>'s abilities, or <code>power#ability</code>.</dd></div></dl></div>
+  <div class="tile"><h4><code>power</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>the stone's</dd></div><div class="wide"><dt>Meaning</dt><dd>The power whose abilities <code>glow_abilities</code> names without a <code>power#</code>.</dd></div></dl></div>
+  <div class="tile"><h4><code>glow_color</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>the stone's, or <code>#FFFFFF</code></dd></div><div class="wide"><dt>Meaning</dt><dd><code>#RRGGBB</code> added over it while it glows.</dd></div></dl></div>
+  <div class="tile"><h4><code>glow_texture</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>none</dd></div><div class="wide"><dt>Meaning</dt><dd>A mask laid over the item's texture: only its non-transparent pixels glow, whatever their color. It should match the item texture's layout. Without it the whole item glows.</dd></div></dl></div>
+</div>
 <pre data-lang="json" data-title="data/infinity/stone_containers/scepter.json">
 {
   "item": "infinity:scepter",

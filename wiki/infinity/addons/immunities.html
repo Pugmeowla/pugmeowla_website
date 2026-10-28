@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -66,15 +66,12 @@
 <p>Each immunity is an ability type you put in a <a class="mod-link" href="https://modrinth.com/mod/threetag-palladium" data-modrinth="https://modrinth.com/mod/threetag-palladium" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/threetag-palladium"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/palladium.png" alt="" loading="lazy">Palladium</span></a> power. Give it conditions like any ability, or none to keep it on whenever
   the power is there. While it's on, other players' stone abilities of that kind don't work on the entity. Its own abilities still
   work on itself.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Ability</th><th>What it blocks</th></tr></thead>
-  <tbody>
-    <tr><td><code>infinity:<wbr>mental_<wbr>immunity</code></td><td><a class="ability-link" href="../stones/mind.html#mind-reading">Mind Reading</a> ("That mind is shielded"), <a class="ability-link" href="../stones/mind.html#passive">Pacify</a>, and <a class="ability-link" href="../stones/mind.html#disguise">Disguise</a>: an immune player sees others' real skin and name.</td></tr>
-    <tr><td><code>infinity:<wbr>reality_<wbr>immunity</code></td><td>Nothing built in yet, since no Reality Stone ability targets other entities. It's there for addon abilities and commands.</td></tr>
-    <tr><td><code>infinity:<wbr>soul_<wbr>immunity</code></td><td><a class="ability-link" href="../stones/soul.html#soul-drain">Soul Drain</a> ("That soul is shielded"), being taken along by <a class="ability-link" href="../stones/soul.html#enter-soulworld">Enter / Exit Soulworld</a>, <a href="../commands.html#infinity-soul-locateentity">/infinity soul locateentity</a>, and the location line of Mind Reading.</td></tr>
-    <tr><td><code>infinity:<wbr>spatial_<wbr>immunity</code></td><td><a class="ability-link" href="../stones/space.html#telekinesis">Telekinesis</a> and <a class="ability-link" href="../stones/space.html#spatial-lock">Spatial Lock</a> can't grab or lock it (it's dropped as soon as it becomes immune), and <a class="ability-link" href="../stones/space.html#black-hole">Black Hole</a> doesn't pull it.</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt><code>infinity:<wbr>mental_immunity</code></dt><dd><a class="ability-link" href="../stones/mind.html#mind-reading">Mind Reading</a> ("That mind is shielded"), <a class="ability-link" href="../stones/mind.html#passive">Pacify</a>, and <a class="ability-link" href="../stones/mind.html#disguise">Disguise</a>: an immune player sees others' real skin and name.</dd></div>
+  <div><dt><code>infinity:<wbr>reality_immunity</code></dt><dd>Nothing built in yet, since no Reality Stone ability targets other entities. It's there for addon abilities and commands.</dd></div>
+  <div><dt><code>infinity:<wbr>soul_immunity</code></dt><dd><a class="ability-link" href="../stones/soul.html#soul-drain">Soul Drain</a> ("That soul is shielded"), being taken along by <a class="ability-link" href="../stones/soul.html#enter-soulworld">Enter / Exit Soulworld</a>, <a href="../commands.html#infinity-soul-locateentity">/infinity soul locateentity</a>, and the location line of Mind Reading.</dd></div>
+  <div><dt><code>infinity:<wbr>spatial_immunity</code></dt><dd><a class="ability-link" href="../stones/space.html#telekinesis">Telekinesis</a> and <a class="ability-link" href="../stones/space.html#spatial-lock">Spatial Lock</a> can't grab or lock it (it's dropped as soon as it becomes immune), and <a class="ability-link" href="../stones/space.html#black-hole">Black Hole</a> doesn't pull it.</dd></div>
+</dl>
 <p>The Mind Stone has mental immunity built in as a hidden passive, so anyone channeling it is immune. The Time Stone's
   <code>infinity:<wbr>time_immunity</code> works the same way for Slow Time and Freeze Time.</p>
 
@@ -132,6 +129,6 @@ if (!InfinityImmunity.isSoulImmune(target)) {
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>

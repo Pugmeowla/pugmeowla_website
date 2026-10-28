@@ -13,14 +13,11 @@ icon: compat/infinity_generator.png
 
 <h2 id="making-it">Making it</h2>
 <p>The recipe comes from Infinity Stone Core, and the generator shows up in its creative tab.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Row</th><th>Ingredients</th></tr></thead>
-  <tbody>
-    <tr><td>Top</td><td>{{item dwarf_star_alloy_plate}}, Vibranium Circuit, {{item dwarf_star_alloy_plate}}</td></tr>
-    <tr><td>Middle</td><td>Steel block, Nether Star, steel block</td></tr>
-    <tr><td>Bottom</td><td>{{item dwarf_star_alloy_plate}}, Vibranium Flux Capacitor, {{item dwarf_star_alloy_plate}}</td></tr>
-  </tbody>
-</table></div>
+<dl class="skill-grid">
+  <div><dt>Top</dt><dd>{{item dwarf_star_alloy_plate}}, Vibranium Circuit, {{item dwarf_star_alloy_plate}}</dd></div>
+  <div><dt>Middle</dt><dd>Steel block, Nether Star, steel block</dd></div>
+  <div><dt>Bottom</dt><dd>{{item dwarf_star_alloy_plate}}, Vibranium Flux Capacitor, {{item dwarf_star_alloy_plate}}</dd></div>
+</dl>
 <p>The Vibranium Circuit and Vibranium Flux Capacitor are Palladium items. Any steel block works (<code>#forge:blocks/steel</code>), like
   {{item steel_block}}. Mine the generator with an iron pickaxe or better: it drops itself, keeping its name.</p>
 
@@ -46,12 +43,9 @@ icon: compat/infinity_generator.png
 
 <h2 id="config">Config</h2>
 <p>The generator's numbers are in its own common config file. The defaults are huge on purpose: it's powered by an Infinity Stone.</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>Setting</th><th>Default</th><th>What it does</th></tr></thead>
-  <tbody>
-    <tr><td><code>energyGenerated</code></td><td>1,000,000</td><td>FE made every tick while a stone is inside</td></tr>
-    <tr><td><code>maxCapacity</code></td><td>1,000,000</td><td>FE it can store</td></tr>
-    <tr><td><code>maxTransfer</code></td><td>1,000,000</td><td>FE it can send to each neighbouring block per tick</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><code>energyGenerated</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>1,000,000</dd></div><div class="wide"><dt>What it does</dt><dd>FE made every tick while a stone is inside</dd></div></dl></div>
+  <div class="tile"><h4><code>maxCapacity</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>1,000,000</dd></div><div><dt>What it does</dt><dd>FE it can store</dd></div></dl></div>
+  <div class="tile"><h4><code>maxTransfer</code></h4><dl class="stat-list"><div><dt>Default</dt><dd>1,000,000</dd></div><div class="wide"><dt>What it does</dt><dd>FE it can send to each neighbouring block per tick</dd></div></dl></div>
+</div>
 <p>Each setting can go up to 2,147,483,647.</p>

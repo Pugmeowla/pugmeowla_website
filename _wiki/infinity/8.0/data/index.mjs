@@ -12,4 +12,6 @@ export { items, categories } from './items.mjs';
 export { skins } from './skins.mjs';
 export { abilityTypes, conditions, otherTypes } from './reference.mjs';
 export { mods } from './mods.mjs';
-export { recipes } from './recipes.mjs';
+import { recipes as allRecipes } from './recipes.mjs';
+// Recipes that only exist with another mod installed (Create, Fsang's Heropack) are left out of the wiki.
+export const recipes = allRecipes.filter((r) => !r.note?.startsWith('With '));

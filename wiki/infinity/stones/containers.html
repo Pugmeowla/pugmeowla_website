@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#eecd95">
 <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
-<link rel="stylesheet" href="../../assets/css/wiki.css?v=e688f01f">
+<link rel="stylesheet" href="../../assets/css/wiki.css?v=552cacf0">
 <script>(function(){var d=document.documentElement,dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches,t,p;d.classList.add('js');try{t=localStorage.getItem('wiki-theme');p=localStorage.getItem('wiki-platform')}catch(e){}d.setAttribute('data-theme',t==='light'||t==='dark'?t:(dark?'dark':'light'));d.setAttribute('data-platform',p==='curseforge'?'curseforge':'modrinth')})()</script>
 </head>
 <body class="doc">
@@ -63,16 +63,13 @@
     <details class="toc-inline"><summary>On this page</summary><ol><li class="toc-l2"><a href="#overview">Overview</a></li><li class="toc-l2"><a href="#orb">Orb</a></li><li class="toc-l3"><a href="#cracking-the-orb">Unlocking the combination</a></li><li class="toc-l3"><a href="#opening-the-orb">Opening it and taking the stone</a></li><li class="toc-l2"><a href="#tesseract">Tesseract</a></li><li class="toc-l3"><a href="#tesseract-travel">Jumping between dimensions</a></li><li class="toc-l3"><a href="#opening-the-tesseract">Opening it</a></li><li class="toc-l2"><a href="#aether">Aether</a></li><li class="toc-l2"><a href="#eye-of-agamotto">Eye of Agamotto</a></li><li class="toc-l2"><a href="#scepter">Scepter</a></li><li class="toc-l2"><a href="#ground-items">Items on the ground</a></li></ol></details>
     <article class="prose">
 <h2 id="overview">Overview<a class="heading-anchor" href="#overview" aria-label="Link to this section">#</a></h2>
-<div class="table-wrap"><table>
-  <thead><tr><th>Container</th><th>Stone</th><th>Gives the power?</th><th>Getting the stone out</th><th>Putting it back</th></tr></thead>
-  <tbody>
-    <tr><td><a class="chip item-chip" href="../items.html#item-orb"><img src="../../assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a></td><td><a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a></td><td>No</td><td>Unlock it, open it, right-click</td><td>Open it and right-click with the stone</td></tr>
-    <tr><td><a class="chip item-chip" href="../items.html#item-tesseract"><img src="../../assets/img/renders/tesseract.png" alt="" class="px" loading="lazy">Tesseract</a></td><td><a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a></td><td>Yes, in either hand</td><td>Left-click it on the ground (the Tesseract is gone after)</td><td>Can't</td></tr>
-    <tr><td><a class="chip item-chip" href="../items.html#item-aether"><img src="../../assets/img/renders/aether.png" alt="" class="px" loading="lazy">Aether</a></td><td><a class="chip stone-chip" style="--accent:#FF0130" href="../stones/reality.html"><img src="../../assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a></td><td>Yes, in either hand</td><td>Left-click it on the ground (the Aether is gone after)</td><td>Empty Aether with the stone in your off hand, or right-click it on the ground</td></tr>
-    <tr><td><a class="chip item-chip" href="../items.html#item-eye-of-agamotto"><img src="../../assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy">Eye of Agamotto</a></td><td><a class="chip stone-chip" style="--accent:#13CF55" href="../stones/time.html"><img src="../../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a></td><td>Yes, held or worn, while the stone is in it</td><td>Wear it, open it, right-click with an empty hand, or left-click it on the ground</td><td>Wear it, open it, right-click holding the stone</td></tr>
-    <tr><td><a class="chip item-chip" href="../items.html#item-scepter"><img src="../../assets/img/renders/scepter.png" alt="" class="px" loading="lazy">Scepter</a></td><td><a class="chip stone-chip" style="--accent:#FFD300" href="../stones/mind.html"><img src="../../assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a></td><td>Yes, in either hand</td><td>Left-click it on the ground: you get the stone and an Empty Scepter</td><td>Right-click the Empty Scepter on the ground with the stone</td></tr>
-  </tbody>
-</table></div>
+<div class="tile-grid">
+  <div class="tile"><h4><a class="chip item-chip" href="../items.html#item-orb"><img src="../../assets/img/renders/orb.png" alt="" class="px" loading="lazy">Orb</a></h4><dl class="stat-list"><div><dt>Stone</dt><dd><a class="chip stone-chip" style="--accent:#C32AD1" href="../stones/power.html"><img src="../../assets/img/stones/power_stone.png" alt="" class="px" loading="lazy">Power Stone</a></dd></div><div><dt>Gives the power?</dt><dd>No</dd></div><div><dt>Getting the stone out</dt><dd>Unlock it, open it, right-click</dd></div><div><dt>Putting it back</dt><dd>Open it and right-click with the stone</dd></div></dl></div>
+  <div class="tile"><h4><a class="chip item-chip" href="../items.html#item-tesseract"><img src="../../assets/img/renders/tesseract.png" alt="" class="px" loading="lazy">Tesseract</a></h4><dl class="stat-list"><div><dt>Stone</dt><dd><a class="chip stone-chip" style="--accent:#0255FF" href="../stones/space.html"><img src="../../assets/img/stones/space_stone.png" alt="" class="px" loading="lazy">Space Stone</a></dd></div><div><dt>Gives the power?</dt><dd>Yes, in either hand</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Left-click it on the ground (the Tesseract is gone after)</dd></div><div><dt>Putting it back</dt><dd>Can't</dd></div></dl></div>
+  <div class="tile"><h4><a class="chip item-chip" href="../items.html#item-aether"><img src="../../assets/img/renders/aether.png" alt="" class="px" loading="lazy">Aether</a></h4><dl class="stat-list"><div><dt>Stone</dt><dd><a class="chip stone-chip" style="--accent:#FF0130" href="../stones/reality.html"><img src="../../assets/img/stones/reality_stone.png" alt="" class="px" loading="lazy">Reality Stone</a></dd></div><div><dt>Gives the power?</dt><dd>Yes, in either hand</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Left-click it on the ground (the Aether is gone after)</dd></div><div class="wide"><dt>Putting it back</dt><dd>Empty Aether with the stone in your off hand, or right-click it on the ground</dd></div></dl></div>
+  <div class="tile"><h4><a class="chip item-chip" href="../items.html#item-eye-of-agamotto"><img src="../../assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy">Eye of Agamotto</a></h4><dl class="stat-list"><div><dt>Stone</dt><dd><a class="chip stone-chip" style="--accent:#13CF55" href="../stones/time.html"><img src="../../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy">Time Stone</a></dd></div><div class="wide"><dt>Gives the power?</dt><dd>Yes, held or worn, while the stone is in it</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Wear it, open it, right-click with an empty hand, or left-click it on the ground</dd></div><div class="wide"><dt>Putting it back</dt><dd>Wear it, open it, right-click holding the stone</dd></div></dl></div>
+  <div class="tile"><h4><a class="chip item-chip" href="../items.html#item-scepter"><img src="../../assets/img/renders/scepter.png" alt="" class="px" loading="lazy">Scepter</a></h4><dl class="stat-list"><div><dt>Stone</dt><dd><a class="chip stone-chip" style="--accent:#FFD300" href="../stones/mind.html"><img src="../../assets/img/stones/mind_stone.png" alt="" class="px" loading="lazy">Mind Stone</a></dd></div><div><dt>Gives the power?</dt><dd>Yes, in either hand</dd></div><div class="wide"><dt>Getting the stone out</dt><dd>Left-click it on the ground: you get the stone and an Empty Scepter</dd></div><div class="wide"><dt>Putting it back</dt><dd>Right-click the Empty Scepter on the ground with the stone</dd></div></dl></div>
+</div>
 
 <h2 id="orb">Orb<a class="heading-anchor" href="#orb" aria-label="Link to this section">#</a></h2>
 <div class="item-cards"><div class="item-card"><div class="item-detail">
@@ -88,33 +85,42 @@
   closed. Hold it in either hand and its abilities show up in the ability bar. You hold it in both hands in front of your chest,
   a half in each, and in first person it sits in the middle of your view. <em>Rotate Left</em> rolls the left half down and
   <em>Rotate Right</em> the right half up, and opening it spins both back into line and pulls them apart around the Power Stone:</p>
-<div class="ability-list"><details class="ability-card ability-fold" id="rotate" data-group="orb">
-  <summary><span class="ability-icon"><img src="../../assets/img/icons/left.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Rotate Left / Rotate Right</strong><span class="ability-summary">Turns the Orb’s combination lock one step.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 0.5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
+<div class="ability-list"><article class="ability-card" id="rotate" data-group="orb">
+  <div class="ability-icon"><img src="../../assets/img/icons/left.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Rotate Left / Rotate Right<a class="heading-anchor" href="#rotate" aria-label="Link to Rotate Left / Rotate Right">#</a></h3>
+    <p class="ability-summary">Turns the Orb’s combination lock one step.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 0.5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:orb</code> · <code>geckolib:<wbr>render_layer_animation</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="open-close" data-group="orb">
-  <summary><span class="ability-icon"><img src="../../assets/img/renders/orb.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Open / Close Orb</strong><span class="ability-summary">Once you know the combination, opens the Orb so you can take or put back the Power Stone.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="open-close" data-group="orb">
+  <div class="ability-icon"><img src="../../assets/img/renders/orb.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Open / Close Orb<a class="heading-anchor" href="#open-close" aria-label="Link to Open / Close Orb">#</a></h3>
+    <p class="ability-summary">Once you know the combination, opens the Orb so you can take or put back the Power Stone.</p>
+    <ul class="tags"><li class="tag tag-activation">Toggle</li><li class="tag tag-cost">No unlock needed</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:orb</code> · <code>palladium:dummy</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="reset-progress" data-group="orb">
-  <summary><span class="ability-icon"><img src="../../assets/img/icons/lock.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Lock Orb</strong><span class="ability-summary">Locks the Orb again. You will need the combination to open it.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 0.5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="reset-progress" data-group="orb">
+  <div class="ability-icon"><img src="../../assets/img/icons/lock.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Lock Orb<a class="heading-anchor" href="#reset-progress" aria-label="Link to Lock Orb">#</a></h3>
+    <p class="ability-summary">Locks the Orb again. You will need the combination to open it.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 0.5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:orb</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details></div>
+</article></div>
 <h3 id="cracking-the-orb">Unlocking the combination<a class="heading-anchor" href="#cracking-the-orb" aria-label="Link to this section">#</a></h3>
 <div class="callout"><span class="callout-title">Get a pen and paper ready</span><p>Unlocking the Orb is trial and error. Write down
   every turn as you find it, because one wrong turn sends you back to the start.</p></div>
@@ -194,15 +200,18 @@
   it gives the Reality Stone's power. Left-click it on the ground and its lids swing open, red light bursts out and pours upward in a column for
   5 seconds, and it ends in an explosion that leaves the Reality Stone behind. To make an Aether again, hold the Reality Stone
   in your off hand and an Empty Aether in your main hand and use:</p>
-<div class="ability-list"><details class="ability-card ability-fold" id="insert-reality-stone" data-group="aether">
-  <summary><span class="ability-icon"><img src="../../assets/img/renders/aether.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Insert Reality Stone</strong><span class="ability-summary">With the Reality Stone in your off hand, turns an Empty Aether back into the Aether.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">No unlock needed</li></ul>
+<div class="ability-list"><article class="ability-card" id="insert-reality-stone" data-group="aether">
+  <div class="ability-icon"><img src="../../assets/img/renders/aether.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Insert Reality Stone<a class="heading-anchor" href="#insert-reality-stone" aria-label="Link to Insert Reality Stone">#</a></h3>
+    <p class="ability-summary">With the Reality Stone in your off hand, turns an Empty Aether back into the Aether.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag tag-cost">No unlock needed</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:<wbr>empty_aether</code> · <code>palladium:<wbr>command</code></p>
   </div>
-</details></div>
+</article></div>
 <p>You can also right-click an Empty Aether lying on the ground while holding the Reality Stone.</p>
 
 <h2 id="eye-of-agamotto">Eye of Agamotto<a class="heading-anchor" href="#eye-of-agamotto" aria-label="Link to this section">#</a></h2>
@@ -221,24 +230,30 @@
 <div class="callout warn"><span class="callout-title">Be careful where you wear it</span><p>In the <strong>chest</strong> slot the Eye
   takes damage like any armor and can break. The Eye is lost, but if the Time Stone was still in it, the stone drops on the ground
   where it broke. In the <a class="mod-link" href="https://modrinth.com/mod/curios" data-modrinth="https://modrinth.com/mod/curios" data-curseforge="https://www.curseforge.com/minecraft/mc-mods/curios"><span class="mod-link-lead"><img class="mod-icon" src="../../assets/img/compat/curios.png" alt="" loading="lazy">Curios</span></a> <strong>necklace</strong> slot it never breaks, so wear it there if you can.</p></div>
-<div class="ability-list"><details class="ability-card ability-fold" id="open" data-group="eye">
-  <summary><span class="ability-icon"><img src="../../assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Open / Close Eye</strong><span class="ability-summary">Opens or closes the Eye of Agamotto you are wearing.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 2 s</li><li class="tag tag-cost">No unlock needed</li></ul>
+<div class="ability-list"><article class="ability-card" id="open" data-group="eye">
+  <div class="ability-icon"><img src="../../assets/img/renders/eye_of_agamotto.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Open / Close Eye<a class="heading-anchor" href="#open" aria-label="Link to Open / Close Eye">#</a></h3>
+    <p class="ability-summary">Opens or closes the Eye of Agamotto you are wearing.</p>
+    <ul class="tags"><li class="tag tag-activation">Key press</li><li class="tag">Cooldown 2 s</li><li class="tag tag-cost">No unlock needed</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:<wbr>eye_of_agamotto</code> · <code>infinity:<wbr>eye_of_agamotto</code></p>
   </div>
-</details>
-<details class="ability-card ability-fold" id="remove-stone" data-group="eye">
-  <summary><span class="ability-icon"><img src="../../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"></span><span class="ability-fold-text"><strong class="ability-name">Remove / Insert Time Stone</strong><span class="ability-summary">Right-click with an empty hand to take the Time Stone out of the open Eye, or holding the stone to put it back.</span></span></summary>
-  <div class="ability-body"><ul class="tags"><li class="tag tag-activation">Right-click</li><li class="tag">Cooldown 0.5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
+</article>
+<article class="ability-card" id="remove-stone" data-group="eye">
+  <div class="ability-icon"><img src="../../assets/img/stones/time_stone.png" alt="" class="px" loading="lazy"></div>
+  <div class="ability-body">
+    <h3 class="ability-name no-toc">Remove / Insert Time Stone<a class="heading-anchor" href="#remove-stone" aria-label="Link to Remove / Insert Time Stone">#</a></h3>
+    <p class="ability-summary">Right-click with an empty hand to take the Time Stone out of the open Eye, or holding the stone to put it back.</p>
+    <ul class="tags"><li class="tag tag-activation">Right-click</li><li class="tag">Cooldown 0.5 s</li><li class="tag tag-cost">No unlock needed</li></ul>
     
     
     
     <p class="ability-id"><code>infinity:<wbr>eye_of_agamotto</code> · <code>infinity:<wbr>eye_of_agamotto</code></p>
   </div>
-</details></div>
+</article></div>
 <ul>
   <li><em>Open Eye</em> opens it with an animation, and the stone starts glowing once it's open. It stays open (or closed) when you take
     it off, put it on a suit stand or put it back on.</li>
@@ -303,6 +318,6 @@
 <button type="button" class="to-top" aria-label="Back to top" hidden>↑</button>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><figure><img alt=""><figcaption></figcaption></figure></div>
 <script src="../../assets/js/search-infinity-8.0.js" defer></script>
-<script src="../../assets/js/wiki.js?v=19af54d0" defer></script>
+<script src="../../assets/js/wiki.js?v=ac36b96f" defer></script>
 </body>
 </html>
